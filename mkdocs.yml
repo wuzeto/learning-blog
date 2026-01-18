@@ -109,10 +109,8 @@ nav:
 extra_css:
   - stylesheets/sci-fi-theme.css
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
-  # 添加数学公式样式（MathJax 或 KaTeX）
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.css
-  # 如果使用 KaTeX：
-  # - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
+  # 只使用 KaTeX CSS
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
 
 extra_javascript:
   - javascripts/homepage-effects.js
