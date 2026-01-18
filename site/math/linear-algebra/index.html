@@ -2057,437 +2057,608 @@
 
 
 <script>
+
 window.MathJax = {
+
   tex: {
+
     inlineMath: [['$', '$'], ['\\(', '\\)']],
+
     displayMath: [['$$', '$$'], ['\\[', '\\]']],
+
     macros: {
+
       oiint: "{\\mathchoice{\\mkern-18mu\\iint}{\\mkern-12mu\\iint}{\\mkern-13mu\\iint}{\\mkern-12mu\\iint}}"
+
     }
+
   }
+
 };
+
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
 <h1 id="_1">线性代数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">行列式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="laplace">Laplace 展开定理<a class="headerlink" href="#laplace" title="Permanent link">&para;</a></h3>
-<p><strong>Laplace 展开定理</strong>
-设 <span class="arithmatex">\(A = (a_{ij})\)</span> 是 <span class="arithmatex">\(n\)</span> 阶方阵，则对任意固定的 <span class="arithmatex">\(i\)</span>（按第 <span class="arithmatex">\(i\)</span> 行展开）：
-<span class="arithmatex">\(\det(A) = \sum_{j=1}^n (-1)^{i+j} a_{ij} M_{ij}\)</span>
-或对任意固定的 <span class="arithmatex">\(j\)</span>（按第 <span class="arithmatex">\(j\)</span> 列展开）：
-<span class="arithmatex">\(\det(A) = \sum_{i=1}^n (-1)^{i+j} a_{ij} M_{ij}\)</span>
-其中 <span class="arithmatex">\(M_{ij}\)</span> 是元素 <span class="arithmatex">\(a_{ij}\)</span> 的余子式。</p>
-<p><strong>余子式与代数余子式</strong>
-* 余子式 <span class="arithmatex">\(M_{ij}\)</span>：删除第 <span class="arithmatex">\(i\)</span> 行第 <span class="arithmatex">\(j\)</span> 列后的 <span class="arithmatex">\(n-1\)</span> 阶子式
-* 代数余子式 <span class="arithmatex">\(A_{ij} = (-1)^{i+j} M_{ij}\)</span></p>
-<p><strong>Laplace 定理的一般形式</strong>
-在 <span class="arithmatex">\(n\)</span> 阶行列式中，任意取定 <span class="arithmatex">\(k\)</span> 行（列），则这 <span class="arithmatex">\(k\)</span> 行（列）中所有 <span class="arithmatex">\(k\)</span> 阶子式与其代数余子式的乘积之和等于行列式的值。</p>
+<p><strong>Laplace 展开定理</strong></p>
+<p>设 <span class="arithmatex">\(A = (a_{ij})\)</span> 是 <span class="arithmatex">\(n\)</span> 阶方阵，则对任意固定的 <span class="arithmatex">\(i\)</span>（按第 <span class="arithmatex">\(i\)</span> 行展开）：</p>
+<p><span class="arithmatex">\(\det(A) = \sum_{j=1}^n (-1)^{i+j} a_{ij} M_{ij}\)</span></p>
+<p>或对任意固定的 <span class="arithmatex">\(j\)</span>（按第 <span class="arithmatex">\(j\)</span> 列展开）：</p>
+<p><span class="arithmatex">\(\det(A) = \sum_{i=1}^n (-1)^{i+j} a_{ij} M_{ij}\)</span></p>
+<p>其中 <span class="arithmatex">\(M_{ij}\)</span> 是元素 <span class="arithmatex">\(a_{ij}\)</span> 的余子式。</p>
+<p><strong>余子式与代数余子式</strong></p>
+<ul>
+<li>
+<p>余子式 <span class="arithmatex">\(M_{ij}\)</span>：删除第 <span class="arithmatex">\(i\)</span> 行第 <span class="arithmatex">\(j\)</span> 列后的 <span class="arithmatex">\(n-1\)</span> 阶子式</p>
+</li>
+<li>
+<p>代数余子式 <span class="arithmatex">\(A_{ij} = (-1)^{i+j} M_{ij}\)</span></p>
+</li>
+</ul>
+<p><strong>Laplace 定理的一般形式</strong></p>
+<p>在 <span class="arithmatex">\(n\)</span> 阶行列式中，任意取定 <span class="arithmatex">\(k\)</span> 行（列），则这 <span class="arithmatex">\(k\)</span> 行（列）中所有 <span class="arithmatex">\(k\)</span> 阶子式与其代数余子式的乘积之和等于行列式的值。</p>
 <blockquote>
-<p><strong>示例</strong>
-计算行列式：
-<span class="arithmatex">\(\begin{vmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{vmatrix}\)</span>
-按第一行展开：
-<span class="arithmatex">\(\det = 1 \cdot \begin{vmatrix} 5 &amp; 6 \\ 8 &amp; 9 \end{vmatrix} - 2 \cdot \begin{vmatrix} 4 &amp; 6 \\ 7 &amp; 9 \end{vmatrix} + 3 \cdot \begin{vmatrix} 4 &amp; 5 \\ 7 &amp; 8 \end{vmatrix} = 1\cdot(-3) - 2\cdot(-6) + 3\cdot(-3) = 0\)</span></p>
+<p><strong>示例</strong></p>
+<p>计算行列式：</p>
+<p><span class="arithmatex">\(\begin{vmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{vmatrix}\)</span></p>
+<p>按第一行展开：</p>
+<p><span class="arithmatex">\(\det = 1 \cdot \begin{vmatrix} 5 &amp; 6 \\ 8 &amp; 9 \end{vmatrix} - 2 \cdot \begin{vmatrix} 4 &amp; 6 \\ 7 &amp; 9 \end{vmatrix} + 3 \cdot \begin{vmatrix} 4 &amp; 5 \\ 7 &amp; 8 \end{vmatrix} = 1\cdot(-3) - 2\cdot(-6) + 3\cdot(-3) = 0\)</span></p>
 </blockquote>
 <h3 id="cramer">Cramer 法则<a class="headerlink" href="#cramer" title="Permanent link">&para;</a></h3>
-<p><strong>Cramer 法则</strong>
-设 <span class="arithmatex">\(n\)</span> 元线性方程组：
-<span class="arithmatex">\(\begin{cases} a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1 \\ a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2 \\ \vdots \\ a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n = b_n \end{cases}\)</span>
-系数行列式 <span class="arithmatex">\(D = \det(A) \neq 0\)</span>，则方程组有唯一解：
-<span class="arithmatex">\(x_j = \frac{D_j}{D}, \quad j = 1, 2, \dots, n\)</span>
-其中 <span class="arithmatex">\(D_j\)</span> 是将 <span class="arithmatex">\(D\)</span> 的第 <span class="arithmatex">\(j\)</span> 列换成常数列 <span class="arithmatex">\((b_1, b_2, \dots, b_n)^T\)</span> 所得的行列式。</p>
+<p><strong>Cramer 法则</strong></p>
+<p>设 <span class="arithmatex">\(n\)</span> 元线性方程组：</p>
+<p><span class="arithmatex">\(\begin{cases} a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1 \\ a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2 \\ \vdots \\ a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n = b_n \end{cases}\)</span></p>
+<p>系数行列式 <span class="arithmatex">\(D = \det(A) \neq 0\)</span>，则方程组有唯一解：</p>
+<p><span class="arithmatex">\(x_j = \frac{D_j}{D}, \quad j = 1, 2, \dots, n\)</span></p>
+<p>其中 <span class="arithmatex">\(D_j\)</span> 是将 <span class="arithmatex">\(D\)</span> 的第 <span class="arithmatex">\(j\)</span> 列换成常数列 <span class="arithmatex">\((b_1, b_2, \dots, b_n)^T\)</span> 所得的行列式。</p>
 <blockquote>
-<p><strong>示例</strong>
-解方程组：
-<span class="arithmatex">\(\begin{cases} 2x + y = 5 \\ x + 3y = 7 \end{cases}\)</span>
-解：
-<span class="arithmatex">\(D = \begin{vmatrix} 2 &amp; 1 \\ 1 &amp; 3 \end{vmatrix} = 5, \quad D_1 = \begin{vmatrix} 5 &amp; 1 \\ 7 &amp; 3 \end{vmatrix} = 8, \quad D_2 = \begin{vmatrix} 2 &amp; 5 \\ 1 &amp; 7 \end{vmatrix} = 9\)</span>
-所以 <span class="arithmatex">\(x = \frac{8}{5}, y = \frac{9}{5}\)</span>。</p>
+<p><strong>示例</strong></p>
+<p>解方程组：</p>
+<p><span class="arithmatex">\(\begin{cases} 2x + y = 5 \\ x + 3y = 7 \end{cases}\)</span></p>
+<p>解：</p>
+<p><span class="arithmatex">\(D = \begin{vmatrix} 2 &amp; 1 \\ 1 &amp; 3 \end{vmatrix} = 5, \quad D_1 = \begin{vmatrix} 5 &amp; 1 \\ 7 &amp; 3 \end{vmatrix} = 8, \quad D_2 = \begin{vmatrix} 2 &amp; 5 \\ 1 &amp; 7 \end{vmatrix} = 9\)</span></p>
+<p>所以 <span class="arithmatex">\(x = \frac{8}{5}, y = \frac{9}{5}\)</span>。</p>
 </blockquote>
 <h3 id="vandermonde">Vandermonde 行列式<a class="headerlink" href="#vandermonde" title="Permanent link">&para;</a></h3>
-<p><strong>Vandermonde 行列式</strong>
-<span class="arithmatex">\(V_n = \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; x_3 &amp; \cdots &amp; x_n \\ x_1^2 &amp; x_2^2 &amp; x_3^2 &amp; \cdots &amp; x_n^2 \\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_1^{n-1} &amp; x_2^{n-1} &amp; x_3^{n-1} &amp; \cdots &amp; x_n^{n-1} \end{vmatrix} = \prod_{1 \leq i &lt; j \leq n} (x_j - x_i)\)</span></p>
-<p><strong>证明</strong>
-用数学归纳法。当 <span class="arithmatex">\(n=2\)</span> 时：
-<span class="arithmatex">\(\begin{vmatrix} 1 &amp; 1 \\ x_1 &amp; x_2 \end{vmatrix} = x_2 - x_1\)</span>
-假设对 <span class="arithmatex">\(n-1\)</span> 阶成立，对 <span class="arithmatex">\(n\)</span> 阶从最后一行开始，每行减去前一行的 <span class="arithmatex">\(x_1\)</span> 倍，然后按第一列展开。</p>
+<p><strong>Vandermonde 行列式</strong></p>
+<p><span class="arithmatex">\(V_n = \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; x_3 &amp; \cdots &amp; x_n \\ x_1^2 &amp; x_2^2 &amp; x_3^2 &amp; \cdots &amp; x_n^2 \\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_1^{n-1} &amp; x_2^{n-1} &amp; x_3^{n-1} &amp; \cdots &amp; x_n^{n-1} \end{vmatrix} = \prod_{1 \leq i &lt; j \leq n} (x_j - x_i)\)</span></p>
+<p><strong>证明</strong></p>
+<p>用数学归纳法。当 <span class="arithmatex">\(n=2\)</span> 时：</p>
+<p><span class="arithmatex">\(\begin{vmatrix} 1 &amp; 1 \\ x_1 &amp; x_2 \end{vmatrix} = x_2 - x_1\)</span></p>
+<p>假设对 <span class="arithmatex">\(n-1\)</span> 阶成立，对 <span class="arithmatex">\(n\)</span> 阶从最后一行开始，每行减去前一行的 <span class="arithmatex">\(x_1\)</span> 倍，然后按第一列展开。</p>
 <blockquote>
-<p><strong>示例</strong>
-计算：
-<span class="arithmatex">\(\begin{vmatrix} 1 &amp; 1 &amp; 1 \\ a &amp; b &amp; c \\ a^2 &amp; b^2 &amp; c^2 \end{vmatrix} = (b-a)(c-a)(c-b)\)</span></p>
+<p><strong>示例</strong></p>
+<p>计算：</p>
+<p><span class="arithmatex">\(\begin{vmatrix} 1 &amp; 1 &amp; 1 \\ a &amp; b &amp; c \\ a^2 &amp; b^2 &amp; c^2 \end{vmatrix} = (b-a)(c-a)(c-b)\)</span></p>
 </blockquote>
 <h3 id="_3">行列式乘积公式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p><strong>行列式乘积公式</strong>
-设 <span class="arithmatex">\(A, B\)</span> 都是 <span class="arithmatex">\(n\)</span> 阶方阵，则：
-<span class="arithmatex">\(\det(AB) = \det(A) \det(B)\)</span></p>
-<p><strong>推论</strong>
-* <span class="arithmatex">\(\det(A^k) = [\det(A)]^k\)</span>
-* 若 <span class="arithmatex">\(A\)</span> 可逆，则 <span class="arithmatex">\(\det(A^{-1}) = [\det(A)]^{-1}\)</span>
-* <span class="arithmatex">\(\det(cA) = c^n \det(A)\)</span>，其中 <span class="arithmatex">\(c\)</span> 是常数</p>
-<p><strong>分块矩阵行列式</strong>
-设 <span class="arithmatex">\(A, B, C, D\)</span> 都是方阵，且 <span class="arithmatex">\(A\)</span> 可逆，则：
-<span class="arithmatex">\(\det \begin{pmatrix} A &amp; B \\ C &amp; D \end{pmatrix} = \det(A) \det(D - CA^{-1}B)\)</span>
-特别地，当 <span class="arithmatex">\(AC = CA\)</span> 时：
-<span class="arithmatex">\(\det \begin{pmatrix} A &amp; B \\ C &amp; D \end{pmatrix} = \det(AD - CB)\)</span></p>
+<p><strong>行列式乘积公式</strong></p>
+<p>设 <span class="arithmatex">\(A, B\)</span> 都是 <span class="arithmatex">\(n\)</span> 阶方阵，则：</p>
+<p><span class="arithmatex">\(\det(AB) = \det(A) \det(B)\)</span></p>
+<p><strong>推论</strong></p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\det(A^k) = [\det(A)]^k\)</span></p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(A\)</span> 可逆，则 <span class="arithmatex">\(\det(A^{-1}) = [\det(A)]^{-1}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\det(cA) = c^n \det(A)\)</span>，其中 <span class="arithmatex">\(c\)</span> 是常数</p>
+</li>
+</ul>
+<p><strong>分块矩阵行列式</strong></p>
+<p>设 <span class="arithmatex">\(A, B, C, D\)</span> 都是方阵，且 <span class="arithmatex">\(A\)</span> 可逆，则：</p>
+<p><span class="arithmatex">\(\det \begin{pmatrix} A &amp; B \\ C &amp; D \end{pmatrix} = \det(A) \det(D - CA^{-1}B)\)</span></p>
+<p>特别地，当 <span class="arithmatex">\(AC = CA\)</span> 时：</p>
+<p><span class="arithmatex">\(\det \begin{pmatrix} A &amp; B \\ C &amp; D \end{pmatrix} = \det(AD - CB)\)</span></p>
 <h3 id="weinstein-aronszajn">Weinstein-Aronszajn 恒等式<a class="headerlink" href="#weinstein-aronszajn" title="Permanent link">&para;</a></h3>
-<p><strong>Weinstein-Aronszajn 恒等式</strong>
-设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(m \times n\)</span> 矩阵，<span class="arithmatex">\(B\)</span> 是 <span class="arithmatex">\(n \times m\)</span> 矩阵，则：
-<span class="arithmatex">\(\det(I_m + AB) = \det(I_n + BA)\)</span>
-特别地，当 <span class="arithmatex">\(m = 1\)</span> 时，设 <span class="arithmatex">\(\mathbf{u}, \mathbf{v}\)</span> 是 <span class="arithmatex">\(n\)</span> 维列向量，则：
-<span class="arithmatex">\(\det(I_n + \mathbf{u}\mathbf{v}^T) = 1 + \mathbf{v}^T\mathbf{u}\)</span></p>
-<p><strong>证明</strong>
-考虑分块矩阵：
-<span class="arithmatex">\(\begin{vmatrix} I_m &amp; -A \\ B &amp; I_n \end{vmatrix} = \det(I_m + AB) = \det(I_n + BA)\)</span>
-第一个等号通过行变换，第二个等号通过列变换。</p>
+<p><strong>Weinstein-Aronszajn 恒等式</strong></p>
+<p>设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(m \times n\)</span> 矩阵，<span class="arithmatex">\(B\)</span> 是 <span class="arithmatex">\(n \times m\)</span> 矩阵，则：</p>
+<p><span class="arithmatex">\(\det(I_m + AB) = \det(I_n + BA)\)</span></p>
+<p>特别地，当 <span class="arithmatex">\(m = 1\)</span> 时，设 <span class="arithmatex">\(\mathbf{u}, \mathbf{v}\)</span> 是 <span class="arithmatex">\(n\)</span> 维列向量，则：</p>
+<p><span class="arithmatex">\(\det(I_n + \mathbf{u}\mathbf{v}^T) = 1 + \mathbf{v}^T\mathbf{u}\)</span></p>
+<p><strong>证明</strong></p>
+<p>考虑分块矩阵：</p>
+<p><span class="arithmatex">\(\begin{vmatrix} I_m &amp; -A \\ B &amp; I_n \end{vmatrix} = \det(I_m + AB) = \det(I_n + BA)\)</span></p>
+<p>第一个等号通过行变换，第二个等号通过列变换。</p>
 <blockquote>
-<p><strong>示例</strong>
-设 <span class="arithmatex">\(\mathbf{u} = (1,2)^T, \mathbf{v} = (3,4)^T\)</span>，则：
-<span class="arithmatex">\(\mathbf{u}\mathbf{v}^T = \begin{pmatrix} 3 &amp; 4 \\ 6 &amp; 8 \end{pmatrix}, \quad I_2 + \mathbf{u}\mathbf{v}^T = \begin{pmatrix} 4 &amp; 4 \\ 6 &amp; 9 \end{pmatrix}\)</span>
-直接计算：<span class="arithmatex">\(\det = 36 - 24 = 12\)</span>，而 <span class="arithmatex">\(1 + \mathbf{v}^T\mathbf{u} = 1 + (3,4)(1,2)^T = 1 + 11 = 12\)</span>。</p>
+<p><strong>示例</strong></p>
+<p>设 <span class="arithmatex">\(\mathbf{u} = (1,2)^T, \mathbf{v} = (3,4)^T\)</span>，则：</p>
+<p><span class="arithmatex">\(\mathbf{u}\mathbf{v}^T = \begin{pmatrix} 3 &amp; 4 \\ 6 &amp; 8 \end{pmatrix}, \quad I_2 + \mathbf{u}\mathbf{v}^T = \begin{pmatrix} 4 &amp; 4 \\ 6 &amp; 9 \end{pmatrix}\)</span></p>
+<p>直接计算：<span class="arithmatex">\(\det = 36 - 24 = 12\)</span>，而 <span class="arithmatex">\(1 + \mathbf{v}^T\mathbf{u} = 1 + (3,4)(1,2)^T = 1 + 11 = 12\)</span>。</p>
 </blockquote>
 <h3 id="_4">准三角行列式<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p><strong>准三角行列式（分块三角行列式）</strong>
-设 <span class="arithmatex">\(A, D\)</span> 是方阵，则：
-<span class="arithmatex">\(\det \begin{pmatrix} A &amp; B \\ 0 &amp; D \end{pmatrix} = \det(A) \det(D)\)</span>
-<span class="arithmatex">\(\det \begin{pmatrix} A &amp; 0 \\ C &amp; D \end{pmatrix} = \det(A) \det(D)\)</span></p>
-<p><strong>更一般的分块行列式</strong>
-<span class="arithmatex">\(\det \begin{pmatrix} A &amp; B \\ C &amp; D \end{pmatrix} = 
-\begin{cases}
-   \det(A) \det(D - CA^{-1}B), &amp; \text{若 } A \text{ 可逆} \\
-   \det(D) \det(A - BD^{-1}C), &amp; \text{若 } D \text{ 可逆}
-\end{cases}\)</span></p>
+<p><strong>准三角行列式（分块三角行列式）</strong></p>
+<p>设 <span class="arithmatex">\(A, D\)</span> 是方阵，则：</p>
+<p><span class="arithmatex">\(\det \begin{pmatrix} A &amp; B \\ 0 &amp; D \end{pmatrix} = \det(A) \det(D)\)</span></p>
+<p><span class="arithmatex">\(\det \begin{pmatrix} A &amp; 0 \\ C &amp; D \end{pmatrix} = \det(A) \det(D)\)</span></p>
+<p><strong>更一般的分块行列式</strong></p>
+<p>$\det \begin{pmatrix} A &amp; B \ C &amp; D \end{pmatrix} = </p>
+<p>\begin{cases}</p>
+<p>\det(A) \det(D - CA^{-1}B), &amp; \text{若 } A \text{ 可逆} \</p>
+<p>\det(D) \det(A - BD^{-1}C), &amp; \text{若 } D \text{ 可逆}</p>
+<p>\end{cases}$</p>
 <blockquote>
-<p><strong>示例</strong>
-计算：
-<span class="arithmatex">\(\begin{vmatrix} 1 &amp; 2 &amp; 0 &amp; 0 \\ 3 &amp; 4 &amp; 0 &amp; 0 \\ 5 &amp; 6 &amp; 7 &amp; 8 \\ 9 &amp; 10 &amp; 11 &amp; 12 \end{vmatrix} = \begin{vmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{vmatrix} \cdot \begin{vmatrix} 7 &amp; 8 \\ 11 &amp; 12 \end{vmatrix} = (-2) \cdot (-4) = 8\)</span></p>
+<p><strong>示例</strong></p>
+<p>计算：</p>
+<p><span class="arithmatex">\(\begin{vmatrix} 1 &amp; 2 &amp; 0 &amp; 0 \\ 3 &amp; 4 &amp; 0 &amp; 0 \\ 5 &amp; 6 &amp; 7 &amp; 8 \\ 9 &amp; 10 &amp; 11 &amp; 12 \end{vmatrix} = \begin{vmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{vmatrix} \cdot \begin{vmatrix} 7 &amp; 8 \\ 11 &amp; 12 \end{vmatrix} = (-2) \cdot (-4) = 8\)</span></p>
 </blockquote>
 <h3 id="kronecker">Kronecker 符号<a class="headerlink" href="#kronecker" title="Permanent link">&para;</a></h3>
-<p><strong>Kronecker delta 符号</strong>
-<span class="arithmatex">\(\delta_{ij} = 
-\begin{cases}
-   1, &amp; \text{若 } i = j \\
-   0, &amp; \text{若 } i \neq j
-\end{cases}\)</span></p>
-<p><strong>Kronecker 符号的性质</strong>
-* <span class="arithmatex">\(\sum_j \delta_{ij} a_j = a_i\)</span>
-* <span class="arithmatex">\(\sum_j \delta_{ij} \delta_{jk} = \delta_{ik}\)</span>
-* 单位矩阵 <span class="arithmatex">\(I = (\delta_{ij})\)</span>
-* 正交矩阵的性质：<span class="arithmatex">\(\sum_k a_{ik} a_{jk} = \delta_{ij}\)</span></p>
-<p><strong>行列式的 Kronecker 表示</strong>
-<span class="arithmatex">\(n\)</span> 阶行列式可以用 Kronecker 符号表示为：
-<span class="arithmatex">\(\det(A) = \sum_{\sigma \in S_n} \left( \prod_{i=1}^n a_{i,\sigma(i)} \right) \cdot \operatorname{sgn}(\sigma)\)</span>
-其中 <span class="arithmatex">\(S_n\)</span> 是 <span class="arithmatex">\(n\)</span> 阶对称群，<span class="arithmatex">\(\operatorname{sgn}(\sigma)\)</span> 是置换 <span class="arithmatex">\(\sigma\)</span> 的符号。</p>
-<p><strong>Levi-Civita 符号</strong>
-定义 Levi-Civita 符号（完全反对称张量）：
-<span class="arithmatex">\(\varepsilon_{i_1 i_2 \cdots i_n} = 
-\begin{cases}
-   1, &amp; \text{若 } (i_1, i_2, \dots, i_n) \text{ 是偶排列} \\
-   -1, &amp; \text{若 } (i_1, i_2, \dots, i_n) \text{ 是奇排列} \\
-   0, &amp; \text{其他情况（有重复指标）}
-\end{cases}\)</span>
-则行列式可表示为：
-<span class="arithmatex">\(\det(A) = \sum_{i_1,i_2,\dots,i_n} \varepsilon_{i_1 i_2 \cdots i_n} a_{1i_1} a_{2i_2} \cdots a_{ni_n}\)</span></p>
+<p><strong>Kronecker delta 符号</strong></p>
+<p>$\delta_{ij} = </p>
+<p>\begin{cases}</p>
+<p>1, &amp; \text{若 } i = j \</p>
+<p>0, &amp; \text{若 } i \neq j</p>
+<p>\end{cases}$</p>
+<p><strong>Kronecker 符号的性质</strong></p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\sum_j \delta_{ij} a_j = a_i\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\sum_j \delta_{ij} \delta_{jk} = \delta_{ik}\)</span></p>
+</li>
+<li>
+<p>单位矩阵 <span class="arithmatex">\(I = (\delta_{ij})\)</span></p>
+</li>
+<li>
+<p>正交矩阵的性质：<span class="arithmatex">\(\sum_k a_{ik} a_{jk} = \delta_{ij}\)</span></p>
+</li>
+</ul>
+<p><strong>行列式的 Kronecker 表示</strong></p>
+<p><span class="arithmatex">\(n\)</span> 阶行列式可以用 Kronecker 符号表示为：</p>
+<p><span class="arithmatex">\(\det(A) = \sum_{\sigma \in S_n} \left( \prod_{i=1}^n a_{i,\sigma(i)} \right) \cdot \operatorname{sgn}(\sigma)\)</span></p>
+<p>其中 <span class="arithmatex">\(S_n\)</span> 是 <span class="arithmatex">\(n\)</span> 阶对称群，<span class="arithmatex">\(\operatorname{sgn}(\sigma)\)</span> 是置换 <span class="arithmatex">\(\sigma\)</span> 的符号。</p>
+<p><strong>Levi-Civita 符号</strong></p>
+<p>定义 Levi-Civita 符号（完全反对称张量）：</p>
+<p>$\varepsilon_{i_1 i_2 \cdots i_n} = </p>
+<p>\begin{cases}</p>
+<p>1, &amp; \text{若 } (i_1, i_2, \dots, i_n) \text{ 是偶排列} \</p>
+<p>-1, &amp; \text{若 } (i_1, i_2, \dots, i_n) \text{ 是奇排列} \</p>
+<p>0, &amp; \text{其他情况（有重复指标）}</p>
+<p>\end{cases}$</p>
+<p>则行列式可表示为：</p>
+<p><span class="arithmatex">\(\det(A) = \sum_{i_1,i_2,\dots,i_n} \varepsilon_{i_1 i_2 \cdots i_n} a_{1i_1} a_{2i_2} \cdots a_{ni_n}\)</span></p>
 <h3 id="_5">其他重要行列式公式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><strong>伴随矩阵公式</strong>
-设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\)</span> 阶方阵，<span class="arithmatex">\(A_{ij}\)</span> 是 <span class="arithmatex">\(a_{ij}\)</span> 的代数余子式，则伴随矩阵：
-<span class="arithmatex">\(\operatorname{adj}(A) = (A_{ji})\)</span>
-满足：
-<span class="arithmatex">\(A \cdot \operatorname{adj}(A) = \operatorname{adj}(A) \cdot A = \det(A) I\)</span></p>
-<p><strong>特征多项式</strong>
-矩阵 <span class="arithmatex">\(A\)</span> 的特征多项式：
-<span class="arithmatex">\(\det(\lambda I - A) = \lambda^n - (\operatorname{tr}A)\lambda^{n-1} + \cdots + (-1)^n \det(A)\)</span>
-其中 <span class="arithmatex">\(\operatorname{tr}A\)</span> 是 <span class="arithmatex">\(A\)</span> 的迹。</p>
-<p><strong>Jacobi 公式</strong>
-若 <span class="arithmatex">\(A(t)\)</span> 是可微的矩阵值函数，且 <span class="arithmatex">\(A(t)\)</span> 可逆，则：
-<span class="arithmatex">\(\frac{d}{dt} \det(A(t)) = \det(A(t)) \cdot \operatorname{tr}\left( A^{-1}(t) \frac{dA(t)}{dt} \right)\)</span></p>
+<p><strong>伴随矩阵公式</strong></p>
+<p>设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\)</span> 阶方阵，<span class="arithmatex">\(A_{ij}\)</span> 是 <span class="arithmatex">\(a_{ij}\)</span> 的代数余子式，则伴随矩阵：</p>
+<p><span class="arithmatex">\(\operatorname{adj}(A) = (A_{ji})\)</span></p>
+<p>满足：</p>
+<p><span class="arithmatex">\(A \cdot \operatorname{adj}(A) = \operatorname{adj}(A) \cdot A = \det(A) I\)</span></p>
+<p><strong>特征多项式</strong></p>
+<p>矩阵 <span class="arithmatex">\(A\)</span> 的特征多项式：</p>
+<p><span class="arithmatex">\(\det(\lambda I - A) = \lambda^n - (\operatorname{tr}A)\lambda^{n-1} + \cdots + (-1)^n \det(A)\)</span></p>
+<p>其中 <span class="arithmatex">\(\operatorname{tr}A\)</span> 是 <span class="arithmatex">\(A\)</span> 的迹。</p>
+<p><strong>Jacobi 公式</strong></p>
+<p>若 <span class="arithmatex">\(A(t)\)</span> 是可微的矩阵值函数，且 <span class="arithmatex">\(A(t)\)</span> 可逆，则：</p>
+<p><span class="arithmatex">\(\frac{d}{dt} \det(A(t)) = \det(A(t)) \cdot \operatorname{tr}\left( A^{-1}(t) \frac{dA(t)}{dt} \right)\)</span></p>
 <h3 id="_6">应用实例<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p><strong>示例：循环行列式</strong>
-计算循环行列式：
-<span class="arithmatex">\(D_n = \begin{vmatrix} a_0 &amp; a_1 &amp; a_2 &amp; \cdots &amp; a_{n-1} \\ a_{n-1} &amp; a_0 &amp; a_1 &amp; \cdots &amp; a_{n-2} \\ a_{n-2} &amp; a_{n-1} &amp; a_0 &amp; \cdots &amp; a_{n-3} \\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_1 &amp; a_2 &amp; a_3 &amp; \cdots &amp; a_0 \end{vmatrix} = \prod_{k=0}^{n-1} f(\omega^k)\)</span>
-其中 <span class="arithmatex">\(\omega = e^{2\pi i/n}\)</span>，<span class="arithmatex">\(f(x) = a_0 + a_1 x + \cdots + a_{n-1} x^{n-1}\)</span>。</p>
-<p><strong>示例：三对角行列式</strong>
-计算三对角行列式：
-<span class="arithmatex">\(D_n = \begin{vmatrix} a &amp; b &amp; 0 &amp; \cdots &amp; 0 \\ c &amp; a &amp; b &amp; \cdots &amp; 0 \\ 0 &amp; c &amp; a &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; a \end{vmatrix}\)</span>
-递推关系：<span class="arithmatex">\(D_n = aD_{n-1} - bcD_{n-2}\)</span>。</p>
+<p><strong>示例：循环行列式</strong></p>
+<p>计算循环行列式：</p>
+<p><span class="arithmatex">\(D_n = \begin{vmatrix} a_0 &amp; a_1 &amp; a_2 &amp; \cdots &amp; a_{n-1} \\ a_{n-1} &amp; a_0 &amp; a_1 &amp; \cdots &amp; a_{n-2} \\ a_{n-2} &amp; a_{n-1} &amp; a_0 &amp; \cdots &amp; a_{n-3} \\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_1 &amp; a_2 &amp; a_3 &amp; \cdots &amp; a_0 \end{vmatrix} = \prod_{k=0}^{n-1} f(\omega^k)\)</span></p>
+<p>其中 <span class="arithmatex">\(\omega = e^{2\pi i/n}\)</span>，<span class="arithmatex">\(f(x) = a_0 + a_1 x + \cdots + a_{n-1} x^{n-1}\)</span>。</p>
+<p><strong>示例：三对角行列式</strong></p>
+<p>计算三对角行列式：</p>
+<p><span class="arithmatex">\(D_n = \begin{vmatrix} a &amp; b &amp; 0 &amp; \cdots &amp; 0 \\ c &amp; a &amp; b &amp; \cdots &amp; 0 \\ 0 &amp; c &amp; a &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; a \end{vmatrix}\)</span></p>
+<p>递推关系：<span class="arithmatex">\(D_n = aD_{n-1} - bcD_{n-2}\)</span>。</p>
 </blockquote>
 <h2 id="_7">方程组向量组<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="sylvester">Sylvester 秩不等式<a class="headerlink" href="#sylvester" title="Permanent link">&para;</a></h3>
-<p><strong>Sylvester 秩不等式</strong>
-设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(m \times n\)</span> 矩阵，<span class="arithmatex">\(B\)</span> 是 <span class="arithmatex">\(n \times p\)</span> 矩阵，则：
-<span class="arithmatex">\(\text{rank}(A) + \text{rank}(B) - n \leq \text{rank}(AB) \leq \min\{\text{rank}(A), \text{rank}(B)\}\)</span></p>
+<p><strong>Sylvester 秩不等式</strong></p>
+<p>设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(m \times n\)</span> 矩阵，<span class="arithmatex">\(B\)</span> 是 <span class="arithmatex">\(n \times p\)</span> 矩阵，则：</p>
+<p><span class="arithmatex">\(\text{rank}(A) + \text{rank}(B) - n \leq \text{rank}(AB) \leq \min\{\text{rank}(A), \text{rank}(B)\}\)</span></p>
 <blockquote>
-<p><strong>证明</strong>（简要）
-考虑线性映射：<span class="arithmatex">\(\mathbb{R}^p \xrightarrow{B} \mathbb{R}^n \xrightarrow{A} \mathbb{R}^m\)</span>。
-由秩-零度定理可得不等式。</p>
+<p><strong>证明</strong>（简要）</p>
+<p>考虑线性映射：<span class="arithmatex">\(\mathbb{R}^p \xrightarrow{B} \mathbb{R}^n \xrightarrow{A} \mathbb{R}^m\)</span>。</p>
+<p>由秩-零度定理可得不等式。</p>
 </blockquote>
-<p><strong>Sylvester 不等式推论</strong>
-1. 若 <span class="arithmatex">\(A\)</span> 列满秩，则 <span class="arithmatex">\(\text{rank}(AB) = \text{rank}(B)\)</span>
-2. 若 <span class="arithmatex">\(B\)</span> 行满秩，则 <span class="arithmatex">\(\text{rank}(AB) = \text{rank}(A)\)</span>
-3. 若 <span class="arithmatex">\(A, B\)</span> 都可逆，则 <span class="arithmatex">\(\text{rank}(AB) = n\)</span></p>
+<p><strong>Sylvester 不等式推论</strong></p>
+<ol>
+<li>
+<p>若 <span class="arithmatex">\(A\)</span> 列满秩，则 <span class="arithmatex">\(\text{rank}(AB) = \text{rank}(B)\)</span></p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(B\)</span> 行满秩，则 <span class="arithmatex">\(\text{rank}(AB) = \text{rank}(A)\)</span></p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(A, B\)</span> 都可逆，则 <span class="arithmatex">\(\text{rank}(AB) = n\)</span></p>
+</li>
+</ol>
 <blockquote>
-<p><strong>示例</strong>
-设 <span class="arithmatex">\(A = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}\)</span>, <span class="arithmatex">\(B = \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\)</span>，则：
-<span class="arithmatex">\(\text{rank}(A) = 1, \quad \text{rank}(B) = 1, \quad \text{rank}(AB) = 0\)</span>
-验证：<span class="arithmatex">\(1 + 1 - 2 = 0 \leq 0 \leq \min\{1,1\} = 1\)</span>。</p>
+<p><strong>示例</strong></p>
+<p>设 <span class="arithmatex">\(A = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}\)</span>, <span class="arithmatex">\(B = \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\)</span>，则：</p>
+<p><span class="arithmatex">\(\text{rank}(A) = 1, \quad \text{rank}(B) = 1, \quad \text{rank}(AB) = 0\)</span></p>
+<p>验证：<span class="arithmatex">\(1 + 1 - 2 = 0 \leq 0 \leq \min\{1,1\} = 1\)</span>。</p>
 </blockquote>
 <h3 id="frobenius">Frobenius 不等式<a class="headerlink" href="#frobenius" title="Permanent link">&para;</a></h3>
-<p><strong>Frobenius 不等式</strong>
-设 <span class="arithmatex">\(A, B, C\)</span> 是适当维数的矩阵，使得乘积 <span class="arithmatex">\(ABC\)</span> 有定义，则：
-<span class="arithmatex">\(\text{rank}(AB) + \text{rank}(BC) \leq \text{rank}(B) + \text{rank}(ABC)\)</span></p>
+<p><strong>Frobenius 不等式</strong></p>
+<p>设 <span class="arithmatex">\(A, B, C\)</span> 是适当维数的矩阵，使得乘积 <span class="arithmatex">\(ABC\)</span> 有定义，则：</p>
+<p><span class="arithmatex">\(\text{rank}(AB) + \text{rank}(BC) \leq \text{rank}(B) + \text{rank}(ABC)\)</span></p>
 <blockquote>
-<p><strong>证明思路</strong>
-考虑分块矩阵并利用秩的性质。</p>
+<p><strong>证明思路</strong></p>
+<p>考虑分块矩阵并利用秩的性质。</p>
 </blockquote>
-<p><strong>Frobenius 不等式推论</strong>
-1. 若 <span class="arithmatex">\(BC = 0\)</span>，则 <span class="arithmatex">\(\text{rank}(AB) \leq \text{rank}(B) - \text{rank}(ABC)\)</span>
-2. 若 <span class="arithmatex">\(AB = B\)</span>，则 <span class="arithmatex">\(\text{rank}(B) + \text{rank}(BC) \leq \text{rank}(B) + \text{rank}(BC)\)</span>（平凡情况）</p>
+<p><strong>Frobenius 不等式推论</strong></p>
+<ol>
+<li>
+<p>若 <span class="arithmatex">\(BC = 0\)</span>，则 <span class="arithmatex">\(\text{rank}(AB) \leq \text{rank}(B) - \text{rank}(ABC)\)</span></p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(AB = B\)</span>，则 <span class="arithmatex">\(\text{rank}(B) + \text{rank}(BC) \leq \text{rank}(B) + \text{rank}(BC)\)</span>（平凡情况）</p>
+</li>
+</ol>
 <blockquote>
-<p><strong>示例</strong>
-设 <span class="arithmatex">\(A = \begin{pmatrix} 1 &amp; 0 \end{pmatrix}\)</span>, <span class="arithmatex">\(B = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}\)</span>, <span class="arithmatex">\(C = \begin{pmatrix} 0 \\ 1 \end{pmatrix}\)</span>，则：
-<span class="arithmatex">\(AB = \begin{pmatrix} 1 &amp; 0 \end{pmatrix}, \quad BC = \begin{pmatrix} 0 \\ 0 \end{pmatrix}, \quad ABC = 0\)</span>
-验证：<span class="arithmatex">\(1 + 0 \leq 1 + 0\)</span>，即 <span class="arithmatex">\(1 \leq 1\)</span>。</p>
+<p><strong>示例</strong></p>
+<p>设 <span class="arithmatex">\(A = \begin{pmatrix} 1 &amp; 0 \end{pmatrix}\)</span>, <span class="arithmatex">\(B = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}\)</span>, <span class="arithmatex">\(C = \begin{pmatrix} 0 \\ 1 \end{pmatrix}\)</span>，则：</p>
+<p><span class="arithmatex">\(AB = \begin{pmatrix} 1 &amp; 0 \end{pmatrix}, \quad BC = \begin{pmatrix} 0 \\ 0 \end{pmatrix}, \quad ABC = 0\)</span></p>
+<p>验证：<span class="arithmatex">\(1 + 0 \leq 1 + 0\)</span>，即 <span class="arithmatex">\(1 \leq 1\)</span>。</p>
 </blockquote>
 <h3 id="hamilton-cayley">Hamilton-Cayley 定理<a class="headerlink" href="#hamilton-cayley" title="Permanent link">&para;</a></h3>
-<p><strong>Hamilton-Cayley 定理</strong>
-设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\)</span> 阶方阵，<span class="arithmatex">\(f(\lambda) = \det(\lambda I - A)\)</span> 是 <span class="arithmatex">\(A\)</span> 的特征多项式，则：
-<span class="arithmatex">\(f(A) = 0\)</span>
-即矩阵满足它自己的特征方程。</p>
-<p><strong>证明思路</strong>
-利用伴随矩阵 <span class="arithmatex">\(B(\lambda) = \operatorname{adj}(\lambda I - A)\)</span> 和恒等式 <span class="arithmatex">\((\lambda I - A)B(\lambda) = f(\lambda)I\)</span>，比较系数。</p>
-<p><strong>Hamilton-Cayley 定理推论</strong>
-1. <span class="arithmatex">\(A^n\)</span> 可用 <span class="arithmatex">\(I, A, A^2, \dots, A^{n-1}\)</span> 线性表示
-2. 矩阵的最小多项式整除特征多项式
-3. 若 <span class="arithmatex">\(A\)</span> 可逆，则 <span class="arithmatex">\(A^{-1}\)</span> 可用 <span class="arithmatex">\(I, A, A^2, \dots, A^{n-1}\)</span> 线性表示</p>
+<p><strong>Hamilton-Cayley 定理</strong></p>
+<p>设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\)</span> 阶方阵，<span class="arithmatex">\(f(\lambda) = \det(\lambda I - A)\)</span> 是 <span class="arithmatex">\(A\)</span> 的特征多项式，则：</p>
+<p><span class="arithmatex">\(f(A) = 0\)</span></p>
+<p>即矩阵满足它自己的特征方程。</p>
+<p><strong>证明思路</strong></p>
+<p>利用伴随矩阵 <span class="arithmatex">\(B(\lambda) = \operatorname{adj}(\lambda I - A)\)</span> 和恒等式 <span class="arithmatex">\((\lambda I - A)B(\lambda) = f(\lambda)I\)</span>，比较系数。</p>
+<p><strong>Hamilton-Cayley 定理推论</strong></p>
+<ol>
+<li>
+<p><span class="arithmatex">\(A^n\)</span> 可用 <span class="arithmatex">\(I, A, A^2, \dots, A^{n-1}\)</span> 线性表示</p>
+</li>
+<li>
+<p>矩阵的最小多项式整除特征多项式</p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(A\)</span> 可逆，则 <span class="arithmatex">\(A^{-1}\)</span> 可用 <span class="arithmatex">\(I, A, A^2, \dots, A^{n-1}\)</span> 线性表示</p>
+</li>
+</ol>
 <blockquote>
-<p><strong>示例</strong>
-设 <span class="arithmatex">\(A = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}\)</span>，特征多项式：
-<span class="arithmatex">\(f(\lambda) = \det(\lambda I - A) = \begin{vmatrix} \lambda-2 &amp; -1 \\ -1 &amp; \lambda-2 \end{vmatrix} = (\lambda-2)^2 - 1 = \lambda^2 - 4\lambda + 3\)</span>
-验证：
-<span class="arithmatex">\(f(A) = A^2 - 4A + 3I = \begin{pmatrix} 5 &amp; 4 \\ 4 &amp; 5 \end{pmatrix} - 4\begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix} + 3\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} = \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}\)</span></p>
+<p><strong>示例</strong></p>
+<p>设 <span class="arithmatex">\(A = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}\)</span>，特征多项式：</p>
+<p><span class="arithmatex">\(f(\lambda) = \det(\lambda I - A) = \begin{vmatrix} \lambda-2 &amp; -1 \\ -1 &amp; \lambda-2 \end{vmatrix} = (\lambda-2)^2 - 1 = \lambda^2 - 4\lambda + 3\)</span></p>
+<p>验证：</p>
+<p><span class="arithmatex">\(f(A) = A^2 - 4A + 3I = \begin{pmatrix} 5 &amp; 4 \\ 4 &amp; 5 \end{pmatrix} - 4\begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix} + 3\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} = \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}\)</span></p>
 </blockquote>
 <h3 id="hermite">Hermite 矩阵与二次型<a class="headerlink" href="#hermite" title="Permanent link">&para;</a></h3>
-<p><strong>Hermite 矩阵</strong>
-设 <span class="arithmatex">\(A \in \mathbb{C}^{n \times n}\)</span>，若 <span class="arithmatex">\(A^H = A\)</span>（其中 <span class="arithmatex">\(A^H = \overline{A}^T\)</span>），则称 <span class="arithmatex">\(A\)</span> 为 Hermite 矩阵。
-实数域上即为对称矩阵：<span class="arithmatex">\(A^T = A\)</span>。</p>
-<p><strong>Hermite 矩阵性质</strong>
-1. Hermite 矩阵的特征值都是实数
-2. Hermite 矩阵属于不同特征值的特征向量相互正交
-3. Hermite 矩阵可被酉对角化：存在酉矩阵 <span class="arithmatex">\(U\)</span> 使得 <span class="arithmatex">\(U^H A U = \Lambda\)</span>，其中 <span class="arithmatex">\(\Lambda\)</span> 为实对角矩阵</p>
-<p><strong>Rayleigh-Ritz 定理</strong>
-设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\)</span> 阶 Hermite 矩阵，特征值为 <span class="arithmatex">\(\lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n\)</span>，则：
-<span class="arithmatex">\(\lambda_1 = \min_{\mathbf{x} \neq 0} \frac{\mathbf{x}^H A \mathbf{x}}{\mathbf{x}^H \mathbf{x}}, \quad \lambda_n = \max_{\mathbf{x} \neq 0} \frac{\mathbf{x}^H A \mathbf{x}}{\mathbf{x}^H \mathbf{x}}\)</span></p>
-<p><strong>惯性定理（Sylvester 惯性定律）</strong>
-设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\)</span> 阶 Hermite 矩阵，<span class="arithmatex">\(C\)</span> 是 <span class="arithmatex">\(n\)</span> 阶可逆矩阵，则 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(C^H A C\)</span> 具有相同数量的正特征值、负特征值和零特征值。</p>
-<p><strong>正定矩阵</strong>
-Hermite 矩阵 <span class="arithmatex">\(A\)</span> 称为正定的，如果对任意非零向量 <span class="arithmatex">\(\mathbf{x}\)</span>，有 <span class="arithmatex">\(\mathbf{x}^H A \mathbf{x} &gt; 0\)</span>。
-等价条件：
-* 所有特征值大于 0
-* 所有顺序主子式大于 0
-* 存在可逆矩阵 <span class="arithmatex">\(P\)</span> 使得 <span class="arithmatex">\(A = P^H P\)</span></p>
+<p><strong>Hermite 矩阵</strong></p>
+<p>设 <span class="arithmatex">\(A \in \mathbb{C}^{n \times n}\)</span>，若 <span class="arithmatex">\(A^H = A\)</span>（其中 <span class="arithmatex">\(A^H = \overline{A}^T\)</span>），则称 <span class="arithmatex">\(A\)</span> 为 Hermite 矩阵。</p>
+<p>实数域上即为对称矩阵：<span class="arithmatex">\(A^T = A\)</span>。</p>
+<p><strong>Hermite 矩阵性质</strong></p>
+<ol>
+<li>
+<p>Hermite 矩阵的特征值都是实数</p>
+</li>
+<li>
+<p>Hermite 矩阵属于不同特征值的特征向量相互正交</p>
+</li>
+<li>
+<p>Hermite 矩阵可被酉对角化：存在酉矩阵 <span class="arithmatex">\(U\)</span> 使得 <span class="arithmatex">\(U^H A U = \Lambda\)</span>，其中 <span class="arithmatex">\(\Lambda\)</span> 为实对角矩阵</p>
+</li>
+</ol>
+<p><strong>Rayleigh-Ritz 定理</strong></p>
+<p>设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\)</span> 阶 Hermite 矩阵，特征值为 <span class="arithmatex">\(\lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n\)</span>，则：</p>
+<p><span class="arithmatex">\(\lambda_1 = \min_{\mathbf{x} \neq 0} \frac{\mathbf{x}^H A \mathbf{x}}{\mathbf{x}^H \mathbf{x}}, \quad \lambda_n = \max_{\mathbf{x} \neq 0} \frac{\mathbf{x}^H A \mathbf{x}}{\mathbf{x}^H \mathbf{x}}\)</span></p>
+<p><strong>惯性定理（Sylvester 惯性定律）</strong></p>
+<p>设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\)</span> 阶 Hermite 矩阵，<span class="arithmatex">\(C\)</span> 是 <span class="arithmatex">\(n\)</span> 阶可逆矩阵，则 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(C^H A C\)</span> 具有相同数量的正特征值、负特征值和零特征值。</p>
+<p><strong>正定矩阵</strong></p>
+<p>Hermite 矩阵 <span class="arithmatex">\(A\)</span> 称为正定的，如果对任意非零向量 <span class="arithmatex">\(\mathbf{x}\)</span>，有 <span class="arithmatex">\(\mathbf{x}^H A \mathbf{x} &gt; 0\)</span>。</p>
+<p>等价条件：</p>
+<ul>
+<li>
+<p>所有特征值大于 0</p>
+</li>
+<li>
+<p>所有顺序主子式大于 0</p>
+</li>
+<li>
+<p>存在可逆矩阵 <span class="arithmatex">\(P\)</span> 使得 <span class="arithmatex">\(A = P^H P\)</span></p>
+</li>
+</ul>
 <h3 id="_8">向量组替换定理<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p><strong>Steinitz 替换定理</strong>
-设 <span class="arithmatex">\(V\)</span> 是向量空间，<span class="arithmatex">\(\{\mathbf{v}_1, \dots, \mathbf{v}_m\}\)</span> 是 <span class="arithmatex">\(V\)</span> 的线性无关组，<span class="arithmatex">\(\{\mathbf{w}_1, \dots, \mathbf{w}_n\}\)</span> 是 <span class="arithmatex">\(V\)</span> 的生成组，则：
-1. <span class="arithmatex">\(m \leq n\)</span>
-2. 可用 <span class="arithmatex">\(\{\mathbf{v}_1, \dots, \mathbf{v}_m\}\)</span> 替换 <span class="arithmatex">\(\{\mathbf{w}_1, \dots, \mathbf{w}_n\}\)</span> 中的 <span class="arithmatex">\(m\)</span> 个向量，使得替换后的向量组仍生成 <span class="arithmatex">\(V\)</span></p>
-<p><strong>证明思路</strong>
-对 <span class="arithmatex">\(m\)</span> 用数学归纳法。</p>
-<p><strong>推论：基的等势性</strong>
-有限维向量空间的任意两组基含有相同数量的向量，这个数量称为空间的维数。</p>
-<p><strong>向量组的秩不等式</strong>
-设 <span class="arithmatex">\(\{\mathbf{v}_1, \dots, \mathbf{v}_m\}\)</span> 和 <span class="arithmatex">\(\{\mathbf{w}_1, \dots, \mathbf{w}_n\}\)</span> 是向量空间 <span class="arithmatex">\(V\)</span> 中的两个向量组，则：
-<span class="arithmatex">\(\text{rank}\{\mathbf{v}_1, \dots, \mathbf{v}_m\} + \text{rank}\{\mathbf{w}_1, \dots, \mathbf{w}_n\} - n \leq \text{rank}\{\mathbf{v}_1 + \mathbf{w}_1, \dots, \mathbf{v}_m + \mathbf{w}_m\}\)</span>
-（假设 <span class="arithmatex">\(m = n\)</span>，否则取适当维数）</p>
+<p><strong>Steinitz 替换定理</strong></p>
+<p>设 <span class="arithmatex">\(V\)</span> 是向量空间，<span class="arithmatex">\(\{\mathbf{v}_1, \dots, \mathbf{v}_m\}\)</span> 是 <span class="arithmatex">\(V\)</span> 的线性无关组，<span class="arithmatex">\(\{\mathbf{w}_1, \dots, \mathbf{w}_n\}\)</span> 是 <span class="arithmatex">\(V\)</span> 的生成组，则：</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(m \leq n\)</span></p>
+</li>
+<li>
+<p>可用 <span class="arithmatex">\(\{\mathbf{v}_1, \dots, \mathbf{v}_m\}\)</span> 替换 <span class="arithmatex">\(\{\mathbf{w}_1, \dots, \mathbf{w}_n\}\)</span> 中的 <span class="arithmatex">\(m\)</span> 个向量，使得替换后的向量组仍生成 <span class="arithmatex">\(V\)</span></p>
+</li>
+</ol>
+<p><strong>证明思路</strong></p>
+<p>对 <span class="arithmatex">\(m\)</span> 用数学归纳法。</p>
+<p><strong>推论：基的等势性</strong></p>
+<p>有限维向量空间的任意两组基含有相同数量的向量，这个数量称为空间的维数。</p>
+<p><strong>向量组的秩不等式</strong></p>
+<p>设 <span class="arithmatex">\(\{\mathbf{v}_1, \dots, \mathbf{v}_m\}\)</span> 和 <span class="arithmatex">\(\{\mathbf{w}_1, \dots, \mathbf{w}_n\}\)</span> 是向量空间 <span class="arithmatex">\(V\)</span> 中的两个向量组，则：</p>
+<p><span class="arithmatex">\(\text{rank}\{\mathbf{v}_1, \dots, \mathbf{v}_m\} + \text{rank}\{\mathbf{w}_1, \dots, \mathbf{w}_n\} - n \leq \text{rank}\{\mathbf{v}_1 + \mathbf{w}_1, \dots, \mathbf{v}_m + \mathbf{w}_m\}\)</span></p>
+<p>（假设 <span class="arithmatex">\(m = n\)</span>，否则取适当维数）</p>
 <h3 id="_9">应用与例题<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p><strong>示例：Sylvester 不等式的应用</strong>
-证明：若 <span class="arithmatex">\(A^2 = A\)</span>（幂等矩阵），则 <span class="arithmatex">\(\text{rank}(A) + \text{rank}(I - A) = n\)</span>。</p>
-<p>解：由 Sylvester 不等式：
-<span class="arithmatex">\(\text{rank}(A) + \text{rank}(I - A) - n \leq \text{rank}(A(I - A)) = \text{rank}(A - A^2) = \text{rank}(0) = 0\)</span>
-所以 <span class="arithmatex">\(\text{rank}(A) + \text{rank}(I - A) \leq n\)</span>。</p>
-<p>另一方面：
-<span class="arithmatex">\(n = \text{rank}(I) = \text{rank}(A + (I - A)) \leq \text{rank}(A) + \text{rank}(I - A)\)</span>
-所以 <span class="arithmatex">\(\text{rank}(A) + \text{rank}(I - A) = n\)</span>。</p>
-<p><strong>示例：Hamilton-Cayley 定理的应用</strong>
-求 <span class="arithmatex">\(A^{100}\)</span>，其中 <span class="arithmatex">\(A = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}\)</span>。</p>
+<p><strong>示例：Sylvester 不等式的应用</strong></p>
+<p>证明：若 <span class="arithmatex">\(A^2 = A\)</span>（幂等矩阵），则 <span class="arithmatex">\(\text{rank}(A) + \text{rank}(I - A) = n\)</span>。</p>
+<p>解：由 Sylvester 不等式：</p>
+<p><span class="arithmatex">\(\text{rank}(A) + \text{rank}(I - A) - n \leq \text{rank}(A(I - A)) = \text{rank}(A - A^2) = \text{rank}(0) = 0\)</span></p>
+<p>所以 <span class="arithmatex">\(\text{rank}(A) + \text{rank}(I - A) \leq n\)</span>。</p>
+<p>另一方面：</p>
+<p><span class="arithmatex">\(n = \text{rank}(I) = \text{rank}(A + (I - A)) \leq \text{rank}(A) + \text{rank}(I - A)\)</span></p>
+<p>所以 <span class="arithmatex">\(\text{rank}(A) + \text{rank}(I - A) = n\)</span>。</p>
+<p><strong>示例：Hamilton-Cayley 定理的应用</strong></p>
+<p>求 <span class="arithmatex">\(A^{100}\)</span>，其中 <span class="arithmatex">\(A = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}\)</span>。</p>
 <p>解：特征多项式 <span class="arithmatex">\(f(\lambda) = \lambda^2 - 4\lambda + 3\)</span>，由 Hamilton-Cayley 定理：<span class="arithmatex">\(A^2 = 4A - 3I\)</span>。</p>
-<p>递推可得：<span class="arithmatex">\(A^n = \alpha_n A + \beta_n I\)</span>，满足：
-<span class="arithmatex">\(\alpha_{n+1} = 4\alpha_n + \beta_n, \quad \beta_{n+1} = -3\alpha_n\)</span>
-特征方程 <span class="arithmatex">\(r^2 - 4r + 3 = 0\)</span>，解得 <span class="arithmatex">\(r = 1, 3\)</span>，所以：
-<span class="arithmatex">\(\alpha_n = a \cdot 1^n + b \cdot 3^n, \quad \beta_n = c \cdot 1^n + d \cdot 3^n\)</span>
-由初始条件 <span class="arithmatex">\(\alpha_1 = 1, \beta_1 = 0\)</span>（因 <span class="arithmatex">\(A^1 = A + 0I\)</span>）和 <span class="arithmatex">\(\alpha_2 = 4, \beta_2 = -3\)</span>（因 <span class="arithmatex">\(A^2 = 4A - 3I\)</span>）可解得系数。</p>
-<p><strong>示例：向量组替换定理的应用</strong>
-设 <span class="arithmatex">\(\{\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3\}\)</span> 线性无关，<span class="arithmatex">\(\{\mathbf{w}_1, \mathbf{w}_2, \mathbf{w}_3, \mathbf{w}_4\}\)</span> 生成 <span class="arithmatex">\(\mathbb{R}^3\)</span>，证明可用 <span class="arithmatex">\(\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3\)</span> 替换其中的三个向量，使替换后的向量组仍生成 <span class="arithmatex">\(\mathbb{R}^3\)</span>。</p>
+<p>递推可得：<span class="arithmatex">\(A^n = \alpha_n A + \beta_n I\)</span>，满足：</p>
+<p><span class="arithmatex">\(\alpha_{n+1} = 4\alpha_n + \beta_n, \quad \beta_{n+1} = -3\alpha_n\)</span></p>
+<p>特征方程 <span class="arithmatex">\(r^2 - 4r + 3 = 0\)</span>，解得 <span class="arithmatex">\(r = 1, 3\)</span>，所以：</p>
+<p><span class="arithmatex">\(\alpha_n = a \cdot 1^n + b \cdot 3^n, \quad \beta_n = c \cdot 1^n + d \cdot 3^n\)</span></p>
+<p>由初始条件 <span class="arithmatex">\(\alpha_1 = 1, \beta_1 = 0\)</span>（因 <span class="arithmatex">\(A^1 = A + 0I\)</span>）和 <span class="arithmatex">\(\alpha_2 = 4, \beta_2 = -3\)</span>（因 <span class="arithmatex">\(A^2 = 4A - 3I\)</span>）可解得系数。</p>
+<p><strong>示例：向量组替换定理的应用</strong></p>
+<p>设 <span class="arithmatex">\(\{\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3\}\)</span> 线性无关，<span class="arithmatex">\(\{\mathbf{w}_1, \mathbf{w}_2, \mathbf{w}_3, \mathbf{w}_4\}\)</span> 生成 <span class="arithmatex">\(\mathbb{R}^3\)</span>，证明可用 <span class="arithmatex">\(\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3\)</span> 替换其中的三个向量，使替换后的向量组仍生成 <span class="arithmatex">\(\mathbb{R}^3\)</span>。</p>
 <p>解：由替换定理，<span class="arithmatex">\(3 \leq 4\)</span> 且可用 <span class="arithmatex">\(\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3\)</span> 替换 <span class="arithmatex">\(\mathbf{w}_1, \mathbf{w}_2, \mathbf{w}_3, \mathbf{w}_4\)</span> 中的三个向量。</p>
 </blockquote>
 <h3 id="_10">重要公式总结<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p><strong>秩的不等式总结</strong>
-* <span class="arithmatex">\(\text{rank}(A + B) \leq \text{rank}(A) + \text{rank}(B)\)</span>
-* <span class="arithmatex">\(\text{rank}(AB) \leq \min\{\text{rank}(A), \text{rank}(B)\}\)</span>
-* <span class="arithmatex">\(\text{rank}(A) + \text{rank}(B) - n \leq \text{rank}(AB)\)</span>（Sylvester）
-* <span class="arithmatex">\(\text{rank}(AB) + \text{rank}(BC) \leq \text{rank}(B) + \text{rank}(ABC)\)</span>（Frobenius）</p>
-<p><strong>Hermite 矩阵判定条件</strong>
-<span class="arithmatex">\(A\)</span> 正定 <span class="arithmatex">\(\iff\)</span> 以下任一条件成立：
-* <span class="arithmatex">\(\mathbf{x}^H A \mathbf{x} &gt; 0\)</span> 对所有 <span class="arithmatex">\(\mathbf{x} \neq 0\)</span>
-* 所有特征值 <span class="arithmatex">\(&gt; 0\)</span>
-* 所有顺序主子式 <span class="arithmatex">\(&gt; 0\)</span>
-* 存在可逆 <span class="arithmatex">\(P\)</span> 使 <span class="arithmatex">\(A = P^H P\)</span></p>
-<p><strong>替换定理推论</strong>
-* 任意线性无关组可扩充为一组基
-* 任意生成组可删减为一组基
-* 所有基的维数相同
-* <span class="arithmatex">\(m\)</span> 个向量的线性无关组必在 <span class="arithmatex">\(m\)</span> 维子空间中</p>
+<p><strong>秩的不等式总结</strong></p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\text{rank}(A + B) \leq \text{rank}(A) + \text{rank}(B)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\text{rank}(AB) \leq \min\{\text{rank}(A), \text{rank}(B)\}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\text{rank}(A) + \text{rank}(B) - n \leq \text{rank}(AB)\)</span>（Sylvester）</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\text{rank}(AB) + \text{rank}(BC) \leq \text{rank}(B) + \text{rank}(ABC)\)</span>（Frobenius）</p>
+</li>
+</ul>
+<p><strong>Hermite 矩阵判定条件</strong></p>
+<p><span class="arithmatex">\(A\)</span> 正定 <span class="arithmatex">\(\iff\)</span> 以下任一条件成立：</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\mathbf{x}^H A \mathbf{x} &gt; 0\)</span> 对所有 <span class="arithmatex">\(\mathbf{x} \neq 0\)</span></p>
+</li>
+<li>
+<p>所有特征值 <span class="arithmatex">\(&gt; 0\)</span></p>
+</li>
+<li>
+<p>所有顺序主子式 <span class="arithmatex">\(&gt; 0\)</span></p>
+</li>
+<li>
+<p>存在可逆 <span class="arithmatex">\(P\)</span> 使 <span class="arithmatex">\(A = P^H P\)</span></p>
+</li>
+</ul>
+<p><strong>替换定理推论</strong></p>
+<ul>
+<li>
+<p>任意线性无关组可扩充为一组基</p>
+</li>
+<li>
+<p>任意生成组可删减为一组基</p>
+</li>
+<li>
+<p>所有基的维数相同</p>
+</li>
+<li>
+<p><span class="arithmatex">\(m\)</span> 个向量的线性无关组必在 <span class="arithmatex">\(m\)</span> 维子空间中</p>
+</li>
+</ul>
 <h2 id="_11">相似矩阵二次型<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <h3 id="gram-schmidt">Gram-Schmidt 正交化方法<a class="headerlink" href="#gram-schmidt" title="Permanent link">&para;</a></h3>
-<p><strong>Gram-Schmidt 正交化</strong>
-设 <span class="arithmatex">\(\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}\)</span> 是内积空间 <span class="arithmatex">\(V\)</span> 中的线性无关向量组，则可通过以下步骤构造标准正交基 <span class="arithmatex">\(\{\mathbf{u}_1, \mathbf{u}_2, \dots, \mathbf{u}_n\}\)</span>：
-<span class="arithmatex">\(\begin{aligned}
-   \mathbf{u}_1 &amp;= \frac{\mathbf{v}_1}{\|\mathbf{v}_1\|} \\
-   \mathbf{u}_2 &amp;= \frac{\mathbf{v}_2 - \langle \mathbf{v}_2, \mathbf{u}_1 \rangle \mathbf{u}_1}{\|\mathbf{v}_2 - \langle \mathbf{v}_2, \mathbf{u}_1 \rangle \mathbf{u}_1\|} \\
-   \mathbf{u}_3 &amp;= \frac{\mathbf{v}_3 - \langle \mathbf{v}_3, \mathbf{u}_1 \rangle \mathbf{u}_1 - \langle \mathbf{v}_3, \mathbf{u}_2 \rangle \mathbf{u}_2}{\|\mathbf{v}_3 - \langle \mathbf{v}_3, \mathbf{u}_1 \rangle \mathbf{u}_1 - \langle \mathbf{v}_3, \mathbf{u}_2 \rangle \mathbf{u}_2\|} \\
-   &amp;\vdots \\
-   \mathbf{u}_k &amp;= \frac{\mathbf{v}_k - \sum_{j=1}^{k-1} \langle \mathbf{v}_k, \mathbf{u}_j \rangle \mathbf{u}_j}{\left\| \mathbf{v}_k - \sum_{j=1}^{k-1} \langle \mathbf{v}_k, \mathbf{u}_j \rangle \mathbf{u}_j \right\|}
-\end{aligned}\)</span></p>
-<p><strong>QR 分解</strong>
-任何可逆矩阵 <span class="arithmatex">\(A\)</span> 可分解为 <span class="arithmatex">\(A = QR\)</span>，其中：
-* <span class="arithmatex">\(Q\)</span> 是正交矩阵（<span class="arithmatex">\(Q^T Q = I\)</span>）
-* <span class="arithmatex">\(R\)</span> 是上三角矩阵
-Gram-Schmidt 过程提供了构造 <span class="arithmatex">\(Q\)</span> 和 <span class="arithmatex">\(R\)</span> 的一种方法。</p>
+<p><strong>Gram-Schmidt 正交化</strong></p>
+<p>设 <span class="arithmatex">\(\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}\)</span> 是内积空间 <span class="arithmatex">\(V\)</span> 中的线性无关向量组，则可通过以下步骤构造标准正交基 <span class="arithmatex">\(\{\mathbf{u}_1, \mathbf{u}_2, \dots, \mathbf{u}_n\}\)</span>：</p>
+<p>$\begin{aligned}</p>
+<p>\mathbf{u}_1 &amp;= \frac{\mathbf{v}_1}{|\mathbf{v}_1|} \</p>
+<p>\mathbf{u}_2 &amp;= \frac{\mathbf{v}_2 - \langle \mathbf{v}_2, \mathbf{u}_1 \rangle \mathbf{u}_1}{|\mathbf{v}_2 - \langle \mathbf{v}_2, \mathbf{u}_1 \rangle \mathbf{u}_1|} \</p>
+<p>\mathbf{u}_3 &amp;= \frac{\mathbf{v}_3 - \langle \mathbf{v}_3, \mathbf{u}_1 \rangle \mathbf{u}_1 - \langle \mathbf{v}_3, \mathbf{u}_2 \rangle \mathbf{u}_2}{|\mathbf{v}_3 - \langle \mathbf{v}_3, \mathbf{u}_1 \rangle \mathbf{u}_1 - \langle \mathbf{v}_3, \mathbf{u}_2 \rangle \mathbf{u}_2|} \</p>
+<p>&amp;\vdots \</p>
+<p>\mathbf{u}<em j="1">k &amp;= \frac{\mathbf{v}_k - \sum</em>}^{k-1} \langle \mathbf{v<em j="1">k, \mathbf{u}_j \rangle \mathbf{u}_j}{\left| \mathbf{v}_k - \sum</em>}^{k-1} \langle \mathbf{v}_k, \mathbf{u}_j \rangle \mathbf{u}_j \right|</p>
+<p>\end{aligned}$</p>
+<p><strong>QR 分解</strong></p>
+<p>任何可逆矩阵 <span class="arithmatex">\(A\)</span> 可分解为 <span class="arithmatex">\(A = QR\)</span>，其中：</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(Q\)</span> 是正交矩阵（<span class="arithmatex">\(Q^T Q = I\)</span>）</p>
+</li>
+<li>
+<p><span class="arithmatex">\(R\)</span> 是上三角矩阵</p>
+</li>
+</ul>
+<p>Gram-Schmidt 过程提供了构造 <span class="arithmatex">\(Q\)</span> 和 <span class="arithmatex">\(R\)</span> 的一种方法。</p>
 <blockquote>
-<p><strong>示例</strong>
-将向量组 <span class="arithmatex">\(\mathbf{v}_1 = (1,1,0)^T\)</span>, <span class="arithmatex">\(\mathbf{v}_2 = (1,0,1)^T\)</span>, <span class="arithmatex">\(\mathbf{v}_3 = (0,1,1)^T\)</span> 正交化。</p>
-<p>解：
-<span class="arithmatex">\(\begin{aligned}
-   \mathbf{u}_1 &amp;= \frac{\mathbf{v}_1}{\|\mathbf{v}_1\|} = \frac{1}{\sqrt{2}}(1,1,0)^T \\
-   \mathbf{u}_2 &amp;= \frac{\mathbf{v}_2 - \langle \mathbf{v}_2, \mathbf{u}_1 \rangle \mathbf{u}_1}{\|\cdots\|} 
-   = \frac{(1,0,1)^T - \frac{1}{\sqrt{2}}\cdot\frac{1}{\sqrt{2}}(1,1,0)^T}{\|\cdots\|} \\
-   &amp;= \frac{(1,0,1)^T - \frac{1}{2}(1,1,0)^T}{\sqrt{(\frac{1}{2})^2 + (-\frac{1}{2})^2 + 1^2}} 
-   = \frac{(\frac{1}{2}, -\frac{1}{2}, 1)^T}{\sqrt{\frac{3}{2}}} \\
-   \mathbf{u}_3 &amp;= \cdots \quad \text{(继续类似计算)}
-\end{aligned}\)</span></p>
+<p><strong>示例</strong></p>
+<p>将向量组 <span class="arithmatex">\(\mathbf{v}_1 = (1,1,0)^T\)</span>, <span class="arithmatex">\(\mathbf{v}_2 = (1,0,1)^T\)</span>, <span class="arithmatex">\(\mathbf{v}_3 = (0,1,1)^T\)</span> 正交化。</p>
+<p>解：</p>
+<p>$\begin{aligned}</p>
+<p>\mathbf{u}_1 &amp;= \frac{\mathbf{v}_1}{|\mathbf{v}_1|} = \frac{1}{\sqrt{2}}(1,1,0)^T \</p>
+<p>\mathbf{u}_2 &amp;= \frac{\mathbf{v}_2 - \langle \mathbf{v}_2, \mathbf{u}_1 \rangle \mathbf{u}_1}{|\cdots|} </p>
+<p>= \frac{(1,0,1)^T - \frac{1}{\sqrt{2}}\cdot\frac{1}{\sqrt{2}}(1,1,0)^T}{|\cdots|} \</p>
+<p>&amp;= \frac{(1,0,1)^T - \frac{1}{2}(1,1,0)^T}{\sqrt{(\frac{1}{2})^2 + (-\frac{1}{2})^2 + 1^2}} </p>
+<p>= \frac{(\frac{1}{2}, -\frac{1}{2}, 1)^T}{\sqrt{\frac{3}{2}}} \</p>
+<p>\mathbf{u}_3 &amp;= \cdots \quad \text{(继续类似计算)}</p>
+<p>\end{aligned}$</p>
 </blockquote>
 <h3 id="fibonacci">Fibonacci 数列与矩阵<a class="headerlink" href="#fibonacci" title="Permanent link">&para;</a></h3>
-<p><strong>Fibonacci 数列的矩阵表示</strong>
-Fibonacci 数列 <span class="arithmatex">\(F_0 = 0, F_1 = 1, F_{n+2} = F_{n+1} + F_n\)</span> 可表示为：
-<span class="arithmatex">\(\begin{pmatrix} F_{n+1} &amp; F_n \\ F_n &amp; F_{n-1} \end{pmatrix} = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}^n\)</span>
-特别地：
-<span class="arithmatex">\(\begin{pmatrix} F_{n+1} \\ F_n \end{pmatrix} = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}^n \begin{pmatrix} 1 \\ 0 \end{pmatrix}\)</span></p>
-<p><strong>Fibonacci 通项公式（Binet 公式）</strong>
-<span class="arithmatex">\(F_n = \frac{1}{\sqrt{5}}\left[\left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\frac{1-\sqrt{5}}{2}\right)^n\right]\)</span></p>
-<p><strong>证明思路</strong>
-矩阵 <span class="arithmatex">\(A = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\)</span> 的特征值为：
-<span class="arithmatex">\(\lambda_1 = \frac{1+\sqrt{5}}{2}, \quad \lambda_2 = \frac{1-\sqrt{5}}{2}\)</span>
-对应特征向量为 <span class="arithmatex">\(\mathbf{v}_1 = (\lambda_1, 1)^T\)</span>, <span class="arithmatex">\(\mathbf{v}_2 = (\lambda_2, 1)^T\)</span>。
-将初始向量 <span class="arithmatex">\((1,0)^T\)</span> 用特征向量表示，计算 <span class="arithmatex">\(A^n\)</span> 作用后的结果即得通项。</p>
+<p><strong>Fibonacci 数列的矩阵表示</strong></p>
+<p>Fibonacci 数列 <span class="arithmatex">\(F_0 = 0, F_1 = 1, F_{n+2} = F_{n+1} + F_n\)</span> 可表示为：</p>
+<p><span class="arithmatex">\(\begin{pmatrix} F_{n+1} &amp; F_n \\ F_n &amp; F_{n-1} \end{pmatrix} = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}^n\)</span></p>
+<p>特别地：</p>
+<p><span class="arithmatex">\(\begin{pmatrix} F_{n+1} \\ F_n \end{pmatrix} = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}^n \begin{pmatrix} 1 \\ 0 \end{pmatrix}\)</span></p>
+<p><strong>Fibonacci 通项公式（Binet 公式）</strong></p>
+<p><span class="arithmatex">\(F_n = \frac{1}{\sqrt{5}}\left[\left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\frac{1-\sqrt{5}}{2}\right)^n\right]\)</span></p>
+<p><strong>证明思路</strong></p>
+<p>矩阵 <span class="arithmatex">\(A = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\)</span> 的特征值为：</p>
+<p><span class="arithmatex">\(\lambda_1 = \frac{1+\sqrt{5}}{2}, \quad \lambda_2 = \frac{1-\sqrt{5}}{2}\)</span></p>
+<p>对应特征向量为 <span class="arithmatex">\(\mathbf{v}_1 = (\lambda_1, 1)^T\)</span>, <span class="arithmatex">\(\mathbf{v}_2 = (\lambda_2, 1)^T\)</span>。</p>
+<p>将初始向量 <span class="arithmatex">\((1,0)^T\)</span> 用特征向量表示，计算 <span class="arithmatex">\(A^n\)</span> 作用后的结果即得通项。</p>
 <blockquote>
-<p><strong>示例</strong>
-计算 <span class="arithmatex">\(F_5\)</span>：
-<span class="arithmatex">\(F_5 = \frac{1}{\sqrt{5}}\left[\left(\frac{1+\sqrt{5}}{2}\right)^5 - \left(\frac{1-\sqrt{5}}{2}\right)^5\right] = 5\)</span>
-验证：<span class="arithmatex">\(F_0=0, F_1=1, F_2=1, F_3=2, F_4=3, F_5=5\)</span>。</p>
+<p><strong>示例</strong></p>
+<p>计算 <span class="arithmatex">\(F_5\)</span>：</p>
+<p><span class="arithmatex">\(F_5 = \frac{1}{\sqrt{5}}\left[\left(\frac{1+\sqrt{5}}{2}\right)^5 - \left(\frac{1-\sqrt{5}}{2}\right)^5\right] = 5\)</span></p>
+<p>验证：<span class="arithmatex">\(F_0=0, F_1=1, F_2=1, F_3=2, F_4=3, F_5=5\)</span>。</p>
 </blockquote>
 <h3 id="_12">正交相似与谱定理<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<p><strong>正交相似</strong>
-矩阵 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 称为正交相似的，如果存在正交矩阵 <span class="arithmatex">\(Q\)</span>（<span class="arithmatex">\(Q^T Q = I\)</span>）使得：
-<span class="arithmatex">\(B = Q^T A Q\)</span></p>
-<p><strong>实对称矩阵的谱定理</strong>
-设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\)</span> 阶实对称矩阵，则：
-1. <span class="arithmatex">\(A\)</span> 的特征值都是实数
-2. <span class="arithmatex">\(A\)</span> 可正交相似于对角矩阵：存在正交矩阵 <span class="arithmatex">\(Q\)</span> 使得 <span class="arithmatex">\(Q^T A Q = \operatorname{diag}(\lambda_1, \lambda_2, \dots, \lambda_n)\)</span>
-3. 属于不同特征值的特征向量相互正交</p>
-<p><strong>正规矩阵的谱定理</strong>
-矩阵 <span class="arithmatex">\(A\)</span> 可酉对角化（存在酉矩阵 <span class="arithmatex">\(U\)</span> 使得 <span class="arithmatex">\(U^H A U\)</span> 为对角矩阵）当且仅当 <span class="arithmatex">\(A\)</span> 是正规矩阵，即 <span class="arithmatex">\(A A^H = A^H A\)</span>。
-特别地，Hermite 矩阵、酉矩阵都是正规矩阵。</p>
+<p><strong>正交相似</strong></p>
+<p>矩阵 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 称为正交相似的，如果存在正交矩阵 <span class="arithmatex">\(Q\)</span>（<span class="arithmatex">\(Q^T Q = I\)</span>）使得：</p>
+<p><span class="arithmatex">\(B = Q^T A Q\)</span></p>
+<p><strong>实对称矩阵的谱定理</strong></p>
+<p>设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\)</span> 阶实对称矩阵，则：</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(A\)</span> 的特征值都是实数</p>
+</li>
+<li>
+<p><span class="arithmatex">\(A\)</span> 可正交相似于对角矩阵：存在正交矩阵 <span class="arithmatex">\(Q\)</span> 使得 <span class="arithmatex">\(Q^T A Q = \operatorname{diag}(\lambda_1, \lambda_2, \dots, \lambda_n)\)</span></p>
+</li>
+<li>
+<p>属于不同特征值的特征向量相互正交</p>
+</li>
+</ol>
+<p><strong>正规矩阵的谱定理</strong></p>
+<p>矩阵 <span class="arithmatex">\(A\)</span> 可酉对角化（存在酉矩阵 <span class="arithmatex">\(U\)</span> 使得 <span class="arithmatex">\(U^H A U\)</span> 为对角矩阵）当且仅当 <span class="arithmatex">\(A\)</span> 是正规矩阵，即 <span class="arithmatex">\(A A^H = A^H A\)</span>。</p>
+<p>特别地，Hermite 矩阵、酉矩阵都是正规矩阵。</p>
 <h3 id="_13">惯性定律与二次型<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p><strong>惯性定律（Sylvester 惯性定理）</strong>
-设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\)</span> 阶实对称矩阵，<span class="arithmatex">\(C\)</span> 是 <span class="arithmatex">\(n\)</span> 阶可逆矩阵，则 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(C^T A C\)</span> 具有相同数量的：
-* 正特征值个数（正惯性指数 <span class="arithmatex">\(p\)</span>）
-* 负特征值个数（负惯性指数 <span class="arithmatex">\(q\)</span>）
-* 零特征值个数（零惯性指数 <span class="arithmatex">\(r\)</span>）
-且 <span class="arithmatex">\(p + q + r = n\)</span>。</p>
-<p><strong>二次型的规范形</strong>
-任何实二次型 <span class="arithmatex">\(Q(\mathbf{x}) = \mathbf{x}^T A \mathbf{x}\)</span> 可通过可逆线性替换 <span class="arithmatex">\(\mathbf{x} = C\mathbf{y}\)</span> 化为规范形：
-<span class="arithmatex">\(Q(\mathbf{x}) = y_1^2 + \cdots + y_p^2 - y_{p+1}^2 - \cdots - y_{p+q}^2\)</span>
-其中 <span class="arithmatex">\((p,q)\)</span> 是二次型的符号差，由惯性定律唯一确定。</p>
-<p><strong>正定二次型</strong>
-实二次型 <span class="arithmatex">\(Q(\mathbf{x}) = \mathbf{x}^T A \mathbf{x}\)</span> 称为：
-* 正定的：如果对所有 <span class="arithmatex">\(\mathbf{x} \neq 0\)</span>，<span class="arithmatex">\(Q(\mathbf{x}) &gt; 0\)</span>（此时 <span class="arithmatex">\(p = n\)</span>）
-* 负定的：如果对所有 <span class="arithmatex">\(\mathbf{x} \neq 0\)</span>，<span class="arithmatex">\(Q(\mathbf{x}) &lt; 0\)</span>（此时 <span class="arithmatex">\(q = n\)</span>）
-* 不定的：如果既取正值也取负值（此时 <span class="arithmatex">\(p &gt; 0\)</span> 且 <span class="arithmatex">\(q &gt; 0\)</span>）</p>
+<p><strong>惯性定律（Sylvester 惯性定理）</strong></p>
+<p>设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\)</span> 阶实对称矩阵，<span class="arithmatex">\(C\)</span> 是 <span class="arithmatex">\(n\)</span> 阶可逆矩阵，则 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(C^T A C\)</span> 具有相同数量的：</p>
+<ul>
+<li>
+<p>正特征值个数（正惯性指数 <span class="arithmatex">\(p\)</span>）</p>
+</li>
+<li>
+<p>负特征值个数（负惯性指数 <span class="arithmatex">\(q\)</span>）</p>
+</li>
+<li>
+<p>零特征值个数（零惯性指数 <span class="arithmatex">\(r\)</span>）</p>
+</li>
+</ul>
+<p>且 <span class="arithmatex">\(p + q + r = n\)</span>。</p>
+<p><strong>二次型的规范形</strong></p>
+<p>任何实二次型 <span class="arithmatex">\(Q(\mathbf{x}) = \mathbf{x}^T A \mathbf{x}\)</span> 可通过可逆线性替换 <span class="arithmatex">\(\mathbf{x} = C\mathbf{y}\)</span> 化为规范形：</p>
+<p><span class="arithmatex">\(Q(\mathbf{x}) = y_1^2 + \cdots + y_p^2 - y_{p+1}^2 - \cdots - y_{p+q}^2\)</span></p>
+<p>其中 <span class="arithmatex">\((p,q)\)</span> 是二次型的符号差，由惯性定律唯一确定。</p>
+<p><strong>正定二次型</strong></p>
+<p>实二次型 <span class="arithmatex">\(Q(\mathbf{x}) = \mathbf{x}^T A \mathbf{x}\)</span> 称为：</p>
+<ul>
+<li>
+<p>正定的：如果对所有 <span class="arithmatex">\(\mathbf{x} \neq 0\)</span>，<span class="arithmatex">\(Q(\mathbf{x}) &gt; 0\)</span>（此时 <span class="arithmatex">\(p = n\)</span>）</p>
+</li>
+<li>
+<p>负定的：如果对所有 <span class="arithmatex">\(\mathbf{x} \neq 0\)</span>，<span class="arithmatex">\(Q(\mathbf{x}) &lt; 0\)</span>（此时 <span class="arithmatex">\(q = n\)</span>）</p>
+</li>
+<li>
+<p>不定的：如果既取正值也取负值（此时 <span class="arithmatex">\(p &gt; 0\)</span> 且 <span class="arithmatex">\(q &gt; 0\)</span>）</p>
+</li>
+</ul>
 <h3 id="jordan">Jordan 标准形<a class="headerlink" href="#jordan" title="Permanent link">&para;</a></h3>
-<p><strong>Jordan 标准形定理</strong>
-设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\)</span> 阶复矩阵，则 <span class="arithmatex">\(A\)</span> 相似于 Jordan 标准形：
-<span class="arithmatex">\(J = \operatorname{diag}(J_1(\lambda_1), J_2(\lambda_2), \dots, J_k(\lambda_k))\)</span>
-其中每个 Jordan 块形如：
-<span class="arithmatex">\(J_i(\lambda) = 
-\begin{pmatrix}
-   \lambda &amp; 1 &amp; &amp; \\
-   &amp; \lambda &amp; \ddots &amp; \\
-   &amp; &amp; \ddots &amp; 1 \\
-   &amp; &amp; &amp; \lambda
-\end{pmatrix}\)</span></p>
-<p><strong>Jordan 标准形的唯一性</strong>
-除了 Jordan 块的排列次序外，Jordan 标准形是唯一的。</p>
-<p><strong>几何重数与代数重数</strong>
-设 <span class="arithmatex">\(\lambda\)</span> 是 <span class="arithmatex">\(A\)</span> 的特征值：
-* 代数重数：<span class="arithmatex">\(\lambda\)</span> 作为特征多项式的根的重数
-* 几何重数：对应特征空间 <span class="arithmatex">\(\ker(A - \lambda I)\)</span> 的维数
-几何重数等于 <span class="arithmatex">\(\lambda\)</span> 对应的 Jordan 块个数，代数重数等于所有对应 Jordan 块的阶数之和。</p>
+<p><strong>Jordan 标准形定理</strong></p>
+<p>设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\)</span> 阶复矩阵，则 <span class="arithmatex">\(A\)</span> 相似于 Jordan 标准形：</p>
+<p><span class="arithmatex">\(J = \operatorname{diag}(J_1(\lambda_1), J_2(\lambda_2), \dots, J_k(\lambda_k))\)</span></p>
+<p>其中每个 Jordan 块形如：</p>
+<p>$J_i(\lambda) = </p>
+<p>\begin{pmatrix}</p>
+<p>\lambda &amp; 1 &amp; &amp; \</p>
+<p>&amp; \lambda &amp; \ddots &amp; \</p>
+<p>&amp; &amp; \ddots &amp; 1 \</p>
+<p>&amp; &amp; &amp; \lambda</p>
+<p>\end{pmatrix}$</p>
+<p><strong>Jordan 标准形的唯一性</strong></p>
+<p>除了 Jordan 块的排列次序外，Jordan 标准形是唯一的。</p>
+<p><strong>几何重数与代数重数</strong></p>
+<p>设 <span class="arithmatex">\(\lambda\)</span> 是 <span class="arithmatex">\(A\)</span> 的特征值：</p>
+<ul>
+<li>
+<p>代数重数：<span class="arithmatex">\(\lambda\)</span> 作为特征多项式的根的重数</p>
+</li>
+<li>
+<p>几何重数：对应特征空间 <span class="arithmatex">\(\ker(A - \lambda I)\)</span> 的维数</p>
+</li>
+</ul>
+<p>几何重数等于 <span class="arithmatex">\(\lambda\)</span> 对应的 Jordan 块个数，代数重数等于所有对应 Jordan 块的阶数之和。</p>
 <blockquote>
-<p><strong>示例</strong>
-矩阵 <span class="arithmatex">\(A = \begin{pmatrix} 2 &amp; 1 &amp; 0 \\ 0 &amp; 2 &amp; 1 \\ 0 &amp; 0 &amp; 2 \end{pmatrix}\)</span> 本身就是一个 <span class="arithmatex">\(3\)</span> 阶 Jordan 块。
-特征值 <span class="arithmatex">\(2\)</span> 的代数重数为 <span class="arithmatex">\(3\)</span>，几何重数为 <span class="arithmatex">\(1\)</span>。</p>
+<p><strong>示例</strong></p>
+<p>矩阵 <span class="arithmatex">\(A = \begin{pmatrix} 2 &amp; 1 &amp; 0 \\ 0 &amp; 2 &amp; 1 \\ 0 &amp; 0 &amp; 2 \end{pmatrix}\)</span> 本身就是一个 <span class="arithmatex">\(3\)</span> 阶 Jordan 块。</p>
+<p>特征值 <span class="arithmatex">\(2\)</span> 的代数重数为 <span class="arithmatex">\(3\)</span>，几何重数为 <span class="arithmatex">\(1\)</span>。</p>
 </blockquote>
 <h3 id="_14">维数公式<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
-<p><strong>秩-零度定理（维数公式）</strong>
-设 <span class="arithmatex">\(T: V \to W\)</span> 是线性映射，则：
-<span class="arithmatex">\(\dim(\ker T) + \dim(\operatorname{Im} T) = \dim V\)</span>
-对于矩阵 <span class="arithmatex">\(A \in \mathbb{R}^{m \times n}\)</span>：
-<span class="arithmatex">\(\text{nullity}(A) + \text{rank}(A) = n\)</span></p>
-<p><strong>子空间维数公式</strong>
-设 <span class="arithmatex">\(U, W\)</span> 是向量空间 <span class="arithmatex">\(V\)</span> 的子空间，则：
-<span class="arithmatex">\(\dim(U + W) = \dim U + \dim W - \dim(U \cap W)\)</span></p>
-<p><strong>直和分解</strong>
-若 <span class="arithmatex">\(V = U \oplus W\)</span>，则：
-<span class="arithmatex">\(\dim V = \dim U + \dim W\)</span></p>
-<p><strong>正交补的维数</strong>
-设 <span class="arithmatex">\(W\)</span> 是内积空间 <span class="arithmatex">\(V\)</span> 的子空间，则：
-<span class="arithmatex">\(\dim W + \dim W^\perp = \dim V\)</span>
-其中 <span class="arithmatex">\(W^\perp = \{\mathbf{v} \in V \mid \langle \mathbf{v}, \mathbf{w} \rangle = 0, \forall \mathbf{w} \in W\}\)</span>。</p>
+<p><strong>秩-零度定理（维数公式）</strong></p>
+<p>设 <span class="arithmatex">\(T: V \to W\)</span> 是线性映射，则：</p>
+<p><span class="arithmatex">\(\dim(\ker T) + \dim(\operatorname{Im} T) = \dim V\)</span></p>
+<p>对于矩阵 <span class="arithmatex">\(A \in \mathbb{R}^{m \times n}\)</span>：</p>
+<p><span class="arithmatex">\(\text{nullity}(A) + \text{rank}(A) = n\)</span></p>
+<p><strong>子空间维数公式</strong></p>
+<p>设 <span class="arithmatex">\(U, W\)</span> 是向量空间 <span class="arithmatex">\(V\)</span> 的子空间，则：</p>
+<p><span class="arithmatex">\(\dim(U + W) = \dim U + \dim W - \dim(U \cap W)\)</span></p>
+<p><strong>直和分解</strong></p>
+<p>若 <span class="arithmatex">\(V = U \oplus W\)</span>，则：</p>
+<p><span class="arithmatex">\(\dim V = \dim U + \dim W\)</span></p>
+<p><strong>正交补的维数</strong></p>
+<p>设 <span class="arithmatex">\(W\)</span> 是内积空间 <span class="arithmatex">\(V\)</span> 的子空间，则：</p>
+<p><span class="arithmatex">\(\dim W + \dim W^\perp = \dim V\)</span></p>
+<p>其中 <span class="arithmatex">\(W^\perp = \{\mathbf{v} \in V \mid \langle \mathbf{v}, \mathbf{w} \rangle = 0, \forall \mathbf{w} \in W\}\)</span>。</p>
 <h3 id="_15">应用与计算<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p><strong>示例：Legendre 多项式</strong>
-在区间 <span class="arithmatex">\([-1,1]\)</span> 上定义内积 <span class="arithmatex">\(\langle f, g \rangle = \int_{-1}^1 f(x)g(x)dx\)</span>，对函数组 <span class="arithmatex">\(\{1, x, x^2, x^3, \dots\}\)</span> 应用 Gram-Schmidt 过程得到 Legendre 多项式。</p>
+<p><strong>示例：Legendre 多项式</strong></p>
+<p>在区间 <span class="arithmatex">\([-1,1]\)</span> 上定义内积 <span class="arithmatex">\(\langle f, g \rangle = \int_{-1}^1 f(x)g(x)dx\)</span>，对函数组 <span class="arithmatex">\(\{1, x, x^2, x^3, \dots\}\)</span> 应用 Gram-Schmidt 过程得到 Legendre 多项式。</p>
 </blockquote>
-<p><strong>Jordan 标准形计算步骤</strong>
-1. 求特征多项式，确定特征值
-2. 对每个特征值 <span class="arithmatex">\(\lambda\)</span>，计算 <span class="arithmatex">\(\ker(A - \lambda I)^k\)</span>，<span class="arithmatex">\(k = 1, 2, \dots\)</span>
-3. 确定 Jordan 链和 Jordan 块结构
-4. 构造变换矩阵 <span class="arithmatex">\(P\)</span> 使得 <span class="arithmatex">\(P^{-1} A P = J\)</span></p>
+<p><strong>Jordan 标准形计算步骤</strong></p>
+<ol>
+<li>
+<p>求特征多项式，确定特征值</p>
+</li>
+<li>
+<p>对每个特征值 <span class="arithmatex">\(\lambda\)</span>，计算 <span class="arithmatex">\(\ker(A - \lambda I)^k\)</span>，<span class="arithmatex">\(k = 1, 2, \dots\)</span></p>
+</li>
+<li>
+<p>确定 Jordan 链和 Jordan 块结构</p>
+</li>
+<li>
+<p>构造变换矩阵 <span class="arithmatex">\(P\)</span> 使得 <span class="arithmatex">\(P^{-1} A P = J\)</span></p>
+</li>
+</ol>
 <blockquote>
-<p><strong>示例：二次型的分类</strong>
-判断二次型 <span class="arithmatex">\(Q(x,y,z) = x^2 + 2y^2 + 3z^2 + 2xy + 2xz\)</span> 的类型。</p>
+<p><strong>示例：二次型的分类</strong></p>
+<p>判断二次型 <span class="arithmatex">\(Q(x,y,z) = x^2 + 2y^2 + 3z^2 + 2xy + 2xz\)</span> 的类型。</p>
 <p>解：对应矩阵 <span class="arithmatex">\(A = \begin{pmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; 0 \\ 1 &amp; 0 &amp; 3 \end{pmatrix}\)</span>，计算特征值或顺序主子式判断正定性。</p>
 </blockquote>
 <h3 id="_16">重要公式总结<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
-<p><strong>正交化公式总结</strong>
-Gram-Schmidt 过程的核心公式：
-<span class="arithmatex">\(\mathbf{u}_k = \frac{\mathbf{v}_k - \sum_{j=1}^{k-1} \langle \mathbf{v}_k, \mathbf{u}_j \rangle \mathbf{u}_j}{\left\| \mathbf{v}_k - \sum_{j=1}^{k-1} \langle \mathbf{v}_k, \mathbf{u}_j \rangle \mathbf{u}_j \right\|}\)</span></p>
-<p><strong>Fibonacci 数列性质</strong>
-* 通项公式：<span class="arithmatex">\(F_n = \frac{1}{\sqrt{5}}(\varphi^n - \psi^n)\)</span>，其中 <span class="arithmatex">\(\varphi = \frac{1+\sqrt{5}}{2}\)</span>, <span class="arithmatex">\(\psi = \frac{1-\sqrt{5}}{2}\)</span>
-* 矩阵表示：<span class="arithmatex">\(\begin{pmatrix} F_{n+1} &amp; F_n \\ F_n &amp; F_{n-1} \end{pmatrix} = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}^n\)</span>
-* 极限性质：<span class="arithmatex">\(\lim_{n \to \infty} \frac{F_{n+1}}{F_n} = \varphi\)</span>（黄金比例）</p>
-<p><strong>Jordan 标准形性质</strong>
-* 最小多项式：<span class="arithmatex">\(\prod_{i=1}^k (x - \lambda_i)^{m_i}\)</span>，其中 <span class="arithmatex">\(m_i\)</span> 是最大 Jordan 块的阶数
-* 可对角化条件：所有 Jordan 块都是 <span class="arithmatex">\(1 \times 1\)</span> 的
-* 幂的计算：通过 Jordan 标准形计算 <span class="arithmatex">\(A^n\)</span></p>
-<p><strong>维数关系</strong>
-<span class="arithmatex">\(\begin{aligned}
-   &amp;\dim(\ker T) + \dim(\operatorname{Im} T) = \dim V \\
-   &amp;\dim(U + W) = \dim U + \dim W - \dim(U \cap W) \\
-   &amp;\dim W + \dim W^\perp = \dim V \\
-   &amp;\text{rank}(A) + \text{nullity}(A) = n
-\end{aligned}\)</span></p>
+<p><strong>正交化公式总结</strong></p>
+<p>Gram-Schmidt 过程的核心公式：</p>
+<p><span class="arithmatex">\(\mathbf{u}_k = \frac{\mathbf{v}_k - \sum_{j=1}^{k-1} \langle \mathbf{v}_k, \mathbf{u}_j \rangle \mathbf{u}_j}{\left\| \mathbf{v}_k - \sum_{j=1}^{k-1} \langle \mathbf{v}_k, \mathbf{u}_j \rangle \mathbf{u}_j \right\|}\)</span></p>
+<p><strong>Fibonacci 数列性质</strong></p>
+<ul>
+<li>
+<p>通项公式：<span class="arithmatex">\(F_n = \frac{1}{\sqrt{5}}(\varphi^n - \psi^n)\)</span>，其中 <span class="arithmatex">\(\varphi = \frac{1+\sqrt{5}}{2}\)</span>, <span class="arithmatex">\(\psi = \frac{1-\sqrt{5}}{2}\)</span></p>
+</li>
+<li>
+<p>矩阵表示：<span class="arithmatex">\(\begin{pmatrix} F_{n+1} &amp; F_n \\ F_n &amp; F_{n-1} \end{pmatrix} = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}^n\)</span></p>
+</li>
+<li>
+<p>极限性质：<span class="arithmatex">\(\lim_{n \to \infty} \frac{F_{n+1}}{F_n} = \varphi\)</span>（黄金比例）</p>
+</li>
+</ul>
+<p><strong>Jordan 标准形性质</strong></p>
+<ul>
+<li>
+<p>最小多项式：<span class="arithmatex">\(\prod_{i=1}^k (x - \lambda_i)^{m_i}\)</span>，其中 <span class="arithmatex">\(m_i\)</span> 是最大 Jordan 块的阶数</p>
+</li>
+<li>
+<p>可对角化条件：所有 Jordan 块都是 <span class="arithmatex">\(1 \times 1\)</span> 的</p>
+</li>
+<li>
+<p>幂的计算：通过 Jordan 标准形计算 <span class="arithmatex">\(A^n\)</span></p>
+</li>
+</ul>
+<p><strong>维数关系</strong></p>
+<p>$\begin{aligned}</p>
+<p>&amp;\dim(\ker T) + \dim(\operatorname{Im} T) = \dim V \</p>
+<p>&amp;\dim(U + W) = \dim U + \dim W - \dim(U \cap W) \</p>
+<p>&amp;\dim W + \dim W^\perp = \dim V \</p>
+<p>&amp;\text{rank}(A) + \text{nullity}(A) = n</p>
+<p>\end{aligned}$</p>
 
 
 

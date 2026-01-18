@@ -1593,109 +1593,160 @@
 
 
 <script type="text/javascript" async
+
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+
 </script>
 
 <script type="text/x-mathjax-config">
+
   MathJax.Hub.Config({
+
     tex2jax: {
+
       inlineMath: [['$','$'], ['\\(','\\)']],
+
       displayMath: [['$$','$$'], ['\\[','\\]']],
+
       processEscapes: true,
+
       processEnvironments: true
+
     }
+
   });
+
 </script>
 
 <h1 id="_1">积分<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">积分学定理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">积分方法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p><strong>第一类换元法（凑微分）</strong>
-若 <span class="arithmatex">\(\int f(u) \, du = F(u) + C\)</span>，且 <span class="arithmatex">\(u = \varphi(x)\)</span> 可导，则 <span class="arithmatex">\(\int f[\varphi(x)] \varphi'(x) \, dx = F[\varphi(x)] + C\)</span>。</p>
-<p><strong>第二类换元法</strong>
-设 <span class="arithmatex">\(x = \psi(t)\)</span> 单调可导且 <span class="arithmatex">\(\psi'(t) \ne 0\)</span>，若 <span class="arithmatex">\(\int f[\psi(t)] \psi'(t) \, dt = G(t) + C\)</span>，则 <span class="arithmatex">\(\int f(x) \, dx = G[\psi^{-1}(x)] + C\)</span>。</p>
-<p><strong>分部积分法</strong>
-若 <span class="arithmatex">\(u(x), v(x)\)</span> 有连续导数，则
-<span class="arithmatex">\(\int u(x) v'(x) \, dx = u(x) v(x) - \int u'(x) v(x) \, dx\)</span>
-或 <span class="arithmatex">\(\int u \, dv = uv - \int v \, du\)</span>。</p>
+<p><strong>第一类换元法（凑微分）</strong></p>
+<p>若 <span class="arithmatex">\(\int f(u) \, du = F(u) + C\)</span>，且 <span class="arithmatex">\(u = \varphi(x)\)</span> 可导，则 <span class="arithmatex">\(\int f[\varphi(x)] \varphi'(x) \, dx = F[\varphi(x)] + C\)</span>。</p>
+<p><strong>第二类换元法</strong></p>
+<p>设 <span class="arithmatex">\(x = \psi(t)\)</span> 单调可导且 <span class="arithmatex">\(\psi'(t) \ne 0\)</span>，若 <span class="arithmatex">\(\int f[\psi(t)] \psi'(t) \, dt = G(t) + C\)</span>，则 <span class="arithmatex">\(\int f(x) \, dx = G[\psi^{-1}(x)] + C\)</span>。</p>
+<p><strong>分部积分法</strong></p>
+<p>若 <span class="arithmatex">\(u(x), v(x)\)</span> 有连续导数，则</p>
+<p><span class="arithmatex">\(\int u(x) v'(x) \, dx = u(x) v(x) - \int u'(x) v(x) \, dx\)</span></p>
+<p>或 <span class="arithmatex">\(\int u \, dv = uv - \int v \, du\)</span>。</p>
 <h3 id="euler">Euler 变换与三角代换<a class="headerlink" href="#euler" title="Permanent link">&para;</a></h3>
-<p><strong>Euler 变换</strong>
-对于积分 <span class="arithmatex">\(\int R(x, \sqrt{ax^2 + bx + c}) \, dx\)</span>：
-* 第一类：<span class="arithmatex">\(a &gt; 0\)</span> 时，令 <span class="arithmatex">\(\sqrt{ax^2 + bx + c} = t - \sqrt{a}x\)</span>
-* 第二类：<span class="arithmatex">\(c &gt; 0\)</span> 时，令 <span class="arithmatex">\(\sqrt{ax^2 + bx + c} = tx + \sqrt{c}\)</span>
-* 第三类：<span class="arithmatex">\(b^2 - 4ac &gt; 0\)</span> 时，令 <span class="arithmatex">\(\sqrt{ax^2 + bx + c} = t(x - \alpha)\)</span></p>
-<p><strong>三角代换</strong>
-* <span class="arithmatex">\(\sqrt{a^2 - x^2}\)</span>：令 <span class="arithmatex">\(x = a \sin t\)</span> 或 <span class="arithmatex">\(x = a \cos t\)</span>
-* <span class="arithmatex">\(\sqrt{a^2 + x^2}\)</span>：令 <span class="arithmatex">\(x = a \tan t\)</span> 或 <span class="arithmatex">\(x = a \sinh t\)</span>
-* <span class="arithmatex">\(\sqrt{x^2 - a^2}\)</span>：令 <span class="arithmatex">\(x = a \sec t\)</span> 或 <span class="arithmatex">\(x = a \cosh t\)</span></p>
-<p><strong>无理根式代换</strong>
-* <span class="arithmatex">\(\int R\left( x, \sqrt[n]{\frac{ax+b}{cx+d}}\right) dx\)</span>：令 <span class="arithmatex">\(t = \sqrt[n]{\frac{ax+b}{cx+d}}\)</span>
-* <span class="arithmatex">\(\int R( x, \sqrt{ax+b}, \sqrt{cx+d}) dx\)</span>：令 <span class="arithmatex">\(t = \sqrt{ax+b}\)</span> 或 <span class="arithmatex">\(t = \sqrt{cx+d}\)</span></p>
-<h3 id="_4">积分理论基础<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p><strong>Riemann 积分</strong>
-函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上的 Riemann 积分为：
-<span class="arithmatex">\(\int_a^b f(x) \, dx = \lim_{\|P\| \to 0} \sum_{i=1}^n f(\xi_i) \Delta x_i\)</span>
-其中 <span class="arithmatex">\(P: a = x_0 &lt; x_1 &lt; \cdots &lt; x_n = b\)</span> 是分割，<span class="arithmatex">\(\|P\| = \max \Delta x_i\)</span>。</p>
-<p><strong>Darboux 定理</strong>
-有界函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上 Riemann 可积的充要条件是：
-<span class="arithmatex">\(\lim_{\|P\| \to 0} (S(P) - s(P)) = 0\)</span>
-其中 <span class="arithmatex">\(S(P)\)</span> 和 <span class="arithmatex">\(s(P)\)</span> 分别是 Darboux 大和与小和。</p>
-<p><strong>微积分基本定理</strong>
-若 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上连续，则 <span class="arithmatex">\(\frac{d}{dx} \int_a^x f(t) \, dt = f(x)\)</span>。</p>
-<p><strong>Newton-Leibniz 公式</strong>
-若 <span class="arithmatex">\(F(x)\)</span> 是 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上的原函数，则 <span class="arithmatex">\(\int_a^b f(x) \, dx = F(b) - F(a)\)</span>。</p>
-<h3 id="_5">积分中值定理<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><strong>积分第一中值定理</strong>
-若 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上连续，则存在 <span class="arithmatex">\(\xi \in [a, b]\)</span> 使得 <span class="arithmatex">\(\int_a^b f(x) \, dx = f(\xi)(b - a)\)</span>。</p>
-<p><strong>积分第二中值定理</strong>
-若 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上可积，<span class="arithmatex">\(g(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上单调，则存在 <span class="arithmatex">\(\xi \in [a, b]\)</span> 使得
-<span class="arithmatex">\(\int_a^b f(x) g(x) \, dx = g(a) \int_a^\xi f(x) \, dx + g(b) \int_\xi^b f(x) \, dx\)</span>。</p>
-<p><strong>积分第三中值定理</strong>
-若 <span class="arithmatex">\(f(x), g(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上连续，<span class="arithmatex">\(g(x)\)</span> 不变号，则存在 <span class="arithmatex">\(\xi \in [a, b]\)</span> 使得
-<span class="arithmatex">\(\int_a^b f(x) g(x) \, dx = f(\xi) \int_a^b g(x) \, dx\)</span>。</p>
-<p><strong>Bonnet 定理</strong>
-若 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上可积，<span class="arithmatex">\(g(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上非负递减，则存在 <span class="arithmatex">\(\xi \in [a, b]\)</span> 使得
-<span class="arithmatex">\(\int_a^b f(x) g(x) \, dx = g(a) \int_a^\xi f(x) \, dx\)</span>。</p>
-<p><strong>Lebesgue 定理</strong>
-有界函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上 Riemann 可积的充要条件是 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上几乎处处连续。</p>
-<h2 id="_6">广义积分<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p><strong>广义积分 Cauchy 判别法</strong>
-广义积分 <span class="arithmatex">\(\int_a^{+\infty} f(x) \, dx\)</span> 收敛的充要条件是：
-<span class="arithmatex">\(\forall \varepsilon &gt; 0, \exists A &gt; a, \forall A_1, A_2 &gt; A: \left| \int_{A_1}^{A_2} f(x) \, dx \right| &lt; \varepsilon\)</span>。</p>
-<p><strong>Dirichlet 判别法</strong>
-若：
-1. <span class="arithmatex">\(F(A) = \int_a^A f(x) \, dx\)</span> 在 <span class="arithmatex">\([a, +\infty)\)</span> 上有界
-2. <span class="arithmatex">\(g(x)\)</span> 在 <span class="arithmatex">\([a, +\infty)\)</span> 上单调且 <span class="arithmatex">\(\lim_{x \to +\infty} g(x) = 0\)</span>
-则 <span class="arithmatex">\(\int_a^{+\infty} f(x) g(x) \, dx\)</span> 收敛。</p>
-<p><strong>Abel 判别法</strong>
-若：
-1. <span class="arithmatex">\(\int_a^{+\infty} f(x) \, dx\)</span> 收敛
-2. <span class="arithmatex">\(g(x)\)</span> 在 <span class="arithmatex">\([a, +\infty)\)</span> 上单调有界
-则 <span class="arithmatex">\(\int_a^{+\infty} f(x) g(x) \, dx\)</span> 收敛。</p>
-<h2 id="euler_1">Euler 积分<a class="headerlink" href="#euler_1" title="Permanent link">&para;</a></h2>
-<p><strong>Gamma 函数</strong>
-<span class="arithmatex">\(\Gamma(s) = \int_0^{+\infty} x^{s-1} e^{-x} \, dx, \quad s &gt; 0\)</span>
-性质：
-<span class="arithmatex">\(\Gamma(s+1) = s \Gamma(s)\)</span>
-<span class="arithmatex">\(\Gamma(n+1) = n! \quad (n \in \mathbb{N})\)</span>
-<span class="arithmatex">\(\Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}\)</span></p>
-<p><strong>Beta 函数</strong>
-<span class="arithmatex">\(B(p, q) = \int_0^1 x^{p-1} (1-x)^{q-1} \, dx, \quad p &gt; 0, q &gt; 0\)</span>
-性质：
-<span class="arithmatex">\(B(p, q) = B(q, p)\)</span>
-<span class="arithmatex">\(B(p, q) = \frac{\Gamma(p) \Gamma(q)}{\Gamma(p+q)}\)</span>
-<span class="arithmatex">\(B(p, q) = 2 \int_0^{\pi/2} \sin^{2p-1} \theta \cos^{2q-1} \theta \, d\theta\)</span></p>
-<p><strong>Gamma 函数与 Beta 函数关系</strong>
-<span class="arithmatex">\(B(p, q) = \frac{\Gamma(p) \Gamma(q)}{\Gamma(p+q)}\)</span></p>
-<p><strong>余元公式</strong>
-<span class="arithmatex">\(\Gamma(s) \Gamma(1-s) = \frac{\pi}{\sin \pi s}, \quad 0 &lt; s &lt; 1\)</span>
-特别地：<span class="arithmatex">\(\Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}\)</span></p>
-<p><strong>Legendre 倍元公式</strong>
-<span class="arithmatex">\(\Gamma(s) \Gamma\left(s + \frac{1}{2}\right) = 2^{1-2s} \sqrt{\pi} \, \Gamma(2s)\)</span></p>
+<p><strong>Euler 变换</strong></p>
+<p>对于积分 <span class="arithmatex">\(\int R(x, \sqrt{ax^2 + bx + c}) \, dx\)</span>：</p>
 <ul>
-<li><strong>Liouville 公式</strong>：<span class="arithmatex">\(W(x) = W(x_0)e^{-\int_{x_0}^x P(t)dt}\)</span></li>
-<li><strong>Wronski 行列式</strong>：<span class="arithmatex">\(W(x) = y_1y_2' - y_2y_1'\)</span></li>
-<li><strong>矩阵指数</strong>：<span class="arithmatex">\(e^{\mathbf{A}t} = \sum_{k=0}^{\infty} \frac{\mathbf{A}^k t^k}{k!}\)</span></li>
+<li>
+<p>第一类：<span class="arithmatex">\(a &gt; 0\)</span> 时，令 <span class="arithmatex">\(\sqrt{ax^2 + bx + c} = t - \sqrt{a}x\)</span></p>
+</li>
+<li>
+<p>第二类：<span class="arithmatex">\(c &gt; 0\)</span> 时，令 <span class="arithmatex">\(\sqrt{ax^2 + bx + c} = tx + \sqrt{c}\)</span></p>
+</li>
+<li>
+<p>第三类：<span class="arithmatex">\(b^2 - 4ac &gt; 0\)</span> 时，令 <span class="arithmatex">\(\sqrt{ax^2 + bx + c} = t(x - \alpha)\)</span></p>
+</li>
+</ul>
+<p><strong>三角代换</strong></p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\sqrt{a^2 - x^2}\)</span>：令 <span class="arithmatex">\(x = a \sin t\)</span> 或 <span class="arithmatex">\(x = a \cos t\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\sqrt{a^2 + x^2}\)</span>：令 <span class="arithmatex">\(x = a \tan t\)</span> 或 <span class="arithmatex">\(x = a \sinh t\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\sqrt{x^2 - a^2}\)</span>：令 <span class="arithmatex">\(x = a \sec t\)</span> 或 <span class="arithmatex">\(x = a \cosh t\)</span></p>
+</li>
+</ul>
+<p><strong>无理根式代换</strong></p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\int R\left( x, \sqrt[n]{\frac{ax+b}{cx+d}}\right) dx\)</span>：令 <span class="arithmatex">\(t = \sqrt[n]{\frac{ax+b}{cx+d}}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\int R( x, \sqrt{ax+b}, \sqrt{cx+d}) dx\)</span>：令 <span class="arithmatex">\(t = \sqrt{ax+b}\)</span> 或 <span class="arithmatex">\(t = \sqrt{cx+d}\)</span></p>
+</li>
+</ul>
+<h3 id="_4">积分理论基础<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><strong>Riemann 积分</strong></p>
+<p>函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上的 Riemann 积分为：</p>
+<p><span class="arithmatex">\(\int_a^b f(x) \, dx = \lim_{\|P\| \to 0} \sum_{i=1}^n f(\xi_i) \Delta x_i\)</span></p>
+<p>其中 <span class="arithmatex">\(P: a = x_0 &lt; x_1 &lt; \cdots &lt; x_n = b\)</span> 是分割，<span class="arithmatex">\(\|P\| = \max \Delta x_i\)</span>。</p>
+<p><strong>Darboux 定理</strong></p>
+<p>有界函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上 Riemann 可积的充要条件是：</p>
+<p><span class="arithmatex">\(\lim_{\|P\| \to 0} (S(P) - s(P)) = 0\)</span></p>
+<p>其中 <span class="arithmatex">\(S(P)\)</span> 和 <span class="arithmatex">\(s(P)\)</span> 分别是 Darboux 大和与小和。</p>
+<p><strong>微积分基本定理</strong></p>
+<p>若 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上连续，则 <span class="arithmatex">\(\frac{d}{dx} \int_a^x f(t) \, dt = f(x)\)</span>。</p>
+<p><strong>Newton-Leibniz 公式</strong></p>
+<p>若 <span class="arithmatex">\(F(x)\)</span> 是 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上的原函数，则 <span class="arithmatex">\(\int_a^b f(x) \, dx = F(b) - F(a)\)</span>。</p>
+<h3 id="_5">积分中值定理<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><strong>积分第一中值定理</strong></p>
+<p>若 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上连续，则存在 <span class="arithmatex">\(\xi \in [a, b]\)</span> 使得 <span class="arithmatex">\(\int_a^b f(x) \, dx = f(\xi)(b - a)\)</span>。</p>
+<p><strong>积分第二中值定理</strong></p>
+<p>若 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上可积，<span class="arithmatex">\(g(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上单调，则存在 <span class="arithmatex">\(\xi \in [a, b]\)</span> 使得</p>
+<p><span class="arithmatex">\(\int_a^b f(x) g(x) \, dx = g(a) \int_a^\xi f(x) \, dx + g(b) \int_\xi^b f(x) \, dx\)</span>。</p>
+<p><strong>积分第三中值定理</strong></p>
+<p>若 <span class="arithmatex">\(f(x), g(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上连续，<span class="arithmatex">\(g(x)\)</span> 不变号，则存在 <span class="arithmatex">\(\xi \in [a, b]\)</span> 使得</p>
+<p><span class="arithmatex">\(\int_a^b f(x) g(x) \, dx = f(\xi) \int_a^b g(x) \, dx\)</span>。</p>
+<p><strong>Bonnet 定理</strong></p>
+<p>若 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上可积，<span class="arithmatex">\(g(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上非负递减，则存在 <span class="arithmatex">\(\xi \in [a, b]\)</span> 使得</p>
+<p><span class="arithmatex">\(\int_a^b f(x) g(x) \, dx = g(a) \int_a^\xi f(x) \, dx\)</span>。</p>
+<p><strong>Lebesgue 定理</strong></p>
+<p>有界函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上 Riemann 可积的充要条件是 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a, b]\)</span> 上几乎处处连续。</p>
+<h2 id="_6">广义积分<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p><strong>广义积分 Cauchy 判别法</strong></p>
+<p>广义积分 <span class="arithmatex">\(\int_a^{+\infty} f(x) \, dx\)</span> 收敛的充要条件是：</p>
+<p><span class="arithmatex">\(\forall \varepsilon &gt; 0, \exists A &gt; a, \forall A_1, A_2 &gt; A: \left| \int_{A_1}^{A_2} f(x) \, dx \right| &lt; \varepsilon\)</span>。</p>
+<p><strong>Dirichlet 判别法</strong></p>
+<p>若：</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(F(A) = \int_a^A f(x) \, dx\)</span> 在 <span class="arithmatex">\([a, +\infty)\)</span> 上有界</p>
+</li>
+<li>
+<p><span class="arithmatex">\(g(x)\)</span> 在 <span class="arithmatex">\([a, +\infty)\)</span> 上单调且 <span class="arithmatex">\(\lim_{x \to +\infty} g(x) = 0\)</span></p>
+</li>
+</ol>
+<p>则 <span class="arithmatex">\(\int_a^{+\infty} f(x) g(x) \, dx\)</span> 收敛。</p>
+<p><strong>Abel 判别法</strong></p>
+<p>若：</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(\int_a^{+\infty} f(x) \, dx\)</span> 收敛</p>
+</li>
+<li>
+<p><span class="arithmatex">\(g(x)\)</span> 在 <span class="arithmatex">\([a, +\infty)\)</span> 上单调有界</p>
+</li>
+</ol>
+<p>则 <span class="arithmatex">\(\int_a^{+\infty} f(x) g(x) \, dx\)</span> 收敛。</p>
+<h2 id="euler_1">Euler 积分<a class="headerlink" href="#euler_1" title="Permanent link">&para;</a></h2>
+<p><strong>Gamma 函数</strong></p>
+<p><span class="arithmatex">\(\Gamma(s) = \int_0^{+\infty} x^{s-1} e^{-x} \, dx, \quad s &gt; 0\)</span></p>
+<p>性质：</p>
+<p><span class="arithmatex">\(\Gamma(s+1) = s \Gamma(s)\)</span></p>
+<p><span class="arithmatex">\(\Gamma(n+1) = n! \quad (n \in \mathbb{N})\)</span></p>
+<p><span class="arithmatex">\(\Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}\)</span></p>
+<p><strong>Beta 函数</strong></p>
+<p><span class="arithmatex">\(B(p, q) = \int_0^1 x^{p-1} (1-x)^{q-1} \, dx, \quad p &gt; 0, q &gt; 0\)</span></p>
+<p>性质：</p>
+<p><span class="arithmatex">\(B(p, q) = B(q, p)\)</span></p>
+<p><span class="arithmatex">\(B(p, q) = \frac{\Gamma(p) \Gamma(q)}{\Gamma(p+q)}\)</span></p>
+<p><span class="arithmatex">\(B(p, q) = 2 \int_0^{\pi/2} \sin^{2p-1} \theta \cos^{2q-1} \theta \, d\theta\)</span></p>
+<p><strong>Gamma 函数与 Beta 函数关系</strong></p>
+<p><span class="arithmatex">\(B(p, q) = \frac{\Gamma(p) \Gamma(q)}{\Gamma(p+q)}\)</span></p>
+<p><strong>余元公式</strong></p>
+<p><span class="arithmatex">\(\Gamma(s) \Gamma(1-s) = \frac{\pi}{\sin \pi s}, \quad 0 &lt; s &lt; 1\)</span></p>
+<p>特别地：<span class="arithmatex">\(\Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}\)</span></p>
+<p><strong>Legendre 倍元公式</strong></p>
+<p><span class="arithmatex">\(\Gamma(s) \Gamma\left(s + \frac{1}{2}\right) = 2^{1-2s} \sqrt{\pi} \, \Gamma(2s)\)</span></p>
+<ul>
+<li>
+<p><strong>Liouville 公式</strong>：<span class="arithmatex">\(W(x) = W(x_0)e^{-\int_{x_0}^x P(t)dt}\)</span></p>
+</li>
+<li>
+<p><strong>Wronski 行列式</strong>：<span class="arithmatex">\(W(x) = y_1y_2' - y_2y_1'\)</span></p>
+</li>
+<li>
+<p><strong>矩阵指数</strong>：<span class="arithmatex">\(e^{\mathbf{A}t} = \sum_{k=0}^{\infty} \frac{\mathbf{A}^k t^k}{k!}\)</span></p>
+</li>
 </ul>
 
 

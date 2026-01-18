@@ -1727,283 +1727,135 @@
 
 
 <script>
+
 window.MathJax = {
+
   tex: {
+
     inlineMath: [['$', '$'], ['\\(', '\\)']],
+
     displayMath: [['$$', '$$'], ['\\[', '\\]']],
+
     macros: {
+
       oiint: "{\\mathchoice{\\mkern-18mu\\iint}{\\mkern-12mu\\iint}{\\mkern-13mu\\iint}{\\mkern-12mu\\iint}}"
+
     }
+
   }
+
 };
+
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
 <h1 id="_1">统计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">概率论与数理统计核心内容<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">三大抽样分布<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><strong>卡方分布</strong> (<span class="arithmatex">\(\chi^2\)</span>分布)
-  <span class="arithmatex">\(\chi^2(n) = \sum_{i=1}^n X_i^2, \quad X_i \sim N(0,1), \quad i.i.d.\)</span>
-  性质：<span class="arithmatex">\(E[\chi^2(n)] = n\)</span>, <span class="arithmatex">\(\text{Var}[\chi^2(n)] = 2n\)</span></p>
-</li>
-<li>
-<p><strong>t分布</strong> (学生氏分布)
-  <span class="arithmatex">\(T = \frac{X}{\sqrt{Y/n}}, \quad X \sim N(0,1), \quad Y \sim \chi^2(n), \quad \text{独立}\)</span>
-  性质：对称分布，当<span class="arithmatex">\(n \to \infty\)</span>时，<span class="arithmatex">\(t(n) \to N(0,1)\)</span></p>
-</li>
-<li>
-<p><strong>F分布</strong>
-  <span class="arithmatex">\(F = \frac{X/m}{Y/n}, \quad X \sim \chi^2(m), \quad Y \sim \chi^2(n), \quad \text{独立}\)</span>
-  性质：<span class="arithmatex">\(F(m,n) = \frac{1}{F(n,m)}\)</span></p>
-</li>
+<li><strong>卡方分布</strong> (<span class="arithmatex">\(\chi^2\)</span>分布)</li>
 </ul>
+<p><span class="arithmatex">\(\chi^2(n) = \sum_{i=1}^n X_i^2, \quad X_i \sim N(0,1), \quad i.i.d.\)</span></p>
+<p>性质：<span class="arithmatex">\(E[\chi^2(n)] = n\)</span>, <span class="arithmatex">\(\text{Var}[\chi^2(n)] = 2n\)</span></p>
+<ul>
+<li><strong>t分布</strong> (学生氏分布)</li>
+</ul>
+<p><span class="arithmatex">\(T = \frac{X}{\sqrt{Y/n}}, \quad X \sim N(0,1), \quad Y \sim \chi^2(n), \quad \text{独立}\)</span></p>
+<p>性质：对称分布，当<span class="arithmatex">\(n \to \infty\)</span>时，<span class="arithmatex">\(t(n) \to N(0,1)\)</span></p>
+<ul>
+<li><strong>F分布</strong></li>
+</ul>
+<p><span class="arithmatex">\(F = \frac{X/m}{Y/n}, \quad X \sim \chi^2(m), \quad Y \sim \chi^2(n), \quad \text{独立}\)</span></p>
+<p>性质：<span class="arithmatex">\(F(m,n) = \frac{1}{F(n,m)}\)</span></p>
 <h3 id="_4">八大统计量<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th><strong>符号</strong></th>
-<th><strong>名称</strong></th>
-<th><strong>定义</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="arithmatex">\(\bar{X}\)</span></td>
-<td>样本均值</td>
-<td><span class="arithmatex">\(\frac{1}{n}\sum_{i=1}^n X_i\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(S^2\)</span></td>
-<td>样本方差</td>
-<td><span class="arithmatex">\(\frac{1}{n-1}\sum_{i=1}^n (X_i - \bar{X})^2\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(S\)</span></td>
-<td>样本标准差</td>
-<td><span class="arithmatex">\(\sqrt{S^2}\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(a_k\)</span></td>
-<td>k阶样本原点矩</td>
-<td><span class="arithmatex">\(\frac{1}{n}\sum_{i=1}^n X_i^k\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(A_k\)</span></td>
-<td>k阶样本中心矩</td>
-<td><span class="arithmatex">\(\frac{1}{n}\sum_{i=1}^n (X_i - \bar{X})^k\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(X_{(i)}\)</span></td>
-<td>次序统计量</td>
-<td>第i小的观测值</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(M\)</span></td>
-<td>样本中位数</td>
-<td><span class="arithmatex">\(X_{(\frac{n+1}{2})}\)</span> (n为奇数)</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(R\)</span></td>
-<td>样本极差</td>
-<td><span class="arithmatex">\(X_{(n)} - X_{(1)}\)</span></td>
-</tr>
-</tbody>
-</table>
+<p>| <strong>符号</strong> | <strong>名称</strong> | <strong>定义</strong> |</p>
+<p>|----------|----------|----------|</p>
+<p>| <span class="arithmatex">\(\bar{X}\)</span> | 样本均值 | <span class="arithmatex">\(\frac{1}{n}\sum_{i=1}^n X_i\)</span> |</p>
+<p>| <span class="arithmatex">\(S^2\)</span> | 样本方差 | <span class="arithmatex">\(\frac{1}{n-1}\sum_{i=1}^n (X_i - \bar{X})^2\)</span> |</p>
+<p>| <span class="arithmatex">\(S\)</span> | 样本标准差 | <span class="arithmatex">\(\sqrt{S^2}\)</span> |</p>
+<p>| <span class="arithmatex">\(a_k\)</span> | k阶样本原点矩 | <span class="arithmatex">\(\frac{1}{n}\sum_{i=1}^n X_i^k\)</span> |</p>
+<p>| <span class="arithmatex">\(A_k\)</span> | k阶样本中心矩 | <span class="arithmatex">\(\frac{1}{n}\sum_{i=1}^n (X_i - \bar{X})^k\)</span> |</p>
+<p>| <span class="arithmatex">\(X_{(i)}\)</span> | 次序统计量 | 第i小的观测值 |</p>
+<p>| <span class="arithmatex">\(M\)</span> | 样本中位数 | <span class="arithmatex">\(X_{(\frac{n+1}{2})}\)</span> (n为奇数) |</p>
+<p>| <span class="arithmatex">\(R\)</span> | 样本极差 | <span class="arithmatex">\(X_{(n)} - X_{(1)}\)</span> |</p>
 <h3 id="_5">八大概率分布<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th><strong>分布</strong></th>
-<th><strong>记号</strong></th>
-<th><strong>概率函数/密度</strong></th>
-<th><strong>期望</strong></th>
-<th><strong>方差</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0-1分布</td>
-<td><span class="arithmatex">\(B(1,p)\)</span></td>
-<td><span class="arithmatex">\(P(X=k)=p^k(1-p)^{1-k}\)</span></td>
-<td><span class="arithmatex">\(p\)</span></td>
-<td><span class="arithmatex">\(p(1-p)\)</span></td>
-</tr>
-<tr>
-<td>二项分布</td>
-<td><span class="arithmatex">\(B(n,p)\)</span></td>
-<td><span class="arithmatex">\(P(X=k)=C_n^k p^k(1-p)^{n-k}\)</span></td>
-<td><span class="arithmatex">\(np\)</span></td>
-<td><span class="arithmatex">\(np(1-p)\)</span></td>
-</tr>
-<tr>
-<td>几何分布</td>
-<td><span class="arithmatex">\(G(p)\)</span></td>
-<td><span class="arithmatex">\(P(X=k)=(1-p)^{k-1}p\)</span></td>
-<td><span class="arithmatex">\(\frac{1}{p}\)</span></td>
-<td><span class="arithmatex">\(\frac{1-p}{p^2}\)</span></td>
-</tr>
-<tr>
-<td>泊松分布</td>
-<td><span class="arithmatex">\(P(\lambda)\)</span></td>
-<td><span class="arithmatex">\(P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda}\)</span></td>
-<td><span class="arithmatex">\(\lambda\)</span></td>
-<td><span class="arithmatex">\(\lambda\)</span></td>
-</tr>
-<tr>
-<td>均匀分布</td>
-<td><span class="arithmatex">\(U[a,b]\)</span></td>
-<td><span class="arithmatex">\(f(x)=\frac{1}{b-a}I_{[a,b]}(x)\)</span></td>
-<td><span class="arithmatex">\(\frac{a+b}{2}\)</span></td>
-<td><span class="arithmatex">\(\frac{(b-a)^2}{12}\)</span></td>
-</tr>
-<tr>
-<td>指数分布</td>
-<td><span class="arithmatex">\(E(\beta)\)</span></td>
-<td><span class="arithmatex">\(f(x)=\frac{1}{\beta}e^{-x/\beta}\)</span></td>
-<td><span class="arithmatex">\(\beta\)</span></td>
-<td><span class="arithmatex">\(\beta^2\)</span></td>
-</tr>
-<tr>
-<td>正态分布</td>
-<td><span class="arithmatex">\(N(\mu,\sigma^2)\)</span></td>
-<td><span class="arithmatex">\(f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)</span></td>
-<td><span class="arithmatex">\(\mu\)</span></td>
-<td><span class="arithmatex">\(\sigma^2\)</span></td>
-</tr>
-<tr>
-<td>标准正态</td>
-<td><span class="arithmatex">\(N(0,1)\)</span></td>
-<td><span class="arithmatex">\(\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{-x^2/2}\)</span></td>
-<td><span class="arithmatex">\(0\)</span></td>
-<td><span class="arithmatex">\(1\)</span></td>
-</tr>
-</tbody>
-</table>
+<p>| <strong>分布</strong> | <strong>记号</strong> | <strong>概率函数/密度</strong> | <strong>期望</strong> | <strong>方差</strong> |</p>
+<p>|----------|----------|-------------------|----------|----------|</p>
+<p>| 0-1分布 | <span class="arithmatex">\(B(1,p)\)</span> | <span class="arithmatex">\(P(X=k)=p^k(1-p)^{1-k}\)</span> | <span class="arithmatex">\(p\)</span> | <span class="arithmatex">\(p(1-p)\)</span> |</p>
+<p>| 二项分布 | <span class="arithmatex">\(B(n,p)\)</span> | <span class="arithmatex">\(P(X=k)=C_n^k p^k(1-p)^{n-k}\)</span> | <span class="arithmatex">\(np\)</span> | <span class="arithmatex">\(np(1-p)\)</span> |</p>
+<p>| 几何分布 | <span class="arithmatex">\(G(p)\)</span> | <span class="arithmatex">\(P(X=k)=(1-p)^{k-1}p\)</span> | <span class="arithmatex">\(\frac{1}{p}\)</span> | <span class="arithmatex">\(\frac{1-p}{p^2}\)</span> |</p>
+<p>| 泊松分布 | <span class="arithmatex">\(P(\lambda)\)</span> | <span class="arithmatex">\(P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda}\)</span> | <span class="arithmatex">\(\lambda\)</span> | <span class="arithmatex">\(\lambda\)</span> |</p>
+<p>| 均匀分布 | <span class="arithmatex">\(U[a,b]\)</span> | <span class="arithmatex">\(f(x)=\frac{1}{b-a}I_{[a,b]}(x)\)</span> | <span class="arithmatex">\(\frac{a+b}{2}\)</span> | <span class="arithmatex">\(\frac{(b-a)^2}{12}\)</span> |</p>
+<p>| 指数分布 | <span class="arithmatex">\(E(\beta)\)</span> | <span class="arithmatex">\(f(x)=\frac{1}{\beta}e^{-x/\beta}\)</span> | <span class="arithmatex">\(\beta\)</span> | <span class="arithmatex">\(\beta^2\)</span> |</p>
+<p>| 正态分布 | <span class="arithmatex">\(N(\mu,\sigma^2)\)</span> | <span class="arithmatex">\(f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)</span> | <span class="arithmatex">\(\mu\)</span> | <span class="arithmatex">\(\sigma^2\)</span> |</p>
+<p>| 标准正态 | <span class="arithmatex">\(N(0,1)\)</span> | <span class="arithmatex">\(\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{-x^2/2}\)</span> | <span class="arithmatex">\(0\)</span> | <span class="arithmatex">\(1\)</span> |</p>
 <h3 id="_6">三大参数估计方法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><strong>矩估计法</strong>
-  <span class="arithmatex">\(\text{原理：样本矩} = \text{总体矩}, \quad \frac{1}{n}\sum_{i=1}^n X_i^k = E[X^k]\)</span></p>
-</li>
-<li>
-<p><strong>极大似然估计法</strong>
-  <span class="arithmatex">\(L(\theta) = \prod_{i=1}^n f(x_i;\theta), \quad \hat{\theta}_{MLE} = \arg\max_{\theta} L(\theta)\)</span></p>
-</li>
-<li>
-<p><strong>区间估计</strong>
-  <span class="arithmatex">\(P(\hat{\theta}_1 &lt; \theta &lt; \hat{\theta}_2) = 1 - \alpha\)</span></p>
-</li>
+<li><strong>矩估计法</strong></li>
 </ul>
+<p><span class="arithmatex">\(\text{原理：样本矩} = \text{总体矩}, \quad \frac{1}{n}\sum_{i=1}^n X_i^k = E[X^k]\)</span></p>
+<ul>
+<li><strong>极大似然估计法</strong></li>
+</ul>
+<p><span class="arithmatex">\(L(\theta) = \prod_{i=1}^n f(x_i;\theta), \quad \hat{\theta}_{MLE} = \arg\max_{\theta} L(\theta)\)</span></p>
+<ul>
+<li><strong>区间估计</strong></li>
+</ul>
+<p><span class="arithmatex">\(P(\hat{\theta}_1 &lt; \theta &lt; \hat{\theta}_2) = 1 - \alpha\)</span></p>
 <h3 id="_7">假设检验分类<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th><strong>分类</strong></th>
-<th><strong>子类</strong></th>
-<th><strong>主要内容</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>参数检验</td>
-<td>单个正态总体</td>
-<td>均值检验(<span class="arithmatex">\(\sigma^2\)</span>已知/未知)，方差检验</td>
-</tr>
-<tr>
-<td>参数检验</td>
-<td>两个正态总体</td>
-<td>均值差检验，方差比检验</td>
-</tr>
-<tr>
-<td>非参数检验</td>
-<td>---</td>
-<td>分布拟合检验，独立性检验，符号检验</td>
-</tr>
-</tbody>
-</table>
+<p>| <strong>分类</strong> | <strong>子类</strong> | <strong>主要内容</strong> |</p>
+<p>|----------|----------|--------------|</p>
+<p>| 参数检验 | 单个正态总体 | 均值检验(<span class="arithmatex">\(\sigma^2\)</span>已知/未知)，方差检验 |</p>
+<p>| 参数检验 | 两个正态总体 | 均值差检验，方差比检验 |</p>
+<p>| 非参数检验 | --- | 分布拟合检验，独立性检验，符号检验 |</p>
 <h4 id="_8">单个正态总体检验<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>均值检验</strong> (<span class="arithmatex">\(\sigma^2\)</span>已知)：<span class="arithmatex">\(Z = \frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}} \sim N(0,1)\)</span></li>
-<li><strong>均值检验</strong> (<span class="arithmatex">\(\sigma^2\)</span>未知)：<span class="arithmatex">\(T = \frac{\bar{X}-\mu_0}{S/\sqrt{n}} \sim t(n-1)\)</span></li>
-<li><strong>方差检验</strong>：<span class="arithmatex">\(\chi^2 = \frac{(n-1)S^2}{\sigma_0^2} \sim \chi^2(n-1)\)</span></li>
+<li>
+<p><strong>均值检验</strong> (<span class="arithmatex">\(\sigma^2\)</span>已知)：<span class="arithmatex">\(Z = \frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}} \sim N(0,1)\)</span></p>
+</li>
+<li>
+<p><strong>均值检验</strong> (<span class="arithmatex">\(\sigma^2\)</span>未知)：<span class="arithmatex">\(T = \frac{\bar{X}-\mu_0}{S/\sqrt{n}} \sim t(n-1)\)</span></p>
+</li>
+<li>
+<p><strong>方差检验</strong>：<span class="arithmatex">\(\chi^2 = \frac{(n-1)S^2}{\sigma_0^2} \sim \chi^2(n-1)\)</span></p>
+</li>
 </ul>
 <h4 id="_9">两个正态总体检验<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>均值差检验</strong>：<span class="arithmatex">\(T = \frac{(\bar{X}-\bar{Y})-(\mu_1-\mu_2)}{S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}} \sim t(n_1+n_2-2)\)</span></li>
-<li><strong>方差比检验</strong>：<span class="arithmatex">\(F = \frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2} \sim F(n_1-1,n_2-1)\)</span></li>
+<li>
+<p><strong>均值差检验</strong>：<span class="arithmatex">\(T = \frac{(\bar{X}-\bar{Y})-(\mu_1-\mu_2)}{S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}} \sim t(n_1+n_2-2)\)</span></p>
+</li>
+<li>
+<p><strong>方差比检验</strong>：<span class="arithmatex">\(F = \frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2} \sim F(n_1-1,n_2-1)\)</span></p>
+</li>
 </ul>
 <h3 id="_10">二维分布与复合分布<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <h4 id="_11">二维分布关系<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th><strong>分布类型</strong></th>
-<th><strong>定义</strong></th>
-<th><strong>关系</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>联合分布</td>
-<td><span class="arithmatex">\(F(x,y) = P(X \leq x, Y \leq y)\)</span></td>
-<td>基础</td>
-</tr>
-<tr>
-<td>边缘分布</td>
-<td><span class="arithmatex">\(F_X(x) = P(X \leq x) = F(x,\infty)\)</span></td>
-<td>边际化</td>
-</tr>
-<tr>
-<td>条件分布</td>
-<td>$F_{X</td>
-<td>Y}(x</td>
-</tr>
-<tr>
-<td>均匀分布</td>
-<td><span class="arithmatex">\(f(x,y) = \frac{1}{S_D}I_D(x,y)\)</span></td>
-<td>区域<span class="arithmatex">\(D\)</span>上均匀</td>
-</tr>
-</tbody>
-</table>
+<p>| <strong>分布类型</strong> | <strong>定义</strong> | <strong>关系</strong> |</p>
+<p>|--------------|----------|----------|</p>
+<p>| 联合分布 | <span class="arithmatex">\(F(x,y) = P(X \leq x, Y \leq y)\)</span> | 基础 |</p>
+<p>| 边缘分布 | <span class="arithmatex">\(F_X(x) = P(X \leq x) = F(x,\infty)\)</span> | 边际化 |</p>
+<p>| 条件分布 | <span class="arithmatex">\(F_{X|Y}(x|y) = P(X \leq x|Y=y)\)</span> | 条件概率 |</p>
+<p>| 均匀分布 | <span class="arithmatex">\(f(x,y) = \frac{1}{S_D}I_D(x,y)\)</span> | 区域<span class="arithmatex">\(D\)</span>上均匀 |</p>
 <h4 id="_12">复合分布<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th><strong>分布</strong></th>
-<th><strong>定义</strong></th>
-<th><strong>性质/分布</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="arithmatex">\(X+Y\)</span></td>
-<td>和分布</td>
-<td>卷积公式：<span class="arithmatex">\(f_{X+Y}(z) = \int f_X(x)f_Y(z-x)dx\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(\max\{X,Y\}\)</span></td>
-<td>最大值分布</td>
-<td><span class="arithmatex">\(F_{\max}(z) = F_X(z)F_Y(z)\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(\min\{X,Y\}\)</span></td>
-<td>最小值分布</td>
-<td><span class="arithmatex">\(F_{\min}(z) = 1 - [1-F_X(z)][1-F_Y(z)]\)</span></td>
-</tr>
-<tr>
-<td>Rayleigh分布</td>
-<td><span class="arithmatex">\(R = \sqrt{X^2+Y^2}\)</span></td>
-<td><span class="arithmatex">\(X,Y \sim N(0,\sigma^2)\)</span>，独立</td>
-</tr>
-</tbody>
-</table>
+<p>| <strong>分布</strong> | <strong>定义</strong> | <strong>性质/分布</strong> |</p>
+<p>|----------|----------|----------------|</p>
+<p>| <span class="arithmatex">\(X+Y\)</span> | 和分布 | 卷积公式：<span class="arithmatex">\(f_{X+Y}(z) = \int f_X(x)f_Y(z-x)dx\)</span> |</p>
+<p>| <span class="arithmatex">\(\max\{X,Y\}\)</span> | 最大值分布 | <span class="arithmatex">\(F_{\max}(z) = F_X(z)F_Y(z)\)</span> |</p>
+<p>| <span class="arithmatex">\(\min\{X,Y\}\)</span> | 最小值分布 | <span class="arithmatex">\(F_{\min}(z) = 1 - [1-F_X(z)][1-F_Y(z)]\)</span> |</p>
+<p>| Rayleigh分布 | <span class="arithmatex">\(R = \sqrt{X^2+Y^2}\)</span> | <span class="arithmatex">\(X,Y \sim N(0,\sigma^2)\)</span>，独立 |</p>
 <h4 id="_13">重要公式<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>卷积公式</strong>：<span class="arithmatex">\(f_{X+Y}(z) = \int_{-\infty}^{\infty} f_X(x)f_Y(z-x)dx\)</span></li>
-<li><strong>瑞利分布密度</strong>：<span class="arithmatex">\(f_R(r) = \frac{r}{\sigma^2}e^{-r^2/(2\sigma^2)}, r \geq 0\)</span></li>
-<li><strong>次序统计量联合分布</strong>：<span class="arithmatex">\(f(x_{(1)},\cdots,x_{(n)}) = n!\prod_{i=1}^n f(x_i)\)</span></li>
+<li>
+<p><strong>卷积公式</strong>：<span class="arithmatex">\(f_{X+Y}(z) = \int_{-\infty}^{\infty} f_X(x)f_Y(z-x)dx\)</span></p>
+</li>
+<li>
+<p><strong>瑞利分布密度</strong>：<span class="arithmatex">\(f_R(r) = \frac{r}{\sigma^2}e^{-r^2/(2\sigma^2)}, r \geq 0\)</span></p>
+</li>
+<li>
+<p><strong>次序统计量联合分布</strong>：<span class="arithmatex">\(f(x_{(1)},\cdots,x_{(n)}) = n!\prod_{i=1}^n f(x_i)\)</span></p>
+</li>
 </ul>
 
 

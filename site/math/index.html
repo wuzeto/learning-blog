@@ -2173,18 +2173,29 @@
 
 
 <script type="text/javascript" async
+
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+
 </script>
 
 <script type="text/x-mathjax-config">
+
   MathJax.Hub.Config({
+
     tex2jax: {
+
       inlineMath: [['$','$'], ['\\(','\\)']],
+
       displayMath: [['$$','$$'], ['\\[','\\]']],
+
       processEscapes: true,
+
       processEnvironments: true
+
     }
+
   });
+
 </script>
 
 <h1 id="_1">数列与级数理论概要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
@@ -2198,13 +2209,17 @@
 <blockquote>
 <p>设 <span class="arithmatex">\(\{[a_n, b_n]\}\)</span> 是一列闭区间，满足：</p>
 <ol>
-<li><span class="arithmatex">\([a_{n+1}, b_{n+1}] \subset [a_n, b_n], \quad n = 1, 2, \dots\)</span></li>
-<li><span class="arithmatex">\(\lim_{n \to \infty} (b_n - a_n) = 0\)</span></li>
+<li>
+<p><span class="arithmatex">\([a_{n+1}, b_{n+1}] \subset [a_n, b_n], \quad n = 1, 2, \dots\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\lim_{n \to \infty} (b_n - a_n) = 0\)</span></p>
+</li>
 </ol>
-<p>则存在唯一的实数 <span class="arithmatex">\(\xi\)</span> 属于所有闭区间 <span class="arithmatex">\([a_n, b_n]\)</span>，且
-$$
-\lim_{n \to \infty} a_n = \lim_{n \to \infty} b_n = \xi
-$$</p>
+<p>则存在唯一的实数 <span class="arithmatex">\(\xi\)</span> 属于所有闭区间 <span class="arithmatex">\([a_n, b_n]\)</span>，且</p>
+<p>$$</p>
+<p>\lim_{n \to \infty} a_n = \lim_{n \to \infty} b_n = \xi</p>
+<p>$$</p>
 </blockquote>
 <p><strong>定理 3（聚点定理，Weierstrass）</strong></p>
 <blockquote>
@@ -2212,10 +2227,10 @@ $$</p>
 </blockquote>
 <p><strong>定理 4（柯西收敛准则，Cauchy）</strong></p>
 <blockquote>
-<p>数列 <span class="arithmatex">\(\{x_n\}\)</span> 收敛的充要条件是：
-$$
-\forall \varepsilon &gt; 0, \exists N \in \mathbb{N}, \forall m, n &gt; N: |x_n - x_m| &lt; \varepsilon
-$$</p>
+<p>数列 <span class="arithmatex">\(\{x_n\}\)</span> 收敛的充要条件是：</p>
+<p>$$</p>
+<p>\forall \varepsilon &gt; 0, \exists N \in \mathbb{N}, \forall m, n &gt; N: |x_n - x_m| &lt; \varepsilon</p>
+<p>$$</p>
 </blockquote>
 <p><strong>定理 5（确界原理）</strong></p>
 <blockquote>
@@ -2229,25 +2244,25 @@ $$</p>
 <h2 id="_4">数列极限定理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><strong>定理 7（Stolz 定理）</strong></p>
 <blockquote>
-<p>设 <span class="arithmatex">\(\{y_n\}\)</span> 严格单调趋于 <span class="arithmatex">\(+\infty\)</span>，且
-$$
-\lim_{n \to \infty} \frac{x_n - x_{n-1}}{y_n - y_{n-1}} = L \quad (\text{有限或} \pm\infty)
-$$
-则
-$$
-\lim_{n \to \infty} \frac{x_n}{y_n} = L
-$$</p>
+<p>设 <span class="arithmatex">\(\{y_n\}\)</span> 严格单调趋于 <span class="arithmatex">\(+\infty\)</span>，且</p>
+<p>$$</p>
+<p>\lim_{n \to \infty} \frac{x_n - x_{n-1}}{y_n - y_{n-1}} = L \quad (\text{有限或} \pm\infty)</p>
+<p>$$</p>
+<p>则</p>
+<p>$$</p>
+<p>\lim_{n \to \infty} \frac{x_n}{y_n} = L</p>
+<p>$$</p>
 </blockquote>
 <p><strong>定理 8（数列夹逼定理）</strong></p>
 <blockquote>
-<p>若存在 <span class="arithmatex">\(N_0\)</span>，当 <span class="arithmatex">\(n &gt; N_0\)</span> 时，
-$$
-a_n \leq b_n \leq c_n
-$$
-且 <span class="arithmatex">\(\lim_{n \to \infty} a_n = \lim_{n \to \infty} c_n = L\)</span>，则
-$$
-\lim_{n \to \infty} b_n = L
-$$</p>
+<p>若存在 <span class="arithmatex">\(N_0\)</span>，当 <span class="arithmatex">\(n &gt; N_0\)</span> 时，</p>
+<p>$$</p>
+<p>a_n \leq b_n \leq c_n</p>
+<p>$$</p>
+<p>且 <span class="arithmatex">\(\lim_{n \to \infty} a_n = \lim_{n \to \infty} c_n = L\)</span>，则</p>
+<p>$$</p>
+<p>\lim_{n \to \infty} b_n = L</p>
+<p>$$</p>
 </blockquote>
 <hr />
 <h2 id="_5">正项级数判别法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
@@ -2256,17 +2271,27 @@ $$</p>
 <blockquote>
 <p>设 <span class="arithmatex">\(\sum a_n\)</span> 和 <span class="arithmatex">\(\sum b_n\)</span> 是正项级数，且存在 <span class="arithmatex">\(N\)</span> 使得当 <span class="arithmatex">\(n &gt; N\)</span> 时 <span class="arithmatex">\(a_n \leq b_n\)</span>：</p>
 <ul>
-<li>若 <span class="arithmatex">\(\sum b_n\)</span> 收敛，则 <span class="arithmatex">\(\sum a_n\)</span> 收敛</li>
-<li>若 <span class="arithmatex">\(\sum a_n\)</span> 发散，则 <span class="arithmatex">\(\sum b_n\)</span> 发散</li>
+<li>
+<p>若 <span class="arithmatex">\(\sum b_n\)</span> 收敛，则 <span class="arithmatex">\(\sum a_n\)</span> 收敛</p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(\sum a_n\)</span> 发散，则 <span class="arithmatex">\(\sum b_n\)</span> 发散</p>
+</li>
 </ul>
 </blockquote>
 <p><strong>方法 2（极限比较判别法）</strong></p>
 <blockquote>
 <p>设 <span class="arithmatex">\(\sum a_n\)</span> 和 <span class="arithmatex">\(\sum b_n\)</span> 是正项级数，且 <span class="arithmatex">\(\lim_{n \to \infty} \frac{a_n}{b_n} = L\)</span>：</p>
 <ul>
-<li>若 <span class="arithmatex">\(0 &lt; L &lt; \infty\)</span>，则 <span class="arithmatex">\(\sum a_n\)</span> 与 <span class="arithmatex">\(\sum b_n\)</span> 同敛散</li>
-<li>若 <span class="arithmatex">\(L = 0\)</span> 且 <span class="arithmatex">\(\sum b_n\)</span> 收敛，则 <span class="arithmatex">\(\sum a_n\)</span> 收敛</li>
-<li>若 <span class="arithmatex">\(L = \infty\)</span> 且 <span class="arithmatex">\(\sum b_n\)</span> 发散，则 <span class="arithmatex">\(\sum a_n\)</span> 发散</li>
+<li>
+<p>若 <span class="arithmatex">\(0 &lt; L &lt; \infty\)</span>，则 <span class="arithmatex">\(\sum a_n\)</span> 与 <span class="arithmatex">\(\sum b_n\)</span> 同敛散</p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(L = 0\)</span> 且 <span class="arithmatex">\(\sum b_n\)</span> 收敛，则 <span class="arithmatex">\(\sum a_n\)</span> 收敛</p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(L = \infty\)</span> 且 <span class="arithmatex">\(\sum b_n\)</span> 发散，则 <span class="arithmatex">\(\sum a_n\)</span> 发散</p>
+</li>
 </ul>
 </blockquote>
 <h3 id="cauchy">Cauchy 积分判别法<a class="headerlink" href="#cauchy" title="Permanent link">&para;</a></h3>
@@ -2275,18 +2300,31 @@ $$</p>
 <p>设 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([1, +\infty)\)</span> 上非负单调递减，则正项级数 <span class="arithmatex">\(\sum f(n)\)</span> 与反常积分 <span class="arithmatex">\(\int_1^\infty f(x)dx\)</span> 同敛散。</p>
 </blockquote>
 <div style="background-color: #f0f8ff; padding: 15px; border-left: 5px solid #9370db; margin: 10px 0;">
+
 <strong>示例：</strong> 判断 $\sum_{n=1}^\infty \frac{1}{n^p}$ 的敛散性。
 
 
 
+
+
+
+
 <strong>解：</strong> 考虑积分 $\int_1^\infty \frac{dx}{x^p}$：
+
 $$
+
 \int_1^\infty \frac{dx}{x^p} = \begin{cases}
+
     \text{收敛}, & p > 1 \\
+
     \text{发散}, & p \leq 1
+
 \end{cases}
+
 $$
+
 故 $p$-级数当 $p > 1$ 时收敛，$p \leq 1$ 时发散。
+
 </div>
 
 <h3 id="cauchy_1">Cauchy 根值判别法<a class="headerlink" href="#cauchy_1" title="Permanent link">&para;</a></h3>
@@ -2294,9 +2332,15 @@ $$
 <blockquote>
 <p>设 <span class="arithmatex">\(\sum a_n\)</span> 是正项级数，记 <span class="arithmatex">\(\rho = \limsup_{n \to \infty} \sqrt[n]{a_n}\)</span>：</p>
 <ul>
-<li>若 <span class="arithmatex">\(\rho &lt; 1\)</span>，则级数收敛</li>
-<li>若 <span class="arithmatex">\(\rho &gt; 1\)</span>，则级数发散</li>
-<li>若 <span class="arithmatex">\(\rho = 1\)</span>，判别法失效</li>
+<li>
+<p>若 <span class="arithmatex">\(\rho &lt; 1\)</span>，则级数收敛</p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(\rho &gt; 1\)</span>，则级数发散</p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(\rho = 1\)</span>，判别法失效</p>
+</li>
 </ul>
 </blockquote>
 <h3 id="dalembert">D'Alembert 比值判别法<a class="headerlink" href="#dalembert" title="Permanent link">&para;</a></h3>
@@ -2304,34 +2348,56 @@ $$
 <blockquote>
 <p>设 <span class="arithmatex">\(\sum a_n\)</span> 是正项级数，记 <span class="arithmatex">\(\rho = \lim_{n \to \infty} \frac{a_{n+1}}{a_n}\)</span>：</p>
 <ul>
-<li>若 <span class="arithmatex">\(\rho &lt; 1\)</span>，则级数收敛</li>
-<li>若 <span class="arithmatex">\(\rho &gt; 1\)</span>，则级数发散</li>
-<li>若 <span class="arithmatex">\(\rho = 1\)</span>，判别法失效</li>
+<li>
+<p>若 <span class="arithmatex">\(\rho &lt; 1\)</span>，则级数收敛</p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(\rho &gt; 1\)</span>，则级数发散</p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(\rho = 1\)</span>，判别法失效</p>
+</li>
 </ul>
 </blockquote>
 <h3 id="raabe">Raabe 判别法<a class="headerlink" href="#raabe" title="Permanent link">&para;</a></h3>
 <p><strong>方法 6（Raabe 判别法）</strong></p>
 <blockquote>
-<p>当 D'Alembert 判别法失效时（即 <span class="arithmatex">\(\lim \frac{a_{n+1}}{a_n} = 1\)</span>），考虑：
-$$
-\lim_{n \to \infty} n\left(1 - \frac{a_{n+1}}{a_n}\right) = R
-$$</p>
+<p>当 D'Alembert 判别法失效时（即 <span class="arithmatex">\(\lim \frac{a_{n+1}}{a_n} = 1\)</span>），考虑：</p>
+<p>$$</p>
+<p>\lim_{n \to \infty} n\left(1 - \frac{a_{n+1}}{a_n}\right) = R</p>
+<p>$$</p>
 <ul>
-<li>若 <span class="arithmatex">\(R &gt; 1\)</span>，则级数收敛</li>
-<li>若 <span class="arithmatex">\(R &lt; 1\)</span>，则级数发散</li>
-<li>若 <span class="arithmatex">\(R = 1\)</span>，判别法失效</li>
+<li>
+<p>若 <span class="arithmatex">\(R &gt; 1\)</span>，则级数收敛</p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(R &lt; 1\)</span>，则级数发散</p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(R = 1\)</span>，判别法失效</p>
+</li>
 </ul>
 </blockquote>
 <div style="background-color: #f0f8ff; padding: 15px; border-left: 5px solid #9370db; margin: 10px 0;">
+
 <strong>示例：</strong> 判断 $\sum \frac{1 \cdot 3 \cdots (2n-1)}{2 \cdot 4 \cdots (2n)} \cdot \frac{1}{2n+1}$ 的敛散性。
 
 
 
+
+
+
+
 <strong>解：</strong> 比值 $\frac{a_{n+1}}{a_n} = \frac{2n+1}{2n+2} \cdot \frac{1}{2n+3} \to 1$，用 Raabe 判别法：
+
 $$
+
 n\left(1 - \frac{a_{n+1}}{a_n}\right) = n\left(1 - \frac{2n+1}{(2n+2)(2n+3)}\right) \to \frac{3}{2} > 1
+
 $$
+
 故级数收敛。
+
 </div>
 
 <hr />
@@ -2341,8 +2407,12 @@ $$
 <blockquote>
 <p>设交错级数 <span class="arithmatex">\(\sum (-1)^{n-1} a_n\)</span> 满足：</p>
 <ol>
-<li><span class="arithmatex">\(a_n \geq a_{n+1} &gt; 0\)</span></li>
-<li><span class="arithmatex">\(\lim_{n \to \infty} a_n = 0\)</span></li>
+<li>
+<p><span class="arithmatex">\(a_n \geq a_{n+1} &gt; 0\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\lim_{n \to \infty} a_n = 0\)</span></p>
+</li>
 </ol>
 <p>则级数收敛，且余项 <span class="arithmatex">\(|R_n| \leq a_{n+1}\)</span>。</p>
 </blockquote>
@@ -2351,8 +2421,12 @@ $$
 <blockquote>
 <p>设 <span class="arithmatex">\(\sum a_n b_n\)</span>，若：</p>
 <ol>
-<li>部分和 <span class="arithmatex">\(A_n = \sum_{k=1}^n a_k\)</span> 有界</li>
-<li><span class="arithmatex">\(\{b_n\}\)</span> 单调趋于 0</li>
+<li>
+<p>部分和 <span class="arithmatex">\(A_n = \sum_{k=1}^n a_k\)</span> 有界</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\{b_n\}\)</span> 单调趋于 0</p>
+</li>
 </ol>
 <p>则级数 <span class="arithmatex">\(\sum a_n b_n\)</span> 收敛。</p>
 </blockquote>
@@ -2361,8 +2435,12 @@ $$
 <blockquote>
 <p>设 <span class="arithmatex">\(\sum a_n b_n\)</span>，若：</p>
 <ol>
-<li><span class="arithmatex">\(\sum a_n\)</span> 收敛</li>
-<li><span class="arithmatex">\(\{b_n\}\)</span> 单调有界</li>
+<li>
+<p><span class="arithmatex">\(\sum a_n\)</span> 收敛</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\{b_n\}\)</span> 单调有界</p>
+</li>
 </ol>
 <p>则级数 <span class="arithmatex">\(\sum a_n b_n\)</span> 收敛。</p>
 </blockquote>
@@ -2379,11 +2457,11 @@ $$
 </blockquote>
 <p><strong>定理 11（Cauchy乘积定理）</strong></p>
 <blockquote>
-<p>若 <span class="arithmatex">\(\sum a_n\)</span> 和 <span class="arithmatex">\(\sum b_n\)</span> 绝对收敛，其和分别为 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span>，则它们的 Cauchy 乘积
-$$
-\sum_{n=0}^\infty c_n, \quad c_n = \sum_{k=0}^n a_k b_{n-k}
-$$
-绝对收敛，且和为 <span class="arithmatex">\(AB\)</span>。</p>
+<p>若 <span class="arithmatex">\(\sum a_n\)</span> 和 <span class="arithmatex">\(\sum b_n\)</span> 绝对收敛，其和分别为 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span>，则它们的 Cauchy 乘积</p>
+<p>$$</p>
+<p>\sum_{n=0}^\infty c_n, \quad c_n = \sum_{k=0}^n a_k b_{n-k}</p>
+<p>$$</p>
+<p>绝对收敛，且和为 <span class="arithmatex">\(AB\)</span>。</p>
 </blockquote>
 <h3 id="mertens">Mertens 定理<a class="headerlink" href="#mertens" title="Permanent link">&para;</a></h3>
 <p><strong>定理 12（Mertens 定理）</strong></p>
@@ -2395,18 +2473,18 @@ $$
 <h3 id="_11">无穷乘积收敛性<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p><strong>定义 1（无穷乘积）</strong></p>
 <blockquote>
-<p>无穷乘积 <span class="arithmatex">\(\prod_{n=1}^\infty (1 + a_n)\)</span> 称为收敛，如果部分乘积
-$$
-P_n = \prod_{k=1}^n (1 + a_k)
-$$
-存在有限非零极限 <span class="arithmatex">\(P \neq 0\)</span>。</p>
+<p>无穷乘积 <span class="arithmatex">\(\prod_{n=1}^\infty (1 + a_n)\)</span> 称为收敛，如果部分乘积</p>
+<p>$$</p>
+<p>P_n = \prod_{k=1}^n (1 + a_k)</p>
+<p>$$</p>
+<p>存在有限非零极限 <span class="arithmatex">\(P \neq 0\)</span>。</p>
 </blockquote>
 <p><strong>方法 10（Cauchy 准则）</strong></p>
 <blockquote>
-<p>无穷乘积 <span class="arithmatex">\(\prod (1 + a_n)\)</span> 收敛的充要条件是：对任意 <span class="arithmatex">\(\varepsilon &gt; 0\)</span>，存在 <span class="arithmatex">\(N\)</span> 使得对任意 <span class="arithmatex">\(m &gt; n &gt; N\)</span>，
-$$
-\left| \prod_{k=n+1}^m (1 + a_k) - 1 \right| &lt; \varepsilon
-$$</p>
+<p>无穷乘积 <span class="arithmatex">\(\prod (1 + a_n)\)</span> 收敛的充要条件是：对任意 <span class="arithmatex">\(\varepsilon &gt; 0\)</span>，存在 <span class="arithmatex">\(N\)</span> 使得对任意 <span class="arithmatex">\(m &gt; n &gt; N\)</span>，</p>
+<p>$$</p>
+<p>\left| \prod_{k=n+1}^m (1 + a_k) - 1 \right| &lt; \varepsilon</p>
+<p>$$</p>
 </blockquote>
 <p><strong>定理 13（无穷乘积与级数的关系）</strong></p>
 <blockquote>
@@ -2418,10 +2496,10 @@ $$</p>
 <h3 id="_13">一致收敛判别法<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <p><strong>方法 11（Cauchy一致收敛准则）</strong></p>
 <blockquote>
-<p>函数项级数 <span class="arithmatex">\(\sum u_n(x)\)</span> 在 <span class="arithmatex">\(D\)</span> 上一致收敛的充要条件是：
-$$
-\forall \varepsilon &gt; 0, \exists N, \forall m &gt; n &gt; N, \forall x \in D: \left| \sum_{k=n+1}^m u_k(x) \right| &lt; \varepsilon
-$$</p>
+<p>函数项级数 <span class="arithmatex">\(\sum u_n(x)\)</span> 在 <span class="arithmatex">\(D\)</span> 上一致收敛的充要条件是：</p>
+<p>$$</p>
+<p>\forall \varepsilon &gt; 0, \exists N, \forall m &gt; n &gt; N, \forall x \in D: \left| \sum_{k=n+1}^m u_k(x) \right| &lt; \varepsilon</p>
+<p>$$</p>
 </blockquote>
 <p><strong>方法 12（Weierstrass M-判别法）</strong></p>
 <blockquote>
@@ -2431,8 +2509,12 @@ $$</p>
 <blockquote>
 <p>若在 <span class="arithmatex">\(D\)</span> 上：</p>
 <ol>
-<li><span class="arithmatex">\(\sum_{k=1}^n u_k(x)\)</span> 一致有界</li>
-<li><span class="arithmatex">\(\{v_n(x)\}\)</span> 对 <span class="arithmatex">\(x\)</span> 一致单调趋于 0</li>
+<li>
+<p><span class="arithmatex">\(\sum_{k=1}^n u_k(x)\)</span> 一致有界</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\{v_n(x)\}\)</span> 对 <span class="arithmatex">\(x\)</span> 一致单调趋于 0</p>
+</li>
 </ol>
 <p>则 <span class="arithmatex">\(\sum u_n(x) v_n(x)\)</span> 在 <span class="arithmatex">\(D\)</span> 上一致收敛。</p>
 </blockquote>
@@ -2440,8 +2522,12 @@ $$</p>
 <blockquote>
 <p>若在 <span class="arithmatex">\(D\)</span> 上：</p>
 <ol>
-<li><span class="arithmatex">\(\sum u_n(x)\)</span> 一致收敛</li>
-<li><span class="arithmatex">\(\{v_n(x)\}\)</span> 一致有界且对每个 <span class="arithmatex">\(x\)</span> 单调</li>
+<li>
+<p><span class="arithmatex">\(\sum u_n(x)\)</span> 一致收敛</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\{v_n(x)\}\)</span> 一致有界且对每个 <span class="arithmatex">\(x\)</span> 单调</p>
+</li>
 </ol>
 <p>则 <span class="arithmatex">\(\sum u_n(x) v_n(x)\)</span> 在 <span class="arithmatex">\(D\)</span> 上一致收敛。</p>
 </blockquote>
@@ -2452,17 +2538,17 @@ $$</p>
 </blockquote>
 <p><strong>定理 15（逐项积分定理）</strong></p>
 <blockquote>
-<p>若 <span class="arithmatex">\(u_n(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上连续，且 <span class="arithmatex">\(\sum u_n(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上一致收敛于 <span class="arithmatex">\(S(x)\)</span>，则
-$$
-\int_a^b S(x)dx = \sum_{n=1}^\infty \int_a^b u_n(x)dx
-$$</p>
+<p>若 <span class="arithmatex">\(u_n(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上连续，且 <span class="arithmatex">\(\sum u_n(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上一致收敛于 <span class="arithmatex">\(S(x)\)</span>，则</p>
+<p>$$</p>
+<p>\int_a^b S(x)dx = \sum_{n=1}^\infty \int_a^b u_n(x)dx</p>
+<p>$$</p>
 </blockquote>
 <p><strong>定理 16（逐项求导定理）</strong></p>
 <blockquote>
-<p>若 <span class="arithmatex">\(u_n(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上有连续导数，<span class="arithmatex">\(\sum u_n(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上收敛，且 <span class="arithmatex">\(\sum u_n'(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上一致收敛，则
-$$
-\frac{d}{dx} \left( \sum_{n=1}^\infty u_n(x) \right) = \sum_{n=1}^\infty u_n'(x)
-$$</p>
+<p>若 <span class="arithmatex">\(u_n(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上有连续导数，<span class="arithmatex">\(\sum u_n(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上收敛，且 <span class="arithmatex">\(\sum u_n'(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上一致收敛，则</p>
+<p>$$</p>
+<p>\frac{d}{dx} \left( \sum_{n=1}^\infty u_n(x) \right) = \sum_{n=1}^\infty u_n'(x)</p>
+<p>$$</p>
 </blockquote>
 <hr />
 <h2 id="_15">幂级数<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
@@ -2488,73 +2574,92 @@ $$</p>
 <h3 id="_17">点态收敛定理<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <p><strong>定理 20（Dirichlet收敛定理）</strong></p>
 <blockquote>
-<p>设 <span class="arithmatex">\(f(x)\)</span> 是以 <span class="arithmatex">\(2\pi\)</span> 为周期的分段光滑函数，则其 Fourier 级数在每点 <span class="arithmatex">\(x\)</span> 处收敛于
-$$
-\frac{f(x+0) + f(x-0)}{2}
-$$
-特别地，在连续点处收敛于 <span class="arithmatex">\(f(x)\)</span>。</p>
+<p>设 <span class="arithmatex">\(f(x)\)</span> 是以 <span class="arithmatex">\(2\pi\)</span> 为周期的分段光滑函数，则其 Fourier 级数在每点 <span class="arithmatex">\(x\)</span> 处收敛于</p>
+<p>$$</p>
+<p>\frac{f(x+0) + f(x-0)}{2}</p>
+<p>$$</p>
+<p>特别地，在连续点处收敛于 <span class="arithmatex">\(f(x)\)</span>。</p>
 </blockquote>
 <p><strong>定义 2（Fourier系数）</strong></p>
 <blockquote>
-<div class="arithmatex">\[
-a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx \, dx, \quad 
-b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx \, dx
-\]</div>
-<p>Fourier 级数为：
-$$
-\frac{a_0}{2} + \sum_{n=1}^\infty (a_n \cos nx + b_n \sin nx)
-$$</p>
+<p>$$</p>
+<p>a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx \, dx, \quad </p>
+<p>b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx \, dx</p>
+<p>$$</p>
+<p>Fourier 级数为：</p>
+<p>$$</p>
+<p>\frac{a_0}{2} + \sum_{n=1}^\infty (a_n \cos nx + b_n \sin nx)</p>
+<p>$$</p>
 </blockquote>
 <h3 id="parseval">Parseval 等式<a class="headerlink" href="#parseval" title="Permanent link">&para;</a></h3>
 <p><strong>定理 21（Parseval等式）</strong></p>
 <blockquote>
-<p>若 <span class="arithmatex">\(f(x)\)</span> 平方可积，则
-$$
-\frac{1}{\pi} \int_{-\pi}^{\pi} [f(x)]^2 dx = \frac{a_0^2}{2} + \sum_{n=1}^\infty (a_n^2 + b_n^2)
-$$</p>
+<p>若 <span class="arithmatex">\(f(x)\)</span> 平方可积，则</p>
+<p>$$</p>
+<p>\frac{1}{\pi} \int_{-\pi}^{\pi} [f(x)]^2 dx = \frac{a_0^2}{2} + \sum_{n=1}^\infty (a_n^2 + b_n^2)</p>
+<p>$$</p>
 </blockquote>
 <p><strong>定理 22（广义Parseval等式）</strong></p>
 <blockquote>
-<p>对任意两个平方可积函数 <span class="arithmatex">\(f(x)\)</span> 和 <span class="arithmatex">\(g(x)\)</span>，有
-$$
-\frac{1}{\pi} \int_{-\pi}^{\pi} f(x)g(x)dx = \frac{a_0\alpha_0}{2} + \sum_{n=1}^\infty (a_n\alpha_n + b_n\beta_n)
-$$
-其中 <span class="arithmatex">\(a_n, b_n\)</span> 是 <span class="arithmatex">\(f(x)\)</span> 的 Fourier 系数，<span class="arithmatex">\(\alpha_n, \beta_n\)</span> 是 <span class="arithmatex">\(g(x)\)</span> 的 Fourier 系数。</p>
+<p>对任意两个平方可积函数 <span class="arithmatex">\(f(x)\)</span> 和 <span class="arithmatex">\(g(x)\)</span>，有</p>
+<p>$$</p>
+<p>\frac{1}{\pi} \int_{-\pi}^{\pi} f(x)g(x)dx = \frac{a_0\alpha_0}{2} + \sum_{n=1}^\infty (a_n\alpha_n + b_n\beta_n)</p>
+<p>$$</p>
+<p>其中 <span class="arithmatex">\(a_n, b_n\)</span> 是 <span class="arithmatex">\(f(x)\)</span> 的 Fourier 系数，<span class="arithmatex">\(\alpha_n, \beta_n\)</span> 是 <span class="arithmatex">\(g(x)\)</span> 的 Fourier 系数。</p>
 </blockquote>
 <hr />
 <div style="background-color: #add8e6; padding: 15px; border-left: 5px solid #0000ff; margin: 10px 0;">
+
 <strong>注记段落：</strong>
+
 <br>这是第一段蓝色文字。这段文字会显示为蓝色。
+
 <br>
+
 <br>这是第二段蓝色文字。虽然换段了，但仍然保持蓝色。
+
 <br>
+
 <br>这是第三段蓝色文字。
+
 </div>
 
 <hr />
 <h2 id="_18">总结<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
 <h3 id="_19">判别法选择策略<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>正项级数</strong>：先检验 <span class="arithmatex">\(\lim a_n = 0\)</span>，再用比较法、比值法、根值法</li>
-<li><strong>交错级数</strong>：Leibniz 判别法</li>
-<li><strong>一般项级数</strong>：Dirichlet 或 Abel 判别法</li>
-<li><strong>函数项级数</strong>：Weierstrass M-判别法判断一致收敛</li>
-<li><strong>幂级数</strong>：利用收敛半径和 Abel 定理</li>
-<li><strong>Fourier级数</strong>：Dirichlet 条件判断点态收敛</li>
+<li>
+<p><strong>正项级数</strong>：先检验 <span class="arithmatex">\(\lim a_n = 0\)</span>，再用比较法、比值法、根值法</p>
+</li>
+<li>
+<p><strong>交错级数</strong>：Leibniz 判别法</p>
+</li>
+<li>
+<p><strong>一般项级数</strong>：Dirichlet 或 Abel 判别法</p>
+</li>
+<li>
+<p><strong>函数项级数</strong>：Weierstrass M-判别法判断一致收敛</p>
+</li>
+<li>
+<p><strong>幂级数</strong>：利用收敛半径和 Abel 定理</p>
+</li>
+<li>
+<p><strong>Fourier级数</strong>：Dirichlet 条件判断点态收敛</p>
+</li>
 </ul>
 <h3 id="_20">重要极限与不等式<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
-<p><strong>Cauchy-Hadamard公式：</strong>
-$$
-R = \frac{1}{\limsup_{n \to \infty} \sqrt[n]{|a_n|}}
-$$</p>
-<p><strong>比值判别法：</strong>
-$$
-R = \lim_{n \to \infty} \left| \frac{a_n}{a_{n+1}} \right| \quad (\text{如果极限存在})
-$$</p>
-<p><strong>余项估计：</strong>
-$$
-|R_n| \leq \frac{M}{(n+1)!} |x-x_0|^{n+1} \quad (\text{Taylor级数})
-$$</p>
+<p><strong>Cauchy-Hadamard公式：</strong></p>
+<p>$$</p>
+<p>R = \frac{1}{\limsup_{n \to \infty} \sqrt[n]{|a_n|}}</p>
+<p>$$</p>
+<p><strong>比值判别法：</strong></p>
+<p>$$</p>
+<p>R = \lim_{n \to \infty} \left| \frac{a_n}{a_{n+1}} \right| \quad (\text{如果极限存在})</p>
+<p>$$</p>
+<p><strong>余项估计：</strong></p>
+<p>$$</p>
+<p>|R_n| \leq \frac{M}{(n+1)!} |x-x_0|^{n+1} \quad (\text{Taylor级数})</p>
+<p>$$</p>
 
 
 
