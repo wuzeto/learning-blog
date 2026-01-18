@@ -37,21 +37,14 @@ theme:
   icon:
     logo: material/rocket-launch
 
-# 简化扩展配置（修复emoji配置）
+# 简化扩展配置
 markdown_extensions:
   - attr_list
   - md_in_html
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.details
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
   - footnotes
   - tables
@@ -59,17 +52,17 @@ markdown_extensions:
       permalink: true
       toc_depth: "2-4"
 
-# 插件（移除未安装的插件）
+# 插件（简化版本，只保留必要的）
 plugins:
   - search:
       lang: zh
       separator: '[\s\-\.]+'
       min_search_length: 2
-  - minify:
-      minify_html: true
+  # 如果 minify 插件有问题，可以先注释掉
+  # - minify:
+  #     minify_html: true
 
-# 导航
-# 在 mkdocs.yml 中更新 nav 部分
+# 导航（根据你实际创建的文件调整）
 nav:
   - 🚀 首页: index.md
   - 📐 数学:
