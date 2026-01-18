@@ -1,0 +1,20 @@
+site_name: 我的学习知识库
+site_url: https://wuzeto.github.io/learning-blog/
+repo_url: https://github.com/wuzeto/learning-blog/
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: zh  # 中文界面
+  palette: 
+    scheme: default # 或 slate (暗黑模式)
+  features:
+    - navigation.instant # 页面无刷新加载
+    - search.suggest     # 搜索建议
+    - search.highlight   # 搜索高亮
+
+markdown_extensions:
+  - pymdownx.highlight: # 代码高亮
+      anchor_linenums: true
+  - pymdownx.superfences
+  - admonition          # 支持提示块 (Note/Tip/Warning)
