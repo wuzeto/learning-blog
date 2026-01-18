@@ -105,20 +105,27 @@ nav:
     - 复杂度分析: algorithms/complexity.md
   - 🏗️ 系统架构:
     - 系统总览: systems/index.md
-
+    
 # 额外资源
 extra_css:
   - stylesheets/sci-fi-theme.css
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
-  # 只使用 KaTeX CSS
+  # KaTeX CSS（放在最后确保覆盖）
   - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
 
 extra_javascript:
   - javascripts/homepage-effects.js
-  # KaTeX 支持
+  # KaTeX JS（确保顺序正确）
   - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js
-  - javascripts/math-config.js  # 需要创建这个配置文件
+  - javascripts/math-config.js
+
+# 添加预加载
+head_extra: |
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
 # 版权信息
 copyright: |
