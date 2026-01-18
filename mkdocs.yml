@@ -141,7 +141,7 @@ nav:
     - 动态规划: algorithms/dynamic.md
     - 图论算法: algorithms/graph.md
     - 字符串算法: algorithms/string.md
-    - 复杂度分析: algorithms/complexity.md
+    - 真题补充: algorithms/complexity.md
   - 🏗️ 系统架构:
     - 系统总览: systems/index.md
 

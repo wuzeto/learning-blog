@@ -51,17 +51,7 @@ typedef struct DuLNode {
 * 循环队列：解决假溢出
 * 链队列：链表实现
 
-**串ADT与存储**
 
-**串的存储结构**:
-* 定长顺序存储：char str[MAXLEN+1]
-* 堆分配存储：动态分配，length字段
-* 块链存储：块状链表
-
-**串的基本操作**:
-* StrAssign, StrCopy, StrEmpty, StrCompare
-* StrLength, Concat, SubString
-* Index（朴素/KMP）, Replace, StrInsert, StrDelete
 
 ### 1.2 数组与矩阵存储
 
