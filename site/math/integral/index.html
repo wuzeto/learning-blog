@@ -2680,66 +2680,81 @@
 
 
 
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    }
+  });
+</script>
+
 <h1 id="_1">微积分<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">函数极限定理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><strong>函数夹逼定理</strong><br />
 若在点 <span class="arithmatex">\( x_0 \)</span> 的某去心邻域内，
 [
-f<span class="arithmatex">\(x\)</span> \leq g<span class="arithmatex">\(x\)</span> \leq h<span class="arithmatex">\(x\)</span>
+f<span class="arithmatex">\(\x\)</span> \leq g<span class="arithmatex">\(\x\)</span> \leq h<span class="arithmatex">\(\x\)</span>
 ]
-且 <span class="arithmatex">\( \lim_{x \to x_0} f\(x\)</span> = \lim_{x \to x_0} h<span class="arithmatex">\(x\)</span> = L )，则
+且 <span class="arithmatex">\( \lim_{x \to x_0} f\(\x\)</span> = \lim_{x \to x_0} h<span class="arithmatex">\(\x\)</span> = L )，则
 [
-\lim_{x \to x_0} g<span class="arithmatex">\(x\)</span> = L
+\lim_{x \to x_0} g<span class="arithmatex">\(\x\)</span> = L
 ]</p>
 <p><strong>Heine 定理</strong><br />
 [
-\lim_{x \to x_0} f<span class="arithmatex">\(x\)</span> = L \iff \forall \{x_n\}, x_n \to x_0, x_n \neq x_0: \lim_{n \to \infty} f(x_n) = L
+\lim_{x \to x_0} f<span class="arithmatex">\(\x\)</span> = L \iff \forall \{x_n\}, x_n \to x_0, x_n \neq x_0: \lim_{n \to \infty} f(\x_n) = L
 ]</p>
 <p><strong>函数柯西准则</strong><br />
-<span class="arithmatex">\( \lim_{x \to x_0} f\(x\)</span> ) 存在的充要条件是：
+<span class="arithmatex">\( \lim_{x \to x_0} f\(\x\)</span> ) 存在的充要条件是：
 [
-\forall \varepsilon &gt; 0, \exists \delta &gt; 0, \forall x', x'' \in \mathring{U}(x_0, \delta): |f(x') - f(x'')| &lt; \varepsilon
+\forall \varepsilon &gt; 0, \exists \delta &gt; 0, \forall x', x'' \in \mathring{U}(\x_0, \delta): |f(\x') - f(\x'')| &lt; \varepsilon
 ]</p>
 <h2 id="_3">微分学定理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><strong>Leibniz 求导法则</strong><br />
-若 <span class="arithmatex">\( u\(x\)</span>, v<span class="arithmatex">\(x\)</span> ) 在 <span class="arithmatex">\( x \)</span> 处 <span class="arithmatex">\( n \)</span> 阶可导，则
+若 <span class="arithmatex">\( u\(\x\)</span>, v<span class="arithmatex">\(\x\)</span> ) 在 <span class="arithmatex">\( x \)</span> 处 <span class="arithmatex">\( n \)</span> 阶可导，则
 [
 (u \cdot v)^{(n)} = \sum_{k=0}^n \binom{n}{k} u^{(k)} v^{(n-k)}
 ]</p>
 <p><strong>Rolle 定理</strong><br />
-若 <span class="arithmatex">\( f\(x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上连续，在 <span class="arithmatex">\( (a, b) \)</span> 内可导，且 <span class="arithmatex">\( f(a) = f(b) \)</span>，则存在 <span class="arithmatex">\( \xi \in (a, b) \)</span> 使得
+若 <span class="arithmatex">\( f\(\x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上连续，在 <span class="arithmatex">\( (a, b) \)</span> 内可导，且 <span class="arithmatex">\( f(a) = f(b) \)</span>，则存在 <span class="arithmatex">\( \xi \in (a, b) \)</span> 使得
 [
 f'(\xi) = 0
 ]</p>
 <p><strong>Lagrange 中值定理</strong><br />
-若 <span class="arithmatex">\( f\(x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上连续，在 <span class="arithmatex">\( (a, b) \)</span> 内可导，则存在 <span class="arithmatex">\( \xi \in (a, b) \)</span> 使得
+若 <span class="arithmatex">\( f\(\x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上连续，在 <span class="arithmatex">\( (a, b) \)</span> 内可导，则存在 <span class="arithmatex">\( \xi \in (a, b) \)</span> 使得
 [
 f'(\xi) = \frac{f(b) - f(a)}{b - a}
 ]</p>
 <p><strong>Cauchy 中值定理</strong><br />
-若 <span class="arithmatex">\( f\(x\)</span>, g<span class="arithmatex">\(x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上连续，在 <span class="arithmatex">\( (a, b) \)</span> 内可导，且 <span class="arithmatex">\( g'\(x\)</span> \neq 0 )，则存在 <span class="arithmatex">\( \xi \in (a, b) \)</span> 使得
+若 <span class="arithmatex">\( f\(\x\)</span>, g<span class="arithmatex">\(\x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上连续，在 <span class="arithmatex">\( (a, b) \)</span> 内可导，且 <span class="arithmatex">\( g'\(\x\)</span> \neq 0 )，则存在 <span class="arithmatex">\( \xi \in (a, b) \)</span> 使得
 [
 \frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(\xi)}{g'(\xi)}
 ]</p>
 <p><strong>L'Hospital 法则</strong><br />
 若在 <span class="arithmatex">\( x_0 \)</span> 的某去心邻域内：</p>
 <ol>
-<li><span class="arithmatex">\( \lim_{x \to x_0} f\(x\)</span> = \lim_{x \to x_0} g<span class="arithmatex">\(x\)</span> = 0 )（或 <span class="arithmatex">\( \infty \)</span>）</li>
-<li><span class="arithmatex">\( f'\(x\)</span>, g'<span class="arithmatex">\(x\)</span> ) 存在且 <span class="arithmatex">\( g'\(x\)</span> \neq 0 )</li>
-<li><span class="arithmatex">\( \lim_{x \to x_0} \frac{f'\(x\)</span>}{g'<span class="arithmatex">\(x\)</span>} = L )（有限或 <span class="arithmatex">\( \pm\infty \)</span>）</li>
+<li><span class="arithmatex">\( \lim_{x \to x_0} f\(\x\)</span> = \lim_{x \to x_0} g<span class="arithmatex">\(\x\)</span> = 0 )（或 <span class="arithmatex">\( \infty \)</span>）</li>
+<li><span class="arithmatex">\( f'\(\x\)</span>, g'<span class="arithmatex">\(\x\)</span> ) 存在且 <span class="arithmatex">\( g'\(\x\)</span> \neq 0 )</li>
+<li><span class="arithmatex">\( \lim_{x \to x_0} \frac{f'\(\x\)</span>}{g'<span class="arithmatex">\(\x\)</span>} = L )（有限或 <span class="arithmatex">\( \pm\infty \)</span>）</li>
 </ol>
 <p>则
 [
-\lim_{x \to x_0} \frac{f<span class="arithmatex">\(x\)</span>}{g<span class="arithmatex">\(x\)</span>} = L
+\lim_{x \to x_0} \frac{f<span class="arithmatex">\(\x\)</span>}{g<span class="arithmatex">\(\x\)</span>} = L
 ]</p>
 <p><strong>Taylor 中值定理</strong><br />
-若 <span class="arithmatex">\( f\(x\)</span> ) 在 <span class="arithmatex">\( x_0 \)</span> 处有 <span class="arithmatex">\( n \)</span> 阶导数，则
+若 <span class="arithmatex">\( f\(\x\)</span> ) 在 <span class="arithmatex">\( x_0 \)</span> 处有 <span class="arithmatex">\( n \)</span> 阶导数，则
 [
-f<span class="arithmatex">\(x\)</span> = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + \cdots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n + R_n<span class="arithmatex">\(x\)</span>
+f<span class="arithmatex">\(\x\)</span> = f(\x_0) + f'(\x_0)(\x - x_0) + \frac{f''(\x_0)}{2!}(\x - x_0)^2 + \cdots + \frac{f^{(n)}(\x_0)}{n!}(\x - x_0)^n + R_n<span class="arithmatex">\(\x\)</span>
 ]
-其中余项 <span class="arithmatex">\( R_n\(x\)</span> ) 可表示为：
-*   Peano 余项：<span class="arithmatex">\( R_n\(x\)</span> = o((x - x_0)^n) )
-*   Lagrange 余项：<span class="arithmatex">\( R_n\(x\)</span> = \frac{f^{(n+1)}(\xi)}{(n+1)!}(x - x_0)^{n+1}, \quad \xi \in (x_0, x) )</p>
+其中余项 <span class="arithmatex">\( R_n\(\x\)</span> ) 可表示为：
+*   Peano 余项：<span class="arithmatex">\( R_n\(\x\)</span> = o((\x - x_0)^n) )
+*   Lagrange 余项：<span class="arithmatex">\( R_n\(\x\)</span> = \frac{f^{(n+1)}(\xi)}{(n+1)!}(\x - x_0)^{n+1}, \quad \xi \in (\x_0, x) )</p>
 <h2 id="_4">重要常数与极限<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><strong>Euler 常数</strong><br />
 [
@@ -2748,9 +2763,9 @@ f<span class="arithmatex">\(x\)</span> = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x
 <h2 id="_5">积分学定理<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="_6">积分方法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p><strong>第一类换元法（凑微分）</strong><br />
-若 <span class="arithmatex">\( \int f(u) \, du = F(u) + C \)</span>，且 <span class="arithmatex">\( u = \varphi\(x\)</span> ) 可导，则
+若 <span class="arithmatex">\( \int f(u) \, du = F(u) + C \)</span>，且 <span class="arithmatex">\( u = \varphi\(\x\)</span> ) 可导，则
 [
-\int f[\varphi<span class="arithmatex">\(x\)</span>] \varphi'<span class="arithmatex">\(x\)</span> \, dx = F[\varphi<span class="arithmatex">\(x\)</span>] + C
+\int f[\varphi<span class="arithmatex">\(\x\)</span>] \varphi'<span class="arithmatex">\(\x\)</span> \, dx = F[\varphi<span class="arithmatex">\(\x\)</span>] + C
 ]</p>
 <p><strong>第二类换元法</strong><br />
 设 <span class="arithmatex">\( x = \psi(t) \)</span> 单调可导且 <span class="arithmatex">\( \psi'(t) \neq 0 \)</span>，若
@@ -2759,12 +2774,12 @@ f<span class="arithmatex">\(x\)</span> = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x
 ]
 则
 [
-\int f<span class="arithmatex">\(x\)</span> \, dx = G[\psi^{-1}<span class="arithmatex">\(x\)</span>] + C
+\int f<span class="arithmatex">\(\x\)</span> \, dx = G[\psi^{-1}<span class="arithmatex">\(\x\)</span>] + C
 ]</p>
 <p><strong>分部积分法</strong><br />
-若 <span class="arithmatex">\( u\(x\)</span>, v<span class="arithmatex">\(x\)</span> ) 有连续导数，则
+若 <span class="arithmatex">\( u\(\x\)</span>, v<span class="arithmatex">\(\x\)</span> ) 有连续导数，则
 [
-\int u<span class="arithmatex">\(x\)</span> v'<span class="arithmatex">\(x\)</span> \, dx = u<span class="arithmatex">\(x\)</span> v<span class="arithmatex">\(x\)</span> - \int u'<span class="arithmatex">\(x\)</span> v<span class="arithmatex">\(x\)</span> \, dx
+\int u<span class="arithmatex">\(\x\)</span> v'<span class="arithmatex">\(\x\)</span> \, dx = u<span class="arithmatex">\(\x\)</span> v<span class="arithmatex">\(\x\)</span> - \int u'<span class="arithmatex">\(\x\)</span> v<span class="arithmatex">\(\x\)</span> \, dx
 ]
 或
 [
@@ -2772,79 +2787,79 @@ f<span class="arithmatex">\(x\)</span> = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x
 ]</p>
 <h3 id="euler">Euler 变换与三角代换<a class="headerlink" href="#euler" title="Permanent link">&para;</a></h3>
 <p><strong>Euler 变换</strong><br />
-对于积分 <span class="arithmatex">\( \int R(x, \sqrt{ax^2 + bx + c}) \, dx \)</span>：
+对于积分 <span class="arithmatex">\( \int R(\x, \sqrt{ax^2 + bx + c}) \, dx \)</span>：
 *   第一类：<span class="arithmatex">\( a &gt; 0 \)</span> 时，令 <span class="arithmatex">\( \sqrt{ax^2 + bx + c} = t - \sqrt{a}x \)</span>
 *   第二类：<span class="arithmatex">\( c &gt; 0 \)</span> 时，令 <span class="arithmatex">\( \sqrt{ax^2 + bx + c} = tx + \sqrt{c} \)</span>
-*   第三类：<span class="arithmatex">\( b^2 - 4ac &gt; 0 \)</span> 时，令 <span class="arithmatex">\( \sqrt{ax^2 + bx + c} = t(x - \alpha) \)</span></p>
+*   第三类：<span class="arithmatex">\( b^2 - 4ac &gt; 0 \)</span> 时，令 <span class="arithmatex">\( \sqrt{ax^2 + bx + c} = t(\x - \alpha) \)</span></p>
 <p><strong>三角代换</strong><br />
 *   <span class="arithmatex">\( \sqrt{a^2 - x^2} \)</span>：令 <span class="arithmatex">\( x = a \sin t \)</span> 或 <span class="arithmatex">\( x = a \cos t \)</span>
 *   <span class="arithmatex">\( \sqrt{a^2 + x^2} \)</span>：令 <span class="arithmatex">\( x = a \tan t \)</span> 或 <span class="arithmatex">\( x = a \sinh t \)</span>
 *   <span class="arithmatex">\( \sqrt{x^2 - a^2} \)</span>：令 <span class="arithmatex">\( x = a \sec t \)</span> 或 <span class="arithmatex">\( x = a \cosh t \)</span></p>
 <p><strong>无理根式代换</strong><br />
-*   <span class="arithmatex">\( \int R\left(x, \sqrt[n]{\frac{ax+b}{cx+d}}\right) dx \)</span>：令 <span class="arithmatex">\( t = \sqrt[n]{\frac{ax+b}{cx+d}} \)</span>
-*   <span class="arithmatex">\( \int R(x, \sqrt{ax+b}, \sqrt{cx+d}) dx \)</span>：令 <span class="arithmatex">\( t = \sqrt{ax+b} \)</span> 或 <span class="arithmatex">\( t = \sqrt{cx+d} \)</span></p>
+*   <span class="arithmatex">\( \int R\left(\x, \sqrt[n]{\frac{ax+b}{cx+d}}\right) dx \)</span>：令 <span class="arithmatex">\( t = \sqrt[n]{\frac{ax+b}{cx+d}} \)</span>
+*   <span class="arithmatex">\( \int R(\x, \sqrt{ax+b}, \sqrt{cx+d}) dx \)</span>：令 <span class="arithmatex">\( t = \sqrt{ax+b} \)</span> 或 <span class="arithmatex">\( t = \sqrt{cx+d} \)</span></p>
 <h3 id="_7">积分理论基础<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p><strong>Riemann 积分</strong><br />
-函数 <span class="arithmatex">\( f\(x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上的 Riemann 积分为：
+函数 <span class="arithmatex">\( f\(\x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上的 Riemann 积分为：
 [
-\int_a^b f<span class="arithmatex">\(x\)</span> \, dx = \lim_{|P| \to 0} \sum_{i=1}^n f(\xi_i) \Delta x_i
+\int_a^b f<span class="arithmatex">\(\x\)</span> \, dx = \lim_{|P| \to 0} \sum_{i=1}^n f(\xi_i) \Delta x_i
 ]
 其中 <span class="arithmatex">\( P: a = x_0 &lt; x_1 &lt; \cdots &lt; x_n = b \)</span> 是分割，<span class="arithmatex">\( \|P\| = \max \Delta x_i \)</span>。</p>
 <p><strong>Darboux 定理</strong><br />
-有界函数 <span class="arithmatex">\( f\(x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上 Riemann 可积的充要条件是：
+有界函数 <span class="arithmatex">\( f\(\x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上 Riemann 可积的充要条件是：
 [
 \lim_{|P| \to 0} (S(P) - s(P)) = 0
 ]
 其中 <span class="arithmatex">\( S(P) \)</span> 和 <span class="arithmatex">\( s(P) \)</span> 分别是 Darboux 大和与小和。</p>
 <p><strong>微积分基本定理</strong><br />
-若 <span class="arithmatex">\( f\(x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上连续，则
+若 <span class="arithmatex">\( f\(\x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上连续，则
 [
-\frac{d}{dx} \int_a^x f(t) \, dt = f<span class="arithmatex">\(x\)</span>
+\frac{d}{dx} \int_a^x f(t) \, dt = f<span class="arithmatex">\(\x\)</span>
 ]</p>
 <p><strong>Newton-Leibniz 公式</strong><br />
-若 <span class="arithmatex">\( F\(x\)</span> ) 是 <span class="arithmatex">\( f\(x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上的原函数，则
+若 <span class="arithmatex">\( F\(\x\)</span> ) 是 <span class="arithmatex">\( f\(\x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上的原函数，则
 [
-\int_a^b f<span class="arithmatex">\(x\)</span> \, dx = F(b) - F(a)
+\int_a^b f<span class="arithmatex">\(\x\)</span> \, dx = F(b) - F(a)
 ]</p>
 <h3 id="_8">积分中值定理<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p><strong>积分第一中值定理</strong><br />
-若 <span class="arithmatex">\( f\(x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上连续，则存在 <span class="arithmatex">\( \xi \in [a, b] \)</span> 使得
+若 <span class="arithmatex">\( f\(\x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上连续，则存在 <span class="arithmatex">\( \xi \in [a, b] \)</span> 使得
 [
-\int_a^b f<span class="arithmatex">\(x\)</span> \, dx = f(\xi)(b - a)
+\int_a^b f<span class="arithmatex">\(\x\)</span> \, dx = f(\xi)(b - a)
 ]</p>
 <p><strong>积分第二中值定理</strong><br />
-若 <span class="arithmatex">\( f\(x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上可积，<span class="arithmatex">\( g\(x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上单调，则存在 <span class="arithmatex">\( \xi \in [a, b] \)</span> 使得
+若 <span class="arithmatex">\( f\(\x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上可积，<span class="arithmatex">\( g\(\x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上单调，则存在 <span class="arithmatex">\( \xi \in [a, b] \)</span> 使得
 [
-\int_a^b f<span class="arithmatex">\(x\)</span> g<span class="arithmatex">\(x\)</span> \, dx = g(a) \int_a^\xi f<span class="arithmatex">\(x\)</span> \, dx + g(b) \int_\xi^b f<span class="arithmatex">\(x\)</span> \, dx
+\int_a^b f<span class="arithmatex">\(\x\)</span> g<span class="arithmatex">\(\x\)</span> \, dx = g(a) \int_a^\xi f<span class="arithmatex">\(\x\)</span> \, dx + g(b) \int_\xi^b f<span class="arithmatex">\(\x\)</span> \, dx
 ]</p>
 <p><strong>积分第三中值定理</strong><br />
-若 <span class="arithmatex">\( f\(x\)</span>, g<span class="arithmatex">\(x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上连续，<span class="arithmatex">\( g\(x\)</span> ) 不变号，则存在 <span class="arithmatex">\( \xi \in [a, b] \)</span> 使得
+若 <span class="arithmatex">\( f\(\x\)</span>, g<span class="arithmatex">\(\x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上连续，<span class="arithmatex">\( g\(\x\)</span> ) 不变号，则存在 <span class="arithmatex">\( \xi \in [a, b] \)</span> 使得
 [
-\int_a^b f<span class="arithmatex">\(x\)</span> g<span class="arithmatex">\(x\)</span> \, dx = f(\xi) \int_a^b g<span class="arithmatex">\(x\)</span> \, dx
+\int_a^b f<span class="arithmatex">\(\x\)</span> g<span class="arithmatex">\(\x\)</span> \, dx = f(\xi) \int_a^b g<span class="arithmatex">\(\x\)</span> \, dx
 ]</p>
 <p><strong>Bonnet 定理</strong><br />
-若 <span class="arithmatex">\( f\(x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上可积，<span class="arithmatex">\( g\(x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上非负递减，则存在 <span class="arithmatex">\( \xi \in [a, b] \)</span> 使得
+若 <span class="arithmatex">\( f\(\x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上可积，<span class="arithmatex">\( g\(\x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上非负递减，则存在 <span class="arithmatex">\( \xi \in [a, b] \)</span> 使得
 [
-\int_a^b f<span class="arithmatex">\(x\)</span> g<span class="arithmatex">\(x\)</span> \, dx = g(a) \int_a^\xi f<span class="arithmatex">\(x\)</span> \, dx
+\int_a^b f<span class="arithmatex">\(\x\)</span> g<span class="arithmatex">\(\x\)</span> \, dx = g(a) \int_a^\xi f<span class="arithmatex">\(\x\)</span> \, dx
 ]</p>
 <p><strong>Lebesgue 定理</strong><br />
-有界函数 <span class="arithmatex">\( f\(x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上 Riemann 可积的充要条件是 <span class="arithmatex">\( f\(x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上几乎处处连续。</p>
+有界函数 <span class="arithmatex">\( f\(\x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上 Riemann 可积的充要条件是 <span class="arithmatex">\( f\(\x\)</span> ) 在 <span class="arithmatex">\( [a, b] \)</span> 上几乎处处连续。</p>
 <h2 id="_9">广义积分<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p><strong>广义积分 Cauchy 判别法</strong><br />
-广义积分 <span class="arithmatex">\( \int_a^{+\infty} f\(x\)</span> \, dx ) 收敛的充要条件是：
+广义积分 <span class="arithmatex">\( \int_a^{+\infty} f\(\x\)</span> \, dx ) 收敛的充要条件是：
 [
-\forall \varepsilon &gt; 0, \exists A &gt; a, \forall A_1, A_2 &gt; A: \left| \int_{A_1}^{A_2} f<span class="arithmatex">\(x\)</span> \, dx \right| &lt; \varepsilon
+\forall \varepsilon &gt; 0, \exists A &gt; a, \forall A_1, A_2 &gt; A: \left| \int_{A_1}^{A_2} f<span class="arithmatex">\(\x\)</span> \, dx \right| &lt; \varepsilon
 ]</p>
 <p><strong>Dirichlet 判别法</strong><br />
 若：
-1.  <span class="arithmatex">\( F(A) = \int_a^A f\(x\)</span> \, dx ) 在 <span class="arithmatex">\( [a, +\infty) \)</span> 上有界
-2.  <span class="arithmatex">\( g\(x\)</span> ) 在 <span class="arithmatex">\( [a, +\infty) \)</span> 上单调且 <span class="arithmatex">\( \lim_{x \to +\infty} g\(x\)</span> = 0 )
-则 <span class="arithmatex">\( \int_a^{+\infty} f\(x\)</span> g<span class="arithmatex">\(x\)</span> \, dx ) 收敛。</p>
+1.  <span class="arithmatex">\( F(A) = \int_a^A f\(\x\)</span> \, dx ) 在 <span class="arithmatex">\( [a, +\infty) \)</span> 上有界
+2.  <span class="arithmatex">\( g\(\x\)</span> ) 在 <span class="arithmatex">\( [a, +\infty) \)</span> 上单调且 <span class="arithmatex">\( \lim_{x \to +\infty} g\(\x\)</span> = 0 )
+则 <span class="arithmatex">\( \int_a^{+\infty} f\(\x\)</span> g<span class="arithmatex">\(\x\)</span> \, dx ) 收敛。</p>
 <p><strong>Abel 判别法</strong><br />
 若：
-1.  <span class="arithmatex">\( \int_a^{+\infty} f\(x\)</span> \, dx ) 收敛
-2.  <span class="arithmatex">\( g\(x\)</span> ) 在 <span class="arithmatex">\( [a, +\infty) \)</span> 上单调有界
-则 <span class="arithmatex">\( \int_a^{+\infty} f\(x\)</span> g<span class="arithmatex">\(x\)</span> \, dx ) 收敛。</p>
+1.  <span class="arithmatex">\( \int_a^{+\infty} f\(\x\)</span> \, dx ) 收敛
+2.  <span class="arithmatex">\( g\(\x\)</span> ) 在 <span class="arithmatex">\( [a, +\infty) \)</span> 上单调有界
+则 <span class="arithmatex">\( \int_a^{+\infty} f\(\x\)</span> g<span class="arithmatex">\(\x\)</span> \, dx ) 收敛。</p>
 <h2 id="euler_1">Euler 积分<a class="headerlink" href="#euler_1" title="Permanent link">&para;</a></h2>
 <p><strong>Gamma 函数</strong><br />
 [
@@ -2891,16 +2906,16 @@ B(p, q) = \frac{\Gamma(p) \Gamma(q)}{\Gamma(p+q)}
 <p><strong>可分离变量方程</strong><br />
 形如：
 [
-\frac{dy}{dx} = f<span class="arithmatex">\(x\)</span>g(y)
+\frac{dy}{dx} = f<span class="arithmatex">\(\x\)</span>g(y)
 ]
 的方程称为可分离变量微分方程。</p>
 <p><strong>分离变量法</strong><br />
 [
-\frac{dy}{g(y)} = f<span class="arithmatex">\(x\)</span>dx \quad (g(y) \neq 0)
+\frac{dy}{g(y)} = f<span class="arithmatex">\(\x\)</span>dx \quad (g(y) \neq 0)
 ]
 两边积分得：
 [
-\int \frac{dy}{g(y)} = \int f<span class="arithmatex">\(x\)</span>dx + C
+\int \frac{dy}{g(y)} = \int f<span class="arithmatex">\(\x\)</span>dx + C
 ]</p>
 <blockquote>
 <p><strong>示例：</strong><br />
@@ -2936,24 +2951,24 @@ u + x\frac{du}{dx} = u + \tan u \Rightarrow \frac{du}{\tan u} = \frac{dx}{x}
 <p><strong>一阶线性方程</strong><br />
 形如：
 [
-\frac{dy}{dx} + P<span class="arithmatex">\(x\)</span>y = Q<span class="arithmatex">\(x\)</span>
+\frac{dy}{dx} + P<span class="arithmatex">\(\x\)</span>y = Q<span class="arithmatex">\(\x\)</span>
 ]
 的方程称为一阶线性微分方程。</p>
 <p><strong>常数变易法</strong><br />
 通解公式：
 [
-y = e^{-\int P<span class="arithmatex">\(x\)</span>dx} \left[ \int Q<span class="arithmatex">\(x\)</span>e^{\int P<span class="arithmatex">\(x\)</span>dx}dx + C \right]
+y = e^{-\int P<span class="arithmatex">\(\x\)</span>dx} \left[ \int Q<span class="arithmatex">\(\x\)</span>e^{\int P<span class="arithmatex">\(\x\)</span>dx}dx + C \right]
 ]</p>
 <p><strong>通解结构</strong><br />
-齐次方程 <span class="arithmatex">\( \frac{dy}{dx} + P\(x\)</span>y = 0 ) 的通解为：
+齐次方程 <span class="arithmatex">\( \frac{dy}{dx} + P\(\x\)</span>y = 0 ) 的通解为：
 [
-y = Ce^{-\int P<span class="arithmatex">\(x\)</span>dx}
+y = Ce^{-\int P<span class="arithmatex">\(\x\)</span>dx}
 ]
 非齐次方程的通解为齐次通解加特解。</p>
 <blockquote>
 <p><strong>示例：</strong><br />
 求解 <span class="arithmatex">\( \frac{dy}{dx} + 2xy = xe^{-x^2} \)</span><br />
-解：<span class="arithmatex">\( P\(x\)</span> = 2x )，积分因子为：
+解：<span class="arithmatex">\( P\(\x\)</span> = 2x )，积分因子为：
 [
 e^{\int 2xdx} = e^{x^2}
 ]
@@ -2966,7 +2981,7 @@ y = e^{-x^2} \left[ \int xe^{-x^2} \cdot e^{x^2} dx + C \right] = e^{-x^2} \left
 <p><strong>Bernoulli 方程</strong><br />
 形如：
 [
-\frac{dy}{dx} + P<span class="arithmatex">\(x\)</span>y = Q<span class="arithmatex">\(x\)</span>y^n \quad (n \neq 0, 1)
+\frac{dy}{dx} + P<span class="arithmatex">\(\x\)</span>y = Q<span class="arithmatex">\(\x\)</span>y^n \quad (n \neq 0, 1)
 ]
 的方程称为 Bernoulli 方程。</p>
 <p><strong>变量代换法</strong><br />
@@ -2976,7 +2991,7 @@ y = e^{-x^2} \left[ \int xe^{-x^2} \cdot e^{x^2} dx + C \right] = e^{-x^2} \left
 ]
 代入原方程得：
 [
-\frac{dz}{dx} + (1-n)P<span class="arithmatex">\(x\)</span>z = (1-n)Q<span class="arithmatex">\(x\)</span>
+\frac{dz}{dx} + (1-n)P<span class="arithmatex">\(\x\)</span>z = (1-n)Q<span class="arithmatex">\(\x\)</span>
 ]
 化为一阶线性方程。</p>
 <blockquote>
@@ -2990,15 +3005,15 @@ y = e^{-x^2} \left[ \int xe^{-x^2} \cdot e^{x^2} dx + C \right] = e^{-x^2} \left
 </blockquote>
 <h2 id="_14">高阶微分方程<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
 <h3 id="_15">可降阶的高阶方程<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
-<p><strong>类型一：<span class="arithmatex">\( y^{(n)} = f\(x\)</span> )</strong><br />
+<p><strong>类型一：<span class="arithmatex">\( y^{(n)} = f\(\x\)</span> )</strong><br />
 连续积分 <span class="arithmatex">\( n \)</span> 次：
 [
-y = \underbrace{\int \cdots \int}<em n-1="n-1">{n\text{次}} f<span class="arithmatex">\(x\)</span> dx \cdots dx + C_1x^{n-1} + \cdots + C</em>x + C_n
+y = \underbrace{\int \cdots \int}<em n-1="n-1">{n\text{次}} f<span class="arithmatex">\(\x\)</span> dx \cdots dx + C_1x^{n-1} + \cdots + C</em>x + C_n
 ]</p>
-<p><strong>类型二：<span class="arithmatex">\( y'' = f(x, y') \)</span></strong><br />
+<p><strong>类型二：<span class="arithmatex">\( y'' = f(\x, y') \)</span></strong><br />
 令 <span class="arithmatex">\( p = y' \)</span>，则 <span class="arithmatex">\( y'' = \frac{dp}{dx} \)</span>，方程化为：
 [
-\frac{dp}{dx} = f(x, p)
+\frac{dp}{dx} = f(\x, p)
 ]</p>
 <p><strong>类型三：<span class="arithmatex">\( y'' = f(y, y') \)</span></strong><br />
 令 <span class="arithmatex">\( p = y' \)</span>，则 <span class="arithmatex">\( y'' = p\frac{dp}{dy} \)</span>，方程化为：
@@ -3010,32 +3025,32 @@ p\frac{dp}{dy} = f(y, p)
 <p><strong>二阶线性方程</strong><br />
 形如：
 [
-y'' + P<span class="arithmatex">\(x\)</span>y' + Q<span class="arithmatex">\(x\)</span>y = f<span class="arithmatex">\(x\)</span>
+y'' + P<span class="arithmatex">\(\x\)</span>y' + Q<span class="arithmatex">\(\x\)</span>y = f<span class="arithmatex">\(\x\)</span>
 ]
 的方程称为二阶线性微分方程。</p>
 <p><strong>解的存在唯一性</strong><br />
-若 <span class="arithmatex">\( P\(x\)</span>, Q<span class="arithmatex">\(x\)</span>, f<span class="arithmatex">\(x\)</span> ) 在区间 <span class="arithmatex">\( I \)</span> 上连续，则对于任意 <span class="arithmatex">\( x_0 \in I \)</span> 和任意初始值 <span class="arithmatex">\( y_0, y_0' \)</span>，方程存在唯一解。</p>
+若 <span class="arithmatex">\( P\(\x\)</span>, Q<span class="arithmatex">\(\x\)</span>, f<span class="arithmatex">\(\x\)</span> ) 在区间 <span class="arithmatex">\( I \)</span> 上连续，则对于任意 <span class="arithmatex">\( x_0 \in I \)</span> 和任意初始值 <span class="arithmatex">\( y_0, y_0' \)</span>，方程存在唯一解。</p>
 <p><strong>叠加原理</strong><br />
 若 <span class="arithmatex">\( y_1, y_2 \)</span> 是齐次方程的解，则 <span class="arithmatex">\( C_1y_1 + C_2y_2 \)</span> 也是齐次方程的解。</p>
 <h3 id="wronski-liouville">Wronski 行列式与 Liouville 公式<a class="headerlink" href="#wronski-liouville" title="Permanent link">&para;</a></h3>
 <p><strong>Wronski 行列式</strong><br />
-对于函数组 <span class="arithmatex">\( y_1\(x\)</span>, y_2<span class="arithmatex">\(x\)</span> )，定义 Wronski 行列式为：
+对于函数组 <span class="arithmatex">\( y_1\(\x\)</span>, y_2<span class="arithmatex">\(\x\)</span> )，定义 Wronski 行列式为：
 [
-W<span class="arithmatex">\(x\)</span> = W[y_1, y_2]<span class="arithmatex">\(x\)</span> = 
+W<span class="arithmatex">\(\x\)</span> = W[y_1, y_2]<span class="arithmatex">\(\x\)</span> = 
 \begin{vmatrix}
-y_1<span class="arithmatex">\(x\)</span> &amp; y_2<span class="arithmatex">\(x\)</span> \
-y_1'<span class="arithmatex">\(x\)</span> &amp; y_2'<span class="arithmatex">\(x\)</span>
+y_1<span class="arithmatex">\(\x\)</span> &amp; y_2<span class="arithmatex">\(\x\)</span> \
+y_1'<span class="arithmatex">\(\x\)</span> &amp; y_2'<span class="arithmatex">\(\x\)</span>
 \end{vmatrix}
-= y_1<span class="arithmatex">\(x\)</span>y_2'<span class="arithmatex">\(x\)</span> - y_2<span class="arithmatex">\(x\)</span>y_1'<span class="arithmatex">\(x\)</span>
+= y_1<span class="arithmatex">\(\x\)</span>y_2'<span class="arithmatex">\(\x\)</span> - y_2<span class="arithmatex">\(\x\)</span>y_1'<span class="arithmatex">\(\x\)</span>
 ]</p>
 <p><strong>线性相关判别</strong><br />
-若 <span class="arithmatex">\( y_1, y_2 \)</span> 在区间 <span class="arithmatex">\( I \)</span> 上线性相关，则 <span class="arithmatex">\( W\(x\)</span> \equiv 0 )；若 <span class="arithmatex">\( W\(x\)</span> \not\equiv 0 )，则线性无关。</p>
+若 <span class="arithmatex">\( y_1, y_2 \)</span> 在区间 <span class="arithmatex">\( I \)</span> 上线性相关，则 <span class="arithmatex">\( W\(\x\)</span> \equiv 0 )；若 <span class="arithmatex">\( W\(\x\)</span> \not\equiv 0 )，则线性无关。</p>
 <p><strong>Liouville 公式</strong><br />
-对于齐次方程 <span class="arithmatex">\( y'' + P\(x\)</span>y' + Q<span class="arithmatex">\(x\)</span>y = 0 )，若 <span class="arithmatex">\( y_1, y_2 \)</span> 是解，则：
+对于齐次方程 <span class="arithmatex">\( y'' + P\(\x\)</span>y' + Q<span class="arithmatex">\(\x\)</span>y = 0 )，若 <span class="arithmatex">\( y_1, y_2 \)</span> 是解，则：
 [
-W<span class="arithmatex">\(x\)</span> = W(x_0)e^{-\int_{x_0}^x P(t)dt}
+W<span class="arithmatex">\(\x\)</span> = W(\x_0)e^{-\int_{x_0}^x P(t)dt}
 ]
-特别地，若 <span class="arithmatex">\( W(x_0) \neq 0 \)</span>，则 <span class="arithmatex">\( W\(x\)</span> \neq 0 ) 对所有 <span class="arithmatex">\( x \)</span> 成立。</p>
+特别地，若 <span class="arithmatex">\( W(\x_0) \neq 0 \)</span>，则 <span class="arithmatex">\( W\(\x\)</span> \neq 0 ) 对所有 <span class="arithmatex">\( x \)</span> 成立。</p>
 <h3 id="_18">常系数齐次方程<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <p><strong>特征方程法</strong><br />
 对于方程 <span class="arithmatex">\( y'' + py' + qy = 0 \)</span>，特征方程为：
@@ -3047,19 +3062,19 @@ r^2 + pr + q = 0
 *   共轭复根 <span class="arithmatex">\( r = \alpha \pm i\beta \)</span>：<span class="arithmatex">\( y = e^{\alpha x}(C_1\cos\beta x + C_2\sin\beta x) \)</span></p>
 <h3 id="_19">常系数非齐次方程<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
 <p><strong>待定系数法</strong><br />
-对于 <span class="arithmatex">\( y'' + py' + qy = f\(x\)</span> )：
-*   <span class="arithmatex">\( f\(x\)</span> = P_n<span class="arithmatex">\(x\)</span>e^{\alpha x} )：特解形式 <span class="arithmatex">\( y^* = x^kQ_n\(x\)</span>e^{\alpha x} )，其中 <span class="arithmatex">\( k \)</span> 是 <span class="arithmatex">\( \alpha \)</span> 作为特征根的重数
-*   <span class="arithmatex">\( f\(x\)</span> = e^{\alpha x}[P_m<span class="arithmatex">\(x\)</span>\cos\beta x + P_n<span class="arithmatex">\(x\)</span>\sin\beta x] )：特解形式 <span class="arithmatex">\( y^* = x^ke^{\alpha x}[R_l\(x\)</span>\cos\beta x + S_l<span class="arithmatex">\(x\)</span>\sin\beta x] )，其中 <span class="arithmatex">\( l = \max(m,n) \)</span>，<span class="arithmatex">\( k \)</span> 是 <span class="arithmatex">\( \alpha + i\beta \)</span> 作为特征根的重数</p>
+对于 <span class="arithmatex">\( y'' + py' + qy = f\(\x\)</span> )：
+*   <span class="arithmatex">\( f\(\x\)</span> = P_n<span class="arithmatex">\(\x\)</span>e^{\alpha x} )：特解形式 <span class="arithmatex">\( y^* = x^kQ_n\(\x\)</span>e^{\alpha x} )，其中 <span class="arithmatex">\( k \)</span> 是 <span class="arithmatex">\( \alpha \)</span> 作为特征根的重数
+*   <span class="arithmatex">\( f\(\x\)</span> = e^{\alpha x}[P_m<span class="arithmatex">\(\x\)</span>\cos\beta x + P_n<span class="arithmatex">\(\x\)</span>\sin\beta x] )：特解形式 <span class="arithmatex">\( y^* = x^ke^{\alpha x}[R_l\(\x\)</span>\cos\beta x + S_l<span class="arithmatex">\(\x\)</span>\sin\beta x] )，其中 <span class="arithmatex">\( l = \max(m,n) \)</span>，<span class="arithmatex">\( k \)</span> 是 <span class="arithmatex">\( \alpha + i\beta \)</span> 作为特征根的重数</p>
 <p><strong>常数变易法</strong><br />
 若齐次通解为 <span class="arithmatex">\( y = C_1y_1 + C_2y_2 \)</span>，则设特解为：
 [
-y^* = v_1<span class="arithmatex">\(x\)</span>y_1 + v_2<span class="arithmatex">\(x\)</span>y_2
+y^* = v_1<span class="arithmatex">\(\x\)</span>y_1 + v_2<span class="arithmatex">\(\x\)</span>y_2
 ]
 其中 <span class="arithmatex">\( v_1', v_2' \)</span> 满足：
 [
 \begin{cases}
 v_1'y_1 + v_2'y_2 = 0 \
-v_1'y_1' + v_2'y_2' = f<span class="arithmatex">\(x\)</span>
+v_1'y_1' + v_2'y_2' = f<span class="arithmatex">\(\x\)</span>
 \end{cases}
 ]
 解得：
@@ -3070,7 +3085,7 @@ v_1' = -\frac{y_2f}{W}, \quad v_2' = \frac{y_1f}{W}
 <p><strong>Euler 方程</strong><br />
 形如：
 [
-x^2y'' + pxy' + qy = f<span class="arithmatex">\(x\)</span> \quad (x &gt; 0)
+x^2y'' + pxy' + qy = f<span class="arithmatex">\(\x\)</span> \quad (\x &gt; 0)
 ]
 的方程称为 Euler 方程。</p>
 <p><strong>变量代换法</strong><br />
@@ -3131,7 +3146,7 @@ r(r-1) + pr + q = 0 \Rightarrow r^2 + (p-1)r + q = 0
 根据 <span class="arithmatex">\( \mathbf{F}(t) \)</span> 的形式设定特解形式。</p>
 <h3 id="_24">可化为方程组的二阶方程<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
 <p><strong>一阶化方法</strong><br />
-对于 <span class="arithmatex">\( y'' + py' + qy = f\(x\)</span> )，令：
+对于 <span class="arithmatex">\( y'' + py' + qy = f\(\x\)</span> )，令：
 [
 y_1 = y, \quad y_2 = y'
 ]
@@ -3139,7 +3154,7 @@ y_1 = y, \quad y_2 = y'
 [
 \begin{cases}
 y_1' = y_2 \
-y_2' = -qy_1 - py_2 + f<span class="arithmatex">\(x\)</span>
+y_2' = -qy_1 - py_2 + f<span class="arithmatex">\(\x\)</span>
 \end{cases}
 ]
 即：
@@ -3150,7 +3165,7 @@ y_2' = -qy_1 - py_2 + f<span class="arithmatex">\(x\)</span>
 -q &amp; -p
 \end{bmatrix}
 \begin{bmatrix} y_1 \ y_2 \end{bmatrix} + 
-\begin{bmatrix} 0 \ f<span class="arithmatex">\(x\)</span> \end{bmatrix}
+\begin{bmatrix} 0 \ f<span class="arithmatex">\(\x\)</span> \end{bmatrix}
 ]</p>
 <h2 id="_25">多元函数极限与连续<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h2>
 <h3 id="cantor">Cantor 定理<a class="headerlink" href="#cantor" title="Permanent link">&para;</a></h3>
@@ -3196,7 +3211,7 @@ g(\vv{x}) \leq f(\vv{x}) \leq h(\vv{x})
 ]} \to \vv{x}_0} f(\vv{x</p>
 <blockquote>
 <p><strong>示例：</strong><br />
-证明 <span class="arithmatex">\( \lim_{(x,y) \to (0,0)} \frac{x^2y}{x^2 + y^2} = 0 \)</span><br />
+证明 <span class="arithmatex">\( \lim_{(\x,y) \to (0,0)} \frac{x^2y}{x^2 + y^2} = 0 \)</span><br />
 解：由于 <span class="arithmatex">\( |x| \leq \sqrt{x^2 + y^2} \)</span>，<span class="arithmatex">\( |y| \leq \sqrt{x^2 + y^2} \)</span>，所以
 [
 0 \leq \left|\frac{x^2y}{x^2 + y^2}\right| \leq |y| \leq \sqrt{x^2 + y^2}
@@ -3236,7 +3251,7 @@ f(\vv{a} + \vv{h}) = f(\vv{a}) + \nabla f(\vv{a})^T \vv{h} + \frac{1}{2} \vv{h}^
 ]
 其中 <span class="arithmatex">\( H_f(\vv{a}) \)</span> 是 Hessian 矩阵。</p>
 <p><strong>示例</strong><br />
-二元函数 <span class="arithmatex">\( f(x,y) \)</span> 在 <span class="arithmatex">\( (a,b) \)</span> 处的二阶Taylor展开：
+二元函数 <span class="arithmatex">\( f(\x,y) \)</span> 在 <span class="arithmatex">\( (a,b) \)</span> 处的二阶Taylor展开：
 [
 \begin{aligned}
 f(a+h, b+k) = &amp; f(a,b) + f_x(a,b)h + f_y(a,b)k \
@@ -3258,7 +3273,7 @@ f(a+h, b+k) = &amp; f(a,b) + f_x(a,b)h + f_y(a,b)k \
     \frac{\partial f}{\partial x_i}(\vv{x}) = -\frac{\frac{\partial F}{\partial x_i}(\vv{x}, f(\vv{x}))}{\frac{\partial F}{\partial y}(\vv{x}, f(\vv{x}))}, \quad i = 1, \dots, n
     ]</p>
 <p><strong>示例</strong><br />
-方程 <span class="arithmatex">\( F(x,y) = x^2 + y^2 - 1 = 0 \)</span> 在 <span class="arithmatex">\( (0,1) \)</span> 附近确定隐函数 <span class="arithmatex">\( y = f\(x\)</span> )，且
+方程 <span class="arithmatex">\( F(\x,y) = x^2 + y^2 - 1 = 0 \)</span> 在 <span class="arithmatex">\( (0,1) \)</span> 附近确定隐函数 <span class="arithmatex">\( y = f\(\x\)</span> )，且
 [
 \frac{dy}{dx} = -\frac{F_x}{F_y} = -\frac{2x}{2y} = -\frac{x}{y}
 ]</p>
@@ -3305,7 +3320,7 @@ f(a+h, b+k) = &amp; f(a,b) + f_x(a,b)h + f_y(a,b)k \
 1.  <span class="arithmatex">\( \vv{f} \)</span> 在 <span class="arithmatex">\( \vv{x}_0 \)</span> 处可微
 2.  Jacobi 行列式在 <span class="arithmatex">\( \vv{x}_0 \)</span> 处不为零：
     [
-    J = \frac{\partial(f_1, \dots, f_n)}{\partial(x_1, \dots, x_n)}(\vv{x}_0) \neq 0
+    J = \frac{\partial(f_1, \dots, f_n)}{\partial(\x_1, \dots, x_n)}(\vv{x}_0) \neq 0
     ]
 则在 <span class="arithmatex">\( \vv{y}_0 = \vv{f}(\vv{x}_0) \)</span> 的某邻域内存在唯一反函数组 <span class="arithmatex">\( \vv{x} = \vv{g}(\vv{y}) \)</span>，且
 [
@@ -3327,13 +3342,13 @@ g_i(\vv{x}) = 0, \quad i = 1, \dots, m
 ]</p>
 <h3 id="_33">曲面的切平面与法线<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
 <p><strong>隐式曲面切平面</strong><br />
-设曲面由 <span class="arithmatex">\( F(x,y,z) = 0 \)</span> 确定，<span class="arithmatex">\( P(x_0,y_0,z_0) \)</span> 是曲面上一点，且 <span class="arithmatex">\( \nabla F(P) \neq \vv{0} \)</span>，则曲面在 <span class="arithmatex">\( P \)</span> 点的切平面方程为：
+设曲面由 <span class="arithmatex">\( F(\x,y,z) = 0 \)</span> 确定，<span class="arithmatex">\( P(\x_0,y_0,z_0) \)</span> 是曲面上一点，且 <span class="arithmatex">\( \nabla F(P) \neq \vv{0} \)</span>，则曲面在 <span class="arithmatex">\( P \)</span> 点的切平面方程为：
 [
-F_x(P)(x - x_0) + F_y(P)(y - y_0) + F_z(P)(z - z_0) = 0
+F_x(P)(\x - x_0) + F_y(P)(y - y_0) + F_z(P)(z - z_0) = 0
 ]
 法线方向为 <span class="arithmatex">\( \nabla F(P) \)</span>。</p>
 <p><strong>参数曲面切平面</strong><br />
-设曲面由 <span class="arithmatex">\( \vv{r}(u,v) = (x(u,v), y(u,v), z(u,v)) \)</span> 给出，则切平面由向量
+设曲面由 <span class="arithmatex">\( \vv{r}(u,v) = (\x(u,v), y(u,v), z(u,v)) \)</span> 给出，则切平面由向量
 [
 \frac{\partial \vv{r}}{\partial u} \times \frac{\partial \vv{r}}{\partial v}
 ]
@@ -3357,26 +3372,26 @@ F_x(P)(x - x_0) + F_y(P)(y - y_0) + F_z(P)(z - z_0) = 0
 <li><strong>二元方程组</strong>：对于
     [
     \begin{cases}
-    F(x,y,u,v) = 0 \
-    G(x,y,u,v) = 0
+    F(\x,y,u,v) = 0 \
+    G(\x,y,u,v) = 0
     \end{cases}
     ]
     有
     [
-    \frac{\partial u}{\partial x} = -\frac{1}{J} \frac{\partial(F,G)}{\partial(x,v)}, \quad
+    \frac{\partial u}{\partial x} = -\frac{1}{J} \frac{\partial(F,G)}{\partial(\x,v)}, \quad
     \frac{\partial v}{\partial x} = -\frac{1}{J} \frac{\partial(F,G)}{\partial(u,x)}
     ]
     其中 <span class="arithmatex">\( J = \frac{\partial(F,G)}{\partial(u,v)} \)</span></li>
 </ul>
 <h3 id="jacobi">Jacobi 行列式性质<a class="headerlink" href="#jacobi" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>链式法则</strong>：<span class="arithmatex">\( \frac{\partial(u,v)}{\partial(x,y)} = \frac{\partial(u,v)}{\partial(s,t)} \cdot \frac{\partial(s,t)}{\partial(x,y)} \)</span></li>
-<li><strong>反函数</strong>：<span class="arithmatex">\( \frac{\partial(x,y)}{\partial(u,v)} = \left[\frac{\partial(u,v)}{\partial(x,y)}\right]^{-1} \)</span></li>
+<li><strong>链式法则</strong>：<span class="arithmatex">\( \frac{\partial(u,v)}{\partial(\x,y)} = \frac{\partial(u,v)}{\partial(s,t)} \cdot \frac{\partial(s,t)}{\partial(\x,y)} \)</span></li>
+<li><strong>反函数</strong>：<span class="arithmatex">\( \frac{\partial(\x,y)}{\partial(u,v)} = \left[\frac{\partial(u,v)}{\partial(\x,y)}\right]^{-1} \)</span></li>
 </ul>
 <h2 id="_36">求解公式总结<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h2>
 <h3 id="_37">一阶方程通解公式<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>可分离变量</strong>：<span class="arithmatex">\( \int \frac{dy}{g(y)} = \int f\(x\)</span>dx + C )</li>
+<li><strong>可分离变量</strong>：<span class="arithmatex">\( \int \frac{dy}{g(y)} = \int f\(\x\)</span>dx + C )</li>
 <li><strong>一阶线性</strong>：<span class="arithmatex">\( y = e^{-\int Pdx}\left[\int Qe^{\int Pdx}dx + C\right] \)</span></li>
 <li><strong>Bernoulli</strong>：令 <span class="arithmatex">\( z = y^{1-n} \)</span> 化为一阶线性</li>
 </ul>
@@ -3401,8 +3416,8 @@ F_x(P)(x - x_0) + F_y(P)(y - y_0) + F_z(P)(z - z_0) = 0
 </ul>
 <h3 id="_39">重要公式<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Liouville 公式</strong>：<span class="arithmatex">\( W\(x\)</span> = W(x_0)e^{-\int_{x_0}^x P(t)dt} )</li>
-<li><strong>Wronski 行列式</strong>：<span class="arithmatex">\( W\(x\)</span> = y_1y_2' - y_2y_1' )</li>
+<li><strong>Liouville 公式</strong>：<span class="arithmatex">\( W\(\x\)</span> = W(\x_0)e^{-\int_{x_0}^x P(t)dt} )</li>
+<li><strong>Wronski 行列式</strong>：<span class="arithmatex">\( W\(\x\)</span> = y_1y_2' - y_2y_1' )</li>
 <li><strong>矩阵指数</strong>：<span class="arithmatex">\( e^{\mathbf{A}t} = \sum_{k=0}^{\infty} \frac{\mathbf{A}^k t^k}{k!} \)</span></li>
 </ul>
 
