@@ -68,8 +68,8 @@ plugins:
       lang: zh
       separator: '[\s\-\.]+'
       min_search_length: 2
-  - minify:
-      minify_html: true
+ # - minify:
+  #    minify_html: true
 
 # 导航
 # 在 mkdocs.yml 中更新 nav 部分
@@ -113,7 +113,7 @@ extra_css:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.css
   # 如果使用 KaTeX：
   # - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
-  
+
 extra_javascript:
   - javascripts/homepage-effects.js
   # KaTeX 支持
