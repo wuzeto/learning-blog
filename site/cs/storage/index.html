@@ -85,6 +85,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_2" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -801,6 +806,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    存储系统
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -817,6 +840,73 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、存储系统
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、存储系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 存储器层次与性能
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Cache系统
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 虚拟存储器
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1362,6 +1452,64 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、存储系统
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、存储系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 存储器层次与性能
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Cache系统
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 虚拟存储器
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1378,9 +1526,232 @@
 
 
 
-  <h1>存储系统</h1>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    macros: {
+      oiint: "{\\mathchoice{\\mkern-18mu\\iint}{\\mkern-12mu\\iint}{\\mkern-13mu\\iint}{\\mkern-12mu\\iint}}"
+    }
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
-
+<h1 id="_1">存储系统<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">二、存储系统<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 存储器层次与性能<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p><strong>存储器分类与性能</strong></p>
+<p><strong>按存取方式分类</strong>：
+* <strong>RAM</strong>（随机存取存储器）：
+  * SRAM：静态RAM，触发器存储，速度快，功耗大，用于Cache
+  * DRAM：动态RAM，电容存储，需刷新，密度高，用于主存
+* <strong>ROM</strong>（只读存储器）：
+  * 掩膜ROM：厂家写入，不可改
+  * PROM：用户一次写入
+  * EPROM：紫外线擦除
+  * EEPROM：电擦除
+  * Flash：闪存，块擦除</p>
+<p><strong>性能指标</strong>：
+* <strong>存取时间</strong><span class="arithmatex">\(T_a\)</span>：启动到完成的时间
+* <strong>存取周期</strong><span class="arithmatex">\(T_c\)</span>：连续两次存取的最小时间间隔，<span class="arithmatex">\(T_c &gt; T_a\)</span>
+* <strong>存储器带宽</strong><span class="arithmatex">\(B_m\)</span>：单位时间传输的数据量
+  <span class="arithmatex">\(B_m = \frac{\text{数据宽度}}{T_c}\)</span></p>
+<p><strong>DRAM刷新（2018）</strong>：
+* <strong>刷新方式</strong>：
+  * 集中刷新：固定时间集中刷新，有死时间
+  * 分散刷新：每周期刷新一行，无死时间但周期加倍
+  * 异步刷新：按需刷新，折中方案
+* <strong>刷新开销</strong>：刷新时间占存取周期的比例
+  <span class="arithmatex">\(\text{刷新开销} = \frac{\text{刷新时间}}{\text{总时间}}\)</span></p>
+<p><strong>主存组织与交叉存储</strong></p>
+<p><strong>存储芯片扩展</strong>：
+* <strong>位扩展</strong>：增加数据位宽
+* <strong>字扩展</strong>：增加存储单元数
+* <strong>字位同时扩展</strong>：两者都增加</p>
+<p><strong>四体低位交叉存储（2012）</strong>：
+* 将存储体分为4个独立的模块
+* 地址分布：体号 = 地址 mod 4
+* 优点：提高带宽，支持流水访问
+* 访问时间：连续访问不同体可重叠</p>
+<p><strong>多模块存储器</strong>：
+* 顺序方式：地址顺序分布在各个模块
+* 交叉方式：地址交叉分布在各个模块
+* 带宽计算：<span class="arithmatex">\(B = n \times \frac{W}{T}\)</span>（n为模块数）</p>
+<h3 id="22-cache">2.2 Cache系统<a class="headerlink" href="#22-cache" title="Permanent link">&para;</a></h3>
+<p><strong>Cache基本概念</strong></p>
+<p><strong>Cache性能指标</strong>（2009）：
+* <strong>命中率</strong><span class="arithmatex">\(H\)</span>：<span class="arithmatex">\(H = \frac{N_c}{N_c + N_m}\)</span>
+* <strong>平均访问时间</strong><span class="arithmatex">\(T_a\)</span>：<span class="arithmatex">\(T_a = H \times T_c + (1-H) \times T_m\)</span>
+* <strong>访问效率</strong><span class="arithmatex">\(e\)</span>：<span class="arithmatex">\(e = \frac{T_c}{T_a} \times 100\%\)</span></p>
+<p><strong>Cache-主存-外存层次</strong>（2021-2025）：
+* Cache：SRAM，ns级，MB级
+* 主存：DRAM，100ns级，GB级
+* 辅存：磁盘/SSD，ms级，TB级
+* 目标：接近Cache速度，接近辅存容量</p>
+<p><strong>地址映射方式</strong></p>
+<p><strong>直接映射</strong>（2010）：
+* 主存块只能映射到Cache固定位置
+* Cache行号：<span class="arithmatex">\(i = j \mod m\)</span>（<span class="arithmatex">\(m\)</span>为Cache行数）
+* 地址结构：标记 | 行号 | 块内地址
+* 优点：硬件简单；缺点：冲突率高</p>
+<p><strong>全相联映射</strong>（2013）：
+* 主存块可映射到Cache任意位置
+* 地址结构：标记 | 块内地址
+* 优点：冲突率低；缺点：比较器复杂，速度慢</p>
+<p><strong>组相联映射</strong>（2009 2路组相联）：
+* Cache分组，组内全相联
+* 组号：<span class="arithmatex">\(k = j \mod m\)</span>（<span class="arithmatex">\(m\)</span>为组数）
+* 地址结构：标记 | 组号 | 块内地址
+* n路组相联：每组n个Cache行</p>
+<p><strong>地址结构对比</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>映射方式</th>
+<th>地址划分</th>
+<th>比较器数量</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直接映射</td>
+<td>标记</td>
+<td>行号</td>
+<td>块内地址</td>
+</tr>
+<tr>
+<td>全相联</td>
+<td>标记</td>
+<td>块内地址</td>
+<td>Cache行数</td>
+</tr>
+<tr>
+<td>组相联</td>
+<td>标记</td>
+<td>组号</td>
+<td>块内地址</td>
+</tr>
+</tbody>
+</table>
+<p><strong>替换算法与写策略</strong></p>
+<p><strong>替换算法</strong>：
+* <strong>RAND</strong>：随机替换，简单但性能差
+* <strong>FIFO</strong>：先进先出，可能Belady异常
+* <strong>LRU</strong>：最近最少使用，性能好，实现复杂
+* <strong>OPT</strong>：最优替换，理论最优，不可实现</p>
+<p><strong>写策略</strong>：
+* <strong>写直达</strong>（Write-through，2015）：
+  * 同时写Cache和主存
+  * 优点：数据一致性好
+  * 缺点：总线 traffic大
+* <strong>写回</strong>（Write-back，2015）：
+  * 只写Cache，替换时写回主存
+  * 优点：减少写主存次数
+  * 缺点：数据不一致，需要脏位</p>
+<p><strong>Cache一致性</strong>：
+* 写无效：使其他Cache副本无效
+* 写更新：更新所有Cache副本
+* 监听协议：总线监听一致性操作
+* 目录协议：目录记录副本位置</p>
+<p><strong>Cache中的比较器</strong>（2021-2025）：
+* 相联存储器实现
+* 并行比较，速度关键
+* 组相联需要多个比较器</p>
+<p><strong>Cache优化技术</strong></p>
+<p><strong>多级Cache</strong>：
+* L1 Cache：分离的指令Cache和数据Cache（2010）
+* L2 Cache：统一Cache
+* L3 Cache：共享Cache</p>
+<p><strong>旁路转发</strong>（Bypassing，2012）：
+* 将ALU结果直接转发给需要它的指令
+* 减少数据冒险的停顿</p>
+<p><strong>预取技术</strong>：
+* 硬件预取：根据访问模式预测
+* 软件预取：编译器插入预取指令</p>
+<p><strong>非阻塞Cache</strong>：
+* 支持多个未完成的Cache缺失
+* 提高Cache利用率</p>
+<h3 id="23">2.3 虚拟存储器<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p><strong>虚拟存储概念</strong></p>
+<p><strong>基本思想</strong>：
+* 程序分页/段装入内存
+* 部分在内存，部分在外存
+* 按需调入，页面置换</p>
+<p><strong>虚地址与物理地址</strong>（2011）：
+* 虚地址（逻辑地址）：程序使用的地址
+* 物理地址：实际内存地址
+* 地址转换：MMU（内存管理单元）完成</p>
+<p><strong>地址转换过程</strong>：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">地址转换</span><span class="p">(</span><span class="n">virtual_addr</span><span class="p">):</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">vpn</span> <span class="o">=</span> <span class="n">virtual_addr</span> <span class="o">&gt;&gt;</span> <span class="n">page_size</span>  <span class="c1"># 虚页号</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">offset</span> <span class="o">=</span> <span class="n">virtual_addr</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">page_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 页内偏移</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">pfn</span> <span class="o">=</span> <span class="n">查页表</span><span class="p">(</span><span class="n">vpn</span><span class="p">)</span>  <span class="c1"># 页框号</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="k">if</span> <span class="n">页表项有效位</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="n">缺页中断处理</span><span class="p">()</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">physical_addr</span> <span class="o">=</span> <span class="p">(</span><span class="n">pfn</span> <span class="o">&lt;&lt;</span> <span class="n">page_size</span><span class="p">)</span> <span class="o">|</span> <span class="n">offset</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">return</span> <span class="n">physical_addr</span>
+</code></pre></div>
+<strong>思想</strong>：页表映射虚页到页框
+<strong>复杂度</strong>：<span class="arithmatex">\(O(1)\)</span>（有TLB时）</p>
+<p><strong>页表项结构</strong>：
+* 页框号：物理页号
+* 有效位：是否在内存
+* 访问位：是否被访问过（用于置换）
+* 修改位：是否被修改过（决定写回）
+* 保护位：读/写/执行权限</p>
+<p><strong>页式存储管理（2014）</strong></p>
+<p><strong>单级页表问题</strong>：
+* 页表过大：<span class="arithmatex">\(2^{20}\)</span>个页表项（4GB内存，4KB页）
+* 页表需连续存储</p>
+<p><strong>二级页表</strong>（2010）：
+* 页目录 + 页表
+* 虚地址：页目录索引 | 页表索引 | 页内偏移
+* 优点：页表可离散存放，部分不必常驻内存</p>
+<p><strong>多级页表</strong>：
+* 进一步减少页表占用空间
+* 增加地址转换时间</p>
+<p><strong>倒置页表</strong>：
+* 按物理页号组织
+* 项数=物理页数，节省空间
+* 查找需要哈希或相联存储器</p>
+<p><strong>段页式存储</strong>：
+* 结合分段和分页优点
+* 先分段，段内再分页
+* 地址：段号 | 段内页号 | 页内偏移</p>
+<p><strong>TLB与缺页处理</strong></p>
+<p><strong>TLB（快表）</strong>：
+* 缓存最近使用的页表项
+* 相联存储器实现，并行查找
+* 提高地址转换速度</p>
+<p><strong>缺页率与有效访问时间</strong>：
+* 缺页率<span class="arithmatex">\(p\)</span>：<span class="arithmatex">\(p = \frac{\text{缺页次数}}{\text{访问次数}}\)</span>
+* 有效访问时间<span class="arithmatex">\(T_e\)</span>：
+  <span class="arithmatex">\(T_e = (1-p) \times T_a + p \times T_f\)</span>
+  其中<span class="arithmatex">\(T_a\)</span>为访问时间，<span class="arithmatex">\(T_f\)</span>为缺页处理时间</p>
+<p><strong>缺页处理过程</strong>（2019页故障）：
+1. 陷入操作系统，保存现场
+2. 检查访问合法性
+3. 寻找空闲页框，若无则页面置换
+4. 从磁盘读入所需页
+5. 修改页表，设置有效位
+6. 恢复现场，重新执行指令</p>
+<p><strong>页面置换算法</strong>：
+* <strong>OPT</strong>：淘汰未来最长时间不使用
+* <strong>FIFO</strong>：先进先出，可能Belady异常
+* <strong>LRU</strong>：最近最少使用，实现复杂
+* <strong>CLOCK</strong>：时钟算法，近似LRU</p>
+<p><strong>存储保护</strong></p>
+<p><strong>访问越权</strong>（2021-2025）：
+* 越界访问：地址超出程序空间
+* 越权访问：违反保护权限（读/写/执行）
+* 处理：存储保护异常，陷入操作系统</p>
+<p><strong>保护机制</strong>：
+* 界限寄存器：基址和限长寄存器
+* 页表保护位：每页的读/写/执行权限
+* 段保护：段描述符中的权限位</p>
 
 
 
