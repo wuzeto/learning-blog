@@ -12,9 +12,40 @@ theme:
     - navigation.instant # 页面无刷新加载
     - search.suggest     # 搜索建议
     - search.highlight   # 搜索高亮
+    - navigation.tabs        # 顶部导航栏（类似 App 的 Tab）
+    - navigation.sections    # 侧边栏分组展开
+    - navigation.top         # 返回顶部按钮
+    - toc.integrate          # 将目录集成到左侧（更紧凑）
+    - content.code.copy      # 代码块一键复制按钮
+  custom_dir: overrides
 
 markdown_extensions:
-  - pymdownx.highlight: # 代码高亮
-      anchor_linenums: true
-  - pymdownx.superfences
-  - admonition          # 支持提示块 (Note/Tip/Warning)
+  # 1. 允许在 HTML 标签（如 div）内部写 Markdown 语法
+  # 这是实现首页“三栏布局”最关键的一步！
+  - md_in_html
+
+  # 2. 允许给元素添加属性（如 class="grid"）
+  - attr_list
+
+  # 3. 高级代码块和图表支持 (之前提到的)
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  # 4. 【你要的 Blocks 插件】
+  # 用于更现代的提示块、折叠块写法
+  - pymdownx.blocks:
+      blocks:
+        - admonition  # 提示块
+        - details     # 折叠详情
+        - tab         # 标签页 (可选)
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css

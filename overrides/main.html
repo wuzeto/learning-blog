@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {{ super() }}
+  {% if page.url != "" %}
+    <h2>评论区</h2>
+    {% include "comments.html" %}
+  {% endif %}
+{% endblock %}
