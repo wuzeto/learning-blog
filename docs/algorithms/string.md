@@ -13,6 +13,18 @@ window.MathJax = {
 
 # 算法设计与实现
 
+**串ADT与存储**
+
+**串的存储结构**:
+* 定长顺序存储：char str[MAXLEN+1]
+* 堆分配存储：动态分配，length字段
+* 块链存储：块状链表
+
+**串的基本操作**:
+* StrAssign, StrCopy, StrEmpty, StrCompare
+* StrLength, Concat, SubString
+* Index（朴素/KMP）, Replace, StrInsert, StrDelete
+
 ## 2.4 字符串算法
 
 **KMP算法完整实现**
