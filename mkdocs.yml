@@ -3,6 +3,7 @@ site_description: 探索·学习·创造·超越
 site_author: 未来探索者
 site_url: https://wuzeto.github.io/learning-blog/
 
+# 主题配置
 theme:
   name: material
   custom_dir: overrides
@@ -16,6 +17,7 @@ theme:
         icon: material/weather-night
         name: 切换至浅色模式
   
+  # 启用功能
   features:
     - navigation.instant
     - navigation.tabs
@@ -36,8 +38,11 @@ theme:
   
   icon:
     logo: material/rocket-launch
+  
+  # 语言配置
+  language: zh
 
-# 简化扩展配置（修复emoji配置）
+# Markdown扩展
 markdown_extensions:
   - attr_list
   - md_in_html
@@ -58,21 +63,55 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: "2-4"
-      # 添加数学公式支持
+  # 数学公式支持 - 使用 arithmatex
   - pymdownx.arithmatex:
       generic: true
 
-# 插件（移除未安装的插件）
+# 插件配置 - 使用正确的插件名称
 plugins:
-  - search:
+  - search:  # 内置搜索插件
       lang: zh
-      separator: '[\s\-\.]+'
-      min_search_length: 2
- # - minify:
-  #    minify_html: true
+      separator: '[\s\-\.,;!?]+'
+  
+  # 如果需要额外功能可以添加以下插件
+  # - minify:
+  #     minify_html: true
+  # - mkdocstrings
 
-# 导航
-# 在 mkdocs.yml 中更新 nav 部分
+# 额外的HTML head内容
+extra:
+  # 预连接和DNS预获取
+  extra_head: |
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  
+  # 社交媒体配置
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/wuzeto
+      name: GitHub
+
+# 额外的CSS文件
+extra_css:
+  # 第三方库
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
+  # 自定义样式
+  - stylesheets/sci-fi-theme.css
+
+# 额外的JavaScript文件
+extra_javascript:
+  # 第三方库
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js
+  # 自定义脚本
+  - javascripts/homepage-effects.js
+  - javascripts/math-config.js
+
+# 网站导航
 nav:
   - 🚀 首页: index.md
   - 📐 数学:
@@ -105,34 +144,26 @@ nav:
     - 复杂度分析: algorithms/complexity.md
   - 🏗️ 系统架构:
     - 系统总览: systems/index.md
-    
-# 额外资源
-extra_css:
-  - stylesheets/sci-fi-theme.css
-  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
-  # KaTeX CSS（放在最后确保覆盖）
-  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
-
-extra_javascript:
-  - javascripts/homepage-effects.js
-  # KaTeX JS（确保顺序正确）
-  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
-  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js
-  - javascripts/math-config.js
-
-# 添加预加载
-head_extra: |
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
 # 版权信息
 copyright: |
   © 2024 未来知识引擎 | 
-  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">
     CC BY-NC-SA 4.0
   </a> | 
-  构建于 <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">
+  构建于 <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
     Material for MkDocs
   </a>
+
+# 开发设置
+watch:
+  - overrides
+  - stylesheets
+  - javascripts
+  - docs
+
+# 忽略的文件
+exclude_docs: |
+  README.md
+  CONTRIBUTING.md
+  CHANGELOG.md

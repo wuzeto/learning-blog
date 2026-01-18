@@ -7,46 +7,46 @@
 **函数夹逼定理**  
 若在点 \( x_0 \) 的某去心邻域内，
 \[
-f(x) \leq g(x) \leq h(x)
+f\(\x\) \leq g\(\x\) \leq h\(\x\)
 \]
-且 \( \lim_{x \to x_0} f(x) = \lim_{x \to x_0} h(x) = L \)，则
+且 \( \lim_{x \to x_0} f\(\x\) = \lim_{x \to x_0} h\(\x\) = L \)，则
 \[
-\lim_{x \to x_0} g(x) = L
+\lim_{x \to x_0} g\(\x\) = L
 \]
 
 **Heine 定理**  
 \[
-\lim_{x \to x_0} f(x) = L \iff \forall \\{x_n\\}, x_n \to x_0, x_n \neq x_0: \lim_{n \to \infty} f(x_n) = L
+\lim_{x \to x_0} f\(\x\) = L \iff \forall \\{x_n\\}, x_n \to x_0, x_n \neq x_0: \lim_{n \to \infty} f(\x_n) = L
 \]
 
 **函数柯西准则**  
-\( \lim_{x \to x_0} f(x) \) 存在的充要条件是：
+\( \lim_{x \to x_0} f\(\x\) \) 存在的充要条件是：
 \[
-\forall \varepsilon > 0, \exists \delta > 0, \forall x', x'' \in \mathring{U}(x_0, \delta): |f(x') - f(x'')| < \varepsilon
+\forall \varepsilon > 0, \exists \delta > 0, \forall x', x'' \in \mathring{U}(\x_0, \delta): |f(\x') - f(\x'')| < \varepsilon
 \]
 
 ## 微分学定理
 
 **Leibniz 求导法则**  
-若 \( u(x), v(x) \) 在 \( x \) 处 \( n \) 阶可导，则
+若 \( u\(\x\), v\(\x\) \) 在 \( x \) 处 \( n \) 阶可导，则
 \[
 (u \cdot v)^{(n)} = \sum_{k=0}^n \binom{n}{k} u^{(k)} v^{(n-k)}
 \]
 
 **Rolle 定理**  
-若 \( f(x) \) 在 \( [a, b] \) 上连续，在 \( (a, b) \) 内可导，且 \( f(a) = f(b) \)，则存在 \( \xi \in (a, b) \) 使得
+若 \( f\(\x\) \) 在 \( [a, b] \) 上连续，在 \( (a, b) \) 内可导，且 \( f(a) = f(b) \)，则存在 \( \xi \in (a, b) \) 使得
 \[
 f'(\xi) = 0
 \]
 
 **Lagrange 中值定理**  
-若 \( f(x) \) 在 \( [a, b] \) 上连续，在 \( (a, b) \) 内可导，则存在 \( \xi \in (a, b) \) 使得
+若 \( f\(\x\) \) 在 \( [a, b] \) 上连续，在 \( (a, b) \) 内可导，则存在 \( \xi \in (a, b) \) 使得
 \[
 f'(\xi) = \frac{f(b) - f(a)}{b - a}
 \]
 
 **Cauchy 中值定理**  
-若 \( f(x), g(x) \) 在 \( [a, b] \) 上连续，在 \( (a, b) \) 内可导，且 \( g'(x) \neq 0 \)，则存在 \( \xi \in (a, b) \) 使得
+若 \( f\(\x\), g\(\x\) \) 在 \( [a, b] \) 上连续，在 \( (a, b) \) 内可导，且 \( g'\(\x\) \neq 0 \)，则存在 \( \xi \in (a, b) \) 使得
 \[
 \frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(\xi)}{g'(\xi)}
 \]
@@ -54,23 +54,23 @@ f'(\xi) = \frac{f(b) - f(a)}{b - a}
 **L'Hospital 法则**  
 若在 \( x_0 \) 的某去心邻域内：
 
-1.  \( \lim_{x \to x_0} f(x) = \lim_{x \to x_0} g(x) = 0 \)（或 \( \infty \)）
-2.  \( f'(x), g'(x) \) 存在且 \( g'(x) \neq 0 \)
-3.  \( \lim_{x \to x_0} \frac{f'(x)}{g'(x)} = L \)（有限或 \( \pm\infty \)）
+1.  \( \lim_{x \to x_0} f\(\x\) = \lim_{x \to x_0} g\(\x\) = 0 \)（或 \( \infty \)）
+2.  \( f'\(\x\), g'\(\x\) \) 存在且 \( g'\(\x\) \neq 0 \)
+3.  \( \lim_{x \to x_0} \frac{f'\(\x\)}{g'\(\x\)} = L \)（有限或 \( \pm\infty \)）
 
 则
 \[
-\lim_{x \to x_0} \frac{f(x)}{g(x)} = L
+\lim_{x \to x_0} \frac{f\(\x\)}{g\(\x\)} = L
 \]
 
 **Taylor 中值定理**  
-若 \( f(x) \) 在 \( x_0 \) 处有 \( n \) 阶导数，则
+若 \( f\(\x\) \) 在 \( x_0 \) 处有 \( n \) 阶导数，则
 \[
-f(x) = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + \cdots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n + R_n(x)
+f\(\x\) = f(\x_0) + f'(\x_0)(\x - x_0) + \frac{f''(\x_0)}{2!}(\x - x_0)^2 + \cdots + \frac{f^{(n)}(\x_0)}{n!}(\x - x_0)^n + R_n\(\x\)
 \]
-其中余项 \( R_n(x) \) 可表示为：
-*   Peano 余项：\( R_n(x) = o((x - x_0)^n) \)
-*   Lagrange 余项：\( R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}(x - x_0)^{n+1}, \quad \xi \in (x_0, x) \)
+其中余项 \( R_n\(\x\) \) 可表示为：
+*   Peano 余项：\( R_n\(\x\) = o((\x - x_0)^n) \)
+*   Lagrange 余项：\( R_n\(\x\) = \frac{f^{(n+1)}(\xi)}{(n+1)!}(\x - x_0)^{n+1}, \quad \xi \in (\x_0, x) \)
 
 ## 重要常数与极限
 
@@ -84,9 +84,9 @@ f(x) = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + \cdots + \fr
 ### 积分方法
 
 **第一类换元法（凑微分）**  
-若 \( \int f(u) \, du = F(u) + C \)，且 \( u = \varphi(x) \) 可导，则
+若 \( \int f(u) \, du = F(u) + C \)，且 \( u = \varphi\(\x\) \) 可导，则
 \[
-\int f[\varphi(x)] \varphi'(x) \, dx = F[\varphi(x)] + C
+\int f[\varphi\(\x\)] \varphi'\(\x\) \, dx = F[\varphi\(\x\)] + C
 \]
 
 **第二类换元法**  
@@ -96,13 +96,13 @@ f(x) = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + \cdots + \fr
 \]
 则
 \[
-\int f(x) \, dx = G[\psi^{-1}(x)] + C
+\int f\(\x\) \, dx = G[\psi^{-1}\(\x\)] + C
 \]
 
 **分部积分法**  
-若 \( u(x), v(x) \) 有连续导数，则
+若 \( u\(\x\), v\(\x\) \) 有连续导数，则
 \[
-\int u(x) v'(x) \, dx = u(x) v(x) - \int u'(x) v(x) \, dx
+\int u\(\x\) v'\(\x\) \, dx = u\(\x\) v\(\x\) - \int u'\(\x\) v\(\x\) \, dx
 \]
 或
 \[
@@ -112,10 +112,10 @@ f(x) = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + \cdots + \fr
 ### Euler 变换与三角代换
 
 **Euler 变换**  
-对于积分 \( \int R(x, \sqrt{ax^2 + bx + c}) \, dx \)：
+对于积分 \( \int R(\x, \sqrt{ax^2 + bx + c}) \, dx \)：
 *   第一类：\( a > 0 \) 时，令 \( \sqrt{ax^2 + bx + c} = t - \sqrt{a}x \)
 *   第二类：\( c > 0 \) 时，令 \( \sqrt{ax^2 + bx + c} = tx + \sqrt{c} \)
-*   第三类：\( b^2 - 4ac > 0 \) 时，令 \( \sqrt{ax^2 + bx + c} = t(x - \alpha) \)
+*   第三类：\( b^2 - 4ac > 0 \) 时，令 \( \sqrt{ax^2 + bx + c} = t(\x - \alpha) \)
 
 **三角代换**  
 *   \( \sqrt{a^2 - x^2} \)：令 \( x = a \sin t \) 或 \( x = a \cos t \)
@@ -123,85 +123,85 @@ f(x) = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + \cdots + \fr
 *   \( \sqrt{x^2 - a^2} \)：令 \( x = a \sec t \) 或 \( x = a \cosh t \)
 
 **无理根式代换**  
-*   \( \int R\left(x, \sqrt[n]{\frac{ax+b}{cx+d}}\right) dx \)：令 \( t = \sqrt[n]{\frac{ax+b}{cx+d}} \)
-*   \( \int R(x, \sqrt{ax+b}, \sqrt{cx+d}) dx \)：令 \( t = \sqrt{ax+b} \) 或 \( t = \sqrt{cx+d} \)
+*   \( \int R\left(\x, \sqrt[n]{\frac{ax+b}{cx+d}}\right) dx \)：令 \( t = \sqrt[n]{\frac{ax+b}{cx+d}} \)
+*   \( \int R(\x, \sqrt{ax+b}, \sqrt{cx+d}) dx \)：令 \( t = \sqrt{ax+b} \) 或 \( t = \sqrt{cx+d} \)
 
 ### 积分理论基础
 
 **Riemann 积分**  
-函数 \( f(x) \) 在 \( [a, b] \) 上的 Riemann 积分为：
+函数 \( f\(\x\) \) 在 \( [a, b] \) 上的 Riemann 积分为：
 \[
-\int_a^b f(x) \, dx = \lim_{\|P\| \to 0} \sum_{i=1}^n f(\xi_i) \Delta x_i
+\int_a^b f\(\x\) \, dx = \lim_{\|P\| \to 0} \sum_{i=1}^n f(\xi_i) \Delta x_i
 \]
 其中 \( P: a = x_0 < x_1 < \cdots < x_n = b \) 是分割，\( \|P\| = \max \Delta x_i \)。
 
 **Darboux 定理**  
-有界函数 \( f(x) \) 在 \( [a, b] \) 上 Riemann 可积的充要条件是：
+有界函数 \( f\(\x\) \) 在 \( [a, b] \) 上 Riemann 可积的充要条件是：
 \[
 \lim_{\|P\| \to 0} (S(P) - s(P)) = 0
 \]
 其中 \( S(P) \) 和 \( s(P) \) 分别是 Darboux 大和与小和。
 
 **微积分基本定理**  
-若 \( f(x) \) 在 \( [a, b] \) 上连续，则
+若 \( f\(\x\) \) 在 \( [a, b] \) 上连续，则
 \[
-\frac{d}{dx} \int_a^x f(t) \, dt = f(x)
+\frac{d}{dx} \int_a^x f(t) \, dt = f\(\x\)
 \]
 
 **Newton-Leibniz 公式**  
-若 \( F(x) \) 是 \( f(x) \) 在 \( [a, b] \) 上的原函数，则
+若 \( F\(\x\) \) 是 \( f\(\x\) \) 在 \( [a, b] \) 上的原函数，则
 \[
-\int_a^b f(x) \, dx = F(b) - F(a)
+\int_a^b f\(\x\) \, dx = F(b) - F(a)
 \]
 
 ### 积分中值定理
 
 **积分第一中值定理**  
-若 \( f(x) \) 在 \( [a, b] \) 上连续，则存在 \( \xi \in [a, b] \) 使得
+若 \( f\(\x\) \) 在 \( [a, b] \) 上连续，则存在 \( \xi \in [a, b] \) 使得
 \[
-\int_a^b f(x) \, dx = f(\xi)(b - a)
+\int_a^b f\(\x\) \, dx = f(\xi)(b - a)
 \]
 
 **积分第二中值定理**  
-若 \( f(x) \) 在 \( [a, b] \) 上可积，\( g(x) \) 在 \( [a, b] \) 上单调，则存在 \( \xi \in [a, b] \) 使得
+若 \( f\(\x\) \) 在 \( [a, b] \) 上可积，\( g\(\x\) \) 在 \( [a, b] \) 上单调，则存在 \( \xi \in [a, b] \) 使得
 \[
-\int_a^b f(x) g(x) \, dx = g(a) \int_a^\xi f(x) \, dx + g(b) \int_\xi^b f(x) \, dx
+\int_a^b f\(\x\) g\(\x\) \, dx = g(a) \int_a^\xi f\(\x\) \, dx + g(b) \int_\xi^b f\(\x\) \, dx
 \]
 
 **积分第三中值定理**  
-若 \( f(x), g(x) \) 在 \( [a, b] \) 上连续，\( g(x) \) 不变号，则存在 \( \xi \in [a, b] \) 使得
+若 \( f\(\x\), g\(\x\) \) 在 \( [a, b] \) 上连续，\( g\(\x\) \) 不变号，则存在 \( \xi \in [a, b] \) 使得
 \[
-\int_a^b f(x) g(x) \, dx = f(\xi) \int_a^b g(x) \, dx
+\int_a^b f\(\x\) g\(\x\) \, dx = f(\xi) \int_a^b g\(\x\) \, dx
 \]
 
 **Bonnet 定理**  
-若 \( f(x) \) 在 \( [a, b] \) 上可积，\( g(x) \) 在 \( [a, b] \) 上非负递减，则存在 \( \xi \in [a, b] \) 使得
+若 \( f\(\x\) \) 在 \( [a, b] \) 上可积，\( g\(\x\) \) 在 \( [a, b] \) 上非负递减，则存在 \( \xi \in [a, b] \) 使得
 \[
-\int_a^b f(x) g(x) \, dx = g(a) \int_a^\xi f(x) \, dx
+\int_a^b f\(\x\) g\(\x\) \, dx = g(a) \int_a^\xi f\(\x\) \, dx
 \]
 
 **Lebesgue 定理**  
-有界函数 \( f(x) \) 在 \( [a, b] \) 上 Riemann 可积的充要条件是 \( f(x) \) 在 \( [a, b] \) 上几乎处处连续。
+有界函数 \( f\(\x\) \) 在 \( [a, b] \) 上 Riemann 可积的充要条件是 \( f\(\x\) \) 在 \( [a, b] \) 上几乎处处连续。
 
 ## 广义积分
 
 **广义积分 Cauchy 判别法**  
-广义积分 \( \int_a^{+\infty} f(x) \, dx \) 收敛的充要条件是：
+广义积分 \( \int_a^{+\infty} f\(\x\) \, dx \) 收敛的充要条件是：
 \[
-\forall \varepsilon > 0, \exists A > a, \forall A_1, A_2 > A: \left| \int_{A_1}^{A_2} f(x) \, dx \right| < \varepsilon
+\forall \varepsilon > 0, \exists A > a, \forall A_1, A_2 > A: \left| \int_{A_1}^{A_2} f\(\x\) \, dx \right| < \varepsilon
 \]
 
 **Dirichlet 判别法**  
 若：
-1.  \( F(A) = \int_a^A f(x) \, dx \) 在 \( [a, +\infty) \) 上有界
-2.  \( g(x) \) 在 \( [a, +\infty) \) 上单调且 \( \lim_{x \to +\infty} g(x) = 0 \)
-则 \( \int_a^{+\infty} f(x) g(x) \, dx \) 收敛。
+1.  \( F(A) = \int_a^A f\(\x\) \, dx \) 在 \( [a, +\infty) \) 上有界
+2.  \( g\(\x\) \) 在 \( [a, +\infty) \) 上单调且 \( \lim_{x \to +\infty} g\(\x\) = 0 \)
+则 \( \int_a^{+\infty} f\(\x\) g\(\x\) \, dx \) 收敛。
 
 **Abel 判别法**  
 若：
-1.  \( \int_a^{+\infty} f(x) \, dx \) 收敛
-2.  \( g(x) \) 在 \( [a, +\infty) \) 上单调有界
-则 \( \int_a^{+\infty} f(x) g(x) \, dx \) 收敛。
+1.  \( \int_a^{+\infty} f\(\x\) \, dx \) 收敛
+2.  \( g\(\x\) \) 在 \( [a, +\infty) \) 上单调有界
+则 \( \int_a^{+\infty} f\(\x\) g\(\x\) \, dx \) 收敛。
 
 ## Euler 积分
 
@@ -257,17 +257,17 @@ B(p, q) = \frac{\Gamma(p) \Gamma(q)}{\Gamma(p+q)}
 **可分离变量方程**  
 形如：
 \[
-\frac{dy}{dx} = f(x)g(y)
+\frac{dy}{dx} = f\(\x\)g(y)
 \]
 的方程称为可分离变量微分方程。
 
 **分离变量法**  
 \[
-\frac{dy}{g(y)} = f(x)dx \quad (g(y) \neq 0)
+\frac{dy}{g(y)} = f\(\x\)dx \quad (g(y) \neq 0)
 \]
 两边积分得：
 \[
-\int \frac{dy}{g(y)} = \int f(x)dx + C
+\int \frac{dy}{g(y)} = \int f\(\x\)dx + C
 \]
 
 > **示例：**  
@@ -306,26 +306,26 @@ u + x\frac{du}{dx} = f(u) \Rightarrow \frac{du}{dx} = \frac{f(u) - u}{x}
 **一阶线性方程**  
 形如：
 \[
-\frac{dy}{dx} + P(x)y = Q(x)
+\frac{dy}{dx} + P\(\x\)y = Q\(\x\)
 \]
 的方程称为一阶线性微分方程。
 
 **常数变易法**  
 通解公式：
 \[
-y = e^{-\int P(x)dx} \left[ \int Q(x)e^{\int P(x)dx}dx + C \right]
+y = e^{-\int P\(\x\)dx} \left[ \int Q\(\x\)e^{\int P\(\x\)dx}dx + C \right]
 \]
 
 **通解结构**  
-齐次方程 \( \frac{dy}{dx} + P(x)y = 0 \) 的通解为：
+齐次方程 \( \frac{dy}{dx} + P\(\x\)y = 0 \) 的通解为：
 \[
-y = Ce^{-\int P(x)dx}
+y = Ce^{-\int P\(\x\)dx}
 \]
 非齐次方程的通解为齐次通解加特解。
 
 > **示例：**  
 > 求解 \( \frac{dy}{dx} + 2xy = xe^{-x^2} \)  
-> 解：\( P(x) = 2x \)，积分因子为：
+> 解：\( P\(\x\) = 2x \)，积分因子为：
 > \[
 > e^{\int 2xdx} = e^{x^2}
 > \]
@@ -339,7 +339,7 @@ y = Ce^{-\int P(x)dx}
 **Bernoulli 方程**  
 形如：
 \[
-\frac{dy}{dx} + P(x)y = Q(x)y^n \quad (n \neq 0, 1)
+\frac{dy}{dx} + P\(\x\)y = Q\(\x\)y^n \quad (n \neq 0, 1)
 \]
 的方程称为 Bernoulli 方程。
 
@@ -350,7 +350,7 @@ y = Ce^{-\int P(x)dx}
 \]
 代入原方程得：
 \[
-\frac{dz}{dx} + (1-n)P(x)z = (1-n)Q(x)
+\frac{dz}{dx} + (1-n)P\(\x\)z = (1-n)Q\(\x\)
 \]
 化为一阶线性方程。
 
@@ -366,16 +366,16 @@ y = Ce^{-\int P(x)dx}
 
 ### 可降阶的高阶方程
 
-**类型一：\( y^{(n)} = f(x) \)**  
+**类型一：\( y^{(n)} = f\(\x\) \)**  
 连续积分 \( n \) 次：
 \[
-y = \underbrace{\int \cdots \int}_{n\text{次}} f(x) dx \cdots dx + C_1x^{n-1} + \cdots + C_{n-1}x + C_n
+y = \underbrace{\int \cdots \int}_{n\text{次}} f\(\x\) dx \cdots dx + C_1x^{n-1} + \cdots + C_{n-1}x + C_n
 \]
 
-**类型二：\( y'' = f(x, y') \)**  
+**类型二：\( y'' = f(\x, y') \)**  
 令 \( p = y' \)，则 \( y'' = \frac{dp}{dx} \)，方程化为：
 \[
-\frac{dp}{dx} = f(x, p)
+\frac{dp}{dx} = f(\x, p)
 \]
 
 **类型三：\( y'' = f(y, y') \)**  
@@ -391,12 +391,12 @@ p\frac{dp}{dy} = f(y, p)
 **二阶线性方程**  
 形如：
 \[
-y'' + P(x)y' + Q(x)y = f(x)
+y'' + P\(\x\)y' + Q\(\x\)y = f\(\x\)
 \]
 的方程称为二阶线性微分方程。
 
 **解的存在唯一性**  
-若 \( P(x), Q(x), f(x) \) 在区间 \( I \) 上连续，则对于任意 \( x_0 \in I \) 和任意初始值 \( y_0, y_0' \)，方程存在唯一解。
+若 \( P\(\x\), Q\(\x\), f\(\x\) \) 在区间 \( I \) 上连续，则对于任意 \( x_0 \in I \) 和任意初始值 \( y_0, y_0' \)，方程存在唯一解。
 
 **叠加原理**  
 若 \( y_1, y_2 \) 是齐次方程的解，则 \( C_1y_1 + C_2y_2 \) 也是齐次方程的解。
@@ -404,25 +404,25 @@ y'' + P(x)y' + Q(x)y = f(x)
 ### Wronski 行列式与 Liouville 公式
 
 **Wronski 行列式**  
-对于函数组 \( y_1(x), y_2(x) \)，定义 Wronski 行列式为：
+对于函数组 \( y_1\(\x\), y_2\(\x\) \)，定义 Wronski 行列式为：
 \[
-W(x) = W[y_1, y_2](x) = 
+W\(\x\) = W[y_1, y_2]\(\x\) = 
 \begin{vmatrix}
-y_1(x) & y_2(x) \\
-y_1'(x) & y_2'(x)
+y_1\(\x\) & y_2\(\x\) \\
+y_1'\(\x\) & y_2'\(\x\)
 \end{vmatrix}
-= y_1(x)y_2'(x) - y_2(x)y_1'(x)
+= y_1\(\x\)y_2'\(\x\) - y_2\(\x\)y_1'\(\x\)
 \]
 
 **线性相关判别**  
-若 \( y_1, y_2 \) 在区间 \( I \) 上线性相关，则 \( W(x) \equiv 0 \)；若 \( W(x) \not\equiv 0 \)，则线性无关。
+若 \( y_1, y_2 \) 在区间 \( I \) 上线性相关，则 \( W\(\x\) \equiv 0 \)；若 \( W\(\x\) \not\equiv 0 \)，则线性无关。
 
 **Liouville 公式**  
-对于齐次方程 \( y'' + P(x)y' + Q(x)y = 0 \)，若 \( y_1, y_2 \) 是解，则：
+对于齐次方程 \( y'' + P\(\x\)y' + Q\(\x\)y = 0 \)，若 \( y_1, y_2 \) 是解，则：
 \[
-W(x) = W(x_0)e^{-\int_{x_0}^x P(t)dt}
+W\(\x\) = W(\x_0)e^{-\int_{x_0}^x P(t)dt}
 \]
-特别地，若 \( W(x_0) \neq 0 \)，则 \( W(x) \neq 0 \) 对所有 \( x \) 成立。
+特别地，若 \( W(\x_0) \neq 0 \)，则 \( W\(\x\) \neq 0 \) 对所有 \( x \) 成立。
 
 ### 常系数齐次方程
 
@@ -438,20 +438,20 @@ r^2 + pr + q = 0
 ### 常系数非齐次方程
 
 **待定系数法**  
-对于 \( y'' + py' + qy = f(x) \)：
-*   \( f(x) = P_n(x)e^{\alpha x} \)：特解形式 \( y^* = x^kQ_n(x)e^{\alpha x} \)，其中 \( k \) 是 \( \alpha \) 作为特征根的重数
-*   \( f(x) = e^{\alpha x}[P_m(x)\cos\beta x + P_n(x)\sin\beta x] \)：特解形式 \( y^* = x^ke^{\alpha x}[R_l(x)\cos\beta x + S_l(x)\sin\beta x] \)，其中 \( l = \max(m,n) \)，\( k \) 是 \( \alpha + i\beta \) 作为特征根的重数
+对于 \( y'' + py' + qy = f\(\x\) \)：
+*   \( f\(\x\) = P_n\(\x\)e^{\alpha x} \)：特解形式 \( y^* = x^kQ_n\(\x\)e^{\alpha x} \)，其中 \( k \) 是 \( \alpha \) 作为特征根的重数
+*   \( f\(\x\) = e^{\alpha x}[P_m\(\x\)\cos\beta x + P_n\(\x\)\sin\beta x] \)：特解形式 \( y^* = x^ke^{\alpha x}[R_l\(\x\)\cos\beta x + S_l\(\x\)\sin\beta x] \)，其中 \( l = \max(m,n) \)，\( k \) 是 \( \alpha + i\beta \) 作为特征根的重数
 
 **常数变易法**  
 若齐次通解为 \( y = C_1y_1 + C_2y_2 \)，则设特解为：
 \[
-y^* = v_1(x)y_1 + v_2(x)y_2
+y^* = v_1\(\x\)y_1 + v_2\(\x\)y_2
 \]
 其中 \( v_1', v_2' \) 满足：
 \[
 \begin{cases}
 v_1'y_1 + v_2'y_2 = 0 \\
-v_1'y_1' + v_2'y_2' = f(x)
+v_1'y_1' + v_2'y_2' = f\(\x\)
 \end{cases}
 \]
 解得：
@@ -464,7 +464,7 @@ v_1' = -\frac{y_2f}{W}, \quad v_2' = \frac{y_1f}{W}
 **Euler 方程**  
 形如：
 \[
-x^2y'' + pxy' + qy = f(x) \quad (x > 0)
+x^2y'' + pxy' + qy = f\(\x\) \quad (\x > 0)
 \]
 的方程称为 Euler 方程。
 
@@ -539,7 +539,7 @@ r(r-1) + pr + q = 0 \Rightarrow r^2 + (p-1)r + q = 0
 ### 可化为方程组的二阶方程
 
 **一阶化方法**  
-对于 \( y'' + py' + qy = f(x) \)，令：
+对于 \( y'' + py' + qy = f\(\x\) \)，令：
 \[
 y_1 = y, \quad y_2 = y'
 \]
@@ -547,7 +547,7 @@ y_1 = y, \quad y_2 = y'
 \[
 \begin{cases}
 y_1' = y_2 \\
-y_2' = -qy_1 - py_2 + f(x)
+y_2' = -qy_1 - py_2 + f\(\x\)
 \end{cases}
 \]
 即：
@@ -558,7 +558,7 @@ y_2' = -qy_1 - py_2 + f(x)
 -q & -p
 \end{bmatrix}
 \begin{bmatrix} y_1 \\ y_2 \end{bmatrix} + 
-\begin{bmatrix} 0 \\ f(x) \end{bmatrix}
+\begin{bmatrix} 0 \\ f\(\x\) \end{bmatrix}
 \]
 
 ## 多元函数极限与连续
@@ -615,7 +615,7 @@ g(\vv{x}) \leq f(\vv{x}) \leq h(\vv{x})
 \]
 
 > **示例：**  
-> 证明 \( \lim_{(x,y) \to (0,0)} \frac{x^2y}{x^2 + y^2} = 0 \)  
+> 证明 \( \lim_{(\x,y) \to (0,0)} \frac{x^2y}{x^2 + y^2} = 0 \)  
 > 解：由于 \( |x| \leq \sqrt{x^2 + y^2} \)，\( |y| \leq \sqrt{x^2 + y^2} \)，所以
 > \[
 > 0 \leq \left|\frac{x^2y}{x^2 + y^2}\right| \leq |y| \leq \sqrt{x^2 + y^2}
@@ -661,7 +661,7 @@ f(\vv{a} + \vv{h}) = f(\vv{a}) + \nabla f(\vv{a})^T \vv{h} + \frac{1}{2} \vv{h}^
 其中 \( H_f(\vv{a}) \) 是 Hessian 矩阵。
 
 **示例**  
-二元函数 \( f(x,y) \) 在 \( (a,b) \) 处的二阶Taylor展开：
+二元函数 \( f(\x,y) \) 在 \( (a,b) \) 处的二阶Taylor展开：
 \[
 \begin{aligned}
 f(a+h, b+k) = & f(a,b) + f_x(a,b)h + f_y(a,b)k \\
@@ -687,7 +687,7 @@ f(a+h, b+k) = & f(a,b) + f_x(a,b)h + f_y(a,b)k \\
     \]
 
 **示例**  
-方程 \( F(x,y) = x^2 + y^2 - 1 = 0 \) 在 \( (0,1) \) 附近确定隐函数 \( y = f(x) \)，且
+方程 \( F(\x,y) = x^2 + y^2 - 1 = 0 \) 在 \( (0,1) \) 附近确定隐函数 \( y = f\(\x\) \)，且
 \[
 \frac{dy}{dx} = -\frac{F_x}{F_y} = -\frac{2x}{2y} = -\frac{x}{y}
 \]
@@ -739,7 +739,7 @@ f(a+h, b+k) = & f(a,b) + f_x(a,b)h + f_y(a,b)k \\
 1.  \( \vv{f} \) 在 \( \vv{x}_0 \) 处可微
 2.  Jacobi 行列式在 \( \vv{x}_0 \) 处不为零：
     \[
-    J = \frac{\partial(f_1, \dots, f_n)}{\partial(x_1, \dots, x_n)}(\vv{x}_0) \neq 0
+    J = \frac{\partial(f_1, \dots, f_n)}{\partial(\x_1, \dots, x_n)}(\vv{x}_0) \neq 0
     \]
 则在 \( \vv{y}_0 = \vv{f}(\vv{x}_0) \) 的某邻域内存在唯一反函数组 \( \vv{x} = \vv{g}(\vv{y}) \)，且
 \[
@@ -766,14 +766,14 @@ g_i(\vv{x}) = 0, \quad i = 1, \dots, m
 ### 曲面的切平面与法线
 
 **隐式曲面切平面**  
-设曲面由 \( F(x,y,z) = 0 \) 确定，\( P(x_0,y_0,z_0) \) 是曲面上一点，且 \( \nabla F(P) \neq \vv{0} \)，则曲面在 \( P \) 点的切平面方程为：
+设曲面由 \( F(\x,y,z) = 0 \) 确定，\( P(\x_0,y_0,z_0) \) 是曲面上一点，且 \( \nabla F(P) \neq \vv{0} \)，则曲面在 \( P \) 点的切平面方程为：
 \[
-F_x(P)(x - x_0) + F_y(P)(y - y_0) + F_z(P)(z - z_0) = 0
+F_x(P)(\x - x_0) + F_y(P)(y - y_0) + F_z(P)(z - z_0) = 0
 \]
 法线方向为 \( \nabla F(P) \)。
 
 **参数曲面切平面**  
-设曲面由 \( \vv{r}(u,v) = (x(u,v), y(u,v), z(u,v)) \) 给出，则切平面由向量
+设曲面由 \( \vv{r}(u,v) = (\x(u,v), y(u,v), z(u,v)) \) 给出，则切平面由向量
 \[
 \frac{\partial \vv{r}}{\partial u} \times \frac{\partial \vv{r}}{\partial v}
 \]
@@ -799,27 +799,27 @@ F_x(P)(x - x_0) + F_y(P)(y - y_0) + F_z(P)(z - z_0) = 0
 *   **二元方程组**：对于
     \[
     \begin{cases}
-    F(x,y,u,v) = 0 \\
-    G(x,y,u,v) = 0
+    F(\x,y,u,v) = 0 \\
+    G(\x,y,u,v) = 0
     \end{cases}
     \]
     有
     \[
-    \frac{\partial u}{\partial x} = -\frac{1}{J} \frac{\partial(F,G)}{\partial(x,v)}, \quad
+    \frac{\partial u}{\partial x} = -\frac{1}{J} \frac{\partial(F,G)}{\partial(\x,v)}, \quad
     \frac{\partial v}{\partial x} = -\frac{1}{J} \frac{\partial(F,G)}{\partial(u,x)}
     \]
     其中 \( J = \frac{\partial(F,G)}{\partial(u,v)} \)
 
 ### Jacobi 行列式性质
 
-*   **链式法则**：\( \frac{\partial(u,v)}{\partial(x,y)} = \frac{\partial(u,v)}{\partial(s,t)} \cdot \frac{\partial(s,t)}{\partial(x,y)} \)
-*   **反函数**：\( \frac{\partial(x,y)}{\partial(u,v)} = \left[\frac{\partial(u,v)}{\partial(x,y)}\right]^{-1} \)
+*   **链式法则**：\( \frac{\partial(u,v)}{\partial(\x,y)} = \frac{\partial(u,v)}{\partial(s,t)} \cdot \frac{\partial(s,t)}{\partial(\x,y)} \)
+*   **反函数**：\( \frac{\partial(\x,y)}{\partial(u,v)} = \left[\frac{\partial(u,v)}{\partial(\x,y)}\right]^{-1} \)
 
 ## 求解公式总结
 
 ### 一阶方程通解公式
 
-*   **可分离变量**：\( \int \frac{dy}{g(y)} = \int f(x)dx + C \)
+*   **可分离变量**：\( \int \frac{dy}{g(y)} = \int f\(\x\)dx + C \)
 *   **一阶线性**：\( y = e^{-\int Pdx}\left[\int Qe^{\int Pdx}dx + C\right] \)
 *   **Bernoulli**：令 \( z = y^{1-n} \) 化为一阶线性
 
@@ -844,6 +844,6 @@ F_x(P)(x - x_0) + F_y(P)(y - y_0) + F_z(P)(z - z_0) = 0
 
 ### 重要公式
 
-*   **Liouville 公式**：\( W(x) = W(x_0)e^{-\int_{x_0}^x P(t)dt} \)
-*   **Wronski 行列式**：\( W(x) = y_1y_2' - y_2y_1' \)
+*   **Liouville 公式**：\( W\(\x\) = W(\x_0)e^{-\int_{x_0}^x P(t)dt} \)
+*   **Wronski 行列式**：\( W\(\x\) = y_1y_2' - y_2y_1' \)
 *   **矩阵指数**：\( e^{\mathbf{A}t} = \sum_{k=0}^{\infty} \frac{\mathbf{A}^k t^k}{k!} \)
