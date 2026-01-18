@@ -85,6 +85,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#15" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1114,6 +1119,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    查找算法
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1130,6 +1153,45 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 查找结构实现
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 查找算法
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1234,7 +1296,7 @@
   <span class="md-ellipsis">
     
   
-    复杂度分析
+    真题补充
   
 
     
@@ -1362,6 +1424,36 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 查找结构实现
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 查找算法
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1378,8 +1470,6 @@
 
 
 
-  <h1>查找算法</h1>
-
 <script>
 window.MathJax = {
   tex: {
@@ -1392,6 +1482,243 @@ window.MathJax = {
 };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<h3 id="15">1.5 查找结构实现<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
+<p><strong>有序表与分块表</strong></p>
+<p><strong>有序表</strong>: 关键字有序排列，支持二分查找</p>
+<p><strong>分块有序表</strong>:
+* 块内无序，块间有序
+* 索引表：记录每块最大关键字和起始地址
+* 查找：先查索引表，再在块内顺序查找</p>
+<p><strong>跳表（Skip List）</strong>:
+* 多层索引结构，类似多级索引
+* 查找、插入、删除：平均<span class="arithmatex">\(O(\log n)\)</span>
+* 空间复杂度：<span class="arithmatex">\(O(n)\)</span></p>
+<p><strong>二叉搜索树家族</strong></p>
+<p><strong>二叉搜索树（BST）</strong>:
+* 左子树 &lt; 根 &lt; 右子树
+* 中序遍历得到有序序列</p>
+<p><strong>平衡二叉树（AVL）</strong>:
+* 平衡因子：<span class="arithmatex">\(|h_L-h_R|\leq 1\)</span>
+* 四种旋转：LL, RR, LR, RL</p>
+<p><strong>红黑树</strong>:
+1. 结点红或黑
+2. 根黑，叶(NIL)黑
+3. 红结点的子结点黑
+4. 从任一结点到叶子的路径包含相同黑结点数</p>
+<p><strong>B树家族</strong></p>
+<p><strong>m路查找树</strong>:
+* 每个结点最多m棵子树，m-1个关键字
+* <span class="arithmatex">\(K_1&lt;K_2&lt;\dots&lt;K_{m-1}\)</span>
+* 子树指针：<span class="arithmatex">\(P_0,P_1,\dots,P_{m-1}\)</span></p>
+<p><strong>m阶B树性质</strong>:
+1. 根至少2棵子树（除非为叶）
+2. 非叶结点：<span class="arithmatex">\(\lceil m/2\rceil\)</span>到<span class="arithmatex">\(m\)</span>棵子树
+3. 所有叶在同一层
+4. 关键字数：<span class="arithmatex">\(\lceil m/2\rceil-1\)</span>到<span class="arithmatex">\(m-1\)</span></p>
+<p><strong>B+树与B树区别</strong>:
+* B+树：非叶结点只存索引，数据在叶，叶结点链表连接
+* B树：所有结点都存数据</p>
+<p><strong>键树（Trie树）</strong>:
+* 关键字由字符构成
+* 从根到叶路径表示关键字
+* 压缩存储：合并单分支路径</p>
+<p><strong>哈希表实现</strong></p>
+<p><strong>链地址法</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HashNode</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">KeyType</span><span class="w"> </span><span class="n">key</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">ValueType</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">HashNode</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span><span class="w"> </span><span class="n">HashNode</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>开放定址法</strong>:
+* 线性探测：<span class="arithmatex">\(h_i(k)=(h(k)+i)\mod m\)</span>
+* 二次探测：<span class="arithmatex">\(h_i(k)=(h(k)+c_1i+c_2i^2)\mod m\)</span>
+* 双重散列：<span class="arithmatex">\(h_i(k)=(h_1(k)+ih_2(k))\mod m\)</span></p>
+<p><strong>基桶与溢出桶</strong>:
+* 基桶：主存储区，固定大小
+* 溢出桶：基桶满时使用，链式连接
+* 装填因子：<span class="arithmatex">\(\alpha=n/m\)</span>，影响性能</p>
+<p><strong>哈希函数设计</strong>:
+* 除留余数法：<span class="arithmatex">\(h(k)=k\mod p\)</span>
+* 平方取中法：<span class="arithmatex">\(k^2\)</span>取中间几位
+* 折叠法：分割相加
+* 数字分析法：取分布均匀的位</p>
+<p><strong>索引与倒排表</strong></p>
+<p><strong>索引结构分类</strong>:
+* 稠密索引：每个记录都有索引项
+* 稀疏索引：一组记录共享索引项
+* 主索引：主键上的索引
+* 辅助索引：非主键上的索引
+* 多级索引：索引的索引</p>
+<p><strong>倒排表（Inverted Index）</strong>:
+* 词典：所有单词有序集合
+* 倒排列表：<span class="arithmatex">\(\text{单词}\rightarrow\{\text{文档ID}_1,\text{文档ID}_2,\dots\}\)</span>
+* 应用：搜索引擎全文检索</p>
+<h1 id="_1">算法设计与实现<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="28">2.8 查找算法<a class="headerlink" href="#28" title="Permanent link">&para;</a></h2>
+<p><strong>基本查找算法</strong></p>
+<p><strong>1. 顺序查找</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">sequential_search</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>            <span class="k">return</span> <span class="n">i</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div>
+ASL成功 = <span class="arithmatex">\(\frac{n+1}{2}\)</span>，ASL失败 = <span class="arithmatex">\(n+1\)</span></p>
+<p><strong>2. 二分查找（有序表）</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">low</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">high</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>            <span class="k">return</span> <span class="n">mid</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="k">elif</span> <span class="n">A</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">key</span><span class="p">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>            <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>            <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div>
+时间复杂度：<span class="arithmatex">\(O(\log n)\)</span>
+判定树：平衡二叉树，ASL成功≈<span class="arithmatex">\(\log_2(n+1)-1\)</span></p>
+<p><strong>3. 分块查找</strong>:
+* 将表分成<span class="arithmatex">\(b\)</span>块，每块<span class="arithmatex">\(s\)</span>个记录（<span class="arithmatex">\(n=b\times s\)</span>）
+* 索引表：记录每块最大关键字和起始地址
+* ASL = <span class="arithmatex">\(L_b\)</span>（查索引表）+ <span class="arithmatex">\(L_w\)</span>（块内查找）
+* 最优分块：<span class="arithmatex">\(s=\sqrt{n}\)</span>，ASL最小</p>
+<p><strong>树形查找算法</strong></p>
+<p><strong>1. 二叉查找树操作</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span> <span class="nf">bst_search</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="k">while</span> <span class="n">T</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">T</span><span class="o">.</span><span class="n">key</span> <span class="o">!=</span> <span class="n">key</span><span class="p">:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="k">if</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="n">T</span><span class="o">.</span><span class="n">key</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>            <span class="n">T</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">left</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>            <span class="n">T</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">right</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">return</span> <span class="n">T</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">def</span> <span class="nf">bst_insert</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="k">if</span> <span class="n">T</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="k">return</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="k">if</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="n">T</span><span class="o">.</span><span class="n">key</span><span class="p">:</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        <span class="n">T</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">bst_insert</span><span class="p">(</span><span class="n">T</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="k">elif</span> <span class="n">key</span> <span class="o">&gt;</span> <span class="n">T</span><span class="o">.</span><span class="n">key</span><span class="p">:</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        <span class="n">T</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">bst_insert</span><span class="p">(</span><span class="n">T</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="k">return</span> <span class="n">T</span>
+</code></pre></div></p>
+<p><strong>2. AVL树旋转</strong>:
+* LL型：右单旋转
+* RR型：左单旋转
+* LR型：先左旋后右旋
+* RL型：先右旋后左旋</p>
+<p><strong>B树操作算法</strong></p>
+<p><strong>1. B树查找</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span> <span class="nf">btree_search</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">p</span> <span class="o">=</span> <span class="n">T</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">q</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="k">while</span> <span class="n">p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="c1"># 在当前结点中顺序查找key</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="n">found</span><span class="p">,</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">search_in_node</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="k">if</span> <span class="n">found</span><span class="p">:</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>            <span class="k">return</span> <span class="n">p</span><span class="p">,</span> <span class="n">pos</span>  <span class="c1"># 找到</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="n">q</span> <span class="o">=</span> <span class="n">p</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="c1"># 确定下一个子树指针</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        <span class="n">p</span> <span class="o">=</span> <span class="n">get_next_child</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="k">return</span> <span class="n">q</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">False</span>  <span class="c1"># 未找到，返回可能插入的结点</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="k">def</span> <span class="nf">search_in_node</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;在B树结点中顺序查找关键字&quot;&quot;&quot;</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="n">keys</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">keys</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">)):</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>            <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="n">i</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>        <span class="k">if</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">i</span>  <span class="c1"># 返回应插入的位置</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>  <span class="c1"># 应插入到末尾</span>
+</code></pre></div></p>
+<p><strong>2. B树插入（分裂）</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span> <span class="nf">btree_insert</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="c1"># 查找插入位置</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">node</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">found</span> <span class="o">=</span> <span class="n">btree_search</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="k">if</span> <span class="n">found</span><span class="p">:</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        <span class="k">return</span> <span class="n">T</span>  <span class="c1"># 关键字已存在</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="c1"># 插入关键字</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="n">node</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="c1"># 检查是否超过结点容量</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">keys</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">M</span><span class="p">:</span>  <span class="c1"># M为B树的阶</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="n">node</span> <span class="o">=</span> <span class="n">split_node</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="k">return</span> <span class="n">T</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="k">def</span> <span class="nf">split_node</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;分裂B树结点&quot;&quot;&quot;</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    <span class="n">mid</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">keys</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    <span class="n">median_key</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>    <span class="c1"># 创建左右子结点</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>    <span class="n">left_node</span> <span class="o">=</span> <span class="n">BTreeNode</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">keys</span><span class="p">[:</span><span class="n">mid</span><span class="p">])</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>    <span class="n">right_node</span> <span class="o">=</span> <span class="n">BTreeNode</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>    <span class="c1"># 如果有孩子，也需分裂</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>    <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>        <span class="n">left_node</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[:</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>        <span class="n">right_node</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>    <span class="c1"># 创建新父结点（或提升中间关键字）</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>    <span class="n">new_node</span> <span class="o">=</span> <span class="n">BTreeNode</span><span class="p">([</span><span class="n">median_key</span><span class="p">])</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>    <span class="n">new_node</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="p">[</span><span class="n">left_node</span><span class="p">,</span> <span class="n">right_node</span><span class="p">]</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>    <span class="k">return</span> <span class="n">new_node</span>
+</code></pre></div></p>
+<p><strong>3. B树删除</strong>:
+* 叶结点删除：直接删除
+* 非叶结点删除：用前驱/后继替换
+* 下溢处理：借兄弟结点或合并</p>
+<p><strong>哈希表查找分析</strong></p>
+<p><strong>平均查找长度计算</strong>:
+* 线性探测法：
+  <span class="arithmatex">\(\begin{align*}
+  ASL_{succ} &amp;\approx \frac{1}{2}\left(1+\frac{1}{1-\alpha}\right) \\
+  ASL_{unsucc} &amp;\approx \frac{1}{2}\left(1+\frac{1}{(1-\alpha)^2}\right)
+  \end{align*}\)</span>
+* 链地址法：
+  <span class="arithmatex">\(\begin{align*}
+  ASL_{succ} &amp;\approx 1+\frac{\alpha}{2} \\
+  ASL_{unsucc} &amp;\approx \alpha + e^{-\alpha}
+  \end{align*}\)</span>
+其中<span class="arithmatex">\(\alpha=\frac{n}{m}\)</span>为装填因子</p>
+<p><strong>性能对比</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>查找成功ASL</th>
+<th>查找失败ASL</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>线性探测</td>
+<td><span class="arithmatex">\(\frac{1}{2}(1+\frac{1}{1-\alpha})\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{2}(1+\frac{1}{(1-\alpha)^2})\)</span></td>
+<td>聚集现象</td>
+</tr>
+<tr>
+<td>二次探测</td>
+<td><span class="arithmatex">\(-\frac{1}{\alpha}\ln(1-\alpha)\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{1-\alpha}\)</span></td>
+<td>减少聚集</td>
+</tr>
+<tr>
+<td>链地址</td>
+<td><span class="arithmatex">\(1+\frac{\alpha}{2}\)</span></td>
+<td><span class="arithmatex">\(\alpha+e^{-\alpha}\)</span></td>
+<td>无聚集</td>
+</tr>
+</tbody>
+</table>
 
 
 
