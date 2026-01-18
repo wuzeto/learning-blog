@@ -105,3 +105,164 @@ typedef struct HashNode {
 * 词典：所有单词有序集合
 * 倒排列表：$\text{单词}\rightarrow\{\text{文档ID}_1,\text{文档ID}_2,\dots\}$
 * 应用：搜索引擎全文检索
+
+# 算法设计与实现
+
+## 2.8 查找算法
+
+**基本查找算法**
+
+**1. 顺序查找**:
+```python
+def sequential_search(A, n, key):
+    for i in range(n):
+        if A[i] == key:
+            return i
+    return -1
+```
+ASL成功 = $\frac{n+1}{2}$，ASL失败 = $n+1$
+
+**2. 二分查找（有序表）**:
+```python
+def binary_search(A, n, key):
+    low, high = 0, n-1
+    while low <= high:
+        mid = (low + high) // 2
+        if A[mid] == key:
+            return mid
+        elif A[mid] < key:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+```
+时间复杂度：$O(\log n)$
+判定树：平衡二叉树，ASL成功≈$\log_2(n+1)-1$
+
+**3. 分块查找**:
+* 将表分成$b$块，每块$s$个记录（$n=b\times s$）
+* 索引表：记录每块最大关键字和起始地址
+* ASL = $L_b$（查索引表）+ $L_w$（块内查找）
+* 最优分块：$s=\sqrt{n}$，ASL最小
+
+**树形查找算法**
+
+**1. 二叉查找树操作**:
+```python
+def bst_search(T, key):
+    while T is not None and T.key != key:
+        if key < T.key:
+            T = T.left
+        else:
+            T = T.right
+    return T
+
+def bst_insert(T, key):
+    if T is None:
+        return TreeNode(key)
+    if key < T.key:
+        T.left = bst_insert(T.left, key)
+    elif key > T.key:
+        T.right = bst_insert(T.right, key)
+    return T
+```
+
+**2. AVL树旋转**:
+* LL型：右单旋转
+* RR型：左单旋转
+* LR型：先左旋后右旋
+* RL型：先右旋后左旋
+
+**B树操作算法**
+
+**1. B树查找**:
+```python
+def btree_search(T, key):
+    p = T
+    q = None
+    while p is not None:
+        # 在当前结点中顺序查找key
+        found, pos = search_in_node(p, key)
+        if found:
+            return p, pos  # 找到
+        q = p
+        # 确定下一个子树指针
+        p = get_next_child(p, key)
+    return q, None, False  # 未找到，返回可能插入的结点
+
+def search_in_node(node, key):
+    """在B树结点中顺序查找关键字"""
+    keys = node.keys
+    for i in range(len(keys)):
+        if key == keys[i]:
+            return True, i
+        if key < keys[i]:
+            return False, i  # 返回应插入的位置
+    return False, len(keys)  # 应插入到末尾
+```
+
+**2. B树插入（分裂）**:
+```python
+def btree_insert(T, key):
+    # 查找插入位置
+    node, pos, found = btree_search(T, key)
+    if found:
+        return T  # 关键字已存在
+    
+    # 插入关键字
+    node.keys.insert(pos, key)
+    
+    # 检查是否超过结点容量
+    if len(node.keys) > M:  # M为B树的阶
+        node = split_node(node)
+    
+    return T
+
+def split_node(node):
+    """分裂B树结点"""
+    mid = len(node.keys) // 2
+    median_key = node.keys[mid]
+    
+    # 创建左右子结点
+    left_node = BTreeNode(node.keys[:mid])
+    right_node = BTreeNode(node.keys[mid+1:])
+    
+    # 如果有孩子，也需分裂
+    if node.children:
+        left_node.children = node.children[:mid+1]
+        right_node.children = node.children[mid+1:]
+    
+    # 创建新父结点（或提升中间关键字）
+    new_node = BTreeNode([median_key])
+    new_node.children = [left_node, right_node]
+    
+    return new_node
+```
+
+**3. B树删除**:
+* 叶结点删除：直接删除
+* 非叶结点删除：用前驱/后继替换
+* 下溢处理：借兄弟结点或合并
+
+**哈希表查找分析**
+
+**平均查找长度计算**:
+* 线性探测法：
+  $\begin{align*}
+  ASL_{succ} &\approx \frac{1}{2}\left(1+\frac{1}{1-\alpha}\right) \\
+  ASL_{unsucc} &\approx \frac{1}{2}\left(1+\frac{1}{(1-\alpha)^2}\right)
+  \end{align*}$
+* 链地址法：
+  $\begin{align*}
+  ASL_{succ} &\approx 1+\frac{\alpha}{2} \\
+  ASL_{unsucc} &\approx \alpha + e^{-\alpha}
+  \end{align*}$
+其中$\alpha=\frac{n}{m}$为装填因子
+
+**性能对比**:
+
+| 方法 | 查找成功ASL | 查找失败ASL | 特点 |
+|------|-------------|-------------|------|
+| 线性探测 | $\frac{1}{2}(1+\frac{1}{1-\alpha})$ | $\frac{1}{2}(1+\frac{1}{(1-\alpha)^2})$ | 聚集现象 |
+| 二次探测 | $-\frac{1}{\alpha}\ln(1-\alpha)$ | $\frac{1}{1-\alpha}$ | 减少聚集 |
+| 链地址 | $1+\frac{\alpha}{2}$ | $\alpha+e^{-\alpha}$ | 无聚集 |
