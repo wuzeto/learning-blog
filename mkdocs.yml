@@ -76,7 +76,7 @@ plugins:
 nav:
   - 🚀 首页: index.md
   - 📐 数学:
-    - 数学总览: math/index.md
+    - 数列级数: math/index.md
     - 几何学: math/geometry.md
     - 极限理论: math/limits.md
     - 微分学: math/differential.md
@@ -86,6 +86,7 @@ nav:
     - 统计学: math/statistics.md
   - 💻 计算机科学:
     - 计算机总览: cs/index.md
+    - C语言基础: c++/learning.md
     - 计算机架构: cs/architecture.md
     - 存储系统: cs/storage.md
     - 输入输出系统: cs/io-system.md
