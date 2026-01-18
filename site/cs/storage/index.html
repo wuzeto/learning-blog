@@ -904,6 +904,106 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 内存分配
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 内存分配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连续分配方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        非连续分配方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        页表结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 虚拟存储
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 虚拟存储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        虚拟存储概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        虚拟存储性能
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        内存保护
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1508,6 +1608,106 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 内存分配
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 内存分配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连续分配方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        非连续分配方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        页表结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 虚拟存储
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 虚拟存储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        虚拟存储概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        虚拟存储性能
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        内存保护
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1528,23 +1728,43 @@
 
 <script>
 
+
+
 window.MathJax = {
+
+
 
   tex: {
 
+
+
     inlineMath: [['$', '$'], ['\\(', '\\)']],
+
+
 
     displayMath: [['$$', '$$'], ['\\[', '\\]']],
 
+
+
     macros: {
+
+
 
       oiint: "{\\mathchoice{\\mkern-18mu\\iint}{\\mkern-12mu\\iint}{\\mkern-13mu\\iint}{\\mkern-12mu\\iint}}"
 
+
+
     }
+
+
 
   }
 
+
+
 };
+
+
 
 </script>
 
@@ -1873,19 +2093,33 @@ window.MathJax = {
 <p><strong>地址转换过程</strong>：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">地址转换</span><span class="p">(</span><span class="n">virtual_addr</span><span class="p">):</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">vpn</span> <span class="o">=</span> <span class="n">virtual_addr</span> <span class="o">&gt;&gt;</span> <span class="n">page_size</span>  <span class="c1"># 虚页号</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">offset</span> <span class="o">=</span> <span class="n">virtual_addr</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">page_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 页内偏移</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">vpn</span> <span class="o">=</span> <span class="n">virtual_addr</span> <span class="o">&gt;&gt;</span> <span class="n">page_size</span>  <span class="c1"># 虚页号</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">pfn</span> <span class="o">=</span> <span class="n">查页表</span><span class="p">(</span><span class="n">vpn</span><span class="p">)</span>  <span class="c1"># 页框号</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">if</span> <span class="n">页表项有效位</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">offset</span> <span class="o">=</span> <span class="n">virtual_addr</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">page_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 页内偏移</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        <span class="n">缺页中断处理</span><span class="p">()</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">physical_addr</span> <span class="o">=</span> <span class="p">(</span><span class="n">pfn</span> <span class="o">&lt;&lt;</span> <span class="n">page_size</span><span class="p">)</span> <span class="o">|</span> <span class="n">offset</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">pfn</span> <span class="o">=</span> <span class="n">查页表</span><span class="p">(</span><span class="n">vpn</span><span class="p">)</span>  <span class="c1"># 页框号</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="k">return</span> <span class="n">physical_addr</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="k">if</span> <span class="n">页表项有效位</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        <span class="n">缺页中断处理</span><span class="p">()</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    <span class="n">physical_addr</span> <span class="o">=</span> <span class="p">(</span><span class="n">pfn</span> <span class="o">&lt;&lt;</span> <span class="n">page_size</span><span class="p">)</span> <span class="o">|</span> <span class="n">offset</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    <span class="k">return</span> <span class="n">physical_addr</span>
 </code></pre></div>
 <p><strong>思想</strong>：页表映射虚页到页框</p>
 <p><strong>复杂度</strong>：<span class="arithmatex">\(O(1)\)</span>（有TLB时）</p>
@@ -2047,6 +2281,310 @@ window.MathJax = {
 <p>段保护：段描述符中的权限位</p>
 </li>
 </ul>
+<h1 id="_3">三、内存管理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
+<h2 id="31">3.1 内存分配<a class="headerlink" href="#31" title="Permanent link">&para;</a></h2>
+<h3 id="_4">连续分配方式<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><strong>单一连续分配</strong>：</p>
+<ul>
+<li>
+<p>系统区+用户区</p>
+</li>
+<li>
+<p>简单，内存利用率低</p>
+</li>
+</ul>
+<p><strong>固定分区分配</strong>：</p>
+<ul>
+<li>
+<p>分区大小固定</p>
+</li>
+<li>
+<p>分区说明表记录状态</p>
+</li>
+</ul>
+<p><strong>动态分区分配</strong>（2010）：</p>
+<ul>
+<li>
+<p>分区大小动态创建</p>
+</li>
+<li>
+<p>需要空闲分区表/链</p>
+</li>
+</ul>
+<p><strong>动态分区分配算法</strong>：</p>
+<ol>
+<li>
+<p><strong>首次适应（FF，2019）</strong>：从低地址开始找第一个满足的分区</p>
+</li>
+<li>
+<p><strong>循环首次适应（NF，2019）</strong>：从上一次找到的位置开始</p>
+</li>
+<li>
+<p><strong>最佳适应（BF，2019）</strong>：找大小最接近的分区</p>
+</li>
+<li>
+<p><strong>最坏适应（WF，2019）</strong>：找最大的分区</p>
+</li>
+</ol>
+<p><strong>内存碎片</strong>（2019）：</p>
+<ul>
+<li>
+<p><strong>内部碎片</strong>：分区内未利用空间</p>
+</li>
+<li>
+<p><strong>外部碎片</strong>：分区之间的小空闲区</p>
+</li>
+</ul>
+<h3 id="_5">非连续分配方式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><strong>分页存储</strong>（2009）：</p>
+<ul>
+<li>
+<p>逻辑地址：页号P + 页内偏移W</p>
+</li>
+<li>
+<p>物理地址：页框号f + 页内偏移W</p>
+</li>
+<li>
+<p>页表：页号→页框号的映射</p>
+</li>
+</ul>
+<p><strong>分段存储</strong>（2009）：</p>
+<ul>
+<li>
+<p>逻辑地址：段号S + 段内偏移W</p>
+</li>
+<li>
+<p>物理地址：基址 + 段内偏移</p>
+</li>
+<li>
+<p>段表：段号→基址、段长的映射</p>
+</li>
+</ul>
+<p><strong>段页式存储</strong>：</p>
+<ul>
+<li>
+<p>逻辑地址：段号S + 页号P + 页内偏移W</p>
+</li>
+<li>
+<p>需要段表和页表</p>
+</li>
+</ul>
+<p><strong>地址转换过程</strong>（2011）：</p>
+<ol>
+<li>
+<p>从逻辑地址中提取页号和页内偏移</p>
+</li>
+<li>
+<p>查页表得到页框号</p>
+</li>
+<li>
+<p>如果有效位=0，触发缺页中断处理</p>
+</li>
+<li>
+<p>组合页框号和页内偏移得到物理地址</p>
+</li>
+</ol>
+<p><strong>思想</strong>：页表映射虚页到页框</p>
+<p><strong>复杂度</strong>：<span class="arithmatex">\(O(1)\)</span>（有TLB时）</p>
+<h3 id="_6">页表结构<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><strong>多级页表</strong>（2010二级页表）：</p>
+<ul>
+<li>
+<p>减少页表占用内存</p>
+</li>
+<li>
+<p>逻辑地址：页目录号 + 页表索引 + 页内偏移</p>
+</li>
+</ul>
+<p><strong>倒置页表</strong>：</p>
+<ul>
+<li>
+<p>按物理页号组织</p>
+</li>
+<li>
+<p>查找需要哈希</p>
+</li>
+</ul>
+<p><strong>快表（TLB）</strong>：</p>
+<ul>
+<li>
+<p>缓存常用页表项</p>
+</li>
+<li>
+<p>相联存储器实现</p>
+</li>
+<li>
+<p>有效访问时间：<span class="arithmatex">\(T_e = (1-p) \times T_a + p \times T_f\)</span></p>
+</li>
+</ul>
+<p><strong>页表基地址寄存器</strong>（2024）：</p>
+<ul>
+<li>
+<p>PDBR（Page Directory Base Register，2018）</p>
+</li>
+<li>
+<p>CR3寄存器（x86）</p>
+</li>
+</ul>
+<h2 id="32">3.2 虚拟存储<a class="headerlink" href="#32" title="Permanent link">&para;</a></h2>
+<h3 id="_7">虚拟存储概念<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><strong>请求分页系统</strong>（2010）：</p>
+<ul>
+<li>
+<p>部分页面在内存，部分在外存</p>
+</li>
+<li>
+<p>需要时调入，不需要时调出</p>
+</li>
+</ul>
+<p><strong>页面置换算法</strong>：</p>
+<ol>
+<li>
+<p><strong>最佳置换（OPT，2014）</strong>：淘汰未来最长时间不使用</p>
+</li>
+<li>
+<p><strong>先进先出（FIFO，2014）</strong>：淘汰最早调入的页</p>
+<ul>
+<li><strong>Belady异常</strong>（2014）：增加物理块数可能增加缺页率</li>
+</ul>
+</li>
+<li>
+<p><strong>最近最少使用（LRU，2014）</strong>：淘汰最近最久未使用的页</p>
+<ul>
+<li>
+<p>维护访问时间栈或计数器</p>
+</li>
+<li>
+<p>缺页且无空闲页框时，选择访问时间最早的页面淘汰</p>
+</li>
+<li>
+<p>调入新页，更新访问时间</p>
+</li>
+<li>
+<p><strong>思想</strong>：基于时间局部性</p>
+</li>
+<li>
+<p><strong>复杂度</strong>：<span class="arithmatex">\(O(1)\)</span>（硬件支持）</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>最近未使用（NRU）</strong>：参考位+修改位</p>
+</li>
+<li>
+<p><strong>最不经常使用（LFU）</strong>：淘汰访问次数最少的页</p>
+</li>
+<li>
+<p><strong>时钟算法（CLOCK，2021改进）</strong>：</p>
+<ul>
+<li>
+<p>访问位A，修改位M（2021）</p>
+</li>
+<li>
+<p>第一轮：找(A=0,M=0)</p>
+</li>
+<li>
+<p>第二轮：找(A=0,M=1)，同时将A=1的置0</p>
+</li>
+<li>
+<p>第三轮：找(A=0,M=0)</p>
+</li>
+<li>
+<p>第四轮：找(A=0,M=1)</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>缺页中断处理流程</strong>（2010）：</p>
+<ol>
+<li>
+<p>保护现场，查找页表</p>
+</li>
+<li>
+<p>检查访问合法性</p>
+</li>
+<li>
+<p>寻找空闲页框，若无则页面置换</p>
+</li>
+<li>
+<p>从磁盘读入所需页</p>
+</li>
+<li>
+<p>修改页表，更新TLB</p>
+</li>
+<li>
+<p>恢复现场，重新执行指令</p>
+</li>
+</ol>
+<h3 id="_8">虚拟存储性能<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><strong>抖动</strong>（2011）：</p>
+<ul>
+<li>
+<p>频繁的页面调入调出现象</p>
+</li>
+<li>
+<p>原因：进程物理块数不足</p>
+</li>
+<li>
+<p>解决：增加物理块数或减少进程数</p>
+</li>
+</ul>
+<p><strong>工作集模型</strong>（2016）：</p>
+<ul>
+<li>
+<p>工作集<span class="arithmatex">\(W(t, \Delta)\)</span>：时间<span class="arithmatex">\(t\)</span>前<span class="arithmatex">\(\Delta\)</span>时间内访问的页面集合</p>
+</li>
+<li>
+<p>窗口大小<span class="arithmatex">\(\Delta\)</span>的选择重要</p>
+</li>
+<li>
+<p>用于防止抖动</p>
+</li>
+</ul>
+<p><strong>驻留集管理</strong>（2010）：</p>
+<ul>
+<li>
+<p><strong>固定分配局部置换</strong>（2010）：进程物理块数固定</p>
+</li>
+<li>
+<p><strong>可变分配全局置换</strong>：OS动态调整各进程物理块数</p>
+</li>
+<li>
+<p><strong>可变分配局部置换</strong>：折中方案</p>
+</li>
+</ul>
+<p><strong>页面缓冲算法（PBA）</strong>：</p>
+<ul>
+<li>
+<p>空闲页框链（2012）</p>
+</li>
+<li>
+<p>已修改页链表</p>
+</li>
+<li>
+<p>减少写磁盘次数</p>
+</li>
+</ul>
+<h3 id="_9">内存保护<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p><strong>存储保护</strong>：</p>
+<ul>
+<li>
+<p><strong>界限寄存器</strong>：基址寄存器和限长寄存器</p>
+</li>
+<li>
+<p><strong>存储保护键</strong>：IBM System/360方式</p>
+</li>
+</ul>
+<p><strong>访问越权异常</strong>（2016）：</p>
+<ul>
+<li>
+<p>越界访问：地址超出段长</p>
+</li>
+<li>
+<p>越权访问：违反保护权限</p>
+</li>
+</ul>
+<p><strong>段缺失异常</strong>（2016）：访问不存在的段</p>
 
 
 
