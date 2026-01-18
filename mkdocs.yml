@@ -1,122 +1,121 @@
-site_name: 我的学习知识库
+site_name: 🚀 未来知识引擎
+site_description: 探索·学习·创造·超越
+site_author: 未来探索者
 site_url: https://wuzeto.github.io/learning-blog/
-repo_url: https://github.com/wuzeto/learning-blog/
-edit_uri: edit/main/docs/
 
 theme:
   name: material
-  language: zh  # 中文界面
+  custom_dir: overrides
+  
+  # 暗黑科幻主题
   palette:
-    # 浅色模式
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/weather-sunny
-        name: 切换到暗黑模式
-    # 暗黑模式
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: indigo
-      accent: indigo
+    - scheme: slate
+      primary: cyan
+      accent: deep purple
       toggle:
         icon: material/weather-night
-        name: 切换到浅色模式
+        name: 切换至浅色模式
+  
   features:
-    - navigation.instant  # 页面无刷新加载
-    - search.suggest      # 搜索建议
-    - search.highlight    # 搜索高亮
-    - navigation.tabs     # 顶部导航栏（类似 App 的 Tab）
-    - navigation.sections # 侧边栏分组展开
-    - navigation.top      # 返回顶部按钮
-    - toc.integrate       # 将目录集成到左侧（更紧凑）
-    - content.code.copy   # 代码块一键复制按钮
-    - content.action.edit # 编辑页面按钮
-    - content.action.view # 查看源码按钮
-  custom_dir: overrides
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - navigation.footer
+  
+  # 字体和图标
+  font:
+    text: Roboto
+    code: "JetBrains Mono"
+  
+  icon:
+    logo: material/rocket-launch
 
-# 修复 markdown_extensions
+# 简化扩展配置（修复emoji配置）
 markdown_extensions:
   - attr_list
   - md_in_html
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
   - footnotes
   - tables
   - toc:
       permalink: true
       toc_depth: "2-4"
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.details
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
 
-# 如果需要使用 blocks，使用以下替代方案
-# markdown_extensions:
-#   - attr_list
-#   - md_in_html
-#   - pymdownx.superfences
-#   - pymdownx.tabbed
-#   - pymdownx.details
-#   - admonition
-#   - footnotes
-#   - tables
-#   - toc:
-#       permalink: true
-
-extra_javascript:
-  - javascripts/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-
-extra_css:
-  - stylesheets/extra.css
-
-# 插件配置
+# 插件（移除未安装的插件）
 plugins:
   - search:
       lang: zh
       separator: '[\s\-\.]+'
-      indexing: 'full'
       min_search_length: 2
-  # 如果需要数学公式支持，可以添加
-  # - katex:
-  #     include_path:
-  #       - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/
-  #     macro_file: katex_macros.yaml
+  - minify:
+      minify_html: true
+
+# 导航
+# 在 mkdocs.yml 中更新 nav 部分
+nav:
+  - 🚀 首页: index.md
+  - 📐 数学:
+    - 数学总览: math/index.md
+    - 几何学: math/geometry.md
+    - 极限理论: math/limits.md
+    - 微分学: math/differential.md
+    - 积分学: math/integral.md
+    - 线性代数: math/linear-algebra.md
+    - 概率论: math/probability.md
+    - 统计学: math/statistics.md
+  - 💻 计算机科学:
+    - 计算机总览: cs/index.md
+    - 计算机架构: cs/architecture.md
+    - 存储系统: cs/storage.md
+    - 输入输出系统: cs/io-system.md
+    - 操作系统: cs/os.md
+    - 网络通信: cs/network.md
+    - 数据库系统: cs/database.md
+    - 编译原理: cs/compiler.md
+  - 🧮 算法与数据结构:
+    - 算法总览: algorithms/index.md
+    - 数据结构: algorithms/data-structures.md
+    - 排序算法: algorithms/sorting.md
+    - 查找算法: algorithms/search.md
+    - 动态规划: algorithms/dynamic.md
+    - 图论算法: algorithms/graph.md
+    - 字符串算法: algorithms/string.md
+    - 复杂度分析: algorithms/complexity.md
+  - 🏗️ 系统架构:
+    - 系统总览: systems/index.md
+
+# 额外资源
+extra_css:
+  - stylesheets/sci-fi-theme.css
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
+
+extra_javascript:
+  - javascripts/homepage-effects.js
 
 # 版权信息
 copyright: |
-  &copy; 2024 我的学习知识库 | 
-  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">
+  © 2024 未来知识引擎 | 
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
     CC BY-NC-SA 4.0
-  </a> |
-  使用 <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+  </a> | 
+  构建于 <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">
     Material for MkDocs
   </a>
-
-# 社交媒体链接
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/wuzeto
-      name: GitHub
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/yourusername
-      name: Twitter
-    - icon: fontawesome/brands/weixin
-      link: https://your-wechat.com
-      name: 微信
