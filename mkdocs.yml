@@ -37,32 +37,42 @@ theme:
   icon:
     logo: material/rocket-launch
 
-# 简化扩展配置
+# 简化扩展配置（修复emoji配置）
 markdown_extensions:
   - attr_list
   - md_in_html
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
   - footnotes
   - tables
   - toc:
       permalink: true
       toc_depth: "2-4"
+      # 添加数学公式支持
+  - pymdownx.arithmatex:
+      generic: true
 
-# 插件（简化版本，只保留必要的）
+# 插件（移除未安装的插件）
 plugins:
   - search:
       lang: zh
       separator: '[\s\-\.]+'
       min_search_length: 2
-  # 如果 minify 插件有问题，可以先注释掉
-  # - minify:
-  #     minify_html: true
+  - minify:
+      minify_html: true
 
-# 导航（根据你实际创建的文件调整）
+# 导航
+# 在 mkdocs.yml 中更新 nav 部分
 nav:
   - 🚀 首页: index.md
   - 📐 数学:
@@ -99,9 +109,17 @@ nav:
 extra_css:
   - stylesheets/sci-fi-theme.css
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
-
+  # 添加数学公式样式（MathJax 或 KaTeX）
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.css
+  # 如果使用 KaTeX：
+  # - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
+  
 extra_javascript:
   - javascripts/homepage-effects.js
+  # KaTeX 支持
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js
+  - javascripts/math-config.js  # 需要创建这个配置文件
 
 # 版权信息
 copyright: |
