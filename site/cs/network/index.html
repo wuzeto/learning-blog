@@ -1941,12 +1941,37 @@ window.MathJax = {
 <p><strong>易错点：</strong>会话层和表示层在实际网络（TCP/IP）中很少单独实现，通常并入应用层</p>
 <h2 id="tcpip45">TCP/IP参考模型（4/5层）<a class="headerlink" href="#tcpip45" title="Permanent link">&para;</a></h2>
 <p><strong>层次结构：</strong></p>
-<p>| 层次 | 协议示例 | 数据单元 |</p>
-<p>|------|----------|----------|</p>
-<p>| 应用层 | HTTP, FTP, SMTP, DNS | 报文/消息 |</p>
-<p>| 传输层 | TCP, UDP | 段/数据报 |</p>
-<p>| 网络层 | IP, ICMP, ARP | 分组/数据报 |</p>
-<p>| 网络接口层 | Ethernet, PPP | 帧 |</p>
+<table>
+<thead>
+<tr>
+<th>层次</th>
+<th>协议示例</th>
+<th>数据单元</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用层</td>
+<td>HTTP, FTP, SMTP, DNS</td>
+<td>报文/消息</td>
+</tr>
+<tr>
+<td>传输层</td>
+<td>TCP, UDP</td>
+<td>段/数据报</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>IP, ICMP, ARP</td>
+<td>分组/数据报</td>
+</tr>
+<tr>
+<td>网络接口层</td>
+<td>Ethernet, PPP</td>
+<td>帧</td>
+</tr>
+</tbody>
+</table>
 <p><strong>与OSI对比：</strong></p>
 <ul>
 <li>
@@ -1982,12 +2007,42 @@ window.MathJax = {
 </li>
 </ul>
 <p><strong>编码方式：</strong></p>
-<p>| 编码 | 描述 | 优点 | 缺点 |</p>
-<p>|------|------|------|------|</p>
-<p>| NRZ | 不归零制 | 简单 | 无时钟同步 |</p>
-<p>| NRZI | 不归零反转 | 差分编码抗干扰 | 长0序列失同步 |</p>
-<p>| 曼彻斯特 | 位中间跳变 | 自同步 | 带宽加倍 |</p>
-<p>| 差分曼彻斯特 | 位开始跳变 | 抗干扰强 | 复杂 |</p>
+<table>
+<thead>
+<tr>
+<th>编码</th>
+<th>描述</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NRZ</td>
+<td>不归零制</td>
+<td>简单</td>
+<td>无时钟同步</td>
+</tr>
+<tr>
+<td>NRZI</td>
+<td>不归零反转</td>
+<td>差分编码抗干扰</td>
+<td>长0序列失同步</td>
+</tr>
+<tr>
+<td>曼彻斯特</td>
+<td>位中间跳变</td>
+<td>自同步</td>
+<td>带宽加倍</td>
+</tr>
+<tr>
+<td>差分曼彻斯特</td>
+<td>位开始跳变</td>
+<td>抗干扰强</td>
+<td>复杂</td>
+</tr>
+</tbody>
+</table>
 <h2 id="_4">性能指标与定理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><strong>重要公式：</strong></p>
 <ol>
@@ -2066,12 +2121,42 @@ window.MathJax = {
 </li>
 </ul>
 <p><strong>多路复用：</strong></p>
-<p>| 类型 | 原理 | 应用 | 特点 |</p>
-<p>|------|------|------|------|</p>
-<p>| FDM | 频率分割 | 有线电视，无线电 | 模拟信号 |</p>
-<p>| TDM | 时间分割 | 数字电话，SDH | 同步/统计 |</p>
-<p>| WDM | 波分复用 | 光纤通信 | 光的FDM |</p>
-<p>| CDM | 码分复用 | CDMA移动通信 | 正交码序列 |</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>原理</th>
+<th>应用</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FDM</td>
+<td>频率分割</td>
+<td>有线电视，无线电</td>
+<td>模拟信号</td>
+</tr>
+<tr>
+<td>TDM</td>
+<td>时间分割</td>
+<td>数字电话，SDH</td>
+<td>同步/统计</td>
+</tr>
+<tr>
+<td>WDM</td>
+<td>波分复用</td>
+<td>光纤通信</td>
+<td>光的FDM</td>
+</tr>
+<tr>
+<td>CDM</td>
+<td>码分复用</td>
+<td>CDMA移动通信</td>
+<td>正交码序列</td>
+</tr>
+</tbody>
+</table>
 <h1 id="_6">三、数据链路层<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h1>
 <h2 id="_7">差错控制与帧结构<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p><strong>CRC检错算法：</strong></p>
@@ -2087,10 +2172,33 @@ window.MathJax = {
 </li>
 </ol>
 <p><strong>帧结构对比：</strong></p>
-<p>| 帧类型 | 前导码 | 地址字段 | 类型/长度 | 校验和 |</p>
-<p>|--------|--------|----------|-----------|--------|</p>
-<p>| 以太网帧 | 7B前导码+1B帧首定界符 | 6B目的+6B源 | 2B类型/长度 | 4B CRC |</p>
-<p>| PPP帧 | 1B标志(0x7E) | 1B地址(0xFF) | 1B控制(0x03) | 2B协议+2B CRC |</p>
+<table>
+<thead>
+<tr>
+<th>帧类型</th>
+<th>前导码</th>
+<th>地址字段</th>
+<th>类型/长度</th>
+<th>校验和</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>以太网帧</td>
+<td>7B前导码+1B帧首定界符</td>
+<td>6B目的+6B源</td>
+<td>2B类型/长度</td>
+<td>4B CRC</td>
+</tr>
+<tr>
+<td>PPP帧</td>
+<td>1B标志(0x7E)</td>
+<td>1B地址(0xFF)</td>
+<td>1B控制(0x03)</td>
+<td>2B协议+2B CRC</td>
+</tr>
+</tbody>
+</table>
 <h2 id="mac">MAC协议<a class="headerlink" href="#mac" title="Permanent link">&para;</a></h2>
 <p><strong>信道划分协议：</strong></p>
 <ul>
@@ -2183,18 +2291,78 @@ window.MathJax = {
 </ul>
 <h2 id="_8">局域网与交换机<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p><strong>IEEE 802标准：</strong></p>
-<p>| 标准 | 名称 | 速率 | 介质 |</p>
-<p>|------|------|------|------|</p>
-<p>| 802.3 | 以太网 | 10M/100M/1G/10G | 双绞线/光纤 |</p>
-<p>| 802.11 | WiFi | 11M/54M/... | 无线 |</p>
-<p>| 802.15 | 蓝牙 | 1M/2M/... | 无线 |</p>
+<table>
+<thead>
+<tr>
+<th>标准</th>
+<th>名称</th>
+<th>速率</th>
+<th>介质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>802.3</td>
+<td>以太网</td>
+<td>10M/100M/1G/10G</td>
+<td>双绞线/光纤</td>
+</tr>
+<tr>
+<td>802.11</td>
+<td>WiFi</td>
+<td>11M/54M/...</td>
+<td>无线</td>
+</tr>
+<tr>
+<td>802.15</td>
+<td>蓝牙</td>
+<td>1M/2M/...</td>
+<td>无线</td>
+</tr>
+</tbody>
+</table>
 <p><strong>网络设备对比：</strong></p>
-<p>| 设备 | 工作层次 | 功能 | 冲突域 | 广播域 |</p>
-<p>|------|----------|------|--------|--------|</p>
-<p>| 集线器Hub | 物理层 | 信号放大转发 | 共享 | 共享 |</p>
-<p>| 网桥Bridge | 数据链路层 | 帧过滤转发 | 分隔 | 共享 |</p>
-<p>| 交换机Switch | 数据链路层 | 基于MAC转发 | 每个端口独立 | 共享 |</p>
-<p>| 路由器Router | 网络层 | 路由选择 | 每个端口独立 | 分隔 |</p>
+<table>
+<thead>
+<tr>
+<th>设备</th>
+<th>工作层次</th>
+<th>功能</th>
+<th>冲突域</th>
+<th>广播域</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>集线器Hub</td>
+<td>物理层</td>
+<td>信号放大转发</td>
+<td>共享</td>
+<td>共享</td>
+</tr>
+<tr>
+<td>网桥Bridge</td>
+<td>数据链路层</td>
+<td>帧过滤转发</td>
+<td>分隔</td>
+<td>共享</td>
+</tr>
+<tr>
+<td>交换机Switch</td>
+<td>数据链路层</td>
+<td>基于MAC转发</td>
+<td>每个端口独立</td>
+<td>共享</td>
+</tr>
+<tr>
+<td>路由器Router</td>
+<td>网络层</td>
+<td>路由选择</td>
+<td>每个端口独立</td>
+<td>分隔</td>
+</tr>
+</tbody>
+</table>
 <p><strong>VLAN技术：</strong></p>
 <ul>
 <li>
@@ -2213,19 +2381,72 @@ window.MathJax = {
 <h1 id="_9">四、网络层<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
 <h2 id="ip">IP协议与编址<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h2>
 <p><strong>IPv4数据报格式：</strong></p>
-<p>| 字段 | 长度 | 说明 |</p>
-<p>| :--- | :--- | :--- |</p>
-<p>| 版本 | 4位 | IPv4=4，IPv6=6 |</p>
-<p>| 首部长度 | 4位 | 以4字节为单位，最小5，最大15 |</p>
-<p>| 区分服务 | 8位 | QoS优先级 |</p>
-<p>| 总长度 | 16位 | 首部+数据，最大65535字节 |</p>
-<p>| 标识 | 16位 | 分片标识 |</p>
-<p>| 标志 | 3位 | MF（更多分片）、DF（不分片） |</p>
-<p>| 片偏移 | 13位 | 以8字节为单位 |</p>
-<p>| 生存时间TTL | 8位 | 跳数限制 |</p>
-<p>| 协议 | 8位 | TCP=6，UDP=17，ICMP=1 |</p>
-<p>| 首部检验和 | 16位 | 只检验首部 |</p>
-<p>| 源/目的IP地址 | 各32位 | |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">字段</th>
+<th style="text-align: left;">长度</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">版本</td>
+<td style="text-align: left;">4位</td>
+<td style="text-align: left;">IPv4=4，IPv6=6</td>
+</tr>
+<tr>
+<td style="text-align: left;">首部长度</td>
+<td style="text-align: left;">4位</td>
+<td style="text-align: left;">以4字节为单位，最小5，最大15</td>
+</tr>
+<tr>
+<td style="text-align: left;">区分服务</td>
+<td style="text-align: left;">8位</td>
+<td style="text-align: left;">QoS优先级</td>
+</tr>
+<tr>
+<td style="text-align: left;">总长度</td>
+<td style="text-align: left;">16位</td>
+<td style="text-align: left;">首部+数据，最大65535字节</td>
+</tr>
+<tr>
+<td style="text-align: left;">标识</td>
+<td style="text-align: left;">16位</td>
+<td style="text-align: left;">分片标识</td>
+</tr>
+<tr>
+<td style="text-align: left;">标志</td>
+<td style="text-align: left;">3位</td>
+<td style="text-align: left;">MF（更多分片）、DF（不分片）</td>
+</tr>
+<tr>
+<td style="text-align: left;">片偏移</td>
+<td style="text-align: left;">13位</td>
+<td style="text-align: left;">以8字节为单位</td>
+</tr>
+<tr>
+<td style="text-align: left;">生存时间TTL</td>
+<td style="text-align: left;">8位</td>
+<td style="text-align: left;">跳数限制</td>
+</tr>
+<tr>
+<td style="text-align: left;">协议</td>
+<td style="text-align: left;">8位</td>
+<td style="text-align: left;">TCP=6，UDP=17，ICMP=1</td>
+</tr>
+<tr>
+<td style="text-align: left;">首部检验和</td>
+<td style="text-align: left;">16位</td>
+<td style="text-align: left;">只检验首部</td>
+</tr>
+<tr>
+<td style="text-align: left;">源/目的IP地址</td>
+<td style="text-align: left;">各32位</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
 <p><strong>分片计算：</strong></p>
 <ul>
 <li>
@@ -2243,13 +2464,54 @@ window.MathJax = {
 </ul>
 <h2 id="ip_1">IP地址与子网划分<a class="headerlink" href="#ip_1" title="Permanent link">&para;</a></h2>
 <p><strong>地址分类：</strong></p>
-<p>| 类 | 首字节 | 网络号长度 | 主机号长度 | 范围 |</p>
-<p>| :--- | :--- | :--- | :--- | :--- |</p>
-<p>| A | 1-126 | 8位 | 24位 | 1.0.0.0-126.255.255.255 |</p>
-<p>| B | 128-191 | 16位 | 16位 | 128.0.0.0-191.255.255.255 |</p>
-<p>| C | 192-223 | 24位 | 8位 | 192.0.0.0-223.255.255.255 |</p>
-<p>| D | 224-239 | 组播地址 |  | 224.0.0.0-239.255.255.255 |</p>
-<p>| E | 240-255 | 保留地址 |  | 240.0.0.0-255.255.255.255 |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">类</th>
+<th style="text-align: left;">首字节</th>
+<th style="text-align: left;">网络号长度</th>
+<th style="text-align: left;">主机号长度</th>
+<th style="text-align: left;">范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">1-126</td>
+<td style="text-align: left;">8位</td>
+<td style="text-align: left;">24位</td>
+<td style="text-align: left;">1.0.0.0-126.255.255.255</td>
+</tr>
+<tr>
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">128-191</td>
+<td style="text-align: left;">16位</td>
+<td style="text-align: left;">16位</td>
+<td style="text-align: left;">128.0.0.0-191.255.255.255</td>
+</tr>
+<tr>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">192-223</td>
+<td style="text-align: left;">24位</td>
+<td style="text-align: left;">8位</td>
+<td style="text-align: left;">192.0.0.0-223.255.255.255</td>
+</tr>
+<tr>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">224-239</td>
+<td style="text-align: left;">组播地址</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">224.0.0.0-239.255.255.255</td>
+</tr>
+<tr>
+<td style="text-align: left;">E</td>
+<td style="text-align: left;">240-255</td>
+<td style="text-align: left;">保留地址</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">240.0.0.0-255.255.255.255</td>
+</tr>
+</tbody>
+</table>
 <p><strong>CIDR与子网划分：</strong></p>
 <ul>
 <li>
