@@ -9,6 +9,15 @@
   }
   
   /* 星空背景 */
+  .bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
   .stars, .stars2, .stars3 {
     position: absolute;
     top: 0;
@@ -18,13 +27,14 @@
     pointer-events: none;
   }
   
-  .stars { background: transparent url('/images/stars.png') repeat; }
+  /* 星空背景图路径修正，兼容 GitHub Pages 基础路径 */
+  .stars { background: transparent url('../images/stars.png') repeat; }
   .stars2 { 
-    background: transparent url('/images/stars2.png') repeat;
+    background: transparent url('../images/stars2.png') repeat;
     animation: animStar 100s linear infinite;
   }
   .stars3 { 
-    background: transparent url('/images/stars3.png') repeat;
+    background: transparent url('../images/stars3.png') repeat;
     animation: animStar 150s linear infinite;
   }
   
