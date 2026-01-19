@@ -43,11 +43,8 @@ window.MathJax = {
 **交换律**
 
 $\begin{aligned}
-
 A \cup B &= B \cup A \\
-
 A \cap B &= B \cap A
-
 \end{aligned}$
 
 
@@ -55,11 +52,8 @@ A \cap B &= B \cap A
 **结合律**
 
 $\begin{aligned}
-
 (A \cup B) \cup C &= A \cup (B \cup C) \\
-
 (A \cap B) \cap C &= A \cap (B \cap C)
-
 \end{aligned}$
 
 
@@ -67,11 +61,8 @@ $\begin{aligned}
 **分配律**
 
 $\begin{aligned}
-
 A \cup (B \cap C) &= (A \cup B) \cap (A \cup C) \\
-
 A \cap (B \cup C) &= (A \cap B) \cup (A \cap C)
-
 \end{aligned}$
 
 
@@ -79,11 +70,8 @@ A \cap (B \cup C) &= (A \cap B) \cup (A \cap C)
 **De Morgan 定律**
 
 $\begin{aligned}
-
 \overline{A \cup B} &= \overline{A} \cap \overline{B} \\
-
 \overline{A \cap B} &= \overline{A} \cup \overline{B}
-
 \end{aligned}$
 
 
@@ -91,11 +79,8 @@ $\begin{aligned}
 推广到 $n$ 个事件：
 
 $\begin{aligned}
-
 \overline{\bigcup_{i=1}^n A_i} &= \bigcap_{i=1}^n \overline{A_i} \\
-
 \overline{\bigcap_{i=1}^n A_i} &= \bigcup_{i=1}^n \overline{A_i}
-
 \end{aligned}$
 
 
@@ -123,13 +108,9 @@ $P(A \cup B) = P(A) + P(B)$
 **三个事件的加法公式**
 
 $\begin{aligned}
-
 P(A \cup B \cup C) = & P(A) + P(B) + P(C) \\
-
 & - P(A \cap B) - P(A \cap C) - P(B \cap C) \\
-
 & + P(A \cap B \cap C)
-
 \end{aligned}$
 
 
@@ -155,13 +136,9 @@ $P(A|B) = \frac{P(A \cap B)}{P(B)}, \quad \text{其中 } P(B) > 0$
 **乘法公式**
 
 $\begin{aligned}
-
 P(A \cap B) &= P(A) \cdot P(B|A) = P(B) \cdot P(A|B) \\
-
 P(A \cap B \cap C) &= P(A) \cdot P(B|A) \cdot P(C|A \cap B) \\
-
 P\left( \bigcap_{i=1}^n A_i \right) &= P(A_1) \cdot P(A_2|A_1) \cdot P(A_3|A_1 \cap A_2) \cdots P(A_n|A_1 \cap \cdots \cap A_{n-1})
-
 \end{aligned}$
 
 
@@ -191,13 +168,9 @@ $P(B_i|A) = \frac{P(B_i) \cdot P(A|B_i)}{\sum_{j=1}^n P(B_j) \cdot P(A|B_j)} = \
 > 解：设 $A$ = "患病"，$B$ = "检测阳性"
 
 > $\begin{aligned}
-
 > P(A) &= 0.01, \quad P(\overline{A}) = 0.99 \\
-
 > P(B|A) &= 0.99, \quad P(B|\overline{A}) = 0.01 \\
-
 > P(A|B) &= \frac{0.01 \times 0.99}{0.01 \times 0.99 + 0.99 \times 0.01} = \frac{0.0099}{0.0198} = 0.5
-
 > \end{aligned}$
 
 
@@ -659,11 +632,8 @@ $P(a \leq n_A \leq b) \approx \Phi\left( \frac{b + 0.5 - np}{\sqrt{np(1-p)}} \ri
 > 解：不合格品数 $X \sim B(10000, 0.01)$，由 de Moivre-Laplace 定理：
 
 > $\begin{aligned}
-
 > P(90 \leq X \leq 110) &\approx \Phi\left( \frac{110 + 0.5 - 100}{\sqrt{99}} \right) - \Phi\left( \frac{90 - 0.5 - 100}{\sqrt{99}} \right) \\
-
 > &= \Phi(1.055) - \Phi(-1.055) = 2\Phi(1.055) - 1 \approx 0.709
-
 > \end{aligned}$
 
 
