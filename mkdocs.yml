@@ -115,6 +115,8 @@ extra_javascript:
 nav:
   - 🚀 首页: index.md
   - 📐 数学:
+    - 基础数学 1: math/elementary1.md
+    - 基础数学 2: math/elementary2.md
     - 数列级数: math/index.md
     - 几何学: math/geometry.md
     - 极限理论: math/limits.md

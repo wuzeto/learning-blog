@@ -71,6 +71,12 @@ hide:
     <div class="category-section">
       <div class="category-title"><i class="fas fa-shapes"></i> 数学</div>
       <div class="sub-categories">
+        <a href="math/elementary1/" class="sub-category">
+          <div class="sub-icon"><i class="fas fa-drafting-compass"></i></div>
+          <div class="sub-name">初中基础 Elementary1</div>
+        <a href="math/elementary2/" class="sub-category">
+          <div class="sub-icon"><i class="fas fa-drafting-compass"></i></div>
+          <div class="sub-name">高中基础 Elementary2</div>
         <a href="math/geometry/" class="sub-category">
           <div class="sub-icon"><i class="fas fa-drafting-compass"></i></div>
           <div class="sub-name">几何 Geometry</div>
