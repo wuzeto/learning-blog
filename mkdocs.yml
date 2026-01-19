@@ -148,7 +148,7 @@ nav:
   - 🏗️ 系统架构:
     - 系统总览: systems/index.md
     - 计算机架构: systems/architecture.md
-
+    - 数字模拟: systems/modified.md
 # 版权信息
 copyright: |
   © 2024 未来知识引擎 | 
