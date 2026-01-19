@@ -1949,11 +1949,36 @@ window.MathJax = {
 </li>
 </ul>
 <p><strong>地址结构对比</strong>：</p>
-<p>| 映射方式 | 地址划分 | 比较器数量 | 特点 |</p>
-<p>|----------|----------|------------|------|</p>
-<p>| 直接映射 | 标记|行号|块内地址 | 1 | 简单，易冲突 |</p>
-<p>| 全相联 | 标记|块内地址 | Cache行数 | 灵活，复杂 |</p>
-<p>| 组相联 | 标记|组号|块内地址 | 每组行数 | 折中方案 |</p>
+<table>
+<thead>
+<tr>
+<th>映射方式</th>
+<th>地址划分</th>
+<th>比较器数量</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直接映射</td>
+<td>标记</td>
+<td>行号</td>
+<td>块内地址</td>
+</tr>
+<tr>
+<td>全相联</td>
+<td>标记</td>
+<td>块内地址</td>
+<td>Cache行数</td>
+</tr>
+<tr>
+<td>组相联</td>
+<td>标记</td>
+<td>组号</td>
+<td>块内地址</td>
+</tr>
+</tbody>
+</table>
 <p><strong>替换算法与写策略</strong></p>
 <p><strong>替换算法</strong>：</p>
 <ul>
