@@ -787,6 +787,50 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三章 函数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第四章 自然数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第五章 基数（势）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第六章 序数*
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1564,6 +1608,50 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三章 函数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第四章 自然数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第五章 基数（势）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第六章 序数*
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1762,8 +1850,240 @@ $$</p>
 <p><strong>定理2.31</strong> 设 <span class="arithmatex">\(\langle A,\preccurlyeq \rangle\)</span> 为偏序集，若 <span class="arithmatex">\(A\)</span> 中最长链的长度为 <span class="arithmatex">\(n\)</span>，则<br />
 (1) <span class="arithmatex">\(A\)</span> 中存在极大元；<br />
 (2) <span class="arithmatex">\(A\)</span> 存在 <span class="arithmatex">\(n\)</span> 个划分块的划分，每个划分块都是反链。</p>
+<h1 id="_4">《离散数学教程》定理汇总（续）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
+<h2 id="_5">第三章 函数<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p><strong>定理3.1</strong> 设 <span class="arithmatex">\(f:C\to D\)</span> 为单射，<span class="arithmatex">\(\mathcal{C}\)</span> 为 <span class="arithmatex">\(C\)</span> 的非空子集族，<span class="arithmatex">\(C_1,C_2\subseteq C\)</span>，则<br />
+(1) <span class="arithmatex">\(f(\cup \mathcal{C}) = \cup \{f(A) \mid A\in \mathcal{C}\}\)</span>；<br />
+(2) <span class="arithmatex">\(f(\cap \mathcal{C}) = \cap \{f(A) \mid A\in \mathcal{C}\}\)</span>；<br />
+(3) <span class="arithmatex">\(f(C_1 - C_2) = f(C_1) - f(C_2)\)</span>。</p>
+<p><strong>定理3.2</strong> 设 <span class="arithmatex">\(f:C\to D\)</span>，<span class="arithmatex">\(D_1,D_2\subseteq D\)</span>，<span class="arithmatex">\(\mathcal{D}\)</span> 是 <span class="arithmatex">\(D\)</span> 的非空子集族，则<br />
+(1) <span class="arithmatex">\(f^{-1}(\cup \mathcal{D}) = \cup \{f^{-1}(D) \mid D\in \mathcal{D}\}\)</span>；<br />
+(2) <span class="arithmatex">\(f^{-1}(\cap \mathcal{D}) = \cap \{f^{-1}(D) \mid D\in \mathcal{D}\}\)</span>；<br />
+(3) <span class="arithmatex">\(f^{-1}(D_1 - D_2) = f^{-1}(D_1) - f^{-1}(D_2)\)</span>。</p>
+<p><strong>定理3.3</strong> 设 <span class="arithmatex">\(g:A\to B\)</span>，<span class="arithmatex">\(f:B\to C\)</span>，则 <span class="arithmatex">\(f\circ g:A\to C\)</span>，且对于任意 <span class="arithmatex">\(x\in A\)</span>，<br />
+[
+(f\circ g)(x) = f(g(x)).
+]</p>
+<p><strong>定理3.4</strong> 设 <span class="arithmatex">\(g:A\to B\)</span>，<span class="arithmatex">\(f:B\to C\)</span>：<br />
+(1) 若 <span class="arithmatex">\(f\)</span> 和 <span class="arithmatex">\(g\)</span> 都是满射，则 <span class="arithmatex">\(f\circ g\)</span> 是满射；<br />
+(2) 若 <span class="arithmatex">\(f\)</span> 和 <span class="arithmatex">\(g\)</span> 都是单射，则 <span class="arithmatex">\(f\circ g\)</span> 是单射；<br />
+(3) 若 <span class="arithmatex">\(f\)</span> 和 <span class="arithmatex">\(g\)</span> 都是双射，则 <span class="arithmatex">\(f\circ g\)</span> 是双射。</p>
+<p><strong>定理3.5</strong> 设 <span class="arithmatex">\(g:A\to B\)</span>，<span class="arithmatex">\(f:B\to C\)</span>：<br />
+(1) 若 <span class="arithmatex">\(f\circ g\)</span> 是满射，则 <span class="arithmatex">\(f\)</span> 是满射；<br />
+(2) 若 <span class="arithmatex">\(f\circ g\)</span> 是单射，则 <span class="arithmatex">\(g\)</span> 是单射；<br />
+(3) 若 <span class="arithmatex">\(f\circ g\)</span> 是双射，则 <span class="arithmatex">\(g\)</span> 是单射，<span class="arithmatex">\(f\)</span> 是满射。</p>
+<p><strong>定理3.6</strong> 设 <span class="arithmatex">\(f:A\to B\)</span>，<span class="arithmatex">\(I_A, I_B\)</span> 分别为 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 上的恒等函数，则<br />
+[
+f\circ I_A = I_B\circ f.
+]</p>
+<p><strong>定理3.7</strong> 设 <span class="arithmatex">\(f:\mathbb{R}\to \mathbb{R}\)</span>，<span class="arithmatex">\(g:\mathbb{R}\to \mathbb{R}\)</span>，若 <span class="arithmatex">\(f\)</span> 和 <span class="arithmatex">\(g\)</span> 在实数集上关于“<span class="arithmatex">\(\leq\)</span>”都是单调增加的，则 <span class="arithmatex">\(f\circ g\)</span> 也是单调增加的。</p>
+<p><strong>定理3.8</strong> 设 <span class="arithmatex">\(A\)</span> 为一个集合，<span class="arithmatex">\(A^{-1}\)</span> 为函数当且仅当 <span class="arithmatex">\(A\)</span> 是单根的。<br />
+<strong>推论</strong> 设 <span class="arithmatex">\(R\)</span> 为二元关系，<span class="arithmatex">\(R\)</span> 为函数当且仅当 <span class="arithmatex">\(R^{-1}\)</span> 是单根的。</p>
+<p><strong>定理3.9</strong> 设 <span class="arithmatex">\(f:A\to B\)</span> 为双射，则 <span class="arithmatex">\(f^{-1}:B\to A\)</span> 也是双射。</p>
+<p><strong>定理3.10</strong> 设 <span class="arithmatex">\(f:A\to B\)</span> 且 <span class="arithmatex">\(A\neq \emptyset\)</span>：<br />
+(1) <span class="arithmatex">\(f\)</span> 存在左逆当且仅当 <span class="arithmatex">\(f\)</span> 是单射；<br />
+(2) <span class="arithmatex">\(f\)</span> 存在右逆当且仅当 <span class="arithmatex">\(f\)</span> 是满射；<br />
+(3) <span class="arithmatex">\(f\)</span> 既有左逆又有右逆当且仅当 <span class="arithmatex">\(f\)</span> 是双射；<br />
+(4) 若 <span class="arithmatex">\(f\)</span> 是双射，则其左逆与右逆相等。</p>
 <hr />
-<p>（因内容较长，后续章节的定理将按章节继续整理。如需全部内容，请继续展开。）</p>
+<h2 id="_6">第四章 自然数<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p><strong>定理4.1</strong> <span class="arithmatex">\(\mathbb{N}\)</span> 是归纳集。</p>
+<p><strong>定理4.2</strong> 设 <span class="arithmatex">\(\mathbb{N}\)</span> 为自然数集，<span class="arithmatex">\(\sigma:\mathbb{N}\to \mathbb{N}\)</span>，<span class="arithmatex">\(\sigma(n) = n^{+}\)</span>（后继函数），则 <span class="arithmatex">\(\langle \mathbb{N},\sigma,\emptyset \rangle\)</span> 是 Peano 系统。</p>
+<p><strong>定理4.3</strong> 任意自然数的元素都是它的子集。</p>
+<p><strong>定理4.4</strong> 对于任意自然数 <span class="arithmatex">\(m,n\)</span>，<span class="arithmatex">\(m^{+}\in n^{+}\)</span> 当且仅当 <span class="arithmatex">\(m\in n\)</span>。</p>
+<p><strong>定理4.5</strong> 任何自然数都不是自己的元素。</p>
+<p><strong>定理4.6</strong> 空集属于除零外的一切自然数。</p>
+<p><strong>定理4.7</strong>（三歧性定理）对于任意自然数 <span class="arithmatex">\(m,n\)</span>，以下三式有且仅有一式成立：<br />
+[
+m\in n,\quad m=n,\quad n\in m.
+]</p>
+<p><strong>定理4.8</strong>（<span class="arithmatex">\(\mathbb{N}\)</span> 上的递归定理）设 <span class="arithmatex">\(A\)</span> 为集合，<span class="arithmatex">\(a\in A\)</span>，<span class="arithmatex">\(F:A\to A\)</span>，则存在唯一函数 <span class="arithmatex">\(h:\mathbb{N}\to A\)</span>，使得 <span class="arithmatex">\(h(0) = a\)</span>，且对任意 <span class="arithmatex">\(n\in \mathbb{N}\)</span>，<br />
+[
+h(n^{+}) = F(h(n)).
+]</p>
+<p><strong>定理4.9</strong> 设 <span class="arithmatex">\(\langle M,F,e\rangle\)</span> 为任意 Peano 系统，则 <span class="arithmatex">\(\langle \mathbb{N},\sigma,0\rangle \sim \langle M,F,e\rangle\)</span>。</p>
+<p><strong>定理4.10</strong> 设 <span class="arithmatex">\(A\)</span> 为集合，则以下命题等价：<br />
+(1) <span class="arithmatex">\(A\)</span> 是传递集；<br />
+(2) <span class="arithmatex">\(\cup A\subseteq A\)</span>；<br />
+(3) 对任意 <span class="arithmatex">\(y\in A\)</span>，有 <span class="arithmatex">\(y\subseteq A\)</span>；<br />
+(4) <span class="arithmatex">\(A\subseteq \mathcal{P}(A)\)</span>。</p>
+<p><strong>定理4.11</strong> 设 <span class="arithmatex">\(A\)</span> 为集合，则 <span class="arithmatex">\(A\)</span> 为传递集当且仅当 <span class="arithmatex">\(\mathcal{P}(A)\)</span> 为传递集。</p>
+<p><strong>定理4.12</strong> 设 <span class="arithmatex">\(A\)</span> 是传递集，则 <span class="arithmatex">\(\cup (A^{+}) = A\)</span>。</p>
+<p><strong>定理4.13</strong> 每个自然数都是传递集。</p>
+<p><strong>定理4.14</strong> 自然数集 <span class="arithmatex">\(\mathbb{N}\)</span> 是传递集。</p>
+<p><strong>定理4.15</strong> 设 <span class="arithmatex">\(m,n\in \mathbb{N}\)</span>，则<br />
+（加法规则1）<span class="arithmatex">\(m + 0 = m\)</span>；<br />
+（加法规则2）<span class="arithmatex">\(m + n^{+} = (m + n)^{+}\)</span>。</p>
+<p><strong>定理4.16</strong> 设 <span class="arithmatex">\(m,n\in \mathbb{N}\)</span>，则<br />
+（乘法规则1）<span class="arithmatex">\(m \cdot 0 = 0\)</span>；<br />
+（乘法规则2）<span class="arithmatex">\(m \cdot n^{+} = m \cdot n + m\)</span>。</p>
+<p><strong>定理4.17</strong> 对于任意自然数 <span class="arithmatex">\(m,n\)</span>，则<br />
+（指数运算规则1）<span class="arithmatex">\(m^{0} = 1\)</span>（<span class="arithmatex">\(m\neq 0\)</span>）；<br />
+（指数运算规则2）<span class="arithmatex">\(m^{n^{+}} = m^{n} \cdot m\)</span>。</p>
+<p><strong>定理4.18</strong> 设 <span class="arithmatex">\(m,n,k\in \mathbb{N}\)</span>，则<br />
+(1) <span class="arithmatex">\(m + (n + k) = (m + n) + k\)</span>；<br />
+(2) <span class="arithmatex">\(m + n = n + m\)</span>；<br />
+(3) <span class="arithmatex">\(m \cdot (n + k) = m \cdot n + m \cdot k\)</span>；<br />
+(4) <span class="arithmatex">\(m \cdot (n \cdot k) = (m \cdot n) \cdot k\)</span>；<br />
+(5) <span class="arithmatex">\(m \cdot n = n \cdot m\)</span>。</p>
+<p><strong>定理4.19</strong> <span class="arithmatex">\(\in_{\mathbb{N}}\)</span>（<span class="arithmatex">\(\leq_{\mathbb{N}}\)</span>）为 <span class="arithmatex">\(\mathbb{N}\)</span> 上的线序关系，<span class="arithmatex">\(\in_{\mathbb{N}}\)</span>（<span class="arithmatex">\(\leq_{\mathbb{N}}\)</span>）为 <span class="arithmatex">\(\mathbb{N}\)</span> 上的拟线序关系。</p>
+<p><strong>定理4.20</strong> 设 <span class="arithmatex">\(m,n,k\in \mathbb{N}\)</span>，则<br />
+(1) <span class="arithmatex">\(m \in n \Leftrightarrow (m + k) \in (n + k)\)</span>（即 <span class="arithmatex">\(m &lt; n \Leftrightarrow m + k &lt; n + k\)</span>）；<br />
+(2) <span class="arithmatex">\(m \in n \Leftrightarrow m \cdot k \in n \cdot k\)</span>（即 <span class="arithmatex">\(m &lt; n \Leftrightarrow m \cdot k &lt; n \cdot k\)</span>），<span class="arithmatex">\(k\neq 0\)</span>。</p>
+<p><strong>定理4.21</strong> 设 <span class="arithmatex">\(n,m,k\)</span> 为自然数：<br />
+(1) 若 <span class="arithmatex">\(m + k = n + k\)</span>，则 <span class="arithmatex">\(m = n\)</span>；<br />
+(2) 若 <span class="arithmatex">\(k\neq 0\)</span> 且 <span class="arithmatex">\(m \cdot k = n \cdot k\)</span>，则 <span class="arithmatex">\(m = n\)</span>。</p>
+<p><strong>定理4.22</strong>（<span class="arithmatex">\(\mathbb{N}\)</span> 上的良序定理）设 <span class="arithmatex">\(A\)</span> 为 <span class="arithmatex">\(\mathbb{N}\)</span> 的非空子集，则存在唯一的 <span class="arithmatex">\(m\in A\)</span>，使得对一切 <span class="arithmatex">\(n\in A\)</span>，有 <span class="arithmatex">\(m\subseteq n\)</span>（称 <span class="arithmatex">\(m\)</span> 为 <span class="arithmatex">\(A\)</span> 的最小元）。</p>
+<p><strong>定理4.23</strong>（<span class="arithmatex">\(\mathbb{N}\)</span> 上的强归纳原则）设 <span class="arithmatex">\(A\)</span> 为 <span class="arithmatex">\(\mathbb{N}\)</span> 的子集，若对任意 <span class="arithmatex">\(n\in \mathbb{N}\)</span>，只要小于 <span class="arithmatex">\(n\)</span> 的元素都属于 <span class="arithmatex">\(A\)</span>，就有 <span class="arithmatex">\(n\in A\)</span>，则 <span class="arithmatex">\(A = \mathbb{N}\)</span>。</p>
+<hr />
+<h2 id="_7">第五章 基数（势）<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p><strong>定理5.1</strong><br />
+(1) <span class="arithmatex">\(\mathbb{Z}\approx \mathbb{N}\)</span>；<br />
+(2) <span class="arithmatex">\(\mathbb{N}\times \mathbb{N}\approx \mathbb{N}\)</span>；<br />
+(3) <span class="arithmatex">\(\mathbb{N}\approx \mathbb{Q}\)</span>；<br />
+(4) <span class="arithmatex">\((0,1)\approx \mathbb{R}\)</span>；<br />
+(5) <span class="arithmatex">\([0,1]\approx (0,1)\)</span>。</p>
+<p><strong>定理5.2</strong> 设 <span class="arithmatex">\(A\)</span> 为任意集合，则 <span class="arithmatex">\(\mathcal{P}(A)\approx (A\to 2)\)</span>，其中 <span class="arithmatex">\((A\to 2) = 2^{A}\)</span> 是 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(2=\{0,1\}\)</span> 的所有函数。</p>
+<p><strong>定理5.3</strong> 设 <span class="arithmatex">\(A,B,C\)</span> 为任意集合：<br />
+(1) <span class="arithmatex">\(A\approx A\)</span>；<br />
+(2) 若 <span class="arithmatex">\(A\approx B\)</span>，则 <span class="arithmatex">\(B\approx A\)</span>；<br />
+(3) 若 <span class="arithmatex">\(A\approx B\)</span> 且 <span class="arithmatex">\(B\approx C\)</span>，则 <span class="arithmatex">\(A\approx C\)</span>。</p>
+<p><strong>定理5.4</strong>（康托定理）<br />
+(1) <span class="arithmatex">\(\mathbb{N}\not\approx \mathbb{R}\)</span>；<br />
+(2) 设 <span class="arithmatex">\(A\)</span> 为任意集合，则 <span class="arithmatex">\(A\not\approx \mathcal{P}(A)\)</span>。</p>
+<p><strong>定理5.5</strong> 不存在与自己的真子集等势的自然数。<br />
+<strong>推论1</strong> 不存在与自己的真子集等势的有穷集合。<br />
+<strong>推论2</strong><br />
+(1) 任何与自己的真子集等势的集合都是无穷集；<br />
+(2) <span class="arithmatex">\(\mathbb{N}\)</span> 是无穷集。<br />
+<strong>推论3</strong> 任何有穷集合都与唯一的自然数等势。</p>
+<p><strong>定理5.6</strong> 任何有穷集合的子集仍为有穷集合。</p>
+<p><strong>定理5.7</strong> 设 <span class="arithmatex">\(A,B\)</span> 为任意二集合，则 <span class="arithmatex">\(A\not\approx B\)</span> 当且仅当存在 <span class="arithmatex">\(C\subseteq B\)</span>，使得 <span class="arithmatex">\(A\approx C\)</span>。<br />
+<strong>推论</strong> 设 <span class="arithmatex">\(A,B\)</span> 为二集合：<br />
+(1) 若 <span class="arithmatex">\(A\subseteq B\)</span>，则 <span class="arithmatex">\(A\not\approx B\)</span>；<br />
+(2) 若 <span class="arithmatex">\(A\approx B\)</span>，则 <span class="arithmatex">\(A\not\approx B\)</span> 且 <span class="arithmatex">\(B\not\approx A\)</span>。</p>
+<p><strong>定理5.8</strong> 设 <span class="arithmatex">\(A,B,C\)</span> 为三个集合：<br />
+(1) <span class="arithmatex">\(A\not\approx A\)</span>；<br />
+(2) 若 <span class="arithmatex">\(A\approx B\)</span> 且 <span class="arithmatex">\(B\not\approx C\)</span>，则 <span class="arithmatex">\(A\not\approx C\)</span>。</p>
+<p><strong>定理5.9</strong> 设 <span class="arithmatex">\(A,B,C,D\)</span> 为四个集合，已知 <span class="arithmatex">\(A\not\approx B\)</span> 且 <span class="arithmatex">\(C\not\approx D\)</span>，则<br />
+(1) 若 <span class="arithmatex">\(B\cap D = \emptyset\)</span>，则 <span class="arithmatex">\(A\cup C\not\approx B\cup D\)</span>；<br />
+(2) <span class="arithmatex">\(A\times C\not\approx B\times D\)</span>。</p>
+<p><strong>定理5.10</strong> 设 <span class="arithmatex">\(A,B,C,D\)</span> 为四个集合，且已知 <span class="arithmatex">\(\mathrm{card}\,A = \mathrm{card}\,C = \kappa\)</span>，<span class="arithmatex">\(\mathrm{card}\,B = \mathrm{card}\,D = \lambda\)</span>，则 <span class="arithmatex">\(A\not\approx B\)</span> 当且仅当 <span class="arithmatex">\(C\not\approx D\)</span>。</p>
+<p><strong>定理5.11</strong> 设 <span class="arithmatex">\(A\)</span> 为任意集合，则<br />
+[
+\mathrm{card}\,A &lt; \mathrm{card}\,\mathcal{P}(A).
+]</p>
+<p><strong>定理5.12</strong>（Schröder–Bernstein定理）<br />
+(1) 设 <span class="arithmatex">\(A,B\)</span> 为二集合，若 <span class="arithmatex">\(A\preccurlyeq B\)</span> 且 <span class="arithmatex">\(B\preccurlyeq A\)</span>，则 <span class="arithmatex">\(A\approx B\)</span>；<br />
+(2) 设 <span class="arithmatex">\(\kappa,\lambda\)</span> 为二基数，若 <span class="arithmatex">\(\kappa \leq \lambda\)</span> 且 <span class="arithmatex">\(\lambda \leq \kappa\)</span>，则 <span class="arithmatex">\(\kappa = \lambda\)</span>。</p>
+<p><strong>定理5.13</strong> <span class="arithmatex">\(\mathbb{R}\approx (\mathbb{N}\to 2)\)</span>，其中 <span class="arithmatex">\(\mathbb{N}\to 2 = 2^{\mathbb{N}}\)</span>。</p>
+<p><strong>定理5.14</strong><br />
+(1) 设 <span class="arithmatex">\(A\)</span> 为任意无穷集合，则 <span class="arithmatex">\(\mathbb{N}\preccurlyeq A\)</span>；<br />
+(2) 设 <span class="arithmatex">\(\kappa\)</span> 为任意无穷基数，则 <span class="arithmatex">\(\aleph_{0} \leq \kappa\)</span>。<br />
+<strong>推论1</strong> 设 <span class="arithmatex">\(\kappa\)</span> 为任意基数，<span class="arithmatex">\(\kappa &lt; \aleph_{0}\)</span> 当且仅当 <span class="arithmatex">\(\kappa\)</span> 是有穷基数。<br />
+<strong>推论2</strong> 有穷集合的子集一定是有穷集合。<br />
+<strong>推论3</strong> 设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(\mathbb{N}\)</span> 的无穷子集，则 <span class="arithmatex">\(\mathrm{card}\,A = \aleph_{0}\)</span>。</p>
+<p><strong>定理5.15</strong> 集合 <span class="arithmatex">\(A\)</span> 是无穷可数集当且仅当 <span class="arithmatex">\(A\)</span> 可写成 <span class="arithmatex">\(\{a_{1},a_{2},\dots ,a_{n},\dots\}\)</span> 形式。</p>
+<p><strong>定理5.16</strong> 可数集的子集是可数集。</p>
+<p><strong>定理5.17</strong> 可数个可数集的并集是可数集。</p>
+<p><strong>定理5.18</strong> 设 <span class="arithmatex">\(A\)</span> 为无穷集，则 <span class="arithmatex">\(\mathcal{P}(A)\)</span> 不是可数集。</p>
+<p><strong>定理5.19</strong> 设 <span class="arithmatex">\(K_{1},K_{2},L_{1},L_{2}\)</span> 为四个集合，若 <span class="arithmatex">\(K_{1}\approx K_{2},L_{1}\approx L_{2}\)</span>，则<br />
+(1) 若 <span class="arithmatex">\(K_{1}\cap L_{1} = K_{2}\cap L_{2} = \emptyset\)</span>，则 <span class="arithmatex">\(K_{1}\cup L_{1}\approx K_{2}\cup L_{2}\)</span>；<br />
+(2) <span class="arithmatex">\(K_{1}\times L_{1}\approx K_{2}\times L_{2}\)</span>；<br />
+(3) <span class="arithmatex">\(L_{1}\to K_{1}\approx L_{2}\to K_{2}\)</span>。</p>
+<p><strong>定理5.20</strong><br />
+(1) 设 <span class="arithmatex">\(A\)</span> 为一集合，则 <span class="arithmatex">\(2^{\mathrm{card}\,A} = \mathrm{card}\,\mathcal{P}(A)\)</span>；<br />
+(2) 设 <span class="arithmatex">\(\kappa\)</span> 为一基数，则 <span class="arithmatex">\(\kappa &lt; 2^{\kappa}\)</span>。<br />
+<strong>推论</strong><br />
+(1) <span class="arithmatex">\(\mathrm{card}\,\mathcal{P}(\mathbb{N}) = 2^{\aleph_{0}}\)</span>；<br />
+(2) <span class="arithmatex">\(\mathrm{card}\,\mathcal{P}(\mathbb{R}) = 2^{\aleph_{1}}\)</span>；<br />
+(3) <span class="arithmatex">\(\aleph = 2^{\aleph_{0}}\)</span>。</p>
+<p><strong>定理5.21</strong> 设 <span class="arithmatex">\(\kappa,\lambda,\mu\)</span> 为任意基数，则<br />
+(1) <span class="arithmatex">\(\kappa+\lambda = \lambda+\kappa\)</span>，<span class="arithmatex">\(\kappa\cdot \lambda = \lambda\cdot \kappa\)</span>；<br />
+(2) <span class="arithmatex">\(\kappa+(\lambda+\mu) = (\kappa+\lambda)+\mu\)</span>，<span class="arithmatex">\(\kappa\cdot (\lambda\cdot \mu) = (\kappa\cdot \lambda)\cdot \mu\)</span>；<br />
+(3) <span class="arithmatex">\(\kappa\cdot (\lambda+\mu) = \kappa\cdot \lambda + \kappa\cdot \mu\)</span>；<br />
+(4) <span class="arithmatex">\(\kappa^{\lambda+\mu} = \kappa^{\lambda}\cdot \kappa^{\mu}\)</span>；<br />
+(5) <span class="arithmatex">\((\kappa\cdot \lambda)^{\mu} = \kappa^{\mu}\cdot \lambda^{\mu}\)</span>；<br />
+(6) <span class="arithmatex">\((\kappa^{\lambda})^{\mu} = \kappa^{\lambda\cdot \mu}\)</span>。<br />
+<strong>推论</strong> 设 <span class="arithmatex">\(\kappa,\lambda\)</span> 为任意二基数，则<br />
+(1) <span class="arithmatex">\(\kappa+(\lambda+1) = (\kappa+\lambda)+1\)</span>；<br />
+(2) <span class="arithmatex">\(\kappa\cdot (\lambda+1) = \kappa\cdot \lambda + \kappa\)</span>；<br />
+(3) <span class="arithmatex">\(\kappa^{\lambda+1} = \kappa^{\lambda}\cdot \kappa\)</span>。</p>
+<p><strong>定理5.22</strong> 设 <span class="arithmatex">\(\kappa,\lambda,\mu\)</span> 为基数，若 <span class="arithmatex">\(\kappa \leq \lambda\)</span>，则<br />
+(1) <span class="arithmatex">\(\kappa+\mu \leq \lambda+\mu\)</span>；<br />
+(2) <span class="arithmatex">\(\kappa\cdot \mu \leq \lambda\cdot \mu\)</span>；<br />
+(3) <span class="arithmatex">\(\kappa^{\mu} \leq \lambda^{\mu}\)</span>；<br />
+(4) <span class="arithmatex">\(\mu^{\kappa} \leq \mu^{\lambda}\)</span>，其中 <span class="arithmatex">\(\kappa,\mu\)</span> 不同时为 0。</p>
+<p><strong>定理5.23</strong> 设 <span class="arithmatex">\(\kappa\)</span> 为任意无穷基数，则 <span class="arithmatex">\(\kappa\cdot \kappa = \kappa\)</span>。</p>
+<p><strong>定理5.24</strong> 设 <span class="arithmatex">\(\kappa,\lambda\)</span> 为二基数，其中较大的为无穷基数，较小的不为 0，则<br />
+[
+\kappa+\lambda = \kappa\cdot \lambda = \max{\kappa,\lambda}.
+]<br />
+<strong>推论</strong> 设 <span class="arithmatex">\(\kappa\)</span> 为一无穷基数，则 <span class="arithmatex">\(\kappa+\kappa = \kappa\cdot \kappa = \kappa\)</span>。</p>
+<p><strong>定理5.25</strong> 设 <span class="arithmatex">\(\kappa\)</span> 为无穷基数，则 <span class="arithmatex">\(\kappa^{\kappa} = 2^{\kappa}\)</span>。</p>
+<hr />
+<h2 id="_8">第六章 序数*<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p><strong>定理6.1</strong> 设 <span class="arithmatex">\(\langle A,&lt;\rangle\)</span> 为拟线序集，<span class="arithmatex">\(\prec\)</span> 为 <span class="arithmatex">\(A\neq \emptyset\)</span> 上的良序关系当且仅当不存在函数 <span class="arithmatex">\(f:\mathbb{N}\to A\)</span> 使得对任意 <span class="arithmatex">\(n\in \mathbb{N}\)</span>，有 <span class="arithmatex">\(f(n^{+}) &lt; f(n)\)</span>。</p>
+<p><strong>定理6.2</strong> 设 <span class="arithmatex">\(\langle A,&lt;_1\rangle,\langle B,&lt;_2\rangle,\langle C,&lt;_3\rangle\)</span> 为三个拟序集，则<br />
+(1) <span class="arithmatex">\(\langle A,&lt;_1\rangle \cong \langle A,&lt;_1\rangle\)</span>；<br />
+(2) 若 <span class="arithmatex">\(\langle A,&lt;_1\rangle \cong \langle B,&lt;_2\rangle\)</span>，则 <span class="arithmatex">\(\langle B,&lt;_2\rangle \cong \langle A,&lt;_1\rangle\)</span>；<br />
+(3) 若 <span class="arithmatex">\(\langle A,&lt;_1\rangle \cong \langle B,&lt;_2\rangle\)</span> 且 <span class="arithmatex">\(\langle B,&lt;_2\rangle \cong \langle C,&lt;_3\rangle\)</span>，则 <span class="arithmatex">\(\langle A,&lt;_1\rangle \cong \langle C,&lt;_3\rangle\)</span>。</p>
+<p><strong>定理6.3</strong> 设 <span class="arithmatex">\(f:A\to B\)</span> 为单射，<span class="arithmatex">\(\prec_B\)</span> 为 <span class="arithmatex">\(B\)</span> 上的拟序关系。在 <span class="arithmatex">\(A\)</span> 上定义关系 <span class="arithmatex">\(\prec_A\)</span>：对任意 <span class="arithmatex">\(x,y\in A\)</span>，<span class="arithmatex">\(x\prec_A y \Leftrightarrow f(x)\prec_B f(y)\)</span>，则<br />
+(1) <span class="arithmatex">\(\prec_A\)</span> 为 <span class="arithmatex">\(A\)</span> 上的拟序关系；<br />
+(2) 若 <span class="arithmatex">\(\prec_B\)</span> 为拟线序（拟全序）关系，则 <span class="arithmatex">\(\prec_A\)</span> 为拟线序关系；<br />
+(3) 若 <span class="arithmatex">\(\prec_B\)</span> 为良序关系，则 <span class="arithmatex">\(\prec_A\)</span> 为良序关系。</p>
+<p><strong>定理6.4</strong> 设 <span class="arithmatex">\(A,B\)</span> 为二集合，且 <span class="arithmatex">\(B\subseteq A\)</span>：<br />
+(1) 若 <span class="arithmatex">\(\prec_A\)</span> 为 <span class="arithmatex">\(A\)</span> 上的拟序关系，则 <span class="arithmatex">\(\prec_A|_B\)</span> 为 <span class="arithmatex">\(B\)</span> 上的拟序关系；<br />
+(2) 若 <span class="arithmatex">\(\prec_A\)</span> 为 <span class="arithmatex">\(A\)</span> 上的拟线序关系，则 <span class="arithmatex">\(\prec_A|_B\)</span> 为 <span class="arithmatex">\(B\)</span> 上的拟线序关系；<br />
+(3) 若 <span class="arithmatex">\(\prec_A\)</span> 为 <span class="arithmatex">\(A\)</span> 上的良序关系，则 <span class="arithmatex">\(\prec_A|_B\)</span> 为 <span class="arithmatex">\(B\)</span> 上的良序关系。</p>
+<p><strong>定理6.5</strong>（超限归纳原理）设 <span class="arithmatex">\(\prec\)</span> 为 <span class="arithmatex">\(A\)</span> 上的良序，<span class="arithmatex">\(B\)</span> 是 <span class="arithmatex">\(A\)</span> 关于 <span class="arithmatex">\(\prec\)</span> 的归纳子集，则 <span class="arithmatex">\(B = A\)</span>。</p>
+<p><strong>定理6.6</strong> 设 <span class="arithmatex">\(\prec\)</span> 为 <span class="arithmatex">\(A\)</span> 上的拟线序，如果 <span class="arithmatex">\(A\)</span> 上任何关于 <span class="arithmatex">\(\prec\)</span> 的归纳子集都与 <span class="arithmatex">\(A\)</span> 相等，则 <span class="arithmatex">\(\prec\)</span> 为 <span class="arithmatex">\(A\)</span> 上的良序。</p>
+<p><strong>超限递归定理模式</strong> 对于任意公式 <span class="arithmatex">\(\gamma(x,y)\)</span>，以下成立：<br />
+设 <span class="arithmatex">\(\prec\)</span> 为集合 <span class="arithmatex">\(A\)</span> 上良序，若 <span class="arithmatex">\(\forall f\exists !y\,\gamma(f,y)\)</span> 成立，则存在唯一以 <span class="arithmatex">\(A\)</span> 为定义域的函数 <span class="arithmatex">\(F\)</span>，使得对任意 <span class="arithmatex">\(t\in A\)</span>，<span class="arithmatex">\(\gamma(F|\,\mathrm{seg}\,t, F(t))\)</span> 成立。</p>
+<p><strong>定理6.7</strong> 设 <span class="arithmatex">\(\langle A,&lt;_A\rangle,\langle B,&lt;_B\rangle\)</span> 为两个良序集，则以下三种情况至少成立其一：<br />
+(1) <span class="arithmatex">\(\langle A,&lt;_A\rangle \cong \langle B,&lt;_B\rangle\)</span>；<br />
+(2) <span class="arithmatex">\(\langle A,&lt;_A\rangle \cong \langle \mathrm{seg}\,b,\prec_B^0\rangle, b\in B\)</span>；<br />
+(3) <span class="arithmatex">\(\langle \mathrm{seg}\,a,\prec_A^0\rangle \cong \langle B,&lt;_B\rangle, a\in A\)</span>。<br />
+其中 <span class="arithmatex">\(\prec_A^0,\prec_B^0\)</span> 分别为 <span class="arithmatex">\(\prec_A\)</span> 在 <span class="arithmatex">\(\mathrm{seg}\,a\)</span> 和 <span class="arithmatex">\(\prec_B\)</span> 在 <span class="arithmatex">\(\mathrm{seg}\,b\)</span> 上的限制。</p>
+<p><strong>定理6.8</strong> 设 <span class="arithmatex">\(\prec\)</span> 为集合 <span class="arithmatex">\(A\)</span> 上的良序，则唯一存在一个以 <span class="arithmatex">\(A\)</span> 为定义域的函数 <span class="arithmatex">\(E\)</span>，使得对任意 <span class="arithmatex">\(t\in A\)</span>，<br />
+[
+E(t) = \mathrm{ran}(E|\,\mathrm{seg}\,t) = {E(x) \mid x &lt; t}.
+]</p>
+<p><strong>定理6.9</strong> 设 <span class="arithmatex">\(\langle A,\prec\rangle\)</span> 为良序集，<span class="arithmatex">\(E\)</span> 为前段值域函数，<span class="arithmatex">\(\alpha\)</span> 是 <span class="arithmatex">\(\langle A,\prec\rangle\)</span> 的 <span class="arithmatex">\(\in\)</span>-象，则<br />
+(1) <span class="arithmatex">\(\forall t\in A, E(t)\notin E(t)\)</span>；<br />
+(2) <span class="arithmatex">\(E\)</span> 为 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(\alpha\)</span> 之间的双射函数；<br />
+(3) <span class="arithmatex">\(\forall s,t\in A, s &lt; t \Leftrightarrow E(s)\in E(t)\)</span>；<br />
+(4) <span class="arithmatex">\(\alpha = \mathrm{ran}\,E\)</span> 是传递集。</p>
+<p><strong>定理6.10</strong> 两个良序集是同构的当且仅当它们具有相同的 <span class="arithmatex">\(\in\)</span>-象。</p>
+<p><strong>定理6.11</strong> 同构的良序集具有相同的序数。</p>
+<p><strong>定理6.12</strong> 设 <span class="arithmatex">\(\alpha\)</span> 按属于关系是良序的，并且 <span class="arithmatex">\(\alpha\)</span> 是传递集，则 <span class="arithmatex">\(\alpha\)</span> 是一个序数（即 <span class="arithmatex">\(\alpha\)</span> 是 <span class="arithmatex">\(\langle\alpha,\in_\alpha\rangle\)</span> 的 <span class="arithmatex">\(\in\)</span>-象）。</p>
+<p><strong>定理6.13</strong> 设 <span class="arithmatex">\(\alpha,\beta,\gamma\)</span> 为序数：<br />
+(1) <span class="arithmatex">\(\alpha\)</span> 的元素为序数（任何序数的元素还是序数）；<br />
+(2) <span class="arithmatex">\(\alpha\notin\alpha\)</span>（反自反性）；<br />
+(3) 若 <span class="arithmatex">\(\alpha\in\beta\)</span> 且 <span class="arithmatex">\(\beta\in\gamma\)</span>，则 <span class="arithmatex">\(\alpha\in\gamma\)</span>（传递性）；<br />
+(4) <span class="arithmatex">\(\alpha\in\beta,\alpha=\beta,\beta\in\alpha\)</span> 有且仅有一式成立（序数之间具有三歧性）；<br />
+(5) 由序数构成的非空集，按属于关系有最小元。</p>
+<p><strong>定理6.14</strong> 设 <span class="arithmatex">\(\alpha,\beta\)</span> 为任意两个序数，则 <span class="arithmatex">\(\alpha&lt;\beta,\alpha=\beta,\alpha&gt;\beta\)</span> 三式有且仅有一式成立。</p>
+<p><strong>定理6.15</strong><br />
+(1) 任何以序数为元素的传递集合是序数；<br />
+(2) <span class="arithmatex">\(0\)</span> 是序数；<br />
+(3) 若 <span class="arithmatex">\(\alpha\)</span> 是序数，则 <span class="arithmatex">\(\alpha^{+}=\alpha\cup\{\alpha\}\)</span> 为序数；<br />
+(4) 若集合 <span class="arithmatex">\(A\)</span> 是以序数为元素的集合，则 <span class="arithmatex">\(\cup A\)</span> 为序数。</p>
+<p><strong>定理6.16</strong><br />
+(1) 一切自然数都是序数；<br />
+(2) 自然数集 <span class="arithmatex">\(\mathbb{N}\)</span> 是序数（记作 <span class="arithmatex">\(\omega\)</span>），<span class="arithmatex">\(\omega,\omega^{+},\omega^{++},\omega^{+++},\dots\)</span> 是序数；<br />
+(3) 设 <span class="arithmatex">\(A\)</span> 是以序数为元素的集合，则 <span class="arithmatex">\(\cup A\)</span> 为 <span class="arithmatex">\(A\)</span> 关于属于等于关系的最小上界；<br />
+(4) 设 <span class="arithmatex">\(\alpha\)</span> 为一序数，则 <span class="arithmatex">\(\alpha^{+}\)</span> 是大于 <span class="arithmatex">\(\alpha\)</span> 的最小序数；<br />
+(5) 设 <span class="arithmatex">\(\alpha\)</span> 为一序数，则 <span class="arithmatex">\(\alpha = \{x \mid x\text{ 是序数 } \land x&lt;\alpha\}\)</span>。</p>
+<p><strong>定理6.17</strong>（Hartogs定理）对于任何集合 <span class="arithmatex">\(A\)</span>，都存在序数 <span class="arithmatex">\(\alpha\)</span>，使得 <span class="arithmatex">\(A\prec\alpha\)</span>。</p>
+<p><strong>定理6.18</strong>（良序定理）对于任意集合 <span class="arithmatex">\(A\)</span>，都存在 <span class="arithmatex">\(A\)</span> 上的良序。</p>
+<p><strong>定理6.19</strong>（命数定理）对于任何集合 <span class="arithmatex">\(A\)</span>，都存在序数 <span class="arithmatex">\(\alpha\)</span>，使得 <span class="arithmatex">\(A\approx\alpha\)</span>。</p>
+<p><strong>定理6.20</strong><br />
+(1) 对于任意集合 <span class="arithmatex">\(A,B\)</span>，<span class="arithmatex">\(\mathrm{card}\,A = \mathrm{card}\,B \Leftrightarrow A\approx B\)</span>；<br />
+(2) 对于任意有穷集合 <span class="arithmatex">\(A\)</span>，<span class="arithmatex">\(\mathrm{card}\,A\)</span> 是与 <span class="arithmatex">\(A\)</span> 等势的唯一的自然数。</p>
+<p><strong>定理6.21</strong> 设 <span class="arithmatex">\(\alpha\)</span> 为一序数，则 <span class="arithmatex">\(\alpha\)</span> 为初始序数当且仅当 <span class="arithmatex">\(\alpha\)</span> 为一个基数。</p>
+<hr />
+<p>（以下为图论、代数结构等后续章节内容，将按章节继续整理。如需继续，请告知。）</p>
 
 
 
