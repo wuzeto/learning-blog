@@ -499,21 +499,15 @@ def split_node(node):
 * 线性探测法：
 
   $\begin{align*}
-
   ASL_{succ} &\approx \frac{1}{2}\left(1+\frac{1}{1-\alpha}\right) \\
-
   ASL_{unsucc} &\approx \frac{1}{2}\left(1+\frac{1}{(1-\alpha)^2}\right)
-
   \end{align*}$
 
 * 链地址法：
 
   $\begin{align*}
-
   ASL_{succ} &\approx 1+\frac{\alpha}{2} \\
-
   ASL_{unsucc} &\approx \alpha + e^{-\alpha}
-
   \end{align*}$
 
 其中$\alpha=\frac{n}{m}$为装填因子
@@ -525,11 +519,7 @@ def split_node(node):
 
 
 | 方法 | 查找成功ASL | 查找失败ASL | 特点 |
-
 |------|-------------|-------------|------|
-
 | 线性探测 | $\frac{1}{2}(1+\frac{1}{1-\alpha})$ | $\frac{1}{2}(1+\frac{1}{(1-\alpha)^2})$ | 聚集现象 |
-
 | 二次探测 | $-\frac{1}{\alpha}\ln(1-\alpha)$ | $\frac{1}{1-\alpha}$ | 减少聚集 |
-
 | 链地址 | $1+\frac{\alpha}{2}$ | $\alpha+e^{-\alpha}$ | 无聚集 |

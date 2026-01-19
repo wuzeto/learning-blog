@@ -1922,24 +1922,49 @@ window.MathJax = {
 <ul>
 <li>线性探测法：</li>
 </ul>
-<p>$\begin{align*}</p>
-<p>ASL_{succ} &amp;\approx \frac{1}{2}\left(1+\frac{1}{1-\alpha}\right) \</p>
-<p>ASL_{unsucc} &amp;\approx \frac{1}{2}\left(1+\frac{1}{(1-\alpha)^2}\right)</p>
-<p>\end{align*}$</p>
+<p><span class="arithmatex">\(\begin{align*}
+  ASL_{succ} &amp;\approx \frac{1}{2}\left(1+\frac{1}{1-\alpha}\right) \\
+  ASL_{unsucc} &amp;\approx \frac{1}{2}\left(1+\frac{1}{(1-\alpha)^2}\right)
+  \end{align*}\)</span></p>
 <ul>
 <li>链地址法：</li>
 </ul>
-<p>$\begin{align*}</p>
-<p>ASL_{succ} &amp;\approx 1+\frac{\alpha}{2} \</p>
-<p>ASL_{unsucc} &amp;\approx \alpha + e^{-\alpha}</p>
-<p>\end{align*}$</p>
+<p><span class="arithmatex">\(\begin{align*}
+  ASL_{succ} &amp;\approx 1+\frac{\alpha}{2} \\
+  ASL_{unsucc} &amp;\approx \alpha + e^{-\alpha}
+  \end{align*}\)</span></p>
 <p>其中<span class="arithmatex">\(\alpha=\frac{n}{m}\)</span>为装填因子</p>
 <p><strong>性能对比</strong>:</p>
-<p>| 方法 | 查找成功ASL | 查找失败ASL | 特点 |</p>
-<p>|------|-------------|-------------|------|</p>
-<p>| 线性探测 | <span class="arithmatex">\(\frac{1}{2}(1+\frac{1}{1-\alpha})\)</span> | <span class="arithmatex">\(\frac{1}{2}(1+\frac{1}{(1-\alpha)^2})\)</span> | 聚集现象 |</p>
-<p>| 二次探测 | <span class="arithmatex">\(-\frac{1}{\alpha}\ln(1-\alpha)\)</span> | <span class="arithmatex">\(\frac{1}{1-\alpha}\)</span> | 减少聚集 |</p>
-<p>| 链地址 | <span class="arithmatex">\(1+\frac{\alpha}{2}\)</span> | <span class="arithmatex">\(\alpha+e^{-\alpha}\)</span> | 无聚集 |</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>查找成功ASL</th>
+<th>查找失败ASL</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>线性探测</td>
+<td><span class="arithmatex">\(\frac{1}{2}(1+\frac{1}{1-\alpha})\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{2}(1+\frac{1}{(1-\alpha)^2})\)</span></td>
+<td>聚集现象</td>
+</tr>
+<tr>
+<td>二次探测</td>
+<td><span class="arithmatex">\(-\frac{1}{\alpha}\ln(1-\alpha)\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{1-\alpha}\)</span></td>
+<td>减少聚集</td>
+</tr>
+<tr>
+<td>链地址</td>
+<td><span class="arithmatex">\(1+\frac{\alpha}{2}\)</span></td>
+<td><span class="arithmatex">\(\alpha+e^{-\alpha}\)</span></td>
+<td>无聚集</td>
+</tr>
+</tbody>
+</table>
 
 
 
