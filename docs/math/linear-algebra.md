@@ -289,15 +289,10 @@ $\det(A) = \sum_{\sigma \in S_n} \left( \prod_{i=1}^n a_{i,\sigma(i)} \right) \c
 定义 Levi-Civita 符号（完全反对称张量）：
 
 $\varepsilon_{i_1 i_2 \cdots i_n} = 
-
 \begin{cases}
-
    1, & \text{若 } (i_1, i_2, \dots, i_n) \text{ 是偶排列} \\
-
    -1, & \text{若 } (i_1, i_2, \dots, i_n) \text{ 是奇排列} \\
-
    0, & \text{其他情况（有重复指标）}
-
 \end{cases}$
 
 则行列式可表示为：
@@ -685,17 +680,11 @@ $A$ 正定 $\iff$ 以下任一条件成立：
 设 $\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}$ 是内积空间 $V$ 中的线性无关向量组，则可通过以下步骤构造标准正交基 $\{\mathbf{u}_1, \mathbf{u}_2, \dots, \mathbf{u}_n\}$：
 
 $\begin{aligned}
-
    \mathbf{u}_1 &= \frac{\mathbf{v}_1}{\|\mathbf{v}_1\|} \\
-
    \mathbf{u}_2 &= \frac{\mathbf{v}_2 - \langle \mathbf{v}_2, \mathbf{u}_1 \rangle \mathbf{u}_1}{\|\mathbf{v}_2 - \langle \mathbf{v}_2, \mathbf{u}_1 \rangle \mathbf{u}_1\|} \\
-
    \mathbf{u}_3 &= \frac{\mathbf{v}_3 - \langle \mathbf{v}_3, \mathbf{u}_1 \rangle \mathbf{u}_1 - \langle \mathbf{v}_3, \mathbf{u}_2 \rangle \mathbf{u}_2}{\|\mathbf{v}_3 - \langle \mathbf{v}_3, \mathbf{u}_1 \rangle \mathbf{u}_1 - \langle \mathbf{v}_3, \mathbf{u}_2 \rangle \mathbf{u}_2\|} \\
-
    &\vdots \\
-
    \mathbf{u}_k &= \frac{\mathbf{v}_k - \sum_{j=1}^{k-1} \langle \mathbf{v}_k, \mathbf{u}_j \rangle \mathbf{u}_j}{\left\| \mathbf{v}_k - \sum_{j=1}^{k-1} \langle \mathbf{v}_k, \mathbf{u}_j \rangle \mathbf{u}_j \right\|}
-
 \end{aligned}$
 
 
@@ -721,19 +710,12 @@ Gram-Schmidt 过程提供了构造 $Q$ 和 $R$ 的一种方法。
 > 解：
 
 > $\begin{aligned}
-
 >    \mathbf{u}_1 &= \frac{\mathbf{v}_1}{\|\mathbf{v}_1\|} = \frac{1}{\sqrt{2}}(1,1,0)^T \\
-
 >    \mathbf{u}_2 &= \frac{\mathbf{v}_2 - \langle \mathbf{v}_2, \mathbf{u}_1 \rangle \mathbf{u}_1}{\|\cdots\|} 
-
 >    = \frac{(1,0,1)^T - \frac{1}{\sqrt{2}}\cdot\frac{1}{\sqrt{2}}(1,1,0)^T}{\|\cdots\|} \\
-
 >    &= \frac{(1,0,1)^T - \frac{1}{2}(1,1,0)^T}{\sqrt{(\frac{1}{2})^2 + (-\frac{1}{2})^2 + 1^2}} 
-
 >    = \frac{(\frac{1}{2}, -\frac{1}{2}, 1)^T}{\sqrt{\frac{3}{2}}} \\
-
 >    \mathbf{u}_3 &= \cdots \quad \text{(继续类似计算)}
-
 > \end{aligned}$
 
 
@@ -867,17 +849,11 @@ $J = \operatorname{diag}(J_1(\lambda_1), J_2(\lambda_2), \dots, J_k(\lambda_k))$
 其中每个 Jordan 块形如：
 
 $J_i(\lambda) = 
-
 \begin{pmatrix}
-
    \lambda & 1 & & \\
-
    & \lambda & \ddots & \\
-
    & & \ddots & 1 \\
-
    & & & \lambda
-
 \end{pmatrix}$
 
 
@@ -1017,13 +993,8 @@ $\mathbf{u}_k = \frac{\mathbf{v}_k - \sum_{j=1}^{k-1} \langle \mathbf{v}_k, \mat
 **维数关系**
 
 $\begin{aligned}
-
    &\dim(\ker T) + \dim(\operatorname{Im} T) = \dim V \\
-
    &\dim(U + W) = \dim U + \dim W - \dim(U \cap W) \\
-
    &\dim W + \dim W^\perp = \dim V \\
-
    &\text{rank}(A) + \text{nullity}(A) = n
-
 \end{aligned}$

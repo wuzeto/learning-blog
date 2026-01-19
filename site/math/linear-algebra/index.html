@@ -2215,12 +2215,12 @@ window.MathJax = {
 <p>其中 <span class="arithmatex">\(S_n\)</span> 是 <span class="arithmatex">\(n\)</span> 阶对称群，<span class="arithmatex">\(\operatorname{sgn}(\sigma)\)</span> 是置换 <span class="arithmatex">\(\sigma\)</span> 的符号。</p>
 <p><strong>Levi-Civita 符号</strong></p>
 <p>定义 Levi-Civita 符号（完全反对称张量）：</p>
-<p>$\varepsilon_{i_1 i_2 \cdots i_n} = </p>
-<p>\begin{cases}</p>
-<p>1, &amp; \text{若 } (i_1, i_2, \dots, i_n) \text{ 是偶排列} \</p>
-<p>-1, &amp; \text{若 } (i_1, i_2, \dots, i_n) \text{ 是奇排列} \</p>
-<p>0, &amp; \text{其他情况（有重复指标）}</p>
-<p>\end{cases}$</p>
+<p><span class="arithmatex">\(\varepsilon_{i_1 i_2 \cdots i_n} = 
+\begin{cases}
+   1, &amp; \text{若 } (i_1, i_2, \dots, i_n) \text{ 是偶排列} \\
+   -1, &amp; \text{若 } (i_1, i_2, \dots, i_n) \text{ 是奇排列} \\
+   0, &amp; \text{其他情况（有重复指标）}
+\end{cases}\)</span></p>
 <p>则行列式可表示为：</p>
 <p><span class="arithmatex">\(\det(A) = \sum_{i_1,i_2,\dots,i_n} \varepsilon_{i_1 i_2 \cdots i_n} a_{1i_1} a_{2i_2} \cdots a_{ni_n}\)</span></p>
 <h3 id="_5">其他重要行列式公式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
@@ -2451,13 +2451,13 @@ window.MathJax = {
 <h3 id="gram-schmidt">Gram-Schmidt 正交化方法<a class="headerlink" href="#gram-schmidt" title="Permanent link">&para;</a></h3>
 <p><strong>Gram-Schmidt 正交化</strong></p>
 <p>设 <span class="arithmatex">\(\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}\)</span> 是内积空间 <span class="arithmatex">\(V\)</span> 中的线性无关向量组，则可通过以下步骤构造标准正交基 <span class="arithmatex">\(\{\mathbf{u}_1, \mathbf{u}_2, \dots, \mathbf{u}_n\}\)</span>：</p>
-<p>$\begin{aligned}</p>
-<p>\mathbf{u}_1 &amp;= \frac{\mathbf{v}_1}{|\mathbf{v}_1|} \</p>
-<p>\mathbf{u}_2 &amp;= \frac{\mathbf{v}_2 - \langle \mathbf{v}_2, \mathbf{u}_1 \rangle \mathbf{u}_1}{|\mathbf{v}_2 - \langle \mathbf{v}_2, \mathbf{u}_1 \rangle \mathbf{u}_1|} \</p>
-<p>\mathbf{u}_3 &amp;= \frac{\mathbf{v}_3 - \langle \mathbf{v}_3, \mathbf{u}_1 \rangle \mathbf{u}_1 - \langle \mathbf{v}_3, \mathbf{u}_2 \rangle \mathbf{u}_2}{|\mathbf{v}_3 - \langle \mathbf{v}_3, \mathbf{u}_1 \rangle \mathbf{u}_1 - \langle \mathbf{v}_3, \mathbf{u}_2 \rangle \mathbf{u}_2|} \</p>
-<p>&amp;\vdots \</p>
-<p>\mathbf{u}<em j="1">k &amp;= \frac{\mathbf{v}_k - \sum</em>}^{k-1} \langle \mathbf{v<em j="1">k, \mathbf{u}_j \rangle \mathbf{u}_j}{\left| \mathbf{v}_k - \sum</em>}^{k-1} \langle \mathbf{v}_k, \mathbf{u}_j \rangle \mathbf{u}_j \right|</p>
-<p>\end{aligned}$</p>
+<p><span class="arithmatex">\(\begin{aligned}
+   \mathbf{u}_1 &amp;= \frac{\mathbf{v}_1}{\|\mathbf{v}_1\|} \\
+   \mathbf{u}_2 &amp;= \frac{\mathbf{v}_2 - \langle \mathbf{v}_2, \mathbf{u}_1 \rangle \mathbf{u}_1}{\|\mathbf{v}_2 - \langle \mathbf{v}_2, \mathbf{u}_1 \rangle \mathbf{u}_1\|} \\
+   \mathbf{u}_3 &amp;= \frac{\mathbf{v}_3 - \langle \mathbf{v}_3, \mathbf{u}_1 \rangle \mathbf{u}_1 - \langle \mathbf{v}_3, \mathbf{u}_2 \rangle \mathbf{u}_2}{\|\mathbf{v}_3 - \langle \mathbf{v}_3, \mathbf{u}_1 \rangle \mathbf{u}_1 - \langle \mathbf{v}_3, \mathbf{u}_2 \rangle \mathbf{u}_2\|} \\
+   &amp;\vdots \\
+   \mathbf{u}_k &amp;= \frac{\mathbf{v}_k - \sum_{j=1}^{k-1} \langle \mathbf{v}_k, \mathbf{u}_j \rangle \mathbf{u}_j}{\left\| \mathbf{v}_k - \sum_{j=1}^{k-1} \langle \mathbf{v}_k, \mathbf{u}_j \rangle \mathbf{u}_j \right\|}
+\end{aligned}\)</span></p>
 <p><strong>QR 分解</strong></p>
 <p>任何可逆矩阵 <span class="arithmatex">\(A\)</span> 可分解为 <span class="arithmatex">\(A = QR\)</span>，其中：</p>
 <ul>
@@ -2473,14 +2473,14 @@ window.MathJax = {
 <p><strong>示例</strong></p>
 <p>将向量组 <span class="arithmatex">\(\mathbf{v}_1 = (1,1,0)^T\)</span>, <span class="arithmatex">\(\mathbf{v}_2 = (1,0,1)^T\)</span>, <span class="arithmatex">\(\mathbf{v}_3 = (0,1,1)^T\)</span> 正交化。</p>
 <p>解：</p>
-<p>$\begin{aligned}</p>
-<p>\mathbf{u}_1 &amp;= \frac{\mathbf{v}_1}{|\mathbf{v}_1|} = \frac{1}{\sqrt{2}}(1,1,0)^T \</p>
-<p>\mathbf{u}_2 &amp;= \frac{\mathbf{v}_2 - \langle \mathbf{v}_2, \mathbf{u}_1 \rangle \mathbf{u}_1}{|\cdots|} </p>
-<p>= \frac{(1,0,1)^T - \frac{1}{\sqrt{2}}\cdot\frac{1}{\sqrt{2}}(1,1,0)^T}{|\cdots|} \</p>
-<p>&amp;= \frac{(1,0,1)^T - \frac{1}{2}(1,1,0)^T}{\sqrt{(\frac{1}{2})^2 + (-\frac{1}{2})^2 + 1^2}} </p>
-<p>= \frac{(\frac{1}{2}, -\frac{1}{2}, 1)^T}{\sqrt{\frac{3}{2}}} \</p>
-<p>\mathbf{u}_3 &amp;= \cdots \quad \text{(继续类似计算)}</p>
-<p>\end{aligned}$</p>
+<p><span class="arithmatex">\(\begin{aligned}
+   \mathbf{u}_1 &amp;= \frac{\mathbf{v}_1}{\|\mathbf{v}_1\|} = \frac{1}{\sqrt{2}}(1,1,0)^T \\
+   \mathbf{u}_2 &amp;= \frac{\mathbf{v}_2 - \langle \mathbf{v}_2, \mathbf{u}_1 \rangle \mathbf{u}_1}{\|\cdots\|} 
+   = \frac{(1,0,1)^T - \frac{1}{\sqrt{2}}\cdot\frac{1}{\sqrt{2}}(1,1,0)^T}{\|\cdots\|} \\
+   &amp;= \frac{(1,0,1)^T - \frac{1}{2}(1,1,0)^T}{\sqrt{(\frac{1}{2})^2 + (-\frac{1}{2})^2 + 1^2}} 
+   = \frac{(\frac{1}{2}, -\frac{1}{2}, 1)^T}{\sqrt{\frac{3}{2}}} \\
+   \mathbf{u}_3 &amp;= \cdots \quad \text{(继续类似计算)}
+\end{aligned}\)</span></p>
 </blockquote>
 <h3 id="fibonacci">Fibonacci 数列与矩阵<a class="headerlink" href="#fibonacci" title="Permanent link">&para;</a></h3>
 <p><strong>Fibonacci 数列的矩阵表示</strong></p>
@@ -2558,13 +2558,13 @@ window.MathJax = {
 <p>设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\)</span> 阶复矩阵，则 <span class="arithmatex">\(A\)</span> 相似于 Jordan 标准形：</p>
 <p><span class="arithmatex">\(J = \operatorname{diag}(J_1(\lambda_1), J_2(\lambda_2), \dots, J_k(\lambda_k))\)</span></p>
 <p>其中每个 Jordan 块形如：</p>
-<p>$J_i(\lambda) = </p>
-<p>\begin{pmatrix}</p>
-<p>\lambda &amp; 1 &amp; &amp; \</p>
-<p>&amp; \lambda &amp; \ddots &amp; \</p>
-<p>&amp; &amp; \ddots &amp; 1 \</p>
-<p>&amp; &amp; &amp; \lambda</p>
-<p>\end{pmatrix}$</p>
+<p><span class="arithmatex">\(J_i(\lambda) = 
+\begin{pmatrix}
+   \lambda &amp; 1 &amp; &amp; \\
+   &amp; \lambda &amp; \ddots &amp; \\
+   &amp; &amp; \ddots &amp; 1 \\
+   &amp; &amp; &amp; \lambda
+\end{pmatrix}\)</span></p>
 <p><strong>Jordan 标准形的唯一性</strong></p>
 <p>除了 Jordan 块的排列次序外，Jordan 标准形是唯一的。</p>
 <p><strong>几何重数与代数重数</strong></p>
@@ -2653,12 +2653,12 @@ window.MathJax = {
 </li>
 </ul>
 <p><strong>维数关系</strong></p>
-<p>$\begin{aligned}</p>
-<p>&amp;\dim(\ker T) + \dim(\operatorname{Im} T) = \dim V \</p>
-<p>&amp;\dim(U + W) = \dim U + \dim W - \dim(U \cap W) \</p>
-<p>&amp;\dim W + \dim W^\perp = \dim V \</p>
-<p>&amp;\text{rank}(A) + \text{nullity}(A) = n</p>
-<p>\end{aligned}$</p>
+<p><span class="arithmatex">\(\begin{aligned}
+   &amp;\dim(\ker T) + \dim(\operatorname{Im} T) = \dim V \\
+   &amp;\dim(U + W) = \dim U + \dim W - \dim(U \cap W) \\
+   &amp;\dim W + \dim W^\perp = \dim V \\
+   &amp;\text{rank}(A) + \text{nullity}(A) = n
+\end{aligned}\)</span></p>
 
 
 
