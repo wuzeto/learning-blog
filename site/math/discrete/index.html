@@ -1920,7 +1920,7 @@ window.MathJax = {
 
     inlineMath: [['$', '$'], ['\\(', '\\)']],
 
-    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    displayMath: [['$$', '$$'], ['\$$', '\$$']],
 
     macros: {
 
@@ -2103,9 +2103,9 @@ $$</p>
 (2) <span class="arithmatex">\(f^{-1}(\cap \mathcal{D}) = \cap \{f^{-1}(D) \mid D\in \mathcal{D}\}\)</span>；<br />
 (3) <span class="arithmatex">\(f^{-1}(D_1 - D_2) = f^{-1}(D_1) - f^{-1}(D_2)\)</span>。</p>
 <p><strong>定理3.3</strong> 设 <span class="arithmatex">\(g:A\to B\)</span>，<span class="arithmatex">\(f:B\to C\)</span>，则 <span class="arithmatex">\(f\circ g:A\to C\)</span>，且对于任意 <span class="arithmatex">\(x\in A\)</span>，<br />
-[
+$$
 (f\circ g)(x) = f(g(x)).
-]</p>
+$$</p>
 <p><strong>定理3.4</strong> 设 <span class="arithmatex">\(g:A\to B\)</span>，<span class="arithmatex">\(f:B\to C\)</span>：<br />
 (1) 若 <span class="arithmatex">\(f\)</span> 和 <span class="arithmatex">\(g\)</span> 都是满射，则 <span class="arithmatex">\(f\circ g\)</span> 是满射；<br />
 (2) 若 <span class="arithmatex">\(f\)</span> 和 <span class="arithmatex">\(g\)</span> 都是单射，则 <span class="arithmatex">\(f\circ g\)</span> 是单射；<br />
@@ -2115,9 +2115,9 @@ $$</p>
 (2) 若 <span class="arithmatex">\(f\circ g\)</span> 是单射，则 <span class="arithmatex">\(g\)</span> 是单射；<br />
 (3) 若 <span class="arithmatex">\(f\circ g\)</span> 是双射，则 <span class="arithmatex">\(g\)</span> 是单射，<span class="arithmatex">\(f\)</span> 是满射。</p>
 <p><strong>定理3.6</strong> 设 <span class="arithmatex">\(f:A\to B\)</span>，<span class="arithmatex">\(I_A, I_B\)</span> 分别为 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 上的恒等函数，则<br />
-[
+$$
 f\circ I_A = I_B\circ f.
-]</p>
+$$</p>
 <p><strong>定理3.7</strong> 设 <span class="arithmatex">\(f:\mathbb{R}\to \mathbb{R}\)</span>，<span class="arithmatex">\(g:\mathbb{R}\to \mathbb{R}\)</span>，若 <span class="arithmatex">\(f\)</span> 和 <span class="arithmatex">\(g\)</span> 在实数集上关于“<span class="arithmatex">\(\leq\)</span>”都是单调增加的，则 <span class="arithmatex">\(f\circ g\)</span> 也是单调增加的。</p>
 <p><strong>定理3.8</strong> 设 <span class="arithmatex">\(A\)</span> 为一个集合，<span class="arithmatex">\(A^{-1}\)</span> 为函数当且仅当 <span class="arithmatex">\(A\)</span> 是单根的。<br />
 <strong>推论</strong> 设 <span class="arithmatex">\(R\)</span> 为二元关系，<span class="arithmatex">\(R\)</span> 为函数当且仅当 <span class="arithmatex">\(R^{-1}\)</span> 是单根的。</p>
@@ -2136,13 +2136,13 @@ f\circ I_A = I_B\circ f.
 <p><strong>定理4.5</strong> 任何自然数都不是自己的元素。</p>
 <p><strong>定理4.6</strong> 空集属于除零外的一切自然数。</p>
 <p><strong>定理4.7</strong>（三歧性定理）对于任意自然数 <span class="arithmatex">\(m,n\)</span>，以下三式有且仅有一式成立：<br />
-[
+$$
 m\in n,\quad m=n,\quad n\in m.
-]</p>
+$$</p>
 <p><strong>定理4.8</strong>（<span class="arithmatex">\(\mathbb{N}\)</span> 上的递归定理）设 <span class="arithmatex">\(A\)</span> 为集合，<span class="arithmatex">\(a\in A\)</span>，<span class="arithmatex">\(F:A\to A\)</span>，则存在唯一函数 <span class="arithmatex">\(h:\mathbb{N}\to A\)</span>，使得 <span class="arithmatex">\(h(0) = a\)</span>，且对任意 <span class="arithmatex">\(n\in \mathbb{N}\)</span>，<br />
-[
+$$
 h(n^{+}) = F(h(n)).
-]</p>
+$$</p>
 <p><strong>定理4.9</strong> 设 <span class="arithmatex">\(\langle M,F,e\rangle\)</span> 为任意 Peano 系统，则 <span class="arithmatex">\(\langle \mathbb{N},\sigma,0\rangle \sim \langle M,F,e\rangle\)</span>。</p>
 <p><strong>定理4.10</strong> 设 <span class="arithmatex">\(A\)</span> 为集合，则以下命题等价：<br />
 (1) <span class="arithmatex">\(A\)</span> 是传递集；<br />
@@ -2212,9 +2212,9 @@ h(n^{+}) = F(h(n)).
 (2) <span class="arithmatex">\(A\times C\not\approx B\times D\)</span>。</p>
 <p><strong>定理5.10</strong> 设 <span class="arithmatex">\(A,B,C,D\)</span> 为四个集合，且已知 <span class="arithmatex">\(\mathrm{card}\,A = \mathrm{card}\,C = \kappa\)</span>，<span class="arithmatex">\(\mathrm{card}\,B = \mathrm{card}\,D = \lambda\)</span>，则 <span class="arithmatex">\(A\not\approx B\)</span> 当且仅当 <span class="arithmatex">\(C\not\approx D\)</span>。</p>
 <p><strong>定理5.11</strong> 设 <span class="arithmatex">\(A\)</span> 为任意集合，则<br />
-[
+$$
 \mathrm{card}\,A &lt; \mathrm{card}\,\mathcal{P}(A).
-]</p>
+$$</p>
 <p><strong>定理5.12</strong>（Schröder–Bernstein定理）<br />
 (1) 设 <span class="arithmatex">\(A,B\)</span> 为二集合，若 <span class="arithmatex">\(A\preccurlyeq B\)</span> 且 <span class="arithmatex">\(B\preccurlyeq A\)</span>，则 <span class="arithmatex">\(A\approx B\)</span>；<br />
 (2) 设 <span class="arithmatex">\(\kappa,\lambda\)</span> 为二基数，若 <span class="arithmatex">\(\kappa \leq \lambda\)</span> 且 <span class="arithmatex">\(\lambda \leq \kappa\)</span>，则 <span class="arithmatex">\(\kappa = \lambda\)</span>。</p>
@@ -2258,9 +2258,9 @@ h(n^{+}) = F(h(n)).
 (4) <span class="arithmatex">\(\mu^{\kappa} \leq \mu^{\lambda}\)</span>，其中 <span class="arithmatex">\(\kappa,\mu\)</span> 不同时为 0。</p>
 <p><strong>定理5.23</strong> 设 <span class="arithmatex">\(\kappa\)</span> 为任意无穷基数，则 <span class="arithmatex">\(\kappa\cdot \kappa = \kappa\)</span>。</p>
 <p><strong>定理5.24</strong> 设 <span class="arithmatex">\(\kappa,\lambda\)</span> 为二基数，其中较大的为无穷基数，较小的不为 0，则<br />
-[
+$$
 \kappa+\lambda = \kappa\cdot \lambda = \max{\kappa,\lambda}.
-]<br />
+$$<br />
 <strong>推论</strong> 设 <span class="arithmatex">\(\kappa\)</span> 为一无穷基数，则 <span class="arithmatex">\(\kappa+\kappa = \kappa\cdot \kappa = \kappa\)</span>。</p>
 <p><strong>定理5.25</strong> 设 <span class="arithmatex">\(\kappa\)</span> 为无穷基数，则 <span class="arithmatex">\(\kappa^{\kappa} = 2^{\kappa}\)</span>。</p>
 <hr />
@@ -2288,9 +2288,9 @@ h(n^{+}) = F(h(n)).
 (3) <span class="arithmatex">\(\langle \mathrm{seg}\,a,\prec_A^0\rangle \cong \langle B,&lt;_B\rangle, a\in A\)</span>。<br />
 其中 <span class="arithmatex">\(\prec_A^0,\prec_B^0\)</span> 分别为 <span class="arithmatex">\(\prec_A\)</span> 在 <span class="arithmatex">\(\mathrm{seg}\,a\)</span> 和 <span class="arithmatex">\(\prec_B\)</span> 在 <span class="arithmatex">\(\mathrm{seg}\,b\)</span> 上的限制。</p>
 <p><strong>定理6.8</strong> 设 <span class="arithmatex">\(\prec\)</span> 为集合 <span class="arithmatex">\(A\)</span> 上的良序，则唯一存在一个以 <span class="arithmatex">\(A\)</span> 为定义域的函数 <span class="arithmatex">\(E\)</span>，使得对任意 <span class="arithmatex">\(t\in A\)</span>，<br />
-[
+$$
 E(t) = \mathrm{ran}(E|\,\mathrm{seg}\,t) = {E(x) \mid x &lt; t}.
-]</p>
+$$</p>
 <p><strong>定理6.9</strong> 设 <span class="arithmatex">\(\langle A,\prec\rangle\)</span> 为良序集，<span class="arithmatex">\(E\)</span> 为前段值域函数，<span class="arithmatex">\(\alpha\)</span> 是 <span class="arithmatex">\(\langle A,\prec\rangle\)</span> 的 <span class="arithmatex">\(\in\)</span>-象，则<br />
 (1) <span class="arithmatex">\(\forall t\in A, E(t)\notin E(t)\)</span>；<br />
 (2) <span class="arithmatex">\(E\)</span> 为 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(\alpha\)</span> 之间的双射函数；<br />
@@ -2328,26 +2328,26 @@ E(t) = \mathrm{ran}(E|\,\mathrm{seg}\,t) = {E(x) \mid x &lt; t}.
 <h1 id="_9">《离散数学教程》定理汇总（续）<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
 <h2 id="_10">第七章 图<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p><strong>定理7.1</strong>（图论基本定理）设 <span class="arithmatex">\(G = \langle V,E\rangle\)</span> 为一个无向图，<span class="arithmatex">\(V = \{v_{1},v_{2},\dots ,v_{n}\}\)</span>，<span class="arithmatex">\(|E| = m\)</span>，则<br />
-[
+$$
 \sum_{i = 1}^{n}d(v_{i}) = 2m.
-]</p>
+$$</p>
 <p><strong>定理7.2</strong>（图论基本定理）设 <span class="arithmatex">\(D = \langle V,E\rangle\)</span> 为一个有向图，<span class="arithmatex">\(V = \{v_{1},v_{2},\dots ,v_{n}\}\)</span>，<span class="arithmatex">\(|E| = m\)</span>，则<br />
-[
+$$
 \sum_{i = 1}^{n}d(v_{i}) = 2m \quad \text{且} \quad \sum_{i = 1}^{n}d^{+}(v_{i}) = \sum_{i = 1}^{n}d^{-}(v_{i}) = m.
-]<br />
+$$<br />
 <strong>推论</strong> 任何图 <span class="arithmatex">\(G\)</span>（无向图或有向图）中，奇度数顶点的个数是偶数。</p>
 <p><strong>定理7.3</strong> 非负整数列 <span class="arithmatex">\(\mathbf{d} = (d_{1},d_{2},\dots ,d_{n})\)</span>（<span class="arithmatex">\(d_{i}\geq 0\)</span> 且为整数，<span class="arithmatex">\(i = 1,2,\dots ,n\)</span>）是可图化的当且仅当<br />
-[
+$$
 \sum_{i = 1}^{n}d_{i} \equiv 0 \pmod{2}.
-]</p>
+$$</p>
 <p><strong>定理7.4</strong>（Erdős–Gallai 定理）设非负整数列 <span class="arithmatex">\(\mathbf{d} = (d_{1},d_{2},\dots ,d_{n})\)</span>，满足 <span class="arithmatex">\((n - 1)\geq d_{1}\geq d_{2}\geq \dots \geq d_{n}\geq 0\)</span>，则 <span class="arithmatex">\(\mathbf{d}\)</span> 是可简单图化的当且仅当对每个整数 <span class="arithmatex">\(r\)</span>（<span class="arithmatex">\(1\leq r\leq n - 1\)</span>），<br />
-[
+$$
 \sum_{i = 1}^{r}d_{i} \leq r(r - 1) + \sum_{i = r + 1}^{n}\min {r,d_{i}} \quad \text{且} \quad \sum_{i = 1}^{n}d_{i} \equiv 0 \pmod{2}.
-]</p>
+$$</p>
 <p><strong>定理7.5</strong>（Havel–Hakimi 定理）设非负整数列 <span class="arithmatex">\(\mathbf{d} = (d_{1},d_{2},\dots ,d_{n})\)</span>，满足 <span class="arithmatex">\(\sum_{i = 1}^{n}d_{i} \equiv 0 \pmod{2}\)</span> 且 <span class="arithmatex">\((n - 1)\geq d_{1}\geq d_{2}\geq \dots \geq d_{n}\geq 0\)</span>，则 <span class="arithmatex">\(\mathbf{d}\)</span> 是可简单图化的当且仅当<br />
-[
+$$
 \mathbf{d}^{\prime} = (d_{2} - 1,d_{3} - 1,\dots ,d_{d_{1} + 1} - 1,d_{d_{1} + 2},\dots ,d_{n})
-]<br />
+$$<br />
 是可简单图化的。</p>
 <p><strong>定理7.6</strong> 在 <span class="arithmatex">\(n\)</span> 阶图 <span class="arithmatex">\(G\)</span> 中，若从顶点 <span class="arithmatex">\(v_i\)</span> 到 <span class="arithmatex">\(v_j\)</span>（<span class="arithmatex">\(v_i\neq v_j\)</span>）存在通路，则存在长度 <span class="arithmatex">\(\leq n - 1\)</span> 的通路。<br />
 <strong>推论</strong> 在 <span class="arithmatex">\(n\)</span> 阶图 <span class="arithmatex">\(G\)</span> 中，若从 <span class="arithmatex">\(v_i\)</span> 到 <span class="arithmatex">\(v_j\)</span>（<span class="arithmatex">\(v_i\neq v_j\)</span>）存在通路，则存在长度 <span class="arithmatex">\(\leq n - 1\)</span> 的路径。</p>
@@ -2356,9 +2356,9 @@ E(t) = \mathrm{ran}(E|\,\mathrm{seg}\,t) = {E(x) \mid x &lt; t}.
 <p><strong>定理7.8</strong> 一个图 <span class="arithmatex">\(G\)</span> 为二部图当且仅当 <span class="arithmatex">\(G\)</span> 中无奇圈。</p>
 <p><strong>定理7.9</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n\)</span> 阶无向连通图，则 <span class="arithmatex">\(G\)</span> 的边数 <span class="arithmatex">\(m\geq n - 1\)</span>。</p>
 <p><strong>定理7.10</strong>（Whitney 不等式）对于任意图 <span class="arithmatex">\(G\)</span>，有<br />
-[
+$$
 \kappa(G) \leq \lambda(G) \leq \delta(G),
-]<br />
+$$<br />
 其中 <span class="arithmatex">\(\kappa, \lambda, \delta\)</span> 分别为 <span class="arithmatex">\(G\)</span> 的点连通度、边连通度和最小度。<br />
 <strong>推论</strong> 若 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(k\)</span>-连通图，则 <span class="arithmatex">\(G\)</span> 必为 <span class="arithmatex">\(k\)</span>-边连通图。</p>
 <p><strong>定理7.11</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n(n\geq 6)\)</span> 阶简单无向连通图，<span class="arithmatex">\(\lambda(G) &lt; \delta(G)\)</span>，则必存在由 <span class="arithmatex">\(K_{n_1}, K_{n-n_1}\)</span> 及在它们之间连入 <span class="arithmatex">\(\lambda(G)\)</span> 条边构成的图 <span class="arithmatex">\(G^{*}\)</span>（含 <span class="arithmatex">\(G\)</span> 作为生成子图），其中 <span class="arithmatex">\(\lambda(G) + 2\leq n_1 \leq \left\lfloor \frac{n}{2} \right\rfloor\)</span>。</p>
@@ -2367,9 +2367,9 @@ E(t) = \mathrm{ran}(E|\,\mathrm{seg}\,t) = {E(x) \mid x &lt; t}.
 (2) 若对 <span class="arithmatex">\(G\)</span> 中任意一对不相邻顶点 <span class="arithmatex">\(u,v\)</span> 有 <span class="arithmatex">\(d(u) + d(v) \geq n - 1\)</span>，则 <span class="arithmatex">\(\lambda(G) = \delta(G)\)</span>；<br />
 (3) 若 <span class="arithmatex">\(d(G) \leq 2\)</span>，则 <span class="arithmatex">\(\lambda(G) = \delta(G)\)</span>。</p>
 <p><strong>定理7.13</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n\)</span> 阶无向简单连通图，且 <span class="arithmatex">\(G\)</span> 不是完全图 <span class="arithmatex">\(K_n\)</span>，则<br />
-[
+$$
 \kappa(G) \geq 2\delta(G) - n + 2.
-]</p>
+$$</p>
 <p><strong>定理7.14</strong> 对于给定的正整数 <span class="arithmatex">\(n, \delta, \kappa, \lambda\)</span>，存在 <span class="arithmatex">\(n\)</span> 阶简单连通无向图 <span class="arithmatex">\(G\)</span>，使得 <span class="arithmatex">\(\delta(G)=\delta, \kappa(G)=\kappa, \lambda(G)=\lambda\)</span> 的充要条件是下列三式之一成立：<br />
 (1) <span class="arithmatex">\(0 \leq \kappa \leq \lambda \leq \delta &lt; \left\lfloor \frac{n}{2} \right\rfloor\)</span>；<br />
 (2) <span class="arithmatex">\(1 \leq 2\delta - n + 2 \leq \kappa \leq \lambda = \delta &lt; n - 1\)</span>；<br />
@@ -2404,23 +2404,23 @@ E(t) = \mathrm{ran}(E|\,\mathrm{seg}\,t) = {E(x) \mid x &lt; t}.
 <p><strong>定理8.4</strong> 设 <span class="arithmatex">\(D\)</span> 是连通的有向图，则 <span class="arithmatex">\(D\)</span> 是半欧拉图当且仅当 <span class="arithmatex">\(D\)</span> 中恰有两个奇度顶点，其中一个入度比出度大 1，另一个出度比入度大 1，其余顶点入度等于出度。</p>
 <p><strong>定理8.5</strong> 设 <span class="arithmatex">\(G\)</span> 是无向欧拉图，则 Fleury 算法终止时得到的简单通路是欧拉回路。</p>
 <p><strong>定理8.6</strong> 设无向图 <span class="arithmatex">\(G = \langle V,E\rangle\)</span> 是哈密顿图，则对 <span class="arithmatex">\(V\)</span> 的任意非空真子集 <span class="arithmatex">\(V_1\)</span>，有<br />
-[
+$$
 p(G - V_1) \leq |V_1|,
-]<br />
+$$<br />
 其中 <span class="arithmatex">\(p(G - V_1)\)</span> 是 <span class="arithmatex">\(G - V_1\)</span> 的连通分支数。</p>
 <p><strong>推论</strong> 设 <span class="arithmatex">\(G\)</span> 是半哈密顿图（存在哈密顿通路），则对任意非空真子集 <span class="arithmatex">\(V_1 \subseteq V\)</span>，有<br />
-[
+$$
 p(G - V_1) \leq |V_1| + 1.
-]</p>
+$$</p>
 <p><strong>定理8.7</strong>（Ore）设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n(n\geq 2)\)</span> 阶无向简单图，若对 <span class="arithmatex">\(G\)</span> 中任意不相邻顶点 <span class="arithmatex">\(v_i, v_j\)</span> 有<br />
-[
+$$
 d(v_i) + d(v_j) \geq n - 1,
-]<br />
+$$<br />
 则 <span class="arithmatex">\(G\)</span> 中存在哈密顿通路。</p>
 <p><strong>推论1</strong>（Ore）设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n(n\geq 3)\)</span> 阶无向简单图，若对任意不相邻顶点 <span class="arithmatex">\(v_i, v_j\)</span> 有<br />
-[
+$$
 d(v_i) + d(v_j) \geq n,
-]<br />
+$$<br />
 则 <span class="arithmatex">\(G\)</span> 中存在哈密顿回路（<span class="arithmatex">\(G\)</span> 是哈密顿图）。</p>
 <p><strong>推论2</strong>（Dirac）设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n(n\geq 3)\)</span> 阶无向简单图，若对任意顶点 <span class="arithmatex">\(v\)</span> 有 <span class="arithmatex">\(d(v) \geq \frac{n}{2}\)</span>，则 <span class="arithmatex">\(G\)</span> 是哈密顿图。</p>
 <p><strong>定理8.8</strong>（Bondy–Chvátal）设 <span class="arithmatex">\(u,v\)</span> 为无向 <span class="arithmatex">\(n\)</span> 阶简单图 <span class="arithmatex">\(G\)</span> 中两个不相邻顶点，且 <span class="arithmatex">\(d(u) + d(v) \geq n\)</span>，则 <span class="arithmatex">\(G\)</span> 是哈密顿图当且仅当 <span class="arithmatex">\(G \cup (u,v)\)</span> 是哈密顿图。</p>
@@ -2447,35 +2447,35 @@ d(v_i) + d(v_j) \geq n,
 <p><strong>定理9.4</strong> 设 <span class="arithmatex">\(T\)</span> 是无向连通图 <span class="arithmatex">\(G\)</span> 的一棵生成树，<span class="arithmatex">\(e\)</span> 为 <span class="arithmatex">\(T\)</span> 的任意一条弦（非树枝），则 <span class="arithmatex">\(T \cup \{e\}\)</span> 中含 <span class="arithmatex">\(G\)</span> 的一个只含一条弦、其余边均为树枝的圈，且不同弦对应的圈不同。</p>
 <p><strong>定理9.5</strong> 设 <span class="arithmatex">\(T\)</span> 是连通图 <span class="arithmatex">\(G\)</span> 的一棵生成树，<span class="arithmatex">\(e\)</span> 为 <span class="arithmatex">\(T\)</span> 的一条树枝，则 <span class="arithmatex">\(G\)</span> 中存在只含树枝 <span class="arithmatex">\(e\)</span>、其余元素均为弦的割集。若 <span class="arithmatex">\(e_1, e_2\)</span> 是 <span class="arithmatex">\(T\)</span> 的不同树枝，则它们对应的只含一条树枝的割集不同。</p>
 <p><strong>定理9.6</strong> 设 <span class="arithmatex">\(G = \langle V,E\rangle\)</span> 为 <span class="arithmatex">\(n\)</span> 阶无向连通标定图，则对 <span class="arithmatex">\(G\)</span> 的任意非环边 <span class="arithmatex">\(e\)</span>，有<br />
-[
+$$
 \tau(G) = \tau(G - e) + \tau(G \backslash e),
-]<br />
+$$<br />
 其中 <span class="arithmatex">\(\tau(G)\)</span> 表示 <span class="arithmatex">\(G\)</span> 的生成树数目，<span class="arithmatex">\(G\backslash e\)</span> 表示将边 <span class="arithmatex">\(e\)</span> 收缩后得到的图。</p>
 <p><strong>定理9.7</strong>（Cayley 公式）<span class="arithmatex">\(\tau(K_n) = n^{n-2} \ (n\geq 2)\)</span>，其中 <span class="arithmatex">\(K_n\)</span> 为 <span class="arithmatex">\(n\)</span> 阶标定完全图。</p>
 <p><strong>定理9.8</strong> 设 <span class="arithmatex">\(\Omega\)</span> 为图 <span class="arithmatex">\(G\)</span> 的所有边导出子图的集合，则 <span class="arithmatex">\(\Omega\)</span> 在环和运算及数乘运算（<span class="arithmatex">\(0\cdot G_i = \emptyset, 1\cdot G_i = G_i\)</span>）下构成数域 <span class="arithmatex">\(F = \{0,1\}\)</span> 上的 <span class="arithmatex">\(m\)</span> 维线性空间，其 <span class="arithmatex">\(M\)</span> 为生成元集。</p>
 <p><strong>定理9.9</strong> 设 <span class="arithmatex">\(T\)</span> 是 <span class="arithmatex">\(n\)</span> 阶 <span class="arithmatex">\(m\)</span> 条边的无向连通图 <span class="arithmatex">\(G\)</span> 的一棵生成树，<span class="arithmatex">\(C_k\)</span> 是对应弦 <span class="arithmatex">\(e_k'\)</span> 的基本回路，<span class="arithmatex">\(k = 1,2,\dots ,m - n + 1\)</span>，则对任意 <span class="arithmatex">\(r\)</span> 条弦 <span class="arithmatex">\(e_{i_1}',\dots ,e_{i_r}'\)</span>，这些弦均在<br />
-[
+$$
 C_{i_1} \oplus C_{i_2} \oplus \dots \oplus C_{i_r}
-]<br />
+$$<br />
 中，其中 <span class="arithmatex">\(\oplus\)</span> 为环和运算。</p>
 <p><strong>定理9.10</strong> 设 <span class="arithmatex">\(C_1\)</span> 和 <span class="arithmatex">\(C_2\)</span> 是无向图 <span class="arithmatex">\(G\)</span> 中的任意两个回路（初级的或简单的），则环和 <span class="arithmatex">\(C_1 \oplus C_2\)</span> 为 <span class="arithmatex">\(G\)</span> 中的环路。<br />
 <strong>推论</strong> 环路对环和运算是封闭的。</p>
 <p><strong>定理9.11</strong> 设 <span class="arithmatex">\(G\)</span> 为无向连通图，<span class="arithmatex">\(T\)</span> 为 <span class="arithmatex">\(G\)</span> 的任意一棵生成树，则 <span class="arithmatex">\(G\)</span> 中任一回路（初级的或简单的）或为 <span class="arithmatex">\(T\)</span> 的基本回路，或为若干个基本回路的环和。<br />
 <strong>推论1</strong> 无向连通图 <span class="arithmatex">\(G\)</span> 中任一环路或为某棵生成树的基本回路，或为若干个基本回路的环和。<br />
 <strong>推论2</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n\)</span> 阶 <span class="arithmatex">\(m\)</span> 条边的无向连通图，设 <span class="arithmatex">\(s\)</span> 为 <span class="arithmatex">\(G\)</span> 中回路（初级的或简单的）的个数，则<br />
-[
+$$
 m - n + 1 \leq s \leq 2^{m - n + 1} - 1.
-]<br />
+$$<br />
 <strong>推论3</strong> 设 <span class="arithmatex">\(s\)</span> 是 <span class="arithmatex">\(G\)</span> 中环路数（含空集 <span class="arithmatex">\(\varnothing\)</span>），则<br />
-[
+$$
 s = 2^{m - n + 1}.
-]</p>
+$$</p>
 <p><strong>定理9.12</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n\)</span> 阶 <span class="arithmatex">\(m\)</span> 条边的无向连通图，<span class="arithmatex">\(C_R\)</span> 为 <span class="arithmatex">\(G\)</span> 中环路（含 <span class="arithmatex">\(\varnothing\)</span>）组成的集合，则 <span class="arithmatex">\(C_R\)</span> 是 <span class="arithmatex">\(\Omega\)</span> 的 <span class="arithmatex">\(m - n + 1\)</span> 维子空间，其中 <span class="arithmatex">\(\Omega\)</span> 是 <span class="arithmatex">\(G\)</span> 的所有边导出子图的集合。</p>
 <p><strong>定理9.13</strong> 连通图 <span class="arithmatex">\(G\)</span> 中每个割集至少包含 <span class="arithmatex">\(G\)</span> 的每个生成树的一个树枝。</p>
 <p><strong>定理9.14</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n\)</span> 阶 <span class="arithmatex">\(m\)</span> 条边的无向连通图，<span class="arithmatex">\(T\)</span> 是 <span class="arithmatex">\(G\)</span> 的一棵生成树，<span class="arithmatex">\(S_\perp\)</span> 为 <span class="arithmatex">\(T\)</span> 对应的基本割集系统，则对任意 <span class="arithmatex">\(S_{i_1},\dots ,S_{i_k} \in S_\perp\)</span>，它们对应的树枝 <span class="arithmatex">\(e_{i_1}',\dots ,e_{i_k}'\)</span> 均在<br />
-[
+$$
 S_{i_1} \oplus S_{i_2} \oplus \dots \oplus S_{i_k}
-]<br />
+$$<br />
 中。</p>
 <p><strong>定理9.15</strong> 设 <span class="arithmatex">\(S_1, S_2\)</span> 为无向图 <span class="arithmatex">\(G\)</span> 的两个断集，则 <span class="arithmatex">\(S_1 \oplus S_2\)</span> 为 <span class="arithmatex">\(G\)</span> 的断集。</p>
 <p><strong>定理9.16</strong> 设 <span class="arithmatex">\(G\)</span> 为无向连通图，<span class="arithmatex">\(T\)</span> 为 <span class="arithmatex">\(G\)</span> 的任意一棵生成树，则 <span class="arithmatex">\(G\)</span> 中任一断集或为 <span class="arithmatex">\(T\)</span> 的基本割集，或为若干个基本割集的对称差集。</p>
@@ -2497,37 +2497,37 @@ S_{i_1} \oplus S_{i_2} \oplus \dots \oplus S_{i_k}
 <p><strong>定理11.1</strong> 图 <span class="arithmatex">\(G\)</span> 可嵌入球面当且仅当 <span class="arithmatex">\(G\)</span> 可嵌入平面。<br />
 <strong>推论</strong> 设 <span class="arithmatex">\(\hat{G}\)</span> 与 <span class="arithmatex">\(\hat{G}'\)</span> 分别是平面图 <span class="arithmatex">\(G\)</span> 的球面嵌入和平面嵌入，则 <span class="arithmatex">\(\hat{G} \cong \hat{G}'\)</span>。</p>
 <p><strong>定理11.2</strong> 平面图 <span class="arithmatex">\(G\)</span> 中所有面的次数之和等于边数 <span class="arithmatex">\(m\)</span> 的 2 倍：<br />
-[
+$$
 \sum_{i=1}^r \deg(R_i) = 2m.
-]</p>
+$$</p>
 <p><strong>定理11.3</strong> 设 <span class="arithmatex">\(R\)</span> 是平面图 <span class="arithmatex">\(G\)</span> 的某个平面嵌入 <span class="arithmatex">\(\hat{G}\)</span> 的一个内部面，则存在 <span class="arithmatex">\(G\)</span> 的平面嵌入 <span class="arithmatex">\(\hat{G}_1\)</span> 以 <span class="arithmatex">\(R\)</span> 为外部面。</p>
 <p><strong>定理11.4</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n(n\geq 3)\)</span> 阶简单连通平面图，则 <span class="arithmatex">\(G\)</span> 是极大平面图当且仅当 <span class="arithmatex">\(G\)</span> 的每个面的次数均为 3。</p>
 <p><strong>定理11.5</strong> <span class="arithmatex">\(n(n\geq 4)\)</span> 阶极大平面图 <span class="arithmatex">\(G\)</span> 中，<span class="arithmatex">\(\delta(G) \geq 3\)</span>。</p>
 <p><strong>定理11.6</strong>（Euler 公式）对于任意连通的平面图 <span class="arithmatex">\(G\)</span>，有<br />
-[
+$$
 n - m + r = 2,
-]<br />
+$$<br />
 其中 <span class="arithmatex">\(n, m, r\)</span> 分别为顶点数、边数、面数。</p>
 <p><strong>定理11.7</strong> 对于具有 <span class="arithmatex">\(p(p\geq 2)\)</span> 个连通分支的平面图 <span class="arithmatex">\(G\)</span>，有<br />
-[
+$$
 n - m + r = p + 1.
-]</p>
+$$</p>
 <p><strong>定理11.8</strong> 设 <span class="arithmatex">\(G\)</span> 是连通的平面图，且各面的次数至少为 <span class="arithmatex">\(l(l\geq 3)\)</span>，则<br />
-[
+$$
 m \leq \frac{l}{l-2}(n-2).
-]</p>
+$$</p>
 <p><strong>定理11.9</strong> 设 <span class="arithmatex">\(G\)</span> 是有 <span class="arithmatex">\(p(p\geq 2)\)</span> 个连通分支的平面图，各面的次数至少为 <span class="arithmatex">\(l(l\geq 3)\)</span>，则<br />
-[
+$$
 m \leq \frac{l}{l-2}(n-p-1).
-]</p>
+$$</p>
 <p><strong>定理11.10</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n(n\geq 3)\)</span> 阶 <span class="arithmatex">\(m\)</span> 条边的简单平面图，则<br />
-[
+$$
 m \leq 3n - 6.
-]</p>
+$$</p>
 <p><strong>定理11.11</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n\)</span> 阶极大平面图（<span class="arithmatex">\(n\geq 3\)</span>），则<br />
-[
+$$
 m = 3n - 6.
-]</p>
+$$</p>
 <p><strong>定理11.12</strong> 设 <span class="arithmatex">\(G\)</span> 是简单平面图，则 <span class="arithmatex">\(G\)</span> 中至少存在一个顶点，其度数 <span class="arithmatex">\(\leq 5\)</span>。</p>
 <p><strong>定理11.13</strong>（Kuratowski 定理）图 <span class="arithmatex">\(G\)</span> 是平面图当且仅当 <span class="arithmatex">\(G\)</span> 不含与 <span class="arithmatex">\(K_5\)</span> 或 <span class="arithmatex">\(K_{3,3}\)</span> 同胚的子图。</p>
 <p><strong>定理11.14</strong>（Wagner 定理）图 <span class="arithmatex">\(G\)</span> 是平面图当且仅当 <span class="arithmatex">\(G\)</span> 中没有可以收缩到 <span class="arithmatex">\(K_5\)</span> 或 <span class="arithmatex">\(K_{3,3}\)</span> 的子图。</p>
@@ -2549,9 +2549,9 @@ m = 3n - 6.
 (4) <span class="arithmatex">\(\kappa(G) = 2\)</span>（点连通度）。</p>
 <p><strong>定理11.22</strong> 一个图 <span class="arithmatex">\(G\)</span> 是外平面图当且仅当 <span class="arithmatex">\(G\)</span> 中不含与 <span class="arithmatex">\(K_4\)</span> 或 <span class="arithmatex">\(K_{2,3}\)</span> 同胚的子图。</p>
 <p><strong>定理11.23</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n\)</span> 阶简单平面哈密顿图，<span class="arithmatex">\(C\)</span> 为哈密顿回路，以 <span class="arithmatex">\(r_i', r_i''\)</span> 分别表示在 <span class="arithmatex">\(C\)</span> 内部和外部的次数为 <span class="arithmatex">\(i\)</span> 的面数，则<br />
-[
+$$
 \sum_{i=3}^n (i-2)(r_i' - r_i'') = 0.
-]</p>
+$$</p>
 <p><strong>定理11.24</strong> 任何 4-连通平面图都是哈密顿图。</p>
 <hr />
 <h1 id="_15">《离散数学教程》定理汇总（续）<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h1>
@@ -2563,52 +2563,52 @@ m = 3n - 6.
 <strong>推论1</strong> <span class="arithmatex">\(\chi(G) = 2\)</span> 当且仅当 <span class="arithmatex">\(G\)</span> 为非零图的二部图。<br />
 <strong>推论2</strong> 图 <span class="arithmatex">\(G\)</span> 是 2-可着色的当且仅当 <span class="arithmatex">\(G\)</span> 中不含奇圈。</p>
 <p><strong>定理12.5</strong> 对于任意图 <span class="arithmatex">\(G\)</span>，有<br />
-[
+$$
 \chi(G) \leq \Delta(G) + 1.
-]</p>
+$$</p>
 <p><strong>定理12.6</strong>（Brooks 定理）设连通图 <span class="arithmatex">\(G\)</span> 不是完全图 <span class="arithmatex">\(K_n\)</span>（<span class="arithmatex">\(n \geq 3\)</span>）也不是奇圈，则<br />
-[
+$$
 \chi(G) \leq \Delta(G).
-]</p>
+$$</p>
 <p><strong>定理12.7</strong>（着色划分定理）对图 <span class="arithmatex">\(G\)</span> 进行 <span class="arithmatex">\(\chi(G)\)</span>-着色，设<br />
-[
+$$
 V_i = {v \mid v \in V(G) \text{ 着色为第 } i \text{ 种颜色} },
-]<br />
+$$<br />
 则 <span class="arithmatex">\(\Pi = \{V_1, V_2, \dots, V_{\chi(G)}\}\)</span> 是 <span class="arithmatex">\(V(G)\)</span> 的一个划分。<br />
 （注：原文本中定理12.7 出现两次，第二次可能是关于等价关系的类似结论）</p>
 <p><strong>定理12.8</strong> 设 <span class="arithmatex">\(f(G,k)\)</span> 为图 <span class="arithmatex">\(G\)</span> 的色多项式，则<br />
-[
+$$
 f(K_n,k) = k(k-1)\dots(k-n+1), \quad f(N_n,k) = k^n,
-]<br />
+$$<br />
 其中 <span class="arithmatex">\(K_n\)</span> 为完全图，<span class="arithmatex">\(N_n\)</span> 为零图。<br />
 <strong>推论</strong> <span class="arithmatex">\(f(K_n,k) = f(K_{n-1},k)(k-n+1) \ (n\geq 2)\)</span>.</p>
 <p><strong>定理12.9</strong>（色多项式递推公式）设无环无向图 <span class="arithmatex">\(G\)</span>：<br />
 (1) 若 <span class="arithmatex">\(e = (v_i,v_j) \notin E(G)\)</span>，则<br />
-[
+$$
 f(G,k) = f(G \cup (v_i,v_j), k) + f(G \setminus (v_i,v_j), k).
-]<br />
+$$<br />
 (2) 若 <span class="arithmatex">\(e = (v_i,v_j) \in E(G)\)</span>，则<br />
-[
+$$
 f(G,k) = f(G - e, k) - f(G \setminus e, k).
-]<br />
+$$<br />
 其中 <span class="arithmatex">\(G \setminus (v_i,v_j)\)</span> 表示将 <span class="arithmatex">\(v_i, v_j\)</span> 合并为一个顶点。</p>
 <p><strong>定理12.10</strong> 设 <span class="arithmatex">\(V_1\)</span> 是 <span class="arithmatex">\(G\)</span> 的点割集，且 <span class="arithmatex">\(G[V_1]\)</span> 是 <span class="arithmatex">\(|V_1|\)</span> 阶完全图，<span class="arithmatex">\(G - V_1\)</span> 有 <span class="arithmatex">\(p(p \geq 2)\)</span> 个连通分支 <span class="arithmatex">\(G_1, G_2, \dots, G_p\)</span>，令 <span class="arithmatex">\(H_i = G[V_1 \cup V(G_i)]\)</span>，则<br />
-[
+$$
 f(G,k) = \frac{\prod_{i=1}^p f(H_i,k)}{f(G[V_1],k)^{p-1}}.
-]</p>
+$$</p>
 <p><strong>定理12.11</strong> <span class="arithmatex">\(T\)</span> 是 <span class="arithmatex">\(n\)</span> 阶树当且仅当 <span class="arithmatex">\(f(T,k) = k(k-1)^{n-1}\)</span>.</p>
 <p><strong>定理12.12</strong> 若 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n\)</span> 阶圈（<span class="arithmatex">\(n \geq 3\)</span>），则<br />
-[
+$$
 f(G,k) = (k-1)^n + (-1)^n(k-1).
-]</p>
+$$</p>
 <p><strong>定理12.13</strong> 地图 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(k\)</span> 面可着色的当且仅当它的对偶图 <span class="arithmatex">\(G^*\)</span> 是 <span class="arithmatex">\(k\)</span> 可着色的。</p>
 <p><strong>定理12.14</strong> 设 <span class="arithmatex">\(G\)</span> 是连通的无环平面图，<span class="arithmatex">\(G^*\)</span> 是其对偶图，则 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(k\)</span> 可着色的当且仅当 <span class="arithmatex">\(G^*\)</span> 是 <span class="arithmatex">\(k\)</span> 面可着色的。</p>
 <p><strong>定理12.15</strong> 任何平面图都是 6 可着色的。</p>
 <p><strong>定理12.16</strong>（Heawood）任何平面图都是 5 可着色的。</p>
 <p><strong>定理12.17</strong>（Vizing）设 <span class="arithmatex">\(G\)</span> 是简单图，则<br />
-[
+$$
 \Delta(G) \leq \chi'(G) \leq \Delta(G) + 1,
-]<br />
+$$<br />
 其中 <span class="arithmatex">\(\chi'(G)\)</span> 是边色数。</p>
 <hr />
 <h2 id="_17">第十三章 支配集、覆盖集、独立集与匹配<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
@@ -2616,9 +2616,9 @@ f(G,k) = (k-1)^n + (-1)^n(k-1).
 <p><strong>定理13.2</strong> 设无向图 <span class="arithmatex">\(G\)</span> 中无孤立顶点，<span class="arithmatex">\(V^*\)</span> 为 <span class="arithmatex">\(G\)</span> 中极大独立集，则 <span class="arithmatex">\(V^*\)</span> 是 <span class="arithmatex">\(G\)</span> 的极小支配集。</p>
 <p><strong>定理13.3</strong> 设无向图 <span class="arithmatex">\(G = (V,E)\)</span> 中无孤立顶点，<span class="arithmatex">\(V^* \subset V\)</span>，则 <span class="arithmatex">\(V^*\)</span> 为 <span class="arithmatex">\(G\)</span> 的点覆盖集当且仅当 <span class="arithmatex">\(\overline{V^*} = V - V^*\)</span> 为 <span class="arithmatex">\(G\)</span> 的点独立集。<br />
 <strong>推论</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n\)</span> 阶无孤立点的无向图，<span class="arithmatex">\(V^*\)</span> 是 <span class="arithmatex">\(G\)</span> 的极小（最小）点覆盖集当且仅当 <span class="arithmatex">\(\overline{V^*}\)</span> 是 <span class="arithmatex">\(G\)</span> 的极大（最大）点独立集，且有<br />
-[
+$$
 \alpha_0 + \beta_0 = n,
-]<br />
+$$<br />
 其中 <span class="arithmatex">\(\alpha_0\)</span> 为点覆盖数，<span class="arithmatex">\(\beta_0\)</span> 为点独立数。</p>
 <p><strong>定理13.4</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n\)</span> 阶无向图，<span class="arithmatex">\(V^*\)</span> 为 <span class="arithmatex">\(G\)</span> 中团当且仅当 <span class="arithmatex">\(V^*\)</span> 为 <span class="arithmatex">\(\overline{G}\)</span> 中的独立集。<br />
 <strong>推论</strong> 设 <span class="arithmatex">\(V^*\)</span> 为 <span class="arithmatex">\(G\)</span> 中极大（最大）团当且仅当 <span class="arithmatex">\(V^*\)</span> 为 <span class="arithmatex">\(\overline{G}\)</span> 中的极大（最大）独立集，从而 <span class="arithmatex">\(\nu_0(G) = \beta_0(\overline{G})\)</span>（团数等于补图的独立数）。</p>
@@ -2636,15 +2636,15 @@ f(G,k) = (k-1)^n + (-1)^n(k-1).
 <p><strong>定理13.8</strong> 设 <span class="arithmatex">\(M\)</span> 为图 <span class="arithmatex">\(G\)</span> 中的一个匹配，<span class="arithmatex">\(\Gamma\)</span> 为 <span class="arithmatex">\(G\)</span> 中关于 <span class="arithmatex">\(M\)</span> 的可增广路径，则 <span class="arithmatex">\(M' = M \oplus E(\Gamma)\)</span> 仍为匹配，且 <span class="arithmatex">\(|M'| = |M| + 1\)</span>.</p>
 <p><strong>定理13.9</strong>（Berge）<span class="arithmatex">\(M\)</span> 为 <span class="arithmatex">\(G\)</span> 中最大匹配当且仅当 <span class="arithmatex">\(G\)</span> 中不含 <span class="arithmatex">\(M\)</span>-可增广路径。</p>
 <p><strong>定理13.10</strong>（Tutte）<span class="arithmatex">\(n\)</span> 阶无向图 <span class="arithmatex">\(G\)</span> 具有完美匹配当且仅当对任意 <span class="arithmatex">\(V' \subset V(G)\)</span>，<br />
-[
+$$
 p_#(G - V') \leq |V'|,
-]<br />
+$$<br />
 其中 <span class="arithmatex">\(p_\#(G - V')\)</span> 表示 <span class="arithmatex">\(G - V'\)</span> 中奇数阶连通分支数。<br />
 <strong>推论</strong> 任何无桥 3-正则图都有完美匹配。</p>
 <p><strong>定理13.11</strong>（Hall 定理）设二部图 <span class="arithmatex">\(G = \langle V_1, V_2, E \rangle\)</span>，<span class="arithmatex">\(|V_1| \leq |V_2|\)</span>，则 <span class="arithmatex">\(G\)</span> 中存在 <span class="arithmatex">\(V_1\)</span> 到 <span class="arithmatex">\(V_2\)</span> 的完备匹配当且仅当对任意 <span class="arithmatex">\(S \subseteq V_1\)</span>，<br />
-[
+$$
 |S| \leq |N(S)|,
-]<br />
+$$<br />
 其中 <span class="arithmatex">\(N(S)\)</span> 为 <span class="arithmatex">\(S\)</span> 的邻域。</p>
 <p><strong>定理13.12</strong> 设二部图 <span class="arithmatex">\(G = \langle V_1, V_2, E \rangle\)</span>，若 <span class="arithmatex">\(V_1\)</span> 中每个顶点至少关联 <span class="arithmatex">\(t(t \geq 1)\)</span> 条边，而 <span class="arithmatex">\(V_2\)</span> 中每个顶点至多关联 <span class="arithmatex">\(t\)</span> 条边，则 <span class="arithmatex">\(G\)</span> 中存在 <span class="arithmatex">\(V_1\)</span> 到 <span class="arithmatex">\(V_2\)</span> 的完备匹配。</p>
 <p><strong>定理13.13</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(k\)</span>-正则二部图，则 <span class="arithmatex">\(G\)</span> 中存在 <span class="arithmatex">\(k\)</span> 个边不重的完美匹配。<br />
@@ -2673,17 +2673,17 @@ p_#(G - V') \leq |V'|,
 <p><strong>定理14.14</strong> 一棵二叉树可以产生一个前缀码。<br />
 <strong>推论</strong> 一棵二叉正则树可以产生唯一的一个前缀码。</p>
 <p><strong>定理14.15</strong> 设 <span class="arithmatex">\(G = \langle V,E,W \rangle\)</span> 是 <span class="arithmatex">\(n\)</span> 阶完全带权图，各边权为正，且满足三角不等式，则用最邻近法得到的哈密顿回路权 <span class="arithmatex">\(d\)</span> 与最短哈密顿回路权 <span class="arithmatex">\(d_0\)</span> 满足<br />
-[
+$$
 \frac{d}{d_0} \leq \frac{1}{2}(\lfloor \log_2 n \rfloor + 1).
-]</p>
+$$</p>
 <p><strong>定理14.16</strong> 在满足三角不等式的无向完全带权图中，用最小生成树法得到的哈密顿回路权 <span class="arithmatex">\(d\)</span> 与最短哈密顿回路权 <span class="arithmatex">\(d_0\)</span> 满足<br />
-[
+$$
 \frac{d}{d_0} &lt; 2.
-]</p>
+$$</p>
 <p><strong>定理14.17</strong> 在满足三角不等式的无向完全带权图中，用最小权匹配法得到的哈密顿回路权 <span class="arithmatex">\(d\)</span> 与最短哈密顿回路权 <span class="arithmatex">\(d_0\)</span> 满足<br />
-[
+$$
 \frac{d}{d_0} &lt; \frac{3}{2}.
-]</p>
+$$</p>
 <hr />
 <h2 id="_19">第十五章 代数系统<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
 <p><strong>定理15.1</strong> 设 <span class="arithmatex">\(\circ\)</span> 为 <span class="arithmatex">\(A\)</span> 上的二元运算，若 <span class="arithmatex">\(\circ\)</span> 满足结合律，则 <span class="arithmatex">\(\circ\)</span> 满足广义结合律。</p>
@@ -2708,9 +2708,9 @@ p_#(G - V') \leq |V'|,
 <p><strong>定理15.10</strong> 设 <span class="arithmatex">\(\phi: V_1 \to V_2\)</span> 是同态，则由 <span class="arithmatex">\(\phi\)</span> 导出的等价关系 <span class="arithmatex">\(\sim\)</span> 是 <span class="arithmatex">\(V_1\)</span> 上的同余关系。</p>
 <p><strong>定理15.11</strong> 设 <span class="arithmatex">\(\sim\)</span> 为 <span class="arithmatex">\(V\)</span> 上的同余关系，则自然映射 <span class="arithmatex">\(g: a \mapsto [a]\)</span> 是从 <span class="arithmatex">\(V\)</span> 到 <span class="arithmatex">\(V/\sim\)</span> 的满同态。</p>
 <p><strong>定理15.12</strong>（同态基本定理）设 <span class="arithmatex">\(\phi: V_1 \to V_2\)</span> 是同态，<span class="arithmatex">\(\sim\)</span> 是 <span class="arithmatex">\(\phi\)</span> 导出的同余关系，则<br />
-[
+$$
 V_1 / \sim \ \cong \ \phi(V_1).
-]</p>
+$$</p>
 <hr />
 <h2 id="_20">第十六章 半群与独异点<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
 <p><strong>定理16.1</strong> 设 <span class="arithmatex">\(V = \langle S, \circ \rangle\)</span> 是半群，则 <span class="arithmatex">\(\forall x, y \in S\)</span>：<br />
@@ -2718,9 +2718,9 @@ V_1 / \sim \ \cong \ \phi(V_1).
 <p><strong>定理16.2</strong> 设 <span class="arithmatex">\(\langle S, \circ \rangle\)</span> 是半群，则可以适当添加单位元 <span class="arithmatex">\(e\)</span>，将其扩张为独异点。</p>
 <p><strong>定理16.3</strong> 设 <span class="arithmatex">\(S\)</span> 为半群，<span class="arithmatex">\(V\)</span> 为独异点，则 <span class="arithmatex">\(S\)</span> 的任何子半群的交仍是子半群，<span class="arithmatex">\(V\)</span> 的任何子独异点的交仍是子独异点。</p>
 <p><strong>定理16.4</strong> 设 <span class="arithmatex">\(S\)</span> 为半群，<span class="arithmatex">\(B\)</span> 是 <span class="arithmatex">\(S\)</span> 的非空子集，令<br />
-[
+$$
 B^n = {b_1 b_2 \dots b_n \mid b_i \in B}, \quad \langle B \rangle = \bigcup_{n \in \mathbb{Z}^+} B^n,
-]<br />
+$$<br />
 则 <span class="arithmatex">\(\langle B \rangle\)</span> 是由 <span class="arithmatex">\(B\)</span> 生成的子半群。</p>
 <p><strong>定理16.5</strong> 设 <span class="arithmatex">\(V = \langle S, \ast \rangle\)</span> 为半群，<span class="arithmatex">\(V' = \langle S^S, \circ \rangle\)</span> 是函数合成半群，则 <span class="arithmatex">\(V'\)</span> 是半群，且存在 <span class="arithmatex">\(V\)</span> 到 <span class="arithmatex">\(V'\)</span> 的同态。</p>
 <p><strong>定理16.6</strong>（独异点的表示定理）设 <span class="arithmatex">\(V = \langle S, \ast, e \rangle\)</span> 是独异点，则存在 <span class="arithmatex">\(T \subseteq S^S\)</span>，使得 <span class="arithmatex">\(\langle T, \circ, I_S \rangle\)</span> 同构于 <span class="arithmatex">\(V\)</span>.</p>
@@ -2762,9 +2762,9 @@ B^n = {b_1 b_2 \dots b_n \mid b_i \in B}, \quad \langle B \rangle = \bigcup_{n \
 <p><strong>定理17.15</strong> 设 <span class="arithmatex">\(\sigma, \tau \in S_n\)</span> 是不相交的置换，则 <span class="arithmatex">\(\sigma \tau = \tau \sigma\)</span>.</p>
 <p><strong>定理17.16</strong> 任何 <span class="arithmatex">\(n\)</span> 元置换都可唯一表成不相交轮换之积。</p>
 <p><strong>定理17.17</strong> 设 <span class="arithmatex">\(\sigma = (i_1 i_2 \dots i_k)\)</span> 是 <span class="arithmatex">\(k\)</span> 阶轮换（<span class="arithmatex">\(k &gt; 1\)</span>），则<br />
-[
+$$
 \sigma = (i_1 i_k)(i_1 i_{k-1}) \dots (i_1 i_2).
-]</p>
+$$</p>
 <p><strong>定理17.18</strong> 置换 <span class="arithmatex">\(\sigma\)</span> 在对换表示中对换个数的奇偶性与排列 <span class="arithmatex">\(\pi = i_1 i_2 \dots i_n\)</span> 的逆序数奇偶性一致。</p>
 <p><strong>定理17.19</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n\)</span> 元置换群：<br />
 (1) 若 <span class="arithmatex">\(\sigma = (i_1 \dots i_k)\)</span>，则 <span class="arithmatex">\(|\sigma| = k\)</span>；<br />
@@ -2778,9 +2778,9 @@ B^n = {b_1 b_2 \dots b_n \mid b_i \in B}, \quad \langle B \rangle = \bigcup_{n \
 <p><strong>定理17.29</strong> 设 <span class="arithmatex">\(a \in G\)</span>，则正规化子 <span class="arithmatex">\(N(a) = \{g \in G \mid gag^{-1} = a\}\)</span> 是 <span class="arithmatex">\(G\)</span> 的子群。</p>
 <p><strong>定理17.30</strong> 设 <span class="arithmatex">\(G\)</span> 是有限群，则 <span class="arithmatex">\(\forall a \in G, |a| = [G : N(a)]\)</span>.</p>
 <p><strong>定理17.31</strong>（群的分类方程）设 <span class="arithmatex">\(G\)</span> 有限，<span class="arithmatex">\(C\)</span> 是中心，设 <span class="arithmatex">\(a_1, \dots, a_k\)</span> 为至少含两个元素的共轭类的代表元，则<br />
-[
+$$
 |G| = |C| + \sum_{i=1}^k [G : N(a_i)].
-]</p>
+$$</p>
 <p><strong>定理17.32</strong> 设 <span class="arithmatex">\(N\)</span> 是群 <span class="arithmatex">\(G\)</span> 的子群，则下列等价：<br />
 (1) <span class="arithmatex">\(N \lhd G\)</span>（正规子群）；<br />
 (2) <span class="arithmatex">\(\forall g \in G, gNg^{-1} = N\)</span>；<br />
@@ -2794,9 +2794,9 @@ B^n = {b_1 b_2 \dots b_n \mid b_i \in B}, \quad \langle B \rangle = \bigcup_{n \
 (1) <span class="arithmatex">\(\ker \phi \lhd G_1\)</span>；<br />
 (2) <span class="arithmatex">\(\phi(a) = \phi(b) \Leftrightarrow a \ker \phi = b \ker \phi\)</span>.</p>
 <p><strong>定理17.37</strong>（群同态基本定理）设 <span class="arithmatex">\(H \lhd G\)</span>，则 <span class="arithmatex">\(G/H\)</span> 是 <span class="arithmatex">\(G\)</span> 的同态像；若 <span class="arithmatex">\(G'\)</span> 是 <span class="arithmatex">\(G\)</span> 的同态像，则<br />
-[
+$$
 G / \ker \phi \cong G'.
-]</p>
+$$</p>
 <p><strong>定理17.38</strong> 群 <span class="arithmatex">\(G\)</span> 的自同态集 <span class="arithmatex">\(\mathrm{End}\,G\)</span> 关于映射合成构成独异点，自同构集 <span class="arithmatex">\(\mathrm{Aut}\,G\)</span> 构成群。</p>
 <p><strong>定理17.39</strong> 内自同构群 <span class="arithmatex">\(\mathrm{Inn}\,G \cong G/Z(G)\)</span>（其中 <span class="arithmatex">\(Z(G)\)</span> 是中心）。</p>
 <p><strong>定理17.40</strong> 设 <span class="arithmatex">\(G\)</span> 是群，<span class="arithmatex">\(K, L\)</span> 是子群，则 <span class="arithmatex">\(G = K \times L\)</span>（直积）当且仅当：<br />
