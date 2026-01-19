@@ -251,13 +251,9 @@ $\det \begin{pmatrix} A & B \\ C & D \end{pmatrix} =
 **Kronecker delta 符号**
 
 $\delta_{ij} = 
-
 \begin{cases}
-
    1, & \text{若 } i = j \\
-
    0, & \text{若 } i \neq j
-
 \end{cases}$
 
 
