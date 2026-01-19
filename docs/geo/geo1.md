@@ -808,3 +808,69 @@
 </tbody>
 </table>
 </div>
+
+<!-- 引入 DataTables 相关资源 -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+<!-- 初始化 DataTables -->
+<script>
+$(document).ready(function() {
+    $('#adminCode2000').DataTable({
+        "paging": true,           // 启用分页
+        "searching": true,        // 启用搜索框
+        "ordering": true,         // 启用排序
+        "info": true,             // 显示信息
+        "pageLength": 20,         // 每页显示20条
+        "lengthMenu": [10, 20, 50, 100], // 每页显示条数选项
+        "language": {
+            "search": "搜索:",
+            "lengthMenu": "每页显示 _MENU_ 条",
+            "info": "显示第 _START_ 至 _END_ 条，共 _TOTAL_ 条",
+            "paginate": {
+                "first": "首页",
+                "last": "末页",
+                "next": "下一页",
+                "previous": "上一页"
+            }
+        }
+    });
+});
+</script>
+
+<style>
+/* 自定义样式 */
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+#adminCode2000 {
+    width: 100% !important;
+    border: 1px solid #ddd;
+}
+
+#adminCode2000 thead th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter {
+    margin-bottom: 15px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 5px 10px;
+    margin: 0 2px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: #007bff;
+    color: white !important;
+    border-color: #007bff;
+}
+</style>
