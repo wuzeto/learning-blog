@@ -461,207 +461,340 @@
     }
   }
 
-  /* 添加这些样式到 sci-fi-theme.css 文件末尾 */
+  /* Academic theme enhancements */
+.academic-header {
+  text-align: center;
+  padding: 80px 20px 40px;
+  position: relative;
+  z-index: 2;
+}
 
-/* 分类网格样式 */
-.category-grid {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 2;
-  }
-  
-  .category-section {
-    background: rgba(16, 18, 27, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 243, 255, 0.2);
-    border-radius: 15px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  }
-  
-  .category-title {
-    color: #00f3ff;
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(0, 243, 255, 0.3);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .sub-categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
-  }
-  
-  .sub-category {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 15px;
-    background: rgba(30, 32, 40, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .sub-category::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, 
-      transparent, 
-      rgba(0, 243, 255, 0.1), 
-      transparent);
-    transition: left 0.5s;
-  }
-  
-  .sub-category:hover::before {
-    left: 100%;
-  }
-  
-  .sub-category:hover {
-    transform: translateY(-5px);
-    border-color: #00f3ff;
-    box-shadow: 0 5px 20px rgba(0, 243, 255, 0.2);
-  }
-  
-  .sub-icon {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease;
-  }
-  
-  .sub-category:hover .sub-icon {
-    transform: scale(1.2);
-  }
-  
-  .sub-name {
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: 500;
-    text-align: center;
-    line-height: 1.4;
-  }
-  
-  /* 进度仪表盘 */
-  .dashboard-section {
-    max-width: 800px;
-    margin: 60px auto;
-    background: rgba(16, 18, 27, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 243, 255, 0.2);
-    border-radius: 15px;
-    padding: 30px;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  }
-  
-  .dashboard-title {
-    color: #00ffaa;
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .progress-grid {
-    display: grid;
-    gap: 20px;
-  }
-  
-  .progress-item {
-    display: grid;
-    grid-template-columns: 150px 1fr 60px;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .progress-label {
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 1.1rem;
-  }
-  
-  .progress-bar {
-    height: 12px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #0066ff, #00ccff);
-    border-radius: 6px;
-    position: relative;
-    transition: width 1.5s ease-in-out;
-  }
-  
-  .progress-fill::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, 
-      transparent, 
-      rgba(255, 255, 255, 0.3), 
-      transparent);
-    animation: shimmer 2s infinite;
-  }
-  
-  @keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-  }
-  
-  .progress-percent {
-    color: #00f3ff;
-    font-weight: bold;
-    font-size: 1.1rem;
-    text-align: right;
-  }
-  
-  /* 响应式调整 */
-  @media (max-width: 768px) {
-    .sub-categories {
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 15px;
-    }
-    
-    .progress-item {
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-    
-    .progress-label,
-    .progress-percent {
-      text-align: center;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .sub-categories {
-      grid-template-columns: repeat(2, 1fr);
+.academic-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #e8e8f8;
+  margin: 0;
+  line-height: 1.2;
+  position: relative;
+}
+
+.academic-title::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 2px;
+  margin: 16px auto 0;
+  background: linear-gradient(90deg, #5aa8ff, #7bd2ff);
+  border-radius: 2px;
+}
+
+.academic-subtitle {
+  font-family: 'Merriweather', serif;
+  font-size: 1.1rem;
+  color: #bfc7e6;
+  margin-top: 14px;
+  opacity: 0.9;
+}
+
+/* Reading list */
+.reading-list {
+  max-width: 1000px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.reading-item {
+  background: rgba(16, 18, 27, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+  color: #e6e9ff;
+}
+
+.reading-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(122, 210, 255, 0.5);
+  box-shadow: 0 8px 22px rgba(90, 168, 255, 0.15);
+}
+
+.reading-item .title {
+  font-family: 'Merriweather', serif;
+  font-size: 1rem;
+  margin: 0 0 6px;
+}
+
+.reading-item .meta {
+  font-size: 0.85rem;
+  color: #a8b2d8;
+}
+
+/* Quote section */
+.quote-section {
+  max-width: 900px;
+  margin: 50px auto 0;
+  padding: 20px 24px;
+  background: rgba(16, 18, 27, 0.65);
+  border: 1px solid rgba(122, 210, 255, 0.25);
+  border-left: 4px solid #7bd2ff;
+  border-radius: 8px;
+  color: #cfd6f5;
+  font-family: 'Merriweather', serif;
+}
+
+.quote-section .author {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #a8b2d8;
+}
+
+/* Metric chips */
+.metrics {
+  max-width: 1000px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.chip {
+  padding: 8px 12px;
+  border: 1px solid rgba(122, 210, 255, 0.35);
+  background: rgba(16, 18, 27, 0.7);
+  color: #cfd6f5;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+/* Container alias for homepage */
+.homepage-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a2a 0%, #000428 50%, #1a1a2e 100%);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Segoe UI', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #e0e0ff;
+}
+
+/* Adjust nav-card spacing for academic density */
+.nav-grid .nav-card {
+  padding: 32px 26px;
+}
+
+@media (max-width: 768px) {
+  .academic-title { font-size: 2.2rem; }
+  .academic-subtitle { font-size: 1rem; }
+}
+
+  /* 分类网格样式 */
+  .category-grid {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
     }
     
     .category-section {
-      padding: 20px;
+      background: rgba(16, 18, 27, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 243, 255, 0.2);
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
-  }
+    
+    .category-title {
+      color: #00f3ff;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(0, 243, 255, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .sub-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+    }
+    
+    .sub-category {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 15px;
+      background: rgba(30, 32, 40, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .sub-category::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 243, 255, 0.1), 
+        transparent);
+      transition: left 0.5s;
+    }
+    
+    .sub-category:hover::before {
+      left: 100%;
+    }
+    
+    .sub-category:hover {
+      transform: translateY(-5px);
+      border-color: #00f3ff;
+      box-shadow: 0 5px 20px rgba(0, 243, 255, 0.2);
+    }
+    
+    .sub-icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+    
+    .sub-category:hover .sub-icon {
+      transform: scale(1.2);
+    }
+    
+    .sub-name {
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: center;
+      line-height: 1.4;
+    }
+    
+    /* 进度仪表盘 */
+    .dashboard-section {
+      max-width: 800px;
+      margin: 60px auto;
+      background: rgba(16, 18, 27, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 243, 255, 0.2);
+      border-radius: 15px;
+      padding: 30px;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+    
+    .dashboard-title {
+      color: #00ffaa;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .progress-grid {
+      display: grid;
+      gap: 20px;
+    }
+    
+    .progress-item {
+      display: grid;
+      grid-template-columns: 150px 1fr 60px;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .progress-label {
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+    
+    .progress-bar {
+      height: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #0066ff, #00ccff);
+      border-radius: 6px;
+      position: relative;
+      transition: width 1.5s ease-in-out;
+    }
+    
+    .progress-fill::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent);
+      animation: shimmer 2s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    .progress-percent {
+      color: #00f3ff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-align: right;
+    }
+    
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+      .sub-categories {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 15px;
+      }
+      
+      .progress-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      
+      .progress-label,
+      .progress-percent {
+        text-align: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .sub-categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .category-section {
+        padding: 20px;
+      }
+    }
