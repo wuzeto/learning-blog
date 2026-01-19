@@ -1239,3 +1239,173 @@ $$
 **定理17.44**（电路下界定理）设 \(n = p^i\)（\(p\) 为素数），则用 \(r\)-电路计算 \(\mathbb{Z}_n\) 中加法至少需要 \(\lceil \log_r (2\lceil \log_2 n \rceil) \rceil\) 个时间单位；若 \(n = p_1^{i_1} \dots p_k^{i_k}\)，则至少需要 \(\lceil \log_r (2\lceil \log_2 t(n) \rceil) \rceil\) 时间单位，其中 \(t(n) = \max\{p_1^{i_1}, \dots, p_k^{i_k}\}\).
 
 ---
+
+# 《离散数学教程》定理汇总（续）
+
+## 第十八章 环与域
+
+**定理18.1** 设 \(R\) 是环，则：
+1. \(\forall a \in R, a0 = 0a = 0\)
+2. \(\forall a,b \in R, (-a)b = a(-b) = -(ab)\)
+3. \(\forall a,b \in R, (-a)(-b) = ab\)
+4. \(\forall a,b,c \in R, a(b-c) = ab - ac, (b-c)a = ba - ca\)
+5. \(\forall a_1,\dots,a_n, b_1,\dots,b_m \in R, (\sum a_i)(\sum b_j) = \sum \sum a_i b_j\)
+6. \(\forall a,b \in R, n \in \mathbb{Z}, (na)b = a(nb) = n(ab)\)
+
+**定理18.2** 设 \(R\) 是环，则 \(R\) 是无零因子环的充分必要条件是在 \(R\) 中乘法适合消去律。
+
+**定理18.3** 设 \(F\) 为有限域，则 \(F\) 的特征是素数。
+
+**定理18.4** 设 \(F\) 为有限域，则存在素数 \(p\) 和正整数 \(n\)，使得 \(|F| = p^n\).
+
+**定理18.5** 环 \(R\) 的非空子集 \(S\) 是子环的充要条件是：\(\forall a,b \in S\) 有  
+(1) \(a-b \in S\)  
+(2) \(ab \in S\)
+
+**定理18.6** 设 \(\phi: R_1 \to R_2\) 是环同态，则 \(\ker \phi\) 是 \(R_1\) 的理想。
+
+**定理18.7** 设 \(\phi: R_1 \to R_2\) 是环同态：
+1. 若 \(S\) 是 \(R_1\) 的子环，则 \(\phi(S)\) 是 \(R_2\) 的子环
+2. 若 \(T\) 是 \(R_2\) 的子环，则 \(\phi^{-1}(T)\) 是 \(R_1\) 的子环
+3. 若 \(D\) 是 \(R_1\) 的理想，则 \(\phi(D)\) 是 \(R_2\) 的理想
+4. 若 \(I\) 是 \(R_2\) 的理想，则 \(\phi^{-1}(I)\) 是 \(R_1\) 的理想
+
+**定理18.8** 设 \(D\) 是环 \(R\) 的理想，\(g: R \to R/D\) 定义为 \(g(r) = D + r\)，则 \(g\) 是满同态，且 \(\ker g = D\).
+
+**定理18.9**（环同态基本定理）环 \(R\) 的任何商环 \(R/D\) 都是 \(R\) 的同态像；若环 \(R'\) 是 \(R\) 的同态像，则 \(R' \cong R/\ker \phi\).
+
+**定理18.10** 设 \(F[x]\) 是有限域 \(F\) 上的多项式环，\(f(x) \in F[x]\)，定义二元关系 \(R\)：  
+\(g(x) R h(x) \Leftrightarrow f(x) \mid (g(x) - h(x))\)，  
+则 \(R\) 是 \(F[x]\) 上的同余关系。
+
+**定理18.11** 设 \(F\) 为有限域，则环 \(F[x] / \langle f(x) \rangle\) 是域当且仅当 \(f(x)\) 在 \(F[x]\) 中不可约。
+
+---
+
+## 第十九章 格与布尔代数
+
+### 19.1-19.6 格的基本性质
+
+**格的对偶原理** 如果命题 \(P\) 对一切格 \(L\) 为真，则 \(P\) 的对偶命题也对一切格为真。
+
+**定理19.1** 设 \(\langle S, \ll \rangle\) 是格，则 \(\forall a,b,c \in S\) 有：
+1. \(a \wedge b \ll a, a \wedge b \ll b\)
+2. \(a \ll a \vee b, b \ll a \vee b\)
+3. \(a \ll b\) 且 \(a \ll c \Rightarrow a \ll b \wedge c\)
+4. \(a \gg b\) 且 \(a \gg c \Rightarrow a \gg b \vee c\)
+
+**定理19.2** 设 \(\langle S, \ll \rangle\) 是格，则 \(\forall a,b \in S\) 有：
+\[
+a \ll b \Leftrightarrow a \wedge b = a \Leftrightarrow a \vee b = b
+\]
+
+**定理19.3** 设 \(\langle L, \wedge, \vee \rangle\) 是格 \(L\) 导出的代数系统，则：
+1. \(\wedge, \vee\) 满足交换律
+2. \(\wedge, \vee\) 满足结合律
+3. \(\wedge, \vee\) 满足幂等律
+4. \(\wedge, \vee\) 满足吸收律
+
+**定理19.4** 设 \(\langle S, \ast, \circ \rangle\) 是具有两个二元运算的代数系统，若 \(\ast\) 和 \(\circ\) 满足交换律、结合律和吸收律，则可以定义偏序 \(\ll\) 使 \(\langle S, \ll \rangle\) 构成格，且其导出的代数系统就是 \(\langle S, \ast, \circ \rangle\).
+
+**定理19.5** 设 \(L\) 是格，则：
+1. \(a \ll b \Rightarrow a \wedge c \ll b \wedge c\) 且 \(a \vee c \ll b \vee c\)
+2. \(a \ll b\) 且 \(c \ll d \Rightarrow a \wedge c \ll b \wedge d\) 且 \(a \vee c \ll b \vee d\)
+
+**定理19.6** 设 \(L\) 是格，则：
+1. \(a \vee (b \wedge c) \ll (a \vee b) \wedge (a \vee c)\), \(a \wedge (b \vee c) \gg (a \wedge b) \vee (a \wedge c)\)
+2. \(a \ll b \Leftrightarrow a \vee (c \wedge b) \ll (a \vee c) \wedge b\)
+
+**定理19.7** 设 \(\phi\) 是格 \(L_1\) 到 \(L_2\) 的同态映射，则 \(a \leqslant b \Rightarrow \phi(a) \leqslant \phi(b)\).
+
+**定理19.8** 设 \(L_1, L_2\) 是格，\(\phi: L_1 \to L_2\) 是双射，则 \(\phi\) 是同构当且仅当：
+\[
+\forall a,b \in L_1, a \leqslant b \Leftrightarrow \phi(a) \leqslant \phi(b)
+\]
+
+**定理19.9** 设 \(L\) 是偏序集，若对任意 \(S \subseteq L\) 都有 \(\wedge S\) 存在，则 \(L\) 是完备格。
+
+**定理19.10** 设 \(L\) 是格，令 \(I(L) = \{x \mid x \text{ 是 } L \text{ 的理想}\}\)，则 \(I(L)\) 关于集合包含关系构成格，称为 \(L\) 的理想格。
+
+**定理19.11** 对任意格 \(L\)，设 \(I_0(L) = I(L) \cup \{\emptyset\}\)，则 \(I_0(L)\) 是完备格。
+
+**定理19.12** 任意格 \(L\) 都可以嵌入到 \(I_0(L)\) 中。  
+**推论** 任何格都可以嵌入一个完备格。
+
+### 19.13-19.20 模格与分配格
+
+**定理19.13** 一个格 \(L\) 是模格当且仅当 \(L\) 不含有与五角格同构的子格。
+
+**定理19.14** 格 \(L\) 是模格的充要条件是：\(\forall a,b,c \in L, a \leqslant b\) 有
+\[
+a \vee c = b \vee c \ \text{且} \ a \wedge c = b \wedge c \Rightarrow a = b
+\]
+
+**定理19.15** 设 \(L\) 为分配格，则广义分配律成立：
+\[
+a \vee (\bigwedge_{i=1}^n b_i) = \bigwedge_{i=1}^n (a \vee b_i), \quad a \wedge (\bigvee_{i=1}^n b_i) = \bigvee_{i=1}^n (a \wedge b_i)
+\]
+
+**定理19.16** 设 \(L\) 为分配格，则 \(\forall a,b,c \in L\)：
+\[
+a \wedge c = b \wedge c \ \text{且} \ a \vee c = b \vee c \Rightarrow a = b
+\]
+
+**定理19.17** 分配格一定是模格。
+
+**定理19.18** 一个模格 \(L\) 是分配格当且仅当 \(\forall a,b,c \in L\)：
+\[
+(a \wedge b) \vee (b \wedge c) \vee (c \wedge a) = (a \vee b) \wedge (b \vee c) \wedge (c \vee a)
+\]
+
+**定理19.19** 一个模格是分配格当且仅当它不含有与钻石格同构的子格。
+
+**推论1** 格 \(L\) 是分配格当且仅当 \(L\) 既不含有与五角格同构的子格，也不含有与钻石格同构的子格。
+
+**推论2** 每一条链都是分配格。
+
+**推论3** 小于五元的格都是分配格。
+
+**定理19.20** 格 \(L\) 是分配格当且仅当 \(\forall a,b,c \in L\)：
+\[
+a \wedge c = b \wedge c \ \text{且} \ a \vee c = b \vee c \Rightarrow a = b
+\]
+
+**定理19.21** 设 \(L\) 是有界分配格，若 \(a \in L\) 存在补元，则补元唯一。
+
+### 19.22-19.28 布尔代数
+
+**定理19.22** 设 \(\langle B, \ast, \circ, \triangle, a, b \rangle\) 是代数系统，其中 \(\ast, \circ\) 是二元运算，\(\triangle\) 是一元运算，\(a,b \in B\) 是零元运算。若满足：
+1. 交换律
+2. 分配律
+3. 同一律（\(x \ast b = x, x \circ a = x\)）
+4. 补元律（\(x \ast \triangle x = a, x \circ \triangle x = b\)）
+
+则它是布尔格。若规定 \(\ast\) 为求最大下界，\(\circ\) 为求最小上界，则 \(\triangle\) 为求补运算，\(a\) 为全下界 0，\(b\) 为全上界 1。
+
+**定理19.23** 设 \(\langle B, \wedge, \vee, \neg, 0, 1 \rangle\) 是布尔代数，则：
+1. \(\forall a \in B, \neg \neg a = a\)
+2. \(\forall a,b \in B, \neg(a \wedge b) = \neg a \vee \neg b, \neg(a \vee b) = \neg a \wedge \neg b\)
+3. \(\forall a,b \in B, a \leqslant b \Leftrightarrow a \wedge \neg b = 0 \Leftrightarrow \neg a \vee b = 1 \Leftrightarrow a \wedge b = a \Leftrightarrow a \vee b = b\)
+4. \(\forall a,b \in B, a \leqslant \neg b \Leftrightarrow \neg a \geqslant b\)（原文有重复，此处修正）
+
+**定理19.24** 设 \(B_1, B_2\) 是布尔代数，\(\phi: B_1 \to B_2\) 是同态，则：
+1. \(\phi(0) = 0, \phi(1) = 1\)
+2. \(\phi(B_1)\) 是布尔代数，且是 \(B_2\) 的子代数
+
+**定理19.25**（有限布尔代数的表示定理）设 \(B\) 是有限布尔代数，\(A\) 是 \(B\) 的全体原子构成的集合，则 \(B\) 同构于 \(A\) 的幂集代数 \(\mathcal{P}(A)\).
+
+**定理19.26** 有限布尔代数的基数是 \(2^n\) 形式的（\(n \in \mathbb{N}\)），且任何两个等势的有限布尔代数都是同构的。
+
+**定理19.27** 对每个有限布尔代数 \(B \neq 0\)，都存在正整数 \(n\)，使得 \(B \cong \{0,1\}^n\).
+
+**定理19.28** 设 \(B\) 是布尔代数，令 \(F_n(B) = \{f: B^n \to B\}\) 是 \(B\) 上所有 \(n\) 元布尔函数的集合，定义运算：
+\[
+(f \wedge g)(x) = f(x) \wedge g(x), \quad (f \vee g)(x) = f(x) \vee g(x), \quad \neg f(x) = \neg f(x), \quad f_0(x) = 0, \quad f_1(x) = 1
+\]
+则 \(\langle F_n(B), \wedge, \vee, \neg, f_0, f_1 \rangle\) 构成布尔代数。
+
+---
+
+## 总结
+
+这份定理汇总涵盖了《离散数学教程》中从集合论、关系、函数、自然数、基数、序数、图论、代数系统到群、环、域、格与布尔代数的主要内容。定理按照章节顺序排列，包含了每个章节的核心定理、推论和重要结论。
