@@ -831,6 +831,61 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第七章 图
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第八章 欧拉图与哈密顿图
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第九章 树
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十章 图的矩阵表示
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十一章 平面图
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1652,6 +1707,61 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第七章 图
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第八章 欧拉图与哈密顿图
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第九章 树
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十章 图的矩阵表示
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十一章 平面图
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2083,7 +2193,235 @@ E(t) = \mathrm{ran}(E|\,\mathrm{seg}\,t) = {E(x) \mid x &lt; t}.
 (2) 对于任意有穷集合 <span class="arithmatex">\(A\)</span>，<span class="arithmatex">\(\mathrm{card}\,A\)</span> 是与 <span class="arithmatex">\(A\)</span> 等势的唯一的自然数。</p>
 <p><strong>定理6.21</strong> 设 <span class="arithmatex">\(\alpha\)</span> 为一序数，则 <span class="arithmatex">\(\alpha\)</span> 为初始序数当且仅当 <span class="arithmatex">\(\alpha\)</span> 为一个基数。</p>
 <hr />
-<p>（以下为图论、代数结构等后续章节内容，将按章节继续整理。如需继续，请告知。）</p>
+<h1 id="_9">《离散数学教程》定理汇总（续）<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
+<h2 id="_10">第七章 图<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p><strong>定理7.1</strong>（图论基本定理）设 <span class="arithmatex">\(G = \langle V,E\rangle\)</span> 为一个无向图，<span class="arithmatex">\(V = \{v_{1},v_{2},\dots ,v_{n}\}\)</span>，<span class="arithmatex">\(|E| = m\)</span>，则<br />
+[
+\sum_{i = 1}^{n}d(v_{i}) = 2m.
+]</p>
+<p><strong>定理7.2</strong>（图论基本定理）设 <span class="arithmatex">\(D = \langle V,E\rangle\)</span> 为一个有向图，<span class="arithmatex">\(V = \{v_{1},v_{2},\dots ,v_{n}\}\)</span>，<span class="arithmatex">\(|E| = m\)</span>，则<br />
+[
+\sum_{i = 1}^{n}d(v_{i}) = 2m \quad \text{且} \quad \sum_{i = 1}^{n}d^{+}(v_{i}) = \sum_{i = 1}^{n}d^{-}(v_{i}) = m.
+]<br />
+<strong>推论</strong> 任何图 <span class="arithmatex">\(G\)</span>（无向图或有向图）中，奇度数顶点的个数是偶数。</p>
+<p><strong>定理7.3</strong> 非负整数列 <span class="arithmatex">\(\mathbf{d} = (d_{1},d_{2},\dots ,d_{n})\)</span>（<span class="arithmatex">\(d_{i}\geq 0\)</span> 且为整数，<span class="arithmatex">\(i = 1,2,\dots ,n\)</span>）是可图化的当且仅当<br />
+[
+\sum_{i = 1}^{n}d_{i} \equiv 0 \pmod{2}.
+]</p>
+<p><strong>定理7.4</strong>（Erdős–Gallai 定理）设非负整数列 <span class="arithmatex">\(\mathbf{d} = (d_{1},d_{2},\dots ,d_{n})\)</span>，满足 <span class="arithmatex">\((n - 1)\geq d_{1}\geq d_{2}\geq \dots \geq d_{n}\geq 0\)</span>，则 <span class="arithmatex">\(\mathbf{d}\)</span> 是可简单图化的当且仅当对每个整数 <span class="arithmatex">\(r\)</span>（<span class="arithmatex">\(1\leq r\leq n - 1\)</span>），<br />
+[
+\sum_{i = 1}^{r}d_{i} \leq r(r - 1) + \sum_{i = r + 1}^{n}\min {r,d_{i}} \quad \text{且} \quad \sum_{i = 1}^{n}d_{i} \equiv 0 \pmod{2}.
+]</p>
+<p><strong>定理7.5</strong>（Havel–Hakimi 定理）设非负整数列 <span class="arithmatex">\(\mathbf{d} = (d_{1},d_{2},\dots ,d_{n})\)</span>，满足 <span class="arithmatex">\(\sum_{i = 1}^{n}d_{i} \equiv 0 \pmod{2}\)</span> 且 <span class="arithmatex">\((n - 1)\geq d_{1}\geq d_{2}\geq \dots \geq d_{n}\geq 0\)</span>，则 <span class="arithmatex">\(\mathbf{d}\)</span> 是可简单图化的当且仅当<br />
+[
+\mathbf{d}^{\prime} = (d_{2} - 1,d_{3} - 1,\dots ,d_{d_{1} + 1} - 1,d_{d_{1} + 2},\dots ,d_{n})
+]<br />
+是可简单图化的。</p>
+<p><strong>定理7.6</strong> 在 <span class="arithmatex">\(n\)</span> 阶图 <span class="arithmatex">\(G\)</span> 中，若从顶点 <span class="arithmatex">\(v_i\)</span> 到 <span class="arithmatex">\(v_j\)</span>（<span class="arithmatex">\(v_i\neq v_j\)</span>）存在通路，则存在长度 <span class="arithmatex">\(\leq n - 1\)</span> 的通路。<br />
+<strong>推论</strong> 在 <span class="arithmatex">\(n\)</span> 阶图 <span class="arithmatex">\(G\)</span> 中，若从 <span class="arithmatex">\(v_i\)</span> 到 <span class="arithmatex">\(v_j\)</span>（<span class="arithmatex">\(v_i\neq v_j\)</span>）存在通路，则存在长度 <span class="arithmatex">\(\leq n - 1\)</span> 的路径。</p>
+<p><strong>定理7.7</strong> 在 <span class="arithmatex">\(n\)</span> 阶图 <span class="arithmatex">\(G\)</span> 中，若存在 <span class="arithmatex">\(v_i\)</span> 到自身的回路，则存在长度 <span class="arithmatex">\(\leq n\)</span> 的回路。<br />
+<strong>推论</strong> 在 <span class="arithmatex">\(n\)</span> 阶图 <span class="arithmatex">\(G\)</span> 中，若存在 <span class="arithmatex">\(v_i\)</span> 到自身的简单回路，则存在长度 <span class="arithmatex">\(\leq n\)</span> 的初级回路（圈）。</p>
+<p><strong>定理7.8</strong> 一个图 <span class="arithmatex">\(G\)</span> 为二部图当且仅当 <span class="arithmatex">\(G\)</span> 中无奇圈。</p>
+<p><strong>定理7.9</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n\)</span> 阶无向连通图，则 <span class="arithmatex">\(G\)</span> 的边数 <span class="arithmatex">\(m\geq n - 1\)</span>。</p>
+<p><strong>定理7.10</strong>（Whitney 不等式）对于任意图 <span class="arithmatex">\(G\)</span>，有<br />
+[
+\kappa(G) \leq \lambda(G) \leq \delta(G),
+]<br />
+其中 <span class="arithmatex">\(\kappa, \lambda, \delta\)</span> 分别为 <span class="arithmatex">\(G\)</span> 的点连通度、边连通度和最小度。<br />
+<strong>推论</strong> 若 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(k\)</span>-连通图，则 <span class="arithmatex">\(G\)</span> 必为 <span class="arithmatex">\(k\)</span>-边连通图。</p>
+<p><strong>定理7.11</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n(n\geq 6)\)</span> 阶简单无向连通图，<span class="arithmatex">\(\lambda(G) &lt; \delta(G)\)</span>，则必存在由 <span class="arithmatex">\(K_{n_1}, K_{n-n_1}\)</span> 及在它们之间连入 <span class="arithmatex">\(\lambda(G)\)</span> 条边构成的图 <span class="arithmatex">\(G^{*}\)</span>（含 <span class="arithmatex">\(G\)</span> 作为生成子图），其中 <span class="arithmatex">\(\lambda(G) + 2\leq n_1 \leq \left\lfloor \frac{n}{2} \right\rfloor\)</span>。</p>
+<p><strong>定理7.12</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n(n\geq 6)\)</span> 阶连通简单无向图：<br />
+(1) 若 <span class="arithmatex">\(\delta(G) \geq \left\lfloor \frac{n}{2} \right\rfloor\)</span>，则 <span class="arithmatex">\(\lambda(G) = \delta(G)\)</span>；<br />
+(2) 若对 <span class="arithmatex">\(G\)</span> 中任意一对不相邻顶点 <span class="arithmatex">\(u,v\)</span> 有 <span class="arithmatex">\(d(u) + d(v) \geq n - 1\)</span>，则 <span class="arithmatex">\(\lambda(G) = \delta(G)\)</span>；<br />
+(3) 若 <span class="arithmatex">\(d(G) \leq 2\)</span>，则 <span class="arithmatex">\(\lambda(G) = \delta(G)\)</span>。</p>
+<p><strong>定理7.13</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n\)</span> 阶无向简单连通图，且 <span class="arithmatex">\(G\)</span> 不是完全图 <span class="arithmatex">\(K_n\)</span>，则<br />
+[
+\kappa(G) \geq 2\delta(G) - n + 2.
+]</p>
+<p><strong>定理7.14</strong> 对于给定的正整数 <span class="arithmatex">\(n, \delta, \kappa, \lambda\)</span>，存在 <span class="arithmatex">\(n\)</span> 阶简单连通无向图 <span class="arithmatex">\(G\)</span>，使得 <span class="arithmatex">\(\delta(G)=\delta, \kappa(G)=\kappa, \lambda(G)=\lambda\)</span> 的充要条件是下列三式之一成立：<br />
+(1) <span class="arithmatex">\(0 \leq \kappa \leq \lambda \leq \delta &lt; \left\lfloor \frac{n}{2} \right\rfloor\)</span>；<br />
+(2) <span class="arithmatex">\(1 \leq 2\delta - n + 2 \leq \kappa \leq \lambda = \delta &lt; n - 1\)</span>；<br />
+(3) <span class="arithmatex">\(\kappa = \lambda = \delta = n - 1\)</span>.</p>
+<p><strong>定理7.15</strong>（Whitney）设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n(n\geq 3)\)</span> 阶无向连通图，则 <span class="arithmatex">\(G\)</span> 为 2-连通图当且仅当 <span class="arithmatex">\(G\)</span> 中任意两个顶点共圈。</p>
+<p><strong>定理7.16</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n(n\geq 3)\)</span> 阶无向图，则 <span class="arithmatex">\(G\)</span> 为 2-边连通图当且仅当 <span class="arithmatex">\(G\)</span> 中任何两个顶点共简单回路。</p>
+<p><strong>定理7.17</strong> 设 <span class="arithmatex">\(v\)</span> 为无向连通图 <span class="arithmatex">\(G\)</span> 中的一个顶点，则 <span class="arithmatex">\(v\)</span> 为 <span class="arithmatex">\(G\)</span> 的割点当且仅当存在 <span class="arithmatex">\(V(G) - \{v\}\)</span> 的划分 <span class="arithmatex">\(V_1 \cup V_2\)</span>，使得对任意 <span class="arithmatex">\(u\in V_1, w\in V_2\)</span>，<span class="arithmatex">\(v\)</span> 在每一条 <span class="arithmatex">\(u\)</span> 到 <span class="arithmatex">\(w\)</span> 的路径上。<br />
+<strong>推论</strong> <span class="arithmatex">\(v\)</span> 为割点当且仅当存在 <span class="arithmatex">\(u\neq v, w\neq v\)</span> 使得 <span class="arithmatex">\(v\)</span> 在每一条 <span class="arithmatex">\(u\)</span> 到 <span class="arithmatex">\(w\)</span> 的路径上。</p>
+<p><strong>定理7.18</strong> 设 <span class="arithmatex">\(e\)</span> 为无向连通图 <span class="arithmatex">\(G\)</span> 中的一条边，则 <span class="arithmatex">\(e\)</span> 是桥当且仅当 <span class="arithmatex">\(e\)</span> 不在 <span class="arithmatex">\(G\)</span> 的任何圈上。</p>
+<p><strong>定理7.19</strong> 设 <span class="arithmatex">\(e\)</span> 为无向连通图 <span class="arithmatex">\(G\)</span> 中的一条边，则 <span class="arithmatex">\(e\)</span> 为桥当且仅当存在 <span class="arithmatex">\(V(G)\)</span> 的划分 <span class="arithmatex">\(V_1 \cup V_2\)</span>，使得对任意 <span class="arithmatex">\(u\in V_1, v\in V_2\)</span>，<span class="arithmatex">\(e\)</span> 在每一条 <span class="arithmatex">\(u\)</span> 到 <span class="arithmatex">\(v\)</span> 的路径上。</p>
+<p><strong>定理7.20</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n(n\geq 3)\)</span> 阶无向简单连通图，则下列命题等价：<br />
+(1) <span class="arithmatex">\(G\)</span> 是块（2-连通图）；<br />
+(2) <span class="arithmatex">\(G\)</span> 中任意两个顶点共圈；<br />
+(3) <span class="arithmatex">\(G\)</span> 中任意一个顶点与任意一条边共圈；<br />
+(4) <span class="arithmatex">\(G\)</span> 中任意两条边共圈；<br />
+(5) 对任意 <span class="arithmatex">\(u,v\in V(G)\)</span> 和边 <span class="arithmatex">\(e\)</span>，存在从 <span class="arithmatex">\(u\)</span> 到 <span class="arithmatex">\(v\)</span> 且经过 <span class="arithmatex">\(e\)</span> 的路径；<br />
+(6) 对任意三个顶点中的两个，都存在从一个顶点到另一个顶点且经过第三个顶点的路径；<br />
+(7) 对任意三个顶点中的两个，都存在从一个顶点到另一个顶点而不经过第三个顶点的路径。</p>
+<p><strong>定理7.21</strong> 设 <span class="arithmatex">\(D\)</span> 为 <span class="arithmatex">\(n\)</span> 阶有向图，则 <span class="arithmatex">\(D\)</span> 是强连通的当且仅当 <span class="arithmatex">\(D\)</span> 中存在回路，经过 <span class="arithmatex">\(D\)</span> 中每个顶点至少一次。</p>
+<p><strong>定理7.22</strong> 设 <span class="arithmatex">\(D\)</span> 为 <span class="arithmatex">\(n\)</span> 阶有向图，则 <span class="arithmatex">\(D\)</span> 是单向连通图当且仅当 <span class="arithmatex">\(D\)</span> 中存在通路，经过每个顶点至少一次。</p>
+<hr />
+<h2 id="_11">第八章 欧拉图与哈密顿图<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p><strong>定理8.1</strong> 设 <span class="arithmatex">\(G\)</span> 是无向连通图，则以下命题等价：<br />
+(1) <span class="arithmatex">\(G\)</span> 是欧拉图（存在欧拉回路）；<br />
+(2) <span class="arithmatex">\(G\)</span> 中所有顶点度数均为偶数；<br />
+(3) <span class="arithmatex">\(G\)</span> 是若干个边不重的圈的并。</p>
+<p><strong>定理8.2</strong> 设 <span class="arithmatex">\(G\)</span> 是连通的无向图，则 <span class="arithmatex">\(G\)</span> 是半欧拉图（存在欧拉通路）当且仅当 <span class="arithmatex">\(G\)</span> 中恰有两个奇度顶点。</p>
+<p><strong>定理8.3</strong> 设 <span class="arithmatex">\(D\)</span> 是连通的有向图，则以下命题等价：<br />
+(1) <span class="arithmatex">\(D\)</span> 是欧拉图；<br />
+(2) <span class="arithmatex">\(\forall v\in V(D), d^{+}(v) = d^{-}(v)\)</span>；<br />
+(3) <span class="arithmatex">\(D\)</span> 是若干个边不重的有向初级回路的并。</p>
+<p><strong>定理8.4</strong> 设 <span class="arithmatex">\(D\)</span> 是连通的有向图，则 <span class="arithmatex">\(D\)</span> 是半欧拉图当且仅当 <span class="arithmatex">\(D\)</span> 中恰有两个奇度顶点，其中一个入度比出度大 1，另一个出度比入度大 1，其余顶点入度等于出度。</p>
+<p><strong>定理8.5</strong> 设 <span class="arithmatex">\(G\)</span> 是无向欧拉图，则 Fleury 算法终止时得到的简单通路是欧拉回路。</p>
+<p><strong>定理8.6</strong> 设无向图 <span class="arithmatex">\(G = \langle V,E\rangle\)</span> 是哈密顿图，则对 <span class="arithmatex">\(V\)</span> 的任意非空真子集 <span class="arithmatex">\(V_1\)</span>，有<br />
+[
+p(G - V_1) \leq |V_1|,
+]<br />
+其中 <span class="arithmatex">\(p(G - V_1)\)</span> 是 <span class="arithmatex">\(G - V_1\)</span> 的连通分支数。</p>
+<p><strong>推论</strong> 设 <span class="arithmatex">\(G\)</span> 是半哈密顿图（存在哈密顿通路），则对任意非空真子集 <span class="arithmatex">\(V_1 \subseteq V\)</span>，有<br />
+[
+p(G - V_1) \leq |V_1| + 1.
+]</p>
+<p><strong>定理8.7</strong>（Ore）设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n(n\geq 2)\)</span> 阶无向简单图，若对 <span class="arithmatex">\(G\)</span> 中任意不相邻顶点 <span class="arithmatex">\(v_i, v_j\)</span> 有<br />
+[
+d(v_i) + d(v_j) \geq n - 1,
+]<br />
+则 <span class="arithmatex">\(G\)</span> 中存在哈密顿通路。</p>
+<p><strong>推论1</strong>（Ore）设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n(n\geq 3)\)</span> 阶无向简单图，若对任意不相邻顶点 <span class="arithmatex">\(v_i, v_j\)</span> 有<br />
+[
+d(v_i) + d(v_j) \geq n,
+]<br />
+则 <span class="arithmatex">\(G\)</span> 中存在哈密顿回路（<span class="arithmatex">\(G\)</span> 是哈密顿图）。</p>
+<p><strong>推论2</strong>（Dirac）设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n(n\geq 3)\)</span> 阶无向简单图，若对任意顶点 <span class="arithmatex">\(v\)</span> 有 <span class="arithmatex">\(d(v) \geq \frac{n}{2}\)</span>，则 <span class="arithmatex">\(G\)</span> 是哈密顿图。</p>
+<p><strong>定理8.8</strong>（Bondy–Chvátal）设 <span class="arithmatex">\(u,v\)</span> 为无向 <span class="arithmatex">\(n\)</span> 阶简单图 <span class="arithmatex">\(G\)</span> 中两个不相邻顶点，且 <span class="arithmatex">\(d(u) + d(v) \geq n\)</span>，则 <span class="arithmatex">\(G\)</span> 是哈密顿图当且仅当 <span class="arithmatex">\(G \cup (u,v)\)</span> 是哈密顿图。</p>
+<p><strong>定理8.9</strong> 设 <span class="arithmatex">\(D\)</span> 为 <span class="arithmatex">\(n(n\geq 2)\)</span> 阶竞赛图，则 <span class="arithmatex">\(D\)</span> 具有哈密顿通路。<br />
+<strong>推论</strong> 若 <span class="arithmatex">\(D\)</span> 含 <span class="arithmatex">\(n\)</span> 阶竞赛图作为子图，则 <span class="arithmatex">\(D\)</span> 中具有哈密顿通路。</p>
+<p><strong>定理8.10</strong> 强连通的竞赛图为哈密顿图。<br />
+<strong>推论</strong> 设 <span class="arithmatex">\(D\)</span> 为 <span class="arithmatex">\(n\)</span> 阶有向图，若 <span class="arithmatex">\(D\)</span> 含 <span class="arithmatex">\(n\)</span> 阶强连通的竞赛图作为子图，则 <span class="arithmatex">\(D\)</span> 是哈密顿图。</p>
+<p><strong>定理8.11</strong> 完全图 <span class="arithmatex">\(K_{2k+1}(k\geq 1)\)</span> 中含 <span class="arithmatex">\(k\)</span> 条边不重的哈密顿回路，且这些回路包含 <span class="arithmatex">\(K_{2k+1}\)</span> 的全部边。<br />
+<strong>推论</strong> <span class="arithmatex">\(K_{2k}(k\geq 2)\)</span> 中含 <span class="arithmatex">\(k - 1\)</span> 条边不重的哈密顿回路；从 <span class="arithmatex">\(K_{2k}\)</span> 中删除这些回路的所有边后，所得图含 <span class="arithmatex">\(k\)</span> 条彼此不相邻的边。</p>
+<hr />
+<h2 id="_12">第九章 树<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p><strong>定理9.1</strong> 设 <span class="arithmatex">\(G = \langle V,E\rangle\)</span> 为 <span class="arithmatex">\(n\)</span> 阶 <span class="arithmatex">\(m\)</span> 条边的无向图，则下列命题等价：<br />
+(1) <span class="arithmatex">\(G\)</span> 是树（连通无回路）；<br />
+(2) <span class="arithmatex">\(G\)</span> 中任意两个顶点之间存在唯一的一条路径；<br />
+(3) <span class="arithmatex">\(G\)</span> 中无圈，且 <span class="arithmatex">\(m = n - 1\)</span>；<br />
+(4) <span class="arithmatex">\(G\)</span> 连通，且 <span class="arithmatex">\(m = n - 1\)</span>；<br />
+(5) <span class="arithmatex">\(G\)</span> 连通，且 <span class="arithmatex">\(G\)</span> 中任何边均为桥；<br />
+(6) <span class="arithmatex">\(G\)</span> 中无圈，但在 <span class="arithmatex">\(G\)</span> 中任意两个不同顶点 <span class="arithmatex">\(u,v\)</span> 之间添加边 <span class="arithmatex">\((u,v)\)</span>，所得图含唯一的一个圈。</p>
+<p><strong>定理9.2</strong> 设 <span class="arithmatex">\(T\)</span> 是 <span class="arithmatex">\(n\)</span> 阶非平凡的无向树，则 <span class="arithmatex">\(T\)</span> 至少有两个叶子。</p>
+<p><strong>定理9.3</strong> 无向图 <span class="arithmatex">\(G\)</span> 具有生成树当且仅当 <span class="arithmatex">\(G\)</span> 是连通的。<br />
+<strong>推论1</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n\)</span> 阶 <span class="arithmatex">\(m\)</span> 条边的无向连通图，则 <span class="arithmatex">\(m \geq n - 1\)</span>。<br />
+<strong>推论2</strong> 设 <span class="arithmatex">\(T\)</span> 是 <span class="arithmatex">\(n\)</span> 阶 <span class="arithmatex">\(m\)</span> 条边的无向连通图 <span class="arithmatex">\(G\)</span> 的一棵生成树，则 <span class="arithmatex">\(T\)</span> 的余树 <span class="arithmatex">\(\overline{T}\)</span> 中含 <span class="arithmatex">\(m - n + 1\)</span> 条边。<br />
+<strong>推论3</strong> 设 <span class="arithmatex">\(T\)</span> 是连通图 <span class="arithmatex">\(G\)</span> 的一棵生成树，<span class="arithmatex">\(\overline{T}\)</span> 为余树，<span class="arithmatex">\(C\)</span> 为 <span class="arithmatex">\(G\)</span> 中任意一个圈，则 <span class="arithmatex">\(E(\overline{T}) \cap E(C) \neq \emptyset\)</span>。</p>
+<p><strong>定理9.4</strong> 设 <span class="arithmatex">\(T\)</span> 是无向连通图 <span class="arithmatex">\(G\)</span> 的一棵生成树，<span class="arithmatex">\(e\)</span> 为 <span class="arithmatex">\(T\)</span> 的任意一条弦（非树枝），则 <span class="arithmatex">\(T \cup \{e\}\)</span> 中含 <span class="arithmatex">\(G\)</span> 的一个只含一条弦、其余边均为树枝的圈，且不同弦对应的圈不同。</p>
+<p><strong>定理9.5</strong> 设 <span class="arithmatex">\(T\)</span> 是连通图 <span class="arithmatex">\(G\)</span> 的一棵生成树，<span class="arithmatex">\(e\)</span> 为 <span class="arithmatex">\(T\)</span> 的一条树枝，则 <span class="arithmatex">\(G\)</span> 中存在只含树枝 <span class="arithmatex">\(e\)</span>、其余元素均为弦的割集。若 <span class="arithmatex">\(e_1, e_2\)</span> 是 <span class="arithmatex">\(T\)</span> 的不同树枝，则它们对应的只含一条树枝的割集不同。</p>
+<p><strong>定理9.6</strong> 设 <span class="arithmatex">\(G = \langle V,E\rangle\)</span> 为 <span class="arithmatex">\(n\)</span> 阶无向连通标定图，则对 <span class="arithmatex">\(G\)</span> 的任意非环边 <span class="arithmatex">\(e\)</span>，有<br />
+[
+\tau(G) = \tau(G - e) + \tau(G \backslash e),
+]<br />
+其中 <span class="arithmatex">\(\tau(G)\)</span> 表示 <span class="arithmatex">\(G\)</span> 的生成树数目，<span class="arithmatex">\(G\backslash e\)</span> 表示将边 <span class="arithmatex">\(e\)</span> 收缩后得到的图。</p>
+<p><strong>定理9.7</strong>（Cayley 公式）<span class="arithmatex">\(\tau(K_n) = n^{n-2} \ (n\geq 2)\)</span>，其中 <span class="arithmatex">\(K_n\)</span> 为 <span class="arithmatex">\(n\)</span> 阶标定完全图。</p>
+<p><strong>定理9.8</strong> 设 <span class="arithmatex">\(\Omega\)</span> 为图 <span class="arithmatex">\(G\)</span> 的所有边导出子图的集合，则 <span class="arithmatex">\(\Omega\)</span> 在环和运算及数乘运算（<span class="arithmatex">\(0\cdot G_i = \emptyset, 1\cdot G_i = G_i\)</span>）下构成数域 <span class="arithmatex">\(F = \{0,1\}\)</span> 上的 <span class="arithmatex">\(m\)</span> 维线性空间，其 <span class="arithmatex">\(M\)</span> 为生成元集。</p>
+<p><strong>定理9.9</strong> 设 <span class="arithmatex">\(T\)</span> 是 <span class="arithmatex">\(n\)</span> 阶 <span class="arithmatex">\(m\)</span> 条边的无向连通图 <span class="arithmatex">\(G\)</span> 的一棵生成树，<span class="arithmatex">\(C_k\)</span> 是对应弦 <span class="arithmatex">\(e_k'\)</span> 的基本回路，<span class="arithmatex">\(k = 1,2,\dots ,m - n + 1\)</span>，则对任意 <span class="arithmatex">\(r\)</span> 条弦 <span class="arithmatex">\(e_{i_1}',\dots ,e_{i_r}'\)</span>，这些弦均在<br />
+[
+C_{i_1} \oplus C_{i_2} \oplus \dots \oplus C_{i_r}
+]<br />
+中，其中 <span class="arithmatex">\(\oplus\)</span> 为环和运算。</p>
+<p><strong>定理9.10</strong> 设 <span class="arithmatex">\(C_1\)</span> 和 <span class="arithmatex">\(C_2\)</span> 是无向图 <span class="arithmatex">\(G\)</span> 中的任意两个回路（初级的或简单的），则环和 <span class="arithmatex">\(C_1 \oplus C_2\)</span> 为 <span class="arithmatex">\(G\)</span> 中的环路。<br />
+<strong>推论</strong> 环路对环和运算是封闭的。</p>
+<p><strong>定理9.11</strong> 设 <span class="arithmatex">\(G\)</span> 为无向连通图，<span class="arithmatex">\(T\)</span> 为 <span class="arithmatex">\(G\)</span> 的任意一棵生成树，则 <span class="arithmatex">\(G\)</span> 中任一回路（初级的或简单的）或为 <span class="arithmatex">\(T\)</span> 的基本回路，或为若干个基本回路的环和。<br />
+<strong>推论1</strong> 无向连通图 <span class="arithmatex">\(G\)</span> 中任一环路或为某棵生成树的基本回路，或为若干个基本回路的环和。<br />
+<strong>推论2</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n\)</span> 阶 <span class="arithmatex">\(m\)</span> 条边的无向连通图，设 <span class="arithmatex">\(s\)</span> 为 <span class="arithmatex">\(G\)</span> 中回路（初级的或简单的）的个数，则<br />
+[
+m - n + 1 \leq s \leq 2^{m - n + 1} - 1.
+]<br />
+<strong>推论3</strong> 设 <span class="arithmatex">\(s\)</span> 是 <span class="arithmatex">\(G\)</span> 中环路数（含空集 <span class="arithmatex">\(\varnothing\)</span>），则<br />
+[
+s = 2^{m - n + 1}.
+]</p>
+<p><strong>定理9.12</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n\)</span> 阶 <span class="arithmatex">\(m\)</span> 条边的无向连通图，<span class="arithmatex">\(C_R\)</span> 为 <span class="arithmatex">\(G\)</span> 中环路（含 <span class="arithmatex">\(\varnothing\)</span>）组成的集合，则 <span class="arithmatex">\(C_R\)</span> 是 <span class="arithmatex">\(\Omega\)</span> 的 <span class="arithmatex">\(m - n + 1\)</span> 维子空间，其中 <span class="arithmatex">\(\Omega\)</span> 是 <span class="arithmatex">\(G\)</span> 的所有边导出子图的集合。</p>
+<p><strong>定理9.13</strong> 连通图 <span class="arithmatex">\(G\)</span> 中每个割集至少包含 <span class="arithmatex">\(G\)</span> 的每个生成树的一个树枝。</p>
+<p><strong>定理9.14</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n\)</span> 阶 <span class="arithmatex">\(m\)</span> 条边的无向连通图，<span class="arithmatex">\(T\)</span> 是 <span class="arithmatex">\(G\)</span> 的一棵生成树，<span class="arithmatex">\(S_\perp\)</span> 为 <span class="arithmatex">\(T\)</span> 对应的基本割集系统，则对任意 <span class="arithmatex">\(S_{i_1},\dots ,S_{i_k} \in S_\perp\)</span>，它们对应的树枝 <span class="arithmatex">\(e_{i_1}',\dots ,e_{i_k}'\)</span> 均在<br />
+[
+S_{i_1} \oplus S_{i_2} \oplus \dots \oplus S_{i_k}
+]<br />
+中。</p>
+<p><strong>定理9.15</strong> 设 <span class="arithmatex">\(S_1, S_2\)</span> 为无向图 <span class="arithmatex">\(G\)</span> 的两个断集，则 <span class="arithmatex">\(S_1 \oplus S_2\)</span> 为 <span class="arithmatex">\(G\)</span> 的断集。</p>
+<p><strong>定理9.16</strong> 设 <span class="arithmatex">\(G\)</span> 为无向连通图，<span class="arithmatex">\(T\)</span> 为 <span class="arithmatex">\(G\)</span> 的任意一棵生成树，则 <span class="arithmatex">\(G\)</span> 中任一断集或为 <span class="arithmatex">\(T\)</span> 的基本割集，或为若干个基本割集的对称差集。</p>
+<p><strong>定理9.17</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n\)</span> 阶 <span class="arithmatex">\(m\)</span> 条边的无向连通图，设 <span class="arithmatex">\(S_\# = \{\varnothing\} \cup \{S' \mid S' \text{ 是 } G \text{ 的断集的导出子图}\}\)</span>，则 <span class="arithmatex">\(S_\#\)</span> 为 <span class="arithmatex">\(\Omega\)</span> 的 <span class="arithmatex">\(n - 1\)</span> 维子空间。</p>
+<hr />
+<h2 id="_13">第十章 图的矩阵表示<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p><strong>定理10.1</strong> <span class="arithmatex">\(n\)</span> 阶无向连通图 <span class="arithmatex">\(G\)</span> 的关联矩阵的秩 <span class="arithmatex">\(r(M(G)) = n - 1\)</span>。</p>
+<p><strong>定理10.2</strong> <span class="arithmatex">\(n\)</span> 阶无向连通图 <span class="arithmatex">\(G\)</span> 的基本关联矩阵的秩 <span class="arithmatex">\(r(M_f(G)) = n - 1\)</span>。<br />
+<strong>推论1</strong> 设 <span class="arithmatex">\(n\)</span> 阶无向图 <span class="arithmatex">\(G\)</span> 有 <span class="arithmatex">\(p\)</span> 个连通分支，则 <span class="arithmatex">\(r(M(G)) = r(M_f(G)) = n - p\)</span>，其中 <span class="arithmatex">\(M_f(G)\)</span> 是从 <span class="arithmatex">\(M(G)\)</span> 的每个对角块中删除任意一行得到。<br />
+<strong>推论2</strong> <span class="arithmatex">\(G\)</span> 是连通图当且仅当 <span class="arithmatex">\(r(M(G)) = r(M_f(G)) = n - 1\)</span>。</p>
+<p><strong>定理10.3</strong> 设 <span class="arithmatex">\(M_f(G)\)</span> 是 <span class="arithmatex">\(n\)</span> 阶连通图 <span class="arithmatex">\(G\)</span> 的一个基本关联矩阵，<span class="arithmatex">\(M_f'\)</span> 是 <span class="arithmatex">\(M_f(G)\)</span> 中任意 <span class="arithmatex">\(n - 1\)</span> 列组成的方阵，则 <span class="arithmatex">\(M_f'\)</span> 中各列对应的边集 <span class="arithmatex">\(\{e_{i_1},\dots ,e_{i_{n-1}}\}\)</span> 的导出子图是 <span class="arithmatex">\(G\)</span> 的生成树当且仅当 <span class="arithmatex">\(|M_f'| \neq 0\)</span>。</p>
+<p><strong>定理10.4</strong> 设 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\)</span> 阶有向标定图 <span class="arithmatex">\(D\)</span> 的邻接矩阵，<span class="arithmatex">\(A^l\)</span>（<span class="arithmatex">\(l\geq 2\)</span>）中元素 <span class="arithmatex">\(a_{ij}^{(l)}\)</span> 为 <span class="arithmatex">\(v_i\)</span> 到 <span class="arithmatex">\(v_j\)</span> 长度为 <span class="arithmatex">\(l\)</span> 的通路数，<span class="arithmatex">\(\sum_i \sum_j a_{ij}^{(l)}\)</span> 为 <span class="arithmatex">\(D\)</span> 中长度为 <span class="arithmatex">\(l\)</span> 的通路总数，<span class="arithmatex">\(\sum_i a_{ii}^{(l)}\)</span> 为 <span class="arithmatex">\(D\)</span> 中长度为 <span class="arithmatex">\(l\)</span> 的回路总数。<br />
+<strong>推论</strong> 设 <span class="arithmatex">\(B_r = A + A^2 + \dots + A^r\)</span>，则 <span class="arithmatex">\(b_{ij}^{(r)}\)</span> 为 <span class="arithmatex">\(v_i\)</span> 到 <span class="arithmatex">\(v_j\)</span> 长度 <span class="arithmatex">\(\leq r\)</span> 的通路数，<span class="arithmatex">\(\sum_i \sum_j b_{ij}^{(r)}\)</span> 为长度 <span class="arithmatex">\(\leq r\)</span> 的通路总数，<span class="arithmatex">\(\sum_i b_{ii}^{(r)}\)</span> 为长度 <span class="arithmatex">\(\leq r\)</span> 的回路总数。</p>
+<p><strong>定理10.5</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n\)</span> 阶无向简单图，<span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(G\)</span> 的邻接矩阵，则 <span class="arithmatex">\(A^k\)</span> 中元素 <span class="arithmatex">\(a_{ij}^{(k)}\)</span>（<span class="arithmatex">\(i\neq j\)</span>）为 <span class="arithmatex">\(G\)</span> 中 <span class="arithmatex">\(v_i\)</span> 到 <span class="arithmatex">\(v_j\)</span> 长度为 <span class="arithmatex">\(k\)</span> 的通路数，<span class="arithmatex">\(a_{ii}^{(k)}\)</span> 为 <span class="arithmatex">\(v_i\)</span> 到自身长度为 <span class="arithmatex">\(k\)</span> 的回路数。<br />
+<strong>推论1</strong> 在 <span class="arithmatex">\(A^2\)</span> 中，<span class="arithmatex">\(a_{ii}^{(2)} = d(v_i)\)</span>。<br />
+<strong>推论2</strong> 若 <span class="arithmatex">\(G\)</span> 连通，则 <span class="arithmatex">\(d(v_i, v_j)\)</span> 为使 <span class="arithmatex">\(a_{ij}^{(k)} \neq 0\)</span> 的最小正整数 <span class="arithmatex">\(k\)</span>。</p>
+<hr />
+<h2 id="_14">第十一章 平面图<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p><strong>定理11.1</strong> 图 <span class="arithmatex">\(G\)</span> 可嵌入球面当且仅当 <span class="arithmatex">\(G\)</span> 可嵌入平面。<br />
+<strong>推论</strong> 设 <span class="arithmatex">\(\hat{G}\)</span> 与 <span class="arithmatex">\(\hat{G}'\)</span> 分别是平面图 <span class="arithmatex">\(G\)</span> 的球面嵌入和平面嵌入，则 <span class="arithmatex">\(\hat{G} \cong \hat{G}'\)</span>。</p>
+<p><strong>定理11.2</strong> 平面图 <span class="arithmatex">\(G\)</span> 中所有面的次数之和等于边数 <span class="arithmatex">\(m\)</span> 的 2 倍：<br />
+[
+\sum_{i=1}^r \deg(R_i) = 2m.
+]</p>
+<p><strong>定理11.3</strong> 设 <span class="arithmatex">\(R\)</span> 是平面图 <span class="arithmatex">\(G\)</span> 的某个平面嵌入 <span class="arithmatex">\(\hat{G}\)</span> 的一个内部面，则存在 <span class="arithmatex">\(G\)</span> 的平面嵌入 <span class="arithmatex">\(\hat{G}_1\)</span> 以 <span class="arithmatex">\(R\)</span> 为外部面。</p>
+<p><strong>定理11.4</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n(n\geq 3)\)</span> 阶简单连通平面图，则 <span class="arithmatex">\(G\)</span> 是极大平面图当且仅当 <span class="arithmatex">\(G\)</span> 的每个面的次数均为 3。</p>
+<p><strong>定理11.5</strong> <span class="arithmatex">\(n(n\geq 4)\)</span> 阶极大平面图 <span class="arithmatex">\(G\)</span> 中，<span class="arithmatex">\(\delta(G) \geq 3\)</span>。</p>
+<p><strong>定理11.6</strong>（Euler 公式）对于任意连通的平面图 <span class="arithmatex">\(G\)</span>，有<br />
+[
+n - m + r = 2,
+]<br />
+其中 <span class="arithmatex">\(n, m, r\)</span> 分别为顶点数、边数、面数。</p>
+<p><strong>定理11.7</strong> 对于具有 <span class="arithmatex">\(p(p\geq 2)\)</span> 个连通分支的平面图 <span class="arithmatex">\(G\)</span>，有<br />
+[
+n - m + r = p + 1.
+]</p>
+<p><strong>定理11.8</strong> 设 <span class="arithmatex">\(G\)</span> 是连通的平面图，且各面的次数至少为 <span class="arithmatex">\(l(l\geq 3)\)</span>，则<br />
+[
+m \leq \frac{l}{l-2}(n-2).
+]</p>
+<p><strong>定理11.9</strong> 设 <span class="arithmatex">\(G\)</span> 是有 <span class="arithmatex">\(p(p\geq 2)\)</span> 个连通分支的平面图，各面的次数至少为 <span class="arithmatex">\(l(l\geq 3)\)</span>，则<br />
+[
+m \leq \frac{l}{l-2}(n-p-1).
+]</p>
+<p><strong>定理11.10</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n(n\geq 3)\)</span> 阶 <span class="arithmatex">\(m\)</span> 条边的简单平面图，则<br />
+[
+m \leq 3n - 6.
+]</p>
+<p><strong>定理11.11</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(n\)</span> 阶极大平面图（<span class="arithmatex">\(n\geq 3\)</span>），则<br />
+[
+m = 3n - 6.
+]</p>
+<p><strong>定理11.12</strong> 设 <span class="arithmatex">\(G\)</span> 是简单平面图，则 <span class="arithmatex">\(G\)</span> 中至少存在一个顶点，其度数 <span class="arithmatex">\(\leq 5\)</span>。</p>
+<p><strong>定理11.13</strong>（Kuratowski 定理）图 <span class="arithmatex">\(G\)</span> 是平面图当且仅当 <span class="arithmatex">\(G\)</span> 不含与 <span class="arithmatex">\(K_5\)</span> 或 <span class="arithmatex">\(K_{3,3}\)</span> 同胚的子图。</p>
+<p><strong>定理11.14</strong>（Wagner 定理）图 <span class="arithmatex">\(G\)</span> 是平面图当且仅当 <span class="arithmatex">\(G\)</span> 中没有可以收缩到 <span class="arithmatex">\(K_5\)</span> 或 <span class="arithmatex">\(K_{3,3}\)</span> 的子图。</p>
+<p><strong>定理11.15</strong> 设 <span class="arithmatex">\(G^*\)</span> 是连通平面图 <span class="arithmatex">\(G\)</span> 的对偶图，<span class="arithmatex">\(n^*, m^*, r^*\)</span> 和 <span class="arithmatex">\(n, m, r\)</span> 分别为对偶图和原图的顶点数、边数、面数，则<br />
+(1) <span class="arithmatex">\(n^* = r\)</span>； (2) <span class="arithmatex">\(m^* = m\)</span>； (3) <span class="arithmatex">\(r^* = n\)</span>；<br />
+(4) 设 <span class="arithmatex">\(v_i^*\)</span> 位于面 <span class="arithmatex">\(R_i\)</span> 中，则 <span class="arithmatex">\(d_{G^*}(v_i^*) = \deg(R_i)\)</span>。</p>
+<p><strong>定理11.16</strong> 设 <span class="arithmatex">\(G^*\)</span> 是具有 <span class="arithmatex">\(p(p\geq 2)\)</span> 个连通分支的对偶图，则<br />
+(1) <span class="arithmatex">\(n^* = r\)</span>； (2) <span class="arithmatex">\(m^* = m\)</span>； (3) <span class="arithmatex">\(r^* = n - p + 1\)</span>；<br />
+(4) 设 <span class="arithmatex">\(v_i^*\)</span> 位于面 <span class="arithmatex">\(R_i\)</span> 中，则 <span class="arithmatex">\(d_{G^*}(v_i^*) = \deg(R_i)\)</span>。</p>
+<p><strong>定理11.17</strong> 设 <span class="arithmatex">\(G^*\)</span> 是某平面图 <span class="arithmatex">\(G\)</span> 的对偶图，则 <span class="arithmatex">\(G^{**} \cong G\)</span> 当且仅当 <span class="arithmatex">\(G\)</span> 是连通图。</p>
+<p><strong>定理11.18</strong> <span class="arithmatex">\(n(n\geq 4)\)</span> 阶轮图 <span class="arithmatex">\(W_n\)</span> 是自对偶图。</p>
+<p><strong>定理11.19</strong> 所有顶点都在外部面边界上的 <span class="arithmatex">\(n(n\geq 3)\)</span> 阶外可平面图是极大外可平面图当且仅当每个内部面的边界是长为 3 的圈，外部面的边界是长为 <span class="arithmatex">\(n\)</span> 的圈。<br />
+<strong>推论</strong> 对于 <span class="arithmatex">\(n\)</span> 阶外平面图，总可以通过加边得到极大外平面图。</p>
+<p><strong>定理11.20</strong> 设 <span class="arithmatex">\(G\)</span> 是所有顶点均在外部面边界上的 <span class="arithmatex">\(n(n\geq 3)\)</span> 阶极大外平面图，则 <span class="arithmatex">\(G\)</span> 有 <span class="arithmatex">\(n-2\)</span> 个内部面。</p>
+<p><strong>定理11.21</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n(n\geq 3)\)</span> 阶极大外平面图，则<br />
+(1) <span class="arithmatex">\(m = 2n - 3\)</span>；<br />
+(2) <span class="arithmatex">\(G\)</span> 中至少有 3 个顶点的度数 <span class="arithmatex">\(\leq 3\)</span>；<br />
+(3) <span class="arithmatex">\(G\)</span> 中至少有 2 个顶点的度数为 2；<br />
+(4) <span class="arithmatex">\(\kappa(G) = 2\)</span>（点连通度）。</p>
+<p><strong>定理11.22</strong> 一个图 <span class="arithmatex">\(G\)</span> 是外平面图当且仅当 <span class="arithmatex">\(G\)</span> 中不含与 <span class="arithmatex">\(K_4\)</span> 或 <span class="arithmatex">\(K_{2,3}\)</span> 同胚的子图。</p>
+<p><strong>定理11.23</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n\)</span> 阶简单平面哈密顿图，<span class="arithmatex">\(C\)</span> 为哈密顿回路，以 <span class="arithmatex">\(r_i', r_i''\)</span> 分别表示在 <span class="arithmatex">\(C\)</span> 内部和外部的次数为 <span class="arithmatex">\(i\)</span> 的面数，则<br />
+[
+\sum_{i=3}^n (i-2)(r_i' - r_i'') = 0.
+]</p>
+<p><strong>定理11.24</strong> 任何 4-连通平面图都是哈密顿图。</p>
+<hr />
 
 
 
