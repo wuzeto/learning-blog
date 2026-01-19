@@ -822,7 +822,6 @@ window.MathJax = {
         $$
         (A_1 x+B_1 y+C_1) + \lambda (A_2 x+B_2 y+C_2) = 0 \quad (\text{除 } l_2),
         $$
-
         其中 \(\lambda\) 为待定系数。
   
     (3) 平行直线系方程：直线 \(y=kx+b\) 中当斜率 \(k\) 一定而 \(b\) 变动时，表示平行直线系；与直线 \(Ax+By+C=0\) 平行的直线系方程为 \(Ax+By+\lambda=0 \ (\lambda \neq C)\)。
