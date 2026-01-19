@@ -27,7 +27,7 @@ hide:
   <!-- Navigation grid -->
   <div class="nav-grid">
     
-    <a href="/math/" class="nav-card" data-color="blue">
+    <a href="math/" class="nav-card" data-color="blue">
       <div class="card-icon"><i class="fas fa-infinity"></i></div>
       <h3>MATH_CORE</h3>
       <p>几何 · 微积分 · 线性代数</p>
@@ -36,7 +36,7 @@ hide:
       </div>
     </a>
 
-    <a href="/cs/" class="nav-card" data-color="purple">
+    <a href="cs/" class="nav-card" data-color="purple">
       <div class="card-icon"><i class="fas fa-microchip"></i></div>
       <h3>CS_ARCH</h3>
       <p>架构 · 系统 · 编译原理</p>
@@ -45,7 +45,7 @@ hide:
       </div>
     </a>
 
-    <a href="/algorithms/" class="nav-card" data-color="green">
+    <a href="algorithms/" class="nav-card" data-color="green">
       <div class="card-icon"><i class="fas fa-network-wired"></i></div>
       <h3>ALGO_NET</h3>
       <p>数据结构 · 图论 · 动态规划</p>
@@ -54,7 +54,7 @@ hide:
       </div>
     </a>
 
-    <a href="/systems/" class="nav-card" data-color="orange">
+    <a href="systems/" class="nav-card" data-color="orange">
       <div class="card-icon"><i class="fas fa-server"></i></div>
       <h3>SYS_OPS</h3>
       <p>分布式 · 数据库 · 容器化</p>
@@ -71,19 +71,19 @@ hide:
     <div class="category-section">
       <div class="category-title"><i class="fas fa-shapes"></i> 数学</div>
       <div class="sub-categories">
-        <a href="/math/geometry/" class="sub-category">
+        <a href="math/geometry/" class="sub-category">
           <div class="sub-icon"><i class="fas fa-drafting-compass"></i></div>
           <div class="sub-name">几何 Geometry</div>
         </a>
-        <a href="/math/differential/" class="sub-category">
+        <a href="math/differential/" class="sub-category">
           <div class="sub-icon"><i class="fas fa-calculator"></i></div>
           <div class="sub-name">微分 Calculus</div>
         </a>
-        <a href="/math/linear-algebra/" class="sub-category">
+        <a href="math/linear-algebra/" class="sub-category">
           <div class="sub-icon"><i class="fas fa-border-none"></i></div>
           <div class="sub-name">线性代数 Linear Algebra</div>
         </a>
-        <a href="/math/probability/" class="sub-category">
+        <a href="math/probability/" class="sub-category">
           <div class="sub-icon"><i class="fas fa-percent"></i></div>
           <div class="sub-name">概率 Probability</div>
         </a>
@@ -93,19 +93,19 @@ hide:
     <div class="category-section">
       <div class="category-title"><i class="fas fa-microchip"></i> 计算机科学</div>
       <div class="sub-categories">
-        <a href="/cs/os/" class="sub-category">
+        <a href="cs/os/" class="sub-category">
           <div class="sub-icon"><i class="fas fa-memory"></i></div>
           <div class="sub-name">操作系统 OS</div>
         </a>
-        <a href="/cs/network/" class="sub-category">
+        <a href="cs/network/" class="sub-category">
           <div class="sub-icon"><i class="fas fa-network-wired"></i></div>
           <div class="sub-name">网络 Network</div>
         </a>
-        <a href="/cs/database/" class="sub-category">
+        <a href="cs/database/" class="sub-category">
           <div class="sub-icon"><i class="fas fa-database"></i></div>
           <div class="sub-name">数据库 Database</div>
         </a>
-        <a href="/cs/compiler/" class="sub-category">
+        <a href="cs/compiler/" class="sub-category">
           <div class="sub-icon"><i class="fas fa-code"></i></div>
           <div class="sub-name">编译原理 Compiler</div>
         </a>
@@ -115,19 +115,19 @@ hide:
     <div class="category-section">
       <div class="category-title"><i class="fas fa-project-diagram"></i> 算法</div>
       <div class="sub-categories">
-        <a href="/algorithms/data-structures/" class="sub-category">
+        <a href="algorithms/data-structures/" class="sub-category">
           <div class="sub-icon"><i class="fas fa-sitemap"></i></div>
           <div class="sub-name">数据结构 Data Structures</div>
         </a>
-        <a href="/algorithms/graph/" class="sub-category">
+        <a href="algorithms/graph/" class="sub-category">
           <div class="sub-icon"><i class="fas fa-project-diagram"></i></div>
           <div class="sub-name">图论 Graph</div>
         </a>
-        <a href="/algorithms/dynamic/" class="sub-category">
+        <a href="algorithms/dynamic/" class="sub-category">
           <div class="sub-icon"><i class="fas fa-stream"></i></div>
           <div class="sub-name">动态规划 DP</div>
         </a>
-        <a href="/algorithms/search/" class="sub-category">
+        <a href="algorithms/search/" class="sub-category">
           <div class="sub-icon"><i class="fas fa-search"></i></div>
           <div class="sub-name">查找 Search</div>
         </a>
@@ -137,15 +137,15 @@ hide:
 
   <!-- Academic reading list -->
   <div class="reading-list">
-    <a href="/math/linear-algebra/" class="reading-item">
+    <a href="math/linear-algebra/" class="reading-item">
       <div class="title">Linear Algebra Essentials</div>
       <div class="meta">主线 · 矩阵 · 特征值</div>
     </a>
-    <a href="/cs/architecture/" class="reading-item">
+    <a href="cs/architecture/" class="reading-item">
       <div class="title">Computer Architecture Map</div>
       <div class="meta">基础 · 指令 · 存储层级</div>
     </a>
-    <a href="/algorithms/dynamic/" class="reading-item">
+    <a href="algorithms/dynamic/" class="reading-item">
       <div class="title">Dynamic Programming Toolkit</div>
       <div class="meta">子问题 · 状态转移 · 优化</div>
     </a>
