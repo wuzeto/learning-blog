@@ -6,7 +6,9 @@ window.MathJax = {
 
     inlineMath: [['$', '$'], ['\\(', '\\)']],
 
-    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    displayMath: [['$$', '$$'], ['\$$
+', '\$$
+']],
 
     macros: {
 
@@ -25,27 +27,33 @@ window.MathJax = {
 ## §01 集合与简易逻辑
 
 1. **元素与集合的关系**  
-   \[
+   $$
+
    x \in A \Leftrightarrow x \notin C_U A,\quad x \in C_U A \Leftrightarrow x \notin A.
-   \]
+   $$
+
 
 2. **德摩根公式**  
-   \[
+   $$
    C_U(A \cap B) = C_U A \cup C_U B,\quad C_U(A \cup B) = C_U A \cap C_U B.
-   \]
+   $$
+
 
 3. **包含关系**  
-   \[
+   $$
    A \cap B = A \Leftrightarrow A \cup B = B \Leftrightarrow A \subseteq B \Leftrightarrow C_U B \subseteq C_U A
-   \]
-   \[
+   $$
+
+   $$
    \Leftrightarrow A \cap C_U B = \varnothing \Leftrightarrow C_U A \cup B = \mathbb{R}.
-   \]
+   $$
+
 
 4. **容斥原理**  
-   \[
+   $$
    \text{card}(A \cup B) = \text{card}A + \text{card}B - \text{card}(A \cap B).
-   \]
+   $$
+
 
 5. 集合 \(\{a_1, a_2, \dots, a_n\}\) 的子集个数共有 \(2^n\) 个；真子集有 \(2^n - 1\) 个；非空子集有 \(2^n - 1\) 个；非空的真子集有 \(2^n - 2\) 个。
 
@@ -56,7 +64,7 @@ window.MathJax = {
    (3) 零点式 \(f(x) = a(x - x_1)(x - x_2) \ (a \neq 0)\)
 
 7. **解连不等式 \(N < f(x) < M\) 的转化形式**  
-   \[
+   $$
    \begin{aligned}
    N &< f(x) < M \\
    &\Leftrightarrow [f(x) - M][f(x) - N] < 0 \\
@@ -64,21 +72,25 @@ window.MathJax = {
    &\Leftrightarrow \frac{f(x)-N}{M-f(x)} > 0 \\
    &\Leftrightarrow \frac{1}{f(x)-N} > \frac{1}{M-N}.
    \end{aligned}
-   \]
+   $$
+
 
 8. **方程 \(f(x)=0\) 在 \((k_1,k_2)\) 上有且仅有一个实根**  
    与 \(f(k_1)f(k_2)<0\) 不等价，前者是后者的必要不充分条件。特别地，方程 \(ax^2+bx+c=0 \ (a\neq0)\) 有且仅有一个实根在 \((k_1,k_2)\) 内，等价于  
-   \[
+   $$
    f(k_1)f(k_2)<0,
-   \]
+   $$
+
    或  
-   \[
+   $$
    f(k_1)=0 \ \text{且} \ k_1 < -\frac{b}{2a} < \frac{k_1+k_2}{2},
-   \]
+   $$
+
    或  
-   \[
+   $$
    f(k_2)=0 \ \text{且} \ \frac{k_1+k_2}{2} < -\frac{b}{2a} < k_2.
-   \]
+   $$
+
 
 9. **闭区间上二次函数的最值**  
    二次函数 \(f(x)=ax^2+bx+c \ (a\neq0)\) 在闭区间 \([p,q]\) 上的最值只能在 \(x=-\frac{b}{2a}\) 处及区间端点取得：  
@@ -92,34 +104,39 @@ window.MathJax = {
   
     设 \(f(x)=x^2+px+q\)，则  
     (1) 方程在区间 \((m,+\infty)\) 内有根的充要条件为 \(f(m)=0\) 或  
-        \[
+        $$
         \begin{cases}
         p^2-4q \geq 0, \\
         -\frac{p}{2} > m.
         \end{cases}
-        \]  
+        $$
+  
     (2) 方程在区间 \((m,n)\) 内有根的充要条件为 \(f(m)f(n)<0\) 或  
-        \[
+        $$
         \begin{cases}
         f(m)>0, \\
         p^2-4q \geq 0, \\
         m < -\frac{p}{2} < n,
         \end{cases}
-        \]
+        $$
+
         或  
-        \[
+
+        $$
         \begin{cases}
         f(m)=0, \\
         f(n)>0.
         \end{cases}
-        \]  
+        $$
+  
     (3) 方程在区间 \((-\infty, n)\) 内有根的充要条件为 \(f(m)<0\) 或  
-        \[
+        $$
         \begin{cases}
         p^2-4q \geq 0, \\
         -\frac{p}{2} < m.
         \end{cases}
-        \]
+        $$
+
 
 11. **定区间上含参数的二次不等式恒成立的条件**  
     (1) 在给定区间 \((-\infty,+\infty)\) 的子区间 \(L\)（形如 \([\alpha,\beta],\ (-\infty,\beta],\ [\alpha,+\infty)\) 等）上含参数的二次不等式 \(f(x,t)\geq 0\)（\(t\) 为参数）恒成立的充要条件是 \(f(x,t)_{\min} \geq 0 \ (x\in L)\)。
@@ -127,7 +144,7 @@ window.MathJax = {
     (2) 在给定区间 \((-\infty,+\infty)\) 的子区间上含参数的二次不等式 \(f(x,t)\geq 0\)（\(t\) 为参数）恒成立的充要条件是 \(f(x,t)_{\max} \leq 0 \ (x\notin L)\)。
   
     (3) \(f(x)=ax^4+bx^2+c>0\) 恒成立的充要条件是  
-        \[
+        $$
         \begin{cases}
         a \geq 0, \\
         b \geq 0, \\
@@ -139,7 +156,8 @@ window.MathJax = {
         b^2-4ac < 0, \\
         c > 0.
         \end{cases}
-        \]
+        $$
+
 
 12. **真值表**
     | p | q | 非 p | p 或 q | p 且 q |
@@ -182,12 +200,14 @@ window.MathJax = {
 
 16. **函数的单调性**  
     (1) 设 \(x_1, x_2 \in [a,b],\ x_1 \neq x_2\)，那么  
-        \[
+        $$
         (x_1-x_2)[f(x_1)-f(x_2)] > 0 \Leftrightarrow \frac{f(x_1)-f(x_2)}{x_1-x_2} > 0 \Leftrightarrow f(x) \text{ 在 } [a,b] \text{ 上单调递增};
-        \]
-        \[
+        $$
+
+        $$
         (x_1-x_2)[f(x_1)-f(x_2)] < 0 \Leftrightarrow \frac{f(x_1)-f(x_2)}{x_1-x_2} < 0 \Leftrightarrow f(x) \text{ 在 } [a,b] \text{ 上单调递减}.
-        \]
+        $$
+
     (2) 设函数 \(y=f(x)\) 在某个区间内可导，若 \(f'(x)>0\)，则 \(f(x)\) 为增函数；若 \(f'(x)<0\)，则 \(f(x)\) 为减函数。
 
 
@@ -242,9 +262,10 @@ window.MathJax = {
 
 
 26. **反函数关系**  
-    \[
+    $$
     f(a)=b \Leftrightarrow f^{-1}(b)=a.
-    \]
+    $$
+
 
 27. **反函数的求法**  
     若函数 \(y=f(kx+b)\) 存在反函数，则其反函数为 \(y=\frac{1}{k}[f^{-1}(x)-b]\)，而不是 \(y=f^{-1}(kx+b)\)；而函数 \(y=f^{-1}(kx+b)\) 是 \(y=\frac{1}{k}[f(x)-b]\) 的反函数。
@@ -300,14 +321,16 @@ window.MathJax = {
 
 
 33. **指数式与对数式的互化**  
-    \[
+    $$
     \log_a N = b \Leftrightarrow a^b = N\ (a>0,\ a\neq1,\ N>0).
-    \]
+    $$
+
 
 34. **对数的换底公式**  
-    \[
+    $$
     \log_a N = \frac{\log_m N}{\log_m a}\ (a>0,\ a\neq1,\ m>0,\ m\neq1,\ N>0).
-    \]
+    $$
+
     推论：\(\log_{a^m} b^n = \frac{n}{m} \log_a b\ (a>0,\ a\neq1,\ m,n>0,\ m\neq1,\ n\neq1)\)。
 
 
@@ -346,28 +369,32 @@ window.MathJax = {
 
 
 39. **数列的通项公式与前 \(n\) 项和的关系**  
-    \[
+    $$
     a_n = \begin{cases}
     s_1, & n=1,\\
     s_n - s_{n-1}, & n\geq2,
     \end{cases}
-    \]
+    $$
+
     其中 \(s_n=a_1+a_2+\dots+a_n\)。
 
 
 40. **等差数列的通项公式与前 \(n\) 项和公式**  
-    \[
+    $$
     a_n = a_1 + (n-1)d = dn + a_1 - d \quad (n\in\mathbb{N}^*),
-    \]
-    \[
+    $$
+
+    $$
     s_n = \frac{n(a_1+a_n)}{2} = na_1 + \frac{n(n-1)}{2}d = \frac{d}{2}n^2 + \left(a_1-\frac{d}{2}\right)n.
-    \]
+    $$
+
 
 41. **等比数列的通项公式与前 \(n\) 项和公式**  
-    \[
+    $$
     a_n = a_1 q^{n-1} = \frac{a_1}{q} \cdot q^n \quad (n\in\mathbb{N}^*),
-    \]
-    \[
+    $$
+
+    $$
     s_n = \begin{cases}
     \frac{a_1(1-q^n)}{1-q}, & q\neq1,\\
     na_1, & q=1,
@@ -377,22 +404,25 @@ window.MathJax = {
     \frac{a_1-a_n q}{1-q}, & q\neq1,\\
     na_1, & q=1.
     \end{cases}
-    \]
+    $$
+
 
 42. **等比差数列的通项公式与前 \(n\) 项和公式**  
     数列 \(\{a_n\}\)：\(a_{n+1}=q a_n+d,\ a_1=b\ (q\neq0)\)，  
-    \[
+    $$
     a_n = \begin{cases}
     b+(n-1)d, & q=1,\\
     \frac{b q^n + (d-b)q^{n-1}-d}{q-1}, & q\neq1,
     \end{cases}
-    \]
-    \[
+    $$
+
+    $$
     s_n = \begin{cases}
     nb + \frac{n(n-1)}{2}d, & q=1,\\
     \left(b-\frac{d}{1-q}\right)\frac{1-q^n}{1-q} + \frac{d}{1-q}n, & q\neq1.
     \end{cases}
-    \]
+    $$
+
 
 43. **分期付款（按揭贷款）**  
     每次还款 \(x = \frac{a b (1+b)^n}{(1+b)^n-1}\) 元（贷款 \(a\) 元，分 \(n\) 次还清，每期利率为 \(b\)）。
@@ -411,49 +441,56 @@ window.MathJax = {
 
 
 45. **同角三角函数的基本关系式**  
-    \[
+    $$
     \sin^2\theta + \cos^2\theta = 1,\quad \tan\theta = \frac{\sin\theta}{\cos\theta},\quad \tan\theta \cdot \cot\theta = 1.
-    \]
+    $$
+
 
 46. **正弦、余弦的诱导公式**（奇变偶不变，符号看象限）
 
 47. **和角与差角公式**  
-    \[
+    $$
     \begin{aligned}
     \sin(\alpha\pm\beta) &= \sin\alpha\cos\beta \pm \cos\alpha\sin\beta, \\
     \cos(\alpha\pm\beta) &= \cos\alpha\cos\beta \mp \sin\alpha\sin\beta, \\
     \tan(\alpha\pm\beta) &= \frac{\tan\alpha \pm \tan\beta}{1 \mp \tan\alpha\tan\beta}.
     \end{aligned}
-    \]
-    \[
+    $$
+
+    $$
     \sin(\alpha+\beta)\sin(\alpha-\beta) = \sin^2\alpha - \sin^2\beta \quad \text{(平方正弦公式)},
-    \]
-    \[
+    $$
+
+    $$
     \cos(\alpha+\beta)\cos(\alpha-\beta) = \cos^2\alpha - \sin^2\beta.
-    \]
-    \[
+    $$
+
+    $$
     a\sin\alpha + b\cos\alpha = \sqrt{a^2+b^2}\sin(\alpha+\phi),
-    \]
+    $$
+
     其中辅助角 \(\phi\) 满足 \(\tan\phi = \frac{b}{a}\)，所在象限由点 \((a,b)\) 决定。
 
 
 48. **二倍角公式**  
-    \[
+    $$
     \begin{aligned}
     \sin 2\alpha &= 2\sin\alpha\cos\alpha, \\
     \cos 2\alpha &= \cos^2\alpha - \sin^2\alpha = 2\cos^2\alpha - 1 = 1 - 2\sin^2\alpha, \\
     \tan 2\alpha &= \frac{2\tan\alpha}{1-\tan^2\alpha}.
     \end{aligned}
-    \]
+    $$
+
 
 49. **三倍角公式**  
-    \[
+    $$
     \begin{aligned}
     \sin 3\theta &= 3\sin\theta - 4\sin^3\theta = 4\sin\theta \sin\left(\frac{\pi}{3}-\theta\right)\sin\left(\frac{\pi}{3}+\theta\right), \\
     \cos 3\theta &= 4\cos^3\theta - 3\cos\theta = 4\cos\theta \cos\left(\frac{\pi}{3}-\theta\right)\cos\left(\frac{\pi}{3}+\theta\right), \\
     \tan 3\theta &= \frac{3\tan\theta - \tan^3\theta}{1-3\tan^2\theta} = \tan\theta \tan\left(\frac{\pi}{3}-\theta\right)\tan\left(\frac{\pi}{3}+\theta\right).
     \end{aligned}
-    \]
+    $$
+
 
 50. **三角函数的周期公式**  
     函数 \(y = \sin(\omega x+\phi),\ x\in\mathbb{R}\) 及 \(y = \cos(\omega x+\phi),\ x\in\mathbb{R}\)（\(\omega,\phi\) 为常数，\(\omega>0\)）的周期 \(T = \frac{2\pi}{\omega}\)；  
@@ -461,14 +498,16 @@ window.MathJax = {
 
 
 51. **正弦定理**  
-    \[
+    $$
     \frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R.
-    \]
+    $$
+
 
 52. **余弦定理**  
-    \[
+    $$
     a^2 = b^2 + c^2 - 2bc\cos A,\quad b^2 = c^2 + a^2 - 2ca\cos B,\quad c^2 = a^2 + b^2 - 2ab\cos C.
-    \]
+    $$
+
 
 53. **面积定理**  
     (1) \(S = \frac{1}{2} a h_a = \frac{1}{2} b h_b = \frac{1}{2} c h_c\)（\(h_a,h_b,h_c\) 分别为边 \(a,b,c\) 上的高）。
@@ -480,29 +519,32 @@ window.MathJax = {
 
 54. **三角形内角和定理**  
     在 \(\triangle ABC\) 中，有  
-    \[
+    $$
     A+B+C = \pi \Leftrightarrow C = \pi - (A+B) \Leftrightarrow \frac{C}{2} = \frac{\pi}{2} - \frac{A+B}{2} \Leftrightarrow 2C = 2\pi - 2(A+B).
-    \]
+    $$
+
 
 55. **简单的三角方程的通解**  
-    \[
+    $$
     \begin{aligned}
     \sin x = a &\Leftrightarrow x = k\pi + (-1)^k \arcsin a \quad (k\in\mathbb{Z},\ |a|\leq1), \\
     \cos x = a &\Leftrightarrow x = 2k\pi \pm \arccos a \quad (k\in\mathbb{Z},\ |a|\leq1), \\
     \tan x = a &\Leftrightarrow x = k\pi + \arctan a \quad (k\in\mathbb{Z},\ a\in\mathbb{R}).
     \end{aligned}
-    \]
+    $$
+
     特别地，  
-    \[
+    $$
     \begin{aligned}
     \sin\alpha = \sin\beta &\Leftrightarrow \alpha = k\pi + (-1)^k \beta \quad (k\in\mathbb{Z}), \\
     \cos\alpha = \cos\beta &\Leftrightarrow \alpha = 2k\pi \pm \beta \quad (k\in\mathbb{Z}), \\
     \tan\alpha = \tan\beta &\Leftrightarrow \alpha = k\pi + \beta \quad (k\in\mathbb{Z}).
     \end{aligned}
-    \]
+    $$
+
 
 56. **最简单的三角不等式及其解集**  
-    \[
+    $$
     \begin{aligned}
     \sin x > a\ (|a|\leq1) &\Leftrightarrow x \in (2k\pi + \arcsin a,\ 2k\pi + \pi - \arcsin a),\ k\in\mathbb{Z}, \\
     \sin x < a\ (|a|\leq1) &\Leftrightarrow x \in (2k\pi - \pi - \arcsin a,\ 2k\pi + \arcsin a),\ k\in\mathbb{Z}, \\
@@ -511,7 +553,8 @@ window.MathJax = {
     \tan x > a\ (a\in\mathbb{R}) &\Rightarrow x \in \left(k\pi + \arctan a,\ k\pi + \frac{\pi}{2}\right),\ k\in\mathbb{Z}, \\
     \tan x < a\ (a\in\mathbb{R}) &\Rightarrow x \in \left(k\pi - \frac{\pi}{2},\ k\pi + \arctan a\right),\ k\in\mathbb{Z}.
     \end{aligned}
-    \]
+    $$
+
 
 ---
 
@@ -542,9 +585,10 @@ window.MathJax = {
 
 60. **向量平行的坐标表示**  
     设 \(\mathbf{a}=(x_1,y_1),\ \mathbf{b}=(x_2,y_2)\)，且 \(\mathbf{b}\neq\mathbf{0}\)，则  
-    \[
+    $$
     \mathbf{a}\parallel\mathbf{b} \Leftrightarrow x_1 y_2 - x_2 y_1 = 0.
-    \]
+    $$
+
 
 61. **数量积的几何意义**  
     数量积 \(\mathbf{a}\cdot\mathbf{b}\) 等于 \(\mathbf{a}\) 的长度 \(|\mathbf{a}|\) 与 \(\mathbf{b}\) 在 \(\mathbf{a}\) 方向上的投影 \(|\mathbf{b}|\cos\theta\) 的乘积。
@@ -564,45 +608,52 @@ window.MathJax = {
 
 
 63. **两向量的夹角公式**  
-    \[
+    $$
     \cos\theta = \frac{x_1 x_2 + y_1 y_2}{\sqrt{x_1^2+y_1^2}\cdot\sqrt{x_2^2+y_2^2}} \quad (\mathbf{a}=(x_1,y_1),\ \mathbf{b}=(x_2,y_2)).
-    \]
+    $$
+
 
 64. **平面两点间的距离公式**  
-    \[
+    $$
     d_{A,B} = |\overrightarrow{AB}| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2} \quad (A(x_1,y_1),\ B(x_2,y_2)).
-    \]
+    $$
+
 
 65. **向量的平行与垂直**  
     设 \(\mathbf{a}=(x_1,y_1),\ \mathbf{b}=(x_2,y_2)\)，且 \(\mathbf{b}\neq\mathbf{0}\)，则  
-    \[
+    $$
     \mathbf{a}\parallel\mathbf{b} \Leftrightarrow \mathbf{b} = \lambda\mathbf{a} \Leftrightarrow x_1 y_2 - x_2 y_1 = 0,
-    \]
-    \[
+    $$
+
+    $$
+
     \mathbf{a}\perp\mathbf{b} \Leftrightarrow \mathbf{a}\cdot\mathbf{b} = 0 \Leftrightarrow x_1 x_2 + y_1 y_2 = 0.
-    \]
+    $$
+
 
 66. **线段的定比分公式**  
     设 \(P_1(x_1,y_1),\ P_2(x_2,y_2)\)，点 \(P(x,y)\) 是线段 \(P_1 P_2\) 的分点，\(\lambda\) 是实数，且 \(\overrightarrow{P_1 P} = \lambda \overrightarrow{P P_2}\)，则  
-    \[
+    $$
     \begin{cases}
-    x = \dfrac{x_1 + \lambda x_2}{1+\lambda}, \\[1em]
+    x = \dfrac{x_1 + \lambda x_2}{1+\lambda}, 
     y = \dfrac{y_1 + \lambda y_2}{1+\lambda},
     \end{cases}
     \quad \Leftrightarrow \quad
     \overrightarrow{OP} = \frac{\overrightarrow{OP_1} + \lambda\overrightarrow{OP_2}}{1+\lambda}
     \quad \Leftrightarrow \quad
     \overrightarrow{OP} = t\overrightarrow{OP_1} + (1-t)\overrightarrow{OP_2} \ \left(t=\frac{1}{1+\lambda}\right).
-    \]
+    $$
+
 
 67. **三角形的重心坐标公式**  
     \(\triangle ABC\) 三个顶点坐标分别为 \(A(x_1,y_1),\ B(x_2,y_2),\ C(x_3,y_3)\)，则重心坐标为  
-    \[
+    $$
     G\left(\frac{x_1+x_2+x_3}{3},\ \frac{y_1+y_2+y_3}{3}\right).
-    \]
+    $$
+
 
 68. **点的平移公式**  
-    \[
+    $$
     \begin{cases}
     x' = x + h, \\
     y' = y + k,
@@ -614,7 +665,8 @@ window.MathJax = {
     \end{cases}
     \quad \Leftrightarrow \quad
     \overrightarrow{OP'} = \overrightarrow{OP} + \overrightarrow{PP'}.
-    \]
+    $$
+
     注：图形 \(F\) 上任意一点 \(P(x,y)\) 在平移后图形 \(F'\) 上的对应点为 \(P'(x',y')\)，且 \(\overrightarrow{PP'}=(h,k)\)。
 
 
@@ -675,21 +727,27 @@ window.MathJax = {
 73. **一元二次不等式的解集**  
     一元二次不等式 \(ax^2+bx+c>0\)（或 \(<0\)）\((a\neq0,\ \Delta=b^2-4ac>0)\)，如果 \(a\) 与 \(ax^2+bx+c\) 同号，则解集在两根之外；如果异号，则解集在两根之间。简言之：同号两根之外，异号两根之间。
   
-    \[
+    $$
     x_1 < x < x_2 \Leftrightarrow (x-x_1)(x-x_2) < 0 \quad (x_1 < x_2),
-    \]
-    \[
+    $$
+
+    $$
     x < x_1 \ \text{或} \ x > x_2 \Leftrightarrow (x-x_1)(x-x_2) > 0 \quad (x_1 < x_2).
-    \]
+    $$
+
 
 74. **含有绝对值的不等式**  
     当 \(a>0\) 时，  
-    \[
+    $$
+
     |x| < a \Leftrightarrow x^2 < a^2 \Leftrightarrow -a < x < a,
-    \]
-    \[
+    $$
+
+    $$
+
     |x| > a \Leftrightarrow x^2 > a^2 \Leftrightarrow x > a \ \text{或} \ x < -a.
-    \]
+    $$
+
 
 75. **无理不等式**  
     (1) \(\sqrt{f(x)} > \sqrt{g(x)} \Leftrightarrow \begin{cases} f(x) \geq 0, \\ g(x) \geq 0, \\ f(x) > g(x). \end{cases}\)  
@@ -698,28 +756,33 @@ window.MathJax = {
 
 76. **指数不等式与对数不等式**  
     (1) 当 \(a>1\) 时，  
-        \[
+        $$
         a^{f(x)} > a^{g(x)} \Leftrightarrow f(x) > g(x);
-        \]
-        \[
+        $$
+
+        $$
         \log_a f(x) > \log_a g(x) \Leftrightarrow \begin{cases} f(x) > 0, \\ g(x) > 0, \\ f(x) > g(x). \end{cases}
-        \]  
+        $$
+  
     (2) 当 \(0<a<1\) 时，  
-        \[
+        $$
         a^{f(x)} > a^{g(x)} \Leftrightarrow f(x) < g(x);
-        \]
-        \[
+        $$
+
+        $$
         \log_a f(x) > \log_a g(x) \Leftrightarrow \begin{cases} f(x) > 0, \\ g(x) > 0, \\ f(x) < g(x). \end{cases}
-        \]
+        $$
+
 
 ---
 
 ## §07 直线和圆的方程
 
 77. **斜率公式**  
-    \[
+    $$
     k = \frac{y_2-y_1}{x_2-x_1} \quad (P_1(x_1,y_1),\ P_2(x_2,y_2)).
-    \]
+    $$
+
 
 78. **直线的五种方程**  
     (1) 点斜式：\(y-y_1 = k(x-x_1)\)（直线过点 \(P_1(x_1,y_1)\)，斜率为 \(k\)）。
@@ -735,16 +798,19 @@ window.MathJax = {
 
 79. **两条直线的平行和垂直**  
     (1) 若 \(l_1: y=k_1 x+b_1,\ l_2: y=k_2 x+b_2\)，则  
-        \[
+        $$
         l_1 \parallel l_2 \Leftrightarrow k_1 = k_2,\ b_1 \neq b_2;\quad l_1 \perp l_2 \Leftrightarrow k_1 k_2 = -1.
-        \]  
+        $$
+  
     (2) 若 \(l_1: A_1 x+B_1 y+C_1=0,\ l_2: A_2 x+B_2 y+C_2=0\)，且 \(A_1,A_2,B_1,B_2\) 都不为零，则  
-        \[
+        $$
         l_1 \parallel l_2 \Leftrightarrow \frac{A_1}{A_2} = \frac{B_1}{B_2} \neq \frac{C_1}{C_2};
-        \]
-        \[
+        $$
+
+        $$
         l_1 \perp l_2 \Leftrightarrow A_1 A_2 + B_1 B_2 = 0.
-        \]
+        $$
+
 
 80. **夹角公式**  
     (1) \(\tan\alpha = \left| \dfrac{k_2-k_1}{1+k_1 k_2} \right|\)（\(l_1: y=k_1 x+b_1,\ l_2: y=k_2 x+b_2,\ k_1 k_2 \neq -1\)）。
@@ -766,9 +832,10 @@ window.MathJax = {
     (1) 定点直线系方程：经过定点 \(P_0(x_0,y_0)\) 的直线系方程为 \(y-y_0 = k(x-x_0)\)（除直线 \(x=x_0\)），或 \(A(x-x_0)+B(y-y_0)=0\)（\(A,B\) 为待定系数）。
   
     (2) 共点直线系方程：经过两直线 \(l_1: A_1 x+B_1 y+C_1=0,\ l_2: A_2 x+B_2 y+C_2=0\) 的交点的直线系方程为  
-        \[
+        $$
         (A_1 x+B_1 y+C_1) + \lambda (A_2 x+B_2 y+C_2) = 0 \quad (\text{除 } l_2),
-        \]
+        $$
+
         其中 \(\lambda\) 为待定系数。
   
     (3) 平行直线系方程：直线 \(y=kx+b\) 中当斜率 \(k\) 一定而 \(b\) 变动时，表示平行直线系；与直线 \(Ax+By+C=0\) 平行的直线系方程为 \(Ax+By+\lambda=0 \ (\lambda \neq C)\)。
@@ -777,9 +844,10 @@ window.MathJax = {
 
 
 83. **点到直线的距离**  
-    \[
+    $$
     d = \frac{|Ax_0+By_0+C|}{\sqrt{A^2+B^2}} \quad (\text{点 } P(x_0,y_0),\ \text{直线 } l: Ax+By+C=0).
-    \]
+    $$
+
 
 84. **二元一次不等式表示的平面区域**  
     设直线 \(l: Ax+By+C=0\)，则  
@@ -804,19 +872,22 @@ window.MathJax = {
 
 87. **圆系方程**  
     (1) 过点 \(A(x_1,y_1),\ B(x_2,y_2)\) 的圆系方程：  
-        \[
+        $$
         (x-x_1)(x-x_2) + (y-y_1)(y-y_2) + \lambda[(x-x_1)(y_1-y_2) - (y-y_1)(x_1-x_2)] = 0,
-        \]
+        $$
+
         或 \((x-x_1)(x-x_2) + (y-y_1)(y-y_2) + \lambda(ax+by+c)=0\)，其中 \(ax+by+c=0\) 是直线 \(AB\) 的方程。
   
     (2) 过直线 \(l: Ax+By+C=0\) 与圆 \(C: x^2+y^2+Dx+Ey+F=0\) 的交点的圆系方程：  
-        \[
+        $$
         x^2+y^2+Dx+Ey+F + \lambda(Ax+By+C) = 0.
-        \]  
+        $$
+  
     (3) 过两圆 \(C_1: x^2+y^2+D_1 x+E_1 y+F_1=0,\ C_2: x^2+y^2+D_2 x+E_2 y+F_2=0\) 的交点的圆系方程：  
-        \[
+        $$
         x^2+y^2+D_1 x+E_1 y+F_1 + \lambda(x^2+y^2+D_2 x+E_2 y+F_2) = 0.
-        \]
+        $$
+
 
 88. **点与圆的位置关系**  
     点 \(P(x_0,y_0)\) 与圆 \((x-a)^2+(y-b)^2=r^2\) 的位置关系：  
@@ -844,9 +915,10 @@ window.MathJax = {
 91. **圆的切线方程**  
     (1) 已知圆 \(x^2+y^2+Dx+Ey+F=0\)：  
         - 若已知切点 \((x_0,y_0)\) 在圆上，则切线方程为  
-          \[
+          $$
           x_0 x + y_0 y + \frac{D(x_0+x)}{2} + \frac{E(y_0+y)}{2} + F = 0.
-          \]  
+          $$
+  
         - 过圆外一点 \(P(x_0,y_0)\) 的切线方程可设为 \(y-y_0 = k(x-x_0)\)，利用相切条件求 \(k\)（注意可能有一条切线斜率不存在）。
   
         - 斜率为 \(k\) 的切线方程可设为 \(y = kx + b\)，利用相切条件求 \(b\)。
@@ -862,18 +934,20 @@ window.MathJax = {
 ## §08 圆锥曲线方程
 
 92. **椭圆的参数方程**  
-    \[
+    $$
     \begin{cases}
     x = a\cos\theta, \\
     y = b\sin\theta
     \end{cases}
     \quad (\frac{x^2}{a^2}+\frac{y^2}{b^2}=1,\ a>b>0).
-    \]
+    $$
+
 
 93. **椭圆的焦半径公式**  
-    \[
+    $$
     |PF_1| = e\left(x + \frac{a^2}{c}\right),\quad |PF_2| = e\left(\frac{a^2}{c} - x\right).
-    \]
+    $$
+
 
 94. **椭圆的内部与外部**  
     (1) 点 \(P(x_0,y_0)\) 在椭圆 \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\) 内部 \(\Leftrightarrow \frac{x_0^2}{a^2}+\frac{y_0^2}{b^2} < 1\)。
@@ -890,9 +964,10 @@ window.MathJax = {
 
 
 96. **双曲线的焦半径公式**  
-    \[
+    $$
     |PF_1| = e\left(x + \frac{a^2}{c}\right),\quad |PF_2| = e\left(\frac{a^2}{c} - x\right).
-    \]
+    $$
+
 
 97. **双曲线的内部与外部**  
     (1) 点 \(P(x_0,y_0)\) 在双曲线 \(\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\) 内部 \(\Leftrightarrow \frac{x_0^2}{a^2} - \frac{y_0^2}{b^2} > 1\)。
@@ -959,9 +1034,10 @@ window.MathJax = {
 
 
 106. **直线与圆锥曲线相交的弦长公式**  
-     \[
+     $$
      |AB| = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2} = \sqrt{(1+k^2)(x_2-x_1)^2} = |x_1-x_2|\sqrt{1+\tan^2\alpha} = |y_1-y_2|\sqrt{1+\cot^2\alpha},
-     \]
+     $$
+
      其中 \(A(x_1,y_1),\ B(x_2,y_2)\)，\(\alpha\) 为直线 \(AB\) 的倾斜角，\(k\) 为斜率。
 
 
@@ -969,15 +1045,17 @@ window.MathJax = {
      (1) 曲线 \(F(x,y)=0\) 关于点 \(P(x_0,y_0)\) 成中心对称的曲线是 \(F(2x_0-x,\ 2y_0-y)=0\)。
   
      (2) 曲线 \(F(x,y)=0\) 关于直线 \(Ax+By+C=0\) 成轴对称的曲线是  
-         \[
+         $$
          F\left(x-\frac{2A(Ax+By+C)}{A^2+B^2},\ y-\frac{2B(Ax+By+C)}{A^2+B^2}\right)=0.
-         \]
+         $$
+
 
 108. **“四线”一方程**  
      对于一般的二次曲线 \(Ax^2+Bxy+Cy^2+Dx+Ey+F=0\)，用 \(x_0 x\) 代 \(x^2\)，用 \(y_0 y\) 代 \(y^2\)，用 \(\frac{x_0 y + x y_0}{2}\) 代 \(xy\)，用 \(\frac{x_0+x}{2}\) 代 \(x\)，用 \(\frac{y_0+y}{2}\) 代 \(y\)，得到方程  
-     \[
+     $$
      A x_0 x + B\cdot\frac{x_0 y+x y_0}{2} + C y_0 y + D\cdot\frac{x_0+x}{2} + E\cdot\frac{y_0+y}{2} + F = 0,
-     \]
+     $$
+
      该方程对应曲线的切线、切点弦、中点弦、弦中点方程。
 
 
@@ -1068,9 +1146,10 @@ window.MathJax = {
 
 121. **射影公式**  
      已知向量 \(\overrightarrow{AB}=\mathbf{a}\) 和轴 \(l\)，\(\mathbf{e}\) 是 \(l\) 上与 \(l\) 同方向的单位向量，作 \(A\) 在 \(l\) 上的射影 \(A'\)，作 \(B\) 在 \(l\) 上的射影 \(B'\)，则  
-     \[
+     $$
      A'B' = |\overrightarrow{AB}|\cos\langle\mathbf{a},\mathbf{e}\rangle = \mathbf{a}\cdot\mathbf{e}.
-     \]
+     $$
+
 
 122. **向量的直角坐标运算**  
      设 \(\mathbf{a}=(a_1,a_2,a_3),\ \mathbf{b}=(b_1,b_2,b_3)\)，则  
@@ -1081,129 +1160,150 @@ window.MathJax = {
 
 
 123. **空间两点间的向量**  
-     \[
+     $$
      \overrightarrow{AB} = (x_2-x_1,\ y_2-y_1,\ z_2-z_1) \quad (A(x_1,y_1,z_1),\ B(x_2,y_2,z_2)).
-     \]
+     $$
+
 
 124. **空间的线线平行或垂直**  
      设 \(\vec{a}=(x_1,y_1,z_1),\ \vec{b}=(x_2,y_2,z_2)\)，则  
-     \[
+     $$
      \vec{a}\parallel\vec{b} \Leftrightarrow \vec{a}=\lambda\vec{b} \Leftrightarrow \begin{cases} x_1=\lambda x_2, \\ y_1=\lambda y_2, \\ z_1=\lambda z_2. \end{cases}
-     \]
-     \[
+     $$
+
+     $$
      \vec{a}\perp\vec{b} \Leftrightarrow \vec{a}\cdot\vec{b}=0 \Leftrightarrow x_1 x_2 + y_1 y_2 + z_1 z_2 = 0.
-     \]
+     $$
+
 
 125. **夹角公式**  
-     \[
+     $$
      \cos\langle\mathbf{a},\mathbf{b}\rangle = \frac{a_1 b_1 + a_2 b_2 + a_3 b_3}{\sqrt{a_1^2+a_2^2+a_3^2}\sqrt{b_1^2+b_2^2+b_3^2}} \quad (\mathbf{a}=(a_1,a_2,a_3),\ \mathbf{b}=(b_1,b_2,b_3)).
-     \]  
+     $$
+  
      推论（三维柯西不等式）：\((a_1 b_1 + a_2 b_2 + a_3 b_3)^2 \leq (a_1^2+a_2^2+a_3^2)(b_1^2+b_2^2+b_3^2)\)。
 
 
 126. **四面体的对棱所成的角**  
      四面体 \(ABCD\) 中，\(AC\) 与 \(BD\) 所成的角为 \(\theta\)，则  
-     \[
+     $$
      \cos\theta = \frac{|(AB^2+CD^2) - (BC^2+DA^2)|}{2AC\cdot BD}.
-     \]
+     $$
+
 
 127. **异面直线所成角**  
-     \[
+     $$
      \cos\theta = |\cos\langle\vec{a},\vec{b}\rangle| = \frac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|} = \frac{|x_1 x_2 + y_1 y_2 + z_1 z_2|}{\sqrt{x_1^2+y_1^2+z_1^2}\sqrt{x_2^2+y_2^2+z_2^2}},
-     \]
+     $$
+
      其中 \(\vec{a},\vec{b}\) 分别为异面直线 \(a,b\) 的方向向量，\(\theta\in(0^\circ,90^\circ]\)。
 
 
 128. **直线与平面所成角**  
-     \[
+     $$
      \beta = \arcsin\frac{|\overrightarrow{AB}\cdot\mathbf{m}|}{|\overrightarrow{AB}||\mathbf{m}|} \quad (\mathbf{m}\text{ 为平面 }\alpha\text{ 的法向量}).
-     \]
+     $$
+
 
 129. **三面角公式（一）**  
      若 \(\triangle ABC\) 所在平面 \(\beta\) 与过边 \(AB\) 的平面 \(\alpha\) 所成的角为 \(\theta\)，另两边 \(AC,BC\) 与平面 \(\alpha\) 所成的角分别为 \(\theta_1,\theta_2\)，\(A,B\) 为 \(\triangle ABC\) 的两个内角，则  
-     \[
+     $$
      \sin^2\theta_1 + \sin^2\theta_2 = (\sin^2A + \sin^2B)\sin^2\theta.
-     \]  
+     $$
+  
      特别地，当 \(\angle ACB=90^\circ\) 时，\(\sin^2\theta_1 + \sin^2\theta_2 = \sin^2\theta\)。
 
 
 130. **三面角公式（二）**  
      若 \(\triangle ABC\) 所在平面 \(\beta\) 与过边 \(AB\) 的平面 \(\alpha\) 所成的角为 \(\theta\)，另两边 \(AC,BC\) 与平面 \(\alpha\) 所成的角分别为 \(\theta_1,\theta_2\)，\(A,B\) 为 \(\triangle ABO\) 的两个内角，则  
-     \[
+     $$
      \tan^2\theta_1 + \tan^2\theta_2 = (\sin^2A + \sin^2B)\tan^2\theta.
-     \]  
+     $$
+  
      特别地，当 \(\angle AOB=90^\circ\) 时，\(\sin^2\theta_1 + \sin^2\theta_2 = \sin^2\theta\)。
 
 
 131. **二面角的平面角**  
-     \[
+     $$
      \theta = \arccos\frac{\mathbf{m}\cdot\mathbf{n}}{|\mathbf{m}||\mathbf{n}|} \quad (\mathbf{m},\mathbf{n}\text{ 分别为二面角两个面的法向量}).
-     \]
+     $$
+
 
 132. **三余弦定理**  
      设 \(AC\) 是 \(\alpha\) 内的任一条直线，且 \(BC\perp AC\)，垂足为 \(C\)，又设 \(AO\) 与 \(AB\) 所成的角为 \(\theta_1\)，\(AB\) 与 \(AC\) 所成的角为 \(\theta_2\)，\(AO\) 与 \(AC\) 所成的角为 \(\theta\)，则  
-     \[
+     $$
      \cos\theta = \cos\theta_1 \cos\theta_2.
-     \]
+     $$
+
 
 133. **三射线定理**  
      若夹在平面角为 \(\phi\) 的二面角间的线段与二面角的两个半平面所成的角是 \(\theta_1,\theta_2\)，与二面角的棱所成的角是 \(\theta\)，则有  
-     \[
+     $$
      \sin^2\phi \sin^2\theta = \sin^2\theta_1 + \sin^2\theta_2 - 2\sin\theta_1\sin\theta_2\cos\phi,
-     \]
+     $$
+
      且 \(|\theta_1-\theta_2| \leq \phi \leq 180^\circ - (\theta_1+\theta_2)\)（当且仅当 \(\theta=90^\circ\) 时等号成立）。
 
 
 134. **空间两点间的距离公式**  
-     \[
+     $$
      d_{A,B} = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2} \quad (A(x_1,y_1,z_1),\ B(x_2,y_2,z_2)).
-     \]
+     $$
+
 
 135. **点到直线的距离**  
-     \[
+     $$
      h = \frac{1}{|\mathbf{a}|}\sqrt{(|\mathbf{a}||\mathbf{b}|)^2 - (\mathbf{a}\cdot\mathbf{b})^2} \quad (\text{点 }P\text{ 在直线 }l\text{ 上，方向向量 }\mathbf{a}=\overrightarrow{PA},\ \mathbf{b}=\overrightarrow{PQ}).
-     \]
+     $$
+
 
 136. **异面直线间的距离**  
-     \[
+     $$
      d = \frac{|\overrightarrow{CD}\cdot\mathbf{n}|}{|\mathbf{n}|} \quad (l_1,l_2\text{ 是两异面直线，公垂向量为 }\mathbf{n},\ C,D\text{ 分别在 }l_1,l_2\text{ 上}).
-     \]
+     $$
+
 
 137. **点到平面的距离**  
-     \[
+     $$
      d = \frac{|\overrightarrow{AB}\cdot\mathbf{n}|}{|\mathbf{n}|} \quad (\mathbf{n}\text{ 为平面 }\alpha\text{ 的法向量，}AB\text{ 是经过平面 }\alpha\text{ 的一条斜线，}A\in\alpha).
-     \]
+     $$
+
 
 138. **异面直线上两点距离公式**  
-     \[
+     $$
      d = \sqrt{h^2 + m^2 + n^2 \mp 2mn\cos\theta},
-     \]
+     $$
+
      其中两条异面直线 \(a,b\) 所成的角为 \(\theta\)，公垂线段 \(AA'\) 的长为 \(h\)，在直线 \(a,b\) 上分别取两点 \(E,F\)，使 \(A'E=m,\ AF=n,\ EF=d\)。
 
 
 139. **三个向量和的平方公式**  
-     \[
+     $$
      (\mathbf{a}+\mathbf{b}+\mathbf{c})^2 = \mathbf{a}^2+\mathbf{b}^2+\mathbf{c}^2 + 2\mathbf{a}\cdot\mathbf{b} + 2\mathbf{b}\cdot\mathbf{c} + 2\mathbf{c}\cdot\mathbf{a}.
-     \]
+     $$
+
 
 140. **线段在三个互相垂直的直线上的射影**  
      长度为 \(l\) 的线段在三条两两互相垂直的直线上的射影长分别为 \(l_1,l_2,l_3\)，夹角分别为 \(\theta_1,\theta_2,\theta_3\)，则  
-     \[
+     $$
      l^2 = l_1^2 + l_2^2 + l_3^2 \Leftrightarrow \cos^2\theta_1+\cos^2\theta_2+\cos^2\theta_3=1 \Leftrightarrow \sin^2\theta_1+\sin^2\theta_2+\sin^2\theta_3=2.
-     \]
+     $$
+
 
 141. **面积射影定理**  
-     \[
+     $$
      S = \frac{S'}{\cos\theta},
-     \]
+     $$
+
      其中 \(S,S'\) 分别为平面多边形及其射影的面积，\(\theta\) 为它们所在平面所成的锐二面角。
 
 
 142. **斜棱柱的直截面**  
      斜棱柱的侧棱长为 \(l\)，侧面积和体积分别为 \(S_{\text{斜棱柱侧}}\) 和 \(V_{\text{斜棱柱}}\)，直截面的周长和面积分别为 \(c_1\) 和 \(S_1\)，则  
-     \[
+     $$
      S_{\text{斜棱柱侧}} = c_1 l,\quad V_{\text{斜棱柱}} = S_1 l.
-     \]
+     $$
+
 
 143. **作截面的依据**  
      三个平面两两相交，有三条交线，则这三条交线交于一点或互相平行。
@@ -1214,9 +1314,10 @@ window.MathJax = {
 
 
 145. **欧拉定理（欧拉公式）**  
-     \[
+     $$
      V + F - E = 2,
-     \]
+     $$
+
      其中 \(V,E,F\) 分别为简单多面体的顶点数、棱数、面数。
   
      (1) \(E =\) 各面多边形边数和的一半；若每个面的边数为 \(n\)，则 \(E = \frac{1}{2} nF\)。
@@ -1226,9 +1327,10 @@ window.MathJax = {
 
 146. **球的体积与表面积**  
      球的半径为 \(R\)，则  
-     \[
+     $$
      V = \frac{4}{3}\pi R^3,\quad S = 4\pi R^2.
-     \]
+     $$
+
 
 147. **球的组合体**  
      (1) 球与长方体的组合体：长方体的外接球的直径是长方体的体对角线长。
@@ -1242,9 +1344,10 @@ window.MathJax = {
 
 
 148. **柱体、锥体的体积**  
-     \[
+     $$
      V_{\text{柱体}} = Sh,\quad V_{\text{锥体}} = \frac{1}{3}Sh,
-     \]
+     $$
+
      其中 \(S\) 为底面积，\(h\) 为高。
 
 
@@ -1253,19 +1356,22 @@ window.MathJax = {
 ## §10 排列组合与二项式定理
 
 149. **分类计数原理（加法原理）**  
-     \[
+     $$
      N = m_1 + m_2 + \dots + m_n.
-     \]
+     $$
+
 
 150. **分步计数原理（乘法原理）**  
-     \[
+     $$
      N = m_1 \times m_2 \times \dots \times m_n.
-     \]
+     $$
+
 
 151. **排列数公式**  
-     \[
+     $$
      A_n^m = n(n-1)\dots(n-m+1) = \frac{n!}{(n-m)!} \quad (n,m\in\mathbb{N}^*,\ m\leq n).
-     \]  
+     $$
+  
      规定 \(0! = 1\)。
 
 
@@ -1284,9 +1390,10 @@ window.MathJax = {
 
 
 153. **组合数公式**  
-     \[
+     $$
      C_n^m = \frac{A_n^m}{m!} = \frac{n(n-1)\dots(n-m+1)}{1\cdot2\cdots m} = \frac{n!}{m!(n-m)!} \quad (n,m\in\mathbb{N}^*,\ m\leq n).
-     \]
+     $$
+
 
 154. **组合数的两个性质**  
      (1) \(C_n^m = C_n^{n-m}\)。
@@ -1319,9 +1426,10 @@ window.MathJax = {
 
 
 156. **排列数与组合数的关系**  
-     \[
+     $$
      A_n^m = m! \cdot C_n^m.
-     \]
+     $$
+
 
 157. **单条件排列**（以下大前提：从 \(n\) 个元素中取 \(m\) 个元素的排列）  
      (1) “在位”与“不在位”：  
@@ -1334,51 +1442,62 @@ window.MathJax = {
          - 插空：两组元素分别有 \(k,h\) 个（\(k\leq h+1\)），合起来全排列，\(k\) 个的一组互不能挨近的排列数有 \(A_h^k A_{k+1}^k\) 种。
   
      (3) 两组元素各相同的插空：\(m\) 个大球 \(n\) 个小球排成一列，小球必分开，排法数为  
-         \[
+         $$
+
          \frac{A_{m+1}^n}{A_n^n} = C_{m+1}^n \quad (n\leq m+1).
-         \]  
+         $$
+  
      (4) 两组相同元素的排列：两组元素各有 \(m\) 个和 \(n\) 个，各组元素分别相同的排列数为 \(C_{m+n}^n\)。
 
 
 158. **分配问题**  
      (1) 平均分组有归属问题：将相异的 \(mn\) 个物件等分给 \(m\) 个人，各得 \(n\) 件，分配方法数为  
-         \[
+         $$
          N = C_{mn}^n \cdot C_{mn-n}^n \cdot C_{mn-2n}^n \cdots C_{2n}^n \cdot C_n^n = \frac{(mn)!}{(n!)^m}.
-         \]  
+         $$
+  
      (2) 平均分组无归属问题：将相异的 \(mn\) 个物体等分为无记号或无顺序的 \(m\) 堆，分配方法数为  
-         \[
+         $$
          N = \frac{(mn)!}{m!(n!)^m}.
-         \]  
+         $$
+  
      (3) 非平均分组有归属问题：将相异的 \(P=n_1+n_2+\dots+n_m\) 个物体分给 \(m\) 个人，分别得到 \(n_1,n_2,\dots,n_m\) 件（各数不相等），分配方法数为  
-         \[
+         $$
          N = C_P^{n_1} C_{P-n_1}^{n_2} \cdots C_{n_m}^{n_m} \cdot m! = \frac{P! \cdot m!}{n_1! n_2! \cdots n_m!}.
-         \]  
+         $$
+  
      (4) 非完全平均分组有归属问题：条件同 (3)，但 \(n_1,n_2,\dots,n_m\) 中有 \(a,b,c,\dots\) 个相等，则分配方法数为  
-         \[
+         $$
          N = \frac{P! \cdot m!}{n_1! n_2! \cdots n_m! \cdot (a! b! c! \cdots)}.
-         \]  
+         $$
+  
      (5) 非平均分组无归属问题：将相异的 \(P=n_1+n_2+\dots+n_m\) 个物体分为任意的 \(n_1,n_2,\dots,n_m\) 件无记号的 \(m\) 堆（各数不相等），分配方法数为  
-         \[
+         $$
          N = \frac{P!}{n_1! n_2! \cdots n_m!}.
-         \]  
+         $$
+  
      (6) 非完全平均分组无归属问题：条件同 (5)，但 \(n_1,n_2,\dots,n_m\) 中有 \(a,b,c,\dots\) 个相等，则分配方法数为  
-         \[
+         $$
          N = \frac{P!}{n_1! n_2! \cdots n_m! \cdot (a! b! c! \cdots)}.
-         \]  
+         $$
+  
      (7) 限定分组有归属问题：将相异的 \(P=n_1+n_2+\dots+n_m\) 个物体分给甲、乙、丙等 \(m\) 人，指定甲得 \(n_1\) 件、乙得 \(n_2\) 件等，分配方法数为  
-         \[
+         $$
          N = C_P^{n_1} C_{P-n_1}^{n_2} \cdots C_{n_m}^{n_m} = \frac{P!}{n_1! n_2! \cdots n_m!}.
-         \]
+         $$
+
 
 159. **“错位问题”及其推广**  
      贝努利装错信封问题：\(n\) 封信与 \(n\) 个信封全部错位的组合数为  
-     \[
+     $$
      f(n) = n! \left(\frac{1}{2!} - \frac{1}{3!} + \frac{1}{4!} - \dots + (-1)^n \frac{1}{n!}\right).
-     \]  
+     $$
+  
      推广：\(n\) 个元素与 \(n\) 个位置，至少有 \(m\) 个元素错位的不同组合总数为  
-     \[
+     $$
      f(n,m) = n! - C_n^1 (n-1)! + C_n^2 (n-2)! - C_n^3 (n-3)! + \dots + (-1)^p C_n^p (n-p)! + \dots + (-1)^m C_n^m (n-m)!.
-     \]
+     $$
+
 
 160. **不定方程 \(x_1 + x_2 + \dots + x_n = m\) 的解的个数**  
      (1) 正整数解有 \(C_{m-1}^{n-1}\) 个。
@@ -1388,16 +1507,18 @@ window.MathJax = {
      (3) 满足条件 \(x_i \geq k\ (k\in\mathbb{N}^*,\ 2\leq i\leq n-1)\) 的非负整数解有 \(C_{m+n-1-(n-2)(k-1)}^{n-1}\) 个。
   
      (4) 满足条件 \(x_i \leq k\) 的正整数解有  
-         \[
+         $$
          C_{m-1}^{n-1} - C_{n-2}^1 C_{m-1-k}^{n-1} + C_{n-2}^2 C_{m-1-2k}^{n-1} - \dots + (-1)^{n-2} C_{n-2}^{n-2} C_{m-1-(n-2)k}^{n-1}
-         \]
+         $$
+
          个。
 
 
 161. **二项式定理**  
-     \[
+     $$
      (a+b)^n = C_n^0 a^n + C_n^1 a^{n-1} b + C_n^2 a^{n-2} b^2 + \dots + C_n^r a^{n-r} b^r + \dots + C_n^n b^n.
-     \]  
+     $$
+  
      通项公式：\(T_{r+1} = C_n^r a^{n-r} b^r \quad (r=0,1,2,\dots,n)\)。
 
 
@@ -1406,34 +1527,40 @@ window.MathJax = {
 ## §11、12 概率与统计
 
 162. **等可能性事件的概率**  
-     \[
+     $$
      P(A) = \frac{m}{n}.
-     \]
+     $$
+
 
 163. **互斥事件 \(A,B\) 分别发生的概率的和**  
-     \[
+     $$
      P(A+B) = P(A) + P(B).
-     \]
+     $$
+
 
 164. **\(n\) 个互斥事件分别发生的概率的和**  
-     \[
+     $$
      P(A_1+A_2+\dots+A_n) = P(A_1)+P(A_2)+\dots+P(A_n).
-     \]
+     $$
+
 
 165. **独立事件 \(A,B\) 同时发生的概率**  
-     \[
+     $$
      P(A \cdot B) = P(A) \cdot P(B).
-     \]
+     $$
+
 
 166. **\(n\) 个独立事件同时发生的概率**  
-     \[
+     $$
      P(A_1 \cdot A_2 \cdots A_n) = P(A_1) \cdot P(A_2) \cdots P(A_n).
-     \]
+     $$
+
 
 167. **\(n\) 次独立重复试验中某事件恰好发生 \(k\) 次的概率**  
-     \[
+     $$
      P_n(k) = C_n^k p^k (1-p)^{n-k}.
-     \]
+     $$
+
 
 168. **离散型随机变量的分布列的两个性质**  
      (1) \(P_i \geq 0 \ (i=1,2,\dots)\)；  
@@ -1441,9 +1568,10 @@ window.MathJax = {
 
 
 169. **数学期望**  
-     \[
+     $$
      E\xi = x_1 P_1 + x_2 P_2 + \dots + x_n P_n + \dots
-     \]
+     $$
+
 
 170. **数学期望的性质**  
      (1) \(E(a\xi+b) = a E\xi + b\)。
@@ -1454,14 +1582,16 @@ window.MathJax = {
 
 
 171. **方差**  
-     \[
+     $$
      D\xi = (x_1 - E\xi)^2 P_1 + (x_2 - E\xi)^2 P_2 + \dots + (x_n - E\xi)^2 P_n + \dots
-     \]
+     $$
+
 
 172. **标准差**  
-     \[
+     $$
      \sigma\xi = \sqrt{D\xi}.
-     \]
+     $$
+
 
 173. **方差的性质**  
      (1) \(D(a\xi+b) = a^2 D\xi\)。
@@ -1472,44 +1602,52 @@ window.MathJax = {
 
 
 174. **方差与期望的关系**  
-     \[
+     $$
      D\xi = E\xi^2 - (E\xi)^2.
-     \]
+     $$
+
 
 175. **正态分布密度函数**  
-     \[
+     $$
      f(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}, \quad x\in(-\infty,+\infty),
-     \]
+     $$
+
      其中 \(\mu,\sigma\ (\sigma>0)\) 分别为均值与标准差。
 
 
 176. **标准正态分布密度函数**  
-     \[
+     $$
      f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}, \quad x\in(-\infty,+\infty).
-     \]
+     $$
+
 
 177. **正态分布的概率计算**  
      对于 \(X \sim N(\mu,\sigma^2)\)，  
-     \[
+     $$
      P(X < x) = \Phi\left(\frac{x-\mu}{\sigma}\right),
-     \]
-     \[
+     $$
+
+     $$
      P(x_1 < X < x_2) = \Phi\left(\frac{x_2-\mu}{\sigma}\right) - \Phi\left(\frac{x_1-\mu}{\sigma}\right).
-     \]
+     $$
+
 
 178. **回归直线方程**  
-     \[
+     $$
      \hat{y} = a + bx,
-     \]
+     $$
+
      其中  
-     \[
+     $$
      b = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x})^2} = \frac{\sum_{i=1}^n x_i y_i - n\bar{x}\bar{y}}{\sum_{i=1}^n x_i^2 - n\bar{x}^2},\quad a = \bar{y} - b\bar{x}.
-     \]
+     $$
+
 
 179. **相关系数**  
-     \[
+     $$
      r = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i=1}^n (x_i-\bar{x})^2} \sqrt{\sum_{i=1}^n (y_i-\bar{y})^2}} = \frac{\sum_{i=1}^n x_i y_i - n\bar{x}\bar{y}}{\sqrt{(\sum_{i=1}^n x_i^2 - n\bar{x}^2)(\sum_{i=1}^n y_i^2 - n\bar{y}^2)}}.
-     \]  
+     $$
+  
      \(|r| \leq 1\)，且 \(|r|\) 越接近 1，相关程度越大；越接近 0，相关程度越小。
 
 
@@ -1524,16 +1662,16 @@ window.MathJax = {
 
 
 181. **函数的极限定理**  
-     \[
+     $$
      \lim_{x\to x_0} f(x) = a \Leftrightarrow \lim_{x\to x_0^-} f(x) = \lim_{x\to x_0^+} f(x) = a.
-     \]
+     $$
+
 
 182. **函数的夹逼性定理**  
      如果函数 \(f(x),g(x),h(x)\) 在点 \(x_0\) 附近满足：  
      (1) \(g(x) \leq f(x) \leq h(x)\)；  
      (2) \(\lim_{x\to x_0} g(x) = \lim_{x\to x_0} h(x) = a\)（常数），  
-     则 \(\lim_{x\to x_0} f(x) = a\)。
-该定理对单侧极限和 \(x\to\infty\) 也成立。
+     则 \(\lim_{x\to x_0} f(x) = a\)。该定理对单侧极限和 \(x\to\infty\) 也成立。
 
 
 183. **几个常用极限**  
@@ -1550,15 +1688,17 @@ window.MathJax = {
 
 185. **函数极限的四则运算法则**  
      若 \(\lim_{x\to x_0} f(x)=a,\ \lim_{x\to x_0} g(x)=b\)，则  
-     \[
+     $$
      \lim_{x\to x_0} [f(x)\pm g(x)] = a\pm b,\quad \lim_{x\to x_0} [f(x)\cdot g(x)] = a\cdot b,\quad \lim_{x\to x_0} \frac{f(x)}{g(x)} = \frac{a}{b}\ (b\neq0).
-     \]
+     $$
+
 
 186. **数列极限的四则运算法则**  
      若 \(\lim_{n\to\infty} a_n = a,\ \lim_{n\to\infty} b_n = b\)，则  
-     \[
+     $$
      \lim_{n\to\infty} (a_n\pm b_n) = a\pm b,\quad \lim_{n\to\infty} (a_n\cdot b_n) = a\cdot b,\quad \lim_{n\to\infty} \frac{a_n}{b_n} = \frac{a}{b}\ (b\neq0),
-     \]
+     $$
+
      且 \(\lim_{n\to\infty} (c\cdot a_n) = c\cdot a\)（\(c\) 为常数）。
 
 
@@ -1567,30 +1707,35 @@ window.MathJax = {
 ## §14 导数
 
 187. **导数定义**  
-     \[
+     $$
      f'(x_0) = \lim_{\Delta x\to0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}.
-     \]
+     $$
+
 
 188. **瞬时速度**  
-     \[
+     $$
      v = s'(t) = \lim_{\Delta t\to0} \frac{s(t+\Delta t)-s(t)}{\Delta t}.
-     \]
+     $$
+
 
 189. **瞬时加速度**  
-     \[
+     $$
      a = v'(t) = \lim_{\Delta t\to0} \frac{v(t+\Delta t)-v(t)}{\Delta t}.
-     \]
+     $$
+
 
 190. **导函数**  
-     \[
+     $$
      f'(x) = \lim_{\Delta x\to0} \frac{f(x+\Delta x)-f(x)}{\Delta x}.
-     \]
+     $$
+
 
 191. **导数的几何意义**  
      函数 \(y=f(x)\) 在点 \(x_0\) 处的导数 \(f'(x_0)\) 是曲线 \(y=f(x)\) 在点 \(P(x_0,f(x_0))\) 处切线的斜率，切线方程为  
-     \[
+     $$
      y - y_0 = f'(x_0)(x-x_0).
-     \]
+     $$
+
 
 192. **几种常见函数的导数**  
      (1) \(C' = 0\)（\(C\) 为常数）。
@@ -1614,9 +1759,10 @@ window.MathJax = {
 
 194. **复合函数的求导法则**  
      设函数 \(u=\phi(x)\) 在点 \(x\) 处可导，函数 \(y=f(u)\) 在对应点 \(u\) 处可导，则复合函数 \(y=f(\phi(x))\) 在点 \(x\) 处可导，且  
-     \[
+     $$
      y_x' = y_u' \cdot u_x' \quad \text{或} \quad \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}.
-     \]
+     $$
+
 
 195. **常用的近似计算公式（当 \(|x|\) 很小时）**  
      (1) \(\sqrt{1+x} \approx 1+\frac{1}{2}x\)；\(\sqrt[n]{1+x} \approx 1+\frac{1}{n}x\)。
@@ -1645,14 +1791,16 @@ window.MathJax = {
 ## §15 复数
 
 197. **复数的相等**  
-     \[
+     $$
      a+bi = c+di \Leftrightarrow a=c,\ b=d \quad (a,b,c,d\in\mathbb{R}).
-     \]
+     $$
+
 
 198. **复数的模**  
-     \[
+     $$
      |z| = |a+bi| = \sqrt{a^2+b^2}.
-     \]
+     $$
+
 
 199. **复数的四则运算法则**  
      (1) \((a+bi)+(c+di) = (a+c)+(b+d)i\)。
@@ -1671,15 +1819,17 @@ window.MathJax = {
 
 
 201. **复平面上的两点间的距离公式**  
-     \[
+     $$
      d = |z_1-z_2| = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2} \quad (z_1=x_1+y_1 i,\ z_2=x_2+y_2 i).
-     \]
+     $$
+
 
 202. **向量的垂直**  
      非零复数 \(z_1=a+bi,\ z_2=c+di\) 对应的向量分别是 \(\overrightarrow{OZ_1},\ \overrightarrow{OZ_2}\)，则  
-     \[
+     $$
      \overrightarrow{OZ_1} \perp \overrightarrow{OZ_2} \Leftrightarrow z_1 \cdot \overline{z_2} \text{ 为纯虚数} \Leftrightarrow a c + b d = 0.
-     \]
+     $$
+
 
 203. **实系数一元二次方程的解**  
      实系数一元二次方程 \(ax^2+bx+c=0\)：  

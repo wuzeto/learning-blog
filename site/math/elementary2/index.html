@@ -1798,7 +1798,9 @@ window.MathJax = {
 
     inlineMath: [['$', '$'], ['\\(', '\\)']],
 
-    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    displayMath: [['$$', '$$'], ['\$$
+', '\$$
+']],
 
     macros: {
 
@@ -1815,32 +1817,34 @@ window.MathJax = {
 <h1 id="_1">高中理科数学公式汇总<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="01">§01 集合与简易逻辑<a class="headerlink" href="#01" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p><strong>元素与集合的关系</strong><br />
-   [
-   x \in A \Leftrightarrow x \notin C_U A,\quad x \in C_U A \Leftrightarrow x \notin A.
-   ]</p>
-</li>
+<li><strong>元素与集合的关系</strong><br />
+   $$</li>
+</ol>
+<p>x \in A \Leftrightarrow x \notin C_U A,\quad x \in C_U A \Leftrightarrow x \notin A.
+   $$</p>
+<ol>
 <li>
 <p><strong>德摩根公式</strong><br />
-   [
+   $$
    C_U(A \cap B) = C_U A \cup C_U B,\quad C_U(A \cup B) = C_U A \cap C_U B.
-   ]</p>
+   $$</p>
 </li>
 <li>
 <p><strong>包含关系</strong><br />
-   [
+   $$
    A \cap B = A \Leftrightarrow A \cup B = B \Leftrightarrow A \subseteq B \Leftrightarrow C_U B \subseteq C_U A
-   ]
-   [
-   \Leftrightarrow A \cap C_U B = \varnothing \Leftrightarrow C_U A \cup B = \mathbb{R}.
-   ]</p>
+   $$</p>
 </li>
+</ol>
+<p>$$
+   \Leftrightarrow A \cap C_U B = \varnothing \Leftrightarrow C_U A \cup B = \mathbb{R}.
+   $$</p>
+<ol>
 <li>
 <p><strong>容斥原理</strong><br />
-   [
+   $$
    \text{card}(A \cup B) = \text{card}A + \text{card}B - \text{card}(A \cap B).
-   ]</p>
+   $$</p>
 </li>
 <li>
 <p>集合 <span class="arithmatex">\(\{a_1, a_2, \dots, a_n\}\)</span> 的子集个数共有 <span class="arithmatex">\(2^n\)</span> 个；真子集有 <span class="arithmatex">\(2^n - 1\)</span> 个；非空子集有 <span class="arithmatex">\(2^n - 1\)</span> 个；非空的真子集有 <span class="arithmatex">\(2^n - 2\)</span> 个。</p>
@@ -1853,7 +1857,7 @@ window.MathJax = {
 </li>
 <li>
 <p><strong>解连不等式 <span class="arithmatex">\(N &lt; f(x) &lt; M\)</span> 的转化形式</strong><br />
-   [
+   $$
    \begin{aligned}
    N &amp;&lt; f(x) &lt; M \
    &amp;\Leftrightarrow [f(x) - M][f(x) - N] &lt; 0 \
@@ -1861,27 +1865,27 @@ window.MathJax = {
    &amp;\Leftrightarrow \frac{f(x)-N}{M-f(x)} &gt; 0 \
    &amp;\Leftrightarrow \frac{1}{f(x)-N} &gt; \frac{1}{M-N}.
    \end{aligned}
-   ]</p>
+   $$</p>
 </li>
 <li>
 <p><strong>方程 <span class="arithmatex">\(f(x)=0\)</span> 在 <span class="arithmatex">\((k_1,k_2)\)</span> 上有且仅有一个实根</strong><br />
    与 <span class="arithmatex">\(f(k_1)f(k_2)&lt;0\)</span> 不等价，前者是后者的必要不充分条件。特别地，方程 <span class="arithmatex">\(ax^2+bx+c=0 \ (a\neq0)\)</span> 有且仅有一个实根在 <span class="arithmatex">\((k_1,k_2)\)</span> 内，等价于<br />
-   [
+   $$
    f(k_1)f(k_2)&lt;0,
-   ]
-   或<br />
-   [
+   $$</p>
+</li>
+</ol>
+<p>或<br />
+   $$
    f(k_1)=0 \ \text{且} \ k_1 &lt; -\frac{b}{2a} &lt; \frac{k_1+k_2}{2},
-   ]
-   或<br />
-   [
+   $$</p>
+<p>或<br />
+   $$
    f(k_2)=0 \ \text{且} \ \frac{k_1+k_2}{2} &lt; -\frac{b}{2a} &lt; k_2.
-   ]</p>
-</li>
-<li>
-<p><strong>闭区间上二次函数的最值</strong><br />
-   二次函数 <span class="arithmatex">\(f(x)=ax^2+bx+c \ (a\neq0)\)</span> 在闭区间 <span class="arithmatex">\([p,q]\)</span> 上的最值只能在 <span class="arithmatex">\(x=-\frac{b}{2a}\)</span> 处及区间端点取得：  </p>
-</li>
+   $$</p>
+<ol>
+<li><strong>闭区间上二次函数的最值</strong><br />
+   二次函数 <span class="arithmatex">\(f(x)=ax^2+bx+c \ (a\neq0)\)</span> 在闭区间 <span class="arithmatex">\([p,q]\)</span> 上的最值只能在 <span class="arithmatex">\(x=-\frac{b}{2a}\)</span> 处及区间端点取得：  </li>
 <li>
 <p>当 <span class="arithmatex">\(a&gt;0\)</span> 时，若 <span class="arithmatex">\(x=-\frac{b}{2a} \in [p,q]\)</span>，则 <span class="arithmatex">\(f(x)_{\min}=f(-\frac{b}{2a})\)</span>，<span class="arithmatex">\(f(x)_{\max}=\max\{f(p),f(q)\}\)</span>；若 <span class="arithmatex">\(x=-\frac{b}{2a} \notin [p,q]\)</span>，则 <span class="arithmatex">\(f(x)_{\max}=\max\{f(p),f(q)\}\)</span>，<span class="arithmatex">\(f(x)_{\min}=\min\{f(p),f(q)\}\)</span>。</p>
 </li>
@@ -1893,41 +1897,43 @@ window.MathJax = {
     依据：若 <span class="arithmatex">\(f(m)f(n)&lt;0\)</span>，则方程 <span class="arithmatex">\(f(x)=0\)</span> 在区间 <span class="arithmatex">\((m,n)\)</span> 内至少有一个实根。</p>
 <p>设 <span class="arithmatex">\(f(x)=x^2+px+q\)</span>，则<br />
 (1) 方程在区间 <span class="arithmatex">\((m,+\infty)\)</span> 内有根的充要条件为 <span class="arithmatex">\(f(m)=0\)</span> 或<br />
-    [
+    $$
     \begin{cases}
     p^2-4q \geq 0, \
     -\frac{p}{2} &gt; m.
     \end{cases}
-    ]<br />
-(2) 方程在区间 <span class="arithmatex">\((m,n)\)</span> 内有根的充要条件为 <span class="arithmatex">\(f(m)f(n)&lt;0\)</span> 或<br />
-    [
+    $$</p>
+<p>(2) 方程在区间 <span class="arithmatex">\((m,n)\)</span> 内有根的充要条件为 <span class="arithmatex">\(f(m)f(n)&lt;0\)</span> 或<br />
+    $$
     \begin{cases}
     f(m)&gt;0, \
     p^2-4q \geq 0, \
     m &lt; -\frac{p}{2} &lt; n,
     \end{cases}
-    ]
-    或<br />
-    [
-    \begin{cases}
-    f(m)=0, \
-    f(n)&gt;0.
-    \end{cases}
-    ]<br />
-(3) 方程在区间 <span class="arithmatex">\((-\infty, n)\)</span> 内有根的充要条件为 <span class="arithmatex">\(f(m)&lt;0\)</span> 或<br />
-    [
+    $$</p>
+<div class="highlight"><pre><span></span><code>或
+
+$$
+\begin{cases}
+f(m)=0, \\
+f(n)&gt;0.
+\end{cases}
+$$
+</code></pre></div>
+<p>(3) 方程在区间 <span class="arithmatex">\((-\infty, n)\)</span> 内有根的充要条件为 <span class="arithmatex">\(f(m)&lt;0\)</span> 或<br />
+    $$
     \begin{cases}
     p^2-4q \geq 0, \
     -\frac{p}{2} &lt; m.
     \end{cases}
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>定区间上含参数的二次不等式恒成立的条件</strong><br />
     (1) 在给定区间 <span class="arithmatex">\((-\infty,+\infty)\)</span> 的子区间 <span class="arithmatex">\(L\)</span>（形如 <span class="arithmatex">\([\alpha,\beta],\ (-\infty,\beta],\ [\alpha,+\infty)\)</span> 等）上含参数的二次不等式 <span class="arithmatex">\(f(x,t)\geq 0\)</span>（<span class="arithmatex">\(t\)</span> 为参数）恒成立的充要条件是 <span class="arithmatex">\(f(x,t)_{\min} \geq 0 \ (x\in L)\)</span>。</p>
 <p>(2) 在给定区间 <span class="arithmatex">\((-\infty,+\infty)\)</span> 的子区间上含参数的二次不等式 <span class="arithmatex">\(f(x,t)\geq 0\)</span>（<span class="arithmatex">\(t\)</span> 为参数）恒成立的充要条件是 <span class="arithmatex">\(f(x,t)_{\max} \leq 0 \ (x\notin L)\)</span>。</p>
 <p>(3) <span class="arithmatex">\(f(x)=ax^4+bx^2+c&gt;0\)</span> 恒成立的充要条件是<br />
-    [
+    $$
     \begin{cases}
     a \geq 0, \
     b \geq 0, \
@@ -1939,7 +1945,7 @@ window.MathJax = {
     b^2-4ac &lt; 0, \
     c &gt; 0.
     \end{cases}
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>真值表</strong>
@@ -1982,13 +1988,14 @@ window.MathJax = {
 <li>
 <p><strong>函数的单调性</strong><br />
     (1) 设 <span class="arithmatex">\(x_1, x_2 \in [a,b],\ x_1 \neq x_2\)</span>，那么<br />
-        [
+        $$
         (x_1-x_2)[f(x_1)-f(x_2)] &gt; 0 \Leftrightarrow \frac{f(x_1)-f(x_2)}{x_1-x_2} &gt; 0 \Leftrightarrow f(x) \text{ 在 } [a,b] \text{ 上单调递增};
-        ]
-        [
-        (x_1-x_2)[f(x_1)-f(x_2)] &lt; 0 \Leftrightarrow \frac{f(x_1)-f(x_2)}{x_1-x_2} &lt; 0 \Leftrightarrow f(x) \text{ 在 } [a,b] \text{ 上单调递减}.
-        ]
-    (2) 设函数 <span class="arithmatex">\(y=f(x)\)</span> 在某个区间内可导，若 <span class="arithmatex">\(f'(x)&gt;0\)</span>，则 <span class="arithmatex">\(f(x)\)</span> 为增函数；若 <span class="arithmatex">\(f'(x)&lt;0\)</span>，则 <span class="arithmatex">\(f(x)\)</span> 为减函数。</p>
+        $$</p>
+<div class="highlight"><pre><span></span><code>$$
+(x_1-x_2)[f(x_1)-f(x_2)] &lt; 0 \Leftrightarrow \frac{f(x_1)-f(x_2)}{x_1-x_2} &lt; 0 \Leftrightarrow f(x) \text{ 在 } [a,b] \text{ 上单调递减}.
+$$
+</code></pre></div>
+<p>(2) 设函数 <span class="arithmatex">\(y=f(x)\)</span> 在某个区间内可导，若 <span class="arithmatex">\(f'(x)&gt;0\)</span>，则 <span class="arithmatex">\(f(x)\)</span> 为增函数；若 <span class="arithmatex">\(f'(x)&lt;0\)</span>，则 <span class="arithmatex">\(f(x)\)</span> 为减函数。</p>
 </li>
 <li>
 <p><strong>复合函数的单调性</strong><br />
@@ -2039,9 +2046,9 @@ window.MathJax = {
 </li>
 <li>
 <p><strong>反函数关系</strong><br />
-    [
+    $$
     f(a)=b \Leftrightarrow f^{-1}(b)=a.
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>反函数的求法</strong><br />
@@ -2085,16 +2092,16 @@ window.MathJax = {
 </li>
 <li>
 <p><strong>指数式与对数式的互化</strong><br />
-    [
+    $$
     \log_a N = b \Leftrightarrow a^b = N\ (a&gt;0,\ a\neq1,\ N&gt;0).
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>对数的换底公式</strong><br />
-    [
+    $$
     \log_a N = \frac{\log_m N}{\log_m a}\ (a&gt;0,\ a\neq1,\ m&gt;0,\ m\neq1,\ N&gt;0).
-    ]
-    推论：<span class="arithmatex">\(\log_{a^m} b^n = \frac{n}{m} \log_a b\ (a&gt;0,\ a\neq1,\ m,n&gt;0,\ m\neq1,\ n\neq1)\)</span>。</p>
+    $$</p>
+<p>推论：<span class="arithmatex">\(\log_{a^m} b^n = \frac{n}{m} \log_a b\ (a&gt;0,\ a\neq1,\ m,n&gt;0,\ m\neq1,\ n\neq1)\)</span>。</p>
 </li>
 <li>
 <p><strong>对数的四则运算法则</strong><br />
@@ -2128,55 +2135,55 @@ window.MathJax = {
 </li>
 <li>
 <p><strong>数列的通项公式与前 <span class="arithmatex">\(n\)</span> 项和的关系</strong><br />
-    [
+    $$
     a_n = \begin{cases}
     s_1, &amp; n=1,\
     s_n - s_{n-1}, &amp; n\geq2,
     \end{cases}
-    ]
-    其中 <span class="arithmatex">\(s_n=a_1+a_2+\dots+a_n\)</span>。</p>
+    $$</p>
+<p>其中 <span class="arithmatex">\(s_n=a_1+a_2+\dots+a_n\)</span>。</p>
 </li>
 <li>
 <p><strong>等差数列的通项公式与前 <span class="arithmatex">\(n\)</span> 项和公式</strong><br />
-    [
+    $$
     a_n = a_1 + (n-1)d = dn + a_1 - d \quad (n\in\mathbb{N}^*),
-    ]
-    [
-    s_n = \frac{n(a_1+a_n)}{2} = na_1 + \frac{n(n-1)}{2}d = \frac{d}{2}n^2 + \left(a_1-\frac{d}{2}\right)n.
-    ]</p>
+    $$</p>
+<div class="arithmatex">\[
+s_n = \frac{n(a_1+a_n)}{2} = na_1 + \frac{n(n-1)}{2}d = \frac{d}{2}n^2 + \left(a_1-\frac{d}{2}\right)n.
+\]</div>
 </li>
 <li>
 <p><strong>等比数列的通项公式与前 <span class="arithmatex">\(n\)</span> 项和公式</strong><br />
-    [
+    $$
     a_n = a_1 q^{n-1} = \frac{a_1}{q} \cdot q^n \quad (n\in\mathbb{N}^*),
-    ]
-    [
-    s_n = \begin{cases}
-    \frac{a_1(1-q^n)}{1-q}, &amp; q\neq1,\
-    na_1, &amp; q=1,
-    \end{cases}
-    \quad \text{或} \quad
-    s_n = \begin{cases}
-    \frac{a_1-a_n q}{1-q}, &amp; q\neq1,\
-    na_1, &amp; q=1.
-    \end{cases}
-    ]</p>
+    $$</p>
+<div class="arithmatex">\[
+s_n = \begin{cases}
+\frac{a_1(1-q^n)}{1-q}, &amp; q\neq1,\\
+na_1, &amp; q=1,
+\end{cases}
+\quad \text{或} \quad
+s_n = \begin{cases}
+\frac{a_1-a_n q}{1-q}, &amp; q\neq1,\\
+na_1, &amp; q=1.
+\end{cases}
+\]</div>
 </li>
 <li>
 <p><strong>等比差数列的通项公式与前 <span class="arithmatex">\(n\)</span> 项和公式</strong><br />
     数列 <span class="arithmatex">\(\{a_n\}\)</span>：<span class="arithmatex">\(a_{n+1}=q a_n+d,\ a_1=b\ (q\neq0)\)</span>，<br />
-    [
+    $$
     a_n = \begin{cases}
     b+(n-1)d, &amp; q=1,\
     \frac{b q^n + (d-b)q^{n-1}-d}{q-1}, &amp; q\neq1,
     \end{cases}
-    ]
-    [
-    s_n = \begin{cases}
-    nb + \frac{n(n-1)}{2}d, &amp; q=1,\
-    \left(b-\frac{d}{1-q}\right)\frac{1-q^n}{1-q} + \frac{d}{1-q}n, &amp; q\neq1.
-    \end{cases}
-    ]</p>
+    $$</p>
+<div class="arithmatex">\[
+s_n = \begin{cases}
+nb + \frac{n(n-1)}{2}d, &amp; q=1,\\
+\left(b-\frac{d}{1-q}\right)\frac{1-q^n}{1-q} + \frac{d}{1-q}n, &amp; q\neq1.
+\end{cases}
+\]</div>
 </li>
 <li>
 <p><strong>分期付款（按揭贷款）</strong><br />
@@ -2194,52 +2201,52 @@ window.MathJax = {
 </li>
 <li>
 <p><strong>同角三角函数的基本关系式</strong><br />
-    [
+    $$
     \sin^2\theta + \cos^2\theta = 1,\quad \tan\theta = \frac{\sin\theta}{\cos\theta},\quad \tan\theta \cdot \cot\theta = 1.
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>正弦、余弦的诱导公式</strong>（奇变偶不变，符号看象限）</p>
 </li>
 <li>
 <p><strong>和角与差角公式</strong><br />
-    [
+    $$
     \begin{aligned}
     \sin(\alpha\pm\beta) &amp;= \sin\alpha\cos\beta \pm \cos\alpha\sin\beta, \
     \cos(\alpha\pm\beta) &amp;= \cos\alpha\cos\beta \mp \sin\alpha\sin\beta, \
     \tan(\alpha\pm\beta) &amp;= \frac{\tan\alpha \pm \tan\beta}{1 \mp \tan\alpha\tan\beta}.
     \end{aligned}
-    ]
-    [
-    \sin(\alpha+\beta)\sin(\alpha-\beta) = \sin^2\alpha - \sin^2\beta \quad \text{(平方正弦公式)},
-    ]
-    [
-    \cos(\alpha+\beta)\cos(\alpha-\beta) = \cos^2\alpha - \sin^2\beta.
-    ]
-    [
-    a\sin\alpha + b\cos\alpha = \sqrt{a^2+b^2}\sin(\alpha+\phi),
-    ]
-    其中辅助角 <span class="arithmatex">\(\phi\)</span> 满足 <span class="arithmatex">\(\tan\phi = \frac{b}{a}\)</span>，所在象限由点 <span class="arithmatex">\((a,b)\)</span> 决定。</p>
+    $$</p>
+<div class="arithmatex">\[
+\sin(\alpha+\beta)\sin(\alpha-\beta) = \sin^2\alpha - \sin^2\beta \quad \text{(平方正弦公式)},
+\]</div>
+<div class="arithmatex">\[
+\cos(\alpha+\beta)\cos(\alpha-\beta) = \cos^2\alpha - \sin^2\beta.
+\]</div>
+<div class="arithmatex">\[
+a\sin\alpha + b\cos\alpha = \sqrt{a^2+b^2}\sin(\alpha+\phi),
+\]</div>
+<p>其中辅助角 <span class="arithmatex">\(\phi\)</span> 满足 <span class="arithmatex">\(\tan\phi = \frac{b}{a}\)</span>，所在象限由点 <span class="arithmatex">\((a,b)\)</span> 决定。</p>
 </li>
 <li>
 <p><strong>二倍角公式</strong><br />
-    [
+    $$
     \begin{aligned}
     \sin 2\alpha &amp;= 2\sin\alpha\cos\alpha, \
     \cos 2\alpha &amp;= \cos^2\alpha - \sin^2\alpha = 2\cos^2\alpha - 1 = 1 - 2\sin^2\alpha, \
     \tan 2\alpha &amp;= \frac{2\tan\alpha}{1-\tan^2\alpha}.
     \end{aligned}
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>三倍角公式</strong><br />
-    [
+    $$
     \begin{aligned}
     \sin 3\theta &amp;= 3\sin\theta - 4\sin^3\theta = 4\sin\theta \sin\left(\frac{\pi}{3}-\theta\right)\sin\left(\frac{\pi}{3}+\theta\right), \
     \cos 3\theta &amp;= 4\cos^3\theta - 3\cos\theta = 4\cos\theta \cos\left(\frac{\pi}{3}-\theta\right)\cos\left(\frac{\pi}{3}+\theta\right), \
     \tan 3\theta &amp;= \frac{3\tan\theta - \tan^3\theta}{1-3\tan^2\theta} = \tan\theta \tan\left(\frac{\pi}{3}-\theta\right)\tan\left(\frac{\pi}{3}+\theta\right).
     \end{aligned}
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>三角函数的周期公式</strong><br />
@@ -2248,15 +2255,15 @@ window.MathJax = {
 </li>
 <li>
 <p><strong>正弦定理</strong><br />
-    [
+    $$
     \frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R.
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>余弦定理</strong><br />
-    [
+    $$
     a^2 = b^2 + c^2 - 2bc\cos A,\quad b^2 = c^2 + a^2 - 2ca\cos B,\quad c^2 = a^2 + b^2 - 2ab\cos C.
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>面积定理</strong><br />
@@ -2267,31 +2274,31 @@ window.MathJax = {
 <li>
 <p><strong>三角形内角和定理</strong><br />
     在 <span class="arithmatex">\(\triangle ABC\)</span> 中，有<br />
-    [
+    $$
     A+B+C = \pi \Leftrightarrow C = \pi - (A+B) \Leftrightarrow \frac{C}{2} = \frac{\pi}{2} - \frac{A+B}{2} \Leftrightarrow 2C = 2\pi - 2(A+B).
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>简单的三角方程的通解</strong><br />
-    [
+    $$
     \begin{aligned}
     \sin x = a &amp;\Leftrightarrow x = k\pi + (-1)^k \arcsin a \quad (k\in\mathbb{Z},\ |a|\leq1), \
     \cos x = a &amp;\Leftrightarrow x = 2k\pi \pm \arccos a \quad (k\in\mathbb{Z},\ |a|\leq1), \
     \tan x = a &amp;\Leftrightarrow x = k\pi + \arctan a \quad (k\in\mathbb{Z},\ a\in\mathbb{R}).
     \end{aligned}
-    ]
-    特别地，<br />
-    [
-    \begin{aligned}
-    \sin\alpha = \sin\beta &amp;\Leftrightarrow \alpha = k\pi + (-1)^k \beta \quad (k\in\mathbb{Z}), \
-    \cos\alpha = \cos\beta &amp;\Leftrightarrow \alpha = 2k\pi \pm \beta \quad (k\in\mathbb{Z}), \
-    \tan\alpha = \tan\beta &amp;\Leftrightarrow \alpha = k\pi + \beta \quad (k\in\mathbb{Z}).
-    \end{aligned}
-    ]</p>
+    $$</p>
+<p>特别地，<br />
+$$
+\begin{aligned}
+\sin\alpha = \sin\beta &amp;\Leftrightarrow \alpha = k\pi + (-1)^k \beta \quad (k\in\mathbb{Z}), \
+\cos\alpha = \cos\beta &amp;\Leftrightarrow \alpha = 2k\pi \pm \beta \quad (k\in\mathbb{Z}), \
+\tan\alpha = \tan\beta &amp;\Leftrightarrow \alpha = k\pi + \beta \quad (k\in\mathbb{Z}).
+\end{aligned}
+$$</p>
 </li>
 <li>
 <p><strong>最简单的三角不等式及其解集</strong><br />
-    [
+    $$
     \begin{aligned}
     \sin x &gt; a\ (|a|\leq1) &amp;\Leftrightarrow x \in (2k\pi + \arcsin a,\ 2k\pi + \pi - \arcsin a),\ k\in\mathbb{Z}, \
     \sin x &lt; a\ (|a|\leq1) &amp;\Leftrightarrow x \in (2k\pi - \pi - \arcsin a,\ 2k\pi + \arcsin a),\ k\in\mathbb{Z}, \
@@ -2300,7 +2307,7 @@ window.MathJax = {
     \tan x &gt; a\ (a\in\mathbb{R}) &amp;\Rightarrow x \in \left(k\pi + \arctan a,\ k\pi + \frac{\pi}{2}\right),\ k\in\mathbb{Z}, \
     \tan x &lt; a\ (a\in\mathbb{R}) &amp;\Rightarrow x \in \left(k\pi - \frac{\pi}{2},\ k\pi + \arctan a\right),\ k\in\mathbb{Z}.
     \end{aligned}
-    ]</p>
+    $$</p>
 </li>
 </ol>
 <hr />
@@ -2327,9 +2334,9 @@ window.MathJax = {
 <li>
 <p><strong>向量平行的坐标表示</strong><br />
     设 <span class="arithmatex">\(\mathbf{a}=(x_1,y_1),\ \mathbf{b}=(x_2,y_2)\)</span>，且 <span class="arithmatex">\(\mathbf{b}\neq\mathbf{0}\)</span>，则<br />
-    [
+    $$
     \mathbf{a}\parallel\mathbf{b} \Leftrightarrow x_1 y_2 - x_2 y_1 = 0.
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>数量积的几何意义</strong><br />
@@ -2346,50 +2353,50 @@ window.MathJax = {
 </li>
 <li>
 <p><strong>两向量的夹角公式</strong><br />
-    [
+    $$
     \cos\theta = \frac{x_1 x_2 + y_1 y_2}{\sqrt{x_1^2+y_1^2}\cdot\sqrt{x_2^2+y_2^2}} \quad (\mathbf{a}=(x_1,y_1),\ \mathbf{b}=(x_2,y_2)).
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>平面两点间的距离公式</strong><br />
-    [
+    $$
     d_{A,B} = |\overrightarrow{AB}| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2} \quad (A(x_1,y_1),\ B(x_2,y_2)).
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>向量的平行与垂直</strong><br />
     设 <span class="arithmatex">\(\mathbf{a}=(x_1,y_1),\ \mathbf{b}=(x_2,y_2)\)</span>，且 <span class="arithmatex">\(\mathbf{b}\neq\mathbf{0}\)</span>，则<br />
-    [
+    $$
     \mathbf{a}\parallel\mathbf{b} \Leftrightarrow \mathbf{b} = \lambda\mathbf{a} \Leftrightarrow x_1 y_2 - x_2 y_1 = 0,
-    ]
-    [
-    \mathbf{a}\perp\mathbf{b} \Leftrightarrow \mathbf{a}\cdot\mathbf{b} = 0 \Leftrightarrow x_1 x_2 + y_1 y_2 = 0.
-    ]</p>
+    $$</p>
+<p>$$</p>
+<p>\mathbf{a}\perp\mathbf{b} \Leftrightarrow \mathbf{a}\cdot\mathbf{b} = 0 \Leftrightarrow x_1 x_2 + y_1 y_2 = 0.
+$$</p>
 </li>
 <li>
 <p><strong>线段的定比分公式</strong><br />
     设 <span class="arithmatex">\(P_1(x_1,y_1),\ P_2(x_2,y_2)\)</span>，点 <span class="arithmatex">\(P(x,y)\)</span> 是线段 <span class="arithmatex">\(P_1 P_2\)</span> 的分点，<span class="arithmatex">\(\lambda\)</span> 是实数，且 <span class="arithmatex">\(\overrightarrow{P_1 P} = \lambda \overrightarrow{P P_2}\)</span>，则<br />
-    [
+    $$
     \begin{cases}
-    x = \dfrac{x_1 + \lambda x_2}{1+\lambda}, \[1em]
+    x = \dfrac{x_1 + \lambda x_2}{1+\lambda}, 
     y = \dfrac{y_1 + \lambda y_2}{1+\lambda},
     \end{cases}
     \quad \Leftrightarrow \quad
     \overrightarrow{OP} = \frac{\overrightarrow{OP_1} + \lambda\overrightarrow{OP_2}}{1+\lambda}
     \quad \Leftrightarrow \quad
     \overrightarrow{OP} = t\overrightarrow{OP_1} + (1-t)\overrightarrow{OP_2} \ \left(t=\frac{1}{1+\lambda}\right).
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>三角形的重心坐标公式</strong><br />
 <span class="arithmatex">\(\triangle ABC\)</span> 三个顶点坐标分别为 <span class="arithmatex">\(A(x_1,y_1),\ B(x_2,y_2),\ C(x_3,y_3)\)</span>，则重心坐标为<br />
-    [
+    $$
     G\left(\frac{x_1+x_2+x_3}{3},\ \frac{y_1+y_2+y_3}{3}\right).
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>点的平移公式</strong><br />
-    [
+    $$
     \begin{cases}
     x' = x + h, \
     y' = y + k,
@@ -2401,8 +2408,8 @@ window.MathJax = {
     \end{cases}
     \quad \Leftrightarrow \quad
     \overrightarrow{OP'} = \overrightarrow{OP} + \overrightarrow{PP'}.
-    ]
-    注：图形 <span class="arithmatex">\(F\)</span> 上任意一点 <span class="arithmatex">\(P(x,y)\)</span> 在平移后图形 <span class="arithmatex">\(F'\)</span> 上的对应点为 <span class="arithmatex">\(P'(x',y')\)</span>，且 <span class="arithmatex">\(\overrightarrow{PP'}=(h,k)\)</span>。</p>
+    $$</p>
+<p>注：图形 <span class="arithmatex">\(F\)</span> 上任意一点 <span class="arithmatex">\(P(x,y)\)</span> 在平移后图形 <span class="arithmatex">\(F'\)</span> 上的对应点为 <span class="arithmatex">\(P'(x',y')\)</span>，且 <span class="arithmatex">\(\overrightarrow{PP'}=(h,k)\)</span>。</p>
 </li>
 <li>
 <p><strong>“按向量平移”的几个结论</strong><br />
@@ -2445,22 +2452,22 @@ window.MathJax = {
 <li>
 <p><strong>一元二次不等式的解集</strong><br />
     一元二次不等式 <span class="arithmatex">\(ax^2+bx+c&gt;0\)</span>（或 <span class="arithmatex">\(&lt;0\)</span>）<span class="arithmatex">\((a\neq0,\ \Delta=b^2-4ac&gt;0)\)</span>，如果 <span class="arithmatex">\(a\)</span> 与 <span class="arithmatex">\(ax^2+bx+c\)</span> 同号，则解集在两根之外；如果异号，则解集在两根之间。简言之：同号两根之外，异号两根之间。</p>
-<p>[
+<div class="arithmatex">\[
 x_1 &lt; x &lt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &lt; 0 \quad (x_1 &lt; x_2),
-]
-[
+\]</div>
+<div class="arithmatex">\[
 x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad (x_1 &lt; x_2).
-]</p>
+\]</div>
 </li>
 <li>
 <p><strong>含有绝对值的不等式</strong><br />
     当 <span class="arithmatex">\(a&gt;0\)</span> 时，<br />
-    [
-    |x| &lt; a \Leftrightarrow x^2 &lt; a^2 \Leftrightarrow -a &lt; x &lt; a,
-    ]
-    [
-    |x| &gt; a \Leftrightarrow x^2 &gt; a^2 \Leftrightarrow x &gt; a \ \text{或} \ x &lt; -a.
-    ]</p>
+    $$</p>
+<p>|x| &lt; a \Leftrightarrow x^2 &lt; a^2 \Leftrightarrow -a &lt; x &lt; a,
+$$</p>
+<p>$$</p>
+<p>|x| &gt; a \Leftrightarrow x^2 &gt; a^2 \Leftrightarrow x &gt; a \ \text{或} \ x &lt; -a.
+$$</p>
 </li>
 <li>
 <p><strong>无理不等式</strong><br />
@@ -2471,19 +2478,21 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 <li>
 <p><strong>指数不等式与对数不等式</strong><br />
     (1) 当 <span class="arithmatex">\(a&gt;1\)</span> 时，<br />
-        [
+        $$
         a^{f(x)} &gt; a^{g(x)} \Leftrightarrow f(x) &gt; g(x);
-        ]
-        [
-        \log_a f(x) &gt; \log_a g(x) \Leftrightarrow \begin{cases} f(x) &gt; 0, \ g(x) &gt; 0, \ f(x) &gt; g(x). \end{cases}
-        ]<br />
-    (2) 当 <span class="arithmatex">\(0&lt;a&lt;1\)</span> 时，<br />
-        [
-        a^{f(x)} &gt; a^{g(x)} \Leftrightarrow f(x) &lt; g(x);
-        ]
-        [
-        \log_a f(x) &gt; \log_a g(x) \Leftrightarrow \begin{cases} f(x) &gt; 0, \ g(x) &gt; 0, \ f(x) &lt; g(x). \end{cases}
-        ]</p>
+        $$</p>
+<div class="highlight"><pre><span></span><code>$$
+\log_a f(x) &gt; \log_a g(x) \Leftrightarrow \begin{cases} f(x) &gt; 0, \\ g(x) &gt; 0, \\ f(x) &gt; g(x). \end{cases}
+$$
+</code></pre></div>
+<p>(2) 当 <span class="arithmatex">\(0&lt;a&lt;1\)</span> 时，<br />
+    $$
+    a^{f(x)} &gt; a^{g(x)} \Leftrightarrow f(x) &lt; g(x);
+    $$</p>
+<div class="highlight"><pre><span></span><code>$$
+\log_a f(x) &gt; \log_a g(x) \Leftrightarrow \begin{cases} f(x) &gt; 0, \\ g(x) &gt; 0, \\ f(x) &lt; g(x). \end{cases}
+$$
+</code></pre></div>
 </li>
 </ol>
 <hr />
@@ -2491,9 +2500,9 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 <ol>
 <li>
 <p><strong>斜率公式</strong><br />
-    [
+    $$
     k = \frac{y_2-y_1}{x_2-x_1} \quad (P_1(x_1,y_1),\ P_2(x_2,y_2)).
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>直线的五种方程</strong><br />
@@ -2506,16 +2515,17 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 <li>
 <p><strong>两条直线的平行和垂直</strong><br />
     (1) 若 <span class="arithmatex">\(l_1: y=k_1 x+b_1,\ l_2: y=k_2 x+b_2\)</span>，则<br />
-        [
+        $$
         l_1 \parallel l_2 \Leftrightarrow k_1 = k_2,\ b_1 \neq b_2;\quad l_1 \perp l_2 \Leftrightarrow k_1 k_2 = -1.
-        ]<br />
-    (2) 若 <span class="arithmatex">\(l_1: A_1 x+B_1 y+C_1=0,\ l_2: A_2 x+B_2 y+C_2=0\)</span>，且 <span class="arithmatex">\(A_1,A_2,B_1,B_2\)</span> 都不为零，则<br />
-        [
-        l_1 \parallel l_2 \Leftrightarrow \frac{A_1}{A_2} = \frac{B_1}{B_2} \neq \frac{C_1}{C_2};
-        ]
-        [
-        l_1 \perp l_2 \Leftrightarrow A_1 A_2 + B_1 B_2 = 0.
-        ]</p>
+        $$</p>
+<p>(2) 若 <span class="arithmatex">\(l_1: A_1 x+B_1 y+C_1=0,\ l_2: A_2 x+B_2 y+C_2=0\)</span>，且 <span class="arithmatex">\(A_1,A_2,B_1,B_2\)</span> 都不为零，则<br />
+    $$
+    l_1 \parallel l_2 \Leftrightarrow \frac{A_1}{A_2} = \frac{B_1}{B_2} \neq \frac{C_1}{C_2};
+    $$</p>
+<div class="highlight"><pre><span></span><code>$$
+l_1 \perp l_2 \Leftrightarrow A_1 A_2 + B_1 B_2 = 0.
+$$
+</code></pre></div>
 </li>
 <li>
 <p><strong>夹角公式</strong><br />
@@ -2533,18 +2543,19 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 <p><strong>四种常用直线系方程</strong><br />
     (1) 定点直线系方程：经过定点 <span class="arithmatex">\(P_0(x_0,y_0)\)</span> 的直线系方程为 <span class="arithmatex">\(y-y_0 = k(x-x_0)\)</span>（除直线 <span class="arithmatex">\(x=x_0\)</span>），或 <span class="arithmatex">\(A(x-x_0)+B(y-y_0)=0\)</span>（<span class="arithmatex">\(A,B\)</span> 为待定系数）。</p>
 <p>(2) 共点直线系方程：经过两直线 <span class="arithmatex">\(l_1: A_1 x+B_1 y+C_1=0,\ l_2: A_2 x+B_2 y+C_2=0\)</span> 的交点的直线系方程为<br />
-    [
+    $$
     (A_1 x+B_1 y+C_1) + \lambda (A_2 x+B_2 y+C_2) = 0 \quad (\text{除 } l_2),
-    ]
-    其中 <span class="arithmatex">\(\lambda\)</span> 为待定系数。</p>
+    $$</p>
+<div class="highlight"><pre><span></span><code>其中 \(\lambda\) 为待定系数。
+</code></pre></div>
 <p>(3) 平行直线系方程：直线 <span class="arithmatex">\(y=kx+b\)</span> 中当斜率 <span class="arithmatex">\(k\)</span> 一定而 <span class="arithmatex">\(b\)</span> 变动时，表示平行直线系；与直线 <span class="arithmatex">\(Ax+By+C=0\)</span> 平行的直线系方程为 <span class="arithmatex">\(Ax+By+\lambda=0 \ (\lambda \neq C)\)</span>。</p>
 <p>(4) 垂直直线系方程：与直线 <span class="arithmatex">\(Ax+By+C=0\)</span>（<span class="arithmatex">\(A\neq0,\ B\neq0\)</span>）垂直的直线系方程为 <span class="arithmatex">\(Bx-Ay+\lambda=0\)</span>。</p>
 </li>
 <li>
 <p><strong>点到直线的距离</strong><br />
-    [
+    $$
     d = \frac{|Ax_0+By_0+C|}{\sqrt{A^2+B^2}} \quad (\text{点 } P(x_0,y_0),\ \text{直线 } l: Ax+By+C=0).
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>二元一次不等式表示的平面区域</strong><br />
@@ -2573,18 +2584,19 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 <li>
 <p><strong>圆系方程</strong><br />
     (1) 过点 <span class="arithmatex">\(A(x_1,y_1),\ B(x_2,y_2)\)</span> 的圆系方程：<br />
-        [
+        $$
         (x-x_1)(x-x_2) + (y-y_1)(y-y_2) + \lambda[(x-x_1)(y_1-y_2) - (y-y_1)(x_1-x_2)] = 0,
-        ]
-        或 <span class="arithmatex">\((x-x_1)(x-x_2) + (y-y_1)(y-y_2) + \lambda(ax+by+c)=0\)</span>，其中 <span class="arithmatex">\(ax+by+c=0\)</span> 是直线 <span class="arithmatex">\(AB\)</span> 的方程。</p>
+        $$</p>
+<div class="highlight"><pre><span></span><code>或 \((x-x_1)(x-x_2) + (y-y_1)(y-y_2) + \lambda(ax+by+c)=0\)，其中 \(ax+by+c=0\) 是直线 \(AB\) 的方程。
+</code></pre></div>
 <p>(2) 过直线 <span class="arithmatex">\(l: Ax+By+C=0\)</span> 与圆 <span class="arithmatex">\(C: x^2+y^2+Dx+Ey+F=0\)</span> 的交点的圆系方程：<br />
-    [
+    $$
     x^2+y^2+Dx+Ey+F + \lambda(Ax+By+C) = 0.
-    ]<br />
-(3) 过两圆 <span class="arithmatex">\(C_1: x^2+y^2+D_1 x+E_1 y+F_1=0,\ C_2: x^2+y^2+D_2 x+E_2 y+F_2=0\)</span> 的交点的圆系方程：<br />
-    [
+    $$</p>
+<p>(3) 过两圆 <span class="arithmatex">\(C_1: x^2+y^2+D_1 x+E_1 y+F_1=0,\ C_2: x^2+y^2+D_2 x+E_2 y+F_2=0\)</span> 的交点的圆系方程：<br />
+    $$
     x^2+y^2+D_1 x+E_1 y+F_1 + \lambda(x^2+y^2+D_2 x+E_2 y+F_2) = 0.
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>点与圆的位置关系</strong><br />
@@ -2615,11 +2627,12 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 <p><strong>圆的切线方程</strong><br />
     (1) 已知圆 <span class="arithmatex">\(x^2+y^2+Dx+Ey+F=0\)</span>：<br />
         - 若已知切点 <span class="arithmatex">\((x_0,y_0)\)</span> 在圆上，则切线方程为<br />
-          [
+          $$
           x_0 x + y_0 y + \frac{D(x_0+x)}{2} + \frac{E(y_0+y)}{2} + F = 0.
-          ]<br />
-        - 过圆外一点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 的切线方程可设为 <span class="arithmatex">\(y-y_0 = k(x-x_0)\)</span>，利用相切条件求 <span class="arithmatex">\(k\)</span>（注意可能有一条切线斜率不存在）。</p>
-<div class="highlight"><pre><span></span><code>- 斜率为 \(k\) 的切线方程可设为 \(y = kx + b\)，利用相切条件求 \(b\)。
+          $$</p>
+<div class="highlight"><pre><span></span><code>- 过圆外一点 \(P(x_0,y_0)\) 的切线方程可设为 \(y-y_0 = k(x-x_0)\)，利用相切条件求 \(k\)（注意可能有一条切线斜率不存在）。
+
+- 斜率为 \(k\) 的切线方程可设为 \(y = kx + b\)，利用相切条件求 \(b\)。
 </code></pre></div>
 <p>(2) 已知圆 <span class="arithmatex">\(x^2+y^2=r^2\)</span>：<br />
     - 过圆上一点 <span class="arithmatex">\(P_0(x_0,y_0)\)</span> 的切线方程为 <span class="arithmatex">\(x_0 x + y_0 y = r^2\)</span>。</p>
@@ -2632,19 +2645,19 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 <ol>
 <li>
 <p><strong>椭圆的参数方程</strong><br />
-    [
+    $$
     \begin{cases}
     x = a\cos\theta, \
     y = b\sin\theta
     \end{cases}
     \quad (\frac{x^2}{a^2}+\frac{y^2}{b^2}=1,\ a&gt;b&gt;0).
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>椭圆的焦半径公式</strong><br />
-    [
+    $$
     |PF_1| = e\left(x + \frac{a^2}{c}\right),\quad |PF_2| = e\left(\frac{a^2}{c} - x\right).
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>椭圆的内部与外部</strong><br />
@@ -2659,9 +2672,9 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 </li>
 <li>
 <p><strong>双曲线的焦半径公式</strong><br />
-    [
+    $$
     |PF_1| = e\left(x + \frac{a^2}{c}\right),\quad |PF_2| = e\left(\frac{a^2}{c} - x\right).
-    ]</p>
+    $$</p>
 </li>
 <li>
 <p><strong>双曲线的内部与外部</strong><br />
@@ -2717,26 +2730,26 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 </li>
 <li>
 <p><strong>直线与圆锥曲线相交的弦长公式</strong><br />
-     [
+     $$
      |AB| = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2} = \sqrt{(1+k^2)(x_2-x_1)^2} = |x_1-x_2|\sqrt{1+\tan^2\alpha} = |y_1-y_2|\sqrt{1+\cot^2\alpha},
-     ]
-     其中 <span class="arithmatex">\(A(x_1,y_1),\ B(x_2,y_2)\)</span>，<span class="arithmatex">\(\alpha\)</span> 为直线 <span class="arithmatex">\(AB\)</span> 的倾斜角，<span class="arithmatex">\(k\)</span> 为斜率。</p>
+     $$</p>
+<p>其中 <span class="arithmatex">\(A(x_1,y_1),\ B(x_2,y_2)\)</span>，<span class="arithmatex">\(\alpha\)</span> 为直线 <span class="arithmatex">\(AB\)</span> 的倾斜角，<span class="arithmatex">\(k\)</span> 为斜率。</p>
 </li>
 <li>
 <p><strong>圆锥曲线的两类对称问题</strong><br />
      (1) 曲线 <span class="arithmatex">\(F(x,y)=0\)</span> 关于点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 成中心对称的曲线是 <span class="arithmatex">\(F(2x_0-x,\ 2y_0-y)=0\)</span>。</p>
 <p>(2) 曲线 <span class="arithmatex">\(F(x,y)=0\)</span> 关于直线 <span class="arithmatex">\(Ax+By+C=0\)</span> 成轴对称的曲线是<br />
-     [
+     $$
      F\left(x-\frac{2A(Ax+By+C)}{A^2+B^2},\ y-\frac{2B(Ax+By+C)}{A^2+B^2}\right)=0.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>“四线”一方程</strong><br />
      对于一般的二次曲线 <span class="arithmatex">\(Ax^2+Bxy+Cy^2+Dx+Ey+F=0\)</span>，用 <span class="arithmatex">\(x_0 x\)</span> 代 <span class="arithmatex">\(x^2\)</span>，用 <span class="arithmatex">\(y_0 y\)</span> 代 <span class="arithmatex">\(y^2\)</span>，用 <span class="arithmatex">\(\frac{x_0 y + x y_0}{2}\)</span> 代 <span class="arithmatex">\(xy\)</span>，用 <span class="arithmatex">\(\frac{x_0+x}{2}\)</span> 代 <span class="arithmatex">\(x\)</span>，用 <span class="arithmatex">\(\frac{y_0+y}{2}\)</span> 代 <span class="arithmatex">\(y\)</span>，得到方程<br />
-     [
+     $$
      A x_0 x + B\cdot\frac{x_0 y+x y_0}{2} + C y_0 y + D\cdot\frac{x_0+x}{2} + E\cdot\frac{y_0+y}{2} + F = 0,
-     ]
-     该方程对应曲线的切线、切点弦、中点弦、弦中点方程。</p>
+     $$</p>
+<p>该方程对应曲线的切线、切点弦、中点弦、弦中点方程。</p>
 </li>
 </ol>
 <hr />
@@ -2820,9 +2833,9 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 <li>
 <p><strong>射影公式</strong><br />
      已知向量 <span class="arithmatex">\(\overrightarrow{AB}=\mathbf{a}\)</span> 和轴 <span class="arithmatex">\(l\)</span>，<span class="arithmatex">\(\mathbf{e}\)</span> 是 <span class="arithmatex">\(l\)</span> 上与 <span class="arithmatex">\(l\)</span> 同方向的单位向量，作 <span class="arithmatex">\(A\)</span> 在 <span class="arithmatex">\(l\)</span> 上的射影 <span class="arithmatex">\(A'\)</span>，作 <span class="arithmatex">\(B\)</span> 在 <span class="arithmatex">\(l\)</span> 上的射影 <span class="arithmatex">\(B'\)</span>，则<br />
-     [
+     $$
      A'B' = |\overrightarrow{AB}|\cos\langle\mathbf{a},\mathbf{e}\rangle = \mathbf{a}\cdot\mathbf{e}.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>向量的直角坐标运算</strong><br />
@@ -2834,141 +2847,141 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 </li>
 <li>
 <p><strong>空间两点间的向量</strong><br />
-     [
+     $$
      \overrightarrow{AB} = (x_2-x_1,\ y_2-y_1,\ z_2-z_1) \quad (A(x_1,y_1,z_1),\ B(x_2,y_2,z_2)).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>空间的线线平行或垂直</strong><br />
      设 <span class="arithmatex">\(\vec{a}=(x_1,y_1,z_1),\ \vec{b}=(x_2,y_2,z_2)\)</span>，则<br />
-     [
+     $$
      \vec{a}\parallel\vec{b} \Leftrightarrow \vec{a}=\lambda\vec{b} \Leftrightarrow \begin{cases} x_1=\lambda x_2, \ y_1=\lambda y_2, \ z_1=\lambda z_2. \end{cases}
-     ]
-     [
-     \vec{a}\perp\vec{b} \Leftrightarrow \vec{a}\cdot\vec{b}=0 \Leftrightarrow x_1 x_2 + y_1 y_2 + z_1 z_2 = 0.
-     ]</p>
+     $$</p>
+<p>$$
+ \vec{a}\perp\vec{b} \Leftrightarrow \vec{a}\cdot\vec{b}=0 \Leftrightarrow x_1 x_2 + y_1 y_2 + z_1 z_2 = 0.
+ $$</p>
 </li>
 <li>
 <p><strong>夹角公式</strong><br />
-     [
+     $$
      \cos\langle\mathbf{a},\mathbf{b}\rangle = \frac{a_1 b_1 + a_2 b_2 + a_3 b_3}{\sqrt{a_1^2+a_2^2+a_3^2}\sqrt{b_1^2+b_2^2+b_3^2}} \quad (\mathbf{a}=(a_1,a_2,a_3),\ \mathbf{b}=(b_1,b_2,b_3)).
-     ]<br />
-     推论（三维柯西不等式）：<span class="arithmatex">\((a_1 b_1 + a_2 b_2 + a_3 b_3)^2 \leq (a_1^2+a_2^2+a_3^2)(b_1^2+b_2^2+b_3^2)\)</span>。</p>
+     $$</p>
+<p>推论（三维柯西不等式）：<span class="arithmatex">\((a_1 b_1 + a_2 b_2 + a_3 b_3)^2 \leq (a_1^2+a_2^2+a_3^2)(b_1^2+b_2^2+b_3^2)\)</span>。</p>
 </li>
 <li>
 <p><strong>四面体的对棱所成的角</strong><br />
      四面体 <span class="arithmatex">\(ABCD\)</span> 中，<span class="arithmatex">\(AC\)</span> 与 <span class="arithmatex">\(BD\)</span> 所成的角为 <span class="arithmatex">\(\theta\)</span>，则<br />
-     [
+     $$
      \cos\theta = \frac{|(AB^2+CD^2) - (BC^2+DA^2)|}{2AC\cdot BD}.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>异面直线所成角</strong><br />
-     [
+     $$
      \cos\theta = |\cos\langle\vec{a},\vec{b}\rangle| = \frac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|} = \frac{|x_1 x_2 + y_1 y_2 + z_1 z_2|}{\sqrt{x_1^2+y_1^2+z_1^2}\sqrt{x_2^2+y_2^2+z_2^2}},
-     ]
-     其中 <span class="arithmatex">\(\vec{a},\vec{b}\)</span> 分别为异面直线 <span class="arithmatex">\(a,b\)</span> 的方向向量，<span class="arithmatex">\(\theta\in(0^\circ,90^\circ]\)</span>。</p>
+     $$</p>
+<p>其中 <span class="arithmatex">\(\vec{a},\vec{b}\)</span> 分别为异面直线 <span class="arithmatex">\(a,b\)</span> 的方向向量，<span class="arithmatex">\(\theta\in(0^\circ,90^\circ]\)</span>。</p>
 </li>
 <li>
 <p><strong>直线与平面所成角</strong><br />
-     [
+     $$
      \beta = \arcsin\frac{|\overrightarrow{AB}\cdot\mathbf{m}|}{|\overrightarrow{AB}||\mathbf{m}|} \quad (\mathbf{m}\text{ 为平面 }\alpha\text{ 的法向量}).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>三面角公式（一）</strong><br />
      若 <span class="arithmatex">\(\triangle ABC\)</span> 所在平面 <span class="arithmatex">\(\beta\)</span> 与过边 <span class="arithmatex">\(AB\)</span> 的平面 <span class="arithmatex">\(\alpha\)</span> 所成的角为 <span class="arithmatex">\(\theta\)</span>，另两边 <span class="arithmatex">\(AC,BC\)</span> 与平面 <span class="arithmatex">\(\alpha\)</span> 所成的角分别为 <span class="arithmatex">\(\theta_1,\theta_2\)</span>，<span class="arithmatex">\(A,B\)</span> 为 <span class="arithmatex">\(\triangle ABC\)</span> 的两个内角，则<br />
-     [
+     $$
      \sin^2\theta_1 + \sin^2\theta_2 = (\sin^2A + \sin^2B)\sin^2\theta.
-     ]<br />
-     特别地，当 <span class="arithmatex">\(\angle ACB=90^\circ\)</span> 时，<span class="arithmatex">\(\sin^2\theta_1 + \sin^2\theta_2 = \sin^2\theta\)</span>。</p>
+     $$</p>
+<p>特别地，当 <span class="arithmatex">\(\angle ACB=90^\circ\)</span> 时，<span class="arithmatex">\(\sin^2\theta_1 + \sin^2\theta_2 = \sin^2\theta\)</span>。</p>
 </li>
 <li>
 <p><strong>三面角公式（二）</strong><br />
      若 <span class="arithmatex">\(\triangle ABC\)</span> 所在平面 <span class="arithmatex">\(\beta\)</span> 与过边 <span class="arithmatex">\(AB\)</span> 的平面 <span class="arithmatex">\(\alpha\)</span> 所成的角为 <span class="arithmatex">\(\theta\)</span>，另两边 <span class="arithmatex">\(AC,BC\)</span> 与平面 <span class="arithmatex">\(\alpha\)</span> 所成的角分别为 <span class="arithmatex">\(\theta_1,\theta_2\)</span>，<span class="arithmatex">\(A,B\)</span> 为 <span class="arithmatex">\(\triangle ABO\)</span> 的两个内角，则<br />
-     [
+     $$
      \tan^2\theta_1 + \tan^2\theta_2 = (\sin^2A + \sin^2B)\tan^2\theta.
-     ]<br />
-     特别地，当 <span class="arithmatex">\(\angle AOB=90^\circ\)</span> 时，<span class="arithmatex">\(\sin^2\theta_1 + \sin^2\theta_2 = \sin^2\theta\)</span>。</p>
+     $$</p>
+<p>特别地，当 <span class="arithmatex">\(\angle AOB=90^\circ\)</span> 时，<span class="arithmatex">\(\sin^2\theta_1 + \sin^2\theta_2 = \sin^2\theta\)</span>。</p>
 </li>
 <li>
 <p><strong>二面角的平面角</strong><br />
-     [
+     $$
      \theta = \arccos\frac{\mathbf{m}\cdot\mathbf{n}}{|\mathbf{m}||\mathbf{n}|} \quad (\mathbf{m},\mathbf{n}\text{ 分别为二面角两个面的法向量}).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>三余弦定理</strong><br />
      设 <span class="arithmatex">\(AC\)</span> 是 <span class="arithmatex">\(\alpha\)</span> 内的任一条直线，且 <span class="arithmatex">\(BC\perp AC\)</span>，垂足为 <span class="arithmatex">\(C\)</span>，又设 <span class="arithmatex">\(AO\)</span> 与 <span class="arithmatex">\(AB\)</span> 所成的角为 <span class="arithmatex">\(\theta_1\)</span>，<span class="arithmatex">\(AB\)</span> 与 <span class="arithmatex">\(AC\)</span> 所成的角为 <span class="arithmatex">\(\theta_2\)</span>，<span class="arithmatex">\(AO\)</span> 与 <span class="arithmatex">\(AC\)</span> 所成的角为 <span class="arithmatex">\(\theta\)</span>，则<br />
-     [
+     $$
      \cos\theta = \cos\theta_1 \cos\theta_2.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>三射线定理</strong><br />
      若夹在平面角为 <span class="arithmatex">\(\phi\)</span> 的二面角间的线段与二面角的两个半平面所成的角是 <span class="arithmatex">\(\theta_1,\theta_2\)</span>，与二面角的棱所成的角是 <span class="arithmatex">\(\theta\)</span>，则有<br />
-     [
+     $$
      \sin^2\phi \sin^2\theta = \sin^2\theta_1 + \sin^2\theta_2 - 2\sin\theta_1\sin\theta_2\cos\phi,
-     ]
-     且 <span class="arithmatex">\(|\theta_1-\theta_2| \leq \phi \leq 180^\circ - (\theta_1+\theta_2)\)</span>（当且仅当 <span class="arithmatex">\(\theta=90^\circ\)</span> 时等号成立）。</p>
+     $$</p>
+<p>且 <span class="arithmatex">\(|\theta_1-\theta_2| \leq \phi \leq 180^\circ - (\theta_1+\theta_2)\)</span>（当且仅当 <span class="arithmatex">\(\theta=90^\circ\)</span> 时等号成立）。</p>
 </li>
 <li>
 <p><strong>空间两点间的距离公式</strong><br />
-     [
+     $$
      d_{A,B} = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2} \quad (A(x_1,y_1,z_1),\ B(x_2,y_2,z_2)).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>点到直线的距离</strong><br />
-     [
+     $$
      h = \frac{1}{|\mathbf{a}|}\sqrt{(|\mathbf{a}||\mathbf{b}|)^2 - (\mathbf{a}\cdot\mathbf{b})^2} \quad (\text{点 }P\text{ 在直线 }l\text{ 上，方向向量 }\mathbf{a}=\overrightarrow{PA},\ \mathbf{b}=\overrightarrow{PQ}).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>异面直线间的距离</strong><br />
-     [
+     $$
      d = \frac{|\overrightarrow{CD}\cdot\mathbf{n}|}{|\mathbf{n}|} \quad (l_1,l_2\text{ 是两异面直线，公垂向量为 }\mathbf{n},\ C,D\text{ 分别在 }l_1,l_2\text{ 上}).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>点到平面的距离</strong><br />
-     [
+     $$
      d = \frac{|\overrightarrow{AB}\cdot\mathbf{n}|}{|\mathbf{n}|} \quad (\mathbf{n}\text{ 为平面 }\alpha\text{ 的法向量，}AB\text{ 是经过平面 }\alpha\text{ 的一条斜线，}A\in\alpha).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>异面直线上两点距离公式</strong><br />
-     [
+     $$
      d = \sqrt{h^2 + m^2 + n^2 \mp 2mn\cos\theta},
-     ]
-     其中两条异面直线 <span class="arithmatex">\(a,b\)</span> 所成的角为 <span class="arithmatex">\(\theta\)</span>，公垂线段 <span class="arithmatex">\(AA'\)</span> 的长为 <span class="arithmatex">\(h\)</span>，在直线 <span class="arithmatex">\(a,b\)</span> 上分别取两点 <span class="arithmatex">\(E,F\)</span>，使 <span class="arithmatex">\(A'E=m,\ AF=n,\ EF=d\)</span>。</p>
+     $$</p>
+<p>其中两条异面直线 <span class="arithmatex">\(a,b\)</span> 所成的角为 <span class="arithmatex">\(\theta\)</span>，公垂线段 <span class="arithmatex">\(AA'\)</span> 的长为 <span class="arithmatex">\(h\)</span>，在直线 <span class="arithmatex">\(a,b\)</span> 上分别取两点 <span class="arithmatex">\(E,F\)</span>，使 <span class="arithmatex">\(A'E=m,\ AF=n,\ EF=d\)</span>。</p>
 </li>
 <li>
 <p><strong>三个向量和的平方公式</strong><br />
-     [
+     $$
      (\mathbf{a}+\mathbf{b}+\mathbf{c})^2 = \mathbf{a}^2+\mathbf{b}^2+\mathbf{c}^2 + 2\mathbf{a}\cdot\mathbf{b} + 2\mathbf{b}\cdot\mathbf{c} + 2\mathbf{c}\cdot\mathbf{a}.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>线段在三个互相垂直的直线上的射影</strong><br />
      长度为 <span class="arithmatex">\(l\)</span> 的线段在三条两两互相垂直的直线上的射影长分别为 <span class="arithmatex">\(l_1,l_2,l_3\)</span>，夹角分别为 <span class="arithmatex">\(\theta_1,\theta_2,\theta_3\)</span>，则<br />
-     [
+     $$
      l^2 = l_1^2 + l_2^2 + l_3^2 \Leftrightarrow \cos^2\theta_1+\cos^2\theta_2+\cos^2\theta_3=1 \Leftrightarrow \sin^2\theta_1+\sin^2\theta_2+\sin^2\theta_3=2.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>面积射影定理</strong><br />
-     [
+     $$
      S = \frac{S'}{\cos\theta},
-     ]
-     其中 <span class="arithmatex">\(S,S'\)</span> 分别为平面多边形及其射影的面积，<span class="arithmatex">\(\theta\)</span> 为它们所在平面所成的锐二面角。</p>
+     $$</p>
+<p>其中 <span class="arithmatex">\(S,S'\)</span> 分别为平面多边形及其射影的面积，<span class="arithmatex">\(\theta\)</span> 为它们所在平面所成的锐二面角。</p>
 </li>
 <li>
 <p><strong>斜棱柱的直截面</strong><br />
      斜棱柱的侧棱长为 <span class="arithmatex">\(l\)</span>，侧面积和体积分别为 <span class="arithmatex">\(S_{\text{斜棱柱侧}}\)</span> 和 <span class="arithmatex">\(V_{\text{斜棱柱}}\)</span>，直截面的周长和面积分别为 <span class="arithmatex">\(c_1\)</span> 和 <span class="arithmatex">\(S_1\)</span>，则<br />
-     [
+     $$
      S_{\text{斜棱柱侧}} = c_1 l,\quad V_{\text{斜棱柱}} = S_1 l.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>作截面的依据</strong><br />
@@ -2980,19 +2993,19 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 </li>
 <li>
 <p><strong>欧拉定理（欧拉公式）</strong><br />
-     [
+     $$
      V + F - E = 2,
-     ]
-     其中 <span class="arithmatex">\(V,E,F\)</span> 分别为简单多面体的顶点数、棱数、面数。</p>
+     $$</p>
+<p>其中 <span class="arithmatex">\(V,E,F\)</span> 分别为简单多面体的顶点数、棱数、面数。</p>
 <p>(1) <span class="arithmatex">\(E =\)</span> 各面多边形边数和的一半；若每个面的边数为 <span class="arithmatex">\(n\)</span>，则 <span class="arithmatex">\(E = \frac{1}{2} nF\)</span>。</p>
 <p>(2) 若每个顶点引出的棱数为 <span class="arithmatex">\(m\)</span>，则 <span class="arithmatex">\(E = \frac{1}{2} mV\)</span>。</p>
 </li>
 <li>
 <p><strong>球的体积与表面积</strong><br />
      球的半径为 <span class="arithmatex">\(R\)</span>，则<br />
-     [
+     $$
      V = \frac{4}{3}\pi R^3,\quad S = 4\pi R^2.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>球的组合体</strong><br />
@@ -3005,10 +3018,10 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 </li>
 <li>
 <p><strong>柱体、锥体的体积</strong><br />
-     [
+     $$
      V_{\text{柱体}} = Sh,\quad V_{\text{锥体}} = \frac{1}{3}Sh,
-     ]
-     其中 <span class="arithmatex">\(S\)</span> 为底面积，<span class="arithmatex">\(h\)</span> 为高。</p>
+     $$</p>
+<p>其中 <span class="arithmatex">\(S\)</span> 为底面积，<span class="arithmatex">\(h\)</span> 为高。</p>
 </li>
 </ol>
 <hr />
@@ -3016,22 +3029,22 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 <ol>
 <li>
 <p><strong>分类计数原理（加法原理）</strong><br />
-     [
+     $$
      N = m_1 + m_2 + \dots + m_n.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>分步计数原理（乘法原理）</strong><br />
-     [
+     $$
      N = m_1 \times m_2 \times \dots \times m_n.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>排列数公式</strong><br />
-     [
+     $$
      A_n^m = n(n-1)\dots(n-m+1) = \frac{n!}{(n-m)!} \quad (n,m\in\mathbb{N}^*,\ m\leq n).
-     ]<br />
-     规定 <span class="arithmatex">\(0! = 1\)</span>。</p>
+     $$</p>
+<p>规定 <span class="arithmatex">\(0! = 1\)</span>。</p>
 </li>
 <li>
 <p><strong>排列恒等式</strong><br />
@@ -3044,9 +3057,9 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 </li>
 <li>
 <p><strong>组合数公式</strong><br />
-     [
+     $$
      C_n^m = \frac{A_n^m}{m!} = \frac{n(n-1)\dots(n-m+1)}{1\cdot2\cdots m} = \frac{n!}{m!(n-m)!} \quad (n,m\in\mathbb{N}^*,\ m\leq n).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>组合数的两个性质</strong><br />
@@ -3069,9 +3082,9 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 </li>
 <li>
 <p><strong>排列数与组合数的关系</strong><br />
-     [
+     $$
      A_n^m = m! \cdot C_n^m.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>单条件排列</strong>（以下大前提：从 <span class="arithmatex">\(n\)</span> 个元素中取 <span class="arithmatex">\(m\)</span> 个元素的排列）<br />
@@ -3083,52 +3096,53 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
      - 浮动紧贴：<span class="arithmatex">\(n\)</span> 个元素的全排列把 <span class="arithmatex">\(k\)</span> 个元排在一起的排法有 <span class="arithmatex">\(A_{n-k+1}^{n-k+1} A_k^k\)</span> 种（常用捆绑法）；<br />
      - 插空：两组元素分别有 <span class="arithmatex">\(k,h\)</span> 个（<span class="arithmatex">\(k\leq h+1\)</span>），合起来全排列，<span class="arithmatex">\(k\)</span> 个的一组互不能挨近的排列数有 <span class="arithmatex">\(A_h^k A_{k+1}^k\)</span> 种。</p>
 <p>(3) 两组元素各相同的插空：<span class="arithmatex">\(m\)</span> 个大球 <span class="arithmatex">\(n\)</span> 个小球排成一列，小球必分开，排法数为<br />
-     [
-     \frac{A_{m+1}^n}{A_n^n} = C_{m+1}^n \quad (n\leq m+1).
-     ]<br />
- (4) 两组相同元素的排列：两组元素各有 <span class="arithmatex">\(m\)</span> 个和 <span class="arithmatex">\(n\)</span> 个，各组元素分别相同的排列数为 <span class="arithmatex">\(C_{m+n}^n\)</span>。</p>
+     $$</p>
+<div class="highlight"><pre><span></span><code> \frac{A_{m+1}^n}{A_n^n} = C_{m+1}^n \quad (n\leq m+1).
+ $$
+</code></pre></div>
+<p>(4) 两组相同元素的排列：两组元素各有 <span class="arithmatex">\(m\)</span> 个和 <span class="arithmatex">\(n\)</span> 个，各组元素分别相同的排列数为 <span class="arithmatex">\(C_{m+n}^n\)</span>。</p>
 </li>
 <li>
 <p><strong>分配问题</strong><br />
      (1) 平均分组有归属问题：将相异的 <span class="arithmatex">\(mn\)</span> 个物件等分给 <span class="arithmatex">\(m\)</span> 个人，各得 <span class="arithmatex">\(n\)</span> 件，分配方法数为<br />
-         [
+         $$
          N = C_{mn}^n \cdot C_{mn-n}^n \cdot C_{mn-2n}^n \cdots C_{2n}^n \cdot C_n^n = \frac{(mn)!}{(n!)^m}.
-         ]<br />
-     (2) 平均分组无归属问题：将相异的 <span class="arithmatex">\(mn\)</span> 个物体等分为无记号或无顺序的 <span class="arithmatex">\(m\)</span> 堆，分配方法数为<br />
-         [
-         N = \frac{(mn)!}{m!(n!)^m}.
-         ]<br />
-     (3) 非平均分组有归属问题：将相异的 <span class="arithmatex">\(P=n_1+n_2+\dots+n_m\)</span> 个物体分给 <span class="arithmatex">\(m\)</span> 个人，分别得到 <span class="arithmatex">\(n_1,n_2,\dots,n_m\)</span> 件（各数不相等），分配方法数为<br />
-         [
-         N = C_P^{n_1} C_{P-n_1}^{n_2} \cdots C_{n_m}^{n_m} \cdot m! = \frac{P! \cdot m!}{n_1! n_2! \cdots n_m!}.
-         ]<br />
-     (4) 非完全平均分组有归属问题：条件同 (3)，但 <span class="arithmatex">\(n_1,n_2,\dots,n_m\)</span> 中有 <span class="arithmatex">\(a,b,c,\dots\)</span> 个相等，则分配方法数为<br />
-         [
-         N = \frac{P! \cdot m!}{n_1! n_2! \cdots n_m! \cdot (a! b! c! \cdots)}.
-         ]<br />
-     (5) 非平均分组无归属问题：将相异的 <span class="arithmatex">\(P=n_1+n_2+\dots+n_m\)</span> 个物体分为任意的 <span class="arithmatex">\(n_1,n_2,\dots,n_m\)</span> 件无记号的 <span class="arithmatex">\(m\)</span> 堆（各数不相等），分配方法数为<br />
-         [
-         N = \frac{P!}{n_1! n_2! \cdots n_m!}.
-         ]<br />
-     (6) 非完全平均分组无归属问题：条件同 (5)，但 <span class="arithmatex">\(n_1,n_2,\dots,n_m\)</span> 中有 <span class="arithmatex">\(a,b,c,\dots\)</span> 个相等，则分配方法数为<br />
-         [
-         N = \frac{P!}{n_1! n_2! \cdots n_m! \cdot (a! b! c! \cdots)}.
-         ]<br />
-     (7) 限定分组有归属问题：将相异的 <span class="arithmatex">\(P=n_1+n_2+\dots+n_m\)</span> 个物体分给甲、乙、丙等 <span class="arithmatex">\(m\)</span> 人，指定甲得 <span class="arithmatex">\(n_1\)</span> 件、乙得 <span class="arithmatex">\(n_2\)</span> 件等，分配方法数为<br />
-         [
-         N = C_P^{n_1} C_{P-n_1}^{n_2} \cdots C_{n_m}^{n_m} = \frac{P!}{n_1! n_2! \cdots n_m!}.
-         ]</p>
+         $$</p>
+<p>(2) 平均分组无归属问题：将相异的 <span class="arithmatex">\(mn\)</span> 个物体等分为无记号或无顺序的 <span class="arithmatex">\(m\)</span> 堆，分配方法数为<br />
+     $$
+     N = \frac{(mn)!}{m!(n!)^m}.
+     $$</p>
+<p>(3) 非平均分组有归属问题：将相异的 <span class="arithmatex">\(P=n_1+n_2+\dots+n_m\)</span> 个物体分给 <span class="arithmatex">\(m\)</span> 个人，分别得到 <span class="arithmatex">\(n_1,n_2,\dots,n_m\)</span> 件（各数不相等），分配方法数为<br />
+     $$
+     N = C_P^{n_1} C_{P-n_1}^{n_2} \cdots C_{n_m}^{n_m} \cdot m! = \frac{P! \cdot m!}{n_1! n_2! \cdots n_m!}.
+     $$</p>
+<p>(4) 非完全平均分组有归属问题：条件同 (3)，但 <span class="arithmatex">\(n_1,n_2,\dots,n_m\)</span> 中有 <span class="arithmatex">\(a,b,c,\dots\)</span> 个相等，则分配方法数为<br />
+     $$
+     N = \frac{P! \cdot m!}{n_1! n_2! \cdots n_m! \cdot (a! b! c! \cdots)}.
+     $$</p>
+<p>(5) 非平均分组无归属问题：将相异的 <span class="arithmatex">\(P=n_1+n_2+\dots+n_m\)</span> 个物体分为任意的 <span class="arithmatex">\(n_1,n_2,\dots,n_m\)</span> 件无记号的 <span class="arithmatex">\(m\)</span> 堆（各数不相等），分配方法数为<br />
+     $$
+     N = \frac{P!}{n_1! n_2! \cdots n_m!}.
+     $$</p>
+<p>(6) 非完全平均分组无归属问题：条件同 (5)，但 <span class="arithmatex">\(n_1,n_2,\dots,n_m\)</span> 中有 <span class="arithmatex">\(a,b,c,\dots\)</span> 个相等，则分配方法数为<br />
+     $$
+     N = \frac{P!}{n_1! n_2! \cdots n_m! \cdot (a! b! c! \cdots)}.
+     $$</p>
+<p>(7) 限定分组有归属问题：将相异的 <span class="arithmatex">\(P=n_1+n_2+\dots+n_m\)</span> 个物体分给甲、乙、丙等 <span class="arithmatex">\(m\)</span> 人，指定甲得 <span class="arithmatex">\(n_1\)</span> 件、乙得 <span class="arithmatex">\(n_2\)</span> 件等，分配方法数为<br />
+     $$
+     N = C_P^{n_1} C_{P-n_1}^{n_2} \cdots C_{n_m}^{n_m} = \frac{P!}{n_1! n_2! \cdots n_m!}.
+     $$</p>
 </li>
 <li>
 <p><strong>“错位问题”及其推广</strong><br />
      贝努利装错信封问题：<span class="arithmatex">\(n\)</span> 封信与 <span class="arithmatex">\(n\)</span> 个信封全部错位的组合数为<br />
-     [
+     $$
      f(n) = n! \left(\frac{1}{2!} - \frac{1}{3!} + \frac{1}{4!} - \dots + (-1)^n \frac{1}{n!}\right).
-     ]<br />
-     推广：<span class="arithmatex">\(n\)</span> 个元素与 <span class="arithmatex">\(n\)</span> 个位置，至少有 <span class="arithmatex">\(m\)</span> 个元素错位的不同组合总数为<br />
-     [
-     f(n,m) = n! - C_n^1 (n-1)! + C_n^2 (n-2)! - C_n^3 (n-3)! + \dots + (-1)^p C_n^p (n-p)! + \dots + (-1)^m C_n^m (n-m)!.
-     ]</p>
+     $$</p>
+<p>推广：<span class="arithmatex">\(n\)</span> 个元素与 <span class="arithmatex">\(n\)</span> 个位置，至少有 <span class="arithmatex">\(m\)</span> 个元素错位的不同组合总数为<br />
+ $$
+ f(n,m) = n! - C_n^1 (n-1)! + C_n^2 (n-2)! - C_n^3 (n-3)! + \dots + (-1)^p C_n^p (n-p)! + \dots + (-1)^m C_n^m (n-m)!.
+ $$</p>
 </li>
 <li>
 <p><strong>不定方程 <span class="arithmatex">\(x_1 + x_2 + \dots + x_n = m\)</span> 的解的个数</strong><br />
@@ -3136,17 +3150,18 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 <p>(2) 非负整数解有 <span class="arithmatex">\(C_{m+n-1}^{n-1}\)</span> 个。</p>
 <p>(3) 满足条件 <span class="arithmatex">\(x_i \geq k\ (k\in\mathbb{N}^*,\ 2\leq i\leq n-1)\)</span> 的非负整数解有 <span class="arithmatex">\(C_{m+n-1-(n-2)(k-1)}^{n-1}\)</span> 个。</p>
 <p>(4) 满足条件 <span class="arithmatex">\(x_i \leq k\)</span> 的正整数解有<br />
-     [
+     $$
      C_{m-1}^{n-1} - C_{n-2}^1 C_{m-1-k}^{n-1} + C_{n-2}^2 C_{m-1-2k}^{n-1} - \dots + (-1)^{n-2} C_{n-2}^{n-2} C_{m-1-(n-2)k}^{n-1}
-     ]
-     个。</p>
+     $$</p>
+<div class="highlight"><pre><span></span><code> 个。
+</code></pre></div>
 </li>
 <li>
 <p><strong>二项式定理</strong><br />
-     [
+     $$
      (a+b)^n = C_n^0 a^n + C_n^1 a^{n-1} b + C_n^2 a^{n-2} b^2 + \dots + C_n^r a^{n-r} b^r + \dots + C_n^n b^n.
-     ]<br />
-     通项公式：<span class="arithmatex">\(T_{r+1} = C_n^r a^{n-r} b^r \quad (r=0,1,2,\dots,n)\)</span>。</p>
+     $$</p>
+<p>通项公式：<span class="arithmatex">\(T_{r+1} = C_n^r a^{n-r} b^r \quad (r=0,1,2,\dots,n)\)</span>。</p>
 </li>
 </ol>
 <hr />
@@ -3154,39 +3169,39 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 <ol>
 <li>
 <p><strong>等可能性事件的概率</strong><br />
-     [
+     $$
      P(A) = \frac{m}{n}.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>互斥事件 <span class="arithmatex">\(A,B\)</span> 分别发生的概率的和</strong><br />
-     [
+     $$
      P(A+B) = P(A) + P(B).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong><span class="arithmatex">\(n\)</span> 个互斥事件分别发生的概率的和</strong><br />
-     [
+     $$
      P(A_1+A_2+\dots+A_n) = P(A_1)+P(A_2)+\dots+P(A_n).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>独立事件 <span class="arithmatex">\(A,B\)</span> 同时发生的概率</strong><br />
-     [
+     $$
      P(A \cdot B) = P(A) \cdot P(B).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong><span class="arithmatex">\(n\)</span> 个独立事件同时发生的概率</strong><br />
-     [
+     $$
      P(A_1 \cdot A_2 \cdots A_n) = P(A_1) \cdot P(A_2) \cdots P(A_n).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong><span class="arithmatex">\(n\)</span> 次独立重复试验中某事件恰好发生 <span class="arithmatex">\(k\)</span> 次的概率</strong><br />
-     [
+     $$
      P_n(k) = C_n^k p^k (1-p)^{n-k}.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>离散型随机变量的分布列的两个性质</strong><br />
@@ -3195,9 +3210,9 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 </li>
 <li>
 <p><strong>数学期望</strong><br />
-     [
+     $$
      E\xi = x_1 P_1 + x_2 P_2 + \dots + x_n P_n + \dots
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>数学期望的性质</strong><br />
@@ -3207,15 +3222,15 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 </li>
 <li>
 <p><strong>方差</strong><br />
-     [
+     $$
      D\xi = (x_1 - E\xi)^2 P_1 + (x_2 - E\xi)^2 P_2 + \dots + (x_n - E\xi)^2 P_n + \dots
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>标准差</strong><br />
-     [
+     $$
      \sigma\xi = \sqrt{D\xi}.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>方差的性质</strong><br />
@@ -3225,49 +3240,49 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 </li>
 <li>
 <p><strong>方差与期望的关系</strong><br />
-     [
+     $$
      D\xi = E\xi^2 - (E\xi)^2.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>正态分布密度函数</strong><br />
-     [
+     $$
      f(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}, \quad x\in(-\infty,+\infty),
-     ]
-     其中 <span class="arithmatex">\(\mu,\sigma\ (\sigma&gt;0)\)</span> 分别为均值与标准差。</p>
+     $$</p>
+<p>其中 <span class="arithmatex">\(\mu,\sigma\ (\sigma&gt;0)\)</span> 分别为均值与标准差。</p>
 </li>
 <li>
 <p><strong>标准正态分布密度函数</strong><br />
-     [
+     $$
      f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}, \quad x\in(-\infty,+\infty).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>正态分布的概率计算</strong><br />
      对于 <span class="arithmatex">\(X \sim N(\mu,\sigma^2)\)</span>，<br />
-     [
+     $$
      P(X &lt; x) = \Phi\left(\frac{x-\mu}{\sigma}\right),
-     ]
-     [
-     P(x_1 &lt; X &lt; x_2) = \Phi\left(\frac{x_2-\mu}{\sigma}\right) - \Phi\left(\frac{x_1-\mu}{\sigma}\right).
-     ]</p>
+     $$</p>
+<p>$$
+ P(x_1 &lt; X &lt; x_2) = \Phi\left(\frac{x_2-\mu}{\sigma}\right) - \Phi\left(\frac{x_1-\mu}{\sigma}\right).
+ $$</p>
 </li>
 <li>
 <p><strong>回归直线方程</strong><br />
-     [
+     $$
      \hat{y} = a + bx,
-     ]
-     其中<br />
-     [
-     b = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x})^2} = \frac{\sum_{i=1}^n x_i y_i - n\bar{x}\bar{y}}{\sum_{i=1}^n x_i^2 - n\bar{x}^2},\quad a = \bar{y} - b\bar{x}.
-     ]</p>
+     $$</p>
+<p>其中<br />
+ $$
+ b = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x})^2} = \frac{\sum_{i=1}^n x_i y_i - n\bar{x}\bar{y}}{\sum_{i=1}^n x_i^2 - n\bar{x}^2},\quad a = \bar{y} - b\bar{x}.
+ $$</p>
 </li>
 <li>
 <p><strong>相关系数</strong><br />
-     [
+     $$
      r = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i=1}^n (x_i-\bar{x})^2} \sqrt{\sum_{i=1}^n (y_i-\bar{y})^2}} = \frac{\sum_{i=1}^n x_i y_i - n\bar{x}\bar{y}}{\sqrt{(\sum_{i=1}^n x_i^2 - n\bar{x}^2)(\sum_{i=1}^n y_i^2 - n\bar{y}^2)}}.
-     ]<br />
-<span class="arithmatex">\(|r| \leq 1\)</span>，且 <span class="arithmatex">\(|r|\)</span> 越接近 1，相关程度越大；越接近 0，相关程度越小。</p>
+     $$</p>
+<p><span class="arithmatex">\(|r| \leq 1\)</span>，且 <span class="arithmatex">\(|r|\)</span> 越接近 1，相关程度越大；越接近 0，相关程度越小。</p>
 </li>
 </ol>
 <hr />
@@ -3281,17 +3296,16 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 </li>
 <li>
 <p><strong>函数的极限定理</strong><br />
-     [
+     $$
      \lim_{x\to x_0} f(x) = a \Leftrightarrow \lim_{x\to x_0^-} f(x) = \lim_{x\to x_0^+} f(x) = a.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>函数的夹逼性定理</strong><br />
      如果函数 <span class="arithmatex">\(f(x),g(x),h(x)\)</span> 在点 <span class="arithmatex">\(x_0\)</span> 附近满足：<br />
      (1) <span class="arithmatex">\(g(x) \leq f(x) \leq h(x)\)</span>；<br />
      (2) <span class="arithmatex">\(\lim_{x\to x_0} g(x) = \lim_{x\to x_0} h(x) = a\)</span>（常数），<br />
-     则 <span class="arithmatex">\(\lim_{x\to x_0} f(x) = a\)</span>。
-该定理对单侧极限和 <span class="arithmatex">\(x\to\infty\)</span> 也成立。</p>
+     则 <span class="arithmatex">\(\lim_{x\to x_0} f(x) = a\)</span>。该定理对单侧极限和 <span class="arithmatex">\(x\to\infty\)</span> 也成立。</p>
 </li>
 <li>
 <p><strong>几个常用极限</strong><br />
@@ -3306,17 +3320,17 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 <li>
 <p><strong>函数极限的四则运算法则</strong><br />
      若 <span class="arithmatex">\(\lim_{x\to x_0} f(x)=a,\ \lim_{x\to x_0} g(x)=b\)</span>，则<br />
-     [
+     $$
      \lim_{x\to x_0} [f(x)\pm g(x)] = a\pm b,\quad \lim_{x\to x_0} [f(x)\cdot g(x)] = a\cdot b,\quad \lim_{x\to x_0} \frac{f(x)}{g(x)} = \frac{a}{b}\ (b\neq0).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>数列极限的四则运算法则</strong><br />
      若 <span class="arithmatex">\(\lim_{n\to\infty} a_n = a,\ \lim_{n\to\infty} b_n = b\)</span>，则<br />
-     [
+     $$
      \lim_{n\to\infty} (a_n\pm b_n) = a\pm b,\quad \lim_{n\to\infty} (a_n\cdot b_n) = a\cdot b,\quad \lim_{n\to\infty} \frac{a_n}{b_n} = \frac{a}{b}\ (b\neq0),
-     ]
-     且 <span class="arithmatex">\(\lim_{n\to\infty} (c\cdot a_n) = c\cdot a\)</span>（<span class="arithmatex">\(c\)</span> 为常数）。</p>
+     $$</p>
+<p>且 <span class="arithmatex">\(\lim_{n\to\infty} (c\cdot a_n) = c\cdot a\)</span>（<span class="arithmatex">\(c\)</span> 为常数）。</p>
 </li>
 </ol>
 <hr />
@@ -3324,34 +3338,34 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 <ol>
 <li>
 <p><strong>导数定义</strong><br />
-     [
+     $$
      f'(x_0) = \lim_{\Delta x\to0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>瞬时速度</strong><br />
-     [
+     $$
      v = s'(t) = \lim_{\Delta t\to0} \frac{s(t+\Delta t)-s(t)}{\Delta t}.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>瞬时加速度</strong><br />
-     [
+     $$
      a = v'(t) = \lim_{\Delta t\to0} \frac{v(t+\Delta t)-v(t)}{\Delta t}.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>导函数</strong><br />
-     [
+     $$
      f'(x) = \lim_{\Delta x\to0} \frac{f(x+\Delta x)-f(x)}{\Delta x}.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>导数的几何意义</strong><br />
      函数 <span class="arithmatex">\(y=f(x)\)</span> 在点 <span class="arithmatex">\(x_0\)</span> 处的导数 <span class="arithmatex">\(f'(x_0)\)</span> 是曲线 <span class="arithmatex">\(y=f(x)\)</span> 在点 <span class="arithmatex">\(P(x_0,f(x_0))\)</span> 处切线的斜率，切线方程为<br />
-     [
+     $$
      y - y_0 = f'(x_0)(x-x_0).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>几种常见函数的导数</strong><br />
@@ -3370,9 +3384,9 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 <li>
 <p><strong>复合函数的求导法则</strong><br />
      设函数 <span class="arithmatex">\(u=\phi(x)\)</span> 在点 <span class="arithmatex">\(x\)</span> 处可导，函数 <span class="arithmatex">\(y=f(u)\)</span> 在对应点 <span class="arithmatex">\(u\)</span> 处可导，则复合函数 <span class="arithmatex">\(y=f(\phi(x))\)</span> 在点 <span class="arithmatex">\(x\)</span> 处可导，且<br />
-     [
+     $$
      y_x' = y_u' \cdot u_x' \quad \text{或} \quad \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>常用的近似计算公式（当 <span class="arithmatex">\(|x|\)</span> 很小时）</strong><br />
@@ -3396,15 +3410,15 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 <ol>
 <li>
 <p><strong>复数的相等</strong><br />
-     [
+     $$
      a+bi = c+di \Leftrightarrow a=c,\ b=d \quad (a,b,c,d\in\mathbb{R}).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>复数的模</strong><br />
-     [
+     $$
      |z| = |a+bi| = \sqrt{a^2+b^2}.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>复数的四则运算法则</strong><br />
@@ -3421,16 +3435,16 @@ x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad
 </li>
 <li>
 <p><strong>复平面上的两点间的距离公式</strong><br />
-     [
+     $$
      d = |z_1-z_2| = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2} \quad (z_1=x_1+y_1 i,\ z_2=x_2+y_2 i).
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>向量的垂直</strong><br />
      非零复数 <span class="arithmatex">\(z_1=a+bi,\ z_2=c+di\)</span> 对应的向量分别是 <span class="arithmatex">\(\overrightarrow{OZ_1},\ \overrightarrow{OZ_2}\)</span>，则<br />
-     [
+     $$
      \overrightarrow{OZ_1} \perp \overrightarrow{OZ_2} \Leftrightarrow z_1 \cdot \overline{z_2} \text{ 为纯虚数} \Leftrightarrow a c + b d = 0.
-     ]</p>
+     $$</p>
 </li>
 <li>
 <p><strong>实系数一元二次方程的解</strong><br />
