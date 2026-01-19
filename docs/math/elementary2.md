@@ -621,9 +621,7 @@ window.MathJax = {
     $$
     \mathbf{a}\parallel\mathbf{b} \Leftrightarrow \mathbf{b} = \lambda\mathbf{a} \Leftrightarrow x_1 y_2 - x_2 y_1 = 0,
     $$
-
     $$
-
     \mathbf{a}\perp\mathbf{b} \Leftrightarrow \mathbf{a}\cdot\mathbf{b} = 0 \Leftrightarrow x_1 x_2 + y_1 y_2 = 0.
     $$
 
