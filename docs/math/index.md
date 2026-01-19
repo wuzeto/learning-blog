@@ -68,11 +68,9 @@
 
 > 则存在唯一的实数 $\xi$ 属于所有闭区间 $[a_n, b_n]$，且
 
-> $$
-
-> \lim_{n \to \infty} a_n = \lim_{n \to \infty} b_n = \xi
-
-> $$
+$$
+ \lim_{n \to \infty} a_n = \lim_{n \to \infty} b_n = \xi
+$$
 
 
 
@@ -90,11 +88,9 @@
 
 > 数列 $\{x_n\}$ 收敛的充要条件是：
 
-> $$
-
-> \forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall m, n > N: |x_n - x_m| < \varepsilon
-
-> $$
+$$
+ \forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall m, n > N: |x_n - x_m| < \varepsilon
+$$
 
 
 
@@ -128,19 +124,15 @@
 
 > 设 $\{y_n\}$ 严格单调趋于 $+\infty$，且
 
-> $$
+$$
+ \lim_{n \to \infty} \frac{x_n - x_{n-1}}{y_n - y_{n-1}} = L \quad (\text{有限或} \pm\infty)
+$$
 
-> \lim_{n \to \infty} \frac{x_n - x_{n-1}}{y_n - y_{n-1}} = L \quad (\text{有限或} \pm\infty)
+ 则
 
-> $$
-
-> 则
-
-> $$
-
-> \lim_{n \to \infty} \frac{x_n}{y_n} = L
-
-> $$
+$$
+ \lim_{n \to \infty} \frac{x_n}{y_n} = L
+$$
 
 
 
@@ -150,19 +142,15 @@
 
 > 若存在 $N_0$，当 $n > N_0$ 时，
 
-> $$
+$$ 
+a_n \leq b_n \leq c_n 
+$$
 
-> a_n \leq b_n \leq c_n
+ 且 $\lim_{n \to \infty} a_n = \lim_{n \to \infty} c_n = L$，则
 
-> $$
-
-> 且 $\lim_{n \to \infty} a_n = \lim_{n \to \infty} c_n = L$，则
-
-> $$
-
-> \lim_{n \to \infty} b_n = L
-
-> $$
+$$
+\lim_{n \to \infty} b_n = L
+$$
 
 
 
@@ -233,15 +221,10 @@
 <strong>解：</strong> 考虑积分 $\int_1^\infty \frac{dx}{x^p}$：
 
 $$
-
 \int_1^\infty \frac{dx}{x^p} = \begin{cases}
-
     \text{收敛}, & p > 1 \\
-
     \text{发散}, & p \leq 1
-
 \end{cases}
-
 $$
 
 故 $p$-级数当 $p > 1$ 时收敛，$p \leq 1$ 时发散。
@@ -300,13 +283,11 @@ $$
 
 > 当 D'Alembert 判别法失效时（即 $\lim \frac{a_{n+1}}{a_n} = 1$），考虑：
 
-> $$
+$$
+ \lim_{n \to \infty} n\left(1 - \frac{a_{n+1}}{a_n}\right) = R
+$$
 
-> \lim_{n \to \infty} n\left(1 - \frac{a_{n+1}}{a_n}\right) = R
 
-> $$
-
->
 
 > - 若 $R > 1$，则级数收敛
 
@@ -329,9 +310,7 @@ $$
 <strong>解：</strong> 比值 $\frac{a_{n+1}}{a_n} = \frac{2n+1}{2n+2} \cdot \frac{1}{2n+3} \to 1$，用 Raabe 判别法：
 
 $$
-
 n\left(1 - \frac{a_{n+1}}{a_n}\right) = n\left(1 - \frac{2n+1}{(2n+2)(2n+3)}\right) \to \frac{3}{2} > 1
-
 $$
 
 故级数收敛。
@@ -448,13 +427,11 @@ $$
 
 > 若 $\sum a_n$ 和 $\sum b_n$ 绝对收敛，其和分别为 $A$ 和 $B$，则它们的 Cauchy 乘积
 
-> $$
+$$
+ \sum_{n=0}^\infty c_n, \quad c_n = \sum_{k=0}^n a_k b_{n-k}
+$$
 
-> \sum_{n=0}^\infty c_n, \quad c_n = \sum_{k=0}^n a_k b_{n-k}
-
-> $$
-
-> 绝对收敛，且和为 $AB$。
+ 绝对收敛，且和为 $AB$。
 
 
 
@@ -488,13 +465,11 @@ $$
 
 > 无穷乘积 $\prod_{n=1}^\infty (1 + a_n)$ 称为收敛，如果部分乘积
 
-> $$
+$$
+ P_n = \prod_{k=1}^n (1 + a_k)
+$$
 
-> P_n = \prod_{k=1}^n (1 + a_k)
-
-> $$
-
-> 存在有限非零极限 $P \neq 0$。
+ 存在有限非零极限 $P \neq 0$。
 
 
 
@@ -504,11 +479,9 @@ $$
 
 > 无穷乘积 $\prod (1 + a_n)$ 收敛的充要条件是：对任意 $\varepsilon > 0$，存在 $N$ 使得对任意 $m > n > N$，
 
-> $$
-
-> \left| \prod_{k=n+1}^m (1 + a_k) - 1 \right| < \varepsilon
-
-> $$
+$$
+ \left| \prod_{k=n+1}^m (1 + a_k) - 1 \right| < \varepsilon
+$$
 
 
 
@@ -542,11 +515,9 @@ $$
 
 > 函数项级数 $\sum u_n(x)$ 在 $D$ 上一致收敛的充要条件是：
 
-> $$
-
-> \forall \varepsilon > 0, \exists N, \forall m > n > N, \forall x \in D: \left| \sum_{k=n+1}^m u_k(x) \right| < \varepsilon
-
-> $$
+$$
+ \forall \varepsilon > 0, \exists N, \forall m > n > N, \forall x \in D: \left| \sum_{k=n+1}^m u_k(x) \right| < \varepsilon
+$$
 
 
 
@@ -612,11 +583,9 @@ $$
 
 > 若 $u_n(x)$ 在 $[a,b]$ 上连续，且 $\sum u_n(x)$ 在 $[a,b]$ 上一致收敛于 $S(x)$，则
 
-> $$
-
-> \int_a^b S(x)dx = \sum_{n=1}^\infty \int_a^b u_n(x)dx
-
-> $$
+$$
+ \int_a^b S(x)dx = \sum_{n=1}^\infty \int_a^b u_n(x)dx
+$$
 
 
 
@@ -626,11 +595,9 @@ $$
 
 > 若 $u_n(x)$ 在 $[a,b]$ 上有连续导数，$\sum u_n(x)$ 在 $[a,b]$ 上收敛，且 $\sum u_n'(x)$ 在 $[a,b]$ 上一致收敛，则
 
-> $$
-
-> \frac{d}{dx} \left( \sum_{n=1}^\infty u_n(x) \right) = \sum_{n=1}^\infty u_n'(x)
-
-> $$
+$$
+ \frac{d}{dx} \left( \sum_{n=1}^\infty u_n(x) \right) = \sum_{n=1}^\infty u_n'(x)
+$$
 
 
 
@@ -704,13 +671,11 @@ $$
 
 > 设 $f(x)$ 是以 $2\pi$ 为周期的分段光滑函数，则其 Fourier 级数在每点 $x$ 处收敛于
 
-> $$
+$$
+ \frac{f(x+0) + f(x-0)}{2}
+$$
 
-> \frac{f(x+0) + f(x-0)}{2}
-
-> $$
-
-> 特别地，在连续点处收敛于 $f(x)$。
+ 特别地，在连续点处收敛于 $f(x)$。
 
 
 
@@ -718,23 +683,18 @@ $$
 
 
 
-> $$
-
-> a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx \, dx, \quad 
-
+$$
+ a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx \, dx, \quad 
 > b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx \, dx
+$$
 
-> $$
 
->
 
 > Fourier 级数为：
 
-> $$
-
-> \frac{a_0}{2} + \sum_{n=1}^\infty (a_n \cos nx + b_n \sin nx)
-
-> $$
+$$
+ \frac{a_0}{2} + \sum_{n=1}^\infty (a_n \cos nx + b_n \sin nx)
+$$
 
 
 
@@ -748,11 +708,9 @@ $$
 
 > 若 $f(x)$ 平方可积，则
 
-> $$
-
-> \frac{1}{\pi} \int_{-\pi}^{\pi} [f(x)]^2 dx = \frac{a_0^2}{2} + \sum_{n=1}^\infty (a_n^2 + b_n^2)
-
-> $$
+$$
+ \frac{1}{\pi} \int_{-\pi}^{\pi} [f(x)]^2 dx = \frac{a_0^2}{2} + \sum_{n=1}^\infty (a_n^2 + b_n^2)
+$$
 
 
 
@@ -762,13 +720,11 @@ $$
 
 > 对任意两个平方可积函数 $f(x)$ 和 $g(x)$，有
 
-> $$
+$$
+ \frac{1}{\pi} \int_{-\pi}^{\pi} f(x)g(x)dx = \frac{a_0\alpha_0}{2} + \sum_{n=1}^\infty (a_n\alpha_n + b_n\beta_n)
+$$
 
-> \frac{1}{\pi} \int_{-\pi}^{\pi} f(x)g(x)dx = \frac{a_0\alpha_0}{2} + \sum_{n=1}^\infty (a_n\alpha_n + b_n\beta_n)
-
-> $$
-
-> 其中 $a_n, b_n$ 是 $f(x)$ 的 Fourier 系数，$\alpha_n, \beta_n$ 是 $g(x)$ 的 Fourier 系数。
+ 其中 $a_n, b_n$ 是 $f(x)$ 的 Fourier 系数，$\alpha_n, \beta_n$ 是 $g(x)$ 的 Fourier 系数。
 
 
 
@@ -831,9 +787,7 @@ $$
 **Cauchy-Hadamard公式：**
 
 $$
-
 R = \frac{1}{\limsup_{n \to \infty} \sqrt[n]{|a_n|}}
-
 $$
 
 
@@ -841,9 +795,7 @@ $$
 **比值判别法：**
 
 $$
-
 R = \lim_{n \to \infty} \left| \frac{a_n}{a_{n+1}} \right| \quad (\text{如果极限存在})
-
 $$
 
 
@@ -851,8 +803,6 @@ $$
 **余项估计：**
 
 $$
-
 |R_n| \leq \frac{M}{(n+1)!} |x-x_0|^{n+1} \quad (\text{Taylor级数})
-
 $$
 
