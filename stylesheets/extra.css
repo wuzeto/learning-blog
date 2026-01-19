@@ -1,13 +1,303 @@
-/* 让所有 H1 标题变成炫酷的渐变色 */
-h1 {
-    background: linear-gradient(to right, #d946ef, #8b5cf6, #06b6d4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
+:root {
+    --neon-blue: #00f3ff;
+    --neon-purple: #bc13fe;
+    --neon-green: #0aff0a;
+    --neon-orange: #ff9e00;
+    --dark-bg: #050510;
+    --card-bg: rgba(10, 20, 40, 0.6);
+    --border-color: rgba(0, 243, 255, 0.3);
+    --font-tech: 'Orbitron', sans-serif;
+    --font-code: 'JetBrains Mono', monospace;
   }
   
-  /* 修改侧边栏背景，增加毛玻璃效果 */
-  .md-sidebar {
-      background-color: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(10px);
+  /* 基础重置与容器 */
+  .matrix-container {
+    position: relative;
+    min-height: 100vh;
+    background-color: var(--dark-bg);
+    color: #eee;
+    font-family: var(--font-code);
+    overflow: hidden;
+    padding: 40px 20px;
+  }
+  
+  /* 动态背景 */
+  .bg-layer {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+    perspective: 1000px;
+    overflow: hidden;
+  }
+  
+  .stars {
+    width: 2px; height: 2px;
+    background: transparent;
+    box-shadow: 100px 200px #fff, 400px 300px #fff, 700px 100px #fff; /* 简化版星空，建议使用JS生成更多 */
+    animation: twinkle 5s infinite;
+  }
+  
+  .grid-floor {
+    position: absolute;
+    bottom: -20%;
+    left: -50%;
+    width: 200%;
+    height: 80%;
+    background-image: 
+      linear-gradient(var(--border-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: rotateX(60deg);
+    animation: grid-move 20s linear infinite;
+    mask-image: linear-gradient(to top, rgba(0,0,0,1), transparent 80%);
+    opacity: 0.2;
+  }
+  
+  .cyber-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, #000 120%);
+    pointer-events: none;
+  }
+  
+  /* 头部设计 */
+  .cyber-header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .glitch-text {
+    font-family: var(--font-tech);
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+    letter-spacing: 4px;
+    margin: 0;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: var(--neon-blue);
+    opacity: 0.8;
+    margin-top: 10px;
+  }
+  
+  /* 导航卡片 - 核心视觉 */
+  .nav-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+  }
+  
+  .cyber-card {
+    position: relative;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 30px;
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* 赛博朋克切角 */
+    clip-path: polygon(
+      20px 0, 100% 0, 
+      100% calc(100% - 20px), calc(100% - 20px) 100%, 
+      0 100%, 0 20px
+    );
+    --hue: var(--card-hue, 210);
+    --main-color: hsl(var(--hue), 80%, 60%);
+  }
+  
+  .cyber-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 30px hsla(var(--hue), 80%, 60%, 0.4);
+    border-color: var(--main-color);
+  }
+  
+  .cyber-card h3 {
+    font-family: var(--font-tech);
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin: 15px 0 10px;
+  }
+  
+  .card-icon {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px var(--main-color);
+  }
+  
+  .cyber-card p {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 20px;
+  }
+  
+  /* 进度条装饰 */
+  .status-bar {
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .bar-fill {
+    height: 100%;
+    background: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+    position: relative;
+  }
+  
+  /* 扫描线特效 */
+  .card-glare {
+    position: absolute;
+    top: -100%; left: -100%;
+    width: 300%; height: 300%;
+    background: linear-gradient(
+      45deg, 
+      transparent 45%, 
+      rgba(255,255,255,0.1) 50%, 
+      transparent 55%
+    );
+    transition: 0.5s;
+    pointer-events: none;
+  }
+  .cyber-card:hover .card-glare {
+    top: -50%; left: -50%;
+  }
+  
+  /* 角落装饰标记 */
+  .card-deco::before, .card-deco::after {
+    content: '';
+    position: absolute;
+    width: 10px; height: 10px;
+    border: 2px solid var(--main-color);
+    transition: 0.3s;
+    opacity: 0.5;
+  }
+  .card-deco::before { top: 0; right: 0; border-bottom: none; border-left: none; }
+  .card-deco::after { bottom: 0; left: 0; border-top: none; border-right: none; }
+  
+  /* 模块分类部分 */
+  .modules-section {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-family: var(--font-tech);
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    display: inline-block;
+    position: relative;
+    color: #fff;
+  }
+  
+  .hex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .module-capsule {
+    padding: 10px 25px;
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+    text-decoration: none;
+    border-radius: 50px; /* 胶囊状 */
+    background: rgba(0, 243, 255, 0.05);
+    font-size: 0.9rem;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .module-capsule:hover {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 20px var(--neon-blue);
+  }
+  
+  /* 终端控制台 */
+  .terminal-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.8);
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    font-family: 'Courier New', monospace;
+  }
+  
+  .terminal-header {
+    background: #222;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #333;
+  }
+  
+  .lights span {
+    display: inline-block;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    background: #ff5f56;
+  }
+  .lights span:nth-child(2) { background: #ffbd2e; }
+  .lights span:nth-child(3) { background: #27c93f; }
+  
+  .terminal-header .title {
+    color: #999;
+    margin-left: 20px;
+    font-size: 0.8rem;
+  }
+  
+  .terminal-body {
+    padding: 20px;
+    color: #0f0;
+    height: 150px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+  }
+  
+  .log-entry { margin-bottom: 5px; opacity: 0.8; }
+  .blink { animation: blink 1s infinite; }
+  
+  /* 动画定义 */
+  @keyframes grid-move {
+    0% { transform: rotateX(60deg) translateY(0); }
+    100% { transform: rotateX(60deg) translateY(50px); }
+  }
+  
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  /* 响应式调整 */
+  @media (max-width: 768px) {
+    .glitch-text { font-size: 2rem; }
+    .nav-grid { grid-template-columns: 1fr; }
   }
