@@ -195,13 +195,9 @@ $\iint_D f(x,y)g(x,y) \, d\sigma = f(\xi, \eta) \iint_D g(x,y) \, d\sigma$
 2. Jacobi 行列式在 $D'$ 上不为零：
 
    $J = \frac{\partial(x,y)}{\partial(u,v)} = 
-
    \begin{vmatrix}
-
       \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\
-
       \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
-
    \end{vmatrix} \neq 0$
 
 则

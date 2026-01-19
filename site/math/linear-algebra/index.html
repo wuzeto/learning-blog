@@ -2177,11 +2177,11 @@ window.MathJax = {
 <p><span class="arithmatex">\(\det \begin{pmatrix} A &amp; B \\ 0 &amp; D \end{pmatrix} = \det(A) \det(D)\)</span></p>
 <p><span class="arithmatex">\(\det \begin{pmatrix} A &amp; 0 \\ C &amp; D \end{pmatrix} = \det(A) \det(D)\)</span></p>
 <p><strong>更一般的分块行列式</strong></p>
-<p>$\det \begin{pmatrix} A &amp; B \ C &amp; D \end{pmatrix} = </p>
-<p>\begin{cases}</p>
-<p>\det(A) \det(D - CA^{-1}B), &amp; \text{若 } A \text{ 可逆} \</p>
-<p>\det(D) \det(A - BD^{-1}C), &amp; \text{若 } D \text{ 可逆}</p>
-<p>\end{cases}$</p>
+<p><span class="arithmatex">\(\det \begin{pmatrix} A &amp; B \\ C &amp; D \end{pmatrix} = 
+\begin{cases}
+   \det(A) \det(D - CA^{-1}B), &amp; \text{若 } A \text{ 可逆} \\
+   \det(D) \det(A - BD^{-1}C), &amp; \text{若 } D \text{ 可逆}
+\end{cases}\)</span></p>
 <blockquote>
 <p><strong>示例</strong></p>
 <p>计算：</p>
