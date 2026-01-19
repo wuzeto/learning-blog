@@ -125,6 +125,8 @@ nav:
     - 线性代数: math/linear-algebra.md
     - 概率论: math/probability.md
     - 统计学: math/statistics.md
+    - 离散数学: math/discrete.md
+    - 凸优化: math/convex.md
   - 💻 计算机科学:
     - 计算机总览: cs/index.md
     - C语言基础: c++/learning.md
