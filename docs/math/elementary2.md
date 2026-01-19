@@ -201,7 +201,6 @@ window.MathJax = {
         $$
         (x_1-x_2)[f(x_1)-f(x_2)] > 0 \Leftrightarrow \frac{f(x_1)-f(x_2)}{x_1-x_2} > 0 \Leftrightarrow f(x) \text{ 在 } [a,b] \text{ 上单调递增};
         $$
-
         $$
         (x_1-x_2)[f(x_1)-f(x_2)] < 0 \Leftrightarrow \frac{f(x_1)-f(x_2)}{x_1-x_2} < 0 \Leftrightarrow f(x) \text{ 在 } [a,b] \text{ 上单调递减}.
         $$
