@@ -233,13 +233,9 @@ $x = r\cos\theta, \quad y = r\sin\theta$
 则 Jacobi 行列式为：
 
 $J = \frac{\partial(x,y)}{\partial(r,\theta)} = 
-
 \begin{vmatrix}
-
    \cos\theta & -r\sin\theta \\
-
    \sin\theta & r\cos\theta
-
 \end{vmatrix} = r$
 
 换元公式：
@@ -273,13 +269,9 @@ $x = ar\cos\theta, \quad y = br\sin\theta$
 则 Jacobi 行列式为：
 
 $J = \frac{\partial(x,y)}{\partial(r,\theta)} = 
-
 \begin{vmatrix}
-
    a\cos\theta & -ar\sin\theta \\
-
    b\sin\theta & br\cos\theta
-
 \end{vmatrix} = abr$
 
 换元公式：
@@ -317,13 +309,9 @@ $\iint_D f(x,y) \, dxdy = ab \int_0^{2\pi} \int_0^1 f(ar\cos\theta, br\sin\theta
 > Jacobi 行列式：
 
 > $J = \frac{\partial(x,y)}{\partial(u,v)} = 
-
 > \begin{vmatrix}
-
 >    \frac{1}{2} & \frac{1}{2} \\
-
 >    \frac{1}{2} & -\frac{1}{2}
-
 > \end{vmatrix} = -\frac{1}{2}$
 
 > 新区域：$0 \leq u \leq 1, -u \leq v \leq u$
@@ -687,15 +675,10 @@ $u(P_0) = \frac{1}{4\pi R^2} \oiint_{\partial B_R(P_0)} u \, dS = \frac{3}{4\pi 
 **微分算子**
 
 $\begin{aligned}
-
    \text{梯度：} & \quad \nabla u = \left( \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial u}{\partial z} \right) \\
-
    \text{散度：} & \quad \nabla \cdot \mathbf{F} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \\
-
    \text{旋度：} & \quad \nabla \times \mathbf{F} = \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}, \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}, \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \\
-
    \text{Laplace 算子：} & \quad \Delta u = \nabla \cdot (\nabla u) = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}
-
 \end{aligned}$
 
 
@@ -707,17 +690,11 @@ $\begin{aligned}
 **向量分析恒等式**
 
 $\begin{aligned}
-
    \nabla \cdot (\nabla \times \mathbf{F}) &= 0 \\
-
    \nabla \times (\nabla u) &= \mathbf{0} \\
-
    \nabla \cdot (u\mathbf{F}) &= u\nabla \cdot \mathbf{F} + \mathbf{F} \cdot \nabla u \\
-
    \nabla \times (u\mathbf{F}) &= u\nabla \times \mathbf{F} + \nabla u \times \mathbf{F} \\
-
    \nabla \cdot (\mathbf{F} \times \mathbf{G}) &= \mathbf{G} \cdot (\nabla \times \mathbf{F}) - \mathbf{F} \cdot (\nabla \times \mathbf{G})
-
 \end{aligned}$
 
 

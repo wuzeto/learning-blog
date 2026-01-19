@@ -2433,11 +2433,11 @@ window.MathJax = {
 <p>令</p>
 <p><span class="arithmatex">\(x = r\cos\theta, \quad y = r\sin\theta\)</span></p>
 <p>则 Jacobi 行列式为：</p>
-<p>$J = \frac{\partial(x,y)}{\partial(r,\theta)} = </p>
-<p>\begin{vmatrix}</p>
-<p>\cos\theta &amp; -r\sin\theta \</p>
-<p>\sin\theta &amp; r\cos\theta</p>
-<p>\end{vmatrix} = r$</p>
+<p><span class="arithmatex">\(J = \frac{\partial(x,y)}{\partial(r,\theta)} = 
+\begin{vmatrix}
+   \cos\theta &amp; -r\sin\theta \\
+   \sin\theta &amp; r\cos\theta
+\end{vmatrix} = r\)</span></p>
 <p>换元公式：</p>
 <p><span class="arithmatex">\(\iint_D f(x,y) \, dxdy = \iint_{D'} f(r\cos\theta, r\sin\theta) r \, drd\theta\)</span></p>
 <blockquote>
@@ -2451,11 +2451,11 @@ window.MathJax = {
 <p>对于椭圆区域 <span class="arithmatex">\(\frac{x^2}{a^2} + \frac{y^2}{b^2} \leq 1\)</span>，令：</p>
 <p><span class="arithmatex">\(x = ar\cos\theta, \quad y = br\sin\theta\)</span></p>
 <p>则 Jacobi 行列式为：</p>
-<p>$J = \frac{\partial(x,y)}{\partial(r,\theta)} = </p>
-<p>\begin{vmatrix}</p>
-<p>a\cos\theta &amp; -ar\sin\theta \</p>
-<p>b\sin\theta &amp; br\cos\theta</p>
-<p>\end{vmatrix} = abr$</p>
+<p><span class="arithmatex">\(J = \frac{\partial(x,y)}{\partial(r,\theta)} = 
+\begin{vmatrix}
+   a\cos\theta &amp; -ar\sin\theta \\
+   b\sin\theta &amp; br\cos\theta
+\end{vmatrix} = abr\)</span></p>
 <p>换元公式：</p>
 <p><span class="arithmatex">\(\iint_D f(x,y) \, dxdy = ab \int_0^{2\pi} \int_0^1 f(ar\cos\theta, br\sin\theta) r \, drd\theta\)</span></p>
 <h3 id="_10">一般变量替换<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
@@ -2480,11 +2480,11 @@ window.MathJax = {
 <p>解：令 <span class="arithmatex">\(u = x+y, v = x-y\)</span>，则：</p>
 <p><span class="arithmatex">\(x = \frac{u+v}{2}, \quad y = \frac{u-v}{2}\)</span></p>
 <p>Jacobi 行列式：</p>
-<p>$J = \frac{\partial(x,y)}{\partial(u,v)} = </p>
-<p>\begin{vmatrix}</p>
-<p>\frac{1}{2} &amp; \frac{1}{2} \</p>
-<p>\frac{1}{2} &amp; -\frac{1}{2}</p>
-<p>\end{vmatrix} = -\frac{1}{2}$</p>
+<p><span class="arithmatex">\(J = \frac{\partial(x,y)}{\partial(u,v)} = 
+\begin{vmatrix}
+   \frac{1}{2} &amp; \frac{1}{2} \\
+   \frac{1}{2} &amp; -\frac{1}{2}
+\end{vmatrix} = -\frac{1}{2}\)</span></p>
 <p>新区域：<span class="arithmatex">\(0 \leq u \leq 1, -u \leq v \leq u\)</span></p>
 <p><span class="arithmatex">\(\iint_D (x+y)^2 \, dxdy = \int_0^1 \int_{-u}^u u^2 \cdot \frac{1}{2} \, dvdu = \frac{1}{2} \int_0^1 u^2 \cdot 2u \, du = \int_0^1 u^3 \, du = \frac{1}{4}\)</span></p>
 </blockquote>
@@ -2644,21 +2644,21 @@ window.MathJax = {
 <p><span class="arithmatex">\(\oint_{\partial S} \mathbf{F} \cdot d\mathbf{r} = \iint_S (\nabla \times \mathbf{F}) \cdot \mathbf{n} \, dS\)</span></p>
 <h3 id="_20">微分算子关系<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
 <p><strong>微分算子</strong></p>
-<p>$\begin{aligned}</p>
-<p>\text{梯度：} &amp; \quad \nabla u = \left( \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial u}{\partial z} \right) \</p>
-<p>\text{散度：} &amp; \quad \nabla \cdot \mathbf{F} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \</p>
-<p>\text{旋度：} &amp; \quad \nabla \times \mathbf{F} = \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}, \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}, \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \</p>
-<p>\text{Laplace 算子：} &amp; \quad \Delta u = \nabla \cdot (\nabla u) = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}</p>
-<p>\end{aligned}$</p>
+<p><span class="arithmatex">\(\begin{aligned}
+   \text{梯度：} &amp; \quad \nabla u = \left( \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial u}{\partial z} \right) \\
+   \text{散度：} &amp; \quad \nabla \cdot \mathbf{F} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \\
+   \text{旋度：} &amp; \quad \nabla \times \mathbf{F} = \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}, \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}, \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \\
+   \text{Laplace 算子：} &amp; \quad \Delta u = \nabla \cdot (\nabla u) = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}
+\end{aligned}\)</span></p>
 <h3 id="_21">重要恒等式<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
 <p><strong>向量分析恒等式</strong></p>
-<p>$\begin{aligned}</p>
-<p>\nabla \cdot (\nabla \times \mathbf{F}) &amp;= 0 \</p>
-<p>\nabla \times (\nabla u) &amp;= \mathbf{0} \</p>
-<p>\nabla \cdot (u\mathbf{F}) &amp;= u\nabla \cdot \mathbf{F} + \mathbf{F} \cdot \nabla u \</p>
-<p>\nabla \times (u\mathbf{F}) &amp;= u\nabla \times \mathbf{F} + \nabla u \times \mathbf{F} \</p>
-<p>\nabla \cdot (\mathbf{F} \times \mathbf{G}) &amp;= \mathbf{G} \cdot (\nabla \times \mathbf{F}) - \mathbf{F} \cdot (\nabla \times \mathbf{G})</p>
-<p>\end{aligned}$</p>
+<p><span class="arithmatex">\(\begin{aligned}
+   \nabla \cdot (\nabla \times \mathbf{F}) &amp;= 0 \\
+   \nabla \times (\nabla u) &amp;= \mathbf{0} \\
+   \nabla \cdot (u\mathbf{F}) &amp;= u\nabla \cdot \mathbf{F} + \mathbf{F} \cdot \nabla u \\
+   \nabla \times (u\mathbf{F}) &amp;= u\nabla \times \mathbf{F} + \nabla u \times \mathbf{F} \\
+   \nabla \cdot (\mathbf{F} \times \mathbf{G}) &amp;= \mathbf{G} \cdot (\nabla \times \mathbf{F}) - \mathbf{F} \cdot (\nabla \times \mathbf{G})
+\end{aligned}\)</span></p>
 <p><strong>无旋场与无散场</strong></p>
 <ul>
 <li>
