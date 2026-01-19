@@ -28,7 +28,6 @@ window.MathJax = {
 
 1. **元素与集合的关系**  
    $$
-
    x \in A \Leftrightarrow x \notin C_U A,\quad x \in C_U A \Leftrightarrow x \notin A.
    $$
 
