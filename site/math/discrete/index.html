@@ -886,6 +886,72 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十二章 图的着色
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十三章 支配集、覆盖集、独立集与匹配
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十四章 带权图及其应用
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十五章 代数系统
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十六章 半群与独异点
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十七章 群
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1762,6 +1828,72 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十二章 图的着色
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十三章 支配集、覆盖集、独立集与匹配
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十四章 带权图及其应用
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十五章 代数系统
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十六章 半群与独异点
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十七章 群
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2421,6 +2553,261 @@ m = 3n - 6.
 \sum_{i=3}^n (i-2)(r_i' - r_i'') = 0.
 ]</p>
 <p><strong>定理11.24</strong> 任何 4-连通平面图都是哈密顿图。</p>
+<hr />
+<h1 id="_15">《离散数学教程》定理汇总（续）<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h1>
+<h2 id="_16">第十二章 图的着色<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p><strong>定理12.1</strong> <span class="arithmatex">\(\chi(G) = 1\)</span> 当且仅当 <span class="arithmatex">\(G\)</span> 为零图。</p>
+<p><strong>定理12.2</strong> <span class="arithmatex">\(\chi(K_n) = n\)</span>。</p>
+<p><strong>定理12.3</strong> 奇圈和奇数阶轮图都是 3-色图，偶数阶轮图为 4-色图。</p>
+<p><strong>定理12.4</strong> 图 <span class="arithmatex">\(G\)</span> 是 2-可着色的当且仅当 <span class="arithmatex">\(G\)</span> 为二部图。<br />
+<strong>推论1</strong> <span class="arithmatex">\(\chi(G) = 2\)</span> 当且仅当 <span class="arithmatex">\(G\)</span> 为非零图的二部图。<br />
+<strong>推论2</strong> 图 <span class="arithmatex">\(G\)</span> 是 2-可着色的当且仅当 <span class="arithmatex">\(G\)</span> 中不含奇圈。</p>
+<p><strong>定理12.5</strong> 对于任意图 <span class="arithmatex">\(G\)</span>，有<br />
+[
+\chi(G) \leq \Delta(G) + 1.
+]</p>
+<p><strong>定理12.6</strong>（Brooks 定理）设连通图 <span class="arithmatex">\(G\)</span> 不是完全图 <span class="arithmatex">\(K_n\)</span>（<span class="arithmatex">\(n \geq 3\)</span>）也不是奇圈，则<br />
+[
+\chi(G) \leq \Delta(G).
+]</p>
+<p><strong>定理12.7</strong>（着色划分定理）对图 <span class="arithmatex">\(G\)</span> 进行 <span class="arithmatex">\(\chi(G)\)</span>-着色，设<br />
+[
+V_i = {v \mid v \in V(G) \text{ 着色为第 } i \text{ 种颜色} },
+]<br />
+则 <span class="arithmatex">\(\Pi = \{V_1, V_2, \dots, V_{\chi(G)}\}\)</span> 是 <span class="arithmatex">\(V(G)\)</span> 的一个划分。<br />
+（注：原文本中定理12.7 出现两次，第二次可能是关于等价关系的类似结论）</p>
+<p><strong>定理12.8</strong> 设 <span class="arithmatex">\(f(G,k)\)</span> 为图 <span class="arithmatex">\(G\)</span> 的色多项式，则<br />
+[
+f(K_n,k) = k(k-1)\dots(k-n+1), \quad f(N_n,k) = k^n,
+]<br />
+其中 <span class="arithmatex">\(K_n\)</span> 为完全图，<span class="arithmatex">\(N_n\)</span> 为零图。<br />
+<strong>推论</strong> <span class="arithmatex">\(f(K_n,k) = f(K_{n-1},k)(k-n+1) \ (n\geq 2)\)</span>.</p>
+<p><strong>定理12.9</strong>（色多项式递推公式）设无环无向图 <span class="arithmatex">\(G\)</span>：<br />
+(1) 若 <span class="arithmatex">\(e = (v_i,v_j) \notin E(G)\)</span>，则<br />
+[
+f(G,k) = f(G \cup (v_i,v_j), k) + f(G \setminus (v_i,v_j), k).
+]<br />
+(2) 若 <span class="arithmatex">\(e = (v_i,v_j) \in E(G)\)</span>，则<br />
+[
+f(G,k) = f(G - e, k) - f(G \setminus e, k).
+]<br />
+其中 <span class="arithmatex">\(G \setminus (v_i,v_j)\)</span> 表示将 <span class="arithmatex">\(v_i, v_j\)</span> 合并为一个顶点。</p>
+<p><strong>定理12.10</strong> 设 <span class="arithmatex">\(V_1\)</span> 是 <span class="arithmatex">\(G\)</span> 的点割集，且 <span class="arithmatex">\(G[V_1]\)</span> 是 <span class="arithmatex">\(|V_1|\)</span> 阶完全图，<span class="arithmatex">\(G - V_1\)</span> 有 <span class="arithmatex">\(p(p \geq 2)\)</span> 个连通分支 <span class="arithmatex">\(G_1, G_2, \dots, G_p\)</span>，令 <span class="arithmatex">\(H_i = G[V_1 \cup V(G_i)]\)</span>，则<br />
+[
+f(G,k) = \frac{\prod_{i=1}^p f(H_i,k)}{f(G[V_1],k)^{p-1}}.
+]</p>
+<p><strong>定理12.11</strong> <span class="arithmatex">\(T\)</span> 是 <span class="arithmatex">\(n\)</span> 阶树当且仅当 <span class="arithmatex">\(f(T,k) = k(k-1)^{n-1}\)</span>.</p>
+<p><strong>定理12.12</strong> 若 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n\)</span> 阶圈（<span class="arithmatex">\(n \geq 3\)</span>），则<br />
+[
+f(G,k) = (k-1)^n + (-1)^n(k-1).
+]</p>
+<p><strong>定理12.13</strong> 地图 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(k\)</span> 面可着色的当且仅当它的对偶图 <span class="arithmatex">\(G^*\)</span> 是 <span class="arithmatex">\(k\)</span> 可着色的。</p>
+<p><strong>定理12.14</strong> 设 <span class="arithmatex">\(G\)</span> 是连通的无环平面图，<span class="arithmatex">\(G^*\)</span> 是其对偶图，则 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(k\)</span> 可着色的当且仅当 <span class="arithmatex">\(G^*\)</span> 是 <span class="arithmatex">\(k\)</span> 面可着色的。</p>
+<p><strong>定理12.15</strong> 任何平面图都是 6 可着色的。</p>
+<p><strong>定理12.16</strong>（Heawood）任何平面图都是 5 可着色的。</p>
+<p><strong>定理12.17</strong>（Vizing）设 <span class="arithmatex">\(G\)</span> 是简单图，则<br />
+[
+\Delta(G) \leq \chi'(G) \leq \Delta(G) + 1,
+]<br />
+其中 <span class="arithmatex">\(\chi'(G)\)</span> 是边色数。</p>
+<hr />
+<h2 id="_17">第十三章 支配集、覆盖集、独立集与匹配<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<p><strong>定理13.1</strong> 设无向图 <span class="arithmatex">\(G\)</span> 中无孤立顶点，<span class="arithmatex">\(V_1^*\)</span> 为 <span class="arithmatex">\(G\)</span> 的一个极小支配集，则存在另一个极小支配集 <span class="arithmatex">\(V_2^*\)</span>，使得 <span class="arithmatex">\(V_1^* \cap V_2^* = \emptyset\)</span>.</p>
+<p><strong>定理13.2</strong> 设无向图 <span class="arithmatex">\(G\)</span> 中无孤立顶点，<span class="arithmatex">\(V^*\)</span> 为 <span class="arithmatex">\(G\)</span> 中极大独立集，则 <span class="arithmatex">\(V^*\)</span> 是 <span class="arithmatex">\(G\)</span> 的极小支配集。</p>
+<p><strong>定理13.3</strong> 设无向图 <span class="arithmatex">\(G = (V,E)\)</span> 中无孤立顶点，<span class="arithmatex">\(V^* \subset V\)</span>，则 <span class="arithmatex">\(V^*\)</span> 为 <span class="arithmatex">\(G\)</span> 的点覆盖集当且仅当 <span class="arithmatex">\(\overline{V^*} = V - V^*\)</span> 为 <span class="arithmatex">\(G\)</span> 的点独立集。<br />
+<strong>推论</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n\)</span> 阶无孤立点的无向图，<span class="arithmatex">\(V^*\)</span> 是 <span class="arithmatex">\(G\)</span> 的极小（最小）点覆盖集当且仅当 <span class="arithmatex">\(\overline{V^*}\)</span> 是 <span class="arithmatex">\(G\)</span> 的极大（最大）点独立集，且有<br />
+[
+\alpha_0 + \beta_0 = n,
+]<br />
+其中 <span class="arithmatex">\(\alpha_0\)</span> 为点覆盖数，<span class="arithmatex">\(\beta_0\)</span> 为点独立数。</p>
+<p><strong>定理13.4</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n\)</span> 阶无向图，<span class="arithmatex">\(V^*\)</span> 为 <span class="arithmatex">\(G\)</span> 中团当且仅当 <span class="arithmatex">\(V^*\)</span> 为 <span class="arithmatex">\(\overline{G}\)</span> 中的独立集。<br />
+<strong>推论</strong> 设 <span class="arithmatex">\(V^*\)</span> 为 <span class="arithmatex">\(G\)</span> 中极大（最大）团当且仅当 <span class="arithmatex">\(V^*\)</span> 为 <span class="arithmatex">\(\overline{G}\)</span> 中的极大（最大）独立集，从而 <span class="arithmatex">\(\nu_0(G) = \beta_0(\overline{G})\)</span>（团数等于补图的独立数）。</p>
+<p><strong>定理13.5</strong> 设 <span class="arithmatex">\(G\)</span> 为无孤立点的 <span class="arithmatex">\(n\)</span> 阶无向图：<br />
+(1) 设 <span class="arithmatex">\(M\)</span> 为最大匹配，对每个 <span class="arithmatex">\(M\)</span> 非饱和点 <span class="arithmatex">\(v\)</span>，取一条关联 <span class="arithmatex">\(v\)</span> 的边组成边集 <span class="arithmatex">\(N\)</span>，则 <span class="arithmatex">\(W = M \cup N\)</span> 为最小边覆盖集。<br />
+(2) 设 <span class="arithmatex">\(W_1\)</span> 为最小边覆盖集，若 <span class="arithmatex">\(W_1\)</span> 中存在相邻边，则移去其中一条，直至无相邻边为止，得到 <span class="arithmatex">\(M_1 = W_1 - N_1\)</span>，则 <span class="arithmatex">\(M_1\)</span> 为最大匹配。<br />
+(3) <span class="arithmatex">\(\alpha_1 + \beta_1 = n\)</span>，其中 <span class="arithmatex">\(\alpha_1\)</span> 为边覆盖数，<span class="arithmatex">\(\beta_1\)</span> 为匹配数。<br />
+<strong>推论</strong> 设 <span class="arithmatex">\(M\)</span> 为匹配，<span class="arithmatex">\(W\)</span> 为边覆盖，则 <span class="arithmatex">\(|M| \leq |W|\)</span>，等号成立时 <span class="arithmatex">\(M\)</span> 为完美匹配且 <span class="arithmatex">\(W\)</span> 为最小边覆盖。</p>
+<p><strong>定理13.6</strong> 设 <span class="arithmatex">\(G\)</span> 为无孤立点的 <span class="arithmatex">\(n\)</span> 阶无向图，<span class="arithmatex">\(M\)</span> 为匹配，<span class="arithmatex">\(N\)</span> 为点覆盖，<span class="arithmatex">\(Y\)</span> 为点独立集，<span class="arithmatex">\(W\)</span> 为边覆盖，则<br />
+(1) <span class="arithmatex">\(|M| \leq |N|\)</span>，<br />
+(2) <span class="arithmatex">\(|Y| \leq |W|\)</span>，<br />
+等号成立时分别为最大匹配、最小点覆盖、最大点独立集、最小边覆盖。<br />
+<strong>推论</strong> <span class="arithmatex">\(\beta_1 \leq \alpha_0,\quad \beta_0 \leq \alpha_1\)</span>.</p>
+<p><strong>定理13.7</strong> 设 <span class="arithmatex">\(M_1, M_2\)</span> 为 <span class="arithmatex">\(G\)</span> 中两个不同的匹配，则 <span class="arithmatex">\(G[M_1 \oplus M_2]\)</span> 的每个连通分支或为由 <span class="arithmatex">\(M_1, M_2\)</span> 中的边组成的交错圈，或为交错路径。</p>
+<p><strong>定理13.8</strong> 设 <span class="arithmatex">\(M\)</span> 为图 <span class="arithmatex">\(G\)</span> 中的一个匹配，<span class="arithmatex">\(\Gamma\)</span> 为 <span class="arithmatex">\(G\)</span> 中关于 <span class="arithmatex">\(M\)</span> 的可增广路径，则 <span class="arithmatex">\(M' = M \oplus E(\Gamma)\)</span> 仍为匹配，且 <span class="arithmatex">\(|M'| = |M| + 1\)</span>.</p>
+<p><strong>定理13.9</strong>（Berge）<span class="arithmatex">\(M\)</span> 为 <span class="arithmatex">\(G\)</span> 中最大匹配当且仅当 <span class="arithmatex">\(G\)</span> 中不含 <span class="arithmatex">\(M\)</span>-可增广路径。</p>
+<p><strong>定理13.10</strong>（Tutte）<span class="arithmatex">\(n\)</span> 阶无向图 <span class="arithmatex">\(G\)</span> 具有完美匹配当且仅当对任意 <span class="arithmatex">\(V' \subset V(G)\)</span>，<br />
+[
+p_#(G - V') \leq |V'|,
+]<br />
+其中 <span class="arithmatex">\(p_\#(G - V')\)</span> 表示 <span class="arithmatex">\(G - V'\)</span> 中奇数阶连通分支数。<br />
+<strong>推论</strong> 任何无桥 3-正则图都有完美匹配。</p>
+<p><strong>定理13.11</strong>（Hall 定理）设二部图 <span class="arithmatex">\(G = \langle V_1, V_2, E \rangle\)</span>，<span class="arithmatex">\(|V_1| \leq |V_2|\)</span>，则 <span class="arithmatex">\(G\)</span> 中存在 <span class="arithmatex">\(V_1\)</span> 到 <span class="arithmatex">\(V_2\)</span> 的完备匹配当且仅当对任意 <span class="arithmatex">\(S \subseteq V_1\)</span>，<br />
+[
+|S| \leq |N(S)|,
+]<br />
+其中 <span class="arithmatex">\(N(S)\)</span> 为 <span class="arithmatex">\(S\)</span> 的邻域。</p>
+<p><strong>定理13.12</strong> 设二部图 <span class="arithmatex">\(G = \langle V_1, V_2, E \rangle\)</span>，若 <span class="arithmatex">\(V_1\)</span> 中每个顶点至少关联 <span class="arithmatex">\(t(t \geq 1)\)</span> 条边，而 <span class="arithmatex">\(V_2\)</span> 中每个顶点至多关联 <span class="arithmatex">\(t\)</span> 条边，则 <span class="arithmatex">\(G\)</span> 中存在 <span class="arithmatex">\(V_1\)</span> 到 <span class="arithmatex">\(V_2\)</span> 的完备匹配。</p>
+<p><strong>定理13.13</strong> 设 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(k\)</span>-正则二部图，则 <span class="arithmatex">\(G\)</span> 中存在 <span class="arithmatex">\(k\)</span> 个边不重的完美匹配。<br />
+<strong>推论</strong> <span class="arithmatex">\(K_{k,k}\)</span> 中存在 <span class="arithmatex">\(k\)</span> 个边不重的完美匹配。</p>
+<p><strong>定理13.14</strong>（Kőnig–Egerváry）设 <span class="arithmatex">\(G = \langle V_1, V_2, E \rangle\)</span> 为无孤立点的二部图，则 <span class="arithmatex">\(\alpha_0 = \beta_1\)</span>（点覆盖数等于匹配数）。</p>
+<hr />
+<h2 id="_18">第十四章 带权图及其应用<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p><strong>定理14.1</strong>（关键路径定理）设 <span class="arithmatex">\(P_E = \{v \mid TE(v) \text{已算出}\}\)</span>，<span class="arithmatex">\(T_E = V - P_E\)</span>，若 <span class="arithmatex">\(T_E \neq \emptyset\)</span>，则存在 <span class="arithmatex">\(u \in T_E\)</span> 使得 <span class="arithmatex">\(\Gamma^{-}(u) \subseteq P_E\)</span>.</p>
+<p><strong>定理14.2</strong> 设 <span class="arithmatex">\(P_L = \{v \mid TL(v) \text{已算出}\}\)</span>，<span class="arithmatex">\(T_L = V - P_L\)</span>，若 <span class="arithmatex">\(T_L \neq \emptyset\)</span>，则存在 <span class="arithmatex">\(u \in T_L\)</span> 使得 <span class="arithmatex">\(\Gamma^{+}(u) \subseteq P_L\)</span>.</p>
+<p><strong>定理14.3</strong> 在关键路径问题中，<span class="arithmatex">\(TS(v_i) = 0\)</span> 当且仅当 <span class="arithmatex">\(v_i\)</span> 在关键路径上。</p>
+<p><strong>定理14.4</strong>（中国邮路问题）设 <span class="arithmatex">\(C\)</span> 是带正权无向连通图 <span class="arithmatex">\(G\)</span> 中的最优投递路线当且仅当对应的欧拉图 <span class="arithmatex">\(G^*\)</span> 满足：<br />
+(1) <span class="arithmatex">\(G\)</span> 的每条边在 <span class="arithmatex">\(G^*\)</span> 中至多重复一次；<br />
+(2) <span class="arithmatex">\(G\)</span> 的每个圈上重复边的权之和不超过该圈总权的一半。</p>
+<p><strong>定理14.5</strong> 设带正权无向连通图 <span class="arithmatex">\(G = \langle V,E,W \rangle\)</span>，<span class="arithmatex">\(V'\)</span> 为奇度顶点集，<span class="arithmatex">\(|V'| = 2k(k \geq 0)\)</span>，<span class="arithmatex">\(F = \{e \mid e \in E \text{ 在求最优回路时加了重复边} \}\)</span>，则 <span class="arithmatex">\(F\)</span> 的导出子图 <span class="arithmatex">\(G[F]\)</span> 可以表示为以 <span class="arithmatex">\(V'\)</span> 中顶点为起点与终点的 <span class="arithmatex">\(k\)</span> 条不交的最短路径之并。</p>
+<p><strong>定理14.6</strong>（最小生成树判定定理）设 <span class="arithmatex">\(T\)</span> 是无向连通带权图 <span class="arithmatex">\(G = \langle V,E,W \rangle\)</span> 的一棵生成树，则以下等价：<br />
+(1) <span class="arithmatex">\(T\)</span> 是最小生成树；<br />
+(2) 对任意 <span class="arithmatex">\(e \in E(T)\)</span>，设 <span class="arithmatex">\(S_e\)</span> 为 <span class="arithmatex">\(e\)</span> 对应的基本割集，则 <span class="arithmatex">\(e\)</span> 是 <span class="arithmatex">\(S_e\)</span> 中权最小的边；<br />
+(3) 对任意 <span class="arithmatex">\(e \in E(\overline{T})\)</span>（余树边），设 <span class="arithmatex">\(C_e\)</span> 为 <span class="arithmatex">\(e\)</span> 对应的基本回路，则 <span class="arithmatex">\(e\)</span> 是 <span class="arithmatex">\(C_e\)</span> 中权最大的边。</p>
+<p><strong>定理14.7</strong> 设 <span class="arithmatex">\(G\)</span> 为无向连通带权图，<span class="arithmatex">\(C\)</span> 为任意一个圈，<span class="arithmatex">\(e'\)</span> 是 <span class="arithmatex">\(C\)</span> 中权最大的边，则 <span class="arithmatex">\(G - e'\)</span> 中的最小生成树也是 <span class="arithmatex">\(G\)</span> 中的最小生成树。</p>
+<p><strong>定理14.8</strong> 设 <span class="arithmatex">\(G\)</span> 为无向连通带权图，<span class="arithmatex">\(S = (V_1, \overline{V}_1)\)</span> 为割集，<span class="arithmatex">\(e' \in S\)</span> 且 <span class="arithmatex">\(W(e') = \min_{e \in S} W(e)\)</span>，设 <span class="arithmatex">\(T'\)</span> 是以 <span class="arithmatex">\(e'\)</span> 为树枝的所有生成树中权最小的，则 <span class="arithmatex">\(T'\)</span> 是 <span class="arithmatex">\(G\)</span> 的最小生成树。</p>
+<p><strong>定理14.9</strong> 设 <span class="arithmatex">\(G\)</span> 为无向连通带权图，<span class="arithmatex">\(e\)</span> 是 <span class="arithmatex">\(G\)</span> 中非环且权最小的边，则 <span class="arithmatex">\(G\)</span> 中存在含 <span class="arithmatex">\(e\)</span> 的最小生成树。</p>
+<p><strong>定理14.10</strong> 设 <span class="arithmatex">\(G\)</span> 为无向连通带权图，<span class="arithmatex">\(e\)</span> 是 <span class="arithmatex">\(G\)</span> 中非环且权最小的边，设 <span class="arithmatex">\(G'\)</span> 是 <span class="arithmatex">\(G\)</span> 中短接 <span class="arithmatex">\(e\)</span> 的两个端点后得到的图，<span class="arithmatex">\(T'\)</span> 是 <span class="arithmatex">\(G'\)</span> 的最小生成树，则 <span class="arithmatex">\(T^* = G[E(T') \cup \{e\}]\)</span> 是 <span class="arithmatex">\(G\)</span> 的最小生成树。</p>
+<p><strong>定理14.11</strong> 在带权 <span class="arithmatex">\(w_1 \leq w_2 \leq \dots \leq w_t\)</span> 的所有最优二叉树中，存在以权为 <span class="arithmatex">\(w_1, w_2\)</span> 的两顶点 <span class="arithmatex">\(v_1, v_2\)</span> 为兄弟，且它们的层数均为树高 <span class="arithmatex">\(h\)</span> 的最优树。</p>
+<p><strong>定理14.12</strong>（Huffman 定理）设 <span class="arithmatex">\(T'\)</span> 是带权 <span class="arithmatex">\(w_1 + w_2, w_3, \dots, w_t\)</span> 的最优二叉树（<span class="arithmatex">\(w_1 \leq w_2 \leq \dots \leq w_t\)</span>），如果将 <span class="arithmatex">\(T'\)</span> 中带权 <span class="arithmatex">\(w_1 + w_2\)</span> 的树叶作为分支点，使其带两个儿子，权分别为 <span class="arithmatex">\(w_1\)</span> 和 <span class="arithmatex">\(w_2\)</span>，则所得树 <span class="arithmatex">\(T^*\)</span> 是带权 <span class="arithmatex">\(w_1, w_2, \dots, w_t\)</span> 的最优树。</p>
+<p><strong>定理14.13</strong> 设 <span class="arithmatex">\(r(r \geq 2)\)</span> 又正则树 <span class="arithmatex">\(T\)</span> 的分支点数为 <span class="arithmatex">\(i\)</span>，树叶数为 <span class="arithmatex">\(t\)</span>，则 <span class="arithmatex">\((r-1)i = t - 1\)</span>.</p>
+<p><strong>定理14.14</strong> 一棵二叉树可以产生一个前缀码。<br />
+<strong>推论</strong> 一棵二叉正则树可以产生唯一的一个前缀码。</p>
+<p><strong>定理14.15</strong> 设 <span class="arithmatex">\(G = \langle V,E,W \rangle\)</span> 是 <span class="arithmatex">\(n\)</span> 阶完全带权图，各边权为正，且满足三角不等式，则用最邻近法得到的哈密顿回路权 <span class="arithmatex">\(d\)</span> 与最短哈密顿回路权 <span class="arithmatex">\(d_0\)</span> 满足<br />
+[
+\frac{d}{d_0} \leq \frac{1}{2}(\lfloor \log_2 n \rfloor + 1).
+]</p>
+<p><strong>定理14.16</strong> 在满足三角不等式的无向完全带权图中，用最小生成树法得到的哈密顿回路权 <span class="arithmatex">\(d\)</span> 与最短哈密顿回路权 <span class="arithmatex">\(d_0\)</span> 满足<br />
+[
+\frac{d}{d_0} &lt; 2.
+]</p>
+<p><strong>定理14.17</strong> 在满足三角不等式的无向完全带权图中，用最小权匹配法得到的哈密顿回路权 <span class="arithmatex">\(d\)</span> 与最短哈密顿回路权 <span class="arithmatex">\(d_0\)</span> 满足<br />
+[
+\frac{d}{d_0} &lt; \frac{3}{2}.
+]</p>
+<hr />
+<h2 id="_19">第十五章 代数系统<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<p><strong>定理15.1</strong> 设 <span class="arithmatex">\(\circ\)</span> 为 <span class="arithmatex">\(A\)</span> 上的二元运算，若 <span class="arithmatex">\(\circ\)</span> 满足结合律，则 <span class="arithmatex">\(\circ\)</span> 满足广义结合律。</p>
+<p><strong>定理15.2</strong> 设 <span class="arithmatex">\(\circ\)</span> 为 <span class="arithmatex">\(A\)</span> 上的二元运算，若存在左单位元 <span class="arithmatex">\(e_l\)</span> 和右单位元 <span class="arithmatex">\(e_r\)</span>，则 <span class="arithmatex">\(e_l = e_r = e\)</span>，且 <span class="arithmatex">\(e\)</span> 是唯一的单位元。</p>
+<p><strong>定理15.3</strong> 设 <span class="arithmatex">\(\circ\)</span> 为 <span class="arithmatex">\(A\)</span> 上的二元运算，若存在左零元 <span class="arithmatex">\(\theta_l\)</span> 和右零元 <span class="arithmatex">\(\theta_r\)</span>，则 <span class="arithmatex">\(\theta_l = \theta_r = \theta\)</span>，且 <span class="arithmatex">\(\theta\)</span> 是唯一的零元。</p>
+<p><strong>定理15.4</strong> 设集合 <span class="arithmatex">\(A\)</span> 至少含有两个元素，<span class="arithmatex">\(e\)</span> 和 <span class="arithmatex">\(\theta\)</span> 分别为单位元和零元，则 <span class="arithmatex">\(e \neq \theta\)</span>.</p>
+<p><strong>定理15.5</strong> 设 <span class="arithmatex">\(\circ\)</span> 为 <span class="arithmatex">\(A\)</span> 上可结合的二元运算，单位元为 <span class="arithmatex">\(e\)</span>，若 <span class="arithmatex">\(x \in A\)</span> 存在左逆 <span class="arithmatex">\(y_l\)</span> 和右逆 <span class="arithmatex">\(y_r\)</span>，则 <span class="arithmatex">\(y_l = y_r = y\)</span>，且 <span class="arithmatex">\(y\)</span> 是 <span class="arithmatex">\(x\)</span> 唯一的逆元。</p>
+<p><strong>定理15.6</strong>（积代数的性质）设 <span class="arithmatex">\(V_1 = \langle A, o_{11}, \dots, o_{1r} \rangle\)</span>, <span class="arithmatex">\(V_2 = \langle B, o_{21}, \dots, o_{2r} \rangle\)</span> 是同类型的代数系统，<span class="arithmatex">\(V = V_1 \times V_2\)</span> 是积代数，则：<br />
+(1) 若 <span class="arithmatex">\(o_{1i}, o_{2i}\)</span> 可交换（或可结合、幂等），则 <span class="arithmatex">\(o_i\)</span> 在 <span class="arithmatex">\(V\)</span> 中也可交换（或可结合、幂等）；<br />
+(2) 若 <span class="arithmatex">\(o_{1i}\)</span> 对 <span class="arithmatex">\(o_{1j}\)</span> 可分配，且 <span class="arithmatex">\(o_{2i}\)</span> 对 <span class="arithmatex">\(o_{2j}\)</span> 可分配，则 <span class="arithmatex">\(o_i\)</span> 对 <span class="arithmatex">\(o_j\)</span> 在 <span class="arithmatex">\(V\)</span> 中也可分配；<br />
+(3) 若 <span class="arithmatex">\(o_{1i}, o_{1j}\)</span> 满足吸收律，且 <span class="arithmatex">\(o_{2i}, o_{2j}\)</span> 也满足吸收律，则 <span class="arithmatex">\(o_i, o_j\)</span> 在 <span class="arithmatex">\(V\)</span> 中也满足吸收律；<br />
+(4) 若 <span class="arithmatex">\(e_1, e_2\)</span> 分别是 <span class="arithmatex">\(V_1, V_2\)</span> 中关于 <span class="arithmatex">\(o_{1i}, o_{2i}\)</span> 的单位元，则 <span class="arithmatex">\((e_1, e_2)\)</span> 是 <span class="arithmatex">\(V\)</span> 中关于 <span class="arithmatex">\(o_i\)</span> 的单位元（零元类似）；<br />
+(5) 若 <span class="arithmatex">\(a, b\)</span> 的逆元分别为 <span class="arithmatex">\(a^{-1}, b^{-1}\)</span>，则 <span class="arithmatex">\((a^{-1}, b^{-1})\)</span> 是 <span class="arithmatex">\((a, b)\)</span> 在 <span class="arithmatex">\(V\)</span> 中的逆元。</p>
+<p><strong>定理15.7</strong> 设 <span class="arithmatex">\(\phi: V_1 \to V_2\)</span> 是同态，则 <span class="arithmatex">\(\phi(A)\)</span> 关于 <span class="arithmatex">\(V_2\)</span> 中的运算构成代数系统，且是 <span class="arithmatex">\(V_2\)</span> 的子代数，称为同态像。</p>
+<p><strong>定理15.8</strong> 设 <span class="arithmatex">\(\phi: V_1 \to V_2\)</span> 是满同态，<span class="arithmatex">\(o_i, o_j\)</span> 是 <span class="arithmatex">\(V_1\)</span> 中的二元运算，则：<br />
+(1) 若 <span class="arithmatex">\(o_i\)</span> 可交换（或可结合、幂等），则 <span class="arithmatex">\(\phi\)</span> 下的像运算也可交换（或可结合、幂等）；<br />
+(2) 若 <span class="arithmatex">\(o_i\)</span> 对 <span class="arithmatex">\(o_j\)</span> 可分配，则像运算也可分配；<br />
+(3) 若 <span class="arithmatex">\(o_i, o_j\)</span> 满足吸收律，则像运算也满足吸收律；<br />
+(4) 若 <span class="arithmatex">\(e\)</span> 是 <span class="arithmatex">\(V_1\)</span> 中关于 <span class="arithmatex">\(o_i\)</span> 的单位元，则 <span class="arithmatex">\(\phi(e)\)</span> 是 <span class="arithmatex">\(V_2\)</span> 中的单位元（零元类似）；<br />
+(5) 若 <span class="arithmatex">\(x^{-1}\)</span> 是 <span class="arithmatex">\(x\)</span> 的逆元，则 <span class="arithmatex">\(\phi(x^{-1})\)</span> 是 <span class="arithmatex">\(\phi(x)\)</span> 的逆元。</p>
+<p><strong>定理15.9</strong> 设 <span class="arithmatex">\(\sim\)</span> 是代数系统 <span class="arithmatex">\(V\)</span> 上的同余关系，则商代数 <span class="arithmatex">\(V/\sim\)</span> 继承 <span class="arithmatex">\(V\)</span> 的运算性质：交换、结合、幂等、分配、吸收等均保持，单位元、零元、逆元等也对应保持。</p>
+<p><strong>定理15.10</strong> 设 <span class="arithmatex">\(\phi: V_1 \to V_2\)</span> 是同态，则由 <span class="arithmatex">\(\phi\)</span> 导出的等价关系 <span class="arithmatex">\(\sim\)</span> 是 <span class="arithmatex">\(V_1\)</span> 上的同余关系。</p>
+<p><strong>定理15.11</strong> 设 <span class="arithmatex">\(\sim\)</span> 为 <span class="arithmatex">\(V\)</span> 上的同余关系，则自然映射 <span class="arithmatex">\(g: a \mapsto [a]\)</span> 是从 <span class="arithmatex">\(V\)</span> 到 <span class="arithmatex">\(V/\sim\)</span> 的满同态。</p>
+<p><strong>定理15.12</strong>（同态基本定理）设 <span class="arithmatex">\(\phi: V_1 \to V_2\)</span> 是同态，<span class="arithmatex">\(\sim\)</span> 是 <span class="arithmatex">\(\phi\)</span> 导出的同余关系，则<br />
+[
+V_1 / \sim \ \cong \ \phi(V_1).
+]</p>
+<hr />
+<h2 id="_20">第十六章 半群与独异点<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<p><strong>定理16.1</strong> 设 <span class="arithmatex">\(V = \langle S, \circ \rangle\)</span> 是半群，则 <span class="arithmatex">\(\forall x, y \in S\)</span>：<br />
+(1) <span class="arithmatex">\(x^n \circ x^m = x^{n+m}\)</span>； (2) <span class="arithmatex">\((x^n)^m = x^{nm}\)</span>.</p>
+<p><strong>定理16.2</strong> 设 <span class="arithmatex">\(\langle S, \circ \rangle\)</span> 是半群，则可以适当添加单位元 <span class="arithmatex">\(e\)</span>，将其扩张为独异点。</p>
+<p><strong>定理16.3</strong> 设 <span class="arithmatex">\(S\)</span> 为半群，<span class="arithmatex">\(V\)</span> 为独异点，则 <span class="arithmatex">\(S\)</span> 的任何子半群的交仍是子半群，<span class="arithmatex">\(V\)</span> 的任何子独异点的交仍是子独异点。</p>
+<p><strong>定理16.4</strong> 设 <span class="arithmatex">\(S\)</span> 为半群，<span class="arithmatex">\(B\)</span> 是 <span class="arithmatex">\(S\)</span> 的非空子集，令<br />
+[
+B^n = {b_1 b_2 \dots b_n \mid b_i \in B}, \quad \langle B \rangle = \bigcup_{n \in \mathbb{Z}^+} B^n,
+]<br />
+则 <span class="arithmatex">\(\langle B \rangle\)</span> 是由 <span class="arithmatex">\(B\)</span> 生成的子半群。</p>
+<p><strong>定理16.5</strong> 设 <span class="arithmatex">\(V = \langle S, \ast \rangle\)</span> 为半群，<span class="arithmatex">\(V' = \langle S^S, \circ \rangle\)</span> 是函数合成半群，则 <span class="arithmatex">\(V'\)</span> 是半群，且存在 <span class="arithmatex">\(V\)</span> 到 <span class="arithmatex">\(V'\)</span> 的同态。</p>
+<p><strong>定理16.6</strong>（独异点的表示定理）设 <span class="arithmatex">\(V = \langle S, \ast, e \rangle\)</span> 是独异点，则存在 <span class="arithmatex">\(T \subseteq S^S\)</span>，使得 <span class="arithmatex">\(\langle T, \circ, I_S \rangle\)</span> 同构于 <span class="arithmatex">\(V\)</span>.</p>
+<p><strong>定理16.7</strong> 设 <span class="arithmatex">\(M^* = \langle Q, \Sigma^*, \Gamma^*, \delta^*, \lambda^* \rangle\)</span> 是扩展的有穷自动机，则 <span class="arithmatex">\(\forall w_1, w_2 \in \Sigma^*\)</span>：<br />
+(1) <span class="arithmatex">\(\delta^*(q, w_1 w_2) = \delta^*(\delta^*(q, w_1), w_2)\)</span>；<br />
+(2) <span class="arithmatex">\(\lambda^*(q, w_1 w_2) = \lambda^*(q, w_1) \lambda^*(\delta^*(q, w_1), w_2)\)</span>.</p>
+<p><strong>定理16.8</strong> 设 <span class="arithmatex">\(M = \langle Q, \Sigma, \delta \rangle\)</span> 是半自动机，<span class="arithmatex">\(M^*\)</span> 是扩展，定义 <span class="arithmatex">\(f_w(q) = \delta^*(q, w)\)</span>，令 <span class="arithmatex">\(S = \{f_w \mid w \in \Sigma^*\}\)</span>，则 <span class="arithmatex">\(T_M = \langle S, \circ, f_\lambda \rangle\)</span> 是一个独异点，且是 <span class="arithmatex">\(\langle Q^Q, \circ, I_Q \rangle\)</span> 的子独异点。</p>
+<p><strong>定理16.9</strong> 设 <span class="arithmatex">\(T = \langle S, \cdot, e \rangle\)</span> 是独异点，则存在半自动机 <span class="arithmatex">\(M\)</span>，使得 <span class="arithmatex">\(T_M \cong T\)</span>.</p>
+<p><strong>定理16.10</strong> 设 <span class="arithmatex">\(M_1, M_2\)</span> 是自动机，分别对应独异点 <span class="arithmatex">\(T_{M_1}, T_{M_2}\)</span>，若 <span class="arithmatex">\(M_1 \leq M_2\)</span>，则 <span class="arithmatex">\(T_{M_1}\)</span> 是 <span class="arithmatex">\(T_{M_2}\)</span> 的同态像。</p>
+<p><strong>定理16.11</strong> 设 <span class="arithmatex">\(M_1\)</span> 是有穷自动机，<span class="arithmatex">\(M_2\)</span> 是 <span class="arithmatex">\(M_1\)</span> 的商自动机，则 <span class="arithmatex">\(M_1 \sim M_2\)</span>（等价）。</p>
+<hr />
+<h2 id="_21">第十七章 群<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<p><strong>定理17.1</strong> 设 <span class="arithmatex">\((G, \circ)\)</span> 是具有可结合二元运算的代数系统，若存在 <span class="arithmatex">\(e \in G\)</span> 使得 <span class="arithmatex">\(\forall a \in G, a \circ e = a\)</span>，且对每个 <span class="arithmatex">\(a \in G\)</span> 存在 <span class="arithmatex">\(a' \in G\)</span> 使 <span class="arithmatex">\(a \circ a' = e\)</span>，则 <span class="arithmatex">\(G\)</span> 是一个群。</p>
+<p><strong>定理17.2</strong> 设 <span class="arithmatex">\(G\)</span> 为群，则 <span class="arithmatex">\(\forall a, b \in G\)</span>：<br />
+(1) <span class="arithmatex">\((a^{-1})^{-1} = a\)</span>； (2) <span class="arithmatex">\((ab)^{-1} = b^{-1} a^{-1}\)</span>；<br />
+(3) <span class="arithmatex">\(a^n a^m = a^{n+m}, \ m, n \in \mathbb{Z}\)</span>； (4) <span class="arithmatex">\((a^n)^m = a^{mn}\)</span>；<br />
+(5) 若 <span class="arithmatex">\(G\)</span> 为 Abel 群，则 <span class="arithmatex">\((ab)^n = a^n b^n\)</span>.</p>
+<p><strong>定理17.3</strong> 在群 <span class="arithmatex">\(G\)</span> 中，方程 <span class="arithmatex">\(ax = b\)</span> 和 <span class="arithmatex">\(ya = b\)</span> 有唯一解。</p>
+<p><strong>定理17.4</strong> 设 <span class="arithmatex">\(G\)</span> 具有可结合的二元运算，若 <span class="arithmatex">\(\forall a, b \in G\)</span> 方程 <span class="arithmatex">\(ax = b\)</span> 和 <span class="arithmatex">\(ya = b\)</span> 在 <span class="arithmatex">\(G\)</span> 中有解，则 <span class="arithmatex">\(G\)</span> 是群。</p>
+<p><strong>定理17.5</strong> 群中运算满足消去律。</p>
+<p><strong>定理17.6</strong> 设 <span class="arithmatex">\(G\)</span> 是具有二元运算的不含零元的有限代数系统，且运算适合结合律和消去律，则 <span class="arithmatex">\(G\)</span> 是群。</p>
+<p><strong>定理17.7</strong> 有限群 <span class="arithmatex">\(G = \{a_1, \dots, a_n\}\)</span> 的运算表的每行每列都是 <span class="arithmatex">\(G\)</span> 中元素的一个置换。</p>
+<p><strong>定理17.8</strong> 设 <span class="arithmatex">\(G\)</span> 是群，<span class="arithmatex">\(a \in G\)</span> 且 <span class="arithmatex">\(|a| = r\)</span>，则<br />
+(1) <span class="arithmatex">\(a^k = e\)</span> 当且仅当 <span class="arithmatex">\(r \mid k\)</span>；<br />
+(2) <span class="arithmatex">\(|a| = |a^{-1}|\)</span>；<br />
+(3) 若 <span class="arithmatex">\(|G| = n\)</span>，则 <span class="arithmatex">\(r \leq n\)</span>.</p>
+<p><strong>定理17.9</strong>（子群判定定理一）<span class="arithmatex">\(H\)</span> 是群 <span class="arithmatex">\(G\)</span> 的非空子集，则 <span class="arithmatex">\(H\)</span> 是子群当且仅当：<br />
+(1) <span class="arithmatex">\(\forall a, b \in H, ab \in H\)</span>； (2) <span class="arithmatex">\(\forall a \in H, a^{-1} \in H\)</span>.</p>
+<p><strong>定理17.10</strong>（子群判定定理二）<span class="arithmatex">\(H\)</span> 是 <span class="arithmatex">\(G\)</span> 的非空子集，则 <span class="arithmatex">\(H\)</span> 是子群当且仅当 <span class="arithmatex">\(\forall a, b \in H, ab^{-1} \in H\)</span>.</p>
+<p><strong>定理17.11</strong>（子群判定定理三）<span class="arithmatex">\(H\)</span> 是 <span class="arithmatex">\(G\)</span> 的有穷非空子集，则 <span class="arithmatex">\(H\)</span> 是子群当且仅当 <span class="arithmatex">\(\forall a, b \in H, ab \in H\)</span>.</p>
+<p><strong>定理17.12</strong> 设 <span class="arithmatex">\(G = \langle a \rangle\)</span> 是循环群：<br />
+(1) 若 <span class="arithmatex">\(G\)</span> 是无限阶，则生成元为 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(a^{-1}\)</span>；<br />
+(2) 若 <span class="arithmatex">\(|G| = n\)</span>，则 <span class="arithmatex">\(G\)</span> 有 <span class="arithmatex">\(\phi(n)\)</span> 个生成元，且 <span class="arithmatex">\(a^r\)</span> 是生成元当且仅当 <span class="arithmatex">\((n, r) = 1\)</span>.</p>
+<p><strong>定理17.13</strong> 设 <span class="arithmatex">\(G = \langle a \rangle\)</span> 是循环群：<br />
+(1) <span class="arithmatex">\(G\)</span> 的子群也是循环群；<br />
+(2) 若 <span class="arithmatex">\(G\)</span> 无限阶，则子群除 <span class="arithmatex">\(\{e\}\)</span> 外仍是无限阶；<br />
+(3) 若 <span class="arithmatex">\(|G| = n\)</span>，则子群的阶是 <span class="arithmatex">\(n\)</span> 的因子，且对每个正因子 <span class="arithmatex">\(d\)</span>，<span class="arithmatex">\(G\)</span> 中有且仅有一个 <span class="arithmatex">\(d\)</span> 阶子群。</p>
+<p><strong>定理17.14</strong> 集合 <span class="arithmatex">\(A\)</span> 上的全体一一变换关于变换乘法构成群（对称群）。</p>
+<p><strong>定理17.15</strong> 设 <span class="arithmatex">\(\sigma, \tau \in S_n\)</span> 是不相交的置换，则 <span class="arithmatex">\(\sigma \tau = \tau \sigma\)</span>.</p>
+<p><strong>定理17.16</strong> 任何 <span class="arithmatex">\(n\)</span> 元置换都可唯一表成不相交轮换之积。</p>
+<p><strong>定理17.17</strong> 设 <span class="arithmatex">\(\sigma = (i_1 i_2 \dots i_k)\)</span> 是 <span class="arithmatex">\(k\)</span> 阶轮换（<span class="arithmatex">\(k &gt; 1\)</span>），则<br />
+[
+\sigma = (i_1 i_k)(i_1 i_{k-1}) \dots (i_1 i_2).
+]</p>
+<p><strong>定理17.18</strong> 置换 <span class="arithmatex">\(\sigma\)</span> 在对换表示中对换个数的奇偶性与排列 <span class="arithmatex">\(\pi = i_1 i_2 \dots i_n\)</span> 的逆序数奇偶性一致。</p>
+<p><strong>定理17.19</strong> 设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n\)</span> 元置换群：<br />
+(1) 若 <span class="arithmatex">\(\sigma = (i_1 \dots i_k)\)</span>，则 <span class="arithmatex">\(|\sigma| = k\)</span>；<br />
+(2) 若 <span class="arithmatex">\(\tau = \tau_1 \dots \tau_l\)</span> 是不相交轮换分解，<span class="arithmatex">\(\tau_i\)</span> 为 <span class="arithmatex">\(k_i\)</span> 阶，则 <span class="arithmatex">\(|\tau| = [k_1, \dots, k_l]\)</span>（最小公倍数）。</p>
+<p><strong>定理17.20–17.26</strong> 涉及陪集、Lagrange 定理及其推论：<br />
+<strong>定理17.26</strong>（Lagrange 定理）设 <span class="arithmatex">\(G\)</span> 是有限群，<span class="arithmatex">\(H\)</span> 是子群，则 <span class="arithmatex">\(|G| = [G:H] |H|\)</span>.<br />
+<strong>推论1</strong> <span class="arithmatex">\(G\)</span> 中每个元素的阶是 <span class="arithmatex">\(|G|\)</span> 的因子，且 <span class="arithmatex">\(\forall a \in G, a^{|G|} = e\)</span>.<br />
+<strong>推论2</strong> 阶为素数的群是循环群。</p>
+<p><strong>定理17.27</strong> 群 <span class="arithmatex">\(G\)</span> 上的共轭关系是等价关系。</p>
+<p><strong>定理17.28</strong> 设 <span class="arithmatex">\(C\)</span> 是群 <span class="arithmatex">\(G\)</span> 的中心，则 <span class="arithmatex">\(a \in C \Leftrightarrow \bar{a} = \{a\}\)</span>.</p>
+<p><strong>定理17.29</strong> 设 <span class="arithmatex">\(a \in G\)</span>，则正规化子 <span class="arithmatex">\(N(a) = \{g \in G \mid gag^{-1} = a\}\)</span> 是 <span class="arithmatex">\(G\)</span> 的子群。</p>
+<p><strong>定理17.30</strong> 设 <span class="arithmatex">\(G\)</span> 是有限群，则 <span class="arithmatex">\(\forall a \in G, |a| = [G : N(a)]\)</span>.</p>
+<p><strong>定理17.31</strong>（群的分类方程）设 <span class="arithmatex">\(G\)</span> 有限，<span class="arithmatex">\(C\)</span> 是中心，设 <span class="arithmatex">\(a_1, \dots, a_k\)</span> 为至少含两个元素的共轭类的代表元，则<br />
+[
+|G| = |C| + \sum_{i=1}^k [G : N(a_i)].
+]</p>
+<p><strong>定理17.32</strong> 设 <span class="arithmatex">\(N\)</span> 是群 <span class="arithmatex">\(G\)</span> 的子群，则下列等价：<br />
+(1) <span class="arithmatex">\(N \lhd G\)</span>（正规子群）；<br />
+(2) <span class="arithmatex">\(\forall g \in G, gNg^{-1} = N\)</span>；<br />
+(3) <span class="arithmatex">\(\forall g \in G, \forall n \in N, gng^{-1} \in N\)</span>.</p>
+<p><strong>定理17.33</strong> 设 <span class="arithmatex">\(\phi: G_1 \to G_2\)</span> 是同态，则 <span class="arithmatex">\(\phi\)</span> 是单同态当且仅当 <span class="arithmatex">\(\ker \phi = \{e_1\}\)</span>.</p>
+<p><strong>定理17.34</strong> 设 <span class="arithmatex">\(G_1 = \langle a \rangle\)</span> 是循环群，<span class="arithmatex">\(\phi: G_1 \to G_2\)</span> 是满同态，则 <span class="arithmatex">\(G_2\)</span> 也是循环群。</p>
+<p><strong>定理17.35</strong> 设 <span class="arithmatex">\(\phi: G_1 \to G_2\)</span> 是同态：<br />
+(1) 若 <span class="arithmatex">\(H\)</span> 是 <span class="arithmatex">\(G_1\)</span> 的子群，则 <span class="arithmatex">\(\phi(H)\)</span> 是 <span class="arithmatex">\(G_2\)</span> 的子群；<br />
+(2) 若 <span class="arithmatex">\(H \lhd G_1\)</span> 且 <span class="arithmatex">\(\phi\)</span> 满，则 <span class="arithmatex">\(\phi(H) \lhd G_2\)</span>.</p>
+<p><strong>定理17.36</strong> 设 <span class="arithmatex">\(\phi: G_1 \to G_2\)</span> 是同态：<br />
+(1) <span class="arithmatex">\(\ker \phi \lhd G_1\)</span>；<br />
+(2) <span class="arithmatex">\(\phi(a) = \phi(b) \Leftrightarrow a \ker \phi = b \ker \phi\)</span>.</p>
+<p><strong>定理17.37</strong>（群同态基本定理）设 <span class="arithmatex">\(H \lhd G\)</span>，则 <span class="arithmatex">\(G/H\)</span> 是 <span class="arithmatex">\(G\)</span> 的同态像；若 <span class="arithmatex">\(G'\)</span> 是 <span class="arithmatex">\(G\)</span> 的同态像，则<br />
+[
+G / \ker \phi \cong G'.
+]</p>
+<p><strong>定理17.38</strong> 群 <span class="arithmatex">\(G\)</span> 的自同态集 <span class="arithmatex">\(\mathrm{End}\,G\)</span> 关于映射合成构成独异点，自同构集 <span class="arithmatex">\(\mathrm{Aut}\,G\)</span> 构成群。</p>
+<p><strong>定理17.39</strong> 内自同构群 <span class="arithmatex">\(\mathrm{Inn}\,G \cong G/Z(G)\)</span>（其中 <span class="arithmatex">\(Z(G)\)</span> 是中心）。</p>
+<p><strong>定理17.40</strong> 设 <span class="arithmatex">\(G\)</span> 是群，<span class="arithmatex">\(K, L\)</span> 是子群，则 <span class="arithmatex">\(G = K \times L\)</span>（直积）当且仅当：<br />
+(1) <span class="arithmatex">\(K \lhd G, L \lhd G\)</span>； (2) <span class="arithmatex">\(K \cap L = \{e\}\)</span>； (3) <span class="arithmatex">\(G = KL\)</span>.</p>
+<p><strong>定理17.41</strong> 设 <span class="arithmatex">\(G_1, \dots, G_n\)</span> 是 <span class="arithmatex">\(G\)</span> 的子群，则 <span class="arithmatex">\(G = G_1 \times \dots \times G_n\)</span> 当且仅当：<br />
+(1) <span class="arithmatex">\(G_i \lhd G\)</span>；<br />
+(2) <span class="arithmatex">\(G_i \cap (G_1 \dots G_{i-1} G_{i+1} \dots G_n) = \{e\}\)</span>；<br />
+(3) <span class="arithmatex">\(G = G_1 \dots G_n\)</span>.</p>
+<p><strong>定理17.42</strong> 用 <span class="arithmatex">\(r\)</span>-电路计算一个 <span class="arithmatex">\(m\)</span> 元函数至少需要 <span class="arithmatex">\(\lceil \log_r m \rceil\)</span> 个时间单位。</p>
+<p><strong>定理17.43</strong> 设 <span class="arithmatex">\(\langle \mathbb{Z}_n, \otimes \rangle\)</span> 是群，若存在 <span class="arithmatex">\(a \in \mathbb{Z}_n, a \neq 0\)</span>，且 <span class="arithmatex">\(a\)</span> 属于 <span class="arithmatex">\(\mathbb{Z}_n\)</span> 的每个非平凡子群，则对任意模 <span class="arithmatex">\(n\)</span> 加法器 <span class="arithmatex">\(T\)</span>，存在某个输入使得 <span class="arithmatex">\(T\)</span> 至少依赖于输入的 <span class="arithmatex">\(2\lceil \log_2 n \rceil\)</span> 位。</p>
+<p><strong>定理17.44</strong>（电路下界定理）设 <span class="arithmatex">\(n = p^i\)</span>（<span class="arithmatex">\(p\)</span> 为素数），则用 <span class="arithmatex">\(r\)</span>-电路计算 <span class="arithmatex">\(\mathbb{Z}_n\)</span> 中加法至少需要 <span class="arithmatex">\(\lceil \log_r (2\lceil \log_2 n \rceil) \rceil\)</span> 个时间单位；若 <span class="arithmatex">\(n = p_1^{i_1} \dots p_k^{i_k}\)</span>，则至少需要 <span class="arithmatex">\(\lceil \log_r (2\lceil \log_2 t(n) \rceil) \rceil\)</span> 时间单位，其中 <span class="arithmatex">\(t(n) = \max\{p_1^{i_1}, \dots, p_k^{i_k}\}\)</span>.</p>
 <hr />
 
 
