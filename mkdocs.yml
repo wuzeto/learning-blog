@@ -128,7 +128,6 @@ nav:
   - 💻 计算机科学:
     - 计算机总览: cs/index.md
     - C语言基础: c++/learning.md
-    - 计算机架构: cs/architecture.md
     - 存储系统: cs/storage.md
     - 输入输出系统: cs/io-system.md
     - 操作系统: cs/os.md
@@ -146,6 +145,7 @@ nav:
     - 真题补充: algorithms/complexity.md
   - 🏗️ 系统架构:
     - 系统总览: systems/index.md
+    - 计算机架构: systems/architecture.md
 
 # 版权信息
 copyright: |
