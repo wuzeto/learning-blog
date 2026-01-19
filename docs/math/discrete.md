@@ -221,6 +221,326 @@ $$
 (1) $A$ 中存在极大元；  
 (2) $A$ 存在 $n$ 个划分块的划分，每个划分块都是反链。
 
+# 《离散数学教程》定理汇总（续）
+
+## 第三章 函数
+
+**定理3.1** 设 \(f:C\to D\) 为单射，\(\mathcal{C}\) 为 \(C\) 的非空子集族，\(C_1,C_2\subseteq C\)，则  
+(1) \(f(\cup \mathcal{C}) = \cup \{f(A) \mid A\in \mathcal{C}\}\)；  
+(2) \(f(\cap \mathcal{C}) = \cap \{f(A) \mid A\in \mathcal{C}\}\)；  
+(3) \(f(C_1 - C_2) = f(C_1) - f(C_2)\)。
+
+**定理3.2** 设 \(f:C\to D\)，\(D_1,D_2\subseteq D\)，\(\mathcal{D}\) 是 \(D\) 的非空子集族，则  
+(1) \(f^{-1}(\cup \mathcal{D}) = \cup \{f^{-1}(D) \mid D\in \mathcal{D}\}\)；  
+(2) \(f^{-1}(\cap \mathcal{D}) = \cap \{f^{-1}(D) \mid D\in \mathcal{D}\}\)；  
+(3) \(f^{-1}(D_1 - D_2) = f^{-1}(D_1) - f^{-1}(D_2)\)。
+
+**定理3.3** 设 \(g:A\to B\)，\(f:B\to C\)，则 \(f\circ g:A\to C\)，且对于任意 \(x\in A\)，  
+\[
+(f\circ g)(x) = f(g(x)).
+\]
+
+**定理3.4** 设 \(g:A\to B\)，\(f:B\to C\)：  
+(1) 若 \(f\) 和 \(g\) 都是满射，则 \(f\circ g\) 是满射；  
+(2) 若 \(f\) 和 \(g\) 都是单射，则 \(f\circ g\) 是单射；  
+(3) 若 \(f\) 和 \(g\) 都是双射，则 \(f\circ g\) 是双射。
+
+**定理3.5** 设 \(g:A\to B\)，\(f:B\to C\)：  
+(1) 若 \(f\circ g\) 是满射，则 \(f\) 是满射；  
+(2) 若 \(f\circ g\) 是单射，则 \(g\) 是单射；  
+(3) 若 \(f\circ g\) 是双射，则 \(g\) 是单射，\(f\) 是满射。
+
+**定理3.6** 设 \(f:A\to B\)，\(I_A, I_B\) 分别为 \(A\) 和 \(B\) 上的恒等函数，则  
+\[
+f\circ I_A = I_B\circ f.
+\]
+
+**定理3.7** 设 \(f:\mathbb{R}\to \mathbb{R}\)，\(g:\mathbb{R}\to \mathbb{R}\)，若 \(f\) 和 \(g\) 在实数集上关于“\(\leq\)”都是单调增加的，则 \(f\circ g\) 也是单调增加的。
+
+**定理3.8** 设 \(A\) 为一个集合，\(A^{-1}\) 为函数当且仅当 \(A\) 是单根的。  
+**推论** 设 \(R\) 为二元关系，\(R\) 为函数当且仅当 \(R^{-1}\) 是单根的。
+
+**定理3.9** 设 \(f:A\to B\) 为双射，则 \(f^{-1}:B\to A\) 也是双射。
+
+**定理3.10** 设 \(f:A\to B\) 且 \(A\neq \emptyset\)：  
+(1) \(f\) 存在左逆当且仅当 \(f\) 是单射；  
+(2) \(f\) 存在右逆当且仅当 \(f\) 是满射；  
+(3) \(f\) 既有左逆又有右逆当且仅当 \(f\) 是双射；  
+(4) 若 \(f\) 是双射，则其左逆与右逆相等。
+
 ---
 
-（因内容较长，后续章节的定理将按章节继续整理。如需全部内容，请继续展开。）
+## 第四章 自然数
+
+**定理4.1** \(\mathbb{N}\) 是归纳集。
+
+**定理4.2** 设 \(\mathbb{N}\) 为自然数集，\(\sigma:\mathbb{N}\to \mathbb{N}\)，\(\sigma(n) = n^{+}\)（后继函数），则 \(\langle \mathbb{N},\sigma,\emptyset \rangle\) 是 Peano 系统。
+
+**定理4.3** 任意自然数的元素都是它的子集。
+
+**定理4.4** 对于任意自然数 \(m,n\)，\(m^{+}\in n^{+}\) 当且仅当 \(m\in n\)。
+
+**定理4.5** 任何自然数都不是自己的元素。
+
+**定理4.6** 空集属于除零外的一切自然数。
+
+**定理4.7**（三歧性定理）对于任意自然数 \(m,n\)，以下三式有且仅有一式成立：  
+\[
+m\in n,\quad m=n,\quad n\in m.
+\]
+
+**定理4.8**（\(\mathbb{N}\) 上的递归定理）设 \(A\) 为集合，\(a\in A\)，\(F:A\to A\)，则存在唯一函数 \(h:\mathbb{N}\to A\)，使得 \(h(0) = a\)，且对任意 \(n\in \mathbb{N}\)，  
+\[
+h(n^{+}) = F(h(n)).
+\]
+
+**定理4.9** 设 \(\langle M,F,e\rangle\) 为任意 Peano 系统，则 \(\langle \mathbb{N},\sigma,0\rangle \sim \langle M,F,e\rangle\)。
+
+**定理4.10** 设 \(A\) 为集合，则以下命题等价：  
+(1) \(A\) 是传递集；  
+(2) \(\cup A\subseteq A\)；  
+(3) 对任意 \(y\in A\)，有 \(y\subseteq A\)；  
+(4) \(A\subseteq \mathcal{P}(A)\)。
+
+**定理4.11** 设 \(A\) 为集合，则 \(A\) 为传递集当且仅当 \(\mathcal{P}(A)\) 为传递集。
+
+**定理4.12** 设 \(A\) 是传递集，则 \(\cup (A^{+}) = A\)。
+
+**定理4.13** 每个自然数都是传递集。
+
+**定理4.14** 自然数集 \(\mathbb{N}\) 是传递集。
+
+**定理4.15** 设 \(m,n\in \mathbb{N}\)，则  
+（加法规则1）\(m + 0 = m\)；  
+（加法规则2）\(m + n^{+} = (m + n)^{+}\)。
+
+**定理4.16** 设 \(m,n\in \mathbb{N}\)，则  
+（乘法规则1）\(m \cdot 0 = 0\)；  
+（乘法规则2）\(m \cdot n^{+} = m \cdot n + m\)。
+
+**定理4.17** 对于任意自然数 \(m,n\)，则  
+（指数运算规则1）\(m^{0} = 1\)（\(m\neq 0\)）；  
+（指数运算规则2）\(m^{n^{+}} = m^{n} \cdot m\)。
+
+**定理4.18** 设 \(m,n,k\in \mathbb{N}\)，则  
+(1) \(m + (n + k) = (m + n) + k\)；  
+(2) \(m + n = n + m\)；  
+(3) \(m \cdot (n + k) = m \cdot n + m \cdot k\)；  
+(4) \(m \cdot (n \cdot k) = (m \cdot n) \cdot k\)；  
+(5) \(m \cdot n = n \cdot m\)。
+
+**定理4.19** \(\in_{\mathbb{N}}\)（\(\leq_{\mathbb{N}}\)）为 \(\mathbb{N}\) 上的线序关系，\(\in_{\mathbb{N}}\)（\(\leq_{\mathbb{N}}\)）为 \(\mathbb{N}\) 上的拟线序关系。
+
+**定理4.20** 设 \(m,n,k\in \mathbb{N}\)，则  
+(1) \(m \in n \Leftrightarrow (m + k) \in (n + k)\)（即 \(m < n \Leftrightarrow m + k < n + k\)）；  
+(2) \(m \in n \Leftrightarrow m \cdot k \in n \cdot k\)（即 \(m < n \Leftrightarrow m \cdot k < n \cdot k\)），\(k\neq 0\)。
+
+**定理4.21** 设 \(n,m,k\) 为自然数：  
+(1) 若 \(m + k = n + k\)，则 \(m = n\)；  
+(2) 若 \(k\neq 0\) 且 \(m \cdot k = n \cdot k\)，则 \(m = n\)。
+
+**定理4.22**（\(\mathbb{N}\) 上的良序定理）设 \(A\) 为 \(\mathbb{N}\) 的非空子集，则存在唯一的 \(m\in A\)，使得对一切 \(n\in A\)，有 \(m\subseteq n\)（称 \(m\) 为 \(A\) 的最小元）。
+
+**定理4.23**（\(\mathbb{N}\) 上的强归纳原则）设 \(A\) 为 \(\mathbb{N}\) 的子集，若对任意 \(n\in \mathbb{N}\)，只要小于 \(n\) 的元素都属于 \(A\)，就有 \(n\in A\)，则 \(A = \mathbb{N}\)。
+
+---
+
+## 第五章 基数（势）
+
+**定理5.1**  
+(1) \(\mathbb{Z}\approx \mathbb{N}\)；  
+(2) \(\mathbb{N}\times \mathbb{N}\approx \mathbb{N}\)；  
+(3) \(\mathbb{N}\approx \mathbb{Q}\)；  
+(4) \((0,1)\approx \mathbb{R}\)；  
+(5) \([0,1]\approx (0,1)\)。
+
+**定理5.2** 设 \(A\) 为任意集合，则 \(\mathcal{P}(A)\approx (A\to 2)\)，其中 \((A\to 2) = 2^{A}\) 是 \(A\) 到 \(2=\{0,1\}\) 的所有函数。
+
+**定理5.3** 设 \(A,B,C\) 为任意集合：  
+(1) \(A\approx A\)；  
+(2) 若 \(A\approx B\)，则 \(B\approx A\)；  
+(3) 若 \(A\approx B\) 且 \(B\approx C\)，则 \(A\approx C\)。
+
+**定理5.4**（康托定理）  
+(1) \(\mathbb{N}\not\approx \mathbb{R}\)；  
+(2) 设 \(A\) 为任意集合，则 \(A\not\approx \mathcal{P}(A)\)。
+
+**定理5.5** 不存在与自己的真子集等势的自然数。  
+**推论1** 不存在与自己的真子集等势的有穷集合。  
+**推论2**  
+(1) 任何与自己的真子集等势的集合都是无穷集；  
+(2) \(\mathbb{N}\) 是无穷集。  
+**推论3** 任何有穷集合都与唯一的自然数等势。
+
+**定理5.6** 任何有穷集合的子集仍为有穷集合。
+
+**定理5.7** 设 \(A,B\) 为任意二集合，则 \(A\not\approx B\) 当且仅当存在 \(C\subseteq B\)，使得 \(A\approx C\)。  
+**推论** 设 \(A,B\) 为二集合：  
+(1) 若 \(A\subseteq B\)，则 \(A\not\approx B\)；  
+(2) 若 \(A\approx B\)，则 \(A\not\approx B\) 且 \(B\not\approx A\)。
+
+**定理5.8** 设 \(A,B,C\) 为三个集合：  
+(1) \(A\not\approx A\)；  
+(2) 若 \(A\approx B\) 且 \(B\not\approx C\)，则 \(A\not\approx C\)。
+
+**定理5.9** 设 \(A,B,C,D\) 为四个集合，已知 \(A\not\approx B\) 且 \(C\not\approx D\)，则  
+(1) 若 \(B\cap D = \emptyset\)，则 \(A\cup C\not\approx B\cup D\)；  
+(2) \(A\times C\not\approx B\times D\)。
+
+**定理5.10** 设 \(A,B,C,D\) 为四个集合，且已知 \(\mathrm{card}\,A = \mathrm{card}\,C = \kappa\)，\(\mathrm{card}\,B = \mathrm{card}\,D = \lambda\)，则 \(A\not\approx B\) 当且仅当 \(C\not\approx D\)。
+
+**定理5.11** 设 \(A\) 为任意集合，则  
+\[
+\mathrm{card}\,A < \mathrm{card}\,\mathcal{P}(A).
+\]
+
+**定理5.12**（Schröder–Bernstein定理）  
+(1) 设 \(A,B\) 为二集合，若 \(A\preccurlyeq B\) 且 \(B\preccurlyeq A\)，则 \(A\approx B\)；  
+(2) 设 \(\kappa,\lambda\) 为二基数，若 \(\kappa \leq \lambda\) 且 \(\lambda \leq \kappa\)，则 \(\kappa = \lambda\)。
+
+**定理5.13** \(\mathbb{R}\approx (\mathbb{N}\to 2)\)，其中 \(\mathbb{N}\to 2 = 2^{\mathbb{N}}\)。
+
+**定理5.14**  
+(1) 设 \(A\) 为任意无穷集合，则 \(\mathbb{N}\preccurlyeq A\)；  
+(2) 设 \(\kappa\) 为任意无穷基数，则 \(\aleph_{0} \leq \kappa\)。  
+**推论1** 设 \(\kappa\) 为任意基数，\(\kappa < \aleph_{0}\) 当且仅当 \(\kappa\) 是有穷基数。  
+**推论2** 有穷集合的子集一定是有穷集合。  
+**推论3** 设 \(A\) 是 \(\mathbb{N}\) 的无穷子集，则 \(\mathrm{card}\,A = \aleph_{0}\)。
+
+**定理5.15** 集合 \(A\) 是无穷可数集当且仅当 \(A\) 可写成 \(\{a_{1},a_{2},\dots ,a_{n},\dots\}\) 形式。
+
+**定理5.16** 可数集的子集是可数集。
+
+**定理5.17** 可数个可数集的并集是可数集。
+
+**定理5.18** 设 \(A\) 为无穷集，则 \(\mathcal{P}(A)\) 不是可数集。
+
+**定理5.19** 设 \(K_{1},K_{2},L_{1},L_{2}\) 为四个集合，若 \(K_{1}\approx K_{2},L_{1}\approx L_{2}\)，则  
+(1) 若 \(K_{1}\cap L_{1} = K_{2}\cap L_{2} = \emptyset\)，则 \(K_{1}\cup L_{1}\approx K_{2}\cup L_{2}\)；  
+(2) \(K_{1}\times L_{1}\approx K_{2}\times L_{2}\)；  
+(3) \(L_{1}\to K_{1}\approx L_{2}\to K_{2}\)。
+
+**定理5.20**  
+(1) 设 \(A\) 为一集合，则 \(2^{\mathrm{card}\,A} = \mathrm{card}\,\mathcal{P}(A)\)；  
+(2) 设 \(\kappa\) 为一基数，则 \(\kappa < 2^{\kappa}\)。  
+**推论**  
+(1) \(\mathrm{card}\,\mathcal{P}(\mathbb{N}) = 2^{\aleph_{0}}\)；  
+(2) \(\mathrm{card}\,\mathcal{P}(\mathbb{R}) = 2^{\aleph_{1}}\)；  
+(3) \(\aleph = 2^{\aleph_{0}}\)。
+
+**定理5.21** 设 \(\kappa,\lambda,\mu\) 为任意基数，则  
+(1) \(\kappa+\lambda = \lambda+\kappa\)，\(\kappa\cdot \lambda = \lambda\cdot \kappa\)；  
+(2) \(\kappa+(\lambda+\mu) = (\kappa+\lambda)+\mu\)，\(\kappa\cdot (\lambda\cdot \mu) = (\kappa\cdot \lambda)\cdot \mu\)；  
+(3) \(\kappa\cdot (\lambda+\mu) = \kappa\cdot \lambda + \kappa\cdot \mu\)；  
+(4) \(\kappa^{\lambda+\mu} = \kappa^{\lambda}\cdot \kappa^{\mu}\)；  
+(5) \((\kappa\cdot \lambda)^{\mu} = \kappa^{\mu}\cdot \lambda^{\mu}\)；  
+(6) \((\kappa^{\lambda})^{\mu} = \kappa^{\lambda\cdot \mu}\)。  
+**推论** 设 \(\kappa,\lambda\) 为任意二基数，则  
+(1) \(\kappa+(\lambda+1) = (\kappa+\lambda)+1\)；  
+(2) \(\kappa\cdot (\lambda+1) = \kappa\cdot \lambda + \kappa\)；  
+(3) \(\kappa^{\lambda+1} = \kappa^{\lambda}\cdot \kappa\)。
+
+**定理5.22** 设 \(\kappa,\lambda,\mu\) 为基数，若 \(\kappa \leq \lambda\)，则  
+(1) \(\kappa+\mu \leq \lambda+\mu\)；  
+(2) \(\kappa\cdot \mu \leq \lambda\cdot \mu\)；  
+(3) \(\kappa^{\mu} \leq \lambda^{\mu}\)；  
+(4) \(\mu^{\kappa} \leq \mu^{\lambda}\)，其中 \(\kappa,\mu\) 不同时为 0。
+
+**定理5.23** 设 \(\kappa\) 为任意无穷基数，则 \(\kappa\cdot \kappa = \kappa\)。
+
+**定理5.24** 设 \(\kappa,\lambda\) 为二基数，其中较大的为无穷基数，较小的不为 0，则  
+\[
+\kappa+\lambda = \kappa\cdot \lambda = \max\{\kappa,\lambda\}.
+\]  
+**推论** 设 \(\kappa\) 为一无穷基数，则 \(\kappa+\kappa = \kappa\cdot \kappa = \kappa\)。
+
+**定理5.25** 设 \(\kappa\) 为无穷基数，则 \(\kappa^{\kappa} = 2^{\kappa}\)。
+
+---
+
+## 第六章 序数*
+
+**定理6.1** 设 \(\langle A,<\rangle\) 为拟线序集，\(\prec\) 为 \(A\neq \emptyset\) 上的良序关系当且仅当不存在函数 \(f:\mathbb{N}\to A\) 使得对任意 \(n\in \mathbb{N}\)，有 \(f(n^{+}) < f(n)\)。
+
+**定理6.2** 设 \(\langle A,<_1\rangle,\langle B,<_2\rangle,\langle C,<_3\rangle\) 为三个拟序集，则  
+(1) \(\langle A,<_1\rangle \cong \langle A,<_1\rangle\)；  
+(2) 若 \(\langle A,<_1\rangle \cong \langle B,<_2\rangle\)，则 \(\langle B,<_2\rangle \cong \langle A,<_1\rangle\)；  
+(3) 若 \(\langle A,<_1\rangle \cong \langle B,<_2\rangle\) 且 \(\langle B,<_2\rangle \cong \langle C,<_3\rangle\)，则 \(\langle A,<_1\rangle \cong \langle C,<_3\rangle\)。
+
+**定理6.3** 设 \(f:A\to B\) 为单射，\(\prec_B\) 为 \(B\) 上的拟序关系。在 \(A\) 上定义关系 \(\prec_A\)：对任意 \(x,y\in A\)，\(x\prec_A y \Leftrightarrow f(x)\prec_B f(y)\)，则  
+(1) \(\prec_A\) 为 \(A\) 上的拟序关系；  
+(2) 若 \(\prec_B\) 为拟线序（拟全序）关系，则 \(\prec_A\) 为拟线序关系；  
+(3) 若 \(\prec_B\) 为良序关系，则 \(\prec_A\) 为良序关系。
+
+**定理6.4** 设 \(A,B\) 为二集合，且 \(B\subseteq A\)：  
+(1) 若 \(\prec_A\) 为 \(A\) 上的拟序关系，则 \(\prec_A|_B\) 为 \(B\) 上的拟序关系；  
+(2) 若 \(\prec_A\) 为 \(A\) 上的拟线序关系，则 \(\prec_A|_B\) 为 \(B\) 上的拟线序关系；  
+(3) 若 \(\prec_A\) 为 \(A\) 上的良序关系，则 \(\prec_A|_B\) 为 \(B\) 上的良序关系。
+
+**定理6.5**（超限归纳原理）设 \(\prec\) 为 \(A\) 上的良序，\(B\) 是 \(A\) 关于 \(\prec\) 的归纳子集，则 \(B = A\)。
+
+**定理6.6** 设 \(\prec\) 为 \(A\) 上的拟线序，如果 \(A\) 上任何关于 \(\prec\) 的归纳子集都与 \(A\) 相等，则 \(\prec\) 为 \(A\) 上的良序。
+
+**超限递归定理模式** 对于任意公式 \(\gamma(x,y)\)，以下成立：  
+设 \(\prec\) 为集合 \(A\) 上良序，若 \(\forall f\exists !y\,\gamma(f,y)\) 成立，则存在唯一以 \(A\) 为定义域的函数 \(F\)，使得对任意 \(t\in A\)，\(\gamma(F|\,\mathrm{seg}\,t, F(t))\) 成立。
+
+**定理6.7** 设 \(\langle A,<_A\rangle,\langle B,<_B\rangle\) 为两个良序集，则以下三种情况至少成立其一：  
+(1) \(\langle A,<_A\rangle \cong \langle B,<_B\rangle\)；  
+(2) \(\langle A,<_A\rangle \cong \langle \mathrm{seg}\,b,\prec_B^0\rangle, b\in B\)；  
+(3) \(\langle \mathrm{seg}\,a,\prec_A^0\rangle \cong \langle B,<_B\rangle, a\in A\)。  
+其中 \(\prec_A^0,\prec_B^0\) 分别为 \(\prec_A\) 在 \(\mathrm{seg}\,a\) 和 \(\prec_B\) 在 \(\mathrm{seg}\,b\) 上的限制。
+
+**定理6.8** 设 \(\prec\) 为集合 \(A\) 上的良序，则唯一存在一个以 \(A\) 为定义域的函数 \(E\)，使得对任意 \(t\in A\)，  
+\[
+E(t) = \mathrm{ran}(E|\,\mathrm{seg}\,t) = \{E(x) \mid x < t\}.
+\]
+
+**定理6.9** 设 \(\langle A,\prec\rangle\) 为良序集，\(E\) 为前段值域函数，\(\alpha\) 是 \(\langle A,\prec\rangle\) 的 \(\in\)-象，则  
+(1) \(\forall t\in A, E(t)\notin E(t)\)；  
+(2) \(E\) 为 \(A\) 与 \(\alpha\) 之间的双射函数；  
+(3) \(\forall s,t\in A, s < t \Leftrightarrow E(s)\in E(t)\)；  
+(4) \(\alpha = \mathrm{ran}\,E\) 是传递集。
+
+**定理6.10** 两个良序集是同构的当且仅当它们具有相同的 \(\in\)-象。
+
+**定理6.11** 同构的良序集具有相同的序数。
+
+**定理6.12** 设 \(\alpha\) 按属于关系是良序的，并且 \(\alpha\) 是传递集，则 \(\alpha\) 是一个序数（即 \(\alpha\) 是 \(\langle\alpha,\in_\alpha\rangle\) 的 \(\in\)-象）。
+
+**定理6.13** 设 \(\alpha,\beta,\gamma\) 为序数：  
+(1) \(\alpha\) 的元素为序数（任何序数的元素还是序数）；  
+(2) \(\alpha\notin\alpha\)（反自反性）；  
+(3) 若 \(\alpha\in\beta\) 且 \(\beta\in\gamma\)，则 \(\alpha\in\gamma\)（传递性）；  
+(4) \(\alpha\in\beta,\alpha=\beta,\beta\in\alpha\) 有且仅有一式成立（序数之间具有三歧性）；  
+(5) 由序数构成的非空集，按属于关系有最小元。
+
+**定理6.14** 设 \(\alpha,\beta\) 为任意两个序数，则 \(\alpha<\beta,\alpha=\beta,\alpha>\beta\) 三式有且仅有一式成立。
+
+**定理6.15**  
+(1) 任何以序数为元素的传递集合是序数；  
+(2) \(0\) 是序数；  
+(3) 若 \(\alpha\) 是序数，则 \(\alpha^{+}=\alpha\cup\{\alpha\}\) 为序数；  
+(4) 若集合 \(A\) 是以序数为元素的集合，则 \(\cup A\) 为序数。
+
+**定理6.16**  
+(1) 一切自然数都是序数；  
+(2) 自然数集 \(\mathbb{N}\) 是序数（记作 \(\omega\)），\(\omega,\omega^{+},\omega^{++},\omega^{+++},\dots\) 是序数；  
+(3) 设 \(A\) 是以序数为元素的集合，则 \(\cup A\) 为 \(A\) 关于属于等于关系的最小上界；  
+(4) 设 \(\alpha\) 为一序数，则 \(\alpha^{+}\) 是大于 \(\alpha\) 的最小序数；  
+(5) 设 \(\alpha\) 为一序数，则 \(\alpha = \{x \mid x\text{ 是序数 } \land x<\alpha\}\)。
+
+**定理6.17**（Hartogs定理）对于任何集合 \(A\)，都存在序数 \(\alpha\)，使得 \(A\prec\alpha\)。
+
+**定理6.18**（良序定理）对于任意集合 \(A\)，都存在 \(A\) 上的良序。
+
+**定理6.19**（命数定理）对于任何集合 \(A\)，都存在序数 \(\alpha\)，使得 \(A\approx\alpha\)。
+
+**定理6.20**  
+(1) 对于任意集合 \(A,B\)，\(\mathrm{card}\,A = \mathrm{card}\,B \Leftrightarrow A\approx B\)；  
+(2) 对于任意有穷集合 \(A\)，\(\mathrm{card}\,A\) 是与 \(A\) 等势的唯一的自然数。
+
+**定理6.21** 设 \(\alpha\) 为一序数，则 \(\alpha\) 为初始序数当且仅当 \(\alpha\) 为一个基数。
+
+---
+
+（以下为图论、代数结构等后续章节内容，将按章节继续整理。如需继续，请告知。）
