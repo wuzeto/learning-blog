@@ -1,3 +1,25 @@
+<script>
+
+window.MathJax = {
+
+  tex: {
+
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+
+    macros: {
+
+      oiint: "{\\mathchoice{\\mkern-18mu\\iint}{\\mkern-12mu\\iint}{\\mkern-13mu\\iint}{\\mkern-12mu\\iint}}"
+
+    }
+
+  }
+
+};
+
+</script>
+
 # 高中理科数学公式汇总
 
 ## §01 集合与简易逻辑
