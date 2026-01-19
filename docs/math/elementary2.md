@@ -367,10 +367,10 @@ window.MathJax = {
 
 39. **数列的通项公式与前 \(n\) 项和的关系**  
     $$
-    a_n = \begin{cases}
+    a_n = \begin{aligned}
     s_1, & n=1,\\
     s_n - s_{n-1}, & n\geq2,
-    \end{cases}
+    \end{aligned}
     $$
 
     其中 \(s_n=a_1+a_2+\dots+a_n\)。
