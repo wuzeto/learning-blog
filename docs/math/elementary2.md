@@ -724,11 +724,9 @@ window.MathJax = {
 
 73. **一元二次不等式的解集**  
     一元二次不等式 \(ax^2+bx+c>0\)（或 \(<0\)）\((a\neq0,\ \Delta=b^2-4ac>0)\)，如果 \(a\) 与 \(ax^2+bx+c\) 同号，则解集在两根之外；如果异号，则解集在两根之间。简言之：同号两根之外，异号两根之间。
-  
     $$
     x_1 < x < x_2 \Leftrightarrow (x-x_1)(x-x_2) < 0 \quad (x_1 < x_2),
     $$
-
     $$
     x < x_1 \ \text{或} \ x > x_2 \Leftrightarrow (x-x_1)(x-x_2) > 0 \quad (x_1 < x_2).
     $$
@@ -737,12 +735,9 @@ window.MathJax = {
 74. **含有绝对值的不等式**  
     当 \(a>0\) 时，  
     $$
-
     |x| < a \Leftrightarrow x^2 < a^2 \Leftrightarrow -a < x < a,
     $$
-
     $$
-
     |x| > a \Leftrightarrow x^2 > a^2 \Leftrightarrow x > a \ \text{或} \ x < -a.
     $$
 
@@ -757,7 +752,6 @@ window.MathJax = {
         $$
         a^{f(x)} > a^{g(x)} \Leftrightarrow f(x) > g(x);
         $$
-
         $$
         \log_a f(x) > \log_a g(x) \Leftrightarrow \begin{cases} f(x) > 0, \\ g(x) > 0, \\ f(x) > g(x). \end{cases}
         $$
@@ -766,7 +760,6 @@ window.MathJax = {
         $$
         a^{f(x)} > a^{g(x)} \Leftrightarrow f(x) < g(x);
         $$
-
         $$
         \log_a f(x) > \log_a g(x) \Leftrightarrow \begin{cases} f(x) > 0, \\ g(x) > 0, \\ f(x) < g(x). \end{cases}
         $$
@@ -804,7 +797,6 @@ window.MathJax = {
         $$
         l_1 \parallel l_2 \Leftrightarrow \frac{A_1}{A_2} = \frac{B_1}{B_2} \neq \frac{C_1}{C_2};
         $$
-
         $$
         l_1 \perp l_2 \Leftrightarrow A_1 A_2 + B_1 B_2 = 0.
         $$
