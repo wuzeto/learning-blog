@@ -113,14 +113,11 @@ window.MathJax = {
     (2) 方程在区间 \((m,n)\) 内有根的充要条件为 \(f(m)f(n)<0\) 或  
         $$
         \begin{cases}
-        f(m)>0, \\
-        p^2-4q \geq 0, \\
-        m < -\frac{p}{2} < n,
+        f(m)>0,p^2-4q \geq 0, \\
+        m < -\frac{p}{2} < n
         \end{cases}
         $$
-
         或  
-
         $$
         \begin{cases}
         f(m)=0, \\
