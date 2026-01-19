@@ -2544,39 +2544,57 @@ window.MathJax = {
 </ul>
 <h2 id="_10">路由协议<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p><strong>路由算法对比：</strong></p>
-<p>| 协议 | 类型 | 度量 | 更新方式 | 适用规模 |</p>
-<p>| :--- | :--- | :--- | :--- | :--- |</p>
-<p>| RIP | 距离向量 | 跳数 | 周期性广播 | 小型网络 |</p>
-<p>| OSPF | 链路状态 | 代价 | 触发式泛洪 | 大型网络 |</p>
-<p>| BGP | 路径向量 | 策略 | 增量更新 | 自治系统间 |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">协议</th>
+<th style="text-align: left;">类型</th>
+<th style="text-align: left;">度量</th>
+<th style="text-align: left;">更新方式</th>
+<th style="text-align: left;">适用规模</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">RIP</td>
+<td style="text-align: left;">距离向量</td>
+<td style="text-align: left;">跳数</td>
+<td style="text-align: left;">周期性广播</td>
+<td style="text-align: left;">小型网络</td>
+</tr>
+<tr>
+<td style="text-align: left;">OSPF</td>
+<td style="text-align: left;">链路状态</td>
+<td style="text-align: left;">代价</td>
+<td style="text-align: left;">触发式泛洪</td>
+<td style="text-align: left;">大型网络</td>
+</tr>
+<tr>
+<td style="text-align: left;">BGP</td>
+<td style="text-align: left;">路径向量</td>
+<td style="text-align: left;">策略</td>
+<td style="text-align: left;">增量更新</td>
+<td style="text-align: left;">自治系统间</td>
+</tr>
+</tbody>
+</table>
 <p><strong>RIP距离向量算法：</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Procedure RIP更新()
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    初始化：距离向量D[v]=∞，下一跳N[v]=null
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    初始化：距离向量D[v]=∞，下一跳N[v]=null
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    D[self] = 0
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    D[self] = 0
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Loop
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    每隔30秒向邻居发送距离向量
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    收到邻居u的距离向量Du
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    ForAll 目的节点v
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        If Du[v] + 1 &lt; D[v]
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>            D[v] = Du[v] + 1
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>            N[v] = u
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        EndIf
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    EndFor
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>EndLoop
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>EndProcedure
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Loop
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    每隔30秒向邻居发送距离向量
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    收到邻居u的距离向量Du
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    ForAll 目的节点v
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        If Du[v] + 1 &lt; D[v]
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>            D[v] = Du[v] + 1
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            N[v] = u
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        EndIf
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    EndFor
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>EndLoop
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>EndProcedure
 </code></pre></div>
 <p><strong>计数到无穷问题：</strong></p>
 <ul>
@@ -2636,13 +2654,36 @@ window.MathJax = {
 <h1 id="_11">五、传输层<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h1>
 <h2 id="udp">UDP协议<a class="headerlink" href="#udp" title="Permanent link">&para;</a></h2>
 <p><strong>UDP数据报格式：</strong></p>
-<p>| 字段 | 说明 |</p>
-<p>| :--- | :--- |</p>
-<p>| 源端口 | 16位，可选（0表示无） |</p>
-<p>| 目的端口 | 16位 |</p>
-<p>| 长度 | 16位，首部+数据 |</p>
-<p>| 检验和 | 16位，可选（0表示无） |</p>
-<p>| 数据 | 应用层数据 |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">字段</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">源端口</td>
+<td style="text-align: left;">16位，可选（0表示无）</td>
+</tr>
+<tr>
+<td style="text-align: left;">目的端口</td>
+<td style="text-align: left;">16位</td>
+</tr>
+<tr>
+<td style="text-align: left;">长度</td>
+<td style="text-align: left;">16位，首部+数据</td>
+</tr>
+<tr>
+<td style="text-align: left;">检验和</td>
+<td style="text-align: left;">16位，可选（0表示无）</td>
+</tr>
+<tr>
+<td style="text-align: left;">数据</td>
+<td style="text-align: left;">应用层数据</td>
+</tr>
+</tbody>
+</table>
 <p><strong>UDP特点：</strong></p>
 <ul>
 <li>
@@ -2660,17 +2701,62 @@ window.MathJax = {
 </ul>
 <h2 id="tcp">TCP协议与连接管理<a class="headerlink" href="#tcp" title="Permanent link">&para;</a></h2>
 <p><strong>TCP段格式：</strong></p>
-<p>| 字段 | 长度 | 说明 |</p>
-<p>| :--- | :--- | :--- |</p>
-<p>| 源端口/目的端口 | 各16位 |  |</p>
-<p>| 序列号 | 32位 | 本报文段第一个字节的序号 |</p>
-<p>| 确认号 | 32位 | 期望收到的下一个字节序号 |</p>
-<p>| 数据偏移 | 4位 | TCP首部长度（以4字节为单位） |</p>
-<p>| 控制位 | 6位 | URG/ACK/PSH/RST/SYN/FIN |</p>
-<p>| 窗口大小 | 16位 | 接收窗口大小（流量控制） |</p>
-<p>| 检验和 | 16位 |  |</p>
-<p>| 紧急指针 | 16位 | URG=1时有效 |</p>
-<p>| 选项 | 可变 | MSS、窗口扩大因子等 |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">字段</th>
+<th style="text-align: left;">长度</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">源端口/目的端口</td>
+<td style="text-align: left;">各16位</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">序列号</td>
+<td style="text-align: left;">32位</td>
+<td style="text-align: left;">本报文段第一个字节的序号</td>
+</tr>
+<tr>
+<td style="text-align: left;">确认号</td>
+<td style="text-align: left;">32位</td>
+<td style="text-align: left;">期望收到的下一个字节序号</td>
+</tr>
+<tr>
+<td style="text-align: left;">数据偏移</td>
+<td style="text-align: left;">4位</td>
+<td style="text-align: left;">TCP首部长度（以4字节为单位）</td>
+</tr>
+<tr>
+<td style="text-align: left;">控制位</td>
+<td style="text-align: left;">6位</td>
+<td style="text-align: left;">URG/ACK/PSH/RST/SYN/FIN</td>
+</tr>
+<tr>
+<td style="text-align: left;">窗口大小</td>
+<td style="text-align: left;">16位</td>
+<td style="text-align: left;">接收窗口大小（流量控制）</td>
+</tr>
+<tr>
+<td style="text-align: left;">检验和</td>
+<td style="text-align: left;">16位</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">紧急指针</td>
+<td style="text-align: left;">16位</td>
+<td style="text-align: left;">URG=1时有效</td>
+</tr>
+<tr>
+<td style="text-align: left;">选项</td>
+<td style="text-align: left;">可变</td>
+<td style="text-align: left;">MSS、窗口扩大因子等</td>
+</tr>
+</tbody>
+</table>
 <p><strong>TCP三次握手：</strong></p>
 <ol>
 <li>
@@ -2725,48 +2811,31 @@ window.MathJax = {
 </ul>
 <p><strong>回退N帧（GBN）：</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Procedure GBN发送方()
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    base ← 1 //发送窗口下界
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    base ← 1 //发送窗口下界
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    nextseqnum ← 1 //下一个要发送的序号
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    nextseqnum ← 1 //下一个要发送的序号
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Loop
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    If 有数据发送且窗口未满
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Loop
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    If 有数据发送且窗口未满
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        发送序号为nextseqnum的分组
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        nextseqnum ← nextseqnum + 1
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    EndIf
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        发送序号为nextseqnum的分组
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        nextseqnum ← nextseqnum + 1
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    EndIf
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    If 收到ACK n
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>        base ← n + 1
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>        If base == nextseqnum
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>            停止定时器
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>        Else
-<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>            重启定时器
-<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
-<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>        EndIf
-<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
-<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>    EndIf
-<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>
-<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>    If 超时
-<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
-<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>        重传所有未确认分组（base到nextseqnum-1）
-<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
-<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>        重启定时器
-<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
-<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>    EndIf
-<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>
-<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>EndLoop
-<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>
-<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>EndProcedure
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    If 收到ACK n
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        base ← n + 1
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        If base == nextseqnum
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>            停止定时器
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        Else
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>            重启定时器
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        EndIf
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    EndIf
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    If 超时
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>        重传所有未确认分组（base到nextseqnum-1）
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>        重启定时器
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    EndIf
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>EndLoop
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>EndProcedure
 </code></pre></div>
 <p><strong>选择重传（SR）：</strong></p>
 <ul>
@@ -2844,13 +2913,42 @@ window.MathJax = {
 </li>
 </ol>
 <p><strong>资源记录类型：</strong></p>
-<p>| 类型 | 代码 | 功能 |</p>
-<p>| :--- | :--- | :--- |</p>
-<p>| A | 1 | IPv4地址 |</p>
-<p>| AAAA | 28 | IPv6地址 |</p>
-<p>| CNAME | 5 | 规范名（别名） |</p>
-<p>| MX | 15 | 邮件交换 |</p>
-<p>| NS | 2 | 域名服务器 |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">类型</th>
+<th style="text-align: left;">代码</th>
+<th style="text-align: left;">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">IPv4地址</td>
+</tr>
+<tr>
+<td style="text-align: left;">AAAA</td>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;">IPv6地址</td>
+</tr>
+<tr>
+<td style="text-align: left;">CNAME</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">规范名（别名）</td>
+</tr>
+<tr>
+<td style="text-align: left;">MX</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">邮件交换</td>
+</tr>
+<tr>
+<td style="text-align: left;">NS</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">域名服务器</td>
+</tr>
+</tbody>
+</table>
 <h2 id="_15">电子邮件协议<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
 <p><strong>协议体系：</strong></p>
 <ul>
@@ -2869,13 +2967,36 @@ window.MathJax = {
 </ul>
 <h2 id="http">HTTP协议<a class="headerlink" href="#http" title="Permanent link">&para;</a></h2>
 <p><strong>HTTP方法：</strong></p>
-<p>| 方法 | 功能 |</p>
-<p>| :--- | :--- |</p>
-<p>| GET | 获取资源 |</p>
-<p>| POST | 提交数据 |</p>
-<p>| PUT | 上传资源 |</p>
-<p>| DELETE | 删除资源 |</p>
-<p>| HEAD | 获取头部 |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">方法</th>
+<th style="text-align: left;">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">获取资源</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">提交数据</td>
+</tr>
+<tr>
+<td style="text-align: left;">PUT</td>
+<td style="text-align: left;">上传资源</td>
+</tr>
+<tr>
+<td style="text-align: left;">DELETE</td>
+<td style="text-align: left;">删除资源</td>
+</tr>
+<tr>
+<td style="text-align: left;">HEAD</td>
+<td style="text-align: left;">获取头部</td>
+</tr>
+</tbody>
+</table>
 <p><strong>HTTP连接：</strong></p>
 <ul>
 <li>
@@ -2890,16 +3011,11 @@ window.MathJax = {
 </ul>
 <p><strong>HTTP报文格式：</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>请求行：方法 URL 版本
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>首部行：Host: www.example.com
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Connection: keep-alive
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Cookie: name=value
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>空行
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>实体主体：POST数据等
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>首部行：Host: www.example.com
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Connection: keep-alive
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Cookie: name=value
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>空行
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>实体主体：POST数据等
 </code></pre></div>
 <h2 id="ftp">FTP文件传输<a class="headerlink" href="#ftp" title="Permanent link">&para;</a></h2>
 <p><strong>双连接模式：</strong></p>
@@ -3136,18 +3252,67 @@ window.MathJax = {
 </li>
 </ol>
 <h2 id="_17">附录：重要公式速查<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
-<p>| 名称 | 公式 | 说明 |</p>
-<p>| :--- | :--- | :--- |</p>
-<p>| Nyquist定理 | <span class="arithmatex">\(C = 2B\log_2 M\)</span> | 无噪声极限速率 |</p>
-<p>| Shannon定理 | <span class="arithmatex">\(C = B\log_2(1+S/N)\)</span> | 有噪声极限速率 |</p>
-<p>| 发送时延 | <span class="arithmatex">\(T_s = L/R\)</span> | 数据长度/带宽 |</p>
-<p>| 传播时延 | <span class="arithmatex">\(T_p = D/V\)</span> | 距离/传播速度 |</p>
-<p>| 时延带宽积 | <span class="arithmatex">\(B \times T_p\)</span> | 链路上比特数 |</p>
-<p>| ALOHA吞吐量 | <span class="arithmatex">\(S = Ge^{-2G}\)</span> | 纯ALOHA |</p>
-<p>| 时隙ALOHA吞吐量 | <span class="arithmatex">\(S = Ge^{-G}\)</span> | 时隙ALOHA |</p>
-<p>| 最小帧长 | <span class="arithmatex">\(L_{\min} = 2\tau R\)</span> | 确保冲突检测 |</p>
-<p>| GBN窗口大小 | <span class="arithmatex">\(W_T \leq 2^n - 1\)</span> | n为序号比特数 |</p>
-<p>| SR窗口大小 | <span class="arithmatex">\(W_T = W_R = 2^{n-1}\)</span> | 避免序号歧义 |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">名称</th>
+<th style="text-align: left;">公式</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Nyquist定理</td>
+<td style="text-align: left;"><span class="arithmatex">\(C = 2B\log_2 M\)</span></td>
+<td style="text-align: left;">无噪声极限速率</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shannon定理</td>
+<td style="text-align: left;"><span class="arithmatex">\(C = B\log_2(1+S/N)\)</span></td>
+<td style="text-align: left;">有噪声极限速率</td>
+</tr>
+<tr>
+<td style="text-align: left;">发送时延</td>
+<td style="text-align: left;"><span class="arithmatex">\(T_s = L/R\)</span></td>
+<td style="text-align: left;">数据长度/带宽</td>
+</tr>
+<tr>
+<td style="text-align: left;">传播时延</td>
+<td style="text-align: left;"><span class="arithmatex">\(T_p = D/V\)</span></td>
+<td style="text-align: left;">距离/传播速度</td>
+</tr>
+<tr>
+<td style="text-align: left;">时延带宽积</td>
+<td style="text-align: left;"><span class="arithmatex">\(B \times T_p\)</span></td>
+<td style="text-align: left;">链路上比特数</td>
+</tr>
+<tr>
+<td style="text-align: left;">ALOHA吞吐量</td>
+<td style="text-align: left;"><span class="arithmatex">\(S = Ge^{-2G}\)</span></td>
+<td style="text-align: left;">纯ALOHA</td>
+</tr>
+<tr>
+<td style="text-align: left;">时隙ALOHA吞吐量</td>
+<td style="text-align: left;"><span class="arithmatex">\(S = Ge^{-G}\)</span></td>
+<td style="text-align: left;">时隙ALOHA</td>
+</tr>
+<tr>
+<td style="text-align: left;">最小帧长</td>
+<td style="text-align: left;"><span class="arithmatex">\(L_{\min} = 2\tau R\)</span></td>
+<td style="text-align: left;">确保冲突检测</td>
+</tr>
+<tr>
+<td style="text-align: left;">GBN窗口大小</td>
+<td style="text-align: left;"><span class="arithmatex">\(W_T \leq 2^n - 1\)</span></td>
+<td style="text-align: left;">n为序号比特数</td>
+</tr>
+<tr>
+<td style="text-align: left;">SR窗口大小</td>
+<td style="text-align: left;"><span class="arithmatex">\(W_T = W_R = 2^{n-1}\)</span></td>
+<td style="text-align: left;">避免序号歧义</td>
+</tr>
+</tbody>
+</table>
 
 
 

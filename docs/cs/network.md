@@ -682,13 +682,9 @@ window.MathJax = {
 
 
 | 协议 | 类型 | 度量 | 更新方式 | 适用规模 |
-
 | :--- | :--- | :--- | :--- | :--- |
-
 | RIP | 距离向量 | 跳数 | 周期性广播 | 小型网络 |
-
 | OSPF | 链路状态 | 代价 | 触发式泛洪 | 大型网络 |
-
 | BGP | 路径向量 | 策略 | 增量更新 | 自治系统间 |
 
 
@@ -700,29 +696,18 @@ window.MathJax = {
 ```
 
 Procedure RIP更新()
-
     初始化：距离向量D[v]=∞，下一跳N[v]=null
-
     D[self] = 0
 
 Loop
-
     每隔30秒向邻居发送距离向量
-
     收到邻居u的距离向量Du
-
     ForAll 目的节点v
-
         If Du[v] + 1 < D[v]
-
             D[v] = Du[v] + 1
-
             N[v] = u
-
         EndIf
-
     EndFor
-
 EndLoop
 
 EndProcedure
@@ -792,17 +777,11 @@ EndProcedure
 
 
 | 字段 | 说明 |
-
 | :--- | :--- |
-
 | 源端口 | 16位，可选（0表示无） |
-
 | 目的端口 | 16位 |
-
 | 长度 | 16位，首部+数据 |
-
 | 检验和 | 16位，可选（0表示无） |
-
 | 数据 | 应用层数据 |
 
 
@@ -828,25 +807,15 @@ EndProcedure
 
 
 | 字段 | 长度 | 说明 |
-
 | :--- | :--- | :--- |
-
 | 源端口/目的端口 | 各16位 |  |
-
 | 序列号 | 32位 | 本报文段第一个字节的序号 |
-
 | 确认号 | 32位 | 期望收到的下一个字节序号 |
-
 | 数据偏移 | 4位 | TCP首部长度（以4字节为单位） |
-
 | 控制位 | 6位 | URG/ACK/PSH/RST/SYN/FIN |
-
 | 窗口大小 | 16位 | 接收窗口大小（流量控制） |
-
 | 检验和 | 16位 |  |
-
 | 紧急指针 | 16位 | URG=1时有效 |
-
 | 选项 | 可变 | MSS、窗口扩大因子等 |
 
 
@@ -904,45 +873,28 @@ EndProcedure
 ```
 
 Procedure GBN发送方()
-
     base ← 1 //发送窗口下界
-
     nextseqnum ← 1 //下一个要发送的序号
 
 Loop
-
     If 有数据发送且窗口未满
-
         发送序号为nextseqnum的分组
-
         nextseqnum ← nextseqnum + 1
-
     EndIf
 
     If 收到ACK n
-
         base ← n + 1
-
         If base == nextseqnum
-
             停止定时器
-
         Else
-
             重启定时器
-
         EndIf
-
     EndIf
 
     If 超时
-
         重传所有未确认分组（base到nextseqnum-1）
-
         重启定时器
-
     EndIf
-
 EndLoop
 
 EndProcedure
@@ -1028,17 +980,11 @@ EndProcedure
 
 
 | 类型 | 代码 | 功能 |
-
 | :--- | :--- | :--- |
-
 | A | 1 | IPv4地址 |
-
 | AAAA | 28 | IPv6地址 |
-
 | CNAME | 5 | 规范名（别名） |
-
 | MX | 15 | 邮件交换 |
-
 | NS | 2 | 域名服务器 |
 
 
@@ -1068,17 +1014,11 @@ EndProcedure
 
 
 | 方法 | 功能 |
-
 | :--- | :--- |
-
 | GET | 获取资源 |
-
 | POST | 提交数据 |
-
 | PUT | 上传资源 |
-
 | DELETE | 删除资源 |
-
 | HEAD | 获取头部 |
 
 
@@ -1098,15 +1038,10 @@ EndProcedure
 ```
 
 请求行：方法 URL 版本
-
 首部行：Host: www.example.com
-
 Connection: keep-alive
-
 Cookie: name=value
-
 空行
-
 实体主体：POST数据等
 
 ```
@@ -1309,28 +1244,15 @@ Cookie: name=value
 
 ## 附录：重要公式速查
 
-
-
 | 名称 | 公式 | 说明 |
-
 | :--- | :--- | :--- |
-
 | Nyquist定理 | $C = 2B\log_2 M$ | 无噪声极限速率 |
-
 | Shannon定理 | $C = B\log_2(1+S/N)$ | 有噪声极限速率 |
-
 | 发送时延 | $T_s = L/R$ | 数据长度/带宽 |
-
 | 传播时延 | $T_p = D/V$ | 距离/传播速度 |
-
 | 时延带宽积 | $B \times T_p$ | 链路上比特数 |
-
 | ALOHA吞吐量 | $S = Ge^{-2G}$ | 纯ALOHA |
-
 | 时隙ALOHA吞吐量 | $S = Ge^{-G}$ | 时隙ALOHA |
-
 | 最小帧长 | $L_{\min} = 2\tau R$ | 确保冲突检测 |
-
 | GBN窗口大小 | $W_T \leq 2^n - 1$ | n为序号比特数 |
-
 | SR窗口大小 | $W_T = W_R = 2^{n-1}$ | 避免序号歧义 |
