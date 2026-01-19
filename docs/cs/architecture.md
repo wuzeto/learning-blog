@@ -22,18 +22,25 @@ window.MathJax = {
 **计算机性能指标**
 
 **存储容量**:
+
 * 主存容量：$2^n \times m$（n为地址线数，m为数据线位数）
+
 * 辅存容量：字节、KB、MB、GB、TB为单位
+
 * 容量单位：1B=8bit, 1KB=1024B, 1MB=1024KB, 1GB=1024MB
 
 **运算速度指标**:
+
 * **MIPS**（Million Instructions Per Second）：每秒百万条指令
+
   $\text{MIPS} = \frac{\text{指令条数}}{\text{执行时间} \times 10^6} = \frac{f}{CPI \times 10^6}$
 
 * **FLOPS**（Floating-point Operations Per Second）：每秒浮点运算次数
+
   $\text{FLOPS} = \frac{\text{浮点运算次数}}{\text{执行时间}}$
 
 * **CPI**（Cycles Per Instruction）：每条指令平均时钟周期数
+
   $\text{CPI} = \frac{\sum_{i=1}^n (IC_i \times CPI_i)}{IC} = \frac{\text{总时钟周期数}}{\text{总指令数}}$
 
 * **CPU时间**：$\text{CPU时间} = \frac{\text{指令数} \times \text{CPI}}{\text{时钟频率}}$

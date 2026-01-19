@@ -1521,25 +1521,33 @@ window.MathJax = {
 <h2 id="_2">一、计算机系统概述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="11">1.1 性能指标与冯诺伊曼结构<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
 <p><strong>计算机性能指标</strong></p>
-<p><strong>存储容量</strong>:
-* 主存容量：<span class="arithmatex">\(2^n \times m\)</span>（n为地址线数，m为数据线位数）
-* 辅存容量：字节、KB、MB、GB、TB为单位
-* 容量单位：1B=8bit, 1KB=1024B, 1MB=1024KB, 1GB=1024MB</p>
-<p><strong>运算速度指标</strong>:
-* <strong>MIPS</strong>（Million Instructions Per Second）：每秒百万条指令
-  <span class="arithmatex">\(\text{MIPS} = \frac{\text{指令条数}}{\text{执行时间} \times 10^6} = \frac{f}{CPI \times 10^6}\)</span></p>
+<p><strong>存储容量</strong>:</p>
 <ul>
 <li>
-<p><strong>FLOPS</strong>（Floating-point Operations Per Second）：每秒浮点运算次数
-  <span class="arithmatex">\(\text{FLOPS} = \frac{\text{浮点运算次数}}{\text{执行时间}}\)</span></p>
+<p>主存容量：<span class="arithmatex">\(2^n \times m\)</span>（n为地址线数，m为数据线位数）</p>
 </li>
 <li>
-<p><strong>CPI</strong>（Cycles Per Instruction）：每条指令平均时钟周期数
-  <span class="arithmatex">\(\text{CPI} = \frac{\sum_{i=1}^n (IC_i \times CPI_i)}{IC} = \frac{\text{总时钟周期数}}{\text{总指令数}}\)</span></p>
+<p>辅存容量：字节、KB、MB、GB、TB为单位</p>
 </li>
 <li>
-<p><strong>CPU时间</strong>：<span class="arithmatex">\(\text{CPU时间} = \frac{\text{指令数} \times \text{CPI}}{\text{时钟频率}}\)</span></p>
+<p>容量单位：1B=8bit, 1KB=1024B, 1MB=1024KB, 1GB=1024MB</p>
 </li>
+</ul>
+<p><strong>运算速度指标</strong>:</p>
+<ul>
+<li><strong>MIPS</strong>（Million Instructions Per Second）：每秒百万条指令</li>
+</ul>
+<p><span class="arithmatex">\(\text{MIPS} = \frac{\text{指令条数}}{\text{执行时间} \times 10^6} = \frac{f}{CPI \times 10^6}\)</span></p>
+<ul>
+<li><strong>FLOPS</strong>（Floating-point Operations Per Second）：每秒浮点运算次数</li>
+</ul>
+<p><span class="arithmatex">\(\text{FLOPS} = \frac{\text{浮点运算次数}}{\text{执行时间}}\)</span></p>
+<ul>
+<li><strong>CPI</strong>（Cycles Per Instruction）：每条指令平均时钟周期数</li>
+</ul>
+<p><span class="arithmatex">\(\text{CPI} = \frac{\sum_{i=1}^n (IC_i \times CPI_i)}{IC} = \frac{\text{总时钟周期数}}{\text{总指令数}}\)</span></p>
+<ul>
+<li><strong>CPU时间</strong>：<span class="arithmatex">\(\text{CPU时间} = \frac{\text{指令数} \times \text{CPI}}{\text{时钟频率}}\)</span></li>
 </ul>
 <p><strong>字长概念</strong>:</p>
 <ul>
