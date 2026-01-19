@@ -225,13 +225,9 @@ $\det \begin{pmatrix} A & 0 \\ C & D \end{pmatrix} = \det(A) \det(D)$
 **更一般的分块行列式**
 
 $\det \begin{pmatrix} A & B \\ C & D \end{pmatrix} = 
-
 \begin{cases}
-
    \det(A) \det(D - CA^{-1}B), & \text{若 } A \text{ 可逆} \\
-
    \det(D) \det(A - BD^{-1}C), & \text{若 } D \text{ 可逆}
-
 \end{cases}$
 
 
