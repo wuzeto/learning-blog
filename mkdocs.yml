@@ -8,8 +8,17 @@ theme:
   name: material
   custom_dir: overrides
   
-  # 暗黑科幻主题
+  # 完整颜色方案配置
   palette:
+    # 浅色模式
+    - scheme: default
+      primary: cyan
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至深色模式
+    
+    # 深色模式
     - scheme: slate
       primary: cyan
       accent: deep purple
@@ -17,7 +26,7 @@ theme:
         icon: material/weather-night
         name: 切换至浅色模式
   
-  # 启用功能
+  # 功能配置
   features:
     - navigation.instant
     - navigation.tabs
@@ -30,17 +39,12 @@ theme:
     - content.code.select
     - content.code.annotate
     - navigation.footer
+    - navigation.indexes  # 添加索引功能
   
-  # 字体和图标
-  font:
-    text: Roboto
-    code: "JetBrains Mono"
-  
-  icon:
-    logo: material/rocket-launch
-  
-  # 语言配置
-  language: zh
+  # 添加主题插件
+  plugin:
+    - palette
+
 
 # Markdown扩展
 markdown_extensions:
