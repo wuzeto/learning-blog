@@ -375,6 +375,660 @@ $$
 (II) $Y_{1}$ 与 $Y_{n}$ 的协方差 $Cov(Y_{1}, Y_{n})$。
 
 ---
+
+# 2006年全国硕士研究生招生考试试题
+## 一、填空题(本题共6小题,每小题4分,满分24分)
+(1) $\lim\limits_{x \to 0}\frac{\arctan x - x}{\ln(1 + 2x^3)} =$
+(2) 微分方程 $y' = \frac{y(1 - x)}{x}$ 的通解是
+(3) 设 $\sum$ 是锥面 $z = \sqrt{x^2 + y^2}(0 \leq z \leq 1)$ 的下侧，则 $\iint_{\sum} x\mathrm{d}y\mathrm{d}z + 2y\mathrm{d}z\mathrm{d}x + 3(z - 1)\mathrm{d}x\mathrm{d}y =$
+(4) 点 $(2,1,0)$ 到平面 $3x + 4y + 5z = 0$ 的距离 $d =$
+(5) 设矩阵 $A = \begin{pmatrix}2 & 1 \\ -1 & 2\end{pmatrix}$，$E$ 为2阶单位矩阵，$B$ 满足 $BA = B + 2E$，则 $|B| =$
+(6) 设随机变量 $X$ 与 $Y$ 相互独立，且均服从区间 $[0,3]$ 上的均匀分布，则 $P\{\max\{X,Y\} \leq 1\} =$
+
+## 二、选择题(本题共8小题,每小题4分,满分32分)
+(7) 设函数 $y = f(x)$ 具有二阶导数，且 $f'(x) > 0$，$f''(x) > 0$，$\Delta x$ 为自变量 $x$ 在点 $x_0$ 处的增量，$\Delta y$ 与 $\mathrm{d}y$ 分别为 $f(x)$ 在点 $x_0$ 处对应的增量与微分，若 $\Delta x > 0$，则()
+(A) $0 < \mathrm{d}y < \Delta y$
+(B) $0 < \Delta y < \mathrm{d}y$
+(C) $\Delta y < \mathrm{d}y < 0$
+(D) $\mathrm{d}y < \Delta y < 0$
+
+(8) 设 $f(x,y)$ 为连续函数，则 $\int_{0}^{\frac{\pi}{4}} \mathrm{d}\theta \int_{0}^{1} f(r\cos\theta, r\sin\theta)r\mathrm{d}r =$()
+(A) $\int_{0}^{\frac{\sqrt{2}}{2}} \mathrm{d}x \int_{x}^{\sqrt{1 - x^2}} f(x,y)\mathrm{d}y$
+(B) $\int_{0}^{\frac{\sqrt{2}}{2}} \mathrm{d}x \int_{0}^{\sqrt{1 - x^2}} f(x,y)\mathrm{d}y$
+(C) $\int_{0}^{\frac{\sqrt{2}}{2}} \mathrm{d}y \int_{y}^{\sqrt{1 - y^2}} f(x,y)\mathrm{d}x$
+(D) $\int_{0}^{\frac{\sqrt{2}}{2}} \mathrm{d}y \int_{0}^{\sqrt{1 - y^2}} f(x,y)\mathrm{d}x$
+
+(9) 若级数 $\sum_{n=1}^{\infty} a_n$ 收敛，则级数()
+(A) $\sum_{n=1}^{\infty} |a_n|$ 收敛
+(B) $\sum_{n=1}^{\infty} (-1)^n a_n$ 收敛
+(C) $\sum_{n=1}^{\infty} a_n a_{n+1}$ 收敛
+(D) $\sum_{n=1}^{\infty} \frac{a_n + a_{n+1}}{2}$ 收敛
+
+(10) 设 $f(x,y)$ 与 $\varphi(x,y)$ 均为可微函数，且 $\varphi_y'(x,y) \neq 0$，已知 $(x_0,y_0)$ 是 $f(x,y)$ 在约束条件 $\varphi(x,y) = 0$ 下的一个极值点，下列选项正确的是()
+(A) 若 $f_x'(x_0,y_0) = 0$，则 $f_y'(x_0,y_0) = 0$
+(B) 若 $f_x'(x_0,y_0) = 0$，则 $f_y'(x_0,y_0) \neq 0$
+(C) 若 $f_x'(x_0,y_0) \neq 0$，则 $f_y'(x_0,y_0) = 0$
+(D) 若 $f_x'(x_0,y_0) \neq 0$，则 $f_y'(x_0,y_0) \neq 0$
+
+(11) 设 $\alpha_1,\alpha_2,\cdots,\alpha_s$ 均为 $n$ 维列向量，$A$ 是 $m \times n$ 矩阵，下列选项正确的是()
+(A) 若 $\alpha_1,\alpha_2,\cdots,\alpha_s$ 线性相关，则 $A\alpha_1,A\alpha_2,\cdots,A\alpha_s$ 线性相关
+(B) 若 $\alpha_1,\alpha_2,\cdots,\alpha_s$ 线性相关，则 $A\alpha_1,A\alpha_2,\cdots,A\alpha_s$ 线性无关
+(C) 若 $\alpha_1,\alpha_2,\cdots,\alpha_s$ 线性无关，则 $A\alpha_1,A\alpha_2,\cdots,A\alpha_s$ 线性相关
+(D) 若 $\alpha_1,\alpha_2,\cdots,\alpha_s$ 线性无关，则 $A\alpha_1,A\alpha_2,\cdots,A\alpha_s$ 线性无关
+
+(12) 设 $A$ 为3阶矩阵，将 $A$ 的第2行加到第1行得 $B$，再将 $B$ 的第1列的 $-1$ 倍加到第2列得 $C$，记 $P = \begin{pmatrix}1 & 1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}$，则()
+(A) $C = P^{-1}AP$
+(B) $C = PAP^{-1}$
+(C) $C = P^TAP$
+(D) $C = PAP^T$
+
+(13) 设 $A,B$ 为随机事件，且 $P(B) > 0$，$P(A|B) = 1$，则必有()
+(A) $P(A \cup B) > P(A)$
+(B) $P(A \cup B) > P(B)$
+(C) $P(A \cup B) = P(A)$
+(D) $P(A \cup B) = P(B)$
+
+(14) 设随机变量 $X$ 服从正态分布 $N(\mu_1,\sigma_1^2)$，$Y$ 服从正态分布 $N(\mu_2,\sigma_2^2)$，且 $P\{|X - \mu_1| < 1\} > P\{|Y - \mu_2| < 1\}$，则必有()
+(A) $\sigma_1 < \sigma_2$
+(B) $\sigma_1 > \sigma_2$
+(C) $\mu_1 < \mu_2$
+(D) $\mu_1 > \mu_2$
+
+## 三、解答题(本题共9小题,满分94分.解答应写出文字说明、证明过程或演算步骤)
+(15)(本题满分10分)
+设区域 $D = \{(x,y) | x^2 + y^2 \leq 1, x \geq 0\}$，计算二重积分 $I = \iint_{D} \frac{1 + xy}{1 + x^2 + y^2}\mathrm{d}x\mathrm{d}y$
+
+(16)(本题满分12分)
+设数列 $\{x_n\}$ 满足 $0 < x_1 < \pi$，$x_{n+1} = \sin x_n (n = 1,2,\cdots)$
+(I) 证明 $\lim\limits_{n \to \infty} x_n$ 存在，并求该极限；
+(II) 计算 $\lim\limits_{n \to \infty} \left(\frac{x_{n+1}}{x_n}\right)^{\frac{1}{x_n^2}}$
+
+(17)(本题满分12分)
+将函数 $f(x) = \frac{x}{2 + x - x^2}$ 展开成 $x$ 的幂级数
+
+(18)(本题满分12分)
+设函数 $f(u)$ 在 $(0,+\infty)$ 内具有二阶导数，且 $z = f(\sqrt{x^2 + y^2})$ 满足等式 $\frac{\partial^2 z}{\partial x^2} + \frac{\partial^2 z}{\partial y^2} = 0$
+(I) 验证 $f''(u) + \frac{f'(u)}{u} = 0$；
+(II) 若 $f(1) = 0$，$f'(1) = 1$，求函数 $f(u)$ 的表达式
+
+(19)(本题满分12分)
+设在上半平面 $D = \{(x,y) | y > 0\}$ 内，函数 $f(x,y)$ 具有连续偏导数，且对任意的 $t > 0$ 都有 $f(tx, ty) = t^{-2}f(x,y)$。证明：对 $D$ 内的任意分段光滑的有向简单闭曲线 $L$，都有 $\oint_{L} yf(x,y)\mathrm{d}x - xf(x,y)\mathrm{d}y = 0$
+
+(20)(本题满分9分)
+已知非齐次线性方程组
+$\begin{cases}
+x_1 + x_2 + x_3 + x_4 = -1, \\
+4x_1 + 3x_2 + 5x_3 - x_4 = -1, \\
+ax_1 + x_2 + 3x_3 + bx_4 = 1
+\end{cases}$
+有3个线性无关的解
+(I) 证明方程组系数矩阵 $A$ 的秩 $r(A) = 2$；
+(II) 求 $a,b$ 的值及方程组的通解
+
+(21)(本题满分9分)
+设3阶实对称矩阵 $A$ 的各行元素之和均为3，向量 $\alpha_1 = (-1,2,-1)^T$，$\alpha_2 = (0,-1,1)^T$ 是线性方程组 $Ax = 0$ 的两个解
+(I) 求 $A$ 的特征值与特征向量；
+(II) 求正交矩阵 $Q$ 和对角矩阵 $\Lambda$，使得 $Q^T A Q = \Lambda$
+
+(22)(本题满分9分)
+设随机变量 $X$ 的概率密度为 $f_X(x) = \begin{cases}\frac{1}{2}, & -1 < x < 0, \\ \frac{1}{4}, & 0 \leq x < 2, \\ 0, & \text{其他}\end{cases}$，令 $Y = X^2$，$F(x,y)$ 为二维随机变量 $(X,Y)$ 的分布函数，求
+(I) $Y$ 的概率密度 $f_Y(y)$；
+(II) $Cov(X,Y)$；
+(III) $F\left(-\frac{1}{2},4\right)$
+
+(23)(本题满分9分)
+设总体 $X$ 的概率密度为 $f(x;\theta) = \begin{cases}\theta, & 0 < x < 1, \\ 1 - \theta, & 1 \leq x < 2, \\ 0, & \text{其他}\end{cases}$，其中 $\theta$ 是未知参数 $(0 < \theta < 1)$。$X_1,X_2,\cdots,X_n$ 为来自总体 $X$ 的简单随机样本，记 $N$ 为样本值 $x_1,x_2,\cdots,x_n$ 中小于1的个数。求 $\theta$ 的最大似然估计
+
+
+# 2007年全国硕士研究生招生考试试题
+## 一、选择题(本题共10小题,每小题4分,满分40分)
+(1) 当 $x \to 0^+$ 时，与 $\sqrt{x}$ 等价的无穷小量是()
+(A) $1 - e^{\sqrt{x}}$
+(B) $\ln\frac{1 + x}{1 - \sqrt{x}}$
+(C) $\sqrt{1 + \sqrt{x}} - 1$
+(D) $1 - \cos\sqrt{x}$
+
+(2) 曲线 $y = \frac{1}{x} + \ln(1 + e^x)$ 渐近线的条数为()
+(A) 0
+(B) 1
+(C) 2
+(D) 3
+
+(3) 如图，连续函数 $y = f(x)$ 在区间 $[-3,-2],[2,3]$ 上的图形分别是直径为1的上、下半圆周，在区间 $[-2,0],[0,2]$ 上的图形分别是直径为2的下、上半圆周，设 $F(x) = \int_{0}^{x} f(t)\mathrm{d}t$，则下列结论正确的是()
+(A) $F(3) = -\frac{3}{4}F(-2)$
+(B) $F(3) = \frac{5}{4}F(2)$
+(C) $F(-3) = \frac{3}{4}F(2)$
+(D) $F(-3) = -\frac{5}{4}F(-2)$
+
+(4) 设函数 $f(x)$ 在 $x = 0$ 处连续，下列命题错误的是()
+(A) 若 $\lim\limits_{x \to 0} \frac{f(x)}{x}$ 存在，则 $f(0) = 0$
+(B) 若 $\lim\limits_{x \to 0} \frac{f(x) + f(-x)}{x}$ 存在，则 $f(0) = 0$
+(C) 若 $\lim\limits_{x \to 0} \frac{f(x)}{x}$ 存在，则 $f'(0)$ 存在
+(D) 若 $\lim\limits_{x \to 0} \frac{f(x) - f(-x)}{x}$ 存在，则 $f'(0)$ 存在
+
+(5) 设函数 $f(x)$ 在 $(0,+\infty)$ 上具有二阶导数，且 $f''(x) > 0$，令 $u_n = f(n)(n = 1,2,\cdots)$，则下列结论正确的是()
+(A) 若 $u_1 > u_2$，则 $\{u_n\}$ 必收敛
+(B) 若 $u_1 > u_2$，则 $\{u_n\}$ 必发散
+(C) 若 $u_1 < u_2$，则 $\{u_n\}$ 必收敛
+(D) 若 $u_1 < u_2$，则 $\{u_n\}$ 必发散
+
+(6) 设曲线 $L: f(x,y) = 1$（$f(x,y)$ 具有一阶连续偏导数）过第一象限内的点 $M$ 和第四象限内的点 $N$，$\Gamma$ 为 $L$ 上从点 $M$ 到点 $N$ 的一段弧，则下列积分小于零的是()
+(A) $\int_{\Gamma} f(x,y)\mathrm{d}x$
+(B) $\int_{\Gamma} f(x,y)\mathrm{d}y$
+(C) $\int_{\Gamma} f(x,y)\mathrm{d}s$
+(D) $\int_{\Gamma} (f_x'(x,y)\mathrm{d}x + f_y'(x,y)\mathrm{d}y)$
+
+(7) 设向量组 $\alpha_1,\alpha_2,\alpha_3$ 线性无关，则下列向量组线性相关的是()
+(A) $\alpha_1 - \alpha_2,\alpha_2 - \alpha_3,\alpha_3 - \alpha_1$
+(B) $\alpha_1 + \alpha_2,\alpha_2 + \alpha_3,\alpha_3 + \alpha_1$
+(C) $\alpha_1 - 2\alpha_2,\alpha_2 - 2\alpha_3,\alpha_3 - 2\alpha_1$
+(D) $\alpha_1 + 2\alpha_2,\alpha_2 + 2\alpha_3,\alpha_3 + 2\alpha_1$
+
+(8) 设矩阵 $A = \begin{pmatrix}2 & -1 & -1 \\ -1 & 2 & -1 \\ -1 & -1 & 2\end{pmatrix}$，$B = \begin{pmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0\end{pmatrix}$，则 $A$ 与 $B$()
+(A) 合同，且相似
+(B) 合同，但不相似
+(C) 不合同，但相似
+(D) 既不合同，也不相似
+
+(9) 某人向同一目标独立重复射击，每次射击命中目标的概率为 $p(0 < p < 1)$，则此人第4次射击恰好第2次命中目标的概率为()
+(A) $3p(1 - p)^2$
+(B) $6p(1 - p)^2$
+(C) $3p^2(1 - p)^2$
+(D) $6p^2(1 - p)^2$
+
+(10) 设随机变量 $(X,Y)$ 服从二维正态分布，且 $X$ 与 $Y$ 不相关，$f_X(x),f_Y(y)$ 分别表示 $X,Y$ 的概率密度，则在 $Y = y$ 的条件下，$X$ 的条件概率密度 $f_{X|Y}(x|y)$ 为()
+(A) $f_X(x)$
+(B) $f_Y(y)$
+(C) $f_X(x)f_Y(y)$
+(D) $\frac{f_X(x)}{f_Y(y)}$
+
+## 二、填空题(本题共6小题,每小题4分,满分24分)
+(11) $\int_{1}^{2} \frac{1}{x^3} e^{\frac{1}{x}}\mathrm{d}x =$
+(12) 设 $f(u,v)$ 为二元可微函数，$z = f(x^y, y^x)$，则 $\frac{\partial z}{\partial x} =$
+(13) 二阶常系数非齐次线性微分方程 $y'' - 4y' + 3y = 2e^{2x}$ 的通解为 $y =$
+(14) 设曲面 $\sum: |x| + |y| + |z| = 1$，则 $\oiint_{\sum} (x + |y|)\mathrm{d}S =$
+(15) 设矩阵 $A = \begin{pmatrix}0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{pmatrix}$，则 $A^3$ 的秩为
+(16) 在区间 $(0,1)$ 中随机地取两个数，则这两个数之差的绝对值小于 $\frac{1}{2}$ 的概率为
+
+## 三、解答题(本题共8小题,满分86分.解答应写出文字说明、证明过程或演算步骤)
+(17)(本题满分11分)
+求函数 $f(x,y) = x^2 + 2y^2 - x^2y^2$ 在区域 $D = \{(x,y) | x^2 + y^2 \leq 4, y \geq 0\}$ 上的最大值和最小值
+
+(18)(本题满分10分)
+计算曲面积分 $I = \iint_{\sum} xz\mathrm{d}y\mathrm{d}z + 2zy\mathrm{d}z\mathrm{d}x + 3xy\mathrm{d}x\mathrm{d}y$，其中 $\sum$ 是曲面 $z = 1 - x^2 - \frac{y^2}{4}(0 \leq z \leq 1)$ 的上侧
+
+(19)(本题满分11分)
+设函数 $f(x),g(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 内具有二阶导数且存在相等的最大值，$f(a) = g(a)$，$f(b) = g(b)$，证明：存在 $\xi \in (a,b)$，使得 $f''(\xi) = g''(\xi)$
+
+(20)(本题满分10分)
+设幂级数 $\sum_{n=0}^{\infty} a_n x^n$ 在 $(-\infty,+\infty)$ 内收敛，其和函数 $y(x)$ 满足 $y'' - 2xy' - 4y = 0$，$y(0) = 0$，$y'(0) = 1$
+(I) 证明 $a_{n+2} = \frac{2}{n+1}a_n$，$n = 1,2,\cdots$；
+(II) 求 $y(x)$ 的表达式
+
+(21)(本题满分11分)
+设线性方程组 $\begin{cases}
+x_1 + x_2 + x_3 = 0, \\
+x_1 + 2x_2 + ax_3 = 0, \\
+x_1 + 4x_2 + a^2x_3 = 0
+\end{cases}$ 与方程 $x_1 + 2x_2 + x_3 = a - 1$ 有公共解，求 $a$ 的值及所有公共解
+
+(22)(本题满分11分)
+设3阶实对称矩阵 $A$ 的特征值 $\lambda_1 = 1$，$\lambda_2 = 2$，$\lambda_3 = -2$，且 $\alpha_1 = (1,-1,1)^T$ 是 $A$ 的属于 $\lambda_1$ 的一个特征向量。记 $B = A^5 - 4A^3 + E$，其中 $E$ 为3阶单位矩阵
+(I) 验证 $\alpha_1$ 是矩阵 $B$ 的特征向量，并求 $B$ 的全部特征值与特征向量；
+(II) 求矩阵 $B$
+
+(23)(本题满分11分)
+设二维随机变量 $(X,Y)$ 的概率密度为 $f(x,y) = \begin{cases}1, & 0 < x < 1, 0 < y < 2x, \\ 0, & \text{其他}\end{cases}$
+(I) 求 $P\{X > 2Y\}$；
+(II) 求 $Z = X + Y$ 的概率密度 $f_Z(z)$
+
+(24)(本题满分11分)
+设总体 $X$ 的概率密度为 $f(x;\theta) = \begin{cases}\frac{1}{2\theta}, & 0 < x < \theta, \\ \frac{1}{2(1 - \theta)}, & \theta \leq x < 1, \\ 0, & \text{其他}\end{cases}$，其中参数 $\theta(0 < \theta < 1)$ 未知，$X_1,X_2,\cdots,X_n$ 为来自总体 $X$ 的简单随机样本，$\bar{X}$ 是样本均值
+(I) 求参数 $\theta$ 的矩估计量 $\hat{\theta}$；
+(II) 判断 $4\bar{X}^2$ 是否为 $\theta^2$ 的无偏估计量，并说明理由
+
+
+# 2008年全国硕士研究生招生考试试题
+## 一、选择题(本题共8小题,每小题4分,满分32分)
+(1) 设函数 $f(x) = \int_{0}^{x^2} \ln(2 + t)\mathrm{d}t$，则 $f'(x)$ 的零点个数为()
+(A) 0
+(B) 1
+(C) 2
+(D) 3
+
+(2) 函数 $f(x,y) = \arctan\frac{x}{y}$ 在点 $(0,1)$ 处的梯度为()
+(A) $(1,0)$
+(B) $(-1,0)$
+(C) $(0,1)$
+(D) $(0,-1)$
+
+(3) 在下列微分方程中，以 $y = C_1e^x + C_2\cos2x + C_3\sin2x$（$C_1,C_2,C_3$ 为任意常数）为通解的是()
+(A) $y''' + y'' - 4y' - 4y = 0$
+(B) $y''' + y'' + 4y' + 4y = 0$
+(C) $y''' - y'' - 4y' + 4y = 0$
+(D) $y''' - y'' + 4y' - 4y = 0$
+
+(4) 设函数 $f(x)$ 在 $(-\infty,+\infty)$ 内单调有界，$\{x_n\}$ 为数列，下列命题正确的是()
+(A) 若 $\{x_n\}$ 收敛，则 $\{f(x_n)\}$ 收敛
+(B) 若 $\{x_n\}$ 单调，则 $\{f(x_n)\}$ 收敛
+(C) 若 $\{f(x_n)\}$ 收敛，则 $\{x_n\}$ 收敛
+(D) 若 $\{f(x_n)\}$ 单调，则 $\{x_n\}$ 收敛
+
+(5) 设 $A$ 为 $n$ 阶非零矩阵，$E$ 为 $n$ 阶单位矩阵，若 $A^3 = O$，则()
+(A) $E - A$ 不可逆，$E + A$ 不可逆
+(B) $E - A$ 不可逆，$E + A$ 可逆
+(C) $E - A$ 可逆，$E + A$ 可逆
+(D) $E - A$ 可逆，$E + A$ 不可逆
+
+(6) 设 $A$ 为3阶实对称矩阵，如果二次曲面方程 $(x,y,z)A\begin{pmatrix}x \\ y \\ z\end{pmatrix} = 1$ 在正交变换下的标准方程的图形如图所示，则 $A$ 的正特征值的个数为()
+(A) 0
+(B) 1
+(C) 2
+(D) 3
+
+(7) 设随机变量 $X,Y$ 独立同分布，且 $X$ 的分布函数为 $F(x)$，则 $Z = \max\{X,Y\}$ 的分布函数为()
+(A) $F^2(x)$
+(B) $F(x)F(y)$
+(C) $1 - [1 - F(x)]^2$
+(D) $[1 - F(x)][1 - F(y)]$
+
+(8) 设随机变量 $X \sim N(0,1)$，$Y \sim N(1,4)$，且相关系数 $\rho_{XY} = 1$，则()
+(A) $P\{Y = -2X - 1\} = 1$
+(B) $P\{Y = 2X - 1\} = 1$
+(C) $P\{Y = -2X + 1\} = 1$
+(D) $P\{Y = 2X + 1\} = 1$
+
+## 二、填空题(本题共6小题,每小题4分,满分24分)
+(9) 微分方程 $xy' + y = 0$ 满足条件 $y(1) = 1$ 的解是 $y =$
+(10) 曲线 $\sin(xy) + \ln(y - x) = x$ 在点 $(0,1)$ 处的切线方程是
+(11) 已知幂级数 $\sum_{n=0}^{\infty} a_n(x + 2)^n$ 在 $x = 0$ 处收敛，在 $x = -4$ 处发散，则幂级数 $\sum_{n=0}^{\infty} a_n(x - 3)^n$ 的收敛域为
+(12) 设曲面 $\sum$ 是 $z = \sqrt{4 - x^2 - y^2}$ 的上侧，则 $\iint_{\sum} xy\mathrm{d}y\mathrm{d}z + x\mathrm{d}z\mathrm{d}x + x^2\mathrm{d}x\mathrm{d}y =$
+(13) 设 $A$ 为2阶矩阵，$\alpha_1,\alpha_2$ 为线性无关的2维列向量，$A\alpha_1 = 0$，$A\alpha_2 = 2\alpha_1 + \alpha_2$，则 $A$ 的非零特征值为
+(14) 设随机变量 $X$ 服从参数为1的泊松分布，则 $P\{X = E(X^2)\} =$
+
+## 三、解答题(本题共9小题,满分94分.解答应写出文字说明、证明过程或演算步骤)
+(15)(本题满分9分)
+求极限 $\lim\limits_{x \to 0} \frac{[\sin x - \sin(\sin x)]\sin x}{x^4}$
+
+(16)(本题满分9分)
+计算曲线积分 $\int_{L} \sin2x\mathrm{d}x + 2(x^2 - 1)y\mathrm{d}y$，其中 $L$ 是曲线 $y = \sin x$ 上从点 $(0,0)$ 到点 $(\pi,0)$ 的一段
+
+(17)(本题满分11分)
+已知曲线 $C: \begin{cases}x^2 + y^2 - 2z^2 = 0, \\ x + y + 3z = 5,\end{cases}$ 求曲线 $C$ 上距离 $xOy$ 面最远的点和最近的点
+
+(18)(本题满分10分)
+设 $f(x)$ 是连续函数
+(I) 利用定义证明函数 $F(x) = \int_{0}^{x} f(t)\mathrm{d}t$ 可导，且 $F'(x) = f(x)$；
+(II) 当 $f(x)$ 是以2为周期的周期函数时，证明 $G(x) = 2\int_{0}^{x} f(t)\mathrm{d}t - x\int_{0}^{2} f(t)\mathrm{d}t$ 也是以2为周期的周期函数
+
+(19)(本题满分11分)
+将函数 $f(x) = 1 - x^2(0 \leq x \leq \pi)$ 展开成余弦级数，并求 $\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n^2}$ 的和
+
+(20)(本题满分10分)
+设 $\alpha,\beta$ 为3维列向量，矩阵 $A = \alpha\alpha^T + \beta\beta^T$，其中 $\alpha^T,\beta^T$ 分别是 $\alpha,\beta$ 的转置。证明：
+(I) 秩 $r(A) \leq 2$；
+(II) 若 $\alpha,\beta$ 线性相关，则秩 $r(A) < 2$
+
+(21)(本题满分12分)
+设 $n$ 元线性方程组 $Ax = b$，其中
+$A = \begin{pmatrix}
+2a & 1 & \\
+a^2 & 2a & 1 \\
+& a^2 & 2a & 1 \\
+& & \ddots & \ddots & \ddots \\
+& & & a^2 & 2a & 1 \\
+& & & & a^2 & 2a
+\end{pmatrix}_{n \times n}$，$b = \begin{pmatrix}1 \\ 0 \\ 0 \\ \vdots \\ 0\end{pmatrix}$
+(I) 证明行列式 $|A| = (n + 1)a^n$；
+(II) 当 $a$ 为何值时，该方程组有唯一解，并求 $x_1$；
+(III) 当 $a$ 为何值时，该方程组有无穷多解，并求通解
+
+(22)(本题满分11分)
+设随机变量 $X$ 与 $Y$ 相互独立，$X$ 的概率分布为 $P\{X = i\} = \frac{1}{3}(i = -1,0,1)$，$Y$ 的概率密度为 $f_Y(y) = \begin{cases}1, & 0 \leq y \leq 1, \\ 0, & \text{其他}\end{cases}$，记 $Z = X + Y$
+(I) 求 $P\{Z \leq \frac{1}{2} | X = 0\}$；
+(II) 求 $Z$ 的概率密度 $f_Z(z)$
+
+(23)(本题满分11分)
+设 $X_1,X_2,\cdots,X_n$ 是总体 $N(\mu,\sigma^2)$ 的简单随机样本，记 $\bar{X} = \frac{1}{n}\sum_{i=1}^{n}X_i$，$S^2 = \frac{1}{n - 1}\sum_{i=1}^{n}(X_i - \bar{X})^2$，$T = \bar{X}^2 - \frac{1}{n}S^2$
+(I) 证明 $T$ 是 $\mu^2$ 的无偏估计量；
+(II) 当 $\mu = 0$，$\sigma = 1$ 时，求 $D(T)$
+
+
+# 2009年全国硕士研究生招生考试试题
+## 一、选择题(本题共8小题,每小题4分,满分32分)
+(1) 当 $x \to 0$ 时，$f(x) = x - \sin ax$ 与 $g(x) = x^2\ln(1 - bx)$ 是等价无穷小量，则()
+(A) $a = 1$，$b = -\frac{1}{6}$
+(B) $a = 1$，$b = \frac{1}{6}$
+(C) $a = -1$，$b = -\frac{1}{6}$
+(D) $a = -1$，$b = \frac{1}{6}$
+
+(2) 如图，正方形 $\{(x,y) ||x| \leq 1, |y| \leq 1\}$ 被其对角线划分为四个区域 $D_k(k = 1,2,3,4)$，$I_k = \iint_{D_k} y\cos x\mathrm{d}x\mathrm{d}y$，则 $\max\limits_{1 \leq k \leq 4}\{I_k\} =$()
+(A) $I_1$
+(B) $I_2$
+(C) $I_3$
+(D) $I_4$
+
+(3) 设函数 $y = f(x)$ 在区间 $[-1,3]$ 上的图形如图所示，则函数 $F(x) = \int_{0}^{x} f(t)\mathrm{d}t$ 的图形为()（选项图形略）
+
+(4) 设有两个数列 $\{a_n\}$，$\{b_n\}$，若 $\lim\limits_{n \to \infty} a_n = 0$，则()
+(A) 当 $\sum_{n=1}^{\infty} b_n$ 收敛时，$\sum_{n=1}^{\infty} a_n b_n$ 收敛
+(B) 当 $\sum_{n=1}^{\infty} b_n$ 发散时，$\sum_{n=1}^{\infty} a_n b_n$ 发散
+(C) 当 $\sum_{n=1}^{\infty} |b_n|$ 收敛时，$\sum_{n=1}^{\infty} a_n^2 b_n^2$ 收敛
+(D) 当 $\sum_{n=1}^{\infty} |b_n|$ 发散时，$\sum_{n=1}^{\infty} a_n^2 b_n^2$ 发散
+
+(5) 设 $\alpha_1,\alpha_2,\alpha_3$ 是3维向量空间 $R^3$ 的一组基，则由基 $\alpha_1,\frac{1}{2}\alpha_2,\frac{1}{3}\alpha_3$ 到基 $\alpha_1 + \alpha_2,\alpha_2 + \alpha_3,\alpha_3 + \alpha_1$ 的过渡矩阵为()
+(A) $\begin{pmatrix}1 & 0 & 1 \\ 2 & 2 & 0 \\ 0 & 3 & 3\end{pmatrix}$
+(B) $\begin{pmatrix}1 & 2 & 0 \\ 0 & 2 & 3 \\ 1 & 0 & 3\end{pmatrix}$
+(C) $\begin{pmatrix}\frac{1}{2} & \frac{1}{4} & -\frac{1}{6} \\ -\frac{1}{2} & \frac{1}{4} & \frac{1}{6} \\ \frac{1}{2} & -\frac{1}{4} & \frac{1}{6}\end{pmatrix}$
+(D) $\begin{pmatrix}\frac{1}{2} & -\frac{1}{2} & \frac{1}{2} \\ \frac{1}{4} & \frac{1}{4} & -\frac{1}{4} \\ -\frac{1}{6} & \frac{1}{6} & \frac{1}{6}\end{pmatrix}$
+
+(6) 设 $A,B$ 均为2阶矩阵，$A^*$，$B^*$ 分别为 $A,B$ 的伴随矩阵，若 $|A| = 2$，$|B| = 3$，则分块矩阵 $\begin{pmatrix}O & A \\ B & O\end{pmatrix}$ 的伴随矩阵为()
+(A) $\begin{pmatrix}O & 3B^* \\ 2A^* & O\end{pmatrix}$
+(B) $\begin{pmatrix}O & 2B^* \\ 3A^* & O\end{pmatrix}$
+(C) $\begin{pmatrix}O & 3A^* \\ 2B^* & O\end{pmatrix}$
+(D) $\begin{pmatrix}O & 2A^* \\ 3B^* & O\end{pmatrix}$
+
+(7) 设随机变量 $X$ 的分布函数为 $F(x) = 0.3\Phi(x) + 0.7\Phi\left(\frac{x - 1}{2}\right)$，其中 $\Phi(x)$ 为标准正态分布的分布函数，则 $E(X) =$()
+(A) 0
+(B) 0.3
+(C) 0.7
+(D) 1
+
+(8) 设随机变量 $X$ 与 $Y$ 相互独立，且 $X$ 服从标准正态分布 $N(0,1)$，$Y$ 的概率分布为 $P\{Y = 0\} = P\{Y = 1\} = \frac{1}{2}$，记 $F_Z(z)$ 为随机变量 $Z = XY$ 的分布函数，则函数 $F_Z(z)$ 的间断点个数为()
+(A) 0
+(B) 1
+(C) 2
+(D) 3
+
+## 二、填空题(本题共6小题,每小题4分,满分24分)
+(9) 设函数 $f(u,v)$ 具有二阶连续偏导数，$z = f(x,xy)$，则 $\frac{\partial^2 z}{\partial x\partial y} =$
+(10) 若二阶常系数线性齐次微分方程 $y'' + ay' + by = 0$ 的通解为 $y = (C_1 + C_2x)e^x$，则非齐次方程 $y'' + ay' + by = x$ 满足条件 $y(0) = 2$，$y'(0) = 0$ 的解为 $y =$
+(11) 已知曲线 $L: y = x^2(0 \leq x \leq \sqrt{2})$，则 $\int_{L} x\mathrm{d}s =$
+(12) 设 $\Omega = \{(x,y,z) | x^2 + y^2 + z^2 \leq 1\}$，则 $\iiint_{\Omega} z^2\mathrm{d}x\mathrm{d}y\mathrm{d}z =$
+(13) 若3维列向量 $\alpha,\beta$ 满足 $\alpha^T\beta = 2$，其中 $\alpha^T$ 为 $\alpha$ 的转置，则矩阵 $\beta\alpha^T$ 的非零特征值为
+(14) 设 $X_1,X_2,\cdots,X_m$ 为来自二项分布总体 $B(n,p)$ 的简单随机样本，$\bar{X}$ 和 $S^2$ 分别为样本均值和样本方差，若 $\bar{X} + kS^2$ 为 $np^2$ 的无偏估计量，则 $k =$
+
+## 三、解答题(本题共9小题,满分94分.解答应写出文字说明、证明过程或演算步骤)
+(15)(本题满分9分)
+求二元函数 $f(x,y) = x^2(2 + y^2) + y\ln y$ 的极值
+
+(16)(本题满分9分)
+设 $a_n$ 为曲线 $y = x^n$ 与 $y = x^{n+1}(n = 1,2,\cdots)$ 所围成区域的面积，记 $S_1 = \sum_{n=1}^{\infty} a_n$，$S_2 = \sum_{n=1}^{\infty} a_{2n-1}$，求 $S_1$ 与 $S_2$ 的值
+
+(17)(本题满分11分)
+椭球面 $S_1$ 是椭圆 $\frac{x^2}{4} + \frac{y^2}{3} = 1$ 绕 $x$ 轴旋转而成，圆锥面 $S_2$ 是由过点 $(4,0)$ 且与椭圆 $\frac{x^2}{4} + \frac{y^2}{3} = 1$ 相切的直线绕 $x$ 轴旋转而成
+(I) 求 $S_1$ 及 $S_2$ 的方程；
+(II) 求 $S_1$ 与 $S_2$ 之间的立体的体积
+
+(18)(本题满分11分)
+(I) 证明拉格朗日中值定理：若函数 $f(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 内可导，则存在 $\xi \in (a,b)$，使得 $f(b) - f(a) = f'(\xi)(b - a)$；
+(II) 证明：若函数 $f(x)$ 在 $x = 0$ 处连续，在 $(0,\delta)(\delta > 0)$ 内可导，且 $\lim\limits_{x \to 0^+} f'(x) = A$，则 $f_+'(0)$ 存在，且 $f_+'(0) = A$
+
+(19)(本题满分10分)
+计算曲面积分 $I = \oiint_{\sum} \frac{x\mathrm{d}y\mathrm{d}z + y\mathrm{d}z\mathrm{d}x + z\mathrm{d}x\mathrm{d}y}{(x^2 + y^2 + z^2)^{\frac{3}{2}}}$，其中 $\sum$ 是曲面 $2x^2 + 2y^2 + z^2 = 4$ 的外侧
+
+(20)(本题满分11分)
+设 $A = \begin{pmatrix}1 & -1 & -1 \\ -1 & 1 & 1 \\ 0 & -4 & -2\end{pmatrix}$，$\xi_1 = \begin{pmatrix}-1 \\ 1 \\ -2\end{pmatrix}$
+(I) 求满足 $A\xi_2 = \xi_1$，$A^2\xi_3 = \xi_1$ 的所有向量 $\xi_2$，$\xi_3$；
+(II) 对(I)中的任意向量 $\xi_2$，$\xi_3$，证明 $\xi_1$，$\xi_2$，$\xi_3$ 线性无关
+
+(21)(本题满分11分)
+设二次型 $f(x_1,x_2,x_3) = ax_1^2 + ax_2^2 + (a - 1)x_3^2 + 2x_1x_3 - 2x_2x_3$
+(I) 求二次型 $f$ 的矩阵的所有特征值；
+(II) 若二次型 $f$ 的规范形为 $y_1^2 + y_2^2$，求 $a$ 的值
+
+(22)(本题满分11分)
+袋中有1个红球、2个黑球与3个白球。现有放回地从袋中取两次，每次取一个球。以 $X,Y,Z$ 分别表示两次取球所取得的红球、黑球与白球的个数
+(I) 求 $P\{X = 1 | Z = 0\}$；
+(II) 求二维随机变量 $(X,Y)$ 的概率分布
+
+(23)(本题满分11分)
+设总体 $X$ 的概率密度为 $f(x;\lambda) = \begin{cases}\lambda^2 x e^{-\lambda x}, & x > 0, \\ 0, & \text{其他}\end{cases}$，其中参数 $\lambda(\lambda > 0)$ 未知，$X_1,X_2,\cdots,X_n$ 为来自总体 $X$ 的简单随机样本
+(I) 求参数 $\lambda$ 的矩估计量；
+(II) 求参数 $\lambda$ 的最大似然估计量
+
+
+# 2010年全国硕士研究生招生考试试题
+## 一、选择题(本题共8小题,每小题4分,满分32分)
+(1) 极限 $\lim\limits_{x \to \infty} \left[\frac{x^2}{(x - a)(x + b)}\right]^x =$()
+(A) 1
+(B) $e$
+(C) $e^{a - b}$
+(D) $e^{b - a}$
+
+(2) 设函数 $z = z(x,y)$ 由方程 $F\left(\frac{y}{x},\frac{z}{x}\right) = 0$ 确定，其中 $F$ 为可微函数，且 $F_2' \neq 0$，则 $x\frac{\partial z}{\partial x} + y\frac{\partial z}{\partial y} =$()
+(A) $x$
+(B) $z$
+(C) $-x$
+(D) $-z$
+
+(3) 设 $m,n$ 均是正整数，则反常积分 $\int_{0}^{1} \frac{\sqrt[m]{\ln^2(1 - x)}}{\sqrt[n]{x}}\mathrm{d}x$ 的收敛性()
+(A) 仅与 $m$ 的取值有关
+(B) 仅与 $n$ 的取值有关
+(C) 与 $m,n$ 的取值都有关
+(D) 与 $m,n$ 的取值都无关
+
+(4) $\lim\limits_{n \to \infty} \sum_{i=1}^{n} \sum_{j=1}^{n} \frac{n}{(n + i)(n + j)} =$()
+(A) $\int_{0}^{1} \mathrm{d}x \int_{0}^{x} \frac{1}{(1 + x)(1 + y)}\mathrm{d}y$
+(B) $\int_{0}^{1} \mathrm{d}x \int_{0}^{x} \frac{1}{(1 + x)(1 + y)}\mathrm{d}y$
+(C) $\int_{0}^{1} \mathrm{d}x \int_{0}^{1} \frac{1}{(1 + x)(1 + y)}\mathrm{d}y$
+(D) $\int_{0}^{1} \mathrm{d}x \int_{0}^{1} \frac{1}{(1 + x)^2}\mathrm{d}y$
+
+(5) 设 $A$ 为 $m \times n$ 矩阵，$B$ 为 $n \times m$ 矩阵，$E$ 为 $m$ 阶单位矩阵，若 $AB = E$，则()
+(A) 秩 $r(A) = m$，秩 $r(B) = m$
+(B) 秩 $r(A) = m$，秩 $r(B) = n$
+(C) 秩 $r(A) = n$，秩 $r(B) = m$
+(D) 秩 $r(A) = n$，秩 $r(B) = n$
+
+(6) 设 $A$ 为4阶实对称矩阵，且 $A^2 + A = O$，若 $A$ 的秩为3，则 $A$ 相似于()
+(A) $\begin{pmatrix}1 & & & \\ & 1 & & \\ & & 1 & \\ & & & 0\end{pmatrix}$
+(B) $\begin{pmatrix}1 & & & \\ & 1 & & \\ & & -1 & \\ & & & 0\end{pmatrix}$
+(C) $\begin{pmatrix}1 & & & \\ & -1 & & \\ & & -1 & \\ & & & 0\end{pmatrix}$
+(D) $\begin{pmatrix}-1 & & & \\ & -1 & & \\ & & -1 & \\ & & & 0\end{pmatrix}$
+
+(7) 设随机变量 $X$ 的分布函数 $F(x) = \begin{cases}0, & x < 0, \\ \frac{1}{2}, & 0 \leq x < 1, \\ 1 - e^{-x}, & x \geq 1,\end{cases}$ 则 $P\{X = 1\} =$()
+(A) 0
+(B) $\frac{1}{2}$
+(C) $\frac{1}{2} - e^{-1}$
+(D) $1 - e^{-1}$
+
+(8) 设 $f_1(x)$ 为标准正态分布的概率密度，$f_2(x)$ 为 $[-1,3]$ 上均匀分布的概率密度，若 $f(x) = \begin{cases}a f_1(x), & x \leq 0, \\ b f_2(x), & x > 0\end{cases}$（$a > 0$，$b > 0$）为概率密度，则 $a,b$ 应满足()
+(A) $2a + 3b = 4$
+(B) $3a + 2b = 4$
+(C) $a + b = 1$
+(D) $a + b = 2$
+
+## 二、填空题(本题共6小题,每小题4分,满分24分)
+(9) 设 $\begin{cases}x = e^{-t} + t + 1, \\ y = t^2 e^{-t}\end{cases}$，则 $\frac{\mathrm{d}^2 y}{\mathrm{d}x^2}\bigg|_{t=0} =$
+(10) $\int_{0}^{\pi^2} \sqrt{x} \cos\sqrt{x}\mathrm{d}x =$
+(11) 已知曲线 $L$ 的方程为 $y = 1 - |x|(x \in [-1,1])$，起点是 $(-1,0)$，终点为 $(1,0)$，则曲线积分 $\int_{L} x y\mathrm{d}x + x^2\mathrm{d}y =$
+(12) 设 $\Omega = \{(x,y,z) | x^2 + y^2 \leq z \leq 1\}$，则 $\Omega$ 的形心的竖坐标 $\bar{z} =$
+(13) 设 $\alpha_1 = (1,2,-1,0)^T$，$\alpha_2 = (1,1,0,2)^T$，$\alpha_3 = (2,1,1,a)^T$，若由 $\alpha_1,\alpha_2,\alpha_3$ 生成的向量空间的维数为2，则 $a =$
+(14) 设随机变量 $X$ 的概率分布为 $P\{X = k\} = \frac{C}{k!}$，$k = 0,1,2,\cdots$，则 $E(X^2) =$
+
+## 三、解答题(本题共9小题,满分94分.解答应写出文字说明、证明过程或演算步骤)
+(15)(本题满分10分)
+求微分方程 $y'' - 3y' + 2y = 2x e^x$ 的通解
+
+(16)(本题满分10分)
+求函数 $f(x) = \int_{1}^{x^2} (x^2 - t)e^{-t^2}\mathrm{d}t$ 的单调区间与极值
+
+(17)(本题满分10分)
+(I) 比较 $\int_{0}^{1} |\ln t|[\ln(1 + t)]^n\mathrm{d}t$ 与 $\int_{0}^{1} t^n |\ln t|\mathrm{d}t(n = 1,2,\cdots)$ 的大小，说明理由；
+(II) 记 $u_n = \int_{0}^{1} |\ln t|[\ln(1 + t)]^n\mathrm{d}t(n = 1,2,\cdots)$，求极限 $\lim\limits_{n \to \infty} u_n$
+
+(18)(本题满分10分)
+求幂级数 $\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{2n - 1}x^{2n}$ 的收敛域及和函数
+
+(19)(本题满分10分)
+设 $P$ 为椭球面 $S: x^2 + y^2 + z^2 - y z = 1$ 上的动点，若 $S$ 在点 $P$ 处的切平面与 $xOy$ 面垂直，求点 $P$ 的轨迹 $C$，并计算曲面积分 $I = \iint_{\sum} \frac{(x + \sqrt{3})|y - 2z|}{\sqrt{4 + y^2 + z^2 - 4y z}}\mathrm{d}S$，其中 $\sum$ 是椭球面 $S$ 位于曲线 $C$ 上方的部分
+
+(20)(本题满分11分)
+设 $A = \begin{pmatrix}\lambda & 1 & 1 \\ 0 & \lambda - 1 & 0 \\ 1 & 1 & \lambda\end{pmatrix}$，$b = \begin{pmatrix}a \\ 1 \\ 1\end{pmatrix}$，已知线性方程组 $Ax = b$ 存在2个不同的解
+(I) 求 $\lambda,a$；
+(II) 求方程组 $Ax = b$ 的通解
+
+(21)(本题满分11分)
+已知二次型 $f(x_1,x_2,x_3) = x^T A x$ 在正交变换 $x = Q y$ 下的标准形为 $y_1^2 + y_2^2$，且 $Q$ 的第三列为 $\left(\frac{\sqrt{2}}{2},0,\frac{\sqrt{2}}{2}\right)^T$
+(I) 求矩阵 $A$；
+(II) 证明 $A + E$ 为正定矩阵，其中 $E$ 为3阶单位矩阵
+
+(22)(本题满分11分)
+设二维随机变量 $(X,Y)$ 的概率密度为 $f(x,y) = \begin{cases}A e^{-2x - y}, & x > 0, y > 0, \\ 0, & \text{其他}\end{cases}$
+(I) 求常数 $A$ 及条件概率密度 $f_{Y|X}(y|x)$；
+(II) 求 $P\{X \leq 2 | Y \leq 1\}$
+
+(23)(本题满分11分)
+设总体 $X$ 的概率分布为
+
+| $X$ | 1 | 2 | 3 |
+| --- | --- | --- | --- |
+| $P$ | $1 - \theta$ | $\theta - \theta^2$ | $\theta^2$ |
+
+其中参数 $\theta \in (0,1)$ 未知，以 $N_i$ 表示来自总体 $X$ 的简单随机样本（样本容量为 $n$）中等于 $i$ 的个数（$i = 1,2,3$）。试求常数 $a_1,a_2,a_3$，使 $T = \sum_{i=1}^{3} a_i N_i$ 为 $\theta$ 的无偏估计量，并求 $T$ 的方差
+
+
+# 2011年全国硕士研究生招生考试试题
+## 一、选择题(本题共8小题,每小题4分,满分32分)
+(1) 曲线 $y = (x - 1)(x - 2)^2(x - 3)^3(x - 4)^4$ 的拐点是()
+(A) $(1,0)$
+(B) $(2,0)$
+(C) $(3,0)$
+(D) $(4,0)$
+
+(2) 设数列 $\{a_n\}$ 单调减少，$\lim\limits_{n \to \infty} a_n = 0$，$S_n = \sum_{k=1}^{n} a_k(n = 1,2,\cdots)$ 无界，则幂级数 $\sum_{n=1}^{\infty} a_n(x - 1)^n$ 的收敛域为()
+(A) $(-1,1]$
+(B) $[-1,1)$
+(C) $[0,2)$
+(D) $(0,2]$
+
+(3) 设函数 $f(x)$ 具有二阶连续导数，且 $f(x) > 0$，$f'(0) = 0$，则函数 $z = f(x)\ln f(y)$ 在点 $(0,0)$ 处取得极小值的一个充分条件是()
+(A) $f(0) > 1$，$f''(0) > 0$
+(B) $f(0) > 1$，$f''(0) < 0$
+(C) $f(0) < 1$，$f''(0) > 0$
+(D) $f(0) < 1$，$f''(0) < 0$
+
+(4) 设 $I = \int_{0}^{\frac{\pi}{4}} \ln\sin x\mathrm{d}x$，$J = \int_{0}^{\frac{\pi}{4}} \ln\cot x\mathrm{d}x$，$K = \int_{0}^{\frac{\pi}{4}} \ln\cos x\mathrm{d}x$，则 $I,J,K$ 的大小关系为()
+(A) $I < J < K$
+(B) $I < K < J$
+(C) $J < I < K$
+(D) $K < J < I$
+
+(5) 设 $A$ 为3阶矩阵，将 $A$ 的第2列加到第1列得矩阵 $B$，再交换 $B$ 的第2行与第3行得单位矩阵，记 $P_1 = \begin{pmatrix}1 & 0 & 0 \\ 1 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}$，$P_2 = \begin{pmatrix}1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0\end{pmatrix}$，则 $A =$()
+(A) $P_1 P_2$
+(B) $P_1^{-1} P_2$
+(C) $P_2 P_1$
+(D) $P_2 P_1^{-1}$
+
+(6) 设 $A = (\alpha_1,\alpha_2,\alpha_3,\alpha_4)$ 是4阶矩阵，$A^*$ 为 $A$ 的伴随矩阵，若 $(1,0,1,0)^T$ 是方程组 $Ax = 0$ 的一个基础解系，则 $A^*x = 0$ 的基础解系可为()
+(A) $\alpha_1,\alpha_3$
+(B) $\alpha_1,\alpha_2$
+(C) $\alpha_1,\alpha_2,\alpha_3$
+(D) $\alpha_2,\alpha_3,\alpha_4$
+
+(7) 设 $F_1(x)$ 与 $F_2(x)$ 为两个分布函数，其相应的概率密度 $f_1(x)$ 与 $f_2(x)$ 是连续函数，则必为概率密度的是()
+(A) $f_1(x)f_2(x)$
+(B) $2f_2(x)F_1(x)$
+(C) $f_1(x)F_2(x)$
+(D) $f_1(x)F_2(x) + f_2(x)F_1(x)$
+
+(8) 设随机变量 $X$ 与 $Y$ 相互独立，且 $E(X)$ 与 $E(Y)$ 存在，则 $E[XY] =$()
+(A) $E(X)E(Y)$
+(B) $E(X) + E(Y)$
+(C) $E(X) - E(Y)$
+(D) $2E(X)E(Y)$
+
+## 二、填空题(本题共6小题,每小题4分,满分24分)
+(9) 曲线 $y = \int_{0}^{x} \tan t\mathrm{d}t(0 \leq x \leq \frac{\pi}{4})$ 的弧长 $s =$
+(10) 微分方程 $y' + y = e^{-x}\cos x$ 满足条件 $y(0) = 0$ 的解为 $y =$
+(11) 设函数 $F(x,y) = \int_{0}^{xy} \frac{\sin t}{1 + t^2}\mathrm{d}t$，则 $\frac{\partial^2 F}{\partial x^2}\bigg|_{\substack{x=0 \\ y=2}} =$
+(12) 设 $L$ 是柱面 $x^2 + y^2 = 1$ 与平面 $z = x + y$ 的交线，从 $z$ 轴正向往 $z$ 轴负向看去为逆时针方向，则曲线积分 $\oint_{L} x z\mathrm{d}x + x\mathrm{d}y + \frac{y^2}{2}\mathrm{d}z =$
+(13) 若二次曲面的方程 $x^2 + 3y^2 + z^2 + 2axy + 2xz + 2yz = 4$ 经正交变换化为 $y_1^2 + 4z_1^2 = 4$，则 $a =$
+(14) 设二维随机变量 $(X,Y)$ 服从正态分布 $N(\mu,\mu;\sigma^2,\sigma^2;0)$，则 $E(XY^2) =$
+
+## 三、解答题(本题共9小题,满分94分.解答应写出文字说明、证明过程或演算步骤)
+(15)(本题满分10分)
+求极限 $\lim\limits_{x \to 0} \left[\frac{\ln(1 + x)}{x}\right]^{\frac{1}{e^x - 1}}$
+
+(16)(本题满分9分)
+设函数 $z = f(xy, yg(x))$，其中函数 $f$ 具有二阶连续偏导数，函数 $g(x)$ 可导，且在 $x = 1$ 处取得极值 $g(1) = 1$，求 $\frac{\partial^2 z}{\partial x\partial y}\bigg|_{\substack{x=1 \\ y=1}}$
+
+(17)(本题满分10分)
+求方程 $k\arctan x - x = 0$ 不同实根的个数，其中 $k$ 为参数
+
+(18)(本题满分10分)
+(I) 证明：对任意的正整数 $n$，都有 $\frac{1}{n + 1} < \ln\left(1 + \frac{1}{n}\right) < \frac{1}{n}$ 成立；
+(II) 设 $a_n = 1 + \frac{1}{2} + \cdots + \frac{1}{n} - \ln n(n = 1,2,\cdots)$，证明数列 $\{a_n\}$ 收敛
+
+(19)(本题满分11分)
+已知函数 $f(x,y)$ 具有二阶连续偏导数，且 $f(1,y) = 0$，$f(x,1) = 0$，$\iint_{D} f(x,y)\mathrm{d}x\mathrm{d}y = a$，其中 $D = \{(x,y) | 0 \leq x \leq 1,0 \leq y \leq 1\}$，计算二重积分 $I = \iint_{D} xy f_{xy}''(x,y)\mathrm{d}x\mathrm{d}y$
+
+(20)(本题满分11分)
+设向量组 $\alpha_1 = (1,0,1)^T$，$\alpha_2 = (0,1,1)^T$，$\alpha_3 = (1,3,5)^T$ 不能由向量组 $\beta_1 = (1,1,1)^T$，$\beta_2 = (1,2,3)^T$，$\beta_3 = (3,4,a)^T$ 线性表示
+(I) 求 $a$ 的值；
+(II) 将 $\beta_1,\beta_2,\beta_3$ 用 $\alpha_1,\alpha_2,\alpha_3$ 线性表示
+
+(21)(本题满分11分)
+设 $A$ 为3阶实对称矩阵，$A$ 的秩为2，且 $A\begin{pmatrix}1 & 1 \\ 0 & 0 \\ -1 & 1\end{pmatrix} = \begin{pmatrix}-1 & 1 \\ 0 & 0 \\ 1 & 1\end{pmatrix}$
+(I) 求 $A$ 的所有特征值与特征向量；
+(II) 求矩阵 $A$
+
+(22)(本题满分11分)
+设随机变量 $X$ 与 $Y$ 的概率分布分别为
+
+| $X$ | 0 | 1 |
+| --- | --- | --- |
+| $P$ | $\frac{1}{3}$ | $\frac{2}{3}$ |
+
+| $Y$ | -1 | 0 | 1 |
+| --- | --- | --- | --- |
+| $P$ | $\frac{1}{3}$ | $\frac{1}{3}$ | $\frac{1}{3}$ |
+
+且 $P\{X^2 = Y^2\} = 1$
+(I) 求二维随机变量 $(X,Y)$ 的概率分布；
+(II) 求 $Z = XY$ 的概率分布；
+(III) 求 $X$ 与 $Y$ 的相关系数 $\rho_{XY}$
+
+(23)(本题满分11分)
+设 $X_1,X_2,\cdots,X_n$ 为来自正态总体 $N(\mu_0,\sigma^2)$ 的简单随机样本，其中 $\mu_0$ 已知，$\sigma^2 > 0$ 未知，$\bar{X}$ 和 $S^2$ 分别表示样本均值和样本方差
+(I) 求参数 $\sigma^2$ 的最大似然估计 $\hat{\sigma}^2$；
+(II) 计算 $E(\hat{\sigma}^2)$ 和 $D(\hat{\sigma}^2)$
+
+
+# 2012年全国硕士研究生招生考试试题
+## 一、选择题(本题共8小题,每小题4分,满分32分)
+(1) 曲线 $y = \frac{x^2 + x}{x^2 - 1}$ 的渐近线的条数为()
+(A) 0
+(B) 1
+(C) 2
+(D) 3
+
+(2) 设函数 $f(x) = (e^x - 1)(e^{2x} - 2)\cdots(e^{nx} - n)$，其中 $n$ 为正整数，则 $f'(0) =$()
+(A) $(-1)^{n-1}(n - 1)!$
+(B) $(-1)^{n}(n - 1)!$
+(C) $(-1)^{n-1}n!$
+(D) $(-1)^{n}n!$
+
+(3) 如果函数 $f(x,y)$ 在点 $(0,0)$ 处连续，那么下列命题正确的是()
+(A) 若极限 $\lim\limits_{\substack{x \to 0 \\ y \to 0}} \frac{f(x,y)}{|x| + |y|}$ 存在，则 $f(x,y)$ 在点 $(0,0)$ 处可微
+(B) 若极限 $\lim\limits_{\substack{x \to 0 \\ y \to 0}} \frac{f(x,y)}{x^2 + y^2}$ 存在，则 $f(x,y)$ 在点 $(0,0)$ 处可微
+(C) 若 $f(x,y)$ 在点 $(0,0)$ 处可微，则极限 $\lim\limits_{\substack{x \to 0 \\ y \to 0}} \frac{f(x,y)}{|x| + |y|}$ 存在
+(D) 若 $f(x,y)$ 在点 $(0,0)$ 处可微，则极限 $\lim\limits_{\substack{x \to 0 \\ y \to 0}} \frac{f(x,y)}{x^2 + y^2}$ 存在
+
+(4) 设 $I_k = \int_{0}^{k\pi} e^{x^2}\sin x\mathrm{d}x(k = 1,2,3)$，则有()
+(A) $I_1 < I_2 < I_3$
+(B) $I_3 < I_2 < I_1$
+(C) $I_2 < I_3 < I_1$
+(D) $I_2 < I_1 < I_3$
+
+(5) 设 $\alpha_1 = (0,0,c_1)^T$，$\alpha_2 = (0,1,c_2)^T$，$\alpha_3 = (1,-1,c_3)^T$，$\alpha_4 = (-1,1,c_4)^T$，其中 $c_1,c_2,c_3,c_4$ 为任意常数，则下列向量组线性相关的为()
+(A) $\alpha_1,\alpha_2,\alpha_3$
+(B) $\alpha_1,\alpha_2,\alpha_4$
+(C) $\alpha_1,\alpha_3,\alpha_4$
+(D) $\alpha_2,\alpha_3,\alpha_4$
+
+(6) 设 $A$ 为3阶矩阵，$P$ 为3阶
+
 # 2025年全国硕士研究生招生考试 试题（数学一）
 
 ## 一、选择题:1~10小题,每小题5分,共50分
