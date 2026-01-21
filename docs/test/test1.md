@@ -375,3 +375,144 @@ $$
 (II) $Y_{1}$ 与 $Y_{n}$ 的协方差 $Cov(Y_{1}, Y_{n})$。
 
 ---
+# 2025年全国硕士研究生招生考试 试题（数学一）
+
+## 一、选择题:1~10小题,每小题5分,共50分
+
+下列每题给出的四个选项中,只有一个选项是符合题目要求的,请将所选选项前的字母填在答题卡指定位置.
+
+(1) 已知函数 $f(x)=\int_{0}^{x} e^{t^{2}} sin t d t$，$g(x)=\int_{0}^{x} e^{t^{2}} d t \cdot sin ^{2} x$，则()
+
+(A) $x=0$ 是 $f(x)$ 的极值点，也是 $g(x)$ 的极值点
+
+(B) $x=0$ 是 $f(x)$ 的极值点，$(0,0)$ 是曲线 $y=g(x)$ 的拐点
+
+(C) $x=0$ 是 $f(x)$ 的极值点，$(0,0)$ 是曲线 $y=f(x)$ 的拐点
+
+(D) $(0,0)$ 是曲线 $y=f(x)$ 的拐点，也是曲线 $y=g(x)$ 的拐点
+
+(2) 已知级数:
+① $\sum_{n=1}^{\infty} sin \frac{n^{3} \pi}{n^{2}+1}$
+② $\sum_{n=1}^{\infty}(-1)^{n}(\frac{1}{\sqrt[3]{n^{2}}}-tan \frac{1}{\sqrt[3]{n^{2}}})$
+
+则()
+
+(A) ①与②均条件收敛
+(B) ①条件收敛，②绝对收敛
+(C) ①绝对收敛，②条件收敛
+(D) ①与②均绝对收敛
+
+(3) 设函数 $f(x)$ 在区间 $[0,+\infty)$ 上可导，则()
+
+(A) 当 $\lim _{x \to +\infty} f(x)$ 存在时，$\lim _{x \to +\infty} f'(x)$ 存在
+(B) 当 $\lim _{x \to +\infty} f'(x)$ 存在时，$\lim _{x \to +\infty} f(x)$ 存在
+
+(C) 当 $\lim _{x \to +\infty} \frac{\int_{0}^{x} f(t) d t}{x}$ 存在时，$\lim _{x \to +\infty} f(x)$ 存在
+(D) 当 $\lim _{x \to +\infty} f(x)$ 存在时，$\lim _{x \to +\infty} \frac{\int_{0}^{x} f(t) d t}{x}$ 存在
+
+(4) 设函数 $f(x, y)$ 连续，则 $\int_{-2}^{2} d x \int_{4-x^{2}}^{4} f(x, y) d y=$()
+
+(A) $\int_{0}^{4}\left[\int_{-2}^{-\sqrt{4-y}} f(x, y) d x+\int_{\sqrt{4-y}}^{2} f(x, y) d x\right] d y$
+(B) $\int_{0}^{4}\left[\int_{-2}^{\sqrt{4-y}} f(x, y) d x+\int_{\sqrt{4-y}}^{2} f(x, y) d x\right] d y$
+
+(C) $\int_{0}^{4}\left[\int_{-2}^{-\sqrt{4-y}} f(x, y) d x+\int_{2}^{\sqrt{4-y}} f(x, y) d x\right] d y$
+(D) $2 \int_{0}^{4} d y \int_{\sqrt{4-y}}^{2} f(x, y) d x$
+
+(5) 二次型 $f(x_{1}, x_{2}, x_{3})=x_{1}^{2}+2 x_{1} x_{2}+2 x_{1} x_{3}$ 的正惯性指数为()
+
+(A) 0
+(B) 1
+(C) 2
+(D) 3
+
+(6) 设 $\alpha_{1}, \alpha_{2}, \alpha_{3}, \alpha_{4}$ 是 n 维向量，$\alpha_{1}, \alpha_{2}$ 线性无关，$\alpha_{1}, \alpha_{2}, \alpha_{3}$ 线性相关，且 $\alpha_{1}+\alpha_{2}+\alpha_{4}=0$，在空间直角坐标系 $O-x y z$ 中，关于 $x, y, z$ 的方程组 $x \alpha_{1}+y \alpha_{2}+z \alpha_{3}=\alpha_{4}$ 的几何图形是()
+
+(A) 过原点的一个平面
+(B) 过原点的一条直线
+(C) 不过原点的一个平面
+(D) 不过原点的一条直线
+
+(7) 设 n 阶矩阵 $A, B, C$ 满足 $r(A)+r(B)+r(C)=r(A B C)+2 n$，给出下列四个结论:
+
+① $r(A B C)+n=r(A B)+r(C)$
+② $r(A B)+n=r(A)+r(B)$
+③ $r(A)=r(B)=r(C)=n$
+④ $r(A B)=r(B C)=n$
+
+其中正确的选项是()
+(A) ①②
+(B) ①③
+(C) ②④
+(D) ③④
+
+(8) 设二维随机变量 $(X, Y)$ 服从正态分布 $N(0,0 ; 1,1 ; \rho)$，其中 $\rho \in(-1,1)$，若 $a, b$ 为满足 $a^{2}+b^{2}=1$ 的任意实数，则 $D(a X+b Y)$ 的最大值为()
+
+(A) 1
+(B) 2
+(C) $1+|\rho|$
+(D) $1+\rho^{2}$
+
+(9) 设 $X_{1}, X_{2}, ..., X_{20}$ 是来自总体 $B(1,0.1)$ 的简单随机样本，令 $T=\sum_{i=1}^{20} X_{i}$，利用泊松分布近似表示二项分布的方法可得 $P\{T ≤1\} \approx$()
+
+(A) $\frac{1}{e^{2}}$
+(B) $\frac{2}{e^{2}}$
+(C) $\frac{3}{e^{2}}$
+(D) $\frac{4}{e^{2}}$
+
+(10) 设 $x_{1}, x_{2}, \cdots, x_{n}$ 为来自正态总体 $N(\mu, 2)$ 的简单随机样本，记 $\bar{X}=\frac{1}{n} \sum_{i=1}^{n} x_{i}$，$Z_{\alpha}$ 表示标准正态分布的上侧 $\alpha$ 分位数，假设检验问题: $H_{0}: \mu ≤1$，$H_{1}: \mu>1$ 的显著性水平为 $\alpha$ 的检验的拒绝域为()
+
+(A) $\left\{\left(x_{1}, x_{2}, \cdots, x_{n}\right) | \overline{X}>1+\frac{2}{n} Z_{\alpha}\right\}$
+(B) $\left\{\left(x_{1}, x_{2}, \cdots, x_{n}\right) | \overline{X}>1+\frac{\sqrt{2}}{n} Z_{\alpha}\right\}$
+(C) $\left\{\left(x_{1}, x_{2}, \cdots, x_{n}\right) | \overline{X}>1+\frac{2}{\sqrt{n}} Z_{\alpha}\right\}$
+(D) $\left\{\left(x_{1}, x_{2}, \cdots, x_{n}\right) | \overline{X}>1+\sqrt{\frac{2}{n}} Z_{\alpha}\right\}$
+
+## 二、填空题:11~16小题,每小题5分,共30分
+
+请将答案写在题中横线上.
+
+(11) $\lim _{x \to 0^{+}} \frac{x^{x}-1}{\ln x \cdot ln (1-x)}=$
+
+(12) 已知函数 $f(x)= \begin{cases}0, & 0 ≤x<\frac{1}{2} \\ x^{2}, & \frac{1}{2} ≤x ≤1\end{cases}$ 的傅里叶级数为 $\sum_{n=1}^{\infty} b_{n} sin n \pi x$，$S(x)$ 为该级数的和函数，则 $S(-\frac{7}{2})=$
+
+(13) 已知函数 $U(x, y, z)=x y^{2} z^{3}$，向量 $n=(2,2,-1)$，则 $\frac{\partial U}{\partial n}|_{(1,1,1)}=$
+
+(14) 已知有向曲线 $L$ 是沿抛物线 $y=1-x^{2}$ 从点 $(1,0)$ 到点 $(-1,0)$ 的一段，则曲线积分 $\int_{L}(y+cos x) d x+(2 x+cos y) d y=$
+
+(15) 设矩阵 $A=\begin{pmatrix}4 & 2 & -3 \\ a & 3 & -4 \\ b & 5 & -7\end{pmatrix}$，若方程组 $A^{2} X=0$ 与 $A X=0$ 不同解，则 $a, b$ 满足的条件是
+
+(16) 设 $A, B$ 为两个不同随机事件，且相互独立，已知 $P(A)=2 P(B)$，$P(A \cup B)=\frac{5}{8}$，则 $A, B$ 中至少有一个发生的条件下，$A, B$ 中恰好有一个发生的概率为
+
+## 三、解答题:17~22小题,共70分
+
+解答应写出文字说明、证明过程或演算步骤.
+
+(17)(本题满分10分)
+计算 $\int_{0}^{1} \frac{1}{(x+1)(x^{2}-2 x+2)} d x$
+
+(18)(本题满分12分)
+
+已知函数 $f(u)$ 在区间 $(0,+\infty)$ 内具有二阶导数，记 $g(x, y)=f(\frac{x}{y})$，若 $g(x, y)$ 满足 $x^{2} \frac{\partial^{2} g}{\partial x^{2}}+x y \frac{\partial^{2} g}{\partial x \partial y}+y^{2} \frac{\partial^{2} g}{\partial y^{2}}=1$，且 $g(x, x)=1$，$\frac{\partial g}{\partial x}|_{(x, x)}=\frac{2}{x}$，求 $f(u)$ 的表达式.
+
+(19)(本题满分12分)
+
+设函数 $f(x)$ 在区间 $(a, b)$ 内可导，证明: 导函数 $f'(x)$ 在 $(a, b)$ 内严格单调增加的充分必要条件是: 对 $(a, b)$ 内任意的 $x_{1}<x_{2}<x_{3}$，有 $\frac{f\left(x_{2}\right)-f\left(x_{1}\right)}{x_{2}-x_{1}}<\frac{f\left(x_{3}\right)-f\left(x_{2}\right)}{x_{3}-x_{2}}$
+
+(20)(本题满分12分)
+
+设 $\sum$ 是由直线 $\begin{cases}x=0 \\ y=0\end{cases}$ 绕直线 $\begin{cases}x=t \\ y=t \\ z=t\end{cases}$ (t 为参数)旋转一周得到的曲面，$\sum_{1}$ 是 $\sum$ 介于平面 $x+y+z=0$ 与 $x+y+z=1$ 之间部分的外侧，计算曲面积分 $I=\iint_{\sum_{1}} x d y d z+(y+1) d z d x+(z+2) d x d y$
+
+(21)(本题满分12分)
+设矩阵 $A=\begin{pmatrix}0 & -1 & 2 \\ -1 & 0 & 2 \\ -1 & -1 & a\end{pmatrix}$，已知 1 是 $A$ 的特征多项式的重根.
+
+(1) 求 $a$ 的值；
+
+(2) 求所有满足 $A \alpha=\alpha+\beta$，$A^{2} \alpha=\alpha+2 \beta$ 的非零列向量 $\alpha, \beta$
+
+(22)(本题满分12分)
+
+投保人的损失事件发生时，保险公司的赔付额 $Y$ 与投保人的损失额 $X$ 的关系为 $Y= \begin{cases}0, & X ≤100 \\ X-100, & X>100\end{cases}$，设损失事件发生时，投保人的损失额 $X$ 的概率密度为 $f(x)=\begin{cases}\frac{2 × 100^{2}}{(100+x)^{3}}, & x>0 \\ 0, & x \leq 0\end{cases}$
+
+(1) 求 $P\{Y>0\}$ 及 $E(Y)$；
+
+(2) 这种损失事件在一年内发生的次数记为 $N$，保险公司在一年内就这种损失事件产生的理赔次数记为 $M$，假设 $N$ 服从参数为8的泊松分布，在 $N=n(n ≥1)$ 的条件下，$M$ 服从二项分布 $B(n, P)$，其中 $P=P\{Y>0\}$，求 $M$ 的概率分布.
+
