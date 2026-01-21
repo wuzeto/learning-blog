@@ -26,7 +26,8 @@ theme:
         icon: material/weather-night
         name: 切换至浅色模式
   
-  # 功能配置
+  # 主题色选择器配置
+  # 添加这一部分可以让用户选择不同的主题色
   features:
     - navigation.instant
     - navigation.tabs
@@ -39,12 +40,26 @@ theme:
     - content.code.select
     - content.code.annotate
     - navigation.footer
-    - navigation.indexes  # 添加索引功能
+    - navigation.indexes
+    - palette  # 启用调色板功能
   
-  # 添加主题插件
-  plugin:
-    - palette
-
+  # 添加自定义CSS类（可选）
+  extra:
+    palette: true
+  
+  # 字体
+  font:
+    text: Roboto
+    code: "JetBrains Mono"
+  
+  # 图标
+  icon:
+    logo: material/rocket-launch
+  
+  # 插件配置（正确的语法）
+  plugins:
+    - search
+    # 如果需要额外功能可以添加其他插件
 
 # Markdown扩展
 markdown_extensions:
