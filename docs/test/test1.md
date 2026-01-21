@@ -548,8 +548,7 @@ $$
 
 (D) $C = PAP^T$
 
-(13) 设 $A,B$ 为随机事件，且 $P
-(B) > 0$，$P(A|B) = 1$，则必有()
+(13) 设 $A,B$ 为随机事件，且 $P(B) > 0$，$P(A|B) = 1$，则必有()
 
 (A) $P(A \cup B) > P(A)$
 
@@ -1462,8 +1461,7 @@ a^2 & 2a & 1 \\
 (11) 设 $\Sigma$ 是柱面 $x^2 + y^2 = 1$ 被平面 $z = 0$ 及 $z = x + y$ 所截得的第一卦限内的部分，则曲面积分 $\iint_{\Sigma} x\mathrm{d}S =$
 (12) 设 $\Sigma = \{(x,y,z) | x + y + z = 1, x \geq 0, y \geq 0, z \geq 0\}$，则 $\iint_{\Sigma} y^2\mathrm{d}S =$
 (13) 设 $\alpha$ 为3维单位列向量，$E$ 为3阶单位矩阵，则矩阵 $E - \alpha\alpha^T$ 的秩为
-(14) 设 $A,B,C$ 是随机事件，$A$ 与 $C$ 互不相容，$P(AB) = \frac{1}{2}$，$P
-(C) = \frac{1}{3}$，则 $P(AB | \bar{C}) =$
+(14) 设 $A,B,C$ 是随机事件，$A$ 与 $C$ 互不相容，$P(AB) = \frac{1}{2}$，$P(C) = \frac{1}{3}$，则 $P(AB | \bar{C}) =$
 
 三、解答题(本题共9小题,满分94分.解答应写出文字说明、证明过程或演算步骤)
 (15)(本题满分10分)
@@ -1724,8 +1722,7 @@ a^2 & 2a & 1 \\
 
 (D) 既非充分也非必要条件
 
-(7) 设随机事件 $A$ 与 $B$ 相互独立，且 $P
-(B) = 0.5$，$P(A - B) = 0.3$，则 $P(B - A) =$()
+(7) 设随机事件 $A$ 与 $B$ 相互独立，且 $P(B) = 0.5$，$P(A - B) = 0.3$，则 $P(B - A) =$()
 
 (A) $0.1$
 
@@ -1866,12 +1863,9 @@ a^2 & 2a & 1 \\
 
 (7) 若 $A,B$ 为任意两个随机事件，则()
 
-(A) $P(AB) \leq \frac{P
-(A) + P(B)}{2}$
+(A) $P(AB) \leq \frac{P(A) + P(B)}{2}$
 
-(B) $P(AB) \geq P
-(A) + P
-(B) - 1$
+(B) $P(AB) \geq P(A) + P(B) - 1$
 
 (C) $P(AB) \leq P(A)P(B)$
 
@@ -2146,9 +2140,7 @@ a^2 & 2a & 1 \\
 
 (D) $ A $ 与 $ C $ 不相似，$ B $ 与 $ C $ 不相似
 
-(7) 设 $ A,B $ 为随机事件，若 $ 0 < P
-(A) < 1 $，$ 0 < P
-(B) < 1 $，则 $ P(A|B) > P(A|\bar{B}) $ 的充分必要条件是()
+(7) 设 $ A,B $ 为随机事件，若 $ 0 < P(A) < 1 $，$ 0 < P(B) < 1 $，则 $ P(A|B) > P(A|\bar{B}) $ 的充分必要条件是()
 
 (A) $ P(B|A) > P(B|\bar{A}) $
 
@@ -2318,10 +2310,7 @@ a^2 & 2a & 1 \\
 (11) 设 $ \boldsymbol{F}(x,y,z) = xy \boldsymbol{i} - yz \boldsymbol{j} + zx \boldsymbol{k} $，则 $ \text{rot} \boldsymbol{F}(1,1,0) = $
 (12) 设 $ L $ 为球面 $ x^2 + y^2 + z^2 = 1 $ 与平面 $ x + y + z = 0 $ 的交线，则 $ \oint_L xy \mathrm{d}s = $
 (13) 设2阶矩阵 $ A $ 有两个不同特征值，$ \alpha_1,\alpha_2 $ 是 $ A $ 的线性无关的特征向量，且满足 $ A^2(\alpha_1 + \alpha_2) = \alpha_1 + \alpha_2 $，则 $ |A| = $
-(14) 设随机事件 $ A $ 与 $ B $ 相互独立，$ A $ 与 $ C $ 相互独立，$ BC = \varnothing $，若 $ P
-(A) = P
-(B) = \frac{1}{2} $，$ P(AC | AB \cup C) = \frac{1}{4} $，则 $ P
-(C) = $
+(14) 设随机事件 $ A $ 与 $ B $ 相互独立，$ A $ 与 $ C $ 相互独立，$ BC = \varnothing $，若 $ P(A) = P(B) = \frac{1}{2} $，$ P(AC | AB \cup C) = \frac{1}{4} $，则 $ P(C) = $
 
 三、解答题(本题共9小题,满分94分.解答应写出文字说明、证明过程或演算步骤)
 (15)(本题满分10分)
@@ -2437,16 +2426,11 @@ a^2 & 2a & 1 \\
 (D) $ r
 (A) = 1 $，$ r(\bar{A}) = 1 $
 
-(7) 设 $ A,B $ 为随机事件，则 $ P
-(A) = P
-(B) $ 的充分必要条件是()
+(7) 设 $ A,B $ 为随机事件，则 $ P(A) = P(B) $ 的充分必要条件是()
 
-(A) $ P(A \cup B) = P
-(A) + P
-(B) $
+(A) $ P(A \cup B) = P(A) + P(B) $
 
-(B) $ P(AB) = P(A)P
-(B) $
+(B) $ P(AB) = P(A)P(B) $
 
 (C) $ P(A \bar{B}) = P(\bar{A} B) $
 
@@ -2585,10 +2569,7 @@ a^2 & 2a & 1 \\
 
 (D) $ \alpha_1,\alpha_2,\alpha_3 $ 线性无关
 
-(7) 设 $ A,B,C $ 为三个随机事件，且 $ P
-(A) = P
-(B) = P
-(C) = \frac{1}{4} $，$ P(AB) = 0 $，$ P(AC) = P(BC) = \frac{1}{12} $，则 $ A,B,C $ 中恰有一个事件发生的概率为()
+(7) 设 $ A,B,C $ 为三个随机事件，且 $ P(A) = P(B) = P(C) = \frac{1}{4} $，$ P(AB) = 0 $，$ P(AC) = P(BC) = \frac{1}{12} $，则 $ A,B,C $ 中恰有一个事件发生的概率为()
 
 (A) $ \frac{3}{4} $
 
@@ -2742,22 +2723,15 @@ a^2 & 2a & 1 \\
 (D) $ r\left( \begin{pmatrix}A & O \\ BA & A^T\end{pmatrix} \right) = 2r
 (A) $
 
-(8) 设 $ A,B $ 为随机事件，且 $ 0 < P
-(B) < 1 $，下列命题中为假命题的是()
+(8) 设 $ A,B $ 为随机事件，且 $ 0 < P(B) < 1 $，下列命题中为假命题的是()
 
-(A) 若 $ P(A|B) = P
-(A) $，则 $ P(A|\bar{B}) = P
-(A) $
+(A) 若 $ P(A|B) = P(A) $，则 $ P(A|\bar{B}) = P(A) $
 
-(B) 若 $ P(A|B) > P
-(A) $，则 $ P(\bar{A}|\bar{B}) > P(\bar{A}) $
+(B) 若 $ P(A|B) > P(A) $，则 $ P(\bar{A}|\bar{B}) > P(\bar{A}) $
 
-(C) 若 $ P(A|B) > P(A|\bar{B}) $，则 $ P(A|B) > P
-(A) $
+(C) 若 $ P(A|B) > P(A|\bar{B}) $，则 $ P(A|B) > P(A) $
 
-(D) 若 $ P(A|A \cup B) > P(\bar{A}|A \cup B) $，则 $ P
-(A) > P
-(B) $
+(D) 若 $ P(A|A \cup B) > P(\bar{A}|A \cup B) $，则 $ P(A) > P(B) $
 
 (9) 设 $ (X_1,Y_1),(X_2,Y_2),\cdots,(X_n,Y_n) $ 为来自总体 $ N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2;\rho) $ 的简单随机样本，令 $ \theta = \mu_1 - \mu_2 $，$ \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i $，$ \bar{Y} = \frac{1}{n}\sum_{i=1}^n Y_i $，$ \hat{\theta} = \bar{X} - \bar{Y} $，则()
 
