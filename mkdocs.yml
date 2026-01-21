@@ -149,6 +149,12 @@ nav:
     - 系统总览: systems/index.md
     - 计算机架构: systems/architecture.md
     - 数字模拟: systems/modified.md
+  - ✍️ 真题直面:
+    - 数学: test/test1.md
+    - 专业课: test/test2.md
+    - C++: test/test3.md  
+    - 英语: test/test4.md 
+    - 政治: test/test5.md         
   - 🌏 地理方志:
     - 中国地理&游记: geo/geo1.md
     - 世界地理&游记: geo/geo2.md
