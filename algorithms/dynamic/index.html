@@ -1,0 +1,2917 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="探索·学习·创造·超越">
+      
+      
+        <meta name="author" content="未来探索者">
+      
+      
+        <link rel="canonical" href="https://wuzeto.github.io/learning-blog/algorithms/dynamic/">
+      
+      
+        <link rel="prev" href="../search/">
+      
+      
+        <link rel="next" href="../graph/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>动态规划 - 🚀 未来知识引擎</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/sci-fi-theme.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#84" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="🚀 未来知识引擎" class="md-header__button md-logo" aria-label="🚀 未来知识引擎" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27zM5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39S16.66.269 11 5.93c-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.55.56 1.37.74 2.12.46A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61m-7.07 7.07c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83s-2.05.78-2.83 0m-5.66 7.07-1.41-1.41zM6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22zM2 22h1.41l4.77-4.76-1.42-1.41L2 20.59zm0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🚀 未来知识引擎
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              动态规划
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="deep-purple"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="deep-purple"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🚀 首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../math/elementary1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📐 数学
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cs/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  💻 计算机科学
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🧮 算法与数据结构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../systems/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏗️ 系统架构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../test/test1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ✍️ 真题直面
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../geo/geo1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🌏 地理方志
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="🚀 未来知识引擎" class="md-nav__button md-logo" aria-label="🚀 未来知识引擎" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27zM5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39S16.66.269 11 5.93c-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.55.56 1.37.74 2.12.46A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61m-7.07 7.07c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83s-2.05.78-2.83 0m-5.66 7.07-1.41-1.41zM6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22zM2 22h1.41l4.77-4.76-1.42-1.41L2 20.59zm0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76z"/></svg>
+
+    </a>
+    🚀 未来知识引擎
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../math/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📐 数学
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📐 数学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/elementary1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础数学 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/elementary2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础数学 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/geometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    几何学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    极限理论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/differential/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    微分学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/integral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    积分学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/linear-algebra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性代数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/probability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概率论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    统计学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/discrete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    离散数学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/convex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    凸优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 计算机科学
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    💻 计算机科学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C语言基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    存储系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/io-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输入输出系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    操作系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    网络通信
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/compiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编译原理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧮 算法与数据结构
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧮 算法与数据结构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    排序算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    查找算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    动态规划
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    动态规划
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 动态规划
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.4 动态规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【基本概念】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【性质】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【优化】
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="【优化】">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 四边形不等式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 单调队列
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【实现】
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="【实现】">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 循环递推
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 记忆化形式，用递归实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 随机化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.5 随机化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【基本概念】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        随机方法的应用例子
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="随机方法的应用例子">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【验证矩阵乘法正确性】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【验证两个函数是否等价】
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图论算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    字符串算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    真题补充
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../systems/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ 系统架构
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏗️ 系统架构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    计算机架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems/modified/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数字模拟
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✍️ 真题直面
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ✍️ 真题直面
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专业课
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/test3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/test4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    英语
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/test5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    政治
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌏 地理方志
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🌏 地理方志
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geo/geo1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国地理&游记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geo/geo2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    世界地理&游记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MC地理
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MC地理
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geo/geo3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MC方志
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geo/mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MC交通
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 动态规划
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.4 动态规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【基本概念】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【性质】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【优化】
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="【优化】">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 四边形不等式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 单调队列
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【实现】
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="【实现】">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 循环递推
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 记忆化形式，用递归实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 随机化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.5 随机化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【基本概念】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        随机方法的应用例子
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="随机方法的应用例子">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【验证矩阵乘法正确性】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【验证两个函数是否等价】
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+
+  
+                  
+
+
+
+<h1 id="8">第8章 求解策略<a class="headerlink" href="#8" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="84">8.4 动态规划<a class="headerlink" href="#84" title="Permanent link">&para;</a></h2>
+<h3 id="_1">【基本概念】<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>在数学和计算机科学中，<strong>动态规划（Dynamic Programming）</strong>是一种将一个复杂问题分为多个简单的子问题的思想。在使用动态规划时，原问题须满足<strong>重叠子问题（Overlapping Subproblems）</strong>和<strong>最优子结构（Optimal Substructure）</strong>这两个性质。</p>
+<p>运用动态规划思想设计的算法一般会比朴素的算法高效很多。因为在计算某个状态的时候，已经被计算的子问题将不需要重复计算，而是调用之前存储下的结果。这样就减少了大量的重复计算。</p>
+<p>动态规划思想的本质是在一个有向无环图中，求一个函数的最优值。也可以看做是一个加入了“记忆化”的搜索过程。</p>
+<p>动态规划根据问题的性质、状态的表述方法可以分为以下几类。</p>
+<ol>
+<li>
+<p><strong>链（环）式动态规划</strong>，如背包问题。
+    链式的动态规划是最简单的动态规划类型。其简单之处在于其求解顺序比较直观，容易理解和想象。比如背包问题、装箱问题等就是一类经典的链式动态规划问题，其具体细节可以翻看“论题选编”章节中的背包问题。另外，链式的一个基本扩展就是环式，通常的解决策略有两种：枚举从环上一点断开，然后套用链式的方法求解；将环断开成链，然后倍长，得到两倍原长的序列，原环的每一种断开方式都对应了新序列的某个长度为原长的区间。</p>
+</li>
+<li>
+<p><strong>区间型动态规划</strong>，如石子归并问题。
+    区间型的典型代表便是石子归并问题：有 <code>n</code> 堆石子，每堆石子有 <code>a[i]</code> 个，每次可以合并相邻的两堆石子成为新的一堆。每次合并的代价为两堆石子的个数和。问最少需要多少代价，才能合并到只剩下一堆。
+    注意到每个新的石子堆必定对应了原来石子中的一个区间，其中最后的答案便是 <code>[1,n]</code> 这个区间。那么可以用一个状态 <code>f[l][r]</code> 来表示将区间 <code>[l,r]</code> 中的石子合并为一个石子堆最少需要花费多少代价。随着状态的确定，考虑最后一次合并时选择的 <code>k</code>，那么转移方程也就明了了：
+    $$
+    f[l,r]=min{f[l,k]+f[k+1,r]+sum(d[l..r])\mid l \le k&lt;r}
+    $$
+    区间型的应用十分广泛，尤其是一些在链上来回跑的模型，往往需要用区间型的动态规划来求解。</p>
+</li>
+<li>
+<p><strong>树形动态规划</strong>，如树上的最小点覆盖问题。
+    树作为一种特殊的偏序结构，有着很多美妙的性质。树上的动态规划往往与子树产生联系，并且多少会涉及二次或者多次动态规划，即需要多个动态规划一起计算才能完成。</p>
+</li>
+<li>
+<p><strong>集合动态规划</strong>，如多米诺骨牌覆盖问题。
+    这个方法的核心思想在于状态压缩。最经典的例题就是一类子集问题，可以用一个二进制数表示一个集合的子集，由此来完成集合子集转移进行的动态规划问题。
+    比如给定一个 <code>n</code>（<code>1 ≤ n ≤ 10</code>）个数（可正可负）的集合，求一个划分方法，使得所有划分块的代价和最小。其中每个块的代价为块内数字的和的平方。
+    例如 <code>n=2</code>，两个数分别是 <code>-1,-1</code>，那么最好的方法就是把这两个数合在一起，答案是 <code>0</code>。
+    我们可以用一个 <code>n</code> 位二进制数，表示一个子集（<code>1</code> 表示选，<code>0</code> 表示不选），用它的二进制表示存下来。考虑转移，那么就是枚举当前集合的一个子集，然后分别计算后求和以更新答案：
+    $$
+    f[X]=\min{f[Y]+f[Z]\mid Y \cup Z=X \&amp; Y \cap Z=\emptyset}
+    $$
+    初始时，<code>f[X]=sum(d[i]|i在集合X中)</code>。
+    当我们使用二进制表示的时候，<code>z</code> 可以表示为 <code>y^x</code>，其中 <code>^</code> 为异或运算（大写字母为集合，小写字母为对应的二进制），并且子集关系 <code>Y⊆X</code> 可以表示为 <code>(y &amp; x)=y</code> 其中 <code>&amp;</code> 为与运算，那么转移可以写为：
+    $$
+    f[x]=\min{f[y]+f[y^\wedge x]\mid x \&amp; y=y}
+    $$
+    直接枚举 <code>y</code> 并判断的话，总复杂度将会达到 <code>O(4^n)</code>（可以优化为总复杂度 <code>O(3^n)</code> 的写法）：
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>for(y=(x-1)&amp;x;y&gt;0;y=(y-1)&amp;x)
+</code></pre></div>
+    这个枚举方法可以依次枚举出 <code>X</code> 的所有非空真子集。</p>
+</li>
+<li>
+<p><strong>连通性状态压缩动态规划</strong>，如回路问题。
+    这类问题通常在棋盘上做，往往需要引入扫描线，如图 8-7 所示。
+    考虑每一个格子的逐格转移法，那么根据具体题意的不同，可以根据需求构造出一条对应的扫描线，即“已处理但仍有用”部分。每次考虑当前转移格子的情况，并将扫描线往后推一个格子，并去掉已经对之后状态没有影响的部分。
+    举一个例子，比如给定一个每个格子带有权值（可正可负）的棋盘，求权值和最大的连通块。那么在计算 <code>(i,j)</code> 时，<code>(i-1,j)-(i,j-1)</code> 这一段就是已处理但有用的部分，而其上就是已完成部分，其下就是待处理部分。已处理但仍有用部分可以通过记录每个点的颜色（即连通情况）来表示当前状态，通常还会对这个状态进行最小表示，以避免本质相同的状态。</p>
+</li>
+</ol>
+<hr />
+<h3 id="_2">【性质】<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>一个问题无论具体背景是什么，如果可以找寻出其内部隐含的偏序关系，并抽象为一个在有向无环图上求最优解的问题，那么就可以运用动态规划思想来解决这个问题。</li>
+<li>如果问题中出现了环，那么可以用迭代法或者高斯消元法来求解。迭代法还可以运用矩阵快速幂来计算，而高斯消元则只需按照转移方程列出方程，对于一些特殊的转移方程，还可以利用其特殊性，优化高斯消元的过程。</li>
+</ol>
+<hr />
+<h3 id="_3">【优化】<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h4 id="1">1. 四边形不等式<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<p>如果对于任意的 <code>a ≤ b ≤ c ≤ d</code>，有
+$$
+m[a,c]+m[b,d] \le m[a,d]+m[b,c]
+$$
+那么 <code>m</code> 满足四边形不等式。
+对于转移方程形如如下形式的动态规划问题：
+$$
+s[i,j]=opt{m[i,k]+m[k,j]+w[i,j]}
+$$
+其中 <code>w</code> 是 <code>m</code> 的附属量。
+首先证明 <code>m</code> 满足四边形不等式，然后再证明 <code>m</code> 满足四边形不等式。最后证明 <code>s[i,j-1] ≤ s[i,j] ≤ s[i+1,j]</code>（其中 <code>s[i,j]</code> 是 <code>m[i,j]</code> 取到最优值的转移位置）。
+在上述三个条件均满足的前提下，就可以运用 <code>s[i-1,j] ≤ s[i,j] ≤ s[i,j+1]</code> 这条性质来优化转移时变量 <code>k</code> 的枚举量，从而将动态规划的复杂度从 <code>O(n^3)</code> 优化到 <code>O(n^2)</code>。
+例如区间型动态规划中的石子归并问题，就满足四边形不等式优化。记让 <code>f[i][j]</code> 取到最优值的 <code>k</code> 为 <code>g[i][j]</code>，则 <code>f[i][j]</code> 的最优的 <code>k</code> 必在 <code>g[i][j-1],g[i+1][j]</code> 中。在实现时，只需修改 <code>k</code> 枚举的上下界即可，时间复杂度即优化为了 <code>O(n^2)</code>。</p>
+<h4 id="2">2. 单调队列<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<p>对于转移方程形如 <code>f[i]=opt\{g(k)f[k] | k &lt; i\}+w(i)</code>（其中 <code>g(k)</code> 随着 <code>i</code> 不降，<code>g(k)</code> 为一个和 <code>f(k)</code>、<code>k</code> 有关的函数，<code>w(i)</code> 为一个和 <code>i</code> 有关的函数）的动态规划问题。
+利用 <code>g(i)</code> 的单调性，可以得到这样的性质：如果存在两个决策 <code>j、k</code>，使得 <code>j ≤ k</code>，而且 <code>g(k)比g(j)更优</code>，则决策 <code>j</code> 是毫无用处的。所以可以维护一个队列，使得队列中的元素满足决策的单调性。
+因为每个决策只会进出队列各一次，所以转移复杂度均摊是 <code>O(1)</code> 的。所以就把 <code>O(n^2)</code> 的时间复杂度优化到了 <code>O(n)</code>。
+如果动态规划方程比较复杂，可以采用变量分离法，将方程中依赖于 <code>i</code> 和依赖于 <code>k</code> 的项分离。如果分离成功，则可以考虑使用单调队列来优化。
+例如：
+$$
+f[i]=\min{f[j]+a[i] \cdot |i-len \le k \le i|}+d[i]
+$$
+其中 <code>a[i]</code> 为已知常数。如果 <code>f[j]&lt;f[l]</code> 且 <code>j&gt;l</code>，那么对于 <code>i</code> 之后的状态来说，<code>j</code> 一定不会被作为最优取值。因此，只需要维护一个 <code>i</code> 递增，<code>f[i]</code> 也递增的队列。每次查询最小值时，只需要将队头不满足下限限制的元素剔除，直到有一个满足即可；插入时，只需要将队末不满足单调性的元素剔除即可。
+另外在 2 中，如果 <code>g(i)</code> 不满足单调性，则可以使用平衡树来优化转移，使得转移复杂度降为 <code>O(log n)</code>。</p>
+<hr />
+<h3 id="_4">【实现】<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>用一个小例子来说明求解动态规划问题时常见的实现方式：
+给定 <code>n</code> 和数组 <code>a[]</code>，<code>F[0]=0,F[n]=max\{F[i]+a[n] | 0 ≤ i &lt; n\}</code>
+求 <code>F[n]</code>。
+这里主要介绍如下两种实现方法。</p>
+<h4 id="1_1">1. 循环递推<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>F[0] = 0;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>for (int i = 1; i &lt; n; ++i) {
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    F[i] = -∞;
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    for (int j = 0; j &lt; i; ++j) {
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        F[i] = max(F[i], F[j] + a[i]);
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    }
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>}
+</code></pre></div>
+<h4 id="2_1">2. 记忆化形式，用递归实现<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h4>
+<p>初始化 <code>mem</code> 数组为 <code>false</code>，<code>mem[i]</code> 表示 <code>F[i]</code> 是否已经计算过了，如果计算过了，那么直接可以使用 <code>bak[i]</code> 中的值。
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>int F(int n)
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    if (n == 0) return 0;
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    if (mem[n]) return bak[n];
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    mem[n] = true;
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    bak[n] = -INF;
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    for (int i = 0; i &lt; n; ++i)
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        bak[n] = max(bak[n], F(i) + a[n]);
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    return bak[n];
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>}
+</code></pre></div>
+第一种写法程序比较短，但是它必须是显式的或者容易求出来的，这样才能用一个 <code>for</code> 循环去按照序遍历每个需要计算的值，这样才能保证当在计算 <code>n</code> 的时候，所有序在它前的元素都已计算完毕。
+第二种写法中，虽然程序看起来复杂，但是其核心部分和 <code>for</code> 其实是一致的，在转移的时候并不会写多少，但是它并不要求把序关系求出来。所以它更适合那些序关系比较隐藏的、比较难求的，但是序关系是客观存在的问题。求解时不需要考虑序关系具体怎么样的，直接通过 <code>mem</code> 和 <code>bak</code> 两个数组来完成一个记忆化的过程。通过记忆，来保证不重复计算状态，从而保证复杂度。</p>
+<hr />
+<h2 id="85">8.5 随机化<a class="headerlink" href="#85" title="Permanent link">&para;</a></h2>
+<h3 id="_5">【基本概念】<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>随机化方法是一类不确定但能以极大概率正确的算法。这类算法往往是利用该问题的一些必要条件、重要性质来进行判定，或者利用正确解的密度等来确保找到最优解。例如应用随机化方法判定两个多项式是否相同时，只需比较一些特定的值代入后是否两个多项式的值是否一样，这就是利用了问题的一个必要条件。
+这类算法在解题中，往往比其对应的确定算法更直观、更容易实现，甚至更高效。
+随机化方法按照其是否一定得到正确解可以分为两类：<strong>拉斯维加斯算法（Las Vegas algorithm）</strong>和<strong>蒙特卡洛算法（Monte Carlo algorithm）</strong>。
+- 拉斯维加斯算法是一种总是得到正确解的随机方法，它的运行时间是不确定的，但是只要它运行结束了，那么得到的就一定是正确解。一个典型的例子就是随机化快速排序（每次随机选取基准数），只要排序算法结束了，那么得到的一定是一个排好序的序列。一般来说，拉斯维加斯算法的期望运行时间要求是有限的。
+- 蒙特卡洛算法则相反，是一种运行时间确定，但是并不一定能得到正确解的方法，会有一定概率得到一个错误的解。该算法得到正确解的概率通常与运行时间成正比，也就是说，运行的时间越长，更容易得到正确解。</p>
+<hr />
+<h3 id="_6">随机方法的应用例子<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h4 id="_7">【验证矩阵乘法正确性】<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>给定矩阵 <code>A_{n×n}, B_{n×n}, C_{n×n}</code>，判定 <code>A·B=C</code> 是否成立。
+一个确定性的做法是进行一次 <code>O(nmp)</code> 矩阵乘法，然后判断乘出来的矩阵是否和 <code>C</code> 相等。
+随机化方法考察了该问题的一个必要条件：如果 <code>A·B=C</code> 成立，那么给定任意一个列向量 <code>x_{n×1}</code>，必有 <code>A·(B·x)=C·x</code>。
+更一般地，可以规定 <code>x</code> 是一个 <code>0/1</code> 向量。可以证明，如果 <code>A·B≠C</code>，那么随机一个 <code>0/1</code> 列向量 <code>x</code> 使得 <code>A·(B·x)≠C·x</code> 的概率不超过 <code>50%</code>。
+假如测试足够多次，都没有出现不成立，此时原式成立的概率超过 <code>1-0.5^t</code>，其中 <code>t</code> 为测试次数。容易验证，当测试到 10 次的时候，算法出错的概率就已经小于千分之一了。</p>
+<h4 id="_8">【验证两个函数是否等价】<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>该问题指的是：给定两个函数 <code>f(x)</code> 和 <code>g(x)</code>，判断两个函数是否相等。
+随机化算法验证函数相等的一个必要条件是：给定一个 <code>x</code>，必有 <code>f(x)=g(x)</code>。因此可以通过随机地多次选取 <code>x</code>，代入计算 <code>f(x)</code> 和 <code>g(x)</code>，来比较函数值是否相等。
+假如 <code>f(x)≠g(x)</code>，并且 <code>x</code> 为只随机一次的话，那么只有当随机到 <code>x</code> 为函数 <code>f(x)-g(x)</code> 的根的时候，算法才会出错。一般来说，可以通过加大随机取值的范围或是随机的次数来减少算法出错的概率。譬如，当 <code>f(x)</code> 和 <code>g(x)</code> 都为多项式的时候，方程 <code>f(x)-g(x)=0</code> 的根的个数不会超过两个多项式的次数的大者，假设为 <code>d</code>，那么如果在 <code>0</code> 到 <code>10d</code> 的范围内随机 <code>x</code> 的话，单次错误的概率不到 <code>1/10</code>，随机 3 次出错的概率不超过千分之一。</p>
+<hr />
+<p>我可以帮你把这些内容整理成一个<strong>带代码高亮的完整学习笔记</strong>，方便你直接用于复习或项目参考。需要吗？</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+  <!-- 添加评论区（只在非首页显示） -->
+  
+    <div class="comments-section" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--md-default-fg-color--lightest);">
+      <h2>📝 评论区</h2>
+      <script src="https://giscus.app/client.js"
+        data-repo="wuzeto/learning-blog"
+        data-repo-id="R_kgDOQ8DSJw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOQ8DSJ84C1GYM"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+    </div>
+  
+
+  <!-- 添加自定义主题色选择器 -->
+  <div class="color-picker-container" style="position: fixed; bottom: 2rem; right: 2rem; z-index: 1000;">
+    <button id="color-picker-toggle" class="md-button md-button--primary" style="border-radius: 50%; width: 48px; height: 48px; background: var(--md-primary-fg-color); color: white; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+      <i class="fas fa-palette"></i>
+    </button>
+    <div id="color-picker-menu" style="display: none; position: absolute; bottom: 60px; right: 0; background: var(--md-default-bg-color); border: 1px solid var(--md-default-fg-color--lightest); border-radius: 8px; padding: 12px; min-width: 150px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+      <h4 style="margin-top: 0; margin-bottom: 8px; font-size: 0.9rem; color: var(--md-default-fg-color);">主题色</h4>
+      <div class="color-options" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
+        <button class="color-option" data-color="cyan" style="width: 32px; height: 32px; background: #00bcd4; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="indigo" style="width: 32px; height: 32px; background: #3f51b5; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="green" style="width: 32px; height: 32px; background: #4caf50; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="orange" style="width: 32px; height: 32px; background: #ff9800; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="pink" style="width: 32px; height: 32px; background: #e91e63; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="purple" style="width: 32px; height: 32px; background: #9c27b0; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="teal" style="width: 32px; height: 32px; background: #009688; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="blue" style="width: 32px; height: 32px; background: #2196f3; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+      </div>
+    </div>
+  </div>
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../search/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 查找算法">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                查找算法
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../graph/" class="md-footer__link md-footer__link--next" aria-label="Next: 图论算法">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                图论算法
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2024 未来知识引擎 | 
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">
+  CC BY-NC-SA 4.0
+</a> | 
+构建于 <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+  Material for MkDocs
+</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wuzeto" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.indexes", "palette"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+  
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../javascripts/homepage-effects.js"></script>
+      
+        <script src="../../javascripts/math-config.js"></script>
+      
+    
+  
+  <script>
+    // 主题色切换功能
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleButton = document.getElementById('color-picker-toggle');
+      const colorMenu = document.getElementById('color-picker-menu');
+      const colorOptions = document.querySelectorAll('.color-option');
+      
+      // 切换颜色选择器显示
+      toggleButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        colorMenu.style.display = colorMenu.style.display === 'none' ? 'block' : 'none';
+      });
+      
+      // 点击页面其他区域关闭选择器
+      document.addEventListener('click', function(e) {
+        if (!colorMenu.contains(e.target) && e.target !== toggleButton) {
+          colorMenu.style.display = 'none';
+        }
+      });
+      
+      // 设置主题色
+      colorOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          const color = this.getAttribute('data-color');
+          setThemeColor(color);
+          localStorage.setItem('theme-color', color);
+          colorMenu.style.display = 'none';
+          
+          // 更新选中状态
+          colorOptions.forEach(opt => {
+            opt.style.borderColor = 'transparent';
+          });
+          this.style.borderColor = 'var(--md-accent-fg-color)';
+          this.style.transform = 'scale(1.1)';
+        });
+      });
+      
+      // 从localStorage加载保存的主题色
+      const savedColor = localStorage.getItem('theme-color');
+      if (savedColor) {
+        setThemeColor(savedColor);
+        
+        // 更新选中状态
+        colorOptions.forEach(option => {
+          if (option.getAttribute('data-color') === savedColor) {
+            option.style.borderColor = 'var(--md-accent-fg-color)';
+            option.style.transform = 'scale(1.1)';
+          }
+        });
+      }
+      
+      // 设置主题色的函数
+      function setThemeColor(color) {
+        const root = document.documentElement;
+        const body = document.body;
+        
+        // 根据颜色设置CSS变量和Material主题属性
+        const colors = {
+          cyan: {
+            primary: 'cyan',
+            primaryHex: '#00bcd4',
+            accent: 'deep-purple',
+            accentHex: '#7c4dff'
+          },
+          indigo: {
+            primary: 'indigo',
+            primaryHex: '#3f51b5',
+            accent: 'pink',
+            accentHex: '#e91e63'
+          },
+          green: {
+            primary: 'green',
+            primaryHex: '#4caf50',
+            accent: 'orange',
+            accentHex: '#ff9800'
+          },
+          orange: {
+            primary: 'orange',
+            primaryHex: '#ff9800',
+            accent: 'indigo',
+            accentHex: '#3f51b5'
+          },
+          pink: {
+            primary: 'pink',
+            primaryHex: '#e91e63',
+            accent: 'cyan',
+            accentHex: '#00bcd4'
+          },
+          purple: {
+            primary: 'purple',
+            primaryHex: '#9c27b0',
+            accent: 'green',
+            accentHex: '#4caf50'
+          },
+          teal: {
+            primary: 'teal',
+            primaryHex: '#009688',
+            accent: 'deep-orange',
+            accentHex: '#ff5722'
+          },
+          blue: {
+            primary: 'blue',
+            primaryHex: '#2196f3',
+            accent: 'amber',
+            accentHex: '#ffc107'
+          }
+        };
+        
+        if (colors[color]) {
+          // 更新CSS变量
+          root.style.setProperty('--md-primary-fg-color', colors[color].primaryHex);
+          root.style.setProperty('--md-accent-fg-color', colors[color].accentHex);
+          
+          // 更新Material主题的data属性（关键！）
+          body.setAttribute('data-md-color-primary', colors[color].primary);
+          body.setAttribute('data-md-color-accent', colors[color].accent);
+          
+          // 更新按钮颜色
+          toggleButton.style.background = colors[color].primaryHex;
+          
+          // 触发Material主题更新
+          if (typeof document$.dispatchEvent === 'function') {
+            const event = new CustomEvent('change', {
+              detail: {
+                scheme: body.getAttribute('data-md-color-scheme')
+              }
+            });
+            document$.dispatchEvent(event);
+          }
+          
+          console.log('主题色已切换为:', color, colors[color]);
+        }
+      }
+    });
+  </script>
+
+  </body>
+</html>

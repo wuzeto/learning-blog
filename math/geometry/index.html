@@ -1,0 +1,3701 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="探索·学习·创造·超越">
+      
+      
+        <meta name="author" content="未来探索者">
+      
+      
+        <link rel="canonical" href="https://wuzeto.github.io/learning-blog/math/geometry/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../limits/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>几何学 - 🚀 未来知识引擎</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/sci-fi-theme.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="🚀 未来知识引擎" class="md-header__button md-logo" aria-label="🚀 未来知识引擎" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27zM5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39S16.66.269 11 5.93c-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.55.56 1.37.74 2.12.46A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61m-7.07 7.07c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83s-2.05.78-2.83 0m-5.66 7.07-1.41-1.41zM6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22zM2 22h1.41l4.77-4.76-1.42-1.41L2 20.59zm0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🚀 未来知识引擎
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              几何学
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="deep-purple"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="deep-purple"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🚀 首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../elementary1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📐 数学
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cs/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  💻 计算机科学
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../algorithms/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🧮 算法与数据结构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../systems/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏗️ 系统架构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../test/test1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ✍️ 真题直面
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../geo/geo1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🌏 地理方志
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="🚀 未来知识引擎" class="md-nav__button md-logo" aria-label="🚀 未来知识引擎" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27zM5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39S16.66.269 11 5.93c-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.55.56 1.37.74 2.12.46A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61m-7.07 7.07c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83s-2.05.78-2.83 0m-5.66 7.07-1.41-1.41zM6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22zM2 22h1.41l4.77-4.76-1.42-1.41L2 20.59zm0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76z"/></svg>
+
+    </a>
+    🚀 未来知识引擎
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📐 数学
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📐 数学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elementary1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础数学 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elementary2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础数学 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    几何学
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    几何学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二重积分理论基础
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二重积分理论基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二重积分定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#darboux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Darboux 定理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lebesgue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lebesgue 定理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二重积分中值定理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二重积分中值定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        积分中值定理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二重积分换元法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二重积分换元法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一般换元公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        极坐标变换
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        广义极坐标变换
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一般变量替换
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        应用与计算技巧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用与计算技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        对称性简化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        积分次序交换
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一型曲线积分
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一型曲线积分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定义与中值定理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#green" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Green 公式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Green 公式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#green_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本 Green 公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#green_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        平面 Green 公式的推广
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#riemann" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        调和函数与 Riemann 定理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="调和函数与 Riemann 定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        调和函数性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gauss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gauss 公式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gauss 公式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gauss_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本 Gauss 公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#green_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空间 Green 公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stokes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stokes 公式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空间调和函数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        公式总结与关系
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="公式总结与关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三大积分公式关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        微分算子关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重要恒等式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重要公式总结
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="重要公式总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常用换元公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        对称性应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        计算技巧
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    极限理论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../differential/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    微分学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    积分学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linear-algebra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性代数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../probability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概率论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    统计学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discrete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    离散数学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../convex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    凸优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 计算机科学
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    💻 计算机科学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C语言基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    存储系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/io-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输入输出系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    操作系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    网络通信
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/compiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编译原理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../algorithms/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧮 算法与数据结构
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧮 算法与数据结构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/data-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    排序算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    查找算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/dynamic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    动态规划
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图论算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    字符串算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/complexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    真题补充
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../systems/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ 系统架构
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏗️ 系统架构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    计算机架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems/modified/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数字模拟
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✍️ 真题直面
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ✍️ 真题直面
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专业课
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/test3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/test4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    英语
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/test5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    政治
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌏 地理方志
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🌏 地理方志
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geo/geo1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国地理&游记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geo/geo2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    世界地理&游记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MC地理
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MC地理
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geo/geo3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MC方志
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geo/mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MC交通
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二重积分理论基础
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二重积分理论基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二重积分定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#darboux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Darboux 定理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lebesgue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lebesgue 定理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二重积分中值定理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二重积分中值定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        积分中值定理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二重积分换元法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二重积分换元法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一般换元公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        极坐标变换
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        广义极坐标变换
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一般变量替换
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        应用与计算技巧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用与计算技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        对称性简化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        积分次序交换
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一型曲线积分
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一型曲线积分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定义与中值定理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#green" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Green 公式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Green 公式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#green_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本 Green 公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#green_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        平面 Green 公式的推广
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#riemann" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        调和函数与 Riemann 定理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="调和函数与 Riemann 定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        调和函数性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gauss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gauss 公式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gauss 公式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gauss_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本 Gauss 公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#green_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空间 Green 公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stokes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stokes 公式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空间调和函数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        公式总结与关系
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="公式总结与关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三大积分公式关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        微分算子关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重要恒等式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重要公式总结
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="重要公式总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常用换元公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        对称性应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        计算技巧
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+
+  
+                  
+
+
+
+<script>
+
+window.MathJax = {
+
+  tex: {
+
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+
+    macros: {
+
+      oiint: "{\\mathchoice{\\mkern-18mu\\iint}{\\mkern-12mu\\iint}{\\mkern-13mu\\iint}{\\mkern-12mu\\iint}}"
+
+    }
+
+  }
+
+};
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<h1 id="_1">场论<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">二重积分理论基础<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">二重积分定义<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><strong>二重积分</strong></p>
+<p>设 <span class="arithmatex">\(D\)</span> 是 <span class="arithmatex">\(Oxy\)</span> 平面上的有界闭区域，函数 <span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上有界。将 <span class="arithmatex">\(D\)</span> 任意分割成 <span class="arithmatex">\(n\)</span> 个小区域：</p>
+<p><span class="arithmatex">\(\Delta D_1, \Delta D_2, \dots, \Delta D_n\)</span></p>
+<p>其中 <span class="arithmatex">\(\Delta D_i\)</span> 的面积记为 <span class="arithmatex">\(\Delta \sigma_i\)</span>，直径记为 <span class="arithmatex">\(d_i\)</span>，<span class="arithmatex">\(\lambda = \max\{d_1, d_2, \dots, d_n\}\)</span>。在每个 <span class="arithmatex">\(\Delta D_i\)</span> 上任取一点 <span class="arithmatex">\((\xi_i, \eta_i)\)</span>，作和式：</p>
+<p><span class="arithmatex">\(S_n = \sum_{i=1}^n f(\xi_i, \eta_i) \Delta \sigma_i\)</span></p>
+<p>如果当 <span class="arithmatex">\(\lambda \to 0\)</span> 时，极限</p>
+<p><span class="arithmatex">\(\lim_{\lambda \to 0} S_n = I\)</span></p>
+<p>存在且与分割方式和取点方式无关，则称 <span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上可积，<span class="arithmatex">\(I\)</span> 称为二重积分，记为：</p>
+<p><span class="arithmatex">\(\iint_D f(x,y) \, d\sigma = \lim_{\lambda \to 0} \sum_{i=1}^n f(\xi_i, \eta_i) \Delta \sigma_i\)</span></p>
+<h3 id="darboux">Darboux 定理<a class="headerlink" href="#darboux" title="Permanent link">&para;</a></h3>
+<p><strong>Darboux 大和与小和</strong></p>
+<p>设 <span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上有界，<span class="arithmatex">\(P\)</span> 是 <span class="arithmatex">\(D\)</span> 的一个分割：</p>
+<ul>
+<li>
+<p>上确界：<span class="arithmatex">\(M_i = \sup_{(x,y) \in \Delta D_i} f(x,y)\)</span></p>
+</li>
+<li>
+<p>下确界：<span class="arithmatex">\(m_i = \inf_{(x,y) \in \Delta D_i} f(x,y)\)</span></p>
+</li>
+<li>
+<p>Darboux 大和：<span class="arithmatex">\(S(P) = \sum_{i=1}^n M_i \Delta \sigma_i\)</span></p>
+</li>
+<li>
+<p>Darboux 小和：<span class="arithmatex">\(s(P) = \sum_{i=1}^n m_i \Delta \sigma_i\)</span></p>
+</li>
+</ul>
+<p><strong>Darboux 定理</strong></p>
+<p>有界函数 <span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上可积的充要条件是：</p>
+<p><span class="arithmatex">\(\lim_{\lambda \to 0} [S(P) - s(P)] = 0\)</span></p>
+<p>即</p>
+<p><span class="arithmatex">\(\lim_{\lambda \to 0} \sum_{i=1}^n (M_i - m_i) \Delta \sigma_i = 0\)</span></p>
+<p><strong>可积的充分条件</strong></p>
+<ol>
+<li>
+<p>若 <span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上连续，则 <span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上可积</p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上有界，且间断点集的面积为 0，则 <span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上可积</p>
+</li>
+</ol>
+<h3 id="lebesgue">Lebesgue 定理<a class="headerlink" href="#lebesgue" title="Permanent link">&para;</a></h3>
+<p><strong>Lebesgue 定理</strong></p>
+<p>有界函数 <span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上 Riemann 可积的充要条件是：<span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上几乎处处连续，即 <span class="arithmatex">\(f(x,y)\)</span> 的间断点集是零测集。</p>
+<p><strong>零测集</strong></p>
+<p>集合 <span class="arithmatex">\(E \subset \mathbb{R}^2\)</span> 称为零测集，如果对任意 <span class="arithmatex">\(\varepsilon &gt; 0\)</span>，存在可数个矩形 <span class="arithmatex">\(\{R_i\}\)</span> 覆盖 <span class="arithmatex">\(E\)</span>，且这些矩形的面积之和小于 <span class="arithmatex">\(\varepsilon\)</span>。</p>
+<blockquote>
+<p><strong>示例：可积函数举例</strong></p>
+<ul>
+<li>
+<p>连续函数：在闭区域上连续的函数必可积</p>
+</li>
+<li>
+<p>分段连续函数：若间断点构成有限条光滑曲线，则可积</p>
+</li>
+<li>
+<p>Dirichlet 函数：在 <span class="arithmatex">\([0,1] \times [0,1]\)</span> 上不可积</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="_4">二重积分中值定理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">积分中值定理<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><strong>二重积分第一中值定理</strong></p>
+<p>若 <span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上连续，则存在 <span class="arithmatex">\((\xi, \eta) \in D\)</span> 使得：</p>
+<p><span class="arithmatex">\(\iint_D f(x,y) \, d\sigma = f(\xi, \eta) \cdot S(D)\)</span></p>
+<p>其中 <span class="arithmatex">\(S(D)\)</span> 是区域 <span class="arithmatex">\(D\)</span> 的面积。</p>
+<p><strong>二重积分第二中值定理</strong></p>
+<p>若 <span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上可积，<span class="arithmatex">\(g(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上连续且不变号，则存在 <span class="arithmatex">\((\xi, \eta) \in D\)</span> 使得：</p>
+<p><span class="arithmatex">\(\iint_D f(x,y)g(x,y) \, d\sigma = f(\xi, \eta) \iint_D g(x,y) \, d\sigma\)</span></p>
+<p><strong>二重积分第三中值定理</strong></p>
+<p>若 <span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上连续，<span class="arithmatex">\(g(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上可积且不变号，则存在 <span class="arithmatex">\((\xi, \eta) \in D\)</span> 使得：</p>
+<p><span class="arithmatex">\(\iint_D f(x,y)g(x,y) \, d\sigma = f(\xi, \eta) \iint_D g(x,y) \, d\sigma\)</span></p>
+<p><strong>加权积分中值定理</strong></p>
+<p>若 <span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上连续，<span class="arithmatex">\(g(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上可积且 <span class="arithmatex">\(g(x,y) \geq 0\)</span>，则存在 <span class="arithmatex">\((\xi, \eta) \in D\)</span> 使得：</p>
+<p><span class="arithmatex">\(\iint_D f(x,y)g(x,y) \, d\sigma = f(\xi, \eta) \iint_D g(x,y) \, d\sigma\)</span></p>
+<blockquote>
+<p><strong>示例</strong></p>
+<p>计算 <span class="arithmatex">\(\iint_D (x^2 + y^2) \, d\sigma\)</span>，其中 <span class="arithmatex">\(D: x^2 + y^2 \leq R^2\)</span></p>
+<p>解：由积分中值定理，存在 <span class="arithmatex">\((\xi, \eta) \in D\)</span> 使得：</p>
+<p><span class="arithmatex">\(\iint_D (x^2 + y^2) \, d\sigma = (\xi^2 + \eta^2) \cdot \pi R^2\)</span></p>
+<p>由于 <span class="arithmatex">\(0 \leq \xi^2 + \eta^2 \leq R^2\)</span>，可得：</p>
+<p><span class="arithmatex">\(0 \leq \iint_D (x^2 + y^2) \, d\sigma \leq R^2 \cdot \pi R^2 = \pi R^4\)</span></p>
+</blockquote>
+<h2 id="_6">二重积分换元法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">一般换元公式<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><strong>二重积分换元公式</strong></p>
+<p>设变换 <span class="arithmatex">\(T: x = x(u,v), y = y(u,v)\)</span> 将 <span class="arithmatex">\(uv\)</span> 平面上的区域 <span class="arithmatex">\(D'\)</span> 一一对应地映射到 <span class="arithmatex">\(xy\)</span> 平面上的区域 <span class="arithmatex">\(D\)</span>，且满足：</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(x(u,v), y(u,v)\)</span> 在 <span class="arithmatex">\(D'\)</span> 上具有一阶连续偏导数</p>
+</li>
+<li>
+<p>Jacobi 行列式在 <span class="arithmatex">\(D'\)</span> 上不为零：</p>
+</li>
+</ol>
+<p><span class="arithmatex">\(J = \frac{\partial(x,y)}{\partial(u,v)} = 
+   \begin{vmatrix}
+      \frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\
+      \frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v}
+   \end{vmatrix} \neq 0\)</span></p>
+<p>则</p>
+<p><span class="arithmatex">\(\iint_D f(x,y) \, dxdy = \iint_{D'} f(x(u,v), y(u,v)) |J| \, dudv\)</span></p>
+<p><strong>证明</strong></p>
+<p>考虑面积微元的变换：</p>
+<p><span class="arithmatex">\(dxdy = \left| \frac{\partial(x,y)}{\partial(u,v)} \right| dudv\)</span></p>
+<p>代入积分即得结论。</p>
+<h3 id="_8">极坐标变换<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><strong>极坐标变换</strong></p>
+<p>令</p>
+<p><span class="arithmatex">\(x = r\cos\theta, \quad y = r\sin\theta\)</span></p>
+<p>则 Jacobi 行列式为：</p>
+<p><span class="arithmatex">\(J = \frac{\partial(x,y)}{\partial(r,\theta)} = 
+\begin{vmatrix}
+   \cos\theta &amp; -r\sin\theta \\
+   \sin\theta &amp; r\cos\theta
+\end{vmatrix} = r\)</span></p>
+<p>换元公式：</p>
+<p><span class="arithmatex">\(\iint_D f(x,y) \, dxdy = \iint_{D'} f(r\cos\theta, r\sin\theta) r \, drd\theta\)</span></p>
+<blockquote>
+<p><strong>示例</strong></p>
+<p>计算 <span class="arithmatex">\(\iint_D e^{-x^2-y^2} \, dxdy\)</span>，其中 <span class="arithmatex">\(D: x^2 + y^2 \leq R^2\)</span></p>
+<p>解：极坐标变换：</p>
+<p><span class="arithmatex">\(\iint_D e^{-x^2-y^2} \, dxdy = \int_0^{2\pi} \int_0^R e^{-r^2} r \, drd\theta = 2\pi \left[ -\frac{1}{2}e^{-r^2} \right]_0^R = \pi(1 - e^{-R^2})\)</span></p>
+</blockquote>
+<h3 id="_9">广义极坐标变换<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p><strong>椭圆坐标变换</strong></p>
+<p>对于椭圆区域 <span class="arithmatex">\(\frac{x^2}{a^2} + \frac{y^2}{b^2} \leq 1\)</span>，令：</p>
+<p><span class="arithmatex">\(x = ar\cos\theta, \quad y = br\sin\theta\)</span></p>
+<p>则 Jacobi 行列式为：</p>
+<p><span class="arithmatex">\(J = \frac{\partial(x,y)}{\partial(r,\theta)} = 
+\begin{vmatrix}
+   a\cos\theta &amp; -ar\sin\theta \\
+   b\sin\theta &amp; br\cos\theta
+\end{vmatrix} = abr\)</span></p>
+<p>换元公式：</p>
+<p><span class="arithmatex">\(\iint_D f(x,y) \, dxdy = ab \int_0^{2\pi} \int_0^1 f(ar\cos\theta, br\sin\theta) r \, drd\theta\)</span></p>
+<h3 id="_10">一般变量替换<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p><strong>一般变量替换步骤</strong></p>
+<ol>
+<li>
+<p>选择适当的变量替换：<span class="arithmatex">\(x = x(u,v), y = y(u,v)\)</span></p>
+</li>
+<li>
+<p>确定新区域 <span class="arithmatex">\(D'\)</span>：将原区域 <span class="arithmatex">\(D\)</span> 的边界用新变量表示</p>
+</li>
+<li>
+<p>计算 Jacobi 行列式：<span class="arithmatex">\(J = \frac{\partial(x,y)}{\partial(u,v)}\)</span></p>
+</li>
+<li>
+<p>代入换元公式计算</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>示例：线性变换</strong></p>
+<p>计算 <span class="arithmatex">\(\iint_D (x+y)^2 \, dxdy\)</span>，其中 <span class="arithmatex">\(D\)</span> 由 <span class="arithmatex">\(x=0, y=0, x+y=1\)</span> 围成</p>
+<p>解：令 <span class="arithmatex">\(u = x+y, v = x-y\)</span>，则：</p>
+<p><span class="arithmatex">\(x = \frac{u+v}{2}, \quad y = \frac{u-v}{2}\)</span></p>
+<p>Jacobi 行列式：</p>
+<p><span class="arithmatex">\(J = \frac{\partial(x,y)}{\partial(u,v)} = 
+\begin{vmatrix}
+   \frac{1}{2} &amp; \frac{1}{2} \\
+   \frac{1}{2} &amp; -\frac{1}{2}
+\end{vmatrix} = -\frac{1}{2}\)</span></p>
+<p>新区域：<span class="arithmatex">\(0 \leq u \leq 1, -u \leq v \leq u\)</span></p>
+<p><span class="arithmatex">\(\iint_D (x+y)^2 \, dxdy = \int_0^1 \int_{-u}^u u^2 \cdot \frac{1}{2} \, dvdu = \frac{1}{2} \int_0^1 u^2 \cdot 2u \, du = \int_0^1 u^3 \, du = \frac{1}{4}\)</span></p>
+</blockquote>
+<h2 id="_11">应用与计算技巧<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="_12">对称性简化<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p><strong>奇偶对称性</strong></p>
+<p>设 <span class="arithmatex">\(D\)</span> 关于 <span class="arithmatex">\(x\)</span> 轴对称：</p>
+<ul>
+<li>
+<p>若 <span class="arithmatex">\(f(x,-y) = -f(x,y)\)</span>，则 <span class="arithmatex">\(\iint_D f(x,y) \, d\sigma = 0\)</span></p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(f(x,-y) = f(x,y)\)</span>，则 <span class="arithmatex">\(\iint_D f(x,y) \, d\sigma = 2\iint_{D_1} f(x,y) \, d\sigma\)</span>，其中 <span class="arithmatex">\(D_1\)</span> 是 <span class="arithmatex">\(D\)</span> 的上半部分</p>
+</li>
+</ul>
+<p>关于 <span class="arithmatex">\(y\)</span> 轴对称有类似结论。</p>
+<p><strong>轮换对称性</strong></p>
+<p>若区域 <span class="arithmatex">\(D\)</span> 关于直线 <span class="arithmatex">\(y=x\)</span> 对称，则：</p>
+<p><span class="arithmatex">\(\iint_D f(x,y) \, d\sigma = \iint_D f(y,x) \, d\sigma\)</span></p>
+<p>特别地：</p>
+<p><span class="arithmatex">\(\iint_D [f(x,y) + f(y,x)] \, d\sigma = 2\iint_D f(x,y) \, d\sigma\)</span></p>
+<h3 id="_13">积分次序交换<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p><strong>Fubini 定理</strong></p>
+<p>若 <span class="arithmatex">\(f(x,y)\)</span> 在矩形区域 <span class="arithmatex">\([a,b] \times [c,d]\)</span> 上可积，则：</p>
+<p><span class="arithmatex">\(\iint_{[a,b] \times [c,d]} f(x,y) \, dxdy = \int_a^b \left[ \int_c^d f(x,y) \, dy \right] dx = \int_c^d \left[ \int_a^b f(x,y) \, dx \right] dy\)</span></p>
+<p><strong>一般区域积分次序交换</strong></p>
+<p>对于 <span class="arithmatex">\(y\)</span>-型区域：<span class="arithmatex">\(D = \{(x,y) \mid \varphi_1(x) \leq y \leq \varphi_2(x), a \leq x \leq b\}\)</span></p>
+<p><span class="arithmatex">\(\iint_D f(x,y) \, dxdy = \int_a^b \left[ \int_{\varphi_1(x)}^{\varphi_2(x)} f(x,y) \, dy \right] dx\)</span></p>
+<p>对于 <span class="arithmatex">\(x\)</span>-型区域：<span class="arithmatex">\(D = \{(x,y) \mid \psi_1(y) \leq x \leq \psi_2(y), c \leq y \leq d\}\)</span></p>
+<p><span class="arithmatex">\(\iint_D f(x,y) \, dxdy = \int_c^d \left[ \int_{\psi_1(y)}^{\psi_2(y)} f(x,y) \, dx \right] dy\)</span></p>
+<h2 id="_14">第一型曲线积分<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h3 id="_15">定义与中值定理<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p><strong>第一型曲线积分</strong></p>
+<p>设 <span class="arithmatex">\(L\)</span> 是光滑曲线，<span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\(L\)</span> 上有定义。将 <span class="arithmatex">\(L\)</span> 任意分割成 <span class="arithmatex">\(n\)</span> 个小弧段 <span class="arithmatex">\(\Delta s_i\)</span>，长度为 <span class="arithmatex">\(\Delta s_i\)</span>，在 <span class="arithmatex">\(\Delta s_i\)</span> 上任取一点 <span class="arithmatex">\((\xi_i, \eta_i)\)</span>，作和式：</p>
+<p><span class="arithmatex">\(\sum_{i=1}^n f(\xi_i, \eta_i) \Delta s_i\)</span></p>
+<p>如果当 <span class="arithmatex">\(\max \Delta s_i \to 0\)</span> 时极限存在，则称此极限为第一型曲线积分：</p>
+<p><span class="arithmatex">\(\int_L f(x,y) \, ds = \lim_{\max \Delta s_i \to 0} \sum_{i=1}^n f(\xi_i, \eta_i) \Delta s_i\)</span></p>
+<p><strong>第一型曲线积分中值定理</strong></p>
+<p>若 <span class="arithmatex">\(f(x,y)\)</span> 在光滑曲线 <span class="arithmatex">\(L\)</span> 上连续，则存在 <span class="arithmatex">\((\xi, \eta) \in L\)</span> 使得：</p>
+<p><span class="arithmatex">\(\int_L f(x,y) \, ds = f(\xi, \eta) \cdot \text{length}(L)\)</span></p>
+<p>其中 <span class="arithmatex">\(\text{length}(L)\)</span> 是曲线 <span class="arithmatex">\(L\)</span> 的长度。</p>
+<p><strong>证明</strong></p>
+<p>由于 <span class="arithmatex">\(f(x,y)\)</span> 在紧集 <span class="arithmatex">\(L\)</span> 上连续，故存在最大值 <span class="arithmatex">\(M\)</span> 和最小值 <span class="arithmatex">\(m\)</span>，使得：</p>
+<p><span class="arithmatex">\(m \cdot \text{length}(L) \leq \int_L f(x,y) \, ds \leq M \cdot \text{length}(L)\)</span></p>
+<p>由介值定理，存在 <span class="arithmatex">\((\xi, \eta) \in L\)</span> 使得结论成立。</p>
+<h2 id="green">Green 公式<a class="headerlink" href="#green" title="Permanent link">&para;</a></h2>
+<h3 id="green_1">基本 Green 公式<a class="headerlink" href="#green_1" title="Permanent link">&para;</a></h3>
+<p><strong>Green 公式</strong></p>
+<p>设 <span class="arithmatex">\(D\)</span> 是平面有界闭区域，其边界 <span class="arithmatex">\(\partial D\)</span> 由有限条分段光滑曲线组成。若函数 <span class="arithmatex">\(P(x,y), Q(x,y)\)</span> 在 <span class="arithmatex">\(D\)</span> 上具有一阶连续偏导数，则：</p>
+<p><span class="arithmatex">\(\oint_{\partial D} P\,dx + Q\,dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dxdy\)</span></p>
+<p>其中 <span class="arithmatex">\(\partial D\)</span> 取正向（逆时针方向）。</p>
+<blockquote>
+<p><strong>示例</strong></p>
+<p>计算 <span class="arithmatex">\(\oint_L x\,dy - y\,dx\)</span>，其中 <span class="arithmatex">\(L\)</span> 是椭圆 <span class="arithmatex">\(\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1\)</span> 逆时针方向。</p>
+<p>解：由 Green 公式：</p>
+<p><span class="arithmatex">\(\oint_L x\,dy - y\,dx = \iint_D \left( \frac{\partial x}{\partial x} - \frac{\partial (-y)}{\partial y} \right) dxdy = \iint_D (1 + 1) dxdy = 2\iint_D dxdy = 2\pi ab\)</span></p>
+</blockquote>
+<h3 id="green_2">平面 Green 公式的推广<a class="headerlink" href="#green_2" title="Permanent link">&para;</a></h3>
+<p><strong>平面 Green 第一公式</strong></p>
+<p>设 <span class="arithmatex">\(D\)</span> 为平面区域，<span class="arithmatex">\(u,v \in C^2(D) \cap C^1(\overline{D})\)</span>，则：</p>
+<p><span class="arithmatex">\(\iint_D \nabla u \cdot \nabla v \, dxdy = \oint_{\partial D} v \frac{\partial u}{\partial n} \, ds - \iint_D v \Delta u \, dxdy\)</span></p>
+<p>其中 <span class="arithmatex">\(\frac{\partial u}{\partial n}\)</span> 是 <span class="arithmatex">\(u\)</span> 沿外法向的方向导数，<span class="arithmatex">\(\Delta u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}\)</span>。</p>
+<p><strong>平面 Green 第二公式</strong></p>
+<p>在相同条件下：</p>
+<p><span class="arithmatex">\(\iint_D (u\Delta v - v\Delta u) \, dxdy = \oint_{\partial D} \left( u \frac{\partial v}{\partial n} - v \frac{\partial u}{\partial n} \right) ds\)</span></p>
+<p><strong>平面 Green 第三公式</strong></p>
+<p>对于调和函数 <span class="arithmatex">\(u\)</span>（即 <span class="arithmatex">\(\Delta u = 0\)</span>），有：</p>
+<p><span class="arithmatex">\(u(x_0, y_0) = \frac{1}{2\pi} \oint_{\partial D} \left[ u \frac{\partial}{\partial n}(\ln r) - \ln r \frac{\partial u}{\partial n} \right] ds\)</span></p>
+<p>其中 <span class="arithmatex">\(r = \sqrt{(x-x_0)^2 + (y-y_0)^2}\)</span>。</p>
+<h2 id="riemann">调和函数与 Riemann 定理<a class="headerlink" href="#riemann" title="Permanent link">&para;</a></h2>
+<h3 id="_16">调和函数性质<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p><strong>调和函数</strong></p>
+<p>若函数 <span class="arithmatex">\(u(x,y)\)</span> 在区域 <span class="arithmatex">\(D\)</span> 内满足 Laplace 方程：</p>
+<p><span class="arithmatex">\(\Delta u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0\)</span></p>
+<p>则称 <span class="arithmatex">\(u\)</span> 为 <span class="arithmatex">\(D\)</span> 内的调和函数。</p>
+<p><strong>调和函数平面中值定理</strong></p>
+<p>若 <span class="arithmatex">\(u\)</span> 在圆盘 <span class="arithmatex">\(B_R(P_0)\)</span> 内调和，在闭圆盘上连续，则：</p>
+<p><span class="arithmatex">\(u(P_0) = \frac{1}{2\pi R} \oint_{\partial B_R(P_0)} u \, ds = \frac{1}{\pi R^2} \iint_{B_R(P_0)} u \, dxdy\)</span></p>
+<p>即函数在圆心的值等于圆周上的平均值和圆盘上的平均值。</p>
+<p><strong>Riemann 定理</strong></p>
+<p>单连通区域上的调和函数由其在边界上的值唯一确定。</p>
+<p><strong>极值原理</strong></p>
+<p>非常数的调和函数在区域内部不能取得最大值和最小值。</p>
+<h2 id="gauss">Gauss 公式<a class="headerlink" href="#gauss" title="Permanent link">&para;</a></h2>
+<h3 id="gauss_1">基本 Gauss 公式<a class="headerlink" href="#gauss_1" title="Permanent link">&para;</a></h3>
+<p><strong>Gauss 公式（散度定理）</strong></p>
+<p>设 <span class="arithmatex">\(\Omega\)</span> 是空间有界闭区域，其边界 <span class="arithmatex">\(\partial \Omega\)</span> 分片光滑。若向量场 <span class="arithmatex">\(\mathbf{F} = (P, Q, R)\)</span> 在 <span class="arithmatex">\(\Omega\)</span> 上具有一阶连续偏导数，则：</p>
+<p><span class="arithmatex">\(\oiint_{\partial \Omega} \mathbf{F} \cdot \mathbf{n} \, dS = \iiint_\Omega \nabla \cdot \mathbf{F} \, dV\)</span></p>
+<p>即</p>
+<p><span class="arithmatex">\(\oiint_{\partial \Omega} P\,dydz + Q\,dzdx + R\,dxdy = \iiint_\Omega \left( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \right) dxdydz\)</span></p>
+<p>其中 <span class="arithmatex">\(\mathbf{n}\)</span> 是单位外法向量。</p>
+<blockquote>
+<p><strong>示例</strong></p>
+<p>计算 <span class="arithmatex">\(\oiint_S (x^2\,dydz + y^2\,dzdx + z^2\,dxdy)\)</span>，其中 <span class="arithmatex">\(S\)</span> 是单位球面 <span class="arithmatex">\(x^2 + y^2 + z^2 = 1\)</span> 外侧。</p>
+<p>解：由 Gauss 公式：</p>
+<p><span class="arithmatex">\(\oiint_S (x^2\,dydz + y^2\,dzdx + z^2\,dxdy) = \iiint_\Omega (2x + 2y + 2z) dxdydz\)</span></p>
+<p>由对称性，<span class="arithmatex">\(\iiint_\Omega x \, dV = \iiint_\Omega y \, dV = \iiint_\Omega z \, dV = 0\)</span>，故结果为 0。</p>
+</blockquote>
+<h3 id="green_3">空间 Green 公式<a class="headerlink" href="#green_3" title="Permanent link">&para;</a></h3>
+<p><strong>空间 Green 第一公式</strong></p>
+<p>设 <span class="arithmatex">\(\Omega\)</span> 为空间区域，<span class="arithmatex">\(u,v \in C^2(\Omega) \cap C^1(\overline{\Omega})\)</span>，则：</p>
+<p><span class="arithmatex">\(\iiint_\Omega \nabla u \cdot \nabla v \, dV = \oiint_{\partial \Omega} v \frac{\partial u}{\partial n} \, dS - \iiint_\Omega v \Delta u \, dV\)</span></p>
+<p>其中 <span class="arithmatex">\(\Delta u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}\)</span>。</p>
+<p><strong>空间 Green 第二公式</strong></p>
+<p>在相同条件下：</p>
+<p><span class="arithmatex">\(\iiint_\Omega (u\Delta v - v\Delta u) \, dV = \oiint_{\partial \Omega} \left( u \frac{\partial v}{\partial n} - v \frac{\partial u}{\partial n} \right) dS\)</span></p>
+<p><strong>空间 Green 第三公式</strong></p>
+<p>对于调和函数 <span class="arithmatex">\(u\)</span>（即 <span class="arithmatex">\(\Delta u = 0\)</span>），有：</p>
+<p><span class="arithmatex">\(u(P_0) = \frac{1}{4\pi} \oiint_{\partial \Omega} \left[ u \frac{\partial}{\partial n}\left(\frac{1}{r}\right) - \frac{1}{r} \frac{\partial u}{\partial n} \right] dS\)</span></p>
+<p>其中 <span class="arithmatex">\(r = \sqrt{(x-x_0)^2 + (y-y_0)^2 + (z-z_0)^2}\)</span>。</p>
+<h2 id="stokes">Stokes 公式<a class="headerlink" href="#stokes" title="Permanent link">&para;</a></h2>
+<p><strong>Stokes 公式</strong></p>
+<p>设 <span class="arithmatex">\(S\)</span> 是分片光滑的有向曲面，其边界 <span class="arithmatex">\(\partial S\)</span> 是分段光滑的有向闭曲线。若向量场 <span class="arithmatex">\(\mathbf{F} = (P, Q, R)\)</span> 在包含 <span class="arithmatex">\(S\)</span> 的空间区域上具有一阶连续偏导数，则：</p>
+<p><span class="arithmatex">\(\oint_{\partial S} \mathbf{F} \cdot d\mathbf{r} = \iint_S (\nabla \times \mathbf{F}) \cdot \mathbf{n} \, dS\)</span></p>
+<p>即</p>
+<p><span class="arithmatex">\(\oint_{\partial S} P\,dx + Q\,dy + R\,dz = \iint_S \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right) dydz + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} \right) dzdx + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dxdy\)</span></p>
+<p>其中 <span class="arithmatex">\(\mathbf{n}\)</span> 是 <span class="arithmatex">\(S\)</span> 的单位法向量，方向与 <span class="arithmatex">\(\partial S\)</span> 的方向满足右手法则。</p>
+<blockquote>
+<p><strong>示例</strong></p>
+<p>计算 <span class="arithmatex">\(\oint_C y\,dx + z\,dy + x\,dz\)</span>，其中 <span class="arithmatex">\(C\)</span> 是圆周 <span class="arithmatex">\(x^2 + y^2 + z^2 = R^2, x+y+z=0\)</span>，从 <span class="arithmatex">\(x\)</span> 轴正向看去为逆时针方向。</p>
+<p>解：旋度 <span class="arithmatex">\(\nabla \times \mathbf{F} = (-1, -1, -1)\)</span>，法向量 <span class="arithmatex">\(\mathbf{n} = \frac{1}{\sqrt{3}}(1,1,1)\)</span>，故：</p>
+<p><span class="arithmatex">\(\oint_C y\,dx + z\,dy + x\,dz = \iint_S (-1, -1, -1) \cdot \frac{1}{\sqrt{3}}(1,1,1) \, dS = -\sqrt{3} \iint_S dS = -\sqrt{3} \pi R^2\)</span></p>
+</blockquote>
+<h2 id="_17">空间调和函数<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<p><strong>空间调和函数中值定理</strong></p>
+<p>若 <span class="arithmatex">\(u\)</span> 在球体 <span class="arithmatex">\(B_R(P_0)\)</span> 内调和，在闭球体上连续，则：</p>
+<p><span class="arithmatex">\(u(P_0) = \frac{1}{4\pi R^2} \oiint_{\partial B_R(P_0)} u \, dS = \frac{3}{4\pi R^3} \iiint_{B_R(P_0)} u \, dV\)</span></p>
+<p>即函数在球心的值等于球面上的平均值和球体中的平均值。</p>
+<p><strong>空间调和函数性质</strong></p>
+<ol>
+<li>
+<p>平均值性质：调和函数在任一点的值等于以该点为心的任何球面（球体）上的平均值</p>
+</li>
+<li>
+<p>极值原理：非常数的调和函数在区域内部不能取得最大值和最小值</p>
+</li>
+<li>
+<p>解析性：调和函数是实解析的</p>
+</li>
+<li>
+<p>Liouville 定理：有界整调和函数必为常数</p>
+</li>
+</ol>
+<h2 id="_18">公式总结与关系<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<h3 id="_19">三大积分公式关系<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Green 公式</strong>：平面情形，联系曲线积分与二重积分</li>
+</ul>
+<p><span class="arithmatex">\(\oint_{\partial D} P\,dx + Q\,dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dxdy\)</span></p>
+<ul>
+<li><strong>Gauss 公式</strong>：空间情形，联系曲面积分与三重积分</li>
+</ul>
+<p><span class="arithmatex">\(\oiint_{\partial \Omega} \mathbf{F} \cdot \mathbf{n} \, dS = \iiint_\Omega \nabla \cdot \mathbf{F} \, dV\)</span></p>
+<ul>
+<li><strong>Stokes 公式</strong>：空间情形，联系曲线积分与曲面积分</li>
+</ul>
+<p><span class="arithmatex">\(\oint_{\partial S} \mathbf{F} \cdot d\mathbf{r} = \iint_S (\nabla \times \mathbf{F}) \cdot \mathbf{n} \, dS\)</span></p>
+<h3 id="_20">微分算子关系<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p><strong>微分算子</strong></p>
+<p><span class="arithmatex">\(\begin{aligned}
+   \text{梯度：} &amp; \quad \nabla u = \left( \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial u}{\partial z} \right) \\
+   \text{散度：} &amp; \quad \nabla \cdot \mathbf{F} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \\
+   \text{旋度：} &amp; \quad \nabla \times \mathbf{F} = \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}, \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}, \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \\
+   \text{Laplace 算子：} &amp; \quad \Delta u = \nabla \cdot (\nabla u) = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}
+\end{aligned}\)</span></p>
+<h3 id="_21">重要恒等式<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<p><strong>向量分析恒等式</strong></p>
+<p><span class="arithmatex">\(\begin{aligned}
+   \nabla \cdot (\nabla \times \mathbf{F}) &amp;= 0 \\
+   \nabla \times (\nabla u) &amp;= \mathbf{0} \\
+   \nabla \cdot (u\mathbf{F}) &amp;= u\nabla \cdot \mathbf{F} + \mathbf{F} \cdot \nabla u \\
+   \nabla \times (u\mathbf{F}) &amp;= u\nabla \times \mathbf{F} + \nabla u \times \mathbf{F} \\
+   \nabla \cdot (\mathbf{F} \times \mathbf{G}) &amp;= \mathbf{G} \cdot (\nabla \times \mathbf{F}) - \mathbf{F} \cdot (\nabla \times \mathbf{G})
+\end{aligned}\)</span></p>
+<p><strong>无旋场与无散场</strong></p>
+<ul>
+<li>
+<p>若 <span class="arithmatex">\(\nabla \times \mathbf{F} = \mathbf{0}\)</span>，则 <span class="arithmatex">\(\mathbf{F}\)</span> 为保守场，存在势函数 <span class="arithmatex">\(u\)</span> 使得 <span class="arithmatex">\(\mathbf{F} = \nabla u\)</span></p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(\nabla \cdot \mathbf{F} = 0\)</span>，则 <span class="arithmatex">\(\mathbf{F}\)</span> 为无源场，存在向量势 <span class="arithmatex">\(\mathbf{A}\)</span> 使得 <span class="arithmatex">\(\mathbf{F} = \nabla \times \mathbf{A}\)</span></p>
+</li>
+</ul>
+<h2 id="_22">重要公式总结<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
+<h3 id="_23">常用换元公式<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>极坐标</strong>：<span class="arithmatex">\(x = r\cos\theta, y = r\sin\theta\)</span>，<span class="arithmatex">\(dxdy = rdrd\theta\)</span></p>
+</li>
+<li>
+<p><strong>椭圆坐标</strong>：<span class="arithmatex">\(x = ar\cos\theta, y = br\sin\theta\)</span>，<span class="arithmatex">\(dxdy = abrdrd\theta\)</span></p>
+</li>
+<li>
+<p><strong>广义极坐标</strong>：<span class="arithmatex">\(x = ar^\alpha\cos\theta, y = br^\beta\sin\theta\)</span>，需具体计算 Jacobi 行列式</p>
+</li>
+</ul>
+<h3 id="_24">对称性应用<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>奇函数对称</strong>：关于对称轴对称的奇函数积分为零</p>
+</li>
+<li>
+<p><strong>偶函数对称</strong>：关于对称轴对称的偶函数积分可化为半区域的两倍</p>
+</li>
+<li>
+<p><strong>轮换对称</strong>：交换变量积分值不变</p>
+</li>
+</ul>
+<h3 id="_25">计算技巧<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>选择合适次序</strong>：使内层积分容易计算</p>
+</li>
+<li>
+<p><strong>利用对称性</strong>：简化计算过程</p>
+</li>
+<li>
+<p><strong>适当换元</strong>：将复杂区域变为简单区域</p>
+</li>
+<li>
+<p><strong>分割区域</strong>：对不连续函数分段积分</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>示例：综合例题</strong></p>
+<p>计算 <span class="arithmatex">\(\iint_D \frac{\sin(x^2 + y^2)}{x^2 + y^2} \, dxdy\)</span>，其中 <span class="arithmatex">\(D: \pi^2 \leq x^2 + y^2 \leq 4\pi^2\)</span></p>
+<p>解：极坐标变换：</p>
+<p><span class="arithmatex">\(\iint_D \frac{\sin(x^2 + y^2)}{x^2 + y^2} \, dxdy = \int_0^{2\pi} \int_{\pi}^{2\pi} \frac{\sin(r^2)}{r^2} \cdot r \, drd\theta = 2\pi \int_{\pi}^{2\pi} \frac{\sin(r^2)}{r} \, dr\)</span></p>
+<p>令 <span class="arithmatex">\(u = r^2\)</span>，则：</p>
+<p><span class="arithmatex">\(= \pi \int_{\pi^2}^{4\pi^2} \frac{\sin u}{u} \, du = \pi[\text{Si}(4\pi^2) - \text{Si}(\pi^2)]\)</span></p>
+<p>其中 <span class="arithmatex">\(\text{Si}(x) = \int_0^x \frac{\sin t}{t} dt\)</span> 是正弦积分函数。</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+  <!-- 添加评论区（只在非首页显示） -->
+  
+    <div class="comments-section" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--md-default-fg-color--lightest);">
+      <h2>📝 评论区</h2>
+      <script src="https://giscus.app/client.js"
+        data-repo="wuzeto/learning-blog"
+        data-repo-id="R_kgDOQ8DSJw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOQ8DSJ84C1GYM"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+    </div>
+  
+
+  <!-- 添加自定义主题色选择器 -->
+  <div class="color-picker-container" style="position: fixed; bottom: 2rem; right: 2rem; z-index: 1000;">
+    <button id="color-picker-toggle" class="md-button md-button--primary" style="border-radius: 50%; width: 48px; height: 48px; background: var(--md-primary-fg-color); color: white; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+      <i class="fas fa-palette"></i>
+    </button>
+    <div id="color-picker-menu" style="display: none; position: absolute; bottom: 60px; right: 0; background: var(--md-default-bg-color); border: 1px solid var(--md-default-fg-color--lightest); border-radius: 8px; padding: 12px; min-width: 150px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+      <h4 style="margin-top: 0; margin-bottom: 8px; font-size: 0.9rem; color: var(--md-default-fg-color);">主题色</h4>
+      <div class="color-options" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
+        <button class="color-option" data-color="cyan" style="width: 32px; height: 32px; background: #00bcd4; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="indigo" style="width: 32px; height: 32px; background: #3f51b5; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="green" style="width: 32px; height: 32px; background: #4caf50; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="orange" style="width: 32px; height: 32px; background: #ff9800; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="pink" style="width: 32px; height: 32px; background: #e91e63; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="purple" style="width: 32px; height: 32px; background: #9c27b0; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="teal" style="width: 32px; height: 32px; background: #009688; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="blue" style="width: 32px; height: 32px; background: #2196f3; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+      </div>
+    </div>
+  </div>
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: 数列级数">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                数列级数
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../limits/" class="md-footer__link md-footer__link--next" aria-label="Next: 极限理论">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                极限理论
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2024 未来知识引擎 | 
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">
+  CC BY-NC-SA 4.0
+</a> | 
+构建于 <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+  Material for MkDocs
+</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wuzeto" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.indexes", "palette"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+  
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../javascripts/homepage-effects.js"></script>
+      
+        <script src="../../javascripts/math-config.js"></script>
+      
+    
+  
+  <script>
+    // 主题色切换功能
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleButton = document.getElementById('color-picker-toggle');
+      const colorMenu = document.getElementById('color-picker-menu');
+      const colorOptions = document.querySelectorAll('.color-option');
+      
+      // 切换颜色选择器显示
+      toggleButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        colorMenu.style.display = colorMenu.style.display === 'none' ? 'block' : 'none';
+      });
+      
+      // 点击页面其他区域关闭选择器
+      document.addEventListener('click', function(e) {
+        if (!colorMenu.contains(e.target) && e.target !== toggleButton) {
+          colorMenu.style.display = 'none';
+        }
+      });
+      
+      // 设置主题色
+      colorOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          const color = this.getAttribute('data-color');
+          setThemeColor(color);
+          localStorage.setItem('theme-color', color);
+          colorMenu.style.display = 'none';
+          
+          // 更新选中状态
+          colorOptions.forEach(opt => {
+            opt.style.borderColor = 'transparent';
+          });
+          this.style.borderColor = 'var(--md-accent-fg-color)';
+          this.style.transform = 'scale(1.1)';
+        });
+      });
+      
+      // 从localStorage加载保存的主题色
+      const savedColor = localStorage.getItem('theme-color');
+      if (savedColor) {
+        setThemeColor(savedColor);
+        
+        // 更新选中状态
+        colorOptions.forEach(option => {
+          if (option.getAttribute('data-color') === savedColor) {
+            option.style.borderColor = 'var(--md-accent-fg-color)';
+            option.style.transform = 'scale(1.1)';
+          }
+        });
+      }
+      
+      // 设置主题色的函数
+      function setThemeColor(color) {
+        const root = document.documentElement;
+        const body = document.body;
+        
+        // 根据颜色设置CSS变量和Material主题属性
+        const colors = {
+          cyan: {
+            primary: 'cyan',
+            primaryHex: '#00bcd4',
+            accent: 'deep-purple',
+            accentHex: '#7c4dff'
+          },
+          indigo: {
+            primary: 'indigo',
+            primaryHex: '#3f51b5',
+            accent: 'pink',
+            accentHex: '#e91e63'
+          },
+          green: {
+            primary: 'green',
+            primaryHex: '#4caf50',
+            accent: 'orange',
+            accentHex: '#ff9800'
+          },
+          orange: {
+            primary: 'orange',
+            primaryHex: '#ff9800',
+            accent: 'indigo',
+            accentHex: '#3f51b5'
+          },
+          pink: {
+            primary: 'pink',
+            primaryHex: '#e91e63',
+            accent: 'cyan',
+            accentHex: '#00bcd4'
+          },
+          purple: {
+            primary: 'purple',
+            primaryHex: '#9c27b0',
+            accent: 'green',
+            accentHex: '#4caf50'
+          },
+          teal: {
+            primary: 'teal',
+            primaryHex: '#009688',
+            accent: 'deep-orange',
+            accentHex: '#ff5722'
+          },
+          blue: {
+            primary: 'blue',
+            primaryHex: '#2196f3',
+            accent: 'amber',
+            accentHex: '#ffc107'
+          }
+        };
+        
+        if (colors[color]) {
+          // 更新CSS变量
+          root.style.setProperty('--md-primary-fg-color', colors[color].primaryHex);
+          root.style.setProperty('--md-accent-fg-color', colors[color].accentHex);
+          
+          // 更新Material主题的data属性（关键！）
+          body.setAttribute('data-md-color-primary', colors[color].primary);
+          body.setAttribute('data-md-color-accent', colors[color].accent);
+          
+          // 更新按钮颜色
+          toggleButton.style.background = colors[color].primaryHex;
+          
+          // 触发Material主题更新
+          if (typeof document$.dispatchEvent === 'function') {
+            const event = new CustomEvent('change', {
+              detail: {
+                scheme: body.getAttribute('data-md-color-scheme')
+              }
+            });
+            document$.dispatchEvent(event);
+          }
+          
+          console.log('主题色已切换为:', color, colors[color]);
+        }
+      }
+    });
+  </script>
+
+  </body>
+</html>

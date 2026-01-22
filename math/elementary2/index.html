@@ -1,0 +1,4445 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="探索·学习·创造·超越">
+      
+      
+        <meta name="author" content="未来探索者">
+      
+      
+        <link rel="canonical" href="https://wuzeto.github.io/learning-blog/math/elementary2/">
+      
+      
+        <link rel="prev" href="../elementary1/">
+      
+      
+        <link rel="next" href="../">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>基础数学 2 - 🚀 未来知识引擎</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/sci-fi-theme.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#01" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="🚀 未来知识引擎" class="md-header__button md-logo" aria-label="🚀 未来知识引擎" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27zM5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39S16.66.269 11 5.93c-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.55.56 1.37.74 2.12.46A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61m-7.07 7.07c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83s-2.05.78-2.83 0m-5.66 7.07-1.41-1.41zM6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22zM2 22h1.41l4.77-4.76-1.42-1.41L2 20.59zm0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🚀 未来知识引擎
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              基础数学 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="deep-purple"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="deep-purple"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🚀 首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../elementary1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📐 数学
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cs/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  💻 计算机科学
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../algorithms/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🧮 算法与数据结构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../systems/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏗️ 系统架构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../test/test1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ✍️ 真题直面
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../geo/geo1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🌏 地理方志
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="🚀 未来知识引擎" class="md-nav__button md-logo" aria-label="🚀 未来知识引擎" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27zM5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39S16.66.269 11 5.93c-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.55.56 1.37.74 2.12.46A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61m-7.07 7.07c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83s-2.05.78-2.83 0m-5.66 7.07-1.41-1.41zM6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22zM2 22h1.41l4.77-4.76-1.42-1.41L2 20.59zm0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76z"/></svg>
+
+    </a>
+    🚀 未来知识引擎
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📐 数学
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📐 数学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elementary1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础数学 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础数学 2
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础数学 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §01 集合与简易逻辑
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §02 函数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §03 数列
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §04 三角函数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §05 平面向量
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#06" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §06 不等式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#07" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §07 直线和圆的方程
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#08" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §08 圆锥曲线方程
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#09" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §09 立体几何
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §10 排列组合与二项式定理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §11、12 概率与统计
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §13 极限
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §14 导数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §15 复数
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    几何学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    极限理论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../differential/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    微分学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    积分学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linear-algebra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性代数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../probability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概率论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    统计学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discrete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    离散数学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../convex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    凸优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 计算机科学
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    💻 计算机科学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C语言基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    存储系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/io-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输入输出系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    操作系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    网络通信
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/compiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编译原理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../algorithms/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧮 算法与数据结构
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧮 算法与数据结构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/data-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    排序算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    查找算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/dynamic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    动态规划
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图论算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    字符串算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/complexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    真题补充
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../systems/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ 系统架构
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏗️ 系统架构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    计算机架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems/modified/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数字模拟
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✍️ 真题直面
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ✍️ 真题直面
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专业课
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/test3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/test4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    英语
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/test5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    政治
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌏 地理方志
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🌏 地理方志
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geo/geo1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国地理&游记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geo/geo2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    世界地理&游记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MC地理
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MC地理
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geo/geo3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MC方志
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geo/mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MC交通
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §01 集合与简易逻辑
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §02 函数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §03 数列
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §04 三角函数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §05 平面向量
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#06" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §06 不等式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#07" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §07 直线和圆的方程
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#08" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §08 圆锥曲线方程
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#09" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §09 立体几何
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §10 排列组合与二项式定理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §11、12 概率与统计
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §13 极限
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §14 导数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §15 复数
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+
+  
+                  
+
+
+
+<script>
+
+window.MathJax = {
+
+  tex: {
+
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+
+    displayMath: [['$$', '$$'], ['\$$
+', '\$$
+']],
+
+    macros: {
+
+      oiint: "{\\mathchoice{\\mkern-18mu\\iint}{\\mkern-12mu\\iint}{\\mkern-13mu\\iint}{\\mkern-12mu\\iint}}"
+
+    }
+
+  }
+
+};
+
+</script>
+
+<h1 id="_1">高中理科数学公式汇总<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="01">§01 集合与简易逻辑<a class="headerlink" href="#01" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>元素与集合的关系</strong><br />
+   $$
+   x \in A \Leftrightarrow x \notin C_U A,\quad x \in C_U A \Leftrightarrow x \notin A.
+   $$</p>
+</li>
+<li>
+<p><strong>德摩根公式</strong><br />
+   $$
+   C_U(A \cap B) = C_U A \cup C_U B,\quad C_U(A \cup B) = C_U A \cap C_U B.
+   $$</p>
+</li>
+<li>
+<p><strong>包含关系</strong><br />
+   $$
+   A \cap B = A \Leftrightarrow A \cup B = B \Leftrightarrow A \subseteq B \Leftrightarrow C_U B \subseteq C_U A
+   $$</p>
+</li>
+</ol>
+<p>$$
+   \Leftrightarrow A \cap C_U B = \varnothing \Leftrightarrow C_U A \cup B = \mathbb{R}.
+   $$</p>
+<ol>
+<li>
+<p><strong>容斥原理</strong><br />
+   $$
+   \text{card}(A \cup B) = \text{card}A + \text{card}B - \text{card}(A \cap B).
+   $$</p>
+</li>
+<li>
+<p>集合 <span class="arithmatex">\(\{a_1, a_2, \dots, a_n\}\)</span> 的子集个数共有 <span class="arithmatex">\(2^n\)</span> 个；真子集有 <span class="arithmatex">\(2^n - 1\)</span> 个；非空子集有 <span class="arithmatex">\(2^n - 1\)</span> 个；非空的真子集有 <span class="arithmatex">\(2^n - 2\)</span> 个。</p>
+</li>
+<li>
+<p><strong>二次函数的解析式的三种形式</strong><br />
+   (1) 一般式 <span class="arithmatex">\(f(x) = ax^2 + bx + c \ (a \neq 0)\)</span><br />
+   (2) 顶点式 <span class="arithmatex">\(f(x) = a(x - h)^2 + k \ (a \neq 0)\)</span><br />
+   (3) 零点式 <span class="arithmatex">\(f(x) = a(x - x_1)(x - x_2) \ (a \neq 0)\)</span></p>
+</li>
+<li>
+<p><strong>解连不等式 <span class="arithmatex">\(N &lt; f(x) &lt; M\)</span> 的转化形式</strong><br />
+   $$
+   \begin{aligned}
+   N &amp;&lt; f(x) &lt; M \
+   &amp;\Leftrightarrow [f(x) - M][f(x) - N] &lt; 0 \
+   &amp;\Leftrightarrow \left| f(x) - \frac{M+N}{2} \right| &lt; \frac{M-N}{2} \
+   &amp;\Leftrightarrow \frac{f(x)-N}{M-f(x)} &gt; 0 \
+   &amp;\Leftrightarrow \frac{1}{f(x)-N} &gt; \frac{1}{M-N}.
+   \end{aligned}
+   $$</p>
+</li>
+<li>
+<p><strong>方程 <span class="arithmatex">\(f(x)=0\)</span> 在 <span class="arithmatex">\((k_1,k_2)\)</span> 上有且仅有一个实根</strong><br />
+   与 <span class="arithmatex">\(f(k_1)f(k_2)&lt;0\)</span> 不等价，前者是后者的必要不充分条件。特别地，方程 <span class="arithmatex">\(ax^2+bx+c=0 \ (a\neq0)\)</span> 有且仅有一个实根在 <span class="arithmatex">\((k_1,k_2)\)</span> 内，等价于<br />
+   $$
+   f(k_1)f(k_2)&lt;0,
+   $$</p>
+</li>
+</ol>
+<p>或<br />
+   $$
+   f(k_1)=0 \ \text{且} \ k_1 &lt; -\frac{b}{2a} &lt; \frac{k_1+k_2}{2},
+   $$</p>
+<p>或<br />
+   $$
+   f(k_2)=0 \ \text{且} \ \frac{k_1+k_2}{2} &lt; -\frac{b}{2a} &lt; k_2.
+   $$</p>
+<ol>
+<li><strong>闭区间上二次函数的最值</strong><br />
+   二次函数 <span class="arithmatex">\(f(x)=ax^2+bx+c \ (a\neq0)\)</span> 在闭区间 <span class="arithmatex">\([p,q]\)</span> 上的最值只能在 <span class="arithmatex">\(x=-\frac{b}{2a}\)</span> 处及区间端点取得：  </li>
+<li>
+<p>当 <span class="arithmatex">\(a&gt;0\)</span> 时，若 <span class="arithmatex">\(x=-\frac{b}{2a} \in [p,q]\)</span>，则 <span class="arithmatex">\(f(x)_{\min}=f(-\frac{b}{2a})\)</span>，<span class="arithmatex">\(f(x)_{\max}=\max\{f(p),f(q)\}\)</span>；若 <span class="arithmatex">\(x=-\frac{b}{2a} \notin [p,q]\)</span>，则 <span class="arithmatex">\(f(x)_{\max}=\max\{f(p),f(q)\}\)</span>，<span class="arithmatex">\(f(x)_{\min}=\min\{f(p),f(q)\}\)</span>。</p>
+</li>
+<li>
+<p>当 <span class="arithmatex">\(a&lt;0\)</span> 时，若 <span class="arithmatex">\(x=-\frac{b}{2a} \in [p,q]\)</span>，则 <span class="arithmatex">\(f(x)_{\min}=\min\{f(p),f(q)\}\)</span>；若 <span class="arithmatex">\(x=-\frac{b}{2a} \notin [p,q]\)</span>，则 <span class="arithmatex">\(f(x)_{\max}=\max\{f(p),f(q)\}\)</span>，<span class="arithmatex">\(f(x)_{\min}=\min\{f(p),f(q)\}\)</span>。</p>
+</li>
+<li>
+<p><strong>一元二次方程的实根分布</strong><br />
+    依据：若 <span class="arithmatex">\(f(m)f(n)&lt;0\)</span>，则方程 <span class="arithmatex">\(f(x)=0\)</span> 在区间 <span class="arithmatex">\((m,n)\)</span> 内至少有一个实根。</p>
+<p>设 <span class="arithmatex">\(f(x)=x^2+px+q\)</span>，则<br />
+(1) 方程在区间 <span class="arithmatex">\((m,+\infty)\)</span> 内有根的充要条件为 <span class="arithmatex">\(f(m)=0\)</span> 或<br />
+    $$
+    \begin{cases}
+    p^2-4q \geq 0, \
+    -\frac{p}{2} &gt; m.
+    \end{cases}
+    $$</p>
+<p>(2) 方程在区间 <span class="arithmatex">\((m,n)\)</span> 内有根的充要条件为 <span class="arithmatex">\(f(m)f(n)&lt;0\)</span> 或<br />
+    $$
+    \begin{cases}
+    f(m)&gt;0,p^2-4q \geq 0, \
+    m &lt; -\frac{p}{2} &lt; n
+    \end{cases}
+    $$
+    或<br />
+    $$
+    \begin{cases}
+    f(m)=0, \
+    f(n)&gt;0.
+    \end{cases}
+    $$</p>
+<p>(3) 方程在区间 <span class="arithmatex">\((-\infty, n)\)</span> 内有根的充要条件为 <span class="arithmatex">\(f(m)&lt;0\)</span> 或<br />
+    $$
+    \begin{cases}
+    p^2-4q \geq 0, \
+    -\frac{p}{2} &lt; m.
+    \end{cases}
+    $$</p>
+</li>
+<li>
+<p><strong>定区间上含参数的二次不等式恒成立的条件</strong><br />
+    (1) 在给定区间 <span class="arithmatex">\((-\infty,+\infty)\)</span> 的子区间 <span class="arithmatex">\(L\)</span>（形如 <span class="arithmatex">\([\alpha,\beta],\ (-\infty,\beta],\ [\alpha,+\infty)\)</span> 等）上含参数的二次不等式 <span class="arithmatex">\(f(x,t)\geq 0\)</span>（<span class="arithmatex">\(t\)</span> 为参数）恒成立的充要条件是 <span class="arithmatex">\(f(x,t)_{\min} \geq 0 \ (x\in L)\)</span>。</p>
+<p>(2) 在给定区间 <span class="arithmatex">\((-\infty,+\infty)\)</span> 的子区间上含参数的二次不等式 <span class="arithmatex">\(f(x,t)\geq 0\)</span>（<span class="arithmatex">\(t\)</span> 为参数）恒成立的充要条件是 <span class="arithmatex">\(f(x,t)_{\max} \leq 0 \ (x\notin L)\)</span>。</p>
+<p>(3) <span class="arithmatex">\(f(x)=ax^4+bx^2+c&gt;0\)</span> 恒成立的充要条件是<br />
+    $$
+    \begin{cases}
+    a \geq 0, \
+    b \geq 0, \
+    c &gt; 0,
+    \end{cases}
+    \quad \text{或} \quad
+    \begin{cases}
+    a &lt; 0, \
+    b^2-4ac &lt; 0, \
+    c &gt; 0.
+    \end{cases}
+    $$</p>
+</li>
+<li>
+<p><strong>真值表</strong></p>
+<table>
+<thead>
+<tr>
+<th>p</th>
+<th>q</th>
+<th>非 p</th>
+<th>p 或 q</th>
+<th>p 且 q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>真</td>
+<td>真</td>
+<td>假</td>
+<td>真</td>
+<td>真</td>
+</tr>
+<tr>
+<td>真</td>
+<td>假</td>
+<td>假</td>
+<td>真</td>
+<td>假</td>
+</tr>
+<tr>
+<td>假</td>
+<td>真</td>
+<td>真</td>
+<td>真</td>
+<td>假</td>
+</tr>
+<tr>
+<td>假</td>
+<td>假</td>
+<td>真</td>
+<td>假</td>
+<td>假</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>常见结论的否定形式</strong></p>
+<table>
+<thead>
+<tr>
+<th>原结论</th>
+<th>反设词</th>
+<th>原结论</th>
+<th>反设词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是</td>
+<td>不是</td>
+<td>至少有一个</td>
+<td>一个也没有</td>
+</tr>
+<tr>
+<td>都是</td>
+<td>不都是</td>
+<td>至多有一个</td>
+<td>至少有两个</td>
+</tr>
+<tr>
+<td>大于</td>
+<td>不大于</td>
+<td>至少有 <span class="arithmatex">\(n\)</span> 个</td>
+<td>至多有 <span class="arithmatex">\(n-1\)</span> 个</td>
+</tr>
+<tr>
+<td>小于</td>
+<td>不小于</td>
+<td>至多有 <span class="arithmatex">\(n\)</span> 个</td>
+<td>至少有 <span class="arithmatex">\(n+1\)</span> 个</td>
+</tr>
+<tr>
+<td>对所有 <span class="arithmatex">\(x\)</span> 成立</td>
+<td>存在某 <span class="arithmatex">\(x\)</span> 不成立</td>
+<td><span class="arithmatex">\(p\)</span> 或 <span class="arithmatex">\(q\)</span></td>
+<td><span class="arithmatex">\(\lnot p\)</span> 且 <span class="arithmatex">\(\lnot q\)</span></td>
+</tr>
+<tr>
+<td>对任何 <span class="arithmatex">\(x\)</span> 不成立</td>
+<td>存在某 <span class="arithmatex">\(x\)</span> 成立</td>
+<td><span class="arithmatex">\(p\)</span> 且 <span class="arithmatex">\(q\)</span></td>
+<td><span class="arithmatex">\(\lnot p\)</span> 或 <span class="arithmatex">\(\lnot q\)</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>四种命题的相互关系</strong><br />
+    原命题与逆命题互逆，与否命题互否，与逆否命题互为逆否；<br />
+    逆命题与原命题互逆，与逆否命题互否，与否命题互为逆否；<br />
+    否命题与原命题互否，与逆命题互为逆否，与逆否命题互逆；<br />
+    逆否命题与逆命题互否，与否命题互逆，与原命题互为逆否。</p>
+</li>
+<li>
+<p><strong>充要条件</strong><br />
+    (1) 充分条件：若 <span class="arithmatex">\(p \Rightarrow q\)</span>，则 <span class="arithmatex">\(p\)</span> 是 <span class="arithmatex">\(q\)</span> 的充分条件。</p>
+<p>(2) 必要条件：若 <span class="arithmatex">\(q \Rightarrow p\)</span>，则 <span class="arithmatex">\(p\)</span> 是 <span class="arithmatex">\(q\)</span> 的必要条件。</p>
+<p>(3) 充要条件：若 <span class="arithmatex">\(p \Rightarrow q\)</span>，且 <span class="arithmatex">\(q \Rightarrow p\)</span>，则 <span class="arithmatex">\(p\)</span> 是 <span class="arithmatex">\(q\)</span> 的充要条件。</p>
+<p>注：如果甲是乙的充分条件，则乙是甲的必要条件；反之亦然。</p>
+</li>
+</ol>
+<hr />
+<h2 id="02">§02 函数<a class="headerlink" href="#02" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>函数的单调性</strong><br />
+    (1) 设 <span class="arithmatex">\(x_1, x_2 \in [a,b],\ x_1 \neq x_2\)</span>，那么<br />
+        $$
+        (x_1-x_2)[f(x_1)-f(x_2)] &gt; 0 \Leftrightarrow \frac{f(x_1)-f(x_2)}{x_1-x_2} &gt; 0 \Leftrightarrow f(x) \text{ 在 } [a,b] \text{ 上单调递增};
+        $$
+        $$
+        (x_1-x_2)[f(x_1)-f(x_2)] &lt; 0 \Leftrightarrow \frac{f(x_1)-f(x_2)}{x_1-x_2} &lt; 0 \Leftrightarrow f(x) \text{ 在 } [a,b] \text{ 上单调递减}.
+        $$</p>
+<p>(2) 设函数 <span class="arithmatex">\(y=f(x)\)</span> 在某个区间内可导，若 <span class="arithmatex">\(f'(x)&gt;0\)</span>，则 <span class="arithmatex">\(f(x)\)</span> 为增函数；若 <span class="arithmatex">\(f'(x)&lt;0\)</span>，则 <span class="arithmatex">\(f(x)\)</span> 为减函数。</p>
+</li>
+<li>
+<p><strong>复合函数的单调性</strong><br />
+    如果函数 <span class="arithmatex">\(f(x)\)</span> 和 <span class="arithmatex">\(g(x)\)</span> 都是减函数，则在公共定义域内，和函数 <span class="arithmatex">\(f(x)+g(x)\)</span> 也是减函数；<br />
+    如果函数 <span class="arithmatex">\(y=f(u)\)</span> 和 <span class="arithmatex">\(u=g(x)\)</span> 在其对应的定义域上都是减函数，则复合函数 <span class="arithmatex">\(y=f[g(x)]\)</span> 是增函数。</p>
+</li>
+<li>
+<p><strong>奇偶函数的图象特征</strong><br />
+    奇函数的图象关于原点对称，偶函数的图象关于 <span class="arithmatex">\(y\)</span> 轴对称；反过来，如果一个函数的图象关于原点对称，那么这个函数是奇函数；如果一个函数的图象关于 <span class="arithmatex">\(y\)</span> 轴对称，那么这个函数是偶函数。</p>
+</li>
+<li>
+<p><strong>偶函数的性质</strong><br />
+    若函数 <span class="arithmatex">\(y=f(x)\)</span> 是偶函数，则 <span class="arithmatex">\(f(x+a)=f(-x-a)\)</span>；<br />
+    若函数 <span class="arithmatex">\(y=f(x+a)\)</span> 是偶函数，则 <span class="arithmatex">\(f(x+a)=f(-x+a)\)</span>。</p>
+</li>
+<li>
+<p><strong>函数对称轴</strong><br />
+    对于函数 <span class="arithmatex">\(y=f(x)\ (x\in\mathbb{R})\)</span>，<span class="arithmatex">\(f(x+a)=f(b-x)\)</span> 恒成立，则函数 <span class="arithmatex">\(f(x)\)</span> 的对称轴为 <span class="arithmatex">\(x=\frac{a+b}{2}\)</span>；<br />
+    两个函数 <span class="arithmatex">\(y=f(x+a)\)</span> 与 <span class="arithmatex">\(y=f(b-x)\)</span> 的图象关于直线 <span class="arithmatex">\(x=\frac{a+b}{2}\)</span> 对称。</p>
+</li>
+<li>
+<p><strong>函数的对称中心与周期性</strong><br />
+    若 <span class="arithmatex">\(f(x)=-f(-x+a)\)</span>，则函数 <span class="arithmatex">\(y=f(x)\)</span> 的图象关于点 <span class="arithmatex">\(\left(\frac{a}{2},0\right)\)</span> 对称；<br />
+    若 <span class="arithmatex">\(f(x)=-f(x+a)\)</span>，则函数 <span class="arithmatex">\(y=f(x)\)</span> 为周期为 <span class="arithmatex">\(2a\)</span> 的周期函数。</p>
+</li>
+<li>
+<p><strong>多项式函数的奇偶性</strong><br />
+    多项式函数 <span class="arithmatex">\(P(x)=a_n x^n + a_{n-1} x^{n-1} + \dots + a_0\)</span> 是奇函数 <span class="arithmatex">\(\Leftrightarrow\)</span> <span class="arithmatex">\(P(x)\)</span> 的偶次项（即奇数项）的系数全为零；<br />
+    多项式函数 <span class="arithmatex">\(P(x)\)</span> 是偶函数 <span class="arithmatex">\(\Leftrightarrow\)</span> <span class="arithmatex">\(P(x)\)</span> 的奇次项（即偶数项）的系数全为零。</p>
+</li>
+<li>
+<p><strong>函数图象的对称性</strong><br />
+    (1) 函数 <span class="arithmatex">\(y=f(x)\)</span> 的图象关于直线 <span class="arithmatex">\(x=a\)</span> 对称<br />
+<span class="arithmatex">\(\Leftrightarrow f(a+x)=f(a-x) \Leftrightarrow f(2a-x)=f(x)\)</span>。</p>
+<p>(2) 函数 <span class="arithmatex">\(y=f(x)\)</span> 的图象关于直线 <span class="arithmatex">\(x=\frac{a+b}{2}\)</span> 对称<br />
+<span class="arithmatex">\(\Leftrightarrow f(a+mx)=f(b-mx) \Leftrightarrow f(a+b-mx)=f(mx)\)</span>。</p>
+</li>
+<li>
+<p><strong>两个函数图象的对称性</strong><br />
+    (1) 函数 <span class="arithmatex">\(y=f(x)\)</span> 与函数 <span class="arithmatex">\(y=f(-x)\)</span> 的图象关于直线 <span class="arithmatex">\(x=0\)</span>（即 <span class="arithmatex">\(y\)</span> 轴）对称。</p>
+<p>(2) 函数 <span class="arithmatex">\(y=f(mx-a)\)</span> 与函数 <span class="arithmatex">\(y=f(b-mx)\)</span> 的图象关于直线 <span class="arithmatex">\(x=\frac{a+b}{2m}\)</span> 对称。</p>
+<p>(3) 函数 <span class="arithmatex">\(y=f(x)\)</span> 与 <span class="arithmatex">\(y=f^{-1}(x)\)</span> 的图象关于直线 <span class="arithmatex">\(y=x\)</span> 对称。</p>
+</li>
+<li>
+<p><strong>图象平移</strong><br />
+    若将函数 <span class="arithmatex">\(y=f(x)\)</span> 的图象右移 <span class="arithmatex">\(a\)</span>、上移 <span class="arithmatex">\(b\)</span> 个单位，得到函数 <span class="arithmatex">\(y=f(x-a)+b\)</span> 的图象；<br />
+    若将曲线 <span class="arithmatex">\(f(x,y)=0\)</span> 的图象右移 <span class="arithmatex">\(a\)</span>、上移 <span class="arithmatex">\(b\)</span> 个单位，得到曲线 <span class="arithmatex">\(f(x-a,y-b)=0\)</span> 的图象。</p>
+</li>
+<li>
+<p><strong>反函数关系</strong><br />
+    $$
+    f(a)=b \Leftrightarrow f^{-1}(b)=a.
+    $$</p>
+</li>
+<li>
+<p><strong>反函数的求法</strong><br />
+    若函数 <span class="arithmatex">\(y=f(kx+b)\)</span> 存在反函数，则其反函数为 <span class="arithmatex">\(y=\frac{1}{k}[f^{-1}(x)-b]\)</span>，而不是 <span class="arithmatex">\(y=f^{-1}(kx+b)\)</span>；而函数 <span class="arithmatex">\(y=f^{-1}(kx+b)\)</span> 是 <span class="arithmatex">\(y=\frac{1}{k}[f(x)-b]\)</span> 的反函数。</p>
+</li>
+<li>
+<p><strong>常见的函数方程</strong><br />
+    (1) 正比例函数 <span class="arithmatex">\(f(x)=cx\)</span>：<span class="arithmatex">\(f(x+y)=f(x)+f(y),\ f(1)=c\)</span>。</p>
+<p>(2) 指数函数 <span class="arithmatex">\(f(x)=a^x\)</span>：<span class="arithmatex">\(f(x+y)=f(x)f(y),\ f(1)=a\neq0\)</span>。</p>
+<p>(3) 对数函数 <span class="arithmatex">\(f(x)=\log_a x\)</span>：<span class="arithmatex">\(f(xy)=f(x)+f(y),\ f(a)=1\ (a&gt;0,\ a\neq1)\)</span>。</p>
+<p>(4) 幂函数 <span class="arithmatex">\(f(x)=x^\alpha\)</span>：<span class="arithmatex">\(f(xy)=f(x)f(y),\ f(1)=\alpha\)</span>。</p>
+<p>(5) 余弦函数 <span class="arithmatex">\(f(x)=\cos x\)</span>，正弦函数 <span class="arithmatex">\(g(x)=\sin x\)</span>：<br />
+<span class="arithmatex">\(f(x-y)=f(x)f(y)+g(x)g(y),\ f(0)=1,\ \lim_{x\to0}\frac{g(x)}{x}=1\)</span>。</p>
+</li>
+<li>
+<p><strong>函数方程的周期（约定 <span class="arithmatex">\(a&gt;0\)</span>）</strong><br />
+    (1) <span class="arithmatex">\(f(x)=f(x+a)\)</span>，则 <span class="arithmatex">\(f(x)\)</span> 的周期 <span class="arithmatex">\(T=a\)</span>。</p>
+<p>(2) <span class="arithmatex">\(f(x+a)=-f(x)\)</span> 或 <span class="arithmatex">\(f(x+a)=\frac{1}{f(x)}\ (f(x)\neq0)\)</span> 或 <span class="arithmatex">\(f(x+a)=-\frac{1}{f(x)}\ (f(x)\neq0)\)</span>，或 <span class="arithmatex">\(\frac{1}{2}+\sqrt{f(x)-f^2(x)}=f(x+a)\ (f(x)\in[0,1])\)</span>，则周期 <span class="arithmatex">\(T=2a\)</span>。</p>
+<p>(3) <span class="arithmatex">\(f(x)=1-\frac{1}{f(x+a)}\ (f(x)\neq0)\)</span>，则周期 <span class="arithmatex">\(T=3a\)</span>。</p>
+<p>(4) <span class="arithmatex">\(f(x_1+x_2)=\frac{f(x_1)+f(x_2)}{1-f(x_1)f(x_2)}\)</span> 且 <span class="arithmatex">\(f(a)=1\ (f(x_1)f(x_2)\neq1,\ 0&lt;|x_1-x_2|&lt;2a)\)</span>，则周期 <span class="arithmatex">\(T=4a\)</span>。</p>
+<p>(5) <span class="arithmatex">\(f(x)+f(x+a)+f(x+2a)+f(x+3a)+f(x+4a)=f(x)f(x+a)f(x+2a)f(x+3a)f(x+4a)\)</span>，则周期 <span class="arithmatex">\(T=5a\)</span>。</p>
+<p>(6) <span class="arithmatex">\(f(x+a)=f(x)-f(x+a)\)</span>，则周期 <span class="arithmatex">\(T=6a\)</span>。</p>
+</li>
+<li>
+<p><strong>分数指数幂</strong><br />
+    (1) <span class="arithmatex">\(a^{\frac{m}{n}}=\frac{1}{\sqrt[n]{a^m}}\ (a&gt;0,\ m,n\in\mathbb{N}^*,\ n&gt;1)\)</span>。</p>
+<p>(2) <span class="arithmatex">\(a^{-\frac{m}{n}}=\frac{1}{a^{\frac{m}{n}}}\ (a&gt;0,\ m,n\in\mathbb{N}^*,\ n&gt;1)\)</span>。</p>
+</li>
+<li>
+<p><strong>根式的性质</strong><br />
+    (1) <span class="arithmatex">\((\sqrt[n]{a})^n=a\)</span>。</p>
+<p>(2) 当 <span class="arithmatex">\(n\)</span> 为奇数时，<span class="arithmatex">\(\sqrt[n]{a^n}=a\)</span>；<br />
+    当 <span class="arithmatex">\(n\)</span> 为偶数时，<span class="arithmatex">\(\sqrt[n]{a^n}=|a|=\begin{cases}a, &amp; a\geq0,\\-a, &amp; a&lt;0.\end{cases}\)</span></p>
+</li>
+<li>
+<p><strong>有理指数幂的运算性质</strong><br />
+    (1) <span class="arithmatex">\(a^r \cdot a^s = a^{r+s}\ (a&gt;0,\ r,s\in\mathbb{Q})\)</span>。</p>
+<p>(2) <span class="arithmatex">\((a^r)^s = a^{rs}\ (a&gt;0,\ r,s\in\mathbb{Q})\)</span>。</p>
+<p>(3) <span class="arithmatex">\((ab)^r = a^r b^r\ (a&gt;0,\ b&gt;0,\ r\in\mathbb{Q})\)</span>。</p>
+<p>注：若 <span class="arithmatex">\(a&gt;0\)</span>，<span class="arithmatex">\(p\)</span> 是无理数，则 <span class="arithmatex">\(a^p\)</span> 表示一个确定的实数，上述性质对无理数指数幂也适用。</p>
+</li>
+<li>
+<p><strong>指数式与对数式的互化</strong><br />
+    $$
+    \log_a N = b \Leftrightarrow a^b = N\ (a&gt;0,\ a\neq1,\ N&gt;0).
+    $$</p>
+</li>
+<li>
+<p><strong>对数的换底公式</strong><br />
+    $$
+    \log_a N = \frac{\log_m N}{\log_m a}\ (a&gt;0,\ a\neq1,\ m&gt;0,\ m\neq1,\ N&gt;0).
+    $$</p>
+<p>推论：<span class="arithmatex">\(\log_{a^m} b^n = \frac{n}{m} \log_a b\ (a&gt;0,\ a\neq1,\ m,n&gt;0,\ m\neq1,\ n\neq1)\)</span>。</p>
+</li>
+<li>
+<p><strong>对数的四则运算法则</strong><br />
+    若 <span class="arithmatex">\(a&gt;0,\ a\neq1,\ M&gt;0,\ N&gt;0\)</span>，则<br />
+    (1) <span class="arithmatex">\(\log_a (MN) = \log_a M + \log_a N\)</span>。</p>
+<p>(2) <span class="arithmatex">\(\log_a \frac{M}{N} = \log_a M - \log_a N\)</span>。</p>
+<p>(3) <span class="arithmatex">\(\log_a M^n = n \log_a M\ (n\in\mathbb{R})\)</span>。</p>
+</li>
+<li>
+<p><strong>对数函数的定义域与值域</strong><br />
+    设函数 <span class="arithmatex">\(f(x)=\log_a (ax^2+bx+c)\ (a\neq0)\)</span>，记 <span class="arithmatex">\(\Delta=b^2-4ac\)</span>。</p>
+<p>若 <span class="arithmatex">\(f(x)\)</span> 的定义域为 <span class="arithmatex">\(\mathbb{R}\)</span>，则 <span class="arithmatex">\(a&gt;0\)</span> 且 <span class="arithmatex">\(\Delta&lt;0\)</span>；<br />
+若 <span class="arithmatex">\(f(x)\)</span> 的值域为 <span class="arithmatex">\(\mathbb{R}\)</span>，则 <span class="arithmatex">\(a&gt;0\)</span> 且 <span class="arithmatex">\(\Delta\geq0\)</span>。对于 <span class="arithmatex">\(a=0\)</span> 的情形需单独检验。</p>
+</li>
+<li>
+<p><strong>对数换底不等式及其推广</strong><br />
+    若 <span class="arithmatex">\(a&gt;0,\ b&gt;0,\ x&gt;0,\ x\neq\frac{1}{a}\)</span>，则函数 <span class="arithmatex">\(y=\log_{ax}(bx)\)</span>：<br />
+    (1) 当 <span class="arithmatex">\(a&gt;b\)</span> 时，在 <span class="arithmatex">\((0,\frac{1}{a})\)</span> 和 <span class="arithmatex">\((\frac{1}{a},+\infty)\)</span> 上为增函数；<br />
+    (2) 当 <span class="arithmatex">\(a&lt;b\)</span> 时，在 <span class="arithmatex">\((0,\frac{1}{a})\)</span> 和 <span class="arithmatex">\((\frac{1}{a},+\infty)\)</span> 上为减函数。</p>
+<p>推论：设 <span class="arithmatex">\(n&gt;m&gt;1,\ p&gt;0,\ a&gt;0,\ a\neq1\)</span>，则<br />
+(1) <span class="arithmatex">\(\log_{m+p}(n+p) &lt; \log_m n\)</span>；<br />
+(2) <span class="arithmatex">\(\log_a m \log_a n &lt; \log_a^2 \frac{m+n}{2}\)</span>。</p>
+</li>
+</ol>
+<hr />
+<h2 id="03">§03 数列<a class="headerlink" href="#03" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>平均增长率问题</strong><br />
+    如果原来产值的基础数为 <span class="arithmatex">\(N\)</span>，平均增长率为 <span class="arithmatex">\(p\)</span>，则对于时间 <span class="arithmatex">\(x\)</span> 的总产值 <span class="arithmatex">\(y\)</span>，有 <span class="arithmatex">\(y=N(1+p)^x\)</span>。</p>
+</li>
+<li>
+<p><strong>数列的通项公式与前 <span class="arithmatex">\(n\)</span> 项和的关系</strong><br />
+    $$
+    a_n = \begin{aligned}
+    s_1, &amp; n=1,\
+    s_n - s_{n-1}, &amp; n\geq2,
+    \end{aligned}
+    $$</p>
+<p>其中 <span class="arithmatex">\(s_n=a_1+a_2+\dots+a_n\)</span>。</p>
+</li>
+<li>
+<p><strong>等差数列的通项公式与前 <span class="arithmatex">\(n\)</span> 项和公式</strong><br />
+    $$
+    a_n = a_1 + (n-1)d = dn + a_1 - d \quad (n\in\mathbb{N}^*),
+    $$</p>
+<div class="arithmatex">\[
+s_n = \frac{n(a_1+a_n)}{2} = na_1 + \frac{n(n-1)}{2}d = \frac{d}{2}n^2 + \left(a_1-\frac{d}{2}\right)n.
+\]</div>
+</li>
+<li>
+<p><strong>等比数列的通项公式与前 <span class="arithmatex">\(n\)</span> 项和公式</strong><br />
+    $$
+    a_n = a_1 q^{n-1} = \frac{a_1}{q} \cdot q^n \quad (n\in\mathbb{N}^*),
+    $$</p>
+<div class="arithmatex">\[
+s_n = \begin{cases}
+\frac{a_1(1-q^n)}{1-q}, &amp; q\neq1,\\
+na_1, &amp; q=1,
+\end{cases}
+\quad \text{或} \quad
+s_n = \begin{cases}
+\frac{a_1-a_n q}{1-q}, &amp; q\neq1,\\
+na_1, &amp; q=1.
+\end{cases}
+\]</div>
+</li>
+<li>
+<p><strong>等比差数列的通项公式与前 <span class="arithmatex">\(n\)</span> 项和公式</strong><br />
+    数列 <span class="arithmatex">\(\{a_n\}\)</span>：<span class="arithmatex">\(a_{n+1}=q a_n+d,\ a_1=b\ (q\neq0)\)</span>，<br />
+    $$
+    a_n = \begin{cases}
+    b+(n-1)d, &amp; q=1,\
+    \frac{b q^n + (d-b)q^{n-1}-d}{q-1}, &amp; q\neq1,
+    \end{cases}
+    $$</p>
+<div class="arithmatex">\[
+s_n = \begin{cases}
+nb + \frac{n(n-1)}{2}d, &amp; q=1,\\
+\left(b-\frac{d}{1-q}\right)\frac{1-q^n}{1-q} + \frac{d}{1-q}n, &amp; q\neq1.
+\end{cases}
+\]</div>
+</li>
+<li>
+<p><strong>分期付款（按揭贷款）</strong><br />
+    每次还款 <span class="arithmatex">\(x = \frac{a b (1+b)^n}{(1+b)^n-1}\)</span> 元（贷款 <span class="arithmatex">\(a\)</span> 元，分 <span class="arithmatex">\(n\)</span> 次还清，每期利率为 <span class="arithmatex">\(b\)</span>）。</p>
+</li>
+</ol>
+<hr />
+<h2 id="04">§04 三角函数<a class="headerlink" href="#04" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>常见三角不等式</strong><br />
+    (1) 若 <span class="arithmatex">\(x\in(0,\frac{\pi}{2})\)</span>，则 <span class="arithmatex">\(\sin x &lt; x &lt; \tan x\)</span>。</p>
+<p>(2) 若 <span class="arithmatex">\(x\in(0,\frac{\pi}{2})\)</span>，则 <span class="arithmatex">\(1 &lt; \sin x + \cos x \leq \sqrt{2}\)</span>。</p>
+<p>(3) <span class="arithmatex">\(|\sin x| + |\cos x| \geq 1\)</span>。</p>
+</li>
+<li>
+<p><strong>同角三角函数的基本关系式</strong><br />
+    $$
+    \sin^2\theta + \cos^2\theta = 1,\quad \tan\theta = \frac{\sin\theta}{\cos\theta},\quad \tan\theta \cdot \cot\theta = 1.
+    $$</p>
+</li>
+<li>
+<p><strong>正弦、余弦的诱导公式</strong>（奇变偶不变，符号看象限）</p>
+</li>
+<li>
+<p><strong>和角与差角公式</strong><br />
+    $$
+    \begin{aligned}
+    \sin(\alpha\pm\beta) &amp;= \sin\alpha\cos\beta \pm \cos\alpha\sin\beta, \
+    \cos(\alpha\pm\beta) &amp;= \cos\alpha\cos\beta \mp \sin\alpha\sin\beta, \
+    \tan(\alpha\pm\beta) &amp;= \frac{\tan\alpha \pm \tan\beta}{1 \mp \tan\alpha\tan\beta}.
+    \end{aligned}
+    $$</p>
+<div class="arithmatex">\[
+\sin(\alpha+\beta)\sin(\alpha-\beta) = \sin^2\alpha - \sin^2\beta \quad \text{(平方正弦公式)},
+\]</div>
+<div class="arithmatex">\[
+\cos(\alpha+\beta)\cos(\alpha-\beta) = \cos^2\alpha - \sin^2\beta.
+\]</div>
+<div class="arithmatex">\[
+a\sin\alpha + b\cos\alpha = \sqrt{a^2+b^2}\sin(\alpha+\phi),
+\]</div>
+<p>其中辅助角 <span class="arithmatex">\(\phi\)</span> 满足 <span class="arithmatex">\(\tan\phi = \frac{b}{a}\)</span>，所在象限由点 <span class="arithmatex">\((a,b)\)</span> 决定。</p>
+</li>
+<li>
+<p><strong>二倍角公式</strong><br />
+    $$
+    \begin{aligned}
+    \sin 2\alpha &amp;= 2\sin\alpha\cos\alpha, \
+    \cos 2\alpha &amp;= \cos^2\alpha - \sin^2\alpha = 2\cos^2\alpha - 1 = 1 - 2\sin^2\alpha, \
+    \tan 2\alpha &amp;= \frac{2\tan\alpha}{1-\tan^2\alpha}.
+    \end{aligned}
+    $$</p>
+</li>
+<li>
+<p><strong>三倍角公式</strong><br />
+    $$
+    \begin{aligned}
+    \sin 3\theta &amp;= 3\sin\theta - 4\sin^3\theta = 4\sin\theta \sin\left(\frac{\pi}{3}-\theta\right)\sin\left(\frac{\pi}{3}+\theta\right), \
+    \cos 3\theta &amp;= 4\cos^3\theta - 3\cos\theta = 4\cos\theta \cos\left(\frac{\pi}{3}-\theta\right)\cos\left(\frac{\pi}{3}+\theta\right), \
+    \tan 3\theta &amp;= \frac{3\tan\theta - \tan^3\theta}{1-3\tan^2\theta} = \tan\theta \tan\left(\frac{\pi}{3}-\theta\right)\tan\left(\frac{\pi}{3}+\theta\right).
+    \end{aligned}
+    $$</p>
+</li>
+<li>
+<p><strong>三角函数的周期公式</strong><br />
+    函数 <span class="arithmatex">\(y = \sin(\omega x+\phi),\ x\in\mathbb{R}\)</span> 及 <span class="arithmatex">\(y = \cos(\omega x+\phi),\ x\in\mathbb{R}\)</span>（<span class="arithmatex">\(\omega,\phi\)</span> 为常数，<span class="arithmatex">\(\omega&gt;0\)</span>）的周期 <span class="arithmatex">\(T = \frac{2\pi}{\omega}\)</span>；<br />
+    函数 <span class="arithmatex">\(y = \tan(\omega x+\phi),\ x\neq k\pi+\frac{\pi}{2},\ k\in\mathbb{Z}\)</span>（<span class="arithmatex">\(\omega,\phi\)</span> 为常数，<span class="arithmatex">\(\omega&gt;0\)</span>）的周期 <span class="arithmatex">\(T = \frac{\pi}{\omega}\)</span>。</p>
+</li>
+<li>
+<p><strong>正弦定理</strong><br />
+    $$
+    \frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R.
+    $$</p>
+</li>
+<li>
+<p><strong>余弦定理</strong><br />
+    $$
+    a^2 = b^2 + c^2 - 2bc\cos A,\quad b^2 = c^2 + a^2 - 2ca\cos B,\quad c^2 = a^2 + b^2 - 2ab\cos C.
+    $$</p>
+</li>
+<li>
+<p><strong>面积定理</strong><br />
+    (1) <span class="arithmatex">\(S = \frac{1}{2} a h_a = \frac{1}{2} b h_b = \frac{1}{2} c h_c\)</span>（<span class="arithmatex">\(h_a,h_b,h_c\)</span> 分别为边 <span class="arithmatex">\(a,b,c\)</span> 上的高）。</p>
+<p>(2) <span class="arithmatex">\(S = \frac{1}{2} ab\sin C = \frac{1}{2} bc\sin A = \frac{1}{2} ca\sin B\)</span>。</p>
+<p>(3) <span class="arithmatex">\(S_{\triangle OAB} = \frac{1}{2} \sqrt{(|\overrightarrow{OA}|\cdot|\overrightarrow{OB}|)^2 - (\overrightarrow{OA}\cdot\overrightarrow{OB})^2}\)</span>。</p>
+</li>
+<li>
+<p><strong>三角形内角和定理</strong><br />
+    在 <span class="arithmatex">\(\triangle ABC\)</span> 中，有<br />
+    $$
+    A+B+C = \pi \Leftrightarrow C = \pi - (A+B) \Leftrightarrow \frac{C}{2} = \frac{\pi}{2} - \frac{A+B}{2} \Leftrightarrow 2C = 2\pi - 2(A+B).
+    $$</p>
+</li>
+<li>
+<p><strong>简单的三角方程的通解</strong><br />
+    $$
+    \begin{aligned}
+    \sin x = a &amp;\Leftrightarrow x = k\pi + (-1)^k \arcsin a \quad (k\in\mathbb{Z},\ |a|\leq1), \
+    \cos x = a &amp;\Leftrightarrow x = 2k\pi \pm \arccos a \quad (k\in\mathbb{Z},\ |a|\leq1), \
+    \tan x = a &amp;\Leftrightarrow x = k\pi + \arctan a \quad (k\in\mathbb{Z},\ a\in\mathbb{R}).
+    \end{aligned}
+    $$</p>
+<p>特别地，<br />
+$$
+\begin{aligned}
+\sin\alpha = \sin\beta &amp;\Leftrightarrow \alpha = k\pi + (-1)^k \beta \quad (k\in\mathbb{Z}), \
+\cos\alpha = \cos\beta &amp;\Leftrightarrow \alpha = 2k\pi \pm \beta \quad (k\in\mathbb{Z}), \
+\tan\alpha = \tan\beta &amp;\Leftrightarrow \alpha = k\pi + \beta \quad (k\in\mathbb{Z}).
+\end{aligned}
+$$</p>
+</li>
+<li>
+<p><strong>最简单的三角不等式及其解集</strong><br />
+    $$
+    \begin{aligned}
+    \sin x &gt; a\ (|a|\leq1) &amp;\Leftrightarrow x \in (2k\pi + \arcsin a,\ 2k\pi + \pi - \arcsin a),\ k\in\mathbb{Z}, \
+    \sin x &lt; a\ (|a|\leq1) &amp;\Leftrightarrow x \in (2k\pi - \pi - \arcsin a,\ 2k\pi + \arcsin a),\ k\in\mathbb{Z}, \
+    \cos x &gt; a\ (|a|\leq1) &amp;\Leftrightarrow x \in (2k\pi - \arccos a,\ 2k\pi + \arccos a),\ k\in\mathbb{Z}, \
+    \cos x &lt; a\ (|a|\leq1) &amp;\Leftrightarrow x \in (2k\pi + \arccos a,\ 2k\pi + 2\pi - \arccos a),\ k\in\mathbb{Z}, \
+    \tan x &gt; a\ (a\in\mathbb{R}) &amp;\Rightarrow x \in \left(k\pi + \arctan a,\ k\pi + \frac{\pi}{2}\right),\ k\in\mathbb{Z}, \
+    \tan x &lt; a\ (a\in\mathbb{R}) &amp;\Rightarrow x \in \left(k\pi - \frac{\pi}{2},\ k\pi + \arctan a\right),\ k\in\mathbb{Z}.
+    \end{aligned}
+    $$</p>
+</li>
+</ol>
+<hr />
+<h2 id="05">§05 平面向量<a class="headerlink" href="#05" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>实数与向量的积的运算律</strong><br />
+    设 <span class="arithmatex">\(\lambda,\mu\)</span> 为实数，则<br />
+    (1) 结合律：<span class="arithmatex">\(\lambda(\mu\mathbf{a}) = (\lambda\mu)\mathbf{a}\)</span>。</p>
+<p>(2) 第一分配律：<span class="arithmatex">\((\lambda+\mu)\mathbf{a} = \lambda\mathbf{a} + \mu\mathbf{a}\)</span>。</p>
+<p>(3) 第二分配律：<span class="arithmatex">\(\lambda(\mathbf{a}+\mathbf{b}) = \lambda\mathbf{a} + \lambda\mathbf{b}\)</span>。</p>
+</li>
+<li>
+<p><strong>向量的数量积的运算律</strong><br />
+    (1) <span class="arithmatex">\(\mathbf{a}\cdot\mathbf{b} = \mathbf{b}\cdot\mathbf{a}\)</span>（交换律）。</p>
+<p>(2) <span class="arithmatex">\((\lambda\mathbf{a})\cdot\mathbf{b} = \lambda(\mathbf{a}\cdot\mathbf{b}) = \lambda\mathbf{a}\cdot\mathbf{b} = \mathbf{a}\cdot(\lambda\mathbf{b})\)</span>。</p>
+<p>(3) <span class="arithmatex">\((\mathbf{a}+\mathbf{b})\cdot\mathbf{c} = \mathbf{a}\cdot\mathbf{c} + \mathbf{b}\cdot\mathbf{c}\)</span>。</p>
+</li>
+<li>
+<p><strong>平面向量基本定理</strong><br />
+    如果 <span class="arithmatex">\(\mathbf{e}_1,\mathbf{e}_2\)</span> 是同一平面内的两个不共线向量，那么对于该平面内的任一向量 <span class="arithmatex">\(\mathbf{a}\)</span>，有且仅有一对实数 <span class="arithmatex">\(\lambda_1,\lambda_2\)</span>，使得 <span class="arithmatex">\(\mathbf{a} = \lambda_1\mathbf{e}_1 + \lambda_2\mathbf{e}_2\)</span>。</p>
+<p>不共线的向量 <span class="arithmatex">\(\mathbf{e}_1,\mathbf{e}_2\)</span> 叫做表示这一平面内所有向量的一组基底。</p>
+</li>
+<li>
+<p><strong>向量平行的坐标表示</strong><br />
+    设 <span class="arithmatex">\(\mathbf{a}=(x_1,y_1),\ \mathbf{b}=(x_2,y_2)\)</span>，且 <span class="arithmatex">\(\mathbf{b}\neq\mathbf{0}\)</span>，则<br />
+    $$
+    \mathbf{a}\parallel\mathbf{b} \Leftrightarrow x_1 y_2 - x_2 y_1 = 0.
+    $$</p>
+</li>
+<li>
+<p><strong>数量积的几何意义</strong><br />
+    数量积 <span class="arithmatex">\(\mathbf{a}\cdot\mathbf{b}\)</span> 等于 <span class="arithmatex">\(\mathbf{a}\)</span> 的长度 <span class="arithmatex">\(|\mathbf{a}|\)</span> 与 <span class="arithmatex">\(\mathbf{b}\)</span> 在 <span class="arithmatex">\(\mathbf{a}\)</span> 方向上的投影 <span class="arithmatex">\(|\mathbf{b}|\cos\theta\)</span> 的乘积。</p>
+</li>
+<li>
+<p><strong>平面向量的坐标运算</strong><br />
+    设 <span class="arithmatex">\(\mathbf{a}=(x_1,y_1),\ \mathbf{b}=(x_2,y_2)\)</span>，则<br />
+    (1) <span class="arithmatex">\(\mathbf{a}+\mathbf{b} = (x_1+x_2,\ y_1+y_2)\)</span>。</p>
+<p>(2) <span class="arithmatex">\(\mathbf{a}-\mathbf{b} = (x_1-x_2,\ y_1-y_2)\)</span>。</p>
+<p>(3) 设 <span class="arithmatex">\(A(x_1,y_1),\ B(x_2,y_2)\)</span>，则 <span class="arithmatex">\(\overrightarrow{AB} = (x_2-x_1,\ y_2-y_1)\)</span>。</p>
+<p>(4) 设 <span class="arithmatex">\(\mathbf{a}=(x,y),\ \lambda\in\mathbb{R}\)</span>，则 <span class="arithmatex">\(\lambda\mathbf{a} = (\lambda x,\ \lambda y)\)</span>。</p>
+<p>(5) <span class="arithmatex">\(\mathbf{a}\cdot\mathbf{b} = x_1 x_2 + y_1 y_2\)</span>。</p>
+</li>
+<li>
+<p><strong>两向量的夹角公式</strong><br />
+    $$
+    \cos\theta = \frac{x_1 x_2 + y_1 y_2}{\sqrt{x_1^2+y_1^2}\cdot\sqrt{x_2^2+y_2^2}} \quad (\mathbf{a}=(x_1,y_1),\ \mathbf{b}=(x_2,y_2)).
+    $$</p>
+</li>
+<li>
+<p><strong>平面两点间的距离公式</strong><br />
+    $$
+    d_{A,B} = |\overrightarrow{AB}| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2} \quad (A(x_1,y_1),\ B(x_2,y_2)).
+    $$</p>
+</li>
+<li>
+<p><strong>向量的平行与垂直</strong><br />
+    设 <span class="arithmatex">\(\mathbf{a}=(x_1,y_1),\ \mathbf{b}=(x_2,y_2)\)</span>，且 <span class="arithmatex">\(\mathbf{b}\neq\mathbf{0}\)</span>，则<br />
+    $$
+    \mathbf{a}\parallel\mathbf{b} \Leftrightarrow \mathbf{b} = \lambda\mathbf{a} \Leftrightarrow x_1 y_2 - x_2 y_1 = 0,
+    $$
+    $$
+    \mathbf{a}\perp\mathbf{b} \Leftrightarrow \mathbf{a}\cdot\mathbf{b} = 0 \Leftrightarrow x_1 x_2 + y_1 y_2 = 0.
+    $$</p>
+</li>
+<li>
+<p><strong>线段的定比分公式</strong><br />
+    设 <span class="arithmatex">\(P_1(x_1,y_1),\ P_2(x_2,y_2)\)</span>，点 <span class="arithmatex">\(P(x,y)\)</span> 是线段 <span class="arithmatex">\(P_1 P_2\)</span> 的分点，<span class="arithmatex">\(\lambda\)</span> 是实数，且 <span class="arithmatex">\(\overrightarrow{P_1 P} = \lambda \overrightarrow{P P_2}\)</span>，则<br />
+    $$
+    \begin{cases}
+    x = \dfrac{x_1 + \lambda x_2}{1+\lambda}, 
+    y = \dfrac{y_1 + \lambda y_2}{1+\lambda},
+    \end{cases}
+    \quad \Leftrightarrow \quad
+    \overrightarrow{OP} = \frac{\overrightarrow{OP_1} + \lambda\overrightarrow{OP_2}}{1+\lambda}
+    \quad \Leftrightarrow \quad
+    \overrightarrow{OP} = t\overrightarrow{OP_1} + (1-t)\overrightarrow{OP_2} \ \left(t=\frac{1}{1+\lambda}\right).
+    $$</p>
+</li>
+<li>
+<p><strong>三角形的重心坐标公式</strong><br />
+<span class="arithmatex">\(\triangle ABC\)</span> 三个顶点坐标分别为 <span class="arithmatex">\(A(x_1,y_1),\ B(x_2,y_2),\ C(x_3,y_3)\)</span>，则重心坐标为<br />
+    $$
+    G\left(\frac{x_1+x_2+x_3}{3},\ \frac{y_1+y_2+y_3}{3}\right).
+    $$</p>
+</li>
+<li>
+<p><strong>点的平移公式</strong><br />
+    $$
+    \begin{cases}
+    x' = x + h, \
+    y' = y + k,
+    \end{cases}
+    \quad \Leftrightarrow \quad
+    \begin{cases}
+    x = x' - h, \
+    y = y' - k,
+    \end{cases}
+    \quad \Leftrightarrow \quad
+    \overrightarrow{OP'} = \overrightarrow{OP} + \overrightarrow{PP'}.
+    $$</p>
+<p>注：图形 <span class="arithmatex">\(F\)</span> 上任意一点 <span class="arithmatex">\(P(x,y)\)</span> 在平移后图形 <span class="arithmatex">\(F'\)</span> 上的对应点为 <span class="arithmatex">\(P'(x',y')\)</span>，且 <span class="arithmatex">\(\overrightarrow{PP'}=(h,k)\)</span>。</p>
+</li>
+<li>
+<p><strong>“按向量平移”的几个结论</strong><br />
+    (1) 点 <span class="arithmatex">\(P(x,y)\)</span> 按向量 <span class="arithmatex">\(\mathbf{a}=(h,k)\)</span> 平移后得到点 <span class="arithmatex">\(P'(x+h,\ y+k)\)</span>。</p>
+<p>(2) 函数 <span class="arithmatex">\(y=f(x)\)</span> 的图象 <span class="arithmatex">\(C\)</span> 按向量 <span class="arithmatex">\(\mathbf{a}=(h,k)\)</span> 平移后得到图象 <span class="arithmatex">\(C'\)</span>，则 <span class="arithmatex">\(C'\)</span> 的函数解析式为 <span class="arithmatex">\(y = f(x-h) + k\)</span>。</p>
+<p>(3) 图象 <span class="arithmatex">\(C'\)</span> 按向量 <span class="arithmatex">\(\mathbf{a}=(h,k)\)</span> 平移后得到图象 <span class="arithmatex">\(C\)</span>，若 <span class="arithmatex">\(C\)</span> 的解析式为 <span class="arithmatex">\(y=f(x)\)</span>，则 <span class="arithmatex">\(C'\)</span> 的函数解析式为 <span class="arithmatex">\(y = f(x+h) - k\)</span>。</p>
+<p>(4) 曲线 <span class="arithmatex">\(C:\ f(x,y)=0\)</span> 按向量 <span class="arithmatex">\(\mathbf{a}=(h,k)\)</span> 平移后得到图象 <span class="arithmatex">\(C'\)</span>，则 <span class="arithmatex">\(C'\)</span> 的方程为 <span class="arithmatex">\(f(x-h,\ y-k)=0\)</span>。</p>
+<p>(5) 向量 <span class="arithmatex">\(\mathbf{a}=(x,y)\)</span> 按向量 <span class="arithmatex">\(\mathbf{a}=(h,k)\)</span> 平移后得到的向量仍然为 <span class="arithmatex">\(\mathbf{a}=(x,y)\)</span>。</p>
+</li>
+<li>
+<p><strong>三角形五“心”向量形式的充要条件</strong><br />
+    设 <span class="arithmatex">\(O\)</span> 为 <span class="arithmatex">\(\triangle ABC\)</span> 所在平面上一点，角 <span class="arithmatex">\(A,B,C\)</span> 所对边长分别为 <span class="arithmatex">\(a,b,c\)</span>，则<br />
+    (1) <span class="arithmatex">\(O\)</span> 为外心 <span class="arithmatex">\(\Leftrightarrow |\overrightarrow{OA}|^2 = |\overrightarrow{OB}|^2 = |\overrightarrow{OC}|^2\)</span>。</p>
+<p>(2) <span class="arithmatex">\(O\)</span> 为重心 <span class="arithmatex">\(\Leftrightarrow \overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC} = \mathbf{0}\)</span>。</p>
+<p>(3) <span class="arithmatex">\(O\)</span> 为垂心 <span class="arithmatex">\(\Leftrightarrow \overrightarrow{OA}\cdot\overrightarrow{OB} = \overrightarrow{OB}\cdot\overrightarrow{OC} = \overrightarrow{OC}\cdot\overrightarrow{OA}\)</span>。</p>
+<p>(4) <span class="arithmatex">\(O\)</span> 为内心 <span class="arithmatex">\(\Leftrightarrow a\overrightarrow{OA} + b\overrightarrow{OB} + c\overrightarrow{OC} = \mathbf{0}\)</span>。</p>
+<p>(5) <span class="arithmatex">\(O\)</span> 为 <span class="arithmatex">\(\angle A\)</span> 的旁心 <span class="arithmatex">\(\Leftrightarrow a\overrightarrow{OA} = b\overrightarrow{OB} + c\overrightarrow{OC}\)</span>。</p>
+</li>
+</ol>
+<hr />
+<h2 id="06">§06 不等式<a class="headerlink" href="#06" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>常用不等式</strong><br />
+    (1) <span class="arithmatex">\(a,b\in\mathbb{R} \Rightarrow a^2+b^2 \geq 2ab\)</span>（当且仅当 <span class="arithmatex">\(a=b\)</span> 时取等号）。</p>
+<p>(2) <span class="arithmatex">\(a,b\in\mathbb{R}^+ \Rightarrow \dfrac{a+b}{2} \geq \sqrt{ab}\)</span>（当且仅当 <span class="arithmatex">\(a=b\)</span> 时取等号）。</p>
+<p>(3) <span class="arithmatex">\(a^3+b^3+c^3 \geq 3abc\ (a&gt;0,b&gt;0,c&gt;0)\)</span>。</p>
+<p>(4) 柯西不等式：<span class="arithmatex">\((a^2+b^2)(c^2+d^2) \geq (ac+bd)^2\ (a,b,c,d\in\mathbb{R})\)</span>。</p>
+<p>(5) <span class="arithmatex">\(|a|-|b| \leq |a+b| \leq |a|+|b|\)</span>。</p>
+</li>
+<li>
+<p><strong>极值定理</strong><br />
+    已知 <span class="arithmatex">\(x,y\)</span> 都是正数，则<br />
+    (1) 若积 <span class="arithmatex">\(xy\)</span> 是定值 <span class="arithmatex">\(p\)</span>，则当 <span class="arithmatex">\(x=y\)</span> 时，和 <span class="arithmatex">\(x+y\)</span> 有最小值 <span class="arithmatex">\(2\sqrt{p}\)</span>。</p>
+<p>(2) 若和 <span class="arithmatex">\(x+y\)</span> 是定值 <span class="arithmatex">\(s\)</span>，则当 <span class="arithmatex">\(x=y\)</span> 时，积 <span class="arithmatex">\(xy\)</span> 有最大值 <span class="arithmatex">\(\frac{1}{4}s^2\)</span>。</p>
+<p>推广：已知 <span class="arithmatex">\(x,y\in\mathbb{R}\)</span>，则有 <span class="arithmatex">\((x+y)^2 = (x-y)^2 + 4xy\)</span>。</p>
+<p>(1) 若积 <span class="arithmatex">\(xy\)</span> 是定值，则当 <span class="arithmatex">\(|x-y|\)</span> 最大时，<span class="arithmatex">\(|x+y|\)</span> 最大；当 <span class="arithmatex">\(|x-y|\)</span> 最小时，<span class="arithmatex">\(|x+y|\)</span> 最小。</p>
+<p>(2) 若和 <span class="arithmatex">\(|x+y|\)</span> 是定值，则当 <span class="arithmatex">\(|x-y|\)</span> 最大时，<span class="arithmatex">\(|xy|\)</span> 最小；当 <span class="arithmatex">\(|x-y|\)</span> 最小时，<span class="arithmatex">\(|xy|\)</span> 最大。</p>
+</li>
+<li>
+<p><strong>一元二次不等式的解集</strong><br />
+    一元二次不等式 <span class="arithmatex">\(ax^2+bx+c&gt;0\)</span>（或 <span class="arithmatex">\(&lt;0\)</span>）<span class="arithmatex">\((a\neq0,\ \Delta=b^2-4ac&gt;0)\)</span>，如果 <span class="arithmatex">\(a\)</span> 与 <span class="arithmatex">\(ax^2+bx+c\)</span> 同号，则解集在两根之外；如果异号，则解集在两根之间。简言之：同号两根之外，异号两根之间。
+    $$
+    x_1 &lt; x &lt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &lt; 0 \quad (x_1 &lt; x_2),
+    $$
+    $$
+    x &lt; x_1 \ \text{或} \ x &gt; x_2 \Leftrightarrow (x-x_1)(x-x_2) &gt; 0 \quad (x_1 &lt; x_2).
+    $$</p>
+</li>
+<li>
+<p><strong>含有绝对值的不等式</strong><br />
+    当 <span class="arithmatex">\(a&gt;0\)</span> 时，<br />
+    $$
+    |x| &lt; a \Leftrightarrow x^2 &lt; a^2 \Leftrightarrow -a &lt; x &lt; a,
+    $$
+    $$
+    |x| &gt; a \Leftrightarrow x^2 &gt; a^2 \Leftrightarrow x &gt; a \ \text{或} \ x &lt; -a.
+    $$</p>
+</li>
+<li>
+<p><strong>无理不等式</strong><br />
+    (1) <span class="arithmatex">\(\sqrt{f(x)} &gt; \sqrt{g(x)} \Leftrightarrow \begin{cases} f(x) \geq 0, \\ g(x) \geq 0, \\ f(x) &gt; g(x). \end{cases}\)</span><br />
+    (2) <span class="arithmatex">\(\sqrt{f(x)} &gt; g(x) \Leftrightarrow \begin{cases} f(x) \geq 0, \\ g(x) \geq 0, \\ f(x) &gt; [g(x)]^2, \end{cases}\)</span> 或 <span class="arithmatex">\(\begin{cases} f(x) \geq 0, \\ g(x) &lt; 0. \end{cases}\)</span><br />
+    (3) <span class="arithmatex">\(\sqrt{f(x)} &lt; g(x) \Leftrightarrow \begin{cases} f(x) \geq 0, \\ g(x) &gt; 0, \\ f(x) &lt; [g(x)]^2. \end{cases}\)</span></p>
+</li>
+<li>
+<p><strong>指数不等式与对数不等式</strong><br />
+    (1) 当 <span class="arithmatex">\(a&gt;1\)</span> 时，<br />
+        $$
+        a^{f(x)} &gt; a^{g(x)} \Leftrightarrow f(x) &gt; g(x);
+        $$
+        $$
+        \log_a f(x) &gt; \log_a g(x) \Leftrightarrow \begin{cases} f(x) &gt; 0, \ g(x) &gt; 0, \ f(x) &gt; g(x). \end{cases}
+        $$</p>
+<p>(2) 当 <span class="arithmatex">\(0&lt;a&lt;1\)</span> 时，<br />
+    $$
+    a^{f(x)} &gt; a^{g(x)} \Leftrightarrow f(x) &lt; g(x);
+    $$
+    $$
+    \log_a f(x) &gt; \log_a g(x) \Leftrightarrow \begin{cases} f(x) &gt; 0, \ g(x) &gt; 0, \ f(x) &lt; g(x). \end{cases}
+    $$</p>
+</li>
+</ol>
+<hr />
+<h2 id="07">§07 直线和圆的方程<a class="headerlink" href="#07" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>斜率公式</strong><br />
+    $$
+    k = \frac{y_2-y_1}{x_2-x_1} \quad (P_1(x_1,y_1),\ P_2(x_2,y_2)).
+    $$</p>
+</li>
+<li>
+<p><strong>直线的五种方程</strong><br />
+    (1) 点斜式：<span class="arithmatex">\(y-y_1 = k(x-x_1)\)</span>（直线过点 <span class="arithmatex">\(P_1(x_1,y_1)\)</span>，斜率为 <span class="arithmatex">\(k\)</span>）。</p>
+<p>(2) 斜截式：<span class="arithmatex">\(y = kx + b\)</span>（<span class="arithmatex">\(b\)</span> 为直线在 <span class="arithmatex">\(y\)</span> 轴上的截距）。</p>
+<p>(3) 两点式：<span class="arithmatex">\(\dfrac{y-y_1}{y_2-y_1} = \dfrac{x-x_1}{x_2-x_1}\)</span>（<span class="arithmatex">\(y_1\neq y_2,\ x_1\neq x_2\)</span>）。</p>
+<p>(4) 截距式：<span class="arithmatex">\(\dfrac{x}{a} + \dfrac{y}{b} = 1\)</span>（<span class="arithmatex">\(a,b\)</span> 分别为横、纵截距，<span class="arithmatex">\(a,b\neq0\)</span>）。</p>
+<p>(5) 一般式：<span class="arithmatex">\(Ax+By+C=0\)</span>（<span class="arithmatex">\(A,B\)</span> 不同时为0）。</p>
+</li>
+<li>
+<p><strong>两条直线的平行和垂直</strong><br />
+    (1) 若 <span class="arithmatex">\(l_1: y=k_1 x+b_1,\ l_2: y=k_2 x+b_2\)</span>，则<br />
+        $$
+        l_1 \parallel l_2 \Leftrightarrow k_1 = k_2,\ b_1 \neq b_2;\quad l_1 \perp l_2 \Leftrightarrow k_1 k_2 = -1.
+        $$</p>
+<p>(2) 若 <span class="arithmatex">\(l_1: A_1 x+B_1 y+C_1=0,\ l_2: A_2 x+B_2 y+C_2=0\)</span>，且 <span class="arithmatex">\(A_1,A_2,B_1,B_2\)</span> 都不为零，则<br />
+    $$
+    l_1 \parallel l_2 \Leftrightarrow \frac{A_1}{A_2} = \frac{B_1}{B_2} \neq \frac{C_1}{C_2};
+    $$
+    $$
+    l_1 \perp l_2 \Leftrightarrow A_1 A_2 + B_1 B_2 = 0.
+    $$</p>
+</li>
+<li>
+<p><strong>夹角公式</strong><br />
+    (1) <span class="arithmatex">\(\tan\alpha = \left| \dfrac{k_2-k_1}{1+k_1 k_2} \right|\)</span>（<span class="arithmatex">\(l_1: y=k_1 x+b_1,\ l_2: y=k_2 x+b_2,\ k_1 k_2 \neq -1\)</span>）。</p>
+<p>(2) <span class="arithmatex">\(\tan\alpha = \left| \dfrac{A_1 B_2 - A_2 B_1}{A_1 A_2 + B_1 B_2} \right|\)</span>（<span class="arithmatex">\(l_1: A_1 x+B_1 y+C_1=0,\ l_2: A_2 x+B_2 y+C_2=0,\ A_1 A_2+B_1 B_2 \neq 0\)</span>）。</p>
+<p>当 <span class="arithmatex">\(l_1 \perp l_2\)</span> 时，直线 <span class="arithmatex">\(l_1\)</span> 与 <span class="arithmatex">\(l_2\)</span> 的夹角为 <span class="arithmatex">\(\frac{\pi}{2}\)</span>。</p>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(l_1\)</span> 到 <span class="arithmatex">\(l_2\)</span> 的角公式</strong><br />
+    (1) <span class="arithmatex">\(\tan\alpha = \dfrac{k_2-k_1}{1+k_1 k_2}\)</span>（<span class="arithmatex">\(l_1: y=k_1 x+b_1,\ l_2: y=k_2 x+b_2,\ k_1 k_2 \neq -1\)</span>）。</p>
+<p>(2) <span class="arithmatex">\(\tan\alpha = \dfrac{A_1 B_2 - A_2 B_1}{A_1 A_2 + B_1 B_2}\)</span>（<span class="arithmatex">\(l_1: A_1 x+B_1 y+C_1=0,\ l_2: A_2 x+B_2 y+C_2=0,\ A_1 A_2+B_1 B_2 \neq 0\)</span>）。</p>
+<p>当 <span class="arithmatex">\(l_1 \perp l_2\)</span> 时，直线 <span class="arithmatex">\(l_1\)</span> 到 <span class="arithmatex">\(l_2\)</span> 的角为 <span class="arithmatex">\(\frac{\pi}{2}\)</span>。</p>
+</li>
+<li>
+<p><strong>四种常用直线系方程</strong><br />
+    (1) 定点直线系方程：经过定点 <span class="arithmatex">\(P_0(x_0,y_0)\)</span> 的直线系方程为 <span class="arithmatex">\(y-y_0 = k(x-x_0)\)</span>（除直线 <span class="arithmatex">\(x=x_0\)</span>），或 <span class="arithmatex">\(A(x-x_0)+B(y-y_0)=0\)</span>（<span class="arithmatex">\(A,B\)</span> 为待定系数）。</p>
+<p>(2) 共点直线系方程：经过两直线 <span class="arithmatex">\(l_1: A_1 x+B_1 y+C_1=0,\ l_2: A_2 x+B_2 y+C_2=0\)</span> 的交点的直线系方程为<br />
+    $$
+    (A_1 x+B_1 y+C_1) + \lambda (A_2 x+B_2 y+C_2) = 0 \quad (\text{除 } l_2),
+    $$
+    其中 <span class="arithmatex">\(\lambda\)</span> 为待定系数。</p>
+<p>(3) 平行直线系方程：直线 <span class="arithmatex">\(y=kx+b\)</span> 中当斜率 <span class="arithmatex">\(k\)</span> 一定而 <span class="arithmatex">\(b\)</span> 变动时，表示平行直线系；与直线 <span class="arithmatex">\(Ax+By+C=0\)</span> 平行的直线系方程为 <span class="arithmatex">\(Ax+By+\lambda=0 \ (\lambda \neq C)\)</span>。</p>
+<p>(4) 垂直直线系方程：与直线 <span class="arithmatex">\(Ax+By+C=0\)</span>（<span class="arithmatex">\(A\neq0,\ B\neq0\)</span>）垂直的直线系方程为 <span class="arithmatex">\(Bx-Ay+\lambda=0\)</span>。</p>
+</li>
+<li>
+<p><strong>点到直线的距离</strong><br />
+    $$
+    d = \frac{|Ax_0+By_0+C|}{\sqrt{A^2+B^2}} \quad (\text{点 } P(x_0,y_0),\ \text{直线 } l: Ax+By+C=0).
+    $$</p>
+</li>
+<li>
+<p><strong>二元一次不等式表示的平面区域</strong><br />
+    设直线 <span class="arithmatex">\(l: Ax+By+C=0\)</span>，则  </p>
+<ul>
+<li>
+<p>若 <span class="arithmatex">\(B\neq0\)</span>，当 <span class="arithmatex">\(B\)</span> 与 <span class="arithmatex">\(Ax+By+C\)</span> 同号时，表示直线 <span class="arithmatex">\(l\)</span> 的上方区域；异号时，表示下方区域（同号在上，异号在下）。</p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(B=0\)</span>，当 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(Ax+By+C\)</span> 同号时，表示直线 <span class="arithmatex">\(l\)</span> 的右方区域；异号时，表示左方区域（同号在右，异号在左）。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>二元二次不等式表示的平面区域</strong><br />
+    设曲线 <span class="arithmatex">\(C: (A_1 x+B_1 y+C_1)(A_2 x+B_2 y+C_2)=0\)</span>（<span class="arithmatex">\(A_1 A_2 B_1 B_2 \neq 0\)</span>），则<br />
+<span class="arithmatex">\((A_1 x+B_1 y+C_1)(A_2 x+B_2 y+C_2) &gt; 0\)</span>（或 <span class="arithmatex">\(&lt;0\)</span>）所表示的平面区域是曲线 <span class="arithmatex">\(C\)</span> 所围成的区域（不含边界）。</p>
+</li>
+<li>
+<p><strong>圆的四种方程</strong><br />
+    (1) 标准方程：<span class="arithmatex">\((x-a)^2 + (y-b)^2 = r^2\)</span>。</p>
+<p>(2) 一般方程：<span class="arithmatex">\(x^2+y^2+Dx+Ey+F=0 \ (D^2+E^2-4F&gt;0)\)</span>。</p>
+<p>(3) 参数方程：<span class="arithmatex">\(\begin{cases} x = a + r\cos\theta, \\ y = b + r\sin\theta. \end{cases}\)</span><br />
+(4) 直径式方程：<span class="arithmatex">\((x-x_1)(x-x_2) + (y-y_1)(y-y_2)=0\)</span>（直径的端点为 <span class="arithmatex">\(A(x_1,y_1),\ B(x_2,y_2)\)</span>）。</p>
+</li>
+<li>
+<p><strong>圆系方程</strong><br />
+    (1) 过点 <span class="arithmatex">\(A(x_1,y_1),\ B(x_2,y_2)\)</span> 的圆系方程：<br />
+        $$
+        (x-x_1)(x-x_2) + (y-y_1)(y-y_2) + \lambda[(x-x_1)(y_1-y_2) - (y-y_1)(x_1-x_2)] = 0,
+        $$
+        或 <span class="arithmatex">\((x-x_1)(x-x_2) + (y-y_1)(y-y_2) + \lambda(ax+by+c)=0\)</span>，其中 <span class="arithmatex">\(ax+by+c=0\)</span> 是直线 <span class="arithmatex">\(AB\)</span> 的方程。</p>
+<p>(2) 过直线 <span class="arithmatex">\(l: Ax+By+C=0\)</span> 与圆 <span class="arithmatex">\(C: x^2+y^2+Dx+Ey+F=0\)</span> 的交点的圆系方程：<br />
+    $$
+    x^2+y^2+Dx+Ey+F + \lambda(Ax+By+C) = 0.
+    $$</p>
+<p>(3) 过两圆 <span class="arithmatex">\(C_1: x^2+y^2+D_1 x+E_1 y+F_1=0,\ C_2: x^2+y^2+D_2 x+E_2 y+F_2=0\)</span> 的交点的圆系方程：<br />
+    $$
+    x^2+y^2+D_1 x+E_1 y+F_1 + \lambda(x^2+y^2+D_2 x+E_2 y+F_2) = 0.
+    $$</p>
+</li>
+<li>
+<p><strong>点与圆的位置关系</strong><br />
+    点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 与圆 <span class="arithmatex">\((x-a)^2+(y-b)^2=r^2\)</span> 的位置关系：<br />
+    设 <span class="arithmatex">\(d = \sqrt{(a-x_0)^2 + (b-y_0)^2}\)</span>，则<br />
+<span class="arithmatex">\(d &gt; r \Leftrightarrow\)</span> 点在圆外；<span class="arithmatex">\(d = r \Leftrightarrow\)</span> 点在圆上；<span class="arithmatex">\(d &lt; r \Leftrightarrow\)</span> 点在圆内。</p>
+</li>
+<li>
+<p><strong>直线与圆的位置关系</strong><br />
+    直线 <span class="arithmatex">\(Ax+By+C=0\)</span> 与圆 <span class="arithmatex">\((x-a)^2+(y-b)^2=r^2\)</span> 的位置关系：<br />
+    设 <span class="arithmatex">\(d = \dfrac{|Aa+Bb+C|}{\sqrt{A^2+B^2}}\)</span>，则<br />
+<span class="arithmatex">\(d &gt; r \Leftrightarrow\)</span> 相离 <span class="arithmatex">\(\Leftrightarrow \Delta &lt; 0\)</span>；<br />
+<span class="arithmatex">\(d = r \Leftrightarrow\)</span> 相切 <span class="arithmatex">\(\Leftrightarrow \Delta = 0\)</span>；<br />
+<span class="arithmatex">\(d &lt; r \Leftrightarrow\)</span> 相交 <span class="arithmatex">\(\Leftrightarrow \Delta &gt; 0\)</span>。</p>
+</li>
+<li>
+<p><strong>两圆位置关系的判定</strong><br />
+    设两圆圆心分别为 <span class="arithmatex">\(O_1,O_2\)</span>，半径分别为 <span class="arithmatex">\(r_1,r_2\)</span>，圆心距 <span class="arithmatex">\(d=|O_1 O_2|\)</span>，则  </p>
+<ul>
+<li><span class="arithmatex">\(d &gt; r_1+r_2 \Leftrightarrow\)</span> 外离（4条公切线）；  </li>
+<li><span class="arithmatex">\(d = r_1+r_2 \Leftrightarrow\)</span> 外切（3条公切线）；  </li>
+<li><span class="arithmatex">\(|r_1-r_2| &lt; d &lt; r_1+r_2 \Leftrightarrow\)</span> 相交（2条公切线）；  </li>
+<li><span class="arithmatex">\(d = |r_1-r_2| \Leftrightarrow\)</span> 内切（1条公切线）；  </li>
+<li><span class="arithmatex">\(0 &lt; d &lt; |r_1-r_2| \Leftrightarrow\)</span> 内含（无公切线）。</li>
+</ul>
+</li>
+<li>
+<p><strong>圆的切线方程</strong><br />
+    (1) 已知圆 <span class="arithmatex">\(x^2+y^2+Dx+Ey+F=0\)</span>：<br />
+        - 若已知切点 <span class="arithmatex">\((x_0,y_0)\)</span> 在圆上，则切线方程为<br />
+          $$
+          x_0 x + y_0 y + \frac{D(x_0+x)}{2} + \frac{E(y_0+y)}{2} + F = 0.
+          $$
+        - 过圆外一点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 的切线方程可设为 <span class="arithmatex">\(y-y_0 = k(x-x_0)\)</span>，利用相切条件求 <span class="arithmatex">\(k\)</span>（注意可能有一条切线斜率不存在）。
+        - 斜率为 <span class="arithmatex">\(k\)</span> 的切线方程可设为 <span class="arithmatex">\(y = kx + b\)</span>，利用相切条件求 <span class="arithmatex">\(b\)</span>。</p>
+<p>(2) 已知圆 <span class="arithmatex">\(x^2+y^2=r^2\)</span>：<br />
+    - 过圆上一点 <span class="arithmatex">\(P_0(x_0,y_0)\)</span> 的切线方程为 <span class="arithmatex">\(x_0 x + y_0 y = r^2\)</span>。
+    - 斜率为 <span class="arithmatex">\(k\)</span> 的切线方程为 <span class="arithmatex">\(y = kx \pm r\sqrt{1+k^2}\)</span>。</p>
+</li>
+</ol>
+<hr />
+<h2 id="08">§08 圆锥曲线方程<a class="headerlink" href="#08" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>椭圆的参数方程</strong><br />
+    $$
+    \begin{cases}
+    x = a\cos\theta, \
+    y = b\sin\theta
+    \end{cases}
+    \quad (\frac{x^2}{a^2}+\frac{y^2}{b^2}=1,\ a&gt;b&gt;0).
+    $$</p>
+</li>
+<li>
+<p><strong>椭圆的焦半径公式</strong><br />
+    $$
+    |PF_1| = e\left(x + \frac{a^2}{c}\right),\quad |PF_2| = e\left(\frac{a^2}{c} - x\right).
+    $$</p>
+</li>
+<li>
+<p><strong>椭圆的内部与外部</strong><br />
+    (1) 点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 在椭圆 <span class="arithmatex">\(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\)</span> 内部 <span class="arithmatex">\(\Leftrightarrow \frac{x_0^2}{a^2}+\frac{y_0^2}{b^2} &lt; 1\)</span>。</p>
+<p>(2) 点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 在椭圆 <span class="arithmatex">\(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\)</span> 外部 <span class="arithmatex">\(\Leftrightarrow \frac{x_0^2}{a^2}+\frac{y_0^2}{b^2} &gt; 1\)</span>。</p>
+</li>
+<li>
+<p><strong>椭圆的切线方程</strong><br />
+    (1) 椭圆 <span class="arithmatex">\(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\)</span> 上一点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 处的切线方程为 <span class="arithmatex">\(\frac{x_0 x}{a^2} + \frac{y_0 y}{b^2} = 1\)</span>。</p>
+<p>(2) 过椭圆外一点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 所引两条切线的切点弦方程为 <span class="arithmatex">\(\frac{x_0 x}{a^2} + \frac{y_0 y}{b^2} = 1\)</span>。</p>
+<p>(3) 椭圆 <span class="arithmatex">\(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\)</span> 与直线 <span class="arithmatex">\(Ax+By+C=0\)</span> 相切的条件是 <span class="arithmatex">\(A^2 a^2 + B^2 b^2 = C^2\)</span>。</p>
+</li>
+<li>
+<p><strong>双曲线的焦半径公式</strong><br />
+    $$
+    |PF_1| = e\left(x + \frac{a^2}{c}\right),\quad |PF_2| = e\left(\frac{a^2}{c} - x\right).
+    $$</p>
+</li>
+<li>
+<p><strong>双曲线的内部与外部</strong><br />
+    (1) 点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 在双曲线 <span class="arithmatex">\(\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\)</span> 内部 <span class="arithmatex">\(\Leftrightarrow \frac{x_0^2}{a^2} - \frac{y_0^2}{b^2} &gt; 1\)</span>。</p>
+<p>(2) 点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 在双曲线 <span class="arithmatex">\(\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\)</span> 外部 <span class="arithmatex">\(\Leftrightarrow \frac{x_0^2}{a^2} - \frac{y_0^2}{b^2} &lt; 1\)</span>。</p>
+</li>
+<li>
+<p><strong>双曲线方程与渐近线方程的关系</strong><br />
+    (1) 若双曲线方程为 <span class="arithmatex">\(\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\)</span>，则渐近线方程为 <span class="arithmatex">\(\frac{x^2}{a^2}-\frac{y^2}{b^2}=0\)</span>，即 <span class="arithmatex">\(y = \pm \frac{b}{a}x\)</span>。</p>
+<p>(2) 若渐近线方程为 <span class="arithmatex">\(y = \pm \frac{b}{a}x\)</span>，即 <span class="arithmatex">\(\frac{x}{a} \pm \frac{y}{b} = 0\)</span>，则双曲线可设为 <span class="arithmatex">\(\frac{x^2}{a^2} - \frac{y^2}{b^2} = \lambda\)</span>。</p>
+<p>(3) 若双曲线与 <span class="arithmatex">\(\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\)</span> 有公共渐近线，可设为 <span class="arithmatex">\(\frac{x^2}{a^2} - \frac{y^2}{b^2} = \lambda\)</span>（<span class="arithmatex">\(\lambda&gt;0\)</span> 时焦点在 <span class="arithmatex">\(x\)</span> 轴，<span class="arithmatex">\(\lambda&lt;0\)</span> 时焦点在 <span class="arithmatex">\(y\)</span> 轴）。</p>
+</li>
+<li>
+<p><strong>双曲线的切线方程</strong><br />
+    (1) 双曲线 <span class="arithmatex">\(\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\)</span> 上一点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 处的切线方程为 <span class="arithmatex">\(\frac{x_0 x}{a^2} - \frac{y_0 y}{b^2} = 1\)</span>。</p>
+<p>(2) 过双曲线外一点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 所引两条切线的切点弦方程为 <span class="arithmatex">\(\frac{x_0 x}{a^2} - \frac{y_0 y}{b^2} = 1\)</span>。</p>
+<p>(3) 双曲线 <span class="arithmatex">\(\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\)</span> 与直线 <span class="arithmatex">\(Ax+By+C=0\)</span> 相切的条件是 <span class="arithmatex">\(A^2 a^2 - B^2 b^2 = C^2\)</span>。</p>
+</li>
+<li>
+<p><strong>抛物线的焦半径公式</strong><br />
+     抛物线 <span class="arithmatex">\(y^2=2px\ (p&gt;0)\)</span> 的焦半径 <span class="arithmatex">\(|CF| = x_0 + \frac{p}{2}\)</span>。</p>
+<p>过焦点的弦长 <span class="arithmatex">\(|CD| = x_1 + x_2 + p\)</span>。</p>
+</li>
+<li>
+<p><strong>抛物线上的动点表示</strong><br />
+     抛物线 <span class="arithmatex">\(y^2=2px\)</span> 上的动点可设为 <span class="arithmatex">\(P\left(\frac{y_0^2}{2p}, y_0\right)\)</span> 或 <span class="arithmatex">\(P(2pt^2, 2pt)\)</span> 或 <span class="arithmatex">\(P(x_0, y_0)\)</span>，其中 <span class="arithmatex">\(y_0^2 = 2px_0\)</span>。</p>
+</li>
+<li>
+<p><strong>二次函数的图象与抛物线</strong><br />
+     二次函数 <span class="arithmatex">\(y = ax^2+bx+c\ (a\neq0)\)</span> 的图象是抛物线：<br />
+     (1) 顶点坐标为 <span class="arithmatex">\(\left(-\frac{b}{2a},\ \frac{4ac-b^2}{4a}\right)\)</span>；<br />
+     (2) 焦点的坐标为 <span class="arithmatex">\(\left(-\frac{b}{2a},\ \frac{4ac-b^2+1}{4a}\right)\)</span>；<br />
+     (3) 准线方程为 <span class="arithmatex">\(y = \frac{4ac-b^2-1}{4a}\)</span>。</p>
+</li>
+<li>
+<p><strong>抛物线的内部与外部</strong><br />
+     (1) 点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 在抛物线 <span class="arithmatex">\(y^2=2px\ (p&gt;0)\)</span> 的内部 <span class="arithmatex">\(\Leftrightarrow y_0^2 &lt; 2px_0\)</span>；在外部 <span class="arithmatex">\(\Leftrightarrow y_0^2 &gt; 2px_0\)</span>。</p>
+<p>(2) 点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 在抛物线 <span class="arithmatex">\(y^2=-2px\ (p&gt;0)\)</span> 的内部 <span class="arithmatex">\(\Leftrightarrow y_0^2 &lt; -2px_0\)</span>；在外部 <span class="arithmatex">\(\Leftrightarrow y_0^2 &gt; -2px_0\)</span>。</p>
+<p>(3) 点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 在抛物线 <span class="arithmatex">\(x^2=2py\ (p&gt;0)\)</span> 的内部 <span class="arithmatex">\(\Leftrightarrow x_0^2 &lt; 2py_0\)</span>；在外部 <span class="arithmatex">\(\Leftrightarrow x_0^2 &gt; 2py_0\)</span>。</p>
+<p>(4) 点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 在抛物线 <span class="arithmatex">\(x^2=-2py\ (p&gt;0)\)</span> 的内部 <span class="arithmatex">\(\Leftrightarrow x_0^2 &lt; -2py_0\)</span>；在外部 <span class="arithmatex">\(\Leftrightarrow x_0^2 &gt; -2py_0\)</span>。</p>
+</li>
+<li>
+<p><strong>抛物线的切线方程</strong><br />
+     (1) 抛物线 <span class="arithmatex">\(y^2=2px\)</span> 上一点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 处的切线方程为 <span class="arithmatex">\(y_0 y = p(x+x_0)\)</span>。</p>
+<p>(2) 过抛物线 <span class="arithmatex">\(y^2=2px\)</span> 外一点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 所引两条切线的切点弦方程为 <span class="arithmatex">\(y_0 y = p(x+x_0)\)</span>。</p>
+<p>(3) 抛物线 <span class="arithmatex">\(y^2=2px\ (p&gt;0)\)</span> 与直线 <span class="arithmatex">\(Ax+By+C=0\)</span> 相切的条件是 <span class="arithmatex">\(pB^2 = 2AC\)</span>。</p>
+</li>
+<li>
+<p><strong>两个常见的曲线系方程</strong><br />
+     (1) 过曲线 <span class="arithmatex">\(f_1(x,y)=0,\ f_2(x,y)=0\)</span> 的交点的曲线系方程为 <span class="arithmatex">\(f_1(x,y) + \lambda f_2(x,y)=0\)</span>（<span class="arithmatex">\(\lambda\)</span> 为参数）。</p>
+<p>(2) 共焦点的有心圆锥曲线系方程为 <span class="arithmatex">\(\frac{x^2}{a^2-k} + \frac{y^2}{b^2-k} = 1\)</span>，其中 <span class="arithmatex">\(k &lt; \max\{a^2,b^2\}\)</span>。
+当 <span class="arithmatex">\(k &gt; \min\{a^2,b^2\}\)</span> 时表示椭圆；当 <span class="arithmatex">\(\min\{a^2,b^2\} &lt; k &lt; \max\{a^2,b^2\}\)</span> 时表示双曲线。</p>
+</li>
+<li>
+<p><strong>直线与圆锥曲线相交的弦长公式</strong><br />
+     $$
+     |AB| = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2} = \sqrt{(1+k^2)(x_2-x_1)^2} = |x_1-x_2|\sqrt{1+\tan^2\alpha} = |y_1-y_2|\sqrt{1+\cot^2\alpha},
+     $$</p>
+<p>其中 <span class="arithmatex">\(A(x_1,y_1),\ B(x_2,y_2)\)</span>，<span class="arithmatex">\(\alpha\)</span> 为直线 <span class="arithmatex">\(AB\)</span> 的倾斜角，<span class="arithmatex">\(k\)</span> 为斜率。</p>
+</li>
+<li>
+<p><strong>圆锥曲线的两类对称问题</strong><br />
+     (1) 曲线 <span class="arithmatex">\(F(x,y)=0\)</span> 关于点 <span class="arithmatex">\(P(x_0,y_0)\)</span> 成中心对称的曲线是 <span class="arithmatex">\(F(2x_0-x,\ 2y_0-y)=0\)</span>。</p>
+<p>(2) 曲线 <span class="arithmatex">\(F(x,y)=0\)</span> 关于直线 <span class="arithmatex">\(Ax+By+C=0\)</span> 成轴对称的曲线是<br />
+     $$
+     F\left(x-\frac{2A(Ax+By+C)}{A^2+B^2},\ y-\frac{2B(Ax+By+C)}{A^2+B^2}\right)=0.
+     $$</p>
+</li>
+<li>
+<p><strong>“四线”一方程</strong><br />
+     对于一般的二次曲线 <span class="arithmatex">\(Ax^2+Bxy+Cy^2+Dx+Ey+F=0\)</span>，用 <span class="arithmatex">\(x_0 x\)</span> 代 <span class="arithmatex">\(x^2\)</span>，用 <span class="arithmatex">\(y_0 y\)</span> 代 <span class="arithmatex">\(y^2\)</span>，用 <span class="arithmatex">\(\frac{x_0 y + x y_0}{2}\)</span> 代 <span class="arithmatex">\(xy\)</span>，用 <span class="arithmatex">\(\frac{x_0+x}{2}\)</span> 代 <span class="arithmatex">\(x\)</span>，用 <span class="arithmatex">\(\frac{y_0+y}{2}\)</span> 代 <span class="arithmatex">\(y\)</span>，得到方程<br />
+     $$
+     A x_0 x + B\cdot\frac{x_0 y+x y_0}{2} + C y_0 y + D\cdot\frac{x_0+x}{2} + E\cdot\frac{y_0+y}{2} + F = 0,
+     $$</p>
+<p>该方程对应曲线的切线、切点弦、中点弦、弦中点方程。</p>
+</li>
+</ol>
+<hr />
+<h2 id="09">§09 立体几何<a class="headerlink" href="#09" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>证明直线与直线平行的思考途径</strong><br />
+     (1) 转化为判定共面二直线无交点；<br />
+     (2) 转化为二直线同与第三条直线平行；<br />
+     (3) 转化为线面平行；<br />
+     (4) 转化为线面垂直；<br />
+     (5) 转化为面面平行。</p>
+</li>
+<li>
+<p><strong>证明直线与平面平行的思考途径</strong><br />
+     (1) 转化为直线与平面无公共点；<br />
+     (2) 转化为线线平行；<br />
+     (3) 转化为面面平行。</p>
+</li>
+<li>
+<p><strong>证明平面与平面平行的思考途径</strong><br />
+     (1) 转化为判定二平面无公共点；<br />
+     (2) 转化为线面平行；<br />
+     (3) 转化为线面垂直。</p>
+</li>
+<li>
+<p><strong>证明直线与直线垂直的思考途径</strong><br />
+     (1) 转化为相交垂直；<br />
+     (2) 转化为线面垂直；<br />
+     (3) 转化为线与另一线的射影垂直；<br />
+     (4) 转化为线与形成射影的斜线垂直。</p>
+</li>
+<li>
+<p><strong>证明直线与平面垂直的思考途径</strong><br />
+     (1) 转化为该直线与平面内任一直线垂直；<br />
+     (2) 转化为该直线与平面内相交二直线垂直；<br />
+     (3) 转化为该直线与平面的一条直线平行；<br />
+     (4) 转化为该直线垂直于另一个平行平面；<br />
+     (5) 转化为该直线与两个垂直平面的交线垂直。</p>
+</li>
+<li>
+<p><strong>证明平面与平面垂直的思考途径</strong><br />
+     (1) 转化为判断二面角是直二面角；<br />
+     (2) 转化为线面垂直。</p>
+</li>
+<li>
+<p><strong>空间向量的加法与数乘运算律</strong><br />
+     (1) 加法交换律：<span class="arithmatex">\(\mathbf{a}+\mathbf{b}=\mathbf{b}+\mathbf{a}\)</span>。</p>
+<p>(2) 加法结合律：<span class="arithmatex">\((\mathbf{a}+\mathbf{b})+\mathbf{c}=\mathbf{a}+(\mathbf{b}+\mathbf{c})\)</span>。</p>
+<p>(3) 数乘分配律：<span class="arithmatex">\(\lambda(\mathbf{a}+\mathbf{b})=\lambda\mathbf{a}+\lambda\mathbf{b}\)</span>。</p>
+</li>
+<li>
+<p><strong>平面向量加法的平行四边形法则向空间的推广</strong><br />
+     始点相同且不在同一个平面内的三个向量之和，等于以这三个向量为棱的平行六面体的以公共始点为始点的对角线所表示的向量。</p>
+</li>
+<li>
+<p><strong>共线向量定理</strong><br />
+     对空间任意两个向量 <span class="arithmatex">\(\mathbf{a},\mathbf{b}\ (\mathbf{b}\neq\mathbf{0})\)</span>，<span class="arithmatex">\(\mathbf{a} \parallel \mathbf{b} \Leftrightarrow\)</span> 存在实数 <span class="arithmatex">\(\lambda\)</span> 使 <span class="arithmatex">\(\mathbf{a}=\lambda\mathbf{b}\)</span>。</p>
+<p><span class="arithmatex">\(P,A,B\)</span> 三点共线 <span class="arithmatex">\(\Leftrightarrow \overrightarrow{AP} \parallel \overrightarrow{AB} \Leftrightarrow \overrightarrow{AP}=t\overrightarrow{AB} \Leftrightarrow \overrightarrow{OP}=(1-t)\overrightarrow{OA}+t\overrightarrow{OB}\)</span>。</p>
+<p><span class="arithmatex">\(\overrightarrow{AB} \parallel \overrightarrow{CD} \Leftrightarrow \overrightarrow{AB},\overrightarrow{CD}\)</span> 共线且 <span class="arithmatex">\(AB,CD\)</span> 不共线 <span class="arithmatex">\(\Leftrightarrow \overrightarrow{AB} = \overrightarrow{CD}\)</span> 且 <span class="arithmatex">\(AB,CD\)</span> 不共线。</p>
+</li>
+<li>
+<p><strong>共面向量定理</strong><br />
+     向量 <span class="arithmatex">\(\mathbf{p}\)</span> 与两个不共线的向量 <span class="arithmatex">\(\mathbf{a},\mathbf{b}\)</span> 共面 <span class="arithmatex">\(\Leftrightarrow\)</span> 存在实数对 <span class="arithmatex">\(x,y\)</span> 使 <span class="arithmatex">\(\mathbf{p}=x\mathbf{a}+y\mathbf{b}\)</span>。</p>
+<p>推论：空间一点 <span class="arithmatex">\(P\)</span> 位于平面 <span class="arithmatex">\(MAB\)</span> 内 <span class="arithmatex">\(\Leftrightarrow\)</span> 存在有序实数对 <span class="arithmatex">\(x,y\)</span> 使 <span class="arithmatex">\(\overrightarrow{MP}=x\overrightarrow{MA}+y\overrightarrow{MB}\)</span>，或对空间任一定点 <span class="arithmatex">\(O\)</span>，有 <span class="arithmatex">\(\overrightarrow{OP}=\overrightarrow{OM}+x\overrightarrow{MA}+y\overrightarrow{MB}\)</span>。</p>
+</li>
+<li>
+<p><strong>空间四点共面的条件</strong><br />
+     对空间任一点 <span class="arithmatex">\(O\)</span> 和不共线的三点 <span class="arithmatex">\(A,B,C\)</span>，满足 <span class="arithmatex">\(\overrightarrow{OP}=x\overrightarrow{OA}+y\overrightarrow{OB}+z\overrightarrow{OC}\ (x+y+z=k)\)</span>。</p>
+<ul>
+<li>当 <span class="arithmatex">\(k=1\)</span> 时，对于空间任一点 <span class="arithmatex">\(O\)</span>，总有 <span class="arithmatex">\(P,A,B,C\)</span> 四点共面；  </li>
+<li>当 <span class="arithmatex">\(k\neq1\)</span> 时，若 <span class="arithmatex">\(O\in\)</span> 平面 <span class="arithmatex">\(ABC\)</span>，则 <span class="arithmatex">\(P,A,B,C\)</span> 四点共面；若 <span class="arithmatex">\(O\notin\)</span> 平面 <span class="arithmatex">\(ABC\)</span>，则四点不共面。</li>
+</ul>
+<p><span class="arithmatex">\(A,B,C,D\)</span> 四点共面 <span class="arithmatex">\(\Leftrightarrow \overrightarrow{AD}\)</span> 与 <span class="arithmatex">\(\overrightarrow{AB},\overrightarrow{AC}\)</span> 共面 <span class="arithmatex">\(\Leftrightarrow \overrightarrow{AD}=x\overrightarrow{AB}+y\overrightarrow{AC} \Leftrightarrow \overrightarrow{OD}=(1-x-y)\overrightarrow{OA}+x\overrightarrow{OB}+y\overrightarrow{OC}\)</span>（<span class="arithmatex">\(O\notin\)</span> 平面 <span class="arithmatex">\(ABC\)</span>）。</p>
+</li>
+<li>
+<p><strong>空间向量基本定理</strong><br />
+     如果三个向量 <span class="arithmatex">\(\mathbf{a},\mathbf{b},\mathbf{c}\)</span> 不共面，那么对空间任一向量 <span class="arithmatex">\(\mathbf{p}\)</span>，存在唯一的有序实数组 <span class="arithmatex">\(x,y,z\)</span>，使 <span class="arithmatex">\(\mathbf{p}=x\mathbf{a}+y\mathbf{b}+z\mathbf{c}\)</span>。</p>
+<p>推论：设 <span class="arithmatex">\(O,A,B,C\)</span> 是不共面的四点，则对空间任一点 <span class="arithmatex">\(P\)</span>，都存在唯一的三个有序实数 <span class="arithmatex">\(x,y,z\)</span>，使 <span class="arithmatex">\(\overrightarrow{OP}=x\overrightarrow{OA}+y\overrightarrow{OB}+z\overrightarrow{OC}\)</span>。</p>
+</li>
+<li>
+<p><strong>射影公式</strong><br />
+     已知向量 <span class="arithmatex">\(\overrightarrow{AB}=\mathbf{a}\)</span> 和轴 <span class="arithmatex">\(l\)</span>，<span class="arithmatex">\(\mathbf{e}\)</span> 是 <span class="arithmatex">\(l\)</span> 上与 <span class="arithmatex">\(l\)</span> 同方向的单位向量，作 <span class="arithmatex">\(A\)</span> 在 <span class="arithmatex">\(l\)</span> 上的射影 <span class="arithmatex">\(A'\)</span>，作 <span class="arithmatex">\(B\)</span> 在 <span class="arithmatex">\(l\)</span> 上的射影 <span class="arithmatex">\(B'\)</span>，则<br />
+     $$
+     A'B' = |\overrightarrow{AB}|\cos\langle\mathbf{a},\mathbf{e}\rangle = \mathbf{a}\cdot\mathbf{e}.
+     $$</p>
+</li>
+<li>
+<p><strong>向量的直角坐标运算</strong><br />
+     设 <span class="arithmatex">\(\mathbf{a}=(a_1,a_2,a_3),\ \mathbf{b}=(b_1,b_2,b_3)\)</span>，则<br />
+     (1) <span class="arithmatex">\(\mathbf{a}+\mathbf{b}=(a_1+b_1,\ a_2+b_2,\ a_3+b_3)\)</span>；<br />
+     (2) <span class="arithmatex">\(\mathbf{a}-\mathbf{b}=(a_1-b_1,\ a_2-b_2,\ a_3-b_3)\)</span>；<br />
+     (3) <span class="arithmatex">\(\lambda\mathbf{a}=(\lambda a_1,\ \lambda a_2,\ \lambda a_3)\ (\lambda\in\mathbb{R})\)</span>；<br />
+     (4) <span class="arithmatex">\(\mathbf{a}\cdot\mathbf{b}=a_1 b_1 + a_2 b_2 + a_3 b_3\)</span>。</p>
+</li>
+<li>
+<p><strong>空间两点间的向量</strong><br />
+     $$
+     \overrightarrow{AB} = (x_2-x_1,\ y_2-y_1,\ z_2-z_1) \quad (A(x_1,y_1,z_1),\ B(x_2,y_2,z_2)).
+     $$</p>
+</li>
+<li>
+<p><strong>空间的线线平行或垂直</strong><br />
+     设 <span class="arithmatex">\(\vec{a}=(x_1,y_1,z_1),\ \vec{b}=(x_2,y_2,z_2)\)</span>，则<br />
+     $$
+     \vec{a}\parallel\vec{b} \Leftrightarrow \vec{a}=\lambda\vec{b} \Leftrightarrow \begin{cases} x_1=\lambda x_2, \ y_1=\lambda y_2, \ z_1=\lambda z_2. \end{cases}
+     $$</p>
+<p>$$
+ \vec{a}\perp\vec{b} \Leftrightarrow \vec{a}\cdot\vec{b}=0 \Leftrightarrow x_1 x_2 + y_1 y_2 + z_1 z_2 = 0.
+ $$</p>
+</li>
+<li>
+<p><strong>夹角公式</strong><br />
+     $$
+     \cos\langle\mathbf{a},\mathbf{b}\rangle = \frac{a_1 b_1 + a_2 b_2 + a_3 b_3}{\sqrt{a_1^2+a_2^2+a_3^2}\sqrt{b_1^2+b_2^2+b_3^2}} \quad (\mathbf{a}=(a_1,a_2,a_3),\ \mathbf{b}=(b_1,b_2,b_3)).
+     $$</p>
+<p>推论（三维柯西不等式）：<span class="arithmatex">\((a_1 b_1 + a_2 b_2 + a_3 b_3)^2 \leq (a_1^2+a_2^2+a_3^2)(b_1^2+b_2^2+b_3^2)\)</span>。</p>
+</li>
+<li>
+<p><strong>四面体的对棱所成的角</strong><br />
+     四面体 <span class="arithmatex">\(ABCD\)</span> 中，<span class="arithmatex">\(AC\)</span> 与 <span class="arithmatex">\(BD\)</span> 所成的角为 <span class="arithmatex">\(\theta\)</span>，则<br />
+     $$
+     \cos\theta = \frac{|(AB^2+CD^2) - (BC^2+DA^2)|}{2AC\cdot BD}.
+     $$</p>
+</li>
+<li>
+<p><strong>异面直线所成角</strong><br />
+     $$
+     \cos\theta = |\cos\langle\vec{a},\vec{b}\rangle| = \frac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|} = \frac{|x_1 x_2 + y_1 y_2 + z_1 z_2|}{\sqrt{x_1^2+y_1^2+z_1^2}\sqrt{x_2^2+y_2^2+z_2^2}},
+     $$</p>
+<p>其中 <span class="arithmatex">\(\vec{a},\vec{b}\)</span> 分别为异面直线 <span class="arithmatex">\(a,b\)</span> 的方向向量，<span class="arithmatex">\(\theta\in(0^\circ,90^\circ]\)</span>。</p>
+</li>
+<li>
+<p><strong>直线与平面所成角</strong><br />
+     $$
+     \beta = \arcsin\frac{|\overrightarrow{AB}\cdot\mathbf{m}|}{|\overrightarrow{AB}||\mathbf{m}|} \quad (\mathbf{m}\text{ 为平面 }\alpha\text{ 的法向量}).
+     $$</p>
+</li>
+<li>
+<p><strong>三面角公式（一）</strong><br />
+     若 <span class="arithmatex">\(\triangle ABC\)</span> 所在平面 <span class="arithmatex">\(\beta\)</span> 与过边 <span class="arithmatex">\(AB\)</span> 的平面 <span class="arithmatex">\(\alpha\)</span> 所成的角为 <span class="arithmatex">\(\theta\)</span>，另两边 <span class="arithmatex">\(AC,BC\)</span> 与平面 <span class="arithmatex">\(\alpha\)</span> 所成的角分别为 <span class="arithmatex">\(\theta_1,\theta_2\)</span>，<span class="arithmatex">\(A,B\)</span> 为 <span class="arithmatex">\(\triangle ABC\)</span> 的两个内角，则<br />
+     $$
+     \sin^2\theta_1 + \sin^2\theta_2 = (\sin^2A + \sin^2B)\sin^2\theta.
+     $$</p>
+<p>特别地，当 <span class="arithmatex">\(\angle ACB=90^\circ\)</span> 时，<span class="arithmatex">\(\sin^2\theta_1 + \sin^2\theta_2 = \sin^2\theta\)</span>。</p>
+</li>
+<li>
+<p><strong>三面角公式（二）</strong><br />
+     若 <span class="arithmatex">\(\triangle ABC\)</span> 所在平面 <span class="arithmatex">\(\beta\)</span> 与过边 <span class="arithmatex">\(AB\)</span> 的平面 <span class="arithmatex">\(\alpha\)</span> 所成的角为 <span class="arithmatex">\(\theta\)</span>，另两边 <span class="arithmatex">\(AC,BC\)</span> 与平面 <span class="arithmatex">\(\alpha\)</span> 所成的角分别为 <span class="arithmatex">\(\theta_1,\theta_2\)</span>，<span class="arithmatex">\(A,B\)</span> 为 <span class="arithmatex">\(\triangle ABO\)</span> 的两个内角，则<br />
+     $$
+     \tan^2\theta_1 + \tan^2\theta_2 = (\sin^2A + \sin^2B)\tan^2\theta.
+     $$</p>
+<p>特别地，当 <span class="arithmatex">\(\angle AOB=90^\circ\)</span> 时，<span class="arithmatex">\(\sin^2\theta_1 + \sin^2\theta_2 = \sin^2\theta\)</span>。</p>
+</li>
+<li>
+<p><strong>二面角的平面角</strong><br />
+     $$
+     \theta = \arccos\frac{\mathbf{m}\cdot\mathbf{n}}{|\mathbf{m}||\mathbf{n}|} \quad (\mathbf{m},\mathbf{n}\text{ 分别为二面角两个面的法向量}).
+     $$</p>
+</li>
+<li>
+<p><strong>三余弦定理</strong><br />
+     设 <span class="arithmatex">\(AC\)</span> 是 <span class="arithmatex">\(\alpha\)</span> 内的任一条直线，且 <span class="arithmatex">\(BC\perp AC\)</span>，垂足为 <span class="arithmatex">\(C\)</span>，又设 <span class="arithmatex">\(AO\)</span> 与 <span class="arithmatex">\(AB\)</span> 所成的角为 <span class="arithmatex">\(\theta_1\)</span>，<span class="arithmatex">\(AB\)</span> 与 <span class="arithmatex">\(AC\)</span> 所成的角为 <span class="arithmatex">\(\theta_2\)</span>，<span class="arithmatex">\(AO\)</span> 与 <span class="arithmatex">\(AC\)</span> 所成的角为 <span class="arithmatex">\(\theta\)</span>，则<br />
+     $$
+     \cos\theta = \cos\theta_1 \cos\theta_2.
+     $$</p>
+</li>
+<li>
+<p><strong>三射线定理</strong><br />
+     若夹在平面角为 <span class="arithmatex">\(\phi\)</span> 的二面角间的线段与二面角的两个半平面所成的角是 <span class="arithmatex">\(\theta_1,\theta_2\)</span>，与二面角的棱所成的角是 <span class="arithmatex">\(\theta\)</span>，则有<br />
+     $$
+     \sin^2\phi \sin^2\theta = \sin^2\theta_1 + \sin^2\theta_2 - 2\sin\theta_1\sin\theta_2\cos\phi,
+     $$</p>
+<p>且 <span class="arithmatex">\(|\theta_1-\theta_2| \leq \phi \leq 180^\circ - (\theta_1+\theta_2)\)</span>（当且仅当 <span class="arithmatex">\(\theta=90^\circ\)</span> 时等号成立）。</p>
+</li>
+<li>
+<p><strong>空间两点间的距离公式</strong><br />
+     $$
+     d_{A,B} = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2} \quad (A(x_1,y_1,z_1),\ B(x_2,y_2,z_2)).
+     $$</p>
+</li>
+<li>
+<p><strong>点到直线的距离</strong><br />
+     $$
+     h = \frac{1}{|\mathbf{a}|}\sqrt{(|\mathbf{a}||\mathbf{b}|)^2 - (\mathbf{a}\cdot\mathbf{b})^2} \quad (\text{点 }P\text{ 在直线 }l\text{ 上，方向向量 }\mathbf{a}=\overrightarrow{PA},\ \mathbf{b}=\overrightarrow{PQ}).
+     $$</p>
+</li>
+<li>
+<p><strong>异面直线间的距离</strong><br />
+     $$
+     d = \frac{|\overrightarrow{CD}\cdot\mathbf{n}|}{|\mathbf{n}|} \quad (l_1,l_2\text{ 是两异面直线，公垂向量为 }\mathbf{n},\ C,D\text{ 分别在 }l_1,l_2\text{ 上}).
+     $$</p>
+</li>
+<li>
+<p><strong>点到平面的距离</strong><br />
+     $$
+     d = \frac{|\overrightarrow{AB}\cdot\mathbf{n}|}{|\mathbf{n}|} \quad (\mathbf{n}\text{ 为平面 }\alpha\text{ 的法向量，}AB\text{ 是经过平面 }\alpha\text{ 的一条斜线，}A\in\alpha).
+     $$</p>
+</li>
+<li>
+<p><strong>异面直线上两点距离公式</strong><br />
+     $$
+     d = \sqrt{h^2 + m^2 + n^2 \mp 2mn\cos\theta},
+     $$</p>
+<p>其中两条异面直线 <span class="arithmatex">\(a,b\)</span> 所成的角为 <span class="arithmatex">\(\theta\)</span>，公垂线段 <span class="arithmatex">\(AA'\)</span> 的长为 <span class="arithmatex">\(h\)</span>，在直线 <span class="arithmatex">\(a,b\)</span> 上分别取两点 <span class="arithmatex">\(E,F\)</span>，使 <span class="arithmatex">\(A'E=m,\ AF=n,\ EF=d\)</span>。</p>
+</li>
+<li>
+<p><strong>三个向量和的平方公式</strong><br />
+     $$
+     (\mathbf{a}+\mathbf{b}+\mathbf{c})^2 = \mathbf{a}^2+\mathbf{b}^2+\mathbf{c}^2 + 2\mathbf{a}\cdot\mathbf{b} + 2\mathbf{b}\cdot\mathbf{c} + 2\mathbf{c}\cdot\mathbf{a}.
+     $$</p>
+</li>
+<li>
+<p><strong>线段在三个互相垂直的直线上的射影</strong><br />
+     长度为 <span class="arithmatex">\(l\)</span> 的线段在三条两两互相垂直的直线上的射影长分别为 <span class="arithmatex">\(l_1,l_2,l_3\)</span>，夹角分别为 <span class="arithmatex">\(\theta_1,\theta_2,\theta_3\)</span>，则<br />
+     $$
+     l^2 = l_1^2 + l_2^2 + l_3^2 \Leftrightarrow \cos^2\theta_1+\cos^2\theta_2+\cos^2\theta_3=1 \Leftrightarrow \sin^2\theta_1+\sin^2\theta_2+\sin^2\theta_3=2.
+     $$</p>
+</li>
+<li>
+<p><strong>面积射影定理</strong><br />
+     $$
+     S = \frac{S'}{\cos\theta},
+     $$</p>
+<p>其中 <span class="arithmatex">\(S,S'\)</span> 分别为平面多边形及其射影的面积，<span class="arithmatex">\(\theta\)</span> 为它们所在平面所成的锐二面角。</p>
+</li>
+<li>
+<p><strong>斜棱柱的直截面</strong><br />
+     斜棱柱的侧棱长为 <span class="arithmatex">\(l\)</span>，侧面积和体积分别为 <span class="arithmatex">\(S_{\text{斜棱柱侧}}\)</span> 和 <span class="arithmatex">\(V_{\text{斜棱柱}}\)</span>，直截面的周长和面积分别为 <span class="arithmatex">\(c_1\)</span> 和 <span class="arithmatex">\(S_1\)</span>，则<br />
+     $$
+     S_{\text{斜棱柱侧}} = c_1 l,\quad V_{\text{斜棱柱}} = S_1 l.
+     $$</p>
+</li>
+<li>
+<p><strong>作截面的依据</strong><br />
+     三个平面两两相交，有三条交线，则这三条交线交于一点或互相平行。</p>
+</li>
+<li>
+<p><strong>棱锥的平行截面的性质</strong><br />
+     如果棱锥被平行于底面的平面所截，那么截面与底面相似，截面面积与底面面积的比等于顶点到截面距离与棱锥高的平方比；相应小棱锥与小棱锥的侧面积的比也等于该比的平方。</p>
+</li>
+<li>
+<p><strong>欧拉定理（欧拉公式）</strong><br />
+     $$
+     V + F - E = 2,
+     $$</p>
+<p>其中 <span class="arithmatex">\(V,E,F\)</span> 分别为简单多面体的顶点数、棱数、面数。</p>
+<p>(1) <span class="arithmatex">\(E =\)</span> 各面多边形边数和的一半；若每个面的边数为 <span class="arithmatex">\(n\)</span>，则 <span class="arithmatex">\(E = \frac{1}{2} nF\)</span>。</p>
+<p>(2) 若每个顶点引出的棱数为 <span class="arithmatex">\(m\)</span>，则 <span class="arithmatex">\(E = \frac{1}{2} mV\)</span>。</p>
+</li>
+<li>
+<p><strong>球的体积与表面积</strong><br />
+     球的半径为 <span class="arithmatex">\(R\)</span>，则<br />
+     $$
+     V = \frac{4}{3}\pi R^3,\quad S = 4\pi R^2.
+     $$</p>
+</li>
+<li>
+<p><strong>球的组合体</strong><br />
+     (1) 球与长方体的组合体：长方体的外接球的直径是长方体的体对角线长。</p>
+<p>(2) 球与正方体的组合体：<br />
+     - 正方体的内切球的直径等于棱长；<br />
+     - 正方体的棱切球的直径等于面对角线长；<br />
+     - 正方体的外接球的直径等于体对角线长。</p>
+<p>(3) 球与正四面体的组合体：棱长为 <span class="arithmatex">\(a\)</span> 的正四面体的内切球半径为 <span class="arithmatex">\(\frac{\sqrt{6}}{12}a\)</span>，外接球半径为 <span class="arithmatex">\(\frac{\sqrt{6}}{4}a\)</span>。</p>
+</li>
+<li>
+<p><strong>柱体、锥体的体积</strong><br />
+     $$
+     V_{\text{柱体}} = Sh,\quad V_{\text{锥体}} = \frac{1}{3}Sh,
+     $$</p>
+<p>其中 <span class="arithmatex">\(S\)</span> 为底面积，<span class="arithmatex">\(h\)</span> 为高。</p>
+</li>
+</ol>
+<hr />
+<h2 id="10">§10 排列组合与二项式定理<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>分类计数原理（加法原理）</strong><br />
+     $$
+     N = m_1 + m_2 + \dots + m_n.
+     $$</p>
+</li>
+<li>
+<p><strong>分步计数原理（乘法原理）</strong><br />
+     $$
+     N = m_1 \times m_2 \times \dots \times m_n.
+     $$</p>
+</li>
+<li>
+<p><strong>排列数公式</strong><br />
+     $$
+     A_n^m = n(n-1)\dots(n-m+1) = \frac{n!}{(n-m)!} \quad (n,m\in\mathbb{N}^*,\ m\leq n).
+     $$</p>
+<p>规定 <span class="arithmatex">\(0! = 1\)</span>。</p>
+</li>
+<li>
+<p><strong>排列恒等式</strong><br />
+     (1) <span class="arithmatex">\(A_n^m = (n-m+1) A_n^{m-1}\)</span>。</p>
+<p>(2) <span class="arithmatex">\(A_n^m = \frac{n}{n-m} A_{n-1}^m\)</span>。</p>
+<p>(3) <span class="arithmatex">\(A_n^m = n A_{n-1}^{m-1}\)</span>。</p>
+<p>(4) <span class="arithmatex">\(n A_n^m = A_{n+1}^{m+1} - A_n^m\)</span>。</p>
+<p>(5) <span class="arithmatex">\(A_{n+1}^m = A_n^m + m A_n^{m-1}\)</span>。</p>
+<p>(6) <span class="arithmatex">\(1! + 2\cdot2! + 3\cdot3! + \dots + n\cdot n! = (n+1)! - 1\)</span>。</p>
+</li>
+<li>
+<p><strong>组合数公式</strong><br />
+     $$
+     C_n^m = \frac{A_n^m}{m!} = \frac{n(n-1)\dots(n-m+1)}{1\cdot2\cdots m} = \frac{n!}{m!(n-m)!} \quad (n,m\in\mathbb{N}^*,\ m\leq n).
+     $$</p>
+</li>
+<li>
+<p><strong>组合数的两个性质</strong><br />
+     (1) <span class="arithmatex">\(C_n^m = C_n^{n-m}\)</span>。</p>
+<p>(2) <span class="arithmatex">\(C_n^m + C_n^{m-1} = C_{n+1}^m\)</span>。</p>
+<p>规定 <span class="arithmatex">\(C_n^0 = 1\)</span>。</p>
+</li>
+<li>
+<p><strong>组合恒等式</strong><br />
+     (1) <span class="arithmatex">\(C_n^m = \frac{n-m+1}{m} C_n^{m-1}\)</span>。</p>
+<p>(2) <span class="arithmatex">\(C_n^m = \frac{n}{n-m} C_{n-1}^m\)</span>。</p>
+<p>(3) <span class="arithmatex">\(C_n^m = \frac{n}{m} C_{n-1}^{m-1}\)</span>。</p>
+<p>(4) <span class="arithmatex">\(\sum_{r=0}^n C_n^r = 2^n\)</span>。</p>
+<p>(5) <span class="arithmatex">\(C_r^r + C_{r+1}^r + C_{r+2}^r + \dots + C_n^r = C_{n+1}^{r+1}\)</span>。</p>
+<p>(6) <span class="arithmatex">\(C_n^0 + C_n^1 + C_n^2 + \dots + C_n^n = 2^n\)</span>。</p>
+<p>(7) <span class="arithmatex">\(C_n^1 + C_n^3 + C_n^5 + \dots = C_n^0 + C_n^2 + C_n^4 + \dots = 2^{n-1}\)</span>。</p>
+<p>(8) <span class="arithmatex">\(C_n^1 + 2C_n^2 + 3C_n^3 + \dots + n C_n^n = n 2^{n-1}\)</span>。</p>
+<p>(9) <span class="arithmatex">\(C_m^r C_n^0 + C_m^{r-1} C_n^1 + \dots + C_m^0 C_n^r = C_{m+n}^r\)</span>。</p>
+<p>(10) <span class="arithmatex">\((C_n^0)^2 + (C_n^1)^2 + \dots + (C_n^n)^2 = C_{2n}^n\)</span>。</p>
+</li>
+<li>
+<p><strong>排列数与组合数的关系</strong><br />
+     $$
+     A_n^m = m! \cdot C_n^m.
+     $$</p>
+</li>
+<li>
+<p><strong>单条件排列</strong>（以下大前提：从 <span class="arithmatex">\(n\)</span> 个元素中取 <span class="arithmatex">\(m\)</span> 个元素的排列）<br />
+     (1) “在位”与“不在位”：<br />
+         - 某特元必在某位：有 <span class="arithmatex">\(A_{n-1}^{m-1}\)</span> 种；<br />
+         - 某特元不在某位：有 <span class="arithmatex">\(A_n^m - A_{n-1}^{m-1} = A_{n-1}^1 A_{n-1}^{m-1} = A_{n-1}^m + A_{n-1}^1 A_{n-1}^{m-1}\)</span> 种。</p>
+<p>(2) 紧贴与插空（相邻与不相邻）：<br />
+     - 定位紧贴：<span class="arithmatex">\(k\ (k\leq m\leq n)\)</span> 个元在固定位的排列有 <span class="arithmatex">\(A_k^k A_{n-k}^{m-k}\)</span> 种；<br />
+     - 浮动紧贴：<span class="arithmatex">\(n\)</span> 个元素的全排列把 <span class="arithmatex">\(k\)</span> 个元排在一起的排法有 <span class="arithmatex">\(A_{n-k+1}^{n-k+1} A_k^k\)</span> 种（常用捆绑法）；<br />
+     - 插空：两组元素分别有 <span class="arithmatex">\(k,h\)</span> 个（<span class="arithmatex">\(k\leq h+1\)</span>），合起来全排列，<span class="arithmatex">\(k\)</span> 个的一组互不能挨近的排列数有 <span class="arithmatex">\(A_h^k A_{k+1}^k\)</span> 种。</p>
+<p>(3) 两组元素各相同的插空：<span class="arithmatex">\(m\)</span> 个大球 <span class="arithmatex">\(n\)</span> 个小球排成一列，小球必分开，排法数为<br />
+     $$
+     \frac{A_{m+1}^n}{A_n^n} = C_{m+1}^n \quad (n\leq m+1).
+     $$</p>
+<p>(4) 两组相同元素的排列：两组元素各有 <span class="arithmatex">\(m\)</span> 个和 <span class="arithmatex">\(n\)</span> 个，各组元素分别相同的排列数为 <span class="arithmatex">\(C_{m+n}^n\)</span>。</p>
+</li>
+<li>
+<p><strong>分配问题</strong><br />
+     (1) 平均分组有归属问题：将相异的 <span class="arithmatex">\(mn\)</span> 个物件等分给 <span class="arithmatex">\(m\)</span> 个人，各得 <span class="arithmatex">\(n\)</span> 件，分配方法数为<br />
+         $$
+         N = C_{mn}^n \cdot C_{mn-n}^n \cdot C_{mn-2n}^n \cdots C_{2n}^n \cdot C_n^n = \frac{(mn)!}{(n!)^m}.
+         $$</p>
+<p>(2) 平均分组无归属问题：将相异的 <span class="arithmatex">\(mn\)</span> 个物体等分为无记号或无顺序的 <span class="arithmatex">\(m\)</span> 堆，分配方法数为<br />
+     $$
+     N = \frac{(mn)!}{m!(n!)^m}.
+     $$</p>
+<p>(3) 非平均分组有归属问题：将相异的 <span class="arithmatex">\(P=n_1+n_2+\dots+n_m\)</span> 个物体分给 <span class="arithmatex">\(m\)</span> 个人，分别得到 <span class="arithmatex">\(n_1,n_2,\dots,n_m\)</span> 件（各数不相等），分配方法数为<br />
+     $$
+     N = C_P^{n_1} C_{P-n_1}^{n_2} \cdots C_{n_m}^{n_m} \cdot m! = \frac{P! \cdot m!}{n_1! n_2! \cdots n_m!}.
+     $$</p>
+<p>(4) 非完全平均分组有归属问题：条件同 (3)，但 <span class="arithmatex">\(n_1,n_2,\dots,n_m\)</span> 中有 <span class="arithmatex">\(a,b,c,\dots\)</span> 个相等，则分配方法数为<br />
+     $$
+     N = \frac{P! \cdot m!}{n_1! n_2! \cdots n_m! \cdot (a! b! c! \cdots)}.
+     $$</p>
+<p>(5) 非平均分组无归属问题：将相异的 <span class="arithmatex">\(P=n_1+n_2+\dots+n_m\)</span> 个物体分为任意的 <span class="arithmatex">\(n_1,n_2,\dots,n_m\)</span> 件无记号的 <span class="arithmatex">\(m\)</span> 堆（各数不相等），分配方法数为<br />
+     $$
+     N = \frac{P!}{n_1! n_2! \cdots n_m!}.
+     $$</p>
+<p>(6) 非完全平均分组无归属问题：条件同 (5)，但 <span class="arithmatex">\(n_1,n_2,\dots,n_m\)</span> 中有 <span class="arithmatex">\(a,b,c,\dots\)</span> 个相等，则分配方法数为<br />
+     $$
+     N = \frac{P!}{n_1! n_2! \cdots n_m! \cdot (a! b! c! \cdots)}.
+     $$</p>
+<p>(7) 限定分组有归属问题：将相异的 <span class="arithmatex">\(P=n_1+n_2+\dots+n_m\)</span> 个物体分给甲、乙、丙等 <span class="arithmatex">\(m\)</span> 人，指定甲得 <span class="arithmatex">\(n_1\)</span> 件、乙得 <span class="arithmatex">\(n_2\)</span> 件等，分配方法数为<br />
+     $$
+     N = C_P^{n_1} C_{P-n_1}^{n_2} \cdots C_{n_m}^{n_m} = \frac{P!}{n_1! n_2! \cdots n_m!}.
+     $$</p>
+</li>
+<li>
+<p><strong>“错位问题”及其推广</strong><br />
+     贝努利装错信封问题：<span class="arithmatex">\(n\)</span> 封信与 <span class="arithmatex">\(n\)</span> 个信封全部错位的组合数为<br />
+     $$
+     f(n) = n! \left(\frac{1}{2!} - \frac{1}{3!} + \frac{1}{4!} - \dots + (-1)^n \frac{1}{n!}\right).
+     $$</p>
+<p>推广：<span class="arithmatex">\(n\)</span> 个元素与 <span class="arithmatex">\(n\)</span> 个位置，至少有 <span class="arithmatex">\(m\)</span> 个元素错位的不同组合总数为<br />
+ $$
+ f(n,m) = n! - C_n^1 (n-1)! + C_n^2 (n-2)! - C_n^3 (n-3)! + \dots + (-1)^p C_n^p (n-p)! + \dots + (-1)^m C_n^m (n-m)!.
+ $$</p>
+</li>
+<li>
+<p><strong>不定方程 <span class="arithmatex">\(x_1 + x_2 + \dots + x_n = m\)</span> 的解的个数</strong><br />
+     (1) 正整数解有 <span class="arithmatex">\(C_{m-1}^{n-1}\)</span> 个。</p>
+<p>(2) 非负整数解有 <span class="arithmatex">\(C_{m+n-1}^{n-1}\)</span> 个。</p>
+<p>(3) 满足条件 <span class="arithmatex">\(x_i \geq k\ (k\in\mathbb{N}^*,\ 2\leq i\leq n-1)\)</span> 的非负整数解有 <span class="arithmatex">\(C_{m+n-1-(n-2)(k-1)}^{n-1}\)</span> 个。</p>
+<p>(4) 满足条件 <span class="arithmatex">\(x_i \leq k\)</span> 的正整数解有<br />
+     $$
+     C_{m-1}^{n-1} - C_{n-2}^1 C_{m-1-k}^{n-1} + C_{n-2}^2 C_{m-1-2k}^{n-1} - \dots + (-1)^{n-2} C_{n-2}^{n-2} C_{m-1-(n-2)k}^{n-1}
+     $$
+     个。</p>
+</li>
+<li>
+<p><strong>二项式定理</strong><br />
+     $$
+     (a+b)^n = C_n^0 a^n + C_n^1 a^{n-1} b + C_n^2 a^{n-2} b^2 + \dots + C_n^r a^{n-r} b^r + \dots + C_n^n b^n.
+     $$</p>
+<p>通项公式：<span class="arithmatex">\(T_{r+1} = C_n^r a^{n-r} b^r \quad (r=0,1,2,\dots,n)\)</span>。</p>
+</li>
+</ol>
+<hr />
+<h2 id="1112">§11、12 概率与统计<a class="headerlink" href="#1112" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>等可能性事件的概率</strong><br />
+     $$
+     P(A) = \frac{m}{n}.
+     $$</p>
+</li>
+<li>
+<p><strong>互斥事件 <span class="arithmatex">\(A,B\)</span> 分别发生的概率的和</strong><br />
+     $$
+     P(A+B) = P(A) + P(B).
+     $$</p>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(n\)</span> 个互斥事件分别发生的概率的和</strong><br />
+     $$
+     P(A_1+A_2+\dots+A_n) = P(A_1)+P(A_2)+\dots+P(A_n).
+     $$</p>
+</li>
+<li>
+<p><strong>独立事件 <span class="arithmatex">\(A,B\)</span> 同时发生的概率</strong><br />
+     $$
+     P(A \cdot B) = P(A) \cdot P(B).
+     $$</p>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(n\)</span> 个独立事件同时发生的概率</strong><br />
+     $$
+     P(A_1 \cdot A_2 \cdots A_n) = P(A_1) \cdot P(A_2) \cdots P(A_n).
+     $$</p>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(n\)</span> 次独立重复试验中某事件恰好发生 <span class="arithmatex">\(k\)</span> 次的概率</strong><br />
+     $$
+     P_n(k) = C_n^k p^k (1-p)^{n-k}.
+     $$</p>
+</li>
+<li>
+<p><strong>离散型随机变量的分布列的两个性质</strong><br />
+     (1) <span class="arithmatex">\(P_i \geq 0 \ (i=1,2,\dots)\)</span>；<br />
+     (2) <span class="arithmatex">\(P_1 + P_2 + \dots = 1\)</span>。</p>
+</li>
+<li>
+<p><strong>数学期望</strong><br />
+     $$
+     E\xi = x_1 P_1 + x_2 P_2 + \dots + x_n P_n + \dots
+     $$</p>
+</li>
+<li>
+<p><strong>数学期望的性质</strong><br />
+     (1) <span class="arithmatex">\(E(a\xi+b) = a E\xi + b\)</span>。</p>
+<p>(2) 若 <span class="arithmatex">\(\xi \sim B(n,p)\)</span>，则 <span class="arithmatex">\(E\xi = np\)</span>。</p>
+<p>(3) 若 <span class="arithmatex">\(\xi\)</span> 服从几何分布，且 <span class="arithmatex">\(P(\xi=k)=g(k,p)=q^{k-1}p\)</span>，则 <span class="arithmatex">\(E\xi = \frac{1}{p}\)</span>。</p>
+</li>
+<li>
+<p><strong>方差</strong><br />
+     $$
+     D\xi = (x_1 - E\xi)^2 P_1 + (x_2 - E\xi)^2 P_2 + \dots + (x_n - E\xi)^2 P_n + \dots
+     $$</p>
+</li>
+<li>
+<p><strong>标准差</strong><br />
+     $$
+     \sigma\xi = \sqrt{D\xi}.
+     $$</p>
+</li>
+<li>
+<p><strong>方差的性质</strong><br />
+     (1) <span class="arithmatex">\(D(a\xi+b) = a^2 D\xi\)</span>。</p>
+<p>(2) 若 <span class="arithmatex">\(\xi \sim B(n,p)\)</span>，则 <span class="arithmatex">\(D\xi = np(1-p)\)</span>。</p>
+<p>(3) 若 <span class="arithmatex">\(\xi\)</span> 服从几何分布，且 <span class="arithmatex">\(P(\xi=k)=g(k,p)=q^{k-1}p\)</span>，则 <span class="arithmatex">\(D\xi = \frac{q}{p^2}\)</span>。</p>
+</li>
+<li>
+<p><strong>方差与期望的关系</strong><br />
+     $$
+     D\xi = E\xi^2 - (E\xi)^2.
+     $$</p>
+</li>
+<li>
+<p><strong>正态分布密度函数</strong><br />
+     $$
+     f(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}, \quad x\in(-\infty,+\infty),
+     $$</p>
+<p>其中 <span class="arithmatex">\(\mu,\sigma\ (\sigma&gt;0)\)</span> 分别为均值与标准差。</p>
+</li>
+<li>
+<p><strong>标准正态分布密度函数</strong><br />
+     $$
+     f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}, \quad x\in(-\infty,+\infty).
+     $$</p>
+</li>
+<li>
+<p><strong>正态分布的概率计算</strong><br />
+     对于 <span class="arithmatex">\(X \sim N(\mu,\sigma^2)\)</span>，<br />
+     $$
+     P(X &lt; x) = \Phi\left(\frac{x-\mu}{\sigma}\right),
+     $$</p>
+<p>$$
+ P(x_1 &lt; X &lt; x_2) = \Phi\left(\frac{x_2-\mu}{\sigma}\right) - \Phi\left(\frac{x_1-\mu}{\sigma}\right).
+ $$</p>
+</li>
+<li>
+<p><strong>回归直线方程</strong><br />
+     $$
+     \hat{y} = a + bx,
+     $$</p>
+<p>其中<br />
+ $$
+ b = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x})^2} = \frac{\sum_{i=1}^n x_i y_i - n\bar{x}\bar{y}}{\sum_{i=1}^n x_i^2 - n\bar{x}^2},\quad a = \bar{y} - b\bar{x}.
+ $$</p>
+</li>
+<li>
+<p><strong>相关系数</strong><br />
+     $$
+     r = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i=1}^n (x_i-\bar{x})^2} \sqrt{\sum_{i=1}^n (y_i-\bar{y})^2}} = \frac{\sum_{i=1}^n x_i y_i - n\bar{x}\bar{y}}{\sqrt{(\sum_{i=1}^n x_i^2 - n\bar{x}^2)(\sum_{i=1}^n y_i^2 - n\bar{y}^2)}}.
+     $$</p>
+<p><span class="arithmatex">\(|r| \leq 1\)</span>，且 <span class="arithmatex">\(|r|\)</span> 越接近 1，相关程度越大；越接近 0，相关程度越小。</p>
+</li>
+</ol>
+<hr />
+<h2 id="13">§13 极限<a class="headerlink" href="#13" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>特殊数列的极限</strong><br />
+     (1) <span class="arithmatex">\(\lim_{n\to\infty} q^n = \begin{cases} 0, &amp; |q|&lt;1, \\ 1, &amp; q=1, \\ \text{不存在}, &amp; |q|&gt;1 \text{ 或 } q=-1. \end{cases}\)</span><br />
+     (2) <span class="arithmatex">\(\lim_{n\to\infty} \frac{a_k n^k + a_{k-1} n^{k-1} + \dots + a_0}{b_t n^t + b_{t-1} n^{t-1} + \dots + b_0} = \begin{cases} 0, &amp; k&lt;t, \\ \frac{a_k}{b_t}, &amp; k=t, \\ \text{不存在}, &amp; k&gt;t. \end{cases}\)</span><br />
+     (3) <span class="arithmatex">\(\lim_{n\to\infty} S_n = \frac{a_1}{1-q} \quad (|q|&lt;1,\ S_n\text{ 为等比数列前 }n\text{ 项和})\)</span>。</p>
+</li>
+<li>
+<p><strong>函数的极限定理</strong><br />
+     $$
+     \lim_{x\to x_0} f(x) = a \Leftrightarrow \lim_{x\to x_0^-} f(x) = \lim_{x\to x_0^+} f(x) = a.
+     $$</p>
+</li>
+<li>
+<p><strong>函数的夹逼性定理</strong><br />
+     如果函数 <span class="arithmatex">\(f(x),g(x),h(x)\)</span> 在点 <span class="arithmatex">\(x_0\)</span> 附近满足：<br />
+     (1) <span class="arithmatex">\(g(x) \leq f(x) \leq h(x)\)</span>；<br />
+     (2) <span class="arithmatex">\(\lim_{x\to x_0} g(x) = \lim_{x\to x_0} h(x) = a\)</span>（常数），<br />
+     则 <span class="arithmatex">\(\lim_{x\to x_0} f(x) = a\)</span>。该定理对单侧极限和 <span class="arithmatex">\(x\to\infty\)</span> 也成立。</p>
+</li>
+<li>
+<p><strong>几个常用极限</strong><br />
+     (1) <span class="arithmatex">\(\lim_{n\to\infty} \frac{1}{n} = 0\)</span>；<span class="arithmatex">\(\lim_{n\to\infty} a^n = 0 \ (|a|&lt;1)\)</span>。</p>
+<p>(2) <span class="arithmatex">\(\lim_{x\to x_0} x = x_0\)</span>；<span class="arithmatex">\(\lim_{x\to x_0} \frac{1}{x} = \frac{1}{x_0}\)</span>。</p>
+</li>
+<li>
+<p><strong>两个重要的极限</strong><br />
+     (1) <span class="arithmatex">\(\lim_{x\to 0} \frac{\sin x}{x} = 1\)</span>。</p>
+<p>(2) <span class="arithmatex">\(\lim_{x\to\infty} \left(1+\frac{1}{x}\right)^x = e\)</span>（<span class="arithmatex">\(e \approx 2.718281845\dots\)</span>）。</p>
+</li>
+<li>
+<p><strong>函数极限的四则运算法则</strong><br />
+     若 <span class="arithmatex">\(\lim_{x\to x_0} f(x)=a,\ \lim_{x\to x_0} g(x)=b\)</span>，则<br />
+     $$
+     \lim_{x\to x_0} [f(x)\pm g(x)] = a\pm b,\quad \lim_{x\to x_0} [f(x)\cdot g(x)] = a\cdot b,\quad \lim_{x\to x_0} \frac{f(x)}{g(x)} = \frac{a}{b}\ (b\neq0).
+     $$</p>
+</li>
+<li>
+<p><strong>数列极限的四则运算法则</strong><br />
+     若 <span class="arithmatex">\(\lim_{n\to\infty} a_n = a,\ \lim_{n\to\infty} b_n = b\)</span>，则<br />
+     $$
+     \lim_{n\to\infty} (a_n\pm b_n) = a\pm b,\quad \lim_{n\to\infty} (a_n\cdot b_n) = a\cdot b,\quad \lim_{n\to\infty} \frac{a_n}{b_n} = \frac{a}{b}\ (b\neq0),
+     $$</p>
+<p>且 <span class="arithmatex">\(\lim_{n\to\infty} (c\cdot a_n) = c\cdot a\)</span>（<span class="arithmatex">\(c\)</span> 为常数）。</p>
+</li>
+</ol>
+<hr />
+<h2 id="14">§14 导数<a class="headerlink" href="#14" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>导数定义</strong><br />
+     $$
+     f'(x_0) = \lim_{\Delta x\to0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}.
+     $$</p>
+</li>
+<li>
+<p><strong>瞬时速度</strong><br />
+     $$
+     v = s'(t) = \lim_{\Delta t\to0} \frac{s(t+\Delta t)-s(t)}{\Delta t}.
+     $$</p>
+</li>
+<li>
+<p><strong>瞬时加速度</strong><br />
+     $$
+     a = v'(t) = \lim_{\Delta t\to0} \frac{v(t+\Delta t)-v(t)}{\Delta t}.
+     $$</p>
+</li>
+<li>
+<p><strong>导函数</strong><br />
+     $$
+     f'(x) = \lim_{\Delta x\to0} \frac{f(x+\Delta x)-f(x)}{\Delta x}.
+     $$</p>
+</li>
+<li>
+<p><strong>导数的几何意义</strong><br />
+     函数 <span class="arithmatex">\(y=f(x)\)</span> 在点 <span class="arithmatex">\(x_0\)</span> 处的导数 <span class="arithmatex">\(f'(x_0)\)</span> 是曲线 <span class="arithmatex">\(y=f(x)\)</span> 在点 <span class="arithmatex">\(P(x_0,f(x_0))\)</span> 处切线的斜率，切线方程为<br />
+     $$
+     y - y_0 = f'(x_0)(x-x_0).
+     $$</p>
+</li>
+<li>
+<p><strong>几种常见函数的导数</strong><br />
+     (1) <span class="arithmatex">\(C' = 0\)</span>（<span class="arithmatex">\(C\)</span> 为常数）。</p>
+<p>(2) <span class="arithmatex">\((x^n)' = n x^{n-1} \ (n\in\mathbb{Q})\)</span>。</p>
+<p>(3) <span class="arithmatex">\((\sin x)' = \cos x\)</span>；<span class="arithmatex">\((\cos x)' = -\sin x\)</span>。</p>
+<p>(4) <span class="arithmatex">\((\ln x)' = \frac{1}{x}\)</span>；<span class="arithmatex">\((\log_a x)' = \frac{1}{x\ln a}\)</span>。</p>
+<p>(5) <span class="arithmatex">\((e^x)' = e^x\)</span>；<span class="arithmatex">\((a^x)' = a^x \ln a\)</span>。</p>
+</li>
+<li>
+<p><strong>导数的运算法则</strong><br />
+     (1) <span class="arithmatex">\((u\pm v)' = u' \pm v'\)</span>。</p>
+<p>(2) <span class="arithmatex">\((uv)' = u'v + uv'\)</span>。</p>
+<p>(3) <span class="arithmatex">\(\left(\dfrac{u}{v}\right)' = \dfrac{u'v - uv'}{v^2} \ (v\neq0)\)</span>。</p>
+</li>
+<li>
+<p><strong>复合函数的求导法则</strong><br />
+     设函数 <span class="arithmatex">\(u=\phi(x)\)</span> 在点 <span class="arithmatex">\(x\)</span> 处可导，函数 <span class="arithmatex">\(y=f(u)\)</span> 在对应点 <span class="arithmatex">\(u\)</span> 处可导，则复合函数 <span class="arithmatex">\(y=f(\phi(x))\)</span> 在点 <span class="arithmatex">\(x\)</span> 处可导，且<br />
+     $$
+     y_x' = y_u' \cdot u_x' \quad \text{或} \quad \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}.
+     $$</p>
+</li>
+<li>
+<p><strong>常用的近似计算公式（当 <span class="arithmatex">\(|x|\)</span> 很小时）</strong><br />
+     (1) <span class="arithmatex">\(\sqrt{1+x} \approx 1+\frac{1}{2}x\)</span>；<span class="arithmatex">\(\sqrt[n]{1+x} \approx 1+\frac{1}{n}x\)</span>。</p>
+<p>(2) <span class="arithmatex">\((1+x)^\alpha \approx 1+\alpha x\)</span>；<span class="arithmatex">\(\dfrac{1}{1+x} \approx 1-x\)</span>。</p>
+<p>(3) <span class="arithmatex">\(e^x \approx 1+x\)</span>。</p>
+<p>(4) <span class="arithmatex">\(\ln(1+x) \approx x\)</span>。</p>
+<p>(5) <span class="arithmatex">\(\sin x \approx x\)</span>（<span class="arithmatex">\(x\)</span> 为弧度）。</p>
+<p>(6) <span class="arithmatex">\(\tan x \approx x\)</span>（<span class="arithmatex">\(x\)</span> 为弧度）。</p>
+<p>(7) <span class="arithmatex">\(\arctan x \approx x\)</span>（<span class="arithmatex">\(x\)</span> 为弧度）。</p>
+</li>
+<li>
+<p><strong>判别极值的方法</strong><br />
+     当函数 <span class="arithmatex">\(f(x)\)</span> 在点 <span class="arithmatex">\(x_0\)</span> 处连续时：<br />
+     (1) 如果在 <span class="arithmatex">\(x_0\)</span> 附近的左侧 <span class="arithmatex">\(f'(x)&gt;0\)</span>，右侧 <span class="arithmatex">\(f'(x)&lt;0\)</span>，则 <span class="arithmatex">\(f(x_0)\)</span> 是极大值；<br />
+     (2) 如果在 <span class="arithmatex">\(x_0\)</span> 附近的左侧 <span class="arithmatex">\(f'(x)&lt;0\)</span>，右侧 <span class="arithmatex">\(f'(x)&gt;0\)</span>，则 <span class="arithmatex">\(f(x_0)\)</span> 是极小值。</p>
+</li>
+</ol>
+<hr />
+<h2 id="15">§15 复数<a class="headerlink" href="#15" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>复数的相等</strong><br />
+     $$
+     a+bi = c+di \Leftrightarrow a=c,\ b=d \quad (a,b,c,d\in\mathbb{R}).
+     $$</p>
+</li>
+<li>
+<p><strong>复数的模</strong><br />
+     $$
+     |z| = |a+bi| = \sqrt{a^2+b^2}.
+     $$</p>
+</li>
+<li>
+<p><strong>复数的四则运算法则</strong><br />
+     (1) <span class="arithmatex">\((a+bi)+(c+di) = (a+c)+(b+d)i\)</span>。</p>
+<p>(2) <span class="arithmatex">\((a+bi)-(c+di) = (a-c)+(b-d)i\)</span>。</p>
+<p>(3) <span class="arithmatex">\((a+bi)(c+di) = (ac-bd)+(bc+ad)i\)</span>。</p>
+<p>(4) <span class="arithmatex">\(\dfrac{a+bi}{c+di} = \dfrac{ac+bd}{c^2+d^2} + \dfrac{bc-ad}{c^2+d^2}i \ (c+di\neq0)\)</span>。</p>
+</li>
+<li>
+<p><strong>复数的乘法的运算律</strong><br />
+     交换律：<span class="arithmatex">\(z_1 \cdot z_2 = z_2 \cdot z_1\)</span>；<br />
+     结合律：<span class="arithmatex">\((z_1 \cdot z_2) \cdot z_3 = z_1 \cdot (z_2 \cdot z_3)\)</span>；<br />
+     分配律：<span class="arithmatex">\(z_1 \cdot (z_2+z_3) = z_1 \cdot z_2 + z_1 \cdot z_3\)</span>。</p>
+</li>
+<li>
+<p><strong>复平面上的两点间的距离公式</strong><br />
+     $$
+     d = |z_1-z_2| = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2} \quad (z_1=x_1+y_1 i,\ z_2=x_2+y_2 i).
+     $$</p>
+</li>
+<li>
+<p><strong>向量的垂直</strong><br />
+     非零复数 <span class="arithmatex">\(z_1=a+bi,\ z_2=c+di\)</span> 对应的向量分别是 <span class="arithmatex">\(\overrightarrow{OZ_1},\ \overrightarrow{OZ_2}\)</span>，则<br />
+     $$
+     \overrightarrow{OZ_1} \perp \overrightarrow{OZ_2} \Leftrightarrow z_1 \cdot \overline{z_2} \text{ 为纯虚数} \Leftrightarrow a c + b d = 0.
+     $$</p>
+</li>
+<li>
+<p><strong>实系数一元二次方程的解</strong><br />
+     实系数一元二次方程 <span class="arithmatex">\(ax^2+bx+c=0\)</span>：<br />
+     (1) 若 <span class="arithmatex">\(\Delta=b^2-4ac&gt;0\)</span>，则 <span class="arithmatex">\(x_{1,2}=\dfrac{-b\pm\sqrt{\Delta}}{2a}\)</span>；<br />
+     (2) 若 <span class="arithmatex">\(\Delta=0\)</span>，则 <span class="arithmatex">\(x_1=x_2=-\dfrac{b}{2a}\)</span>；<br />
+     (3) 若 <span class="arithmatex">\(\Delta&lt;0\)</span>，则在复数集内有共轭复数根 <span class="arithmatex">\(x=\dfrac{-b\pm\sqrt{-\Delta}\,i}{2a}\)</span>。</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+  <!-- 添加评论区（只在非首页显示） -->
+  
+    <div class="comments-section" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--md-default-fg-color--lightest);">
+      <h2>📝 评论区</h2>
+      <script src="https://giscus.app/client.js"
+        data-repo="wuzeto/learning-blog"
+        data-repo-id="R_kgDOQ8DSJw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOQ8DSJ84C1GYM"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+    </div>
+  
+
+  <!-- 添加自定义主题色选择器 -->
+  <div class="color-picker-container" style="position: fixed; bottom: 2rem; right: 2rem; z-index: 1000;">
+    <button id="color-picker-toggle" class="md-button md-button--primary" style="border-radius: 50%; width: 48px; height: 48px; background: var(--md-primary-fg-color); color: white; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+      <i class="fas fa-palette"></i>
+    </button>
+    <div id="color-picker-menu" style="display: none; position: absolute; bottom: 60px; right: 0; background: var(--md-default-bg-color); border: 1px solid var(--md-default-fg-color--lightest); border-radius: 8px; padding: 12px; min-width: 150px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+      <h4 style="margin-top: 0; margin-bottom: 8px; font-size: 0.9rem; color: var(--md-default-fg-color);">主题色</h4>
+      <div class="color-options" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
+        <button class="color-option" data-color="cyan" style="width: 32px; height: 32px; background: #00bcd4; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="indigo" style="width: 32px; height: 32px; background: #3f51b5; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="green" style="width: 32px; height: 32px; background: #4caf50; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="orange" style="width: 32px; height: 32px; background: #ff9800; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="pink" style="width: 32px; height: 32px; background: #e91e63; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="purple" style="width: 32px; height: 32px; background: #9c27b0; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="teal" style="width: 32px; height: 32px; background: #009688; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+        <button class="color-option" data-color="blue" style="width: 32px; height: 32px; background: #2196f3; border: 2px solid transparent; border-radius: 50%; cursor: pointer;"></button>
+      </div>
+    </div>
+  </div>
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../elementary1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 基础数学 1">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                基础数学 1
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--next" aria-label="Next: 数列级数">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                数列级数
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2024 未来知识引擎 | 
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">
+  CC BY-NC-SA 4.0
+</a> | 
+构建于 <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+  Material for MkDocs
+</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/wuzeto" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.footer", "navigation.indexes", "palette"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+  
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../javascripts/homepage-effects.js"></script>
+      
+        <script src="../../javascripts/math-config.js"></script>
+      
+    
+  
+  <script>
+    // 主题色切换功能
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleButton = document.getElementById('color-picker-toggle');
+      const colorMenu = document.getElementById('color-picker-menu');
+      const colorOptions = document.querySelectorAll('.color-option');
+      
+      // 切换颜色选择器显示
+      toggleButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        colorMenu.style.display = colorMenu.style.display === 'none' ? 'block' : 'none';
+      });
+      
+      // 点击页面其他区域关闭选择器
+      document.addEventListener('click', function(e) {
+        if (!colorMenu.contains(e.target) && e.target !== toggleButton) {
+          colorMenu.style.display = 'none';
+        }
+      });
+      
+      // 设置主题色
+      colorOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          const color = this.getAttribute('data-color');
+          setThemeColor(color);
+          localStorage.setItem('theme-color', color);
+          colorMenu.style.display = 'none';
+          
+          // 更新选中状态
+          colorOptions.forEach(opt => {
+            opt.style.borderColor = 'transparent';
+          });
+          this.style.borderColor = 'var(--md-accent-fg-color)';
+          this.style.transform = 'scale(1.1)';
+        });
+      });
+      
+      // 从localStorage加载保存的主题色
+      const savedColor = localStorage.getItem('theme-color');
+      if (savedColor) {
+        setThemeColor(savedColor);
+        
+        // 更新选中状态
+        colorOptions.forEach(option => {
+          if (option.getAttribute('data-color') === savedColor) {
+            option.style.borderColor = 'var(--md-accent-fg-color)';
+            option.style.transform = 'scale(1.1)';
+          }
+        });
+      }
+      
+      // 设置主题色的函数
+      function setThemeColor(color) {
+        const root = document.documentElement;
+        const body = document.body;
+        
+        // 根据颜色设置CSS变量和Material主题属性
+        const colors = {
+          cyan: {
+            primary: 'cyan',
+            primaryHex: '#00bcd4',
+            accent: 'deep-purple',
+            accentHex: '#7c4dff'
+          },
+          indigo: {
+            primary: 'indigo',
+            primaryHex: '#3f51b5',
+            accent: 'pink',
+            accentHex: '#e91e63'
+          },
+          green: {
+            primary: 'green',
+            primaryHex: '#4caf50',
+            accent: 'orange',
+            accentHex: '#ff9800'
+          },
+          orange: {
+            primary: 'orange',
+            primaryHex: '#ff9800',
+            accent: 'indigo',
+            accentHex: '#3f51b5'
+          },
+          pink: {
+            primary: 'pink',
+            primaryHex: '#e91e63',
+            accent: 'cyan',
+            accentHex: '#00bcd4'
+          },
+          purple: {
+            primary: 'purple',
+            primaryHex: '#9c27b0',
+            accent: 'green',
+            accentHex: '#4caf50'
+          },
+          teal: {
+            primary: 'teal',
+            primaryHex: '#009688',
+            accent: 'deep-orange',
+            accentHex: '#ff5722'
+          },
+          blue: {
+            primary: 'blue',
+            primaryHex: '#2196f3',
+            accent: 'amber',
+            accentHex: '#ffc107'
+          }
+        };
+        
+        if (colors[color]) {
+          // 更新CSS变量
+          root.style.setProperty('--md-primary-fg-color', colors[color].primaryHex);
+          root.style.setProperty('--md-accent-fg-color', colors[color].accentHex);
+          
+          // 更新Material主题的data属性（关键！）
+          body.setAttribute('data-md-color-primary', colors[color].primary);
+          body.setAttribute('data-md-color-accent', colors[color].accent);
+          
+          // 更新按钮颜色
+          toggleButton.style.background = colors[color].primaryHex;
+          
+          // 触发Material主题更新
+          if (typeof document$.dispatchEvent === 'function') {
+            const event = new CustomEvent('change', {
+              detail: {
+                scheme: body.getAttribute('data-md-color-scheme')
+              }
+            });
+            document$.dispatchEvent(event);
+          }
+          
+          console.log('主题色已切换为:', color, colors[color]);
+        }
+      }
+    });
+  </script>
+
+  </body>
+</html>
