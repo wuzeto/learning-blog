@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>🚇 城市交通全景图 (单线详情版)</title>
+    <title>🚇 城市交通全景图 (智能导航版)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* --- 基础设置 --- */
+        /* --- 基础样式 --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif; 
@@ -16,7 +16,6 @@
         }
         .container { width: 100%; height: 100%; display: flex; flex-direction: column; }
 
-        /* --- 头部 --- */
         .header { 
             background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); 
             padding: 0 15px; height: 50px; flex-shrink: 0;
@@ -25,18 +24,16 @@
         }
         .header h1 { font-size: 16px; color: #2c3e50; margin: 0; }
 
-        /* --- 主界面 --- */
         .main-content { display: flex; flex: 1; position: relative; overflow: hidden; }
         .map-container { flex: 1; background: #eef2f5; position: relative; overflow: hidden; will-change: transform; }
         #map { width: 100%; height: 100%; cursor: grab; --map-scale: 1; outline: none; touch-action: none; }
         #map:active { cursor: grabbing; }
 
-        /* --- LOD 动态显示 --- */
+        /* LOD & 样式 */
         .station-group { transition: opacity 0.2s; }
         .view-level-1 .is-minor { opacity: 0; pointer-events: none; }
         .view-level-2 .is-minor .station-label { opacity: 0; }
 
-        /* 样式定义 */
         .station-label { font-weight: bold; fill: #2c3e50; font-size: calc(14px / var(--map-scale)); text-shadow: 1px 1px 0 #fff; pointer-events: none; }
         .station-icon-text { font-size: calc(22px / var(--map-scale)); cursor: pointer; stroke: white; stroke-width: 2px; paint-order: stroke fill; }
         .station-icon-circle { stroke: #555; stroke-width: 2; cursor: pointer; }
@@ -49,7 +46,7 @@
         path.rail-hollow { stroke: #eef2f5 !important; stroke-width: 5; stroke-linecap: square !important; }
         path.rail-ties { stroke-width: 4; stroke-dasharray: 6, 6; stroke-linecap: butt !important; }
 
-        /* --- 侧边栏 --- */
+        /* 侧边栏 */
         .control-panel { 
             width: 320px; flex-shrink: 0; background: white; padding: 15px; 
             overflow-y: auto; box-shadow: -2px 0 15px rgba(0, 0, 0, 0.05); 
@@ -66,57 +63,32 @@
         }
         .main-content.collapsed .toggle-sidebar-btn { right: 0; }
 
-        /* 线路列表项 (新布局) */
         .line-control { display: flex; align-items: stretch; margin-bottom: 8px; background: #f8f9fa; border-radius: 6px; overflow: hidden; border: 1px solid transparent; transition: all 0.2s; }
         .line-control.active { border-color: #3498db; background: #eef7ff; }
-
         .line-toggle-area { flex: 1; display: flex; align-items: center; padding: 10px; cursor: pointer; }
-        .line-toggle-area:hover { background: rgba(0,0,0,0.02); }
+        .line-detail-btn { width: 40px; display: flex; align-items: center; justify-content: center; border-left: 1px solid #eee; cursor: pointer; color: #3498db; font-size: 16px; }
         .line-color { width: 14px; height: 14px; border-radius: 3px; margin-right: 10px; flex-shrink: 0; }
         .line-info { flex: 1; }
         .line-name { font-weight: bold; font-size: 14px; }
         .line-stats { font-size: 11px; color: #888; }
 
-        .line-detail-btn { 
-            width: 40px; display: flex; align-items: center; justify-content: center; 
-            border-left: 1px solid #eee; cursor: pointer; color: #3498db; font-size: 16px;
-        }
-        .line-detail-btn:hover { background: #3498db; color: white; }
-
-        /* --- [新增] 单线详情模态框 (Strip Map) --- */
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5); z-index: 3000;
-            display: none; align-items: center; justify-content: center;
-            backdrop-filter: blur(5px);
-        }
-        .modal-container {
-            background: white; width: 95%; max-width: 1000px; height: 80%;
-            border-radius: 12px; display: flex; flex-direction: column;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden;
-            animation: slideUp 0.3s ease;
-        }
+        /* 单线详情模态框 */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 3000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
+        .modal-container { background: white; width: 95%; max-width: 1000px; height: 80%; border-radius: 12px; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden; animation: slideUp 0.3s ease; }
         @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-
-        .modal-header {
-            padding: 15px 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;
-            background: #f8f9fa;
-        }
+        .modal-header { padding: 15px 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; background: #f8f9fa; }
         .modal-title { font-size: 18px; font-weight: bold; display: flex; align-items: center; gap: 10px; }
         .modal-close { cursor: pointer; font-size: 24px; color: #999; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
-        .modal-close:hover { background: #eee; color: #333; }
-
         .modal-body { flex: 1; overflow-x: auto; overflow-y: hidden; position: relative; padding: 40px 20px; background: #fff; }
-        /* 隐藏滚动条但保留滚动功能 */
         .modal-body::-webkit-scrollbar { height: 8px; }
         .modal-body::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
 
-        /* 单线图 SVG 样式 */
+        /* 单线图样式 */
         .strip-station-group { cursor: pointer; transition: opacity 0.2s; }
         .strip-station-group:hover { opacity: 0.7; }
-        .strip-line-path { fill: none; stroke-linecap: round; }
         .strip-label { font-size: 12px; font-weight: bold; fill: #333; dominant-baseline: middle; text-anchor: start; }
         .strip-tag { font-size: 10px; fill: #666; }
+        .strip-info-text { font-size: 10px; fill: #888; text-anchor: middle; }
 
         /* 弹窗 & 搜索 */
         .map-popup { position: absolute; display: none; background: rgba(255,255,255,0.96); padding: 15px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); z-index: 2000; min-width: 220px; border-left: 5px solid #3498db; pointer-events: auto; transform: translate(-50%, -110%); -webkit-user-select: text; user-select: text; }
@@ -152,12 +124,12 @@
                 </div>
 
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:15px;">
-                    <button onclick="resetView()" style="padding:10px; background:#3498db; color:white; border:none; border-radius:6px; cursor:pointer;">复位地图</button>
+                    <button onclick="resetView()" style="padding:10px; background:#3498db; color:white; border:none; border-radius:6px; cursor:pointer;">复位(0,0)</button>
                     <button id="mode-btn" onclick="toggleIconMode()" style="padding:10px; background:#8e44ad; color:white; border:none; border-radius:6px; cursor:pointer;">切换模式</button>
                 </div>
 
                 <div id="station-info" style="padding:12px; background:#fff; border:1px solid #eee; border-radius:6px; margin-bottom:15px; border-left:4px solid #3498db; font-size:13px; color:#666;">
-                    点击站点查看详情，点击列表右侧图标查看单线图。
+                    点击站点查看详情，点击列表右侧图标查看单线耗时。
                 </div>
 
                 <h4 style="margin-bottom:10px;">线路列表</h4>
@@ -172,8 +144,7 @@
                 <div class="modal-title" id="modalTitle"></div>
                 <div class="modal-close" onclick="closeLineModal()">×</div>
             </div>
-            <div class="modal-body" id="modalBody">
-                </div>
+            <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
 
@@ -4857,7 +4828,10 @@
         const mapContainer = document.getElementById('mapContainer');
         const popup = document.getElementById('map-popup');
 
-        // --- 核心渲染与LOD ---
+        // --- 坐标转换 (全网图) ---
+        // 假设 (0,0) 对应 SVG 中心点附近，这里保留之前的映射逻辑，但 resetView 会修正偏移
+        function getPos(s) { return { x: (s.x + 6000) * 0.08, y: (s.y + 5000) * 0.08 }; }
+
         function updateViewLevel() {
             mapContainer.classList.remove('view-level-1', 'view-level-2', 'view-level-3');
             const l = mapState.scale < 0.6 ? 1 : (mapState.scale < 1.8 ? 2 : 3);
@@ -4872,9 +4846,20 @@
             if(anim) setTimeout(updateLabelsPosition, 300); else if(!mapState.rafId) updateLabelsPosition();
         }
 
-        // --- 线路与站点绘制 (全网图) ---
-        function getPos(s) { return { x: (s.x + 6000) * 0.08, y: (s.y + 5000) * 0.08 }; }
-        function getStationIcon(id) { if(!id) return '㉿'; const m={'H':'₪','S':'㉿','M':'Ⓜ','U':'ℳ','K':'ʍ','T':'₥','B':'Ⓑ'}; return m[id.charAt(0).toUpperCase()]||'㉿'; }
+        // --- 核心：复位到 0,0 ---
+        function resetView() {
+            mapState.scale = 0.8;
+            // 计算数据坐标 (0,0) 在 SVG 中的位置
+            const zeroPos = getPos({x:0, y:0});
+            const r = svg.getBoundingClientRect();
+            // 让 SVG 的 zeroPos 点移动到 屏幕中心
+            mapState.translateX = r.width/2 - zeroPos.x * mapState.scale;
+            mapState.translateY = r.height/2 - zeroPos.y * mapState.scale;
+            updateTransform(true);
+        }
+
+        // --- 绘制全网图 ---
+        function getStationIcon(id) { if(!id) return '㉿'; const m={'H':'₪','M':'㉿','S':'Ⓜ','U':'ℳ','K':'ʍ','T':'₥','B':'Ⓑ'}; return m[id.charAt(0).toUpperCase()]||'㉿'; }
 
         function renderMap() {
             mapGroup.innerHTML = ''; const sMap={}, segs=[];
@@ -4929,79 +4914,83 @@
             });
         }
 
-        // --- [核心功能] 单线详情图 (Strip Map) ---
+        // --- [核心功能升级] 单线详情图 (含测距与时间) ---
         function openLineDetail(lineId) {
             const line = subwayData.lines[lineId];
             if (!line) return;
+            const isHSR = lineId.startsWith('H');
+            const speed = isHSR ? 1333 : 833; // m/min (80km/h vs 50km/h)
 
             const modal = document.getElementById('lineModal');
             document.getElementById('modalTitle').innerHTML = `
                 <div style="width:20px;height:20px;background:${line.color};border-radius:4px;margin-right:10px;"></div>
-                ${line.name} <span style="font-size:14px;color:#666;margin-left:10px;font-weight:normal">全程 ${line.stations.length} 站</span>
+                ${line.name} <span style="font-size:14px;color:#666;margin-left:10px;font-weight:normal">限速: ${isHSR?'80':'40-60'} km/h</span>
             `;
 
-            // 生成 SVG 路线图
-            const spacing = 100; // 站点间距
-            const marginLeft = 50;
-            const marginTop = 150;
-            const width = line.stations.length * spacing + 200;
-            const isHSR = lineId.startsWith('H');
+            const spacing = 120; // 增大间距以容纳文字
+            const marginLeft = 50; const marginTop = 150;
+            const width = line.stations.length * spacing + 100;
 
             let svgContent = `<svg width="${width}" height="300" style="min-width:100%;">`;
-
-            // 1. 绘制连接线
             const yPos = marginTop;
-            const lineClass = isHSR ? 'rail-bed' : 'metro-base'; // 简化样式，详情页只画一条粗线
             const dashAttr = isHSR ? 'stroke-dasharray="10,5"' : '';
 
-            // 底线
-            svgContent += `<path d="M ${marginLeft} ${yPos} L ${marginLeft + (line.stations.length-1)*spacing} ${yPos}" stroke="${line.color}" stroke-width="${isHSR?6:8}" ${dashAttr} fill="none" />`;
+            // 绘制底线 (分段绘制以便插入文字)
+            for (let i = 0; i < line.stations.length - 1; i++) {
+                const s1 = line.stations[i];
+                const s2 = line.stations[i+1];
+                const cx1 = marginLeft + i * spacing;
+                const cx2 = marginLeft + (i+1) * spacing;
 
-            // 2. 绘制站点
+                // 计算距离 (直线距离)
+                const dist = Math.sqrt(Math.pow(s2.x - s1.x, 2) + Math.pow(s2.y - s1.y, 2));
+                const distDisplay = dist > 1000 ? (dist/1000).toFixed(1) + 'kb' : Math.round(dist) + 'b';
+
+                // 计算时间 (距离/速度 + 0.5分停站缓冲)
+                const time = (dist / speed) + 0.5;
+                const timeDisplay = Math.ceil(time) + '分';
+
+                // 路段线
+                svgContent += `<line x1="${cx1}" y1="${yPos}" x2="${cx2}" y2="${yPos}" stroke="${line.color}" stroke-width="${isHSR?6:8}" ${dashAttr} />`;
+
+                // 路段信息 (距离和时间)
+                svgContent += `
+                    <text x="${(cx1+cx2)/2}" y="${yPos-8}" text-anchor="middle" class="strip-info-text" font-weight="bold" fill="#333">${distDisplay}</text>
+                    <text x="${(cx1+cx2)/2}" y="${yPos+14}" text-anchor="middle" class="strip-info-text" fill="#666">~${timeDisplay}</text>
+                `;
+            }
+
+            // 绘制站点
             line.stations.forEach((s, index) => {
                 const cx = marginLeft + index * spacing;
-                const isTransfer = subwayData.lines[lineId].stations.find(st=>st.name===s.name).transfer; 
-                // 注意：这里需要全网搜索该站点的换乘信息
-                // 简化逻辑：重新扫描全网数据找该站点的所有线路
+                // 查找换乘
                 let transfers = [];
                 Object.entries(subwayData.lines).forEach(([lid, l]) => {
-                    if (lid !== lineId && l.stations.some(st => st.name === s.name)) {
-                        transfers.push({id: lid, color: l.color});
-                    }
+                    if (lid !== lineId && l.stations.some(st => st.name === s.name)) transfers.push(l.color);
                 });
 
                 const elevTag = s.elevation >= 60 ? '高架' : '地下';
 
                 // 站点圈
                 svgContent += `<circle cx="${cx}" cy="${yPos}" r="${transfers.length>0?8:6}" fill="white" stroke="${line.color}" stroke-width="3" />`;
-
-                // 站名 (旋转45度)
+                // 站名
+                svgContent += `<text x="${cx}" y="${yPos + 35}" transform="rotate(45, ${cx}, ${yPos + 35})" class="strip-label" style="cursor:pointer" onclick="locate('${s.name}');closeLineModal()">${s.name}</text>`;
+                // ID 和 海拔
                 svgContent += `
-                    <text x="${cx}" y="${yPos + 25}" transform="rotate(45, ${cx}, ${yPos + 25})" class="strip-label" style="cursor:pointer" onclick="locate('${s.name}');closeLineModal()">${s.name}</text>
+                    <text x="${cx}" y="${yPos - 25}" text-anchor="middle" class="strip-tag" font-weight="bold">${s.id}</text>
+                    <text x="${cx}" y="${yPos - 38}" text-anchor="middle" font-size="9" fill="#999">${elevTag}</text>
                 `;
-
-                // 上方信息：海拔 + ID
-                svgContent += `
-                    <text x="${cx}" y="${yPos - 20}" text-anchor="middle" class="strip-tag">${s.id}</text>
-                    <rect x="${cx-15}" y="${yPos - 45}" width="30" height="16" rx="4" fill="#eee" />
-                    <text x="${cx}" y="${yPos - 37}" text-anchor="middle" font-size="9" fill="#666" dy="3">${elevTag}</text>
-                `;
-
-                // 换乘标识 (显示在圆圈下方)
+                // 换乘标记
                 if (transfers.length > 0) {
-                    let badgeY = yPos + 80; // 避开站名
-                    transfers.forEach((t, i) => {
-                        svgContent += `<rect x="${cx-2}" y="${badgeY + i*14}" width="14" height="6" rx="2" fill="${t.color}" />`;
-                    });
+                    let badgeY = yPos + 80;
+                    transfers.forEach((c, i) => { svgContent += `<rect x="${cx-2}" y="${badgeY + i*8}" width="14" height="4" rx="1" fill="${c}" />`; });
                 }
-
-                // 点击区域
-                svgContent += `<rect x="${cx-15}" y="0" width="30" height="300" fill="transparent" style="cursor:pointer" onclick="locate('${s.name}');closeLineModal()" title="点击在地图上定位" />`;
+                // 点击遮罩
+                svgContent += `<rect x="${cx-15}" y="0" width="30" height="300" fill="transparent" style="cursor:pointer" onclick="locate('${s.name}');closeLineModal()" title="定位" />`;
             });
 
             svgContent += `</svg>`;
             document.getElementById('modalBody').innerHTML = svgContent;
-
             modal.style.display = 'flex';
         }
 
@@ -5012,106 +5001,55 @@
             const c = document.getElementById('line-controls'); c.innerHTML='';
             Object.entries(subwayData.lines).sort((a,b)=>parseInt(a[0].replace(/\D/g,''))-parseInt(b[0].replace(/\D/g,''))).forEach(([id,l])=>{
                 const d = document.createElement('div'); d.className = `line-control ${mapState.activeLines.has(id)?'active':''}`;
-
-                // 左侧：开关
                 const toggle = document.createElement('div'); toggle.className='line-toggle-area';
                 toggle.innerHTML = `<div class="line-color" style="background:${l.color}"></div><div class="line-info"><div class="line-name">${l.name}</div><div class="line-stats">${l.stations.length}站</div></div>`;
                 toggle.onclick = () => { mapState.activeLines.has(id)?mapState.activeLines.delete(id):mapState.activeLines.add(id); d.className=`line-control ${mapState.activeLines.has(id)?'active':''}`; renderMap(); };
-
-                // 右侧：详情按钮
                 const detail = document.createElement('div'); detail.className='line-detail-btn';
-                detail.innerHTML = '<i class="fas fa-file-alt"></i>';
-                detail.title = "查看单线路线图";
-                detail.onclick = (e) => { e.stopPropagation(); openLineDetail(id); };
-
-                d.appendChild(toggle);
-                d.appendChild(detail);
-                c.appendChild(d);
+                detail.innerHTML = '<i class="fas fa-file-alt"></i>'; detail.onclick = (e) => { e.stopPropagation(); openLineDetail(id); };
+                d.appendChild(toggle); d.appendChild(detail); c.appendChild(d);
             });
         }
 
         // --- 通用交互 ---
         function showInfo(s, e) {
             if(e) e.stopPropagation();
-            // 查找所有经过该站的线路
-            let linesInfo = [];
-            Object.entries(subwayData.lines).forEach(([lid, l]) => {
-                if (l.stations.some(st => st.name === s.name)) linesInfo.push({id:lid, name:l.name, color:l.color});
-            });
-
-            const html = `
-                <h3 style="border-left:4px solid ${s.color};padding-left:8px;margin-bottom:8px;">${s.name}</h3>
-                <p><strong>ID:</strong> ${s.id}</p>
-                <p><strong>海拔:</strong> ${s.elevation}m ${s.elevation>=60?'<span style="color:#d35400">高架</span>':'<span style="color:#2980b9">地下</span>'}</p>
-                <div style="margin-top:5px;font-size:12px;">
-                    <strong>线路:</strong><br>
-                    ${linesInfo.map(l=>`<span style="display:inline-block;background:${l.color};color:#fff;padding:1px 4px;border-radius:3px;margin:2px 2px 0 0;font-size:10px;">${l.name}</span>`).join('')}
-                </div>
-                <div style="margin-top:8px;text-align:right;">
-                    <a href="javascript:void(0)" onclick="closePopup();" style="color:#999;font-size:12px;text-decoration:none;">关闭</a>
-                </div>
-            `;
-            document.getElementById('popup-content').innerHTML = html;
-            document.getElementById('station-info').innerHTML = html;
-
-            let cx, cy;
-            if(e) { cx=e.clientX||e.touches[0].clientX; cy=e.clientY||e.touches[0].clientY; }
-            else { const r=mapContainer.getBoundingClientRect(); cx=r.left+r.width/2; cy=r.top+r.height/2; }
+            let linesInfo = []; Object.entries(subwayData.lines).forEach(([lid, l]) => { if (l.stations.some(st => st.name === s.name)) linesInfo.push({id:lid, name:l.name, color:l.color}); });
+            const html = `<h3 style="border-left:4px solid ${s.color};padding-left:8px;margin-bottom:8px;">${s.name}</h3><p><strong>ID:</strong> ${s.id}</p><p><strong>海拔:</strong> ${s.elevation}m ${s.elevation>=60?'<span style="color:#d35400">高架</span>':'<span style="color:#2980b9">地下</span>'}</p><div style="margin-top:5px;font-size:12px;"><strong>线路:</strong><br>${linesInfo.map(l=>`<span style="display:inline-block;background:${l.color};color:#fff;padding:1px 4px;border-radius:3px;margin:2px 2px 0 0;font-size:10px;">${l.name}</span>`).join('')}</div><div style="margin-top:8px;text-align:right;"><a href="javascript:void(0)" onclick="closePopup();" style="color:#999;font-size:12px;text-decoration:none;">关闭</a></div>`;
+            document.getElementById('popup-content').innerHTML = html; document.getElementById('station-info').innerHTML = html;
+            let cx, cy; if(e) { cx=e.clientX||e.touches[0].clientX; cy=e.clientY||e.touches[0].clientY; } else { const r=mapContainer.getBoundingClientRect(); cx=r.left+r.width/2; cy=r.top+r.height/2; }
             popup.style.display='block'; popup.style.left=cx+'px'; popup.style.top=cy+'px';
         }
 
         function handleSearch() {
-            const v = document.getElementById('search-input').value.trim().toLowerCase();
-            const res = document.getElementById('search-results');
+            const v = document.getElementById('search-input').value.trim().toLowerCase(); const res = document.getElementById('search-results');
             if(!v) { res.style.display='none'; return; }
-            let hits = [];
-            Object.values(subwayData.lines).forEach(l=>{ l.stations.forEach(s=>{ if(s.name.toLowerCase().includes(v)) hits.push({...s, lname:l.name, lcolor:l.color}); }); });
-            const uniqueHits = []; const names = new Set();
-            hits.forEach(h=>{ if(!names.has(h.name)){ uniqueHits.push(h); names.add(h.name); } }); // 去重
+            let hits = []; Object.values(subwayData.lines).forEach(l=>{ l.stations.forEach(s=>{ if(s.name.toLowerCase().includes(v)) hits.push({...s, lname:l.name, lcolor:l.color}); }); });
+            const uniqueHits = []; const names = new Set(); hits.forEach(h=>{ if(!names.has(h.name)){ uniqueHits.push(h); names.add(h.name); } });
             if(!uniqueHits.length) { res.style.display='none'; return; }
-            res.innerHTML = uniqueHits.map(s=>`<div class="search-item" onclick="locate('${s.name}')">${s.name} <small style="color:${s.lcolor}">${s.lname}</small></div>`).join('');
-            res.style.display='block';
+            res.innerHTML = uniqueHits.map(s=>`<div class="search-item" onclick="locate('${s.name}')">${s.name} <small style="color:${s.lcolor}">${s.lname}</small></div>`).join(''); res.style.display='block';
         }
 
         function locate(name) {
             document.getElementById('search-results').style.display='none'; document.getElementById('search-input').value=name;
             for(const l of Object.values(subwayData.lines)) {
                 const s = l.stations.find(st=>st.name===name);
-                if(s) {
-                    const p = getPos(s); mapState.scale=2.5; 
-                    const r = svg.getBoundingClientRect();
-                    mapState.translateX=r.width/2 - p.x*2.5; mapState.translateY=r.height/2 - p.y*2.5;
-                    updateTransform(true);
-                    setTimeout(()=>showInfo({...s, lines:[], color:l.color}), 350);
-                    break;
-                }
+                if(s) { const p = getPos(s); mapState.scale=2.5; const r = svg.getBoundingClientRect(); mapState.translateX=r.width/2 - p.x*2.5; mapState.translateY=r.height/2 - p.y*2.5; updateTransform(true); setTimeout(()=>showInfo({...s, lines:[], color:l.color}), 350); break; }
             }
         }
 
-        // 事件监听
-        function applyZoom(f,cx,cy,tr=true){ 
-            const os=mapState.scale; let ns=Math.max(0.1,Math.min(10,os*f)); 
-            mapState.translateX=cx-(cx-mapState.translateX)*(ns/os); mapState.translateY=cy-(cy-mapState.translateY)*(ns/os); mapState.scale=ns; 
-            if(!mapState.rafId) mapState.rafId=requestAnimationFrame(()=>{updateTransform(tr);mapState.rafId=null;}); 
-        }
+        function applyZoom(f,cx,cy,tr=true){ const os=mapState.scale; let ns=Math.max(0.1,Math.min(10,os*f)); mapState.translateX=cx-(cx-mapState.translateX)*(ns/os); mapState.translateY=cy-(cy-mapState.translateY)*(ns/os); mapState.scale=ns; if(!mapState.rafId) mapState.rafId=requestAnimationFrame(()=>{updateTransform(tr);mapState.rafId=null;}); }
         svg.addEventListener('wheel', e=>{ e.preventDefault(); popup.style.display='none'; const r=svg.getBoundingClientRect(); applyZoom(e.deltaY>0?0.9:1.1,e.clientX-r.left,e.clientY-r.top,false); },{passive:false});
-
-        let isMD=false;
-        svg.addEventListener('mousedown',e=>{isMD=true;mapState.lastX=e.clientX;mapState.lastY=e.clientY;mapGroup.style.cursor='grabbing';popup.style.display='none';});
+        let isMD=false; svg.addEventListener('mousedown',e=>{isMD=true;mapState.lastX=e.clientX;mapState.lastY=e.clientY;mapGroup.style.cursor='grabbing';popup.style.display='none';});
         window.addEventListener('mousemove',e=>{if(!isMD)return;e.preventDefault();const dx=e.clientX-mapState.lastX,dy=e.clientY-mapState.lastY;mapState.translateX+=dx;mapState.translateY+=dy;mapState.lastX=e.clientX;mapState.lastY=e.clientY;if(!mapState.rafId)mapState.rafId=requestAnimationFrame(()=>{updateTransform(false);mapState.rafId=null;});});
         window.addEventListener('mouseup',()=>{if(isMD){isMD=false;mapGroup.style.cursor='grab';setTimeout(updateLabelsPosition,200);}});
-
-        let ts={mode:'idle',ld:0};
-        svg.addEventListener('touchstart',e=>{popup.style.display='none';if(e.touches.length==1){ts.mode='drag';mapState.lastX=e.touches[0].clientX;mapState.lastY=e.touches[0].clientY;}else if(e.touches.length==2){ts.mode='pinch';ts.ld=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);}},{passive:false});
+        let ts={mode:'idle',ld:0}; svg.addEventListener('touchstart',e=>{popup.style.display='none';if(e.touches.length==1){ts.mode='drag';mapState.lastX=e.touches[0].clientX;mapState.lastY=e.touches[0].clientY;}else if(e.touches.length==2){ts.mode='pinch';ts.ld=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);}},{passive:false});
         svg.addEventListener('touchmove',e=>{e.preventDefault();if(ts.mode=='drag'&&e.touches.length==1){const dx=e.touches[0].clientX-mapState.lastX,dy=e.touches[0].clientY-mapState.lastY;mapState.translateX+=dx;mapState.translateY+=dy;mapState.lastX=e.touches[0].clientX;mapState.lastY=e.touches[0].clientY;if(!mapState.rafId)mapState.rafId=requestAnimationFrame(()=>{updateTransform(false);mapState.rafId=null;});}else if(ts.mode=='pinch'&&e.touches.length==2){const nd=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY),c={x:(e.touches[0].clientX+e.touches[1].clientX)/2,y:(e.touches[0].clientY+e.touches[1].clientY)/2},r=svg.getBoundingClientRect();applyZoom(1+(nd/ts.ld-1)*1.2,c.x-r.left,c.y-r.top,false);ts.ld=nd;}},{passive:false});
         svg.addEventListener('touchend',()=>{ts.mode='idle';setTimeout(updateLabelsPosition,200);});
 
-        // 辅助
         function closePopup(){popup.style.display='none';}
         function toggleSidebar(){document.getElementById('mainContent').classList.toggle('collapsed');document.getElementById('toggleIcon').className=document.getElementById('mainContent').classList.contains('collapsed')?'fas fa-chevron-left':'fas fa-chevron-right';setTimeout(()=>window.dispatchEvent(new Event('resize')),300);}
         function toggleIconMode(){mapState.iconMode=!mapState.iconMode;renderMap();}
         function handleZoomBtn(f){const r=svg.getBoundingClientRect();applyZoom(f,r.width/2,r.height/2,true);}
-        function resetView(){mapState.scale=0.8;mapState.translateX=400;mapState.translateY=400;updateTransform(true);}
         function showAllLines(){mapState.activeLines=new Set(Object.keys(subwayData.lines));generateLineControls();renderMap();}
 
         generateLineControls(); renderMap(); updateViewLevel();
