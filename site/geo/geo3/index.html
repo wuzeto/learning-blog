@@ -2504,6 +2504,5109 @@
 <li>原表末尾“兩亭、三元、四化”为独立区域标识，单独列于表格最后；</li>
 <li>乡/区/市/县/府/道等行政单位，威妥玛拼音统一标注为<strong>Hsiang/Ch'ü/Shih/Hsien/Fu/Tao</strong>。</li>
 </ol>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚇 城市交通网络全景图 (拟真铁轨版)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- 基础样式 --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif; background: linear-gradient(135deg, #f5f7fa, #c3cfe2); color: #333; min-height: 100vh; overflow-x: hidden; }
+        .container { max-width: 100vw; }
+
+        .header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 15px 30px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .header h1 { font-size: 1.8em; color: #2c3e50; }
+
+        .main-content { display: flex; min-height: calc(100vh - 80px); }
+        .map-container { flex: 3; background: #eef2f5; position: relative; overflow: hidden; }
+        #map { width: 100%; height: 100%; cursor: move; --map-scale: 1; }
+        .control-panel { flex: 1; min-width: 320px; max-width: 420px; background: white; padding: 20px; overflow-y: auto; box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1); z-index: 1001; }
+
+        .search-box { position: relative; margin-bottom: 20px; }
+        .search-box input { width: 100%; padding: 12px 20px 12px 40px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; background: #f8f9fa; transition: border-color 0.3s; }
+        .search-box i { position: absolute; left: 15px; top: 14px; color: #95a5a6; }
+        .search-results { position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #eee; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-height: 300px; overflow-y: auto; z-index: 2000; margin-top: 5px; display: none; }
+        .search-item { padding: 10px 15px; cursor: pointer; border-bottom: 1px solid #f5f5f5; display: flex; justify-content: space-between; align-items: center; }
+        .search-item:hover { background-color: #f0f7ff; }
+
+        .line-control { display: flex; align-items: center; padding: 12px; background: #f8f9fa; border-radius: 8px; margin-bottom: 10px; cursor: pointer; border: 2px solid transparent; transition: all 0.2s; }
+        .line-control.active { border-color: #3498db; background: #e1f0fa; }
+        .line-color { width: 16px; height: 16px; border-radius: 4px; margin-right: 12px; flex-shrink: 0; }
+        .line-info { flex-grow: 1; }
+        .line-name { font-weight: bold; font-size: 14px; }
+        .line-stats { font-size: 12px; color: #666; margin-top: 2px; }
+
+        .controls-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
+        .control-btn { padding: 12px; border: none; border-radius: 8px; background: #3498db; color: white; cursor: pointer; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .control-btn:hover { opacity: 0.9; }
+        .control-btn.reset { background: #e74c3c; }
+        .control-btn.toggle { background: #9b59b6; }
+        .control-btn.special { background: #8e44ad; } 
+
+        .station-info { background: #f8f9fa; border-radius: 10px; padding: 15px; margin-top: 20px; border-left: 4px solid #3498db; }
+
+        /* --- SVG 线路样式 (核心部分) --- */
+        path { vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; fill: none; transition: stroke-width 0.3s; }
+
+        /* 1. 普通地铁样式 */
+        path.metro-base { stroke-width: 5; }
+
+        /* 2. 高架底座 (通用) */
+        path.viaduct-base { stroke: #fff; stroke-width: 12; stroke-opacity: 0.9; }
+        path.viaduct-split { stroke: #fff; stroke-width: 2; stroke-opacity: 0.9; } /* 地铁高架的中间线 */
+
+        /* 3. 高铁/H线 专用样式 (三层叠加) */
+
+        /* H1: 铁轨底层 (宽颜色实线) */
+        path.rail-bed { 
+            stroke-width: 8; 
+            stroke-linecap: square !important; /* 方头，连接处更平整 */
+        }
+
+        /* H2: 铁轨中层 (白色实线，用于镂空出双轨) */
+        path.rail-hollow { 
+            stroke: #eef2f5 !important; /* 使用地图背景色，制造镂空感 */
+            stroke-width: 5;
+            stroke-linecap: square !important;
+        }
+
+        /* H3: 铁轨顶层 (颜色虚线，即枕木) */
+        path.rail-ties { 
+            stroke-width: 4; 
+            stroke-dasharray: 6, 6; /* 实线长, 间隔长 */
+            stroke-linecap: butt !important; /* 平头，必须是butt才能像枕木 */
+        }
+
+        /* 站点图标 */
+        .station-icon-text { font-family: 'Arial', sans-serif; font-weight: normal; cursor: pointer; text-anchor: middle; dominant-baseline: central; font-size: calc(20px / var(--map-scale)); stroke: white; stroke-width: calc(3px / var(--map-scale)); paint-order: stroke fill; transition: all 0.3s ease; }
+        .station-icon-text:hover { opacity: 0.8; font-size: calc(24px / var(--map-scale)); }
+        .station-label { font-weight: bold; fill: #2c3e50; pointer-events: none; font-size: calc(14px / var(--map-scale)); text-shadow: calc(1.5px / var(--map-scale)) 0 #fff, 0 calc(1.5px / var(--map-scale)) #fff; dominant-baseline: middle; }
+        .station-icon-circle { fill: #fff; stroke: #555; stroke-width: 2; cursor: pointer; transition: all 0.3s ease; }
+        .station-icon-circle:hover { fill: #eee; stroke: #000; }
+
+        /* 图例 */
+        .legend { position: absolute; bottom: 20px; left: 20px; background: rgba(255,255,255,0.95); padding: 15px; border-radius: 10px; font-size: 13px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); min-width: 200px; }
+        .legend-item { display: flex; align-items: center; margin: 8px 0; }
+
+        .legend-line-normal { width: 40px; height: 5px; background: #3498db; margin-right: 10px; border-radius: 2px;}
+
+        /* 铁轨图例 (CSS模拟) */
+        .legend-line-rail { 
+            width: 40px; height: 8px; 
+            background: #D35400; /* 底色 */
+            position: relative;
+            margin-right: 10px; 
+            border-top: 2px solid #D35400;
+            border-bottom: 2px solid #D35400;
+        }
+        .legend-line-rail::after {
+            content: ''; position: absolute; top: 2px; left: 0; width: 100%; height: 4px;
+            background: repeating-linear-gradient(to right, #D35400 0, #D35400 4px, #fff 4px, #fff 8px);
+        }
+
+        .legend-icon { font-size: 16px; margin-right: 10px; stroke: #ccc; -webkit-text-stroke: 0.5px #ccc; width: 20px; text-align: center; display: inline-block;}
+        .legend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-top: 10px; border-top: 1px solid #eee; padding-top: 10px; }
+
+        .zoom-controls { position: absolute; top: 20px; right: 20px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .zoom-btn { width: 40px; height: 40px; border: none; background: white; cursor: pointer; font-size: 18px; border-bottom: 1px solid #eee; }
+        .zoom-btn:hover { background: #f0f7ff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1><i class="fas fa-subway"></i> 城市交通网络全景图</h1>
+                <div style="font-size: 14px; color: #666;">H线采用拟真铁轨风格 (双实线夹枕木虚线)</div>
+            </div>
+            <div style="font-size: 13px; color: #7f8c8d;">
+                <i class="fas fa-info-circle"></i> 滚轮缩放 / 拖拽移动
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="map-container">
+                <svg id="map" width="2000" height="2000"></svg>
+                <div class="zoom-controls">
+                    <button class="zoom-btn" onclick="zoomIn()"><i class="fas fa-plus"></i></button>
+                    <button class="zoom-btn" onclick="zoomOut()"><i class="fas fa-minus"></i></button>
+                </div>
+                <div class="legend" id="legend"></div>
+            </div>
+
+            <div class="control-panel">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="输入站点名称搜索..." autocomplete="off" oninput="handleSearch()">
+                    <div id="search-results" class="search-results"></div>
+                </div>
+
+                <h3>显示控制</h3>
+                <div class="controls-grid">
+                    <button class="control-btn special" id="mode-btn" onclick="toggleIconMode()">
+                        <i class="fas fa-icons"></i> 切换图标模式
+                    </button>
+                    <button class="control-btn toggle" onclick="toggleLabels()">
+                        <i class="fas fa-font"></i> 切换站名
+                    </button>
+                    <button class="control-btn" onclick="resetView()"><i class="fas fa-redo"></i> 复位视图</button>
+                    <button class="control-btn reset" onclick="showAllLines()"><i class="fas fa-eye"></i> 显示全部</button>
+                </div>
+
+                <h3>线路开关</h3>
+                <div id="line-controls" style="margin: 15px 0;"></div>
+
+                <div class="station-info" id="station-info">
+                    <h3><i class="fas fa-mouse-pointer"></i> 请点击站点</h3>
+                    <p>查看详细信息和海拔高度</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const subwayData = {
+  "lines": {
+    "1号线": {
+      "color": "#F7EB57",
+      "name": "M1号线",
+      "stations": [
+        {
+          "id": "S001",
+          "name": "44中沿海",
+          "x": -2238,
+          "y": -739,
+          "elevation": 47,
+          "transfer": false
+        },
+        {
+          "id": "S002",
+          "name": "西海湾",
+          "x": -2210,
+          "y": -887,
+          "elevation": 52,
+          "transfer": false
+        },
+        {
+          "id": "S003",
+          "name": "兴港",
+          "x": -2092,
+          "y": -912,
+          "elevation": 53,
+          "transfer": false
+        },
+        {
+          "id": "S004",
+          "name": "清流",
+          "x": -1868,
+          "y": -967,
+          "elevation": 70,
+          "transfer": true
+        },
+        {
+          "id": "S005",
+          "name": "乐安",
+          "x": -1557,
+          "y": -932,
+          "elevation": 75,
+          "transfer": true
+        },
+        {
+          "id": "S006",
+          "name": "龙亢",
+          "x": -1207,
+          "y": -1094,
+          "elevation": 52,
+          "transfer": false
+        },
+        {
+          "id": "S007",
+          "name": "江南西路",
+          "x": -794,
+          "y": -1043,
+          "elevation": 54,
+          "transfer": true
+        },
+        {
+          "id": "S008",
+          "name": "西门",
+          "x": -513,
+          "y": -1069,
+          "elevation": 53,
+          "transfer": false
+        },
+        {
+          "id": "S009",
+          "name": "央体",
+          "x": -272,
+          "y": -1100,
+          "elevation": 46,
+          "transfer": true
+        },
+        {
+          "id": "S010",
+          "name": "中央中学",
+          "x": 86,
+          "y": -1096,
+          "elevation": 64,
+          "transfer": false
+        },
+        {
+          "id": "S011",
+          "name": "央大沪江校区",
+          "x": 429,
+          "y": -1147,
+          "elevation": 38,
+          "transfer": false
+        },
+        {
+          "id": "S012",
+          "name": "信安空港",
+          "x": 828,
+          "y": -1277,
+          "elevation": 49,
+          "transfer": false
+        },
+        {
+          "id": "S013",
+          "name": "信东",
+          "x": 1295,
+          "y": -1249,
+          "elevation": 49,
+          "transfer": false
+        },
+        {
+          "id": "S014",
+          "name": "乐成",
+          "x": 1802,
+          "y": -1245,
+          "elevation": 57,
+          "transfer": false
+        },
+        {
+          "id": "S015",
+          "name": "务垟",
+          "x": 2130,
+          "y": -1193,
+          "elevation": 42,
+          "transfer": false
+        },
+        {
+          "id": "S016",
+          "name": "东湖",
+          "x": 2371,
+          "y": -1158,
+          "elevation": 54,
+          "transfer": false
+        },
+        {
+          "id": "S017",
+          "name": "马戏城",
+          "x": 2482,
+          "y": -912,
+          "elevation": 49,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S018",
+          "name": "老郎",
+          "x": 2786,
+          "y": -800,
+          "elevation": 91,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S019",
+          "name": "智算中心",
+          "x": 3072,
+          "y": -615,
+          "elevation": 96,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S020",
+          "name": "新桥",
+          "x": 2942,
+          "y": -371,
+          "elevation": 105,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S021",
+          "name": "水乡客厅",
+          "x": 2861,
+          "y": -105,
+          "elevation": 82,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S022",
+          "name": "新田",
+          "x": 2831,
+          "y": 215,
+          "elevation": 82,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S023",
+          "name": "新镇",
+          "x": 2856,
+          "y": 381,
+          "elevation": 95,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S024",
+          "name": "溪源",
+          "x": 2866,
+          "y": 550,
+          "elevation": 54,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S025",
+          "name": "南武",
+          "x": 2947,
+          "y": 777,
+          "elevation": 56,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S026",
+          "name": "始宁",
+          "x": 3174,
+          "y": 853,
+          "elevation": 59,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S027",
+          "name": "柏树",
+          "x": 3532,
+          "y": 879,
+          "elevation": 53,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S028",
+          "name": "闲林",
+          "x": 3952,
+          "y": 915,
+          "elevation": 59,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S029",
+          "name": "宁邨",
+          "x": 4285,
+          "y": 843,
+          "elevation": 72,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S030",
+          "name": "弘济半岛",
+          "x": 4918,
+          "y": 711,
+          "elevation": 71,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S031",
+          "name": "东门里",
+          "x": 5437,
+          "y": 728,
+          "elevation": 22,
+          "transfer": false,
+          "elevated": false
+        }
+      ]
+    },
+    "2号线": {
+      "color": "#92BD75",
+      "name": "2号线",
+      "stations": [
+        {
+          "id": "S201",
+          "name": "央体",
+          "x": -272,
+          "y": -1100,
+          "elevation": 46,
+          "transfer": true
+        },
+        {
+          "id": "S202",
+          "name": "还淳",
+          "x": -225,
+          "y": -832,
+          "elevation": 40,
+          "transfer": false
+        },
+        {
+          "id": "S203",
+          "name": "城西",
+          "x": -13,
+          "y": -582,
+          "elevation": 54,
+          "transfer": false
+        },
+        {
+          "id": "S204",
+          "name": "吴国",
+          "x": -264,
+          "y": -277,
+          "elevation": 47,
+          "transfer": false
+        },
+        {
+          "id": "S205",
+          "name": "鹊头",
+          "x": -223,
+          "y": -96,
+          "elevation": 53,
+          "transfer": false
+        },
+        {
+          "id": "S206",
+          "name": "塘下",
+          "x": 57,
+          "y": 68,
+          "elevation": 52,
+          "transfer": false
+        },
+        {
+          "id": "S207",
+          "name": "柯西",
+          "x": 422,
+          "y": 142,
+          "elevation": 51,
+          "transfer": false
+        },
+        {
+          "id": "S208",
+          "name": "柯亭",
+          "x": 736,
+          "y": 69,
+          "elevation": 46,
+          "transfer": false
+        },
+        {
+          "id": "S209",
+          "name": "盐市口",
+          "x": 909,
+          "y": 99,
+          "elevation": 45,
+          "transfer": false
+        },
+        {
+          "id": "S210",
+          "name": "指南宫",
+          "x": 1229,
+          "y": 7,
+          "elevation": 53,
+          "transfer": false
+        },
+        {
+          "id": "S211",
+          "name": "宜春门",
+          "x": 1433,
+          "y": 312,
+          "elevation": 52,
+          "transfer": false
+        },
+        {
+          "id": "S212",
+          "name": "河东园",
+          "x": 1522,
+          "y": 566,
+          "elevation": 47,
+          "transfer": false
+        },
+        {
+          "id": "S213",
+          "name": "云路街",
+          "x": 1702,
+          "y": 638,
+          "elevation": 52,
+          "transfer": false
+        },
+        {
+          "id": "S214",
+          "name": "新区湖滨",
+          "x": 1963,
+          "y": 650,
+          "elevation": 54,
+          "transfer": false
+        },
+        {
+          "id": "S215",
+          "name": "大桥北",
+          "x": 2298,
+          "y": 594,
+          "elevation": 65,
+          "transfer": false
+        },
+        {
+          "id": "S216",
+          "name": "新区乐园",
+          "x": 2556,
+          "y": 570,
+          "elevation": 58,
+          "transfer": false
+        },
+        {
+          "id": "S217",
+          "name": "溪源",
+          "x": 2866,
+          "y": 550,
+          "elevation": 54,
+          "transfer": false
+        }
+      ]
+    },
+    "3号线": {
+      "color": "#4FE3F2",
+      "name": "3号线",
+      "stations": [
+        {
+          "id": "S301",
+          "name": "渐台",
+          "x": 803,
+          "y": -2693,
+          "elevation": 60,
+          "transfer": false
+        },
+        {
+          "id": "S302",
+          "name": "保驾庄",
+          "x": 790,
+          "y": -2359,
+          "elevation": 54,
+          "transfer": false
+        },
+        {
+          "id": "S303",
+          "name": "昭文",
+          "x": 827,
+          "y": -2127,
+          "elevation": 46,
+          "transfer": false
+        },
+        {
+          "id": "S304",
+          "name": "虹溪",
+          "x": 809,
+          "y": -1921,
+          "elevation": 44,
+          "transfer": false
+        },
+        {
+          "id": "S305",
+          "name": "子隐台",
+          "x": 887,
+          "y": -1636,
+          "elevation": 50,
+          "transfer": false
+        },
+        {
+          "id": "S306",
+          "name": "信安空港",
+          "x": 828,
+          "y": -1277,
+          "elevation": 49,
+          "transfer": true
+        },
+        {
+          "id": "S307",
+          "name": "昌国",
+          "x": 842,
+          "y": -982,
+          "elevation": 46,
+          "transfer": false
+        },
+        {
+          "id": "S308",
+          "name": "府衙",
+          "x": 892,
+          "y": -726,
+          "elevation": 54,
+          "transfer": false
+        },
+        {
+          "id": "S309",
+          "name": "市厅",
+          "x": 877,
+          "y": -523,
+          "elevation": 47,
+          "transfer": false
+        },
+        {
+          "id": "S310",
+          "name": "青年",
+          "x": 694,
+          "y": -247,
+          "elevation": 45,
+          "transfer": false
+        },
+        {
+          "id": "S311",
+          "name": "保宁寺",
+          "x": 372,
+          "y": -236,
+          "elevation": 45,
+          "transfer": false
+        },
+        {
+          "id": "S312",
+          "name": "柯西",
+          "x": 422,
+          "y": 142,
+          "elevation": 51,
+          "transfer": true
+        },
+        {
+          "id": "S313",
+          "name": "南湖茂",
+          "x": 547,
+          "y": 313,
+          "elevation": 47,
+          "transfer": false
+        },
+        {
+          "id": "S314",
+          "name": "四体",
+          "x": 519,
+          "y": 484,
+          "elevation": 47,
+          "transfer": false
+        },
+        {
+          "id": "S315",
+          "name": "九洲池",
+          "x": 512,
+          "y": 834,
+          "elevation": 55,
+          "transfer": false
+        },
+        {
+          "id": "S316",
+          "name": "南湖",
+          "x": 557,
+          "y": 1232,
+          "elevation": 56,
+          "transfer": false
+        },
+        {
+          "id": "S317",
+          "name": "安固",
+          "x": 565,
+          "y": 1493,
+          "elevation": 52,
+          "transfer": false
+        },
+        {
+          "id": "S318",
+          "name": "南环立交",
+          "x": 558,
+          "y": 1739,
+          "elevation": 49,
+          "transfer": false
+        },
+        {
+          "id": "S319",
+          "name": "灵塔",
+          "x": 563,
+          "y": 2119,
+          "elevation": 81,
+          "transfer": false
+        },
+        {
+          "id": "S320",
+          "name": "文德里",
+          "x": 506,
+          "y": 2314,
+          "elevation": 50,
+          "transfer": false
+        },
+        {
+          "id": "S321",
+          "name": "迪士尼",
+          "x": 499,
+          "y": 2579,
+          "elevation": 43,
+          "transfer": false
+        }
+      ]
+    },
+    "4号线": {
+      "color": "#FE8FF0",
+      "name": "4号线",
+      "stations": [
+        {
+          "id": "S401",
+          "name": "子隐台",
+          "x": 887,
+          "y": -1636,
+          "elevation": 50,
+          "transfer": true
+        },
+        {
+          "id": "S402",
+          "name": "永临",
+          "x": 504,
+          "y": -1718,
+          "elevation": 44,
+          "transfer": false
+        },
+        {
+          "id": "S403",
+          "name": "北站",
+          "x": 407,
+          "y": -1462,
+          "elevation": 14,
+          "transfer": false
+        },
+        {
+          "id": "S404",
+          "name": "央大沪江校区",
+          "x": 429,
+          "y": -1147,
+          "elevation": 38,
+          "transfer": true
+        },
+        {
+          "id": "S405",
+          "name": "府前",
+          "x": 476,
+          "y": -964,
+          "elevation": 38,
+          "transfer": false
+        },
+        {
+          "id": "S406",
+          "name": "金市",
+          "x": 443,
+          "y": -797,
+          "elevation": 50,
+          "transfer": false
+        },
+        {
+          "id": "S407",
+          "name": "六一",
+          "x": 404,
+          "y": -675,
+          "elevation": 44,
+          "transfer": false
+        },
+        {
+          "id": "S408",
+          "name": "步广里",
+          "x": 441,
+          "y": -575,
+          "elevation": 47,
+          "transfer": false
+        },
+        {
+          "id": "S409",
+          "name": "武庙",
+          "x": 567,
+          "y": -468,
+          "elevation": 57,
+          "transfer": false
+        },
+        {
+          "id": "S410",
+          "name": "十一",
+          "x": 568,
+          "y": -345,
+          "elevation": 53,
+          "transfer": false
+        },
+        {
+          "id": "S411",
+          "name": "青年",
+          "x": 694,
+          "y": -247,
+          "elevation": 45,
+          "transfer": true
+        },
+        {
+          "id": "S412",
+          "name": "挹江",
+          "x": 789,
+          "y": -322,
+          "elevation": 63,
+          "transfer": false
+        },
+        {
+          "id": "S413",
+          "name": "贯城",
+          "x": 909,
+          "y": -348,
+          "elevation": 82,
+          "transfer": false
+        },
+        {
+          "id": "S414",
+          "name": "长史司",
+          "x": 959,
+          "y": -472,
+          "elevation": 66,
+          "transfer": false
+        },
+        {
+          "id": "S415",
+          "name": "前卫街",
+          "x": 1193,
+          "y": -485,
+          "elevation": 68,
+          "transfer": false
+        },
+        {
+          "id": "S416",
+          "name": "二七",
+          "x": 1454,
+          "y": -510,
+          "elevation": 50,
+          "transfer": false
+        },
+        {
+          "id": "S417",
+          "name": "广明桥",
+          "x": 1707,
+          "y": -508,
+          "elevation": 55,
+          "transfer": false
+        },
+        {
+          "id": "S418",
+          "name": "大东门",
+          "x": 1916,
+          "y": -557,
+          "elevation": 74,
+          "transfer": false
+        },
+        {
+          "id": "S419",
+          "name": "布政司前街",
+          "x": 2068,
+          "y": -543,
+          "elevation": 67,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S420",
+          "name": "三官庙",
+          "x": 2296,
+          "y": -476,
+          "elevation": 58,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S421",
+          "name": "贤良祠",
+          "x": 2510,
+          "y": -397,
+          "elevation": 86,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S422",
+          "name": "烟波楼",
+          "x": 2563,
+          "y": -243,
+          "elevation": 64,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S423",
+          "name": "水乡客厅",
+          "x": 2861,
+          "y": -105,
+          "elevation": 82,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S424",
+          "name": "东湖CBD",
+          "x": 3110,
+          "y": -76,
+          "elevation": 76,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S425",
+          "name": "天马",
+          "x": 3350,
+          "y": -49,
+          "elevation": 83,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S426",
+          "name": "雄关",
+          "x": 3578,
+          "y": -243,
+          "elevation": 83,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    },
+    "5号线": {
+      "color": "#963095",
+      "name": "5号线",
+      "stations": [
+        {
+          "id": "S501",
+          "name": "宝海",
+          "x": -2397,
+          "y": -1759,
+          "elevation": 69,
+          "transfer": false
+        },
+        {
+          "id": "S502",
+          "name": "三体",
+          "x": -1867,
+          "y": -1834,
+          "elevation": 76,
+          "transfer": false
+        },
+        {
+          "id": "S503",
+          "name": "泽临",
+          "x": -1460,
+          "y": -1847,
+          "elevation": 68,
+          "transfer": false
+        },
+        {
+          "id": "S504",
+          "name": "二会",
+          "x": -1230,
+          "y": -1665,
+          "elevation": 87,
+          "transfer": false
+        },
+        {
+          "id": "S505",
+          "name": "江南钟楼",
+          "x": -815,
+          "y": -1634,
+          "elevation": 69,
+          "transfer": false
+        },
+        {
+          "id": "S506",
+          "name": "塔影",
+          "x": -511,
+          "y": -1495,
+          "elevation": 66,
+          "transfer": false
+        },
+        {
+          "id": "S507",
+          "name": "义乡",
+          "x": -329,
+          "y": -1603,
+          "elevation": 59,
+          "transfer": false
+        },
+        {
+          "id": "S508",
+          "name": "樟水",
+          "x": 53,
+          "y": -1713,
+          "elevation": 52,
+          "transfer": false
+        },
+        {
+          "id": "S509",
+          "name": "千年",
+          "x": 380,
+          "y": -1849,
+          "elevation": 50,
+          "transfer": false
+        },
+        {
+          "id": "S510",
+          "name": "虹溪",
+          "x": 809,
+          "y": -1921,
+          "elevation": 44,
+          "transfer": true
+        },
+        {
+          "id": "S511",
+          "name": "一院",
+          "x": 1234,
+          "y": -1779,
+          "elevation": 41,
+          "transfer": false
+        },
+        {
+          "id": "S512",
+          "name": "三红",
+          "x": 1503,
+          "y": -1564,
+          "elevation": 58,
+          "transfer": false
+        },
+        {
+          "id": "S513",
+          "name": "宣平",
+          "x": 1718,
+          "y": -1418,
+          "elevation": 75,
+          "transfer": false
+        },
+        {
+          "id": "S514",
+          "name": "务垟",
+          "x": 2130,
+          "y": -1193,
+          "elevation": 42,
+          "transfer": true
+        },
+        {
+          "id": "S515",
+          "name": "飞尖",
+          "x": 2301,
+          "y": -871,
+          "elevation": 67,
+          "transfer": false
+        },
+        {
+          "id": "S516",
+          "name": "三官庙",
+          "x": 2296,
+          "y": -476,
+          "elevation": 58,
+          "transfer": false
+        },
+        {
+          "id": "S517",
+          "name": "碧港",
+          "x": 2288,
+          "y": -14,
+          "elevation": 68,
+          "transfer": false
+        },
+        {
+          "id": "S518",
+          "name": "府南公馆",
+          "x": 2288,
+          "y": 231,
+          "elevation": 76,
+          "transfer": false
+        },
+        {
+          "id": "S519",
+          "name": "大桥北",
+          "x": 2298,
+          "y": 594,
+          "elevation": 65,
+          "transfer": true
+        },
+        {
+          "id": "S520",
+          "name": "湖心揽胜",
+          "x": 2301,
+          "y": 809,
+          "elevation": 73,
+          "transfer": false
+        },
+        {
+          "id": "S521",
+          "name": "长途南站",
+          "x": 2284,
+          "y": 1150,
+          "elevation": 82,
+          "transfer": false
+        },
+        {
+          "id": "S522",
+          "name": "演武场",
+          "x": 2377,
+          "y": 1560,
+          "elevation": 50,
+          "transfer": false
+        },
+        {
+          "id": "S523",
+          "name": "向阳路",
+          "x": 2343,
+          "y": 1805,
+          "elevation": 52,
+          "transfer": false
+        },
+        {
+          "id": "S524",
+          "name": "渣口",
+          "x": 2324,
+          "y": 1982,
+          "elevation": 51,
+          "transfer": false
+        }
+      ]
+    },
+    "6号线": {
+      "color": "#F39E1E",
+      "name": "6号线",
+      "stations": [
+        {
+          "id": "S601",
+          "name": "广平仓",
+          "x": -1086,
+          "y": -666,
+          "elevation": 60,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S602",
+          "name": "涡口",
+          "x": -737,
+          "y": -736,
+          "elevation": 42,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S603",
+          "name": "央体南",
+          "x": -455,
+          "y": -720,
+          "elevation": 45,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S604",
+          "name": "还淳",
+          "x": -225,
+          "y": -832,
+          "elevation": 40,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S605",
+          "name": "城市之心",
+          "x": 75,
+          "y": -864,
+          "elevation": 54,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S606",
+          "name": "府前",
+          "x": 476,
+          "y": -964,
+          "elevation": 38,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S607",
+          "name": "昌国",
+          "x": 842,
+          "y": -982,
+          "elevation": 46,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S608",
+          "name": "御兵寨",
+          "x": 1231,
+          "y": -973,
+          "elevation": 48,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S609",
+          "name": "四博",
+          "x": 1596,
+          "y": -1020,
+          "elevation": 49,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S610",
+          "name": "明堂",
+          "x": 1827,
+          "y": -879,
+          "elevation": 77,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    },
+    "7号线": {
+      "color": "#16647B",
+      "name": "7号线",
+      "stations": [
+        {
+          "id": "S701",
+          "name": "樟水",
+          "x": 53,
+          "y": -1713,
+          "elevation": 52,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S702",
+          "name": "永临",
+          "x": 504,
+          "y": -1718,
+          "elevation": 44,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S703",
+          "name": "子隐台",
+          "x": 887,
+          "y": -1636,
+          "elevation": 50,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S704",
+          "name": "乐意门",
+          "x": 1182,
+          "y": -1618,
+          "elevation": 41,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S705",
+          "name": "信东",
+          "x": 1295,
+          "y": -1249,
+          "elevation": 49,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S706",
+          "name": "御兵寨",
+          "x": 1231,
+          "y": -973,
+          "elevation": 48,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S707",
+          "name": "府学",
+          "x": 1137,
+          "y": -746,
+          "elevation": 39,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S708",
+          "name": "长史司",
+          "x": 959,
+          "y": -472,
+          "elevation": 66,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S709",
+          "name": "青年",
+          "x": 694,
+          "y": -247,
+          "elevation": 45,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S710",
+          "name": "保宁寺",
+          "x": 372,
+          "y": -236,
+          "elevation": 45,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S711",
+          "name": "东吴",
+          "x": -51,
+          "y": -274,
+          "elevation": 44,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S712",
+          "name": "吴国",
+          "x": -264,
+          "y": -277,
+          "elevation": 47,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S713",
+          "name": "右护卫",
+          "x": -274,
+          "y": -481,
+          "elevation": 72,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S714",
+          "name": "还淳",
+          "x": -225,
+          "y": -832,
+          "elevation": 40,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S715",
+          "name": "央体",
+          "x": -272,
+          "y": -1100,
+          "elevation": 46,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S716",
+          "name": "元英宫",
+          "x": -226,
+          "y": -1515,
+          "elevation": 37,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S717",
+          "name": "樟水",
+          "x": 53,
+          "y": -1713,
+          "elevation": 52,
+          "transfer": true,
+          "elevated": false
+        }
+      ]
+    },
+    "8号线": {
+      "color": "#5FF905",
+      "name": "8号线",
+      "stations": [
+        {
+          "id": "S801",
+          "name": "玉渊坊",
+          "x": -232,
+          "y": 2018,
+          "elevation": 48,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S802",
+          "name": "七体",
+          "x": -253,
+          "y": 1855,
+          "elevation": 52,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S803",
+          "name": "大有仓",
+          "x": -248,
+          "y": 1641,
+          "elevation": 49,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S804",
+          "name": "司湖",
+          "x": -313,
+          "y": 1394,
+          "elevation": 49,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S805",
+          "name": "进德门",
+          "x": -326,
+          "y": 1097,
+          "elevation": 61,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S806",
+          "name": "尚公广场",
+          "x": -320,
+          "y": 838,
+          "elevation": 54,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S807",
+          "name": "巴蜀会馆",
+          "x": -279,
+          "y": 576,
+          "elevation": 46,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S808",
+          "name": "行都司二院",
+          "x": -201,
+          "y": 378,
+          "elevation": 45,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S809",
+          "name": "城隍庙",
+          "x": -140,
+          "y": 171,
+          "elevation": 67,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S810",
+          "name": "鹊头",
+          "x": -223,
+          "y": -96,
+          "elevation": 53,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S811",
+          "name": "东吴",
+          "x": -51,
+          "y": -274,
+          "elevation": 44,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S812",
+          "name": "旗纛台",
+          "x": 137,
+          "y": -437,
+          "elevation": 58,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S813",
+          "name": "市心街",
+          "x": 238,
+          "y": -629,
+          "elevation": 51,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S814",
+          "name": "六一",
+          "x": 404,
+          "y": -675,
+          "elevation": 44,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S815",
+          "name": "河务局",
+          "x": 683,
+          "y": -665,
+          "elevation": 49,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S816",
+          "name": "府衙",
+          "x": 892,
+          "y": -726,
+          "elevation": 54,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S817",
+          "name": "两河卫",
+          "x": 1013,
+          "y": -665,
+          "elevation": 64,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S818",
+          "name": "前卫街",
+          "x": 1193,
+          "y": -485,
+          "elevation": 68,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S819",
+          "name": "龙舒",
+          "x": 1338,
+          "y": -345,
+          "elevation": 65,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S820",
+          "name": "行春门",
+          "x": 1371,
+          "y": -108,
+          "elevation": 67,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S821",
+          "name": "谯楼",
+          "x": 1549,
+          "y": -81,
+          "elevation": 80,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S822",
+          "name": "央大金陵校区",
+          "x": 1724,
+          "y": -58,
+          "elevation": 71,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S823",
+          "name": "军器局",
+          "x": 1906,
+          "y": -67,
+          "elevation": 75,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    },
+    "9号线": {
+      "color": "#17149A",
+      "name": "9号线",
+      "stations": [
+        {
+          "id": "S901",
+          "name": "信安空港",
+          "x": 828,
+          "y": -1277,
+          "elevation": 49,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S902",
+          "name": "空港旅馆",
+          "x": 737,
+          "y": -1080,
+          "elevation": 49,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S903",
+          "name": "道署",
+          "x": 671,
+          "y": -866,
+          "elevation": 43,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S904",
+          "name": "河务局",
+          "x": 683,
+          "y": -665,
+          "elevation": 49,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S905",
+          "name": "闽浙会馆",
+          "x": 688,
+          "y": -442,
+          "elevation": 45,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S906",
+          "name": "青年",
+          "x": 694,
+          "y": -247,
+          "elevation": 45,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S907",
+          "name": "二体三院",
+          "x": 606,
+          "y": -9,
+          "elevation": 57,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S908",
+          "name": "龙门口",
+          "x": 576,
+          "y": 245,
+          "elevation": 71,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S909",
+          "name": "四牌楼",
+          "x": 336,
+          "y": 394,
+          "elevation": 81,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S910",
+          "name": "常积仓",
+          "x": 131,
+          "y": 479,
+          "elevation": 73,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S911",
+          "name": "长途汽车站",
+          "x": 50,
+          "y": 629,
+          "elevation": 80,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S912",
+          "name": "院门口",
+          "x": -62,
+          "y": 888,
+          "elevation": 87,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S913",
+          "name": "文明门",
+          "x": -63,
+          "y": 1126,
+          "elevation": 96,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S914",
+          "name": "南湖西",
+          "x": -45,
+          "y": 1323,
+          "elevation": 93,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S915",
+          "name": "司湖",
+          "x": -313,
+          "y": 1394,
+          "elevation": 49,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S916",
+          "name": "龙都南关",
+          "x": -536,
+          "y": 1502,
+          "elevation": 55,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S917",
+          "name": "公所",
+          "x": -830,
+          "y": 1557,
+          "elevation": 60,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S918",
+          "name": "央大之江校区",
+          "x": -1102,
+          "y": 1575,
+          "elevation": 52,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S919",
+          "name": "粮饷处",
+          "x": -1196,
+          "y": 1802,
+          "elevation": 54,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S920",
+          "name": "龙云",
+          "x": -1465,
+          "y": 1865,
+          "elevation": 62,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S921",
+          "name": "河正",
+          "x": -1748,
+          "y": 1816,
+          "elevation": 49,
+          "transfer": false,
+          "elevated": false
+        }
+      ]
+    },
+    "10号线": {
+      "color": "#A1939C",
+      "name": "10号线",
+      "stations": [
+        {
+          "id": "S1001",
+          "name": "郡厉坛",
+          "x": -1310,
+          "y": 88,
+          "elevation": 63,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1002",
+          "name": "镇海门",
+          "x": -1080,
+          "y": 173,
+          "elevation": 74,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1003",
+          "name": "水关",
+          "x": -721,
+          "y": 178,
+          "elevation": 64,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1004",
+          "name": "巡检司",
+          "x": -496,
+          "y": 183,
+          "elevation": 70,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1005",
+          "name": "城隍庙",
+          "x": -140,
+          "y": 171,
+          "elevation": 67,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1006",
+          "name": "塘下站",
+          "x": 80,
+          "y": 220,
+          "elevation": 95,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1007",
+          "name": "公议府",
+          "x": 289,
+          "y": 210,
+          "elevation": 69,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1008",
+          "name": "柯西",
+          "x": 422,
+          "y": 142,
+          "elevation": 51,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1009",
+          "name": "二体三院",
+          "x": 606,
+          "y": -9,
+          "elevation": 57,
+          "transfer": true,
+          "elevated": false
+        }
+      ]
+    },
+    "11号线": {
+      "color": "#FC1C30",
+      "name": "11号线",
+      "stations": [
+        {
+          "id": "S1101",
+          "name": "五一",
+          "x": 411,
+          "y": -794,
+          "elevation": 39,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1102",
+          "name": "临蒸驿",
+          "x": 561,
+          "y": -728,
+          "elevation": 37,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1103",
+          "name": "太庙",
+          "x": 745,
+          "y": -733,
+          "elevation": 40,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1104",
+          "name": "府衙",
+          "x": 892,
+          "y": -726,
+          "elevation": 54,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1105",
+          "name": "府学",
+          "x": 1137,
+          "y": -746,
+          "elevation": 39,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1106",
+          "name": "东门",
+          "x": 1395,
+          "y": -798,
+          "elevation": 49,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1107",
+          "name": "急递铺",
+          "x": 1556,
+          "y": -732,
+          "elevation": 50,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1108",
+          "name": "济农仓",
+          "x": 1678,
+          "y": -675,
+          "elevation": 55,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1109",
+          "name": "广明桥",
+          "x": 1707,
+          "y": -508,
+          "elevation": 55,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1110",
+          "name": "一六八中",
+          "x": 1656,
+          "y": -403,
+          "elevation": 55,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1111",
+          "name": "内下塘",
+          "x": 1495,
+          "y": -248,
+          "elevation": 55,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1112",
+          "name": "谯楼",
+          "x": 1549,
+          "y": -81,
+          "elevation": 80,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1113",
+          "name": "宜春门",
+          "x": 1433,
+          "y": 312,
+          "elevation": 52,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1114",
+          "name": "表忠观",
+          "x": 1172,
+          "y": 524,
+          "elevation": 64,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1115",
+          "name": "庄严寺",
+          "x": 983,
+          "y": 797,
+          "elevation": 53,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1116",
+          "name": "广源门",
+          "x": 954,
+          "y": 1087,
+          "elevation": 58,
+          "transfer": false,
+          "elevated": false
+        }
+      ]
+    },
+    "12号线": {
+      "color": "#98546C",
+      "name": "12号线",
+      "stations": [
+        {
+          "id": "S1201",
+          "name": "文瀛",
+          "x": -2176,
+          "y": -245,
+          "elevation": 81,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1202",
+          "name": "校场沿",
+          "x": -1998,
+          "y": -254,
+          "elevation": 81,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1203",
+          "name": "察院",
+          "x": -1807,
+          "y": -264,
+          "elevation": 81,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1204",
+          "name": "大秉庵",
+          "x": -1611,
+          "y": -222,
+          "elevation": 81,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1205",
+          "name": "市门阁",
+          "x": -1381,
+          "y": -250,
+          "elevation": 80,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1206",
+          "name": "卧龙山",
+          "x": -1267,
+          "y": -241,
+          "elevation": 85,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1207",
+          "name": "西湖之星",
+          "x": -1083,
+          "y": -342,
+          "elevation": 83,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1208",
+          "name": "西湖公园",
+          "x": -844,
+          "y": -460,
+          "elevation": 73,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1209",
+          "name": "节孝祠",
+          "x": -545,
+          "y": -433,
+          "elevation": 68,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1210",
+          "name": "右护卫",
+          "x": -274,
+          "y": -481,
+          "elevation": 72,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1211",
+          "name": "运司街",
+          "x": -8,
+          "y": -504,
+          "elevation": 61,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1212",
+          "name": "旗纛台",
+          "x": 137,
+          "y": -437,
+          "elevation": 58,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1213",
+          "name": "明池",
+          "x": 260,
+          "y": -446,
+          "elevation": 58,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1214",
+          "name": "武庙",
+          "x": 567,
+          "y": -468,
+          "elevation": 57,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1215",
+          "name": "税课司",
+          "x": 801,
+          "y": -472,
+          "elevation": 71,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    },
+    "13号线": {
+      "color": "#95E7CB",
+      "name": "13号线",
+      "stations": [
+        {
+          "id": "S1301",
+          "name": "北门",
+          "x": -914,
+          "y": -1979,
+          "elevation": 55,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1302",
+          "name": "贯桥",
+          "x": -648,
+          "y": -2102,
+          "elevation": 72,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1303",
+          "name": "云步山",
+          "x": -356,
+          "y": -1938,
+          "elevation": 53,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1304",
+          "name": "开明",
+          "x": -192,
+          "y": -1861,
+          "elevation": 66,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1305",
+          "name": "和义门",
+          "x": -28,
+          "y": -1917,
+          "elevation": 64,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1306",
+          "name": "延庆寺",
+          "x": 153,
+          "y": -1915,
+          "elevation": 64,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1307",
+          "name": "兵马司",
+          "x": 405,
+          "y": -1936,
+          "elevation": 64,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1308",
+          "name": "牛角坡",
+          "x": 641,
+          "y": -1977,
+          "elevation": 66,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1309",
+          "name": "昭文",
+          "x": 827,
+          "y": -2127,
+          "elevation": 46,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1310",
+          "name": "阜民坊",
+          "x": 1501,
+          "y": -1866,
+          "elevation": 72,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1311",
+          "name": "三红",
+          "x": 1503,
+          "y": -1564,
+          "elevation": 58,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1312",
+          "name": "宣平",
+          "x": 1718,
+          "y": -1418,
+          "elevation": 75,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1313",
+          "name": "四博",
+          "x": 1596,
+          "y": -1020,
+          "elevation": 49,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1314",
+          "name": "东门",
+          "x": 1395,
+          "y": -798,
+          "elevation": 49,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1315",
+          "name": "二七",
+          "x": 1439,
+          "y": -467,
+          "elevation": 63,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1316",
+          "name": "一六八中",
+          "x": 1656,
+          "y": -403,
+          "elevation": 55,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1317",
+          "name": "军器局",
+          "x": 1906,
+          "y": -67,
+          "elevation": 75,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1318",
+          "name": "新区",
+          "x": 2047,
+          "y": 469,
+          "elevation": 62,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1319",
+          "name": "河东园",
+          "x": 1522,
+          "y": 566,
+          "elevation": 47,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1320",
+          "name": "表忠观",
+          "x": 1172,
+          "y": 524,
+          "elevation": 64,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1321",
+          "name": "三山驿",
+          "x": 722,
+          "y": 520,
+          "elevation": 48,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1322",
+          "name": "四体",
+          "x": 519,
+          "y": 484,
+          "elevation": 47,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1323",
+          "name": "常积仓",
+          "x": 131,
+          "y": 479,
+          "elevation": 73,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1324",
+          "name": "木塔寺",
+          "x": -125,
+          "y": 682,
+          "elevation": 51,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1325",
+          "name": "巴蜀会馆",
+          "x": -279,
+          "y": 576,
+          "elevation": 46,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1326",
+          "name": "养济寨",
+          "x": -466,
+          "y": 521,
+          "elevation": 55,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1327",
+          "name": "宣恩门",
+          "x": -700,
+          "y": 399,
+          "elevation": 64,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1328",
+          "name": "水关",
+          "x": -721,
+          "y": 178,
+          "elevation": 64,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1329",
+          "name": "镇海门",
+          "x": -1080,
+          "y": 173,
+          "elevation": 74,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1330",
+          "name": "水街桥",
+          "x": -1108,
+          "y": 2,
+          "elevation": 77,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1331",
+          "name": "西湖之星",
+          "x": -1083,
+          "y": -342,
+          "elevation": 83,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1332",
+          "name": "广平仓",
+          "x": -1086,
+          "y": -666,
+          "elevation": 60,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1333",
+          "name": "清渠街",
+          "x": -1313,
+          "y": -828,
+          "elevation": 84,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1334",
+          "name": "乐安",
+          "x": -1557,
+          "y": -932,
+          "elevation": 75,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1335",
+          "name": "共学",
+          "x": -1534,
+          "y": -1248,
+          "elevation": 62,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1336",
+          "name": "勾栏桥",
+          "x": -1437,
+          "y": -1482,
+          "elevation": 55,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1337",
+          "name": "泽临",
+          "x": -1460,
+          "y": -1847,
+          "elevation": 68,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1338",
+          "name": "北门",
+          "x": -914,
+          "y": -1979,
+          "elevation": 55,
+          "transfer": true,
+          "elevated": false
+        }
+      ]
+    },
+    "14号线": {
+      "color": "#AE4B46",
+      "name": "14号线",
+      "stations": [
+        {
+          "id": "S1401",
+          "name": "上东",
+          "x": -1087,
+          "y": -3184,
+          "elevation": 90,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1402",
+          "name": "青都",
+          "x": -1074,
+          "y": -2923,
+          "elevation": 87,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1403",
+          "name": "崇教坊",
+          "x": -1035,
+          "y": -2600,
+          "elevation": 70,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1404",
+          "name": "新堡",
+          "x": -964,
+          "y": -2292,
+          "elevation": 64,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1405",
+          "name": "北门",
+          "x": -914,
+          "y": -1979,
+          "elevation": 55,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1406",
+          "name": "江南钟楼",
+          "x": -815,
+          "y": -1634,
+          "elevation": 69,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1407",
+          "name": "襄安",
+          "x": -786,
+          "y": -1347,
+          "elevation": 52,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1408",
+          "name": "江南西路",
+          "x": -794,
+          "y": -1043,
+          "elevation": 54,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1409",
+          "name": "涡口",
+          "x": -737,
+          "y": -736,
+          "elevation": 42,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1410",
+          "name": "西湖园区",
+          "x": -844,
+          "y": -460,
+          "elevation": 73,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1411",
+          "name": "歌舞剧院",
+          "x": -779,
+          "y": -238,
+          "elevation": 72,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1412",
+          "name": "水关",
+          "x": -721,
+          "y": 178,
+          "elevation": 64,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1413",
+          "name": "宣恩门",
+          "x": -700,
+          "y": 399,
+          "elevation": 64,
+          "transfer": true,
+          "elevated": true
+        }
+      ]
+    },
+    "15号线": {
+      "color": "#12561D",
+      "name": "15号线",
+      "stations": [
+        {
+          "id": "S1501",
+          "name": "红牌楼",
+          "x": 14,
+          "y": -2379,
+          "elevation": 48,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1502",
+          "name": "澄澜阁",
+          "x": -310,
+          "y": -2225,
+          "elevation": 54,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1503",
+          "name": "云步山",
+          "x": -356,
+          "y": -1938,
+          "elevation": 53,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1504",
+          "name": "义乡",
+          "x": -329,
+          "y": -1603,
+          "elevation": 59,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1505",
+          "name": "央体",
+          "x": -272,
+          "y": -1100,
+          "elevation": 46,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1506",
+          "name": "城市之心",
+          "x": 75,
+          "y": -864,
+          "elevation": 54,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1507",
+          "name": "市心街",
+          "x": 238,
+          "y": -629,
+          "elevation": 51,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1508",
+          "name": "明池",
+          "x": 260,
+          "y": -446,
+          "elevation": 58,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1509",
+          "name": "保宁寺",
+          "x": 372,
+          "y": -236,
+          "elevation": 45,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1510",
+          "name": "二体三院",
+          "x": 606,
+          "y": -9,
+          "elevation": 57,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1511",
+          "name": "柯亭",
+          "x": 736,
+          "y": 69,
+          "elevation": 46,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1512",
+          "name": "盐市口",
+          "x": 909,
+          "y": 99,
+          "elevation": 45,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1513",
+          "name": "表忠观",
+          "x": 1172,
+          "y": 524,
+          "elevation": 64,
+          "transfer": true,
+          "elevated": true
+        }
+      ]
+    },
+    "16号线": {
+      "color": "#7A1FF8",
+      "name": "16号线",
+      "stations": [
+        {
+          "id": "S1601",
+          "name": "北湾",
+          "x": 345,
+          "y": -3519,
+          "elevation": 65,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1602",
+          "name": "湿地公园",
+          "x": 274,
+          "y": -3136,
+          "elevation": 64,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1603",
+          "name": "科学城",
+          "x": 108,
+          "y": -2570,
+          "elevation": 72,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1604",
+          "name": "角城",
+          "x": 120,
+          "y": -2111,
+          "elevation": 68,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1605",
+          "name": "樟水",
+          "x": 53,
+          "y": -1713,
+          "elevation": 52,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1606",
+          "name": "府文庙",
+          "x": 145,
+          "y": -1365,
+          "elevation": 68,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1607",
+          "name": "中央中学",
+          "x": 86,
+          "y": -1096,
+          "elevation": 64,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1608",
+          "name": "城市之心",
+          "x": 75,
+          "y": -864,
+          "elevation": 54,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1609",
+          "name": "城西",
+          "x": -13,
+          "y": -582,
+          "elevation": 54,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1610",
+          "name": "吴国",
+          "x": -264,
+          "y": -277,
+          "elevation": 47,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1611",
+          "name": "三司厅",
+          "x": -553,
+          "y": -213,
+          "elevation": 61,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1612",
+          "name": "歌舞剧院",
+          "x": -779,
+          "y": -238,
+          "elevation": 72,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1613",
+          "name": "西湖之星",
+          "x": -1083,
+          "y": -342,
+          "elevation": 83,
+          "transfer": true,
+          "elevated": true
+        }
+      ]
+    },
+    "17号线": {
+      "color": "#5FE3C0",
+      "name": "17号线",
+      "stations": [
+        {
+          "id": "S1701",
+          "name": "大东寺",
+          "x": 1470,
+          "y": -2570,
+          "elevation": 69,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1702",
+          "name": "蔷薇河",
+          "x": 1534,
+          "y": -2171,
+          "elevation": 69,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1703",
+          "name": "阜民坊",
+          "x": 1501,
+          "y": -1866,
+          "elevation": 72,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1704",
+          "name": "三红",
+          "x": 1503,
+          "y": -1564,
+          "elevation": 58,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1705",
+          "name": "信安邨",
+          "x": 1405,
+          "y": -1360,
+          "elevation": 60,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1706",
+          "name": "信安",
+          "x": 1243,
+          "y": -1145,
+          "elevation": 70,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1707",
+          "name": "四象桥北江",
+          "x": 1044,
+          "y": -823,
+          "elevation": 47,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1708",
+          "name": "河源老城",
+          "x": 768,
+          "y": -602,
+          "elevation": 65,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1709",
+          "name": "步广里",
+          "x": 441,
+          "y": -575,
+          "elevation": 47,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1710",
+          "name": "明池",
+          "x": 260,
+          "y": -446,
+          "elevation": 58,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1711",
+          "name": "禄米仓",
+          "x": 57,
+          "y": -234,
+          "elevation": 49,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1712",
+          "name": "塘下",
+          "x": 57,
+          "y": 68,
+          "elevation": 52,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1713",
+          "name": "行都司二院",
+          "x": -201,
+          "y": 378,
+          "elevation": 45,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1714",
+          "name": "养济寨",
+          "x": -466,
+          "y": 521,
+          "elevation": 55,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1715",
+          "name": "镇海楼",
+          "x": -661,
+          "y": 683,
+          "elevation": 61,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1716",
+          "name": "太医局",
+          "x": -1034,
+          "y": 681,
+          "elevation": 64,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    },
+    "18号线": {
+      "color": "#9C7A7A",
+      "name": "18号线",
+      "stations": [
+        {
+          "id": "S1801",
+          "name": "府学",
+          "x": 1137,
+          "y": -746,
+          "elevation": 39,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1802",
+          "name": "前卫街",
+          "x": 1193,
+          "y": -485,
+          "elevation": 68,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1803",
+          "name": "典史署",
+          "x": 1232,
+          "y": -324,
+          "elevation": 46,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1804",
+          "name": "织染局",
+          "x": 1198,
+          "y": -131,
+          "elevation": 46,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1805",
+          "name": "指南宫",
+          "x": 1229,
+          "y": 7,
+          "elevation": 53,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "S1806",
+          "name": "敦化坊",
+          "x": 1138,
+          "y": 199,
+          "elevation": 71,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1807",
+          "name": "表忠观",
+          "x": 1172,
+          "y": 524,
+          "elevation": 64,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1808",
+          "name": "五体",
+          "x": 1178,
+          "y": 973,
+          "elevation": 81,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1809",
+          "name": "新水街",
+          "x": 1432,
+          "y": 1088,
+          "elevation": 81,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    },
+    "19号线": {
+      "color": "#622A62",
+      "name": "19号线",
+      "stations": [
+        {
+          "id": "S1901",
+          "name": "南湖西",
+          "x": -45,
+          "y": 1323,
+          "elevation": 93,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "S1902",
+          "name": "小南天",
+          "x": -59,
+          "y": 1621,
+          "elevation": 58,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1903",
+          "name": "六体",
+          "x": -13,
+          "y": 1939,
+          "elevation": 59,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "S1904",
+          "name": "南海岸新区",
+          "x": 70,
+          "y": 2142,
+          "elevation": 98,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1905",
+          "name": "达士新城",
+          "x": 70,
+          "y": 3208,
+          "elevation": 98,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "S1906",
+          "name": "云溪北",
+          "x": 50,
+          "y": 4164,
+          "elevation": 92,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    },
+    "H101线": {
+      "color": "#29FF9C",
+      "name": "H101线",
+      "stations": [
+        {
+          "id": "H101",
+          "name": "中央空港T4T5",
+          "x": -5859,
+          "y": -4456,
+          "elevation": 69,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H102",
+          "name": "中央空港T1T2T3",
+          "x": -5095,
+          "y": -4913,
+          "elevation": 80,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H103",
+          "name": "前岛",
+          "x": -3947,
+          "y": -4765,
+          "elevation": 84,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H104",
+          "name": "谷口",
+          "x": -1988,
+          "y": -4384,
+          "elevation": 75,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H105",
+          "name": "深海港区",
+          "x": -342,
+          "y": -4532,
+          "elevation": 98,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H106",
+          "name": "北湾",
+          "x": 367,
+          "y": -3767,
+          "elevation": 82,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H107",
+          "name": "上元",
+          "x": 845,
+          "y": -3245,
+          "elevation": 86,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H108",
+          "name": "昭文",
+          "x": 827,
+          "y": -2127,
+          "elevation": 46,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "H109",
+          "name": "信安邨",
+          "x": 1405,
+          "y": -1360,
+          "elevation": 60,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H110",
+          "name": "城东",
+          "x": 1827,
+          "y": -879,
+          "elevation": 77,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H111",
+          "name": "老郎",
+          "x": 2699,
+          "y": -756,
+          "elevation": 68,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H112",
+          "name": "体育城",
+          "x": 3440,
+          "y": -997,
+          "elevation": 78,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H113",
+          "name": "滨海新城",
+          "x": 4045,
+          "y": -1021,
+          "elevation": 81,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H114",
+          "name": "场口",
+          "x": 4336,
+          "y": -1075,
+          "elevation": 77,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H115",
+          "name": "鱼浦",
+          "x": 4837,
+          "y": -1149,
+          "elevation": 70,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H116",
+          "name": "苍步",
+          "x": 5106,
+          "y": -1430,
+          "elevation": 68,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H117",
+          "name": "安华",
+          "x": 5432,
+          "y": -1981,
+          "elevation": 70,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H118",
+          "name": "八曲",
+          "x": 5913,
+          "y": -2168,
+          "elevation": 86,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    },
+    "H102线": {
+      "color": "#FF0000",
+      "name": "H102线",
+      "stations": [
+        {
+          "id": "H10201",
+          "name": "信安",
+          "x": 1243,
+          "y": -1145,
+          "elevation": 70,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10202",
+          "name": "东门",
+          "x": 1395,
+          "y": -798,
+          "elevation": 49,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "H10203",
+          "name": "龙舒",
+          "x": 1338,
+          "y": -345,
+          "elevation": 65,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10204",
+          "name": "暨阳",
+          "x": 1032,
+          "y": -156,
+          "elevation": 93,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10205",
+          "name": "柯亭",
+          "x": 740,
+          "y": 217,
+          "elevation": 96,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10206",
+          "name": "塘下",
+          "x": 80,
+          "y": 220,
+          "elevation": 95,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10207",
+          "name": "鹊头",
+          "x": -274,
+          "y": -79,
+          "elevation": 89,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10208",
+          "name": "吴国",
+          "x": -264,
+          "y": -277,
+          "elevation": 47,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "H10209",
+          "name": "城西",
+          "x": -13,
+          "y": -582,
+          "elevation": 54,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "H10210",
+          "name": "五一",
+          "x": 411,
+          "y": -794,
+          "elevation": 39,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "H10211",
+          "name": "信安",
+          "x": 1243,
+          "y": -1145,
+          "elevation": 70,
+          "transfer": true,
+          "elevated": true
+        }
+      ]
+    },
+    "H103线": {
+      "color": "#CBD6D5",
+      "name": "H103线",
+      "stations": [
+        {
+          "id": "H10301",
+          "name": "漴缺",
+          "x": -2543,
+          "y": -2759,
+          "elevation": 73,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10302",
+          "name": "北郊",
+          "x": -626,
+          "y": -3026,
+          "elevation": 65,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10303",
+          "name": "北湾",
+          "x": 345,
+          "y": -3519,
+          "elevation": 65,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10304",
+          "name": "上元",
+          "x": 844,
+          "y": -3124,
+          "elevation": 86,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10305",
+          "name": "北海港",
+          "x": 2196,
+          "y": -2781,
+          "elevation": 72,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10306",
+          "name": "科学岛",
+          "x": 2683,
+          "y": -3061,
+          "elevation": 67,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10307",
+          "name": "新城",
+          "x": 3451,
+          "y": -3395,
+          "elevation": 96,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10308",
+          "name": "海头",
+          "x": 3850,
+          "y": -2541,
+          "elevation": 74,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10309",
+          "name": "枫亭",
+          "x": 4016,
+          "y": -2049,
+          "elevation": 92,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10310",
+          "name": "大源",
+          "x": 4257,
+          "y": -1917,
+          "elevation": 73,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10311",
+          "name": "场口",
+          "x": 4336,
+          "y": -1075,
+          "elevation": 77,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10312",
+          "name": "直河",
+          "x": 4143,
+          "y": -171,
+          "elevation": 72,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10313",
+          "name": "新河",
+          "x": 4606,
+          "y": 318,
+          "elevation": 78,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10314",
+          "name": "长浦",
+          "x": 4066,
+          "y": 1585,
+          "elevation": 65,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10315",
+          "name": "前山",
+          "x": 3792,
+          "y": 1374,
+          "elevation": 82,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10316",
+          "name": "始宁T2",
+          "x": 3191,
+          "y": 1419,
+          "elevation": 104,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10317",
+          "name": "始宁T1",
+          "x": 2697,
+          "y": 1425,
+          "elevation": 101,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10318",
+          "name": "长途南站",
+          "x": 2284,
+          "y": 1150,
+          "elevation": 82,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10319",
+          "name": "大市街",
+          "x": 1715,
+          "y": 1107,
+          "elevation": 93,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10320",
+          "name": "舶司署",
+          "x": 1143,
+          "y": 1060,
+          "elevation": 89,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10321",
+          "name": "南湖",
+          "x": 761,
+          "y": 1218,
+          "elevation": 80,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10322",
+          "name": "文明门",
+          "x": -63,
+          "y": 1126,
+          "elevation": 96,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10323",
+          "name": "进德门",
+          "x": -326,
+          "y": 1097,
+          "elevation": 61,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10324",
+          "name": "军政司",
+          "x": -840,
+          "y": 1062,
+          "elevation": 75,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10325",
+          "name": "少年宫",
+          "x": -1257,
+          "y": 1275,
+          "elevation": 91,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10326",
+          "name": "望江",
+          "x": -2474,
+          "y": 379,
+          "elevation": 65,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10327",
+          "name": "登步",
+          "x": -3292,
+          "y": -1107,
+          "elevation": 34,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "H10328",
+          "name": "宝海",
+          "x": -2397,
+          "y": -1759,
+          "elevation": 69,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10329",
+          "name": "漴缺",
+          "x": -2543,
+          "y": -2759,
+          "elevation": 73,
+          "transfer": true,
+          "elevated": true
+        }
+      ]
+    },
+    "H104线": {
+      "color": "#6C93C2",
+      "name": "H104线",
+      "stations": [
+        {
+          "id": "H10401",
+          "name": "凤岙",
+          "x": 5303,
+          "y": -3327,
+          "elevation": 88,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10402",
+          "name": "下涯埠",
+          "x": 4468,
+          "y": -2899,
+          "elevation": 68,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10403",
+          "name": "海头",
+          "x": 3850,
+          "y": -2541,
+          "elevation": 74,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10404",
+          "name": "东关隘",
+          "x": 3551,
+          "y": -2208,
+          "elevation": 84,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10405",
+          "name": "竹帛湖",
+          "x": 2954,
+          "y": -1949,
+          "elevation": 64,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10406",
+          "name": "聚阳",
+          "x": 2023,
+          "y": -2210,
+          "elevation": 73,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10407",
+          "name": "宣平",
+          "x": 1718,
+          "y": -1418,
+          "elevation": 75,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10408",
+          "name": "大东门",
+          "x": 1916,
+          "y": -557,
+          "elevation": 74,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10409",
+          "name": "新区",
+          "x": 2047,
+          "y": 469,
+          "elevation": 62,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10410",
+          "name": "迎薰门",
+          "x": 1813,
+          "y": 1657,
+          "elevation": 76,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10411",
+          "name": "灵塔",
+          "x": 563,
+          "y": 2119,
+          "elevation": 81,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10412",
+          "name": "达士",
+          "x": 390,
+          "y": 3303,
+          "elevation": 65,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10413",
+          "name": "汉景",
+          "x": -2862,
+          "y": 3327,
+          "elevation": 65,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10414",
+          "name": "武泰",
+          "x": -3999,
+          "y": 2817,
+          "elevation": 69,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    },
+    "H105线": {
+      "color": "#D1E292",
+      "name": "H105线",
+      "stations": [
+        {
+          "id": "H10501",
+          "name": "东湖园区",
+          "x": 2125,
+          "y": -740,
+          "elevation": 41,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "H10502",
+          "name": "二七",
+          "x": 1439,
+          "y": -467,
+          "elevation": 63,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10503",
+          "name": "龙舒",
+          "x": 1338,
+          "y": -345,
+          "elevation": 65,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10504",
+          "name": "暨阳",
+          "x": 1032,
+          "y": -156,
+          "elevation": 93,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10505",
+          "name": "河源",
+          "x": 768,
+          "y": -602,
+          "elevation": 65,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10506",
+          "name": "老城",
+          "x": 476,
+          "y": -615,
+          "elevation": 53,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "H10507",
+          "name": "城西",
+          "x": -13,
+          "y": -582,
+          "elevation": 54,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "H10508",
+          "name": "吴国",
+          "x": -264,
+          "y": -277,
+          "elevation": 47,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "H10509",
+          "name": "西湖园区",
+          "x": -844,
+          "y": -460,
+          "elevation": 73,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10510",
+          "name": "古城",
+          "x": -1453,
+          "y": -499,
+          "elevation": 85,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10511",
+          "name": "西海湾",
+          "x": -2210,
+          "y": -887,
+          "elevation": 52,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "H10512",
+          "name": "宝海",
+          "x": -2397,
+          "y": -1759,
+          "elevation": 69,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10513",
+          "name": "石头沙",
+          "x": -3191,
+          "y": -2295,
+          "elevation": 63,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10514",
+          "name": "迎恩",
+          "x": -4666,
+          "y": -3663,
+          "elevation": 77,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10515",
+          "name": "中央空港T4T5",
+          "x": -5859,
+          "y": -4456,
+          "elevation": 69,
+          "transfer": true,
+          "elevated": true
+        }
+      ]
+    },
+    "H106线": {
+      "color": "#6A854D",
+      "name": "H106线",
+      "stations": [
+        {
+          "id": "H10601",
+          "name": "柯亭",
+          "x": 740,
+          "y": 217,
+          "elevation": 96,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10602",
+          "name": "宜春门",
+          "x": 1540,
+          "y": 343,
+          "elevation": 101,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10603",
+          "name": "始宁",
+          "x": 3013,
+          "y": 930,
+          "elevation": 77,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10604",
+          "name": "宁邨",
+          "x": 4285,
+          "y": 843,
+          "elevation": 72,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10605",
+          "name": "新河",
+          "x": 4606,
+          "y": 318,
+          "elevation": 78,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10606",
+          "name": "直河空港",
+          "x": 5972,
+          "y": 1425,
+          "elevation": 71,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    },
+    "H107线": {
+      "color": "#3B0ECF",
+      "name": "H107线",
+      "stations": [
+        {
+          "id": "H10701",
+          "name": "迎薰门",
+          "x": 1813,
+          "y": 1657,
+          "elevation": 76,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10702",
+          "name": "南湖",
+          "x": 761,
+          "y": 1218,
+          "elevation": 80,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10703",
+          "name": "龙井巷",
+          "x": 651,
+          "y": 1604,
+          "elevation": 86,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10704",
+          "name": "灵塔",
+          "x": 563,
+          "y": 2119,
+          "elevation": 81,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10705",
+          "name": "永安门",
+          "x": 968,
+          "y": 2277,
+          "elevation": 77,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10706",
+          "name": "高空",
+          "x": 1210,
+          "y": 2306,
+          "elevation": 81,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10707",
+          "name": "体仁门",
+          "x": 1635,
+          "y": 2237,
+          "elevation": 62,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10708",
+          "name": "观象台",
+          "x": 1840,
+          "y": 2249,
+          "elevation": 67,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10709",
+          "name": "湾尾",
+          "x": 2359,
+          "y": 2396,
+          "elevation": 71,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10710",
+          "name": "祥凤",
+          "x": 2661,
+          "y": 2954,
+          "elevation": 80,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10711",
+          "name": "良兴",
+          "x": 3408,
+          "y": 3371,
+          "elevation": 65,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10712",
+          "name": "吴洋空港",
+          "x": 3840,
+          "y": 3367,
+          "elevation": 65,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10713",
+          "name": "吴洋西",
+          "x": 3991,
+          "y": 3730,
+          "elevation": 67,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10714",
+          "name": "马溪",
+          "x": 3904,
+          "y": 4293,
+          "elevation": 69,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10715",
+          "name": "江尾",
+          "x": 3442,
+          "y": 4468,
+          "elevation": 74,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    },
+    "H108线": {
+      "color": "#749D1A",
+      "name": "H108线",
+      "stations": [
+        {
+          "id": "H10801",
+          "name": "长浦",
+          "x": 4066,
+          "y": 1585,
+          "elevation": 65,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10802",
+          "name": "长浦东",
+          "x": 4276,
+          "y": 1636,
+          "elevation": 73,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10803",
+          "name": "长浦空港",
+          "x": 4313,
+          "y": 1963,
+          "elevation": 79,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10804",
+          "name": "金溪",
+          "x": 4643,
+          "y": 2453,
+          "elevation": 85,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10805",
+          "name": "七滧",
+          "x": 4247,
+          "y": 2889,
+          "elevation": 99,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10806",
+          "name": "吴洋空港",
+          "x": 3840,
+          "y": 3367,
+          "elevation": 65,
+          "transfer": true,
+          "elevated": true
+        }
+      ]
+    },
+    "H109线": {
+      "color": "#32CE3A",
+      "name": "H109线",
+      "stations": [
+        {
+          "id": "H10901",
+          "name": "少年宫",
+          "x": -1257,
+          "y": 1275,
+          "elevation": 91,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10902",
+          "name": "龙云",
+          "x": -1465,
+          "y": 1865,
+          "elevation": 62,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10903",
+          "name": "三山",
+          "x": -2423,
+          "y": 1626,
+          "elevation": 81,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10904",
+          "name": "花山",
+          "x": -2979,
+          "y": 1558,
+          "elevation": 68,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10905",
+          "name": "永坪里",
+          "x": -3867,
+          "y": 890,
+          "elevation": 83,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10906",
+          "name": "碑亭",
+          "x": -5349,
+          "y": 1035,
+          "elevation": 102,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10907",
+          "name": "新亭津",
+          "x": -5294,
+          "y": 1657,
+          "elevation": 71,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10908",
+          "name": "恒阳",
+          "x": -4412,
+          "y": 2250,
+          "elevation": 64,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H10909",
+          "name": "武泰",
+          "x": -3999,
+          "y": 2817,
+          "elevation": 69,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H10910",
+          "name": "新仓空港",
+          "x": -4729,
+          "y": 4276,
+          "elevation": 73,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    },
+    "H110线": {
+      "color": "#D4CE2D",
+      "name": "H110线",
+      "stations": [
+        {
+          "id": "H11001",
+          "name": "新城",
+          "x": 3451,
+          "y": -3395,
+          "elevation": 96,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "H11002",
+          "name": "四子墩",
+          "x": 3487,
+          "y": -4050,
+          "elevation": 72,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H11003",
+          "name": "通贤",
+          "x": 2776,
+          "y": -3992,
+          "elevation": 67,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "H11004",
+          "name": "首列",
+          "x": 1944,
+          "y": -4073,
+          "elevation": 41,
+          "transfer": false,
+          "elevated": false
+        }
+      ]
+    },
+    "U1号线": {
+      "color": "#369070",
+      "name": "U1号线",
+      "stations": [
+        {
+          "id": "U101",
+          "name": "登步",
+          "x": -3093,
+          "y": -1197,
+          "elevation": 74,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "U102",
+          "name": "五担山",
+          "x": -2996,
+          "y": -705,
+          "elevation": 85,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "U103",
+          "name": "凤栖山",
+          "x": -3019,
+          "y": -409,
+          "elevation": 97,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "U104",
+          "name": "河伯所",
+          "x": -3058,
+          "y": -110,
+          "elevation": 86,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "U105",
+          "name": "六水桥",
+          "x": -2903,
+          "y": 327,
+          "elevation": 57,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "U106",
+          "name": "奥体中心",
+          "x": -2930,
+          "y": 576,
+          "elevation": 58,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "U107",
+          "name": "十字街",
+          "x": -2934,
+          "y": 717,
+          "elevation": 62,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "U108",
+          "name": "飞云",
+          "x": -2988,
+          "y": 874,
+          "elevation": 62,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    },
+    "U2线": {
+      "color": "#69125E",
+      "name": "U2线",
+      "stations": [
+        {
+          "id": "U201",
+          "name": "下寺坡",
+          "x": -3954,
+          "y": 967,
+          "elevation": 44,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "U202",
+          "name": "火车站东",
+          "x": -3748,
+          "y": 879,
+          "elevation": 83,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "U203",
+          "name": "朱衣阁",
+          "x": -3712,
+          "y": 691,
+          "elevation": 73,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "U204",
+          "name": "归义门",
+          "x": -3107,
+          "y": 555,
+          "elevation": 49,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "U205",
+          "name": "奥体中心",
+          "x": -2930,
+          "y": 576,
+          "elevation": 58,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "U206",
+          "name": "参将府",
+          "x": -2592,
+          "y": 628,
+          "elevation": 66,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "U207",
+          "name": "望江综合交通枢纽",
+          "x": -2456,
+          "y": 433,
+          "elevation": 64,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "U208",
+          "name": "三元宫",
+          "x": -2203,
+          "y": 340,
+          "elevation": 79,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    },
+    "K1线": {
+      "color": "#98C924",
+      "name": "K1线",
+      "stations": [
+        {
+          "id": "K101",
+          "name": "通贤",
+          "x": 2776,
+          "y": -3992,
+          "elevation": 67,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "K102",
+          "name": "东门大街",
+          "x": 2950,
+          "y": -4178,
+          "elevation": 49,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "K103",
+          "name": "咸化门",
+          "x": 2892,
+          "y": -4468,
+          "elevation": 48,
+          "transfer": true,
+          "elevated": false
+        }
+      ]
+    },
+    "K2线": {
+      "color": "#2C5D9B",
+      "name": "K2线",
+      "stations": [
+        {
+          "id": "K201",
+          "name": "咸化门",
+          "x": 2892,
+          "y": -4468,
+          "elevation": 48,
+          "transfer": true,
+          "elevated": false
+        },
+        {
+          "id": "K202",
+          "name": "天仙街",
+          "x": 3203,
+          "y": -4443,
+          "elevation": 49,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "K203",
+          "name": "丰济仓",
+          "x": 3518,
+          "y": -4370,
+          "elevation": 51,
+          "transfer": false,
+          "elevated": false
+        },
+        {
+          "id": "K204",
+          "name": "四子墩",
+          "x": 3595,
+          "y": -4114,
+          "elevation": 83,
+          "transfer": true,
+          "elevated": true
+        }
+      ]
+    },
+    "K3线": {
+      "color": "#CDE73F",
+      "name": "K3线",
+      "stations": [
+        {
+          "id": "K301",
+          "name": "四子墩",
+          "x": 3595,
+          "y": -4114,
+          "elevation": 83,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "K302",
+          "name": "机场",
+          "x": 3946,
+          "y": -5275,
+          "elevation": 81,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    },
+    "T1线": {
+      "color": "#2579B4",
+      "name": "T1线",
+      "stations": [
+        {
+          "id": "T101",
+          "name": "水屯",
+          "x": 3880,
+          "y": 295,
+          "elevation": 76,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "T102",
+          "name": "三元巷",
+          "x": 4007,
+          "y": 239,
+          "elevation": 94,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "T103",
+          "name": "拱辰门",
+          "x": 4139,
+          "y": 180,
+          "elevation": 92,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "T104",
+          "name": "城隍庙",
+          "x": 4312,
+          "y": 209,
+          "elevation": 96,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "T105",
+          "name": "石牌坊",
+          "x": 4511,
+          "y": 212,
+          "elevation": 76,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    },
+    "T2线": {
+      "color": "#DBD35D",
+      "name": "T2线",
+      "stations": [
+        {
+          "id": "T201",
+          "name": "白塔山",
+          "x": 4321,
+          "y": -320,
+          "elevation": 83,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "T202",
+          "name": "直河",
+          "x": 4277,
+          "y": -174,
+          "elevation": 80,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "T203",
+          "name": "壶源",
+          "x": 4285,
+          "y": 11,
+          "elevation": 89,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "T204",
+          "name": "城隍庙",
+          "x": 4312,
+          "y": 209,
+          "elevation": 96,
+          "transfer": true,
+          "elevated": true
+        }
+      ]
+    },
+    "B1线": {
+      "color": "#B802C4",
+      "name": "B1线",
+      "stations": [
+        {
+          "id": "B101",
+          "name": "云溪北",
+          "x": 50,
+          "y": 4164,
+          "elevation": 92,
+          "transfer": true,
+          "elevated": true
+        },
+        {
+          "id": "B102",
+          "name": "象浦",
+          "x": 130,
+          "y": 4305,
+          "elevation": 76,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "B103",
+          "name": "联城",
+          "x": 143,
+          "y": 4481,
+          "elevation": 80,
+          "transfer": false,
+          "elevated": true
+        },
+        {
+          "id": "B104",
+          "name": "云溪",
+          "x": 299,
+          "y": 4565,
+          "elevation": 68,
+          "transfer": false,
+          "elevated": true
+        }
+      ]
+    }
+  }
+};
+
+        let mapState = {
+            scale: 0.8,
+            translateX: 400,
+            translateY: 400,
+            isDragging: false,
+            lastX: 0, lastY: 0,
+            activeLines: new Set(Object.keys(subwayData.lines)),
+            showLabels: true,
+            iconMode: false
+        };
+
+        const svg = document.getElementById('map');
+        const mapGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        svg.appendChild(mapGroup);
+
+        let labelElements = [];
+
+        // --- 图标映射 ---
+        function getStationIcon(id) {
+            if (!id) return '㉿';
+            const prefix = id.charAt(0).toUpperCase();
+            switch(prefix) {
+                case 'H': return '₪'; case 'S': return '㉿'; case 'M': return 'Ⓜ';
+                case 'U': return 'ℳ'; case 'K': return 'ʍ'; case 'T': return '₥';
+                case 'B': return 'Ꮑ'; default: return '㉿';
+            }
+        }
+
+        function toggleIconMode() {
+            mapState.iconMode = !mapState.iconMode;
+            const btn = document.getElementById('mode-btn');
+            if (mapState.iconMode) {
+                btn.innerHTML = '<i class="fas fa-circle"></i> 恢复普通模式'; btn.style.background = '#e67e22';
+            } else {
+                btn.innerHTML = '<i class="fas fa-icons"></i> 切换信息模式'; btn.style.background = '#8e44ad';
+            }
+            renderMap();
+        }
+
+        function generateLineControls() {
+            const container = document.getElementById('line-controls');
+            container.innerHTML = '';
+            const sortedLines = Object.entries(subwayData.lines).sort((a,b) => {
+                const numA = parseInt(a[0].replace(/\D/g, '')) || 0;
+                const numB = parseInt(b[0].replace(/\D/g, '')) || 0;
+                return numA - numB;
+            });
+            sortedLines.forEach(([lineId, line]) => {
+                const div = document.createElement('div');
+                div.className = `line-control ${mapState.activeLines.has(lineId) ? 'active' : ''}`;
+
+                // 铁轨样式预览
+                let colorStyle = `background: ${line.color};`;
+                if(lineId.startsWith('H')) {
+                    colorStyle = `background: repeating-linear-gradient(to right, ${line.color} 0, ${line.color} 3px, #fff 3px, #fff 6px); border: 1px solid ${line.color};`;
+                }
+
+                div.onclick = () => {
+                    if (mapState.activeLines.has(lineId)) mapState.activeLines.delete(lineId);
+                    else mapState.activeLines.add(lineId);
+                    div.className = `line-control ${mapState.activeLines.has(lineId) ? 'active' : ''}`;
+                    renderMap();
+                };
+                const totalStations = line.stations.length;
+                const elevatedStations = line.stations.filter(s => s.elevation >= 60).length;
+                div.innerHTML = `<div class="line-color" style="${colorStyle}"></div><div class="line-info"><div class="line-name">${line.name}</div><div class="line-stats">共${totalStations}站 / 高架${elevatedStations}站</div></div>`;
+                container.appendChild(div);
+            });
+        }
+
+        function getPos(station) { return { x: (station.x + 6000) * 0.08, y: (station.y + 5000) * 0.08 }; }
+
+        function getSplinePath(p0, p1, p2, p3) {
+            const tension = 0.4; 
+            if (!p0 || !p1 || !p2 || !p3) return '';
+            const cp1x = p1.x + (p2.x - p0.x) * tension / 3;
+            const cp1y = p1.y + (p2.y - p0.y) * tension / 3;
+            const cp2x = p2.x - (p3.x - p1.x) * tension / 3;
+            const cp2y = p2.y - (p3.y - p1.y) * tension / 3;
+            return `M ${p1.x} ${p1.y} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${p2.x} ${p2.y}`;
+        }
+
+        function drawPath(d, color, className) {
+             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+             path.setAttribute('d', d);
+             path.setAttribute('stroke', color);
+             path.setAttribute('class', className);
+             mapGroup.appendChild(path);
+        }
+
+        function renderMap() {
+            mapGroup.innerHTML = ''; 
+            labelElements = [];
+            const stationMap = {};
+            const segments = [];
+
+            // A. 计算路径
+            Object.entries(subwayData.lines).forEach(([lineId, line]) => {
+                if (!mapState.activeLines.has(lineId)) return;
+                const isHSR = lineId.startsWith('H');
+                const stations = line.stations;
+                if (stations.length < 2) return;
+
+                for (let i = 0; i < stations.length - 1; i++) {
+                    const s1 = stations[i];
+                    const s2 = stations[i+1];
+                    const isViaduct = (s1.elevation >= 60 && s2.elevation >= 60);
+                    const p0 = getPos(stations[Math.max(0, i - 1)]);
+                    const p1 = getPos(s1);
+                    const p2 = getPos(s2);
+                    const p3 = getPos(stations[Math.min(stations.length - 1, i + 2)]);
+                    const d = getSplinePath(p0, p1, p2, p3);
+                    if (d) segments.push({ d: d, color: line.color, isViaduct: isViaduct, isHSR: isHSR });
+                }
+            });
+
+            // B. 绘制图层 (关键：多层叠加创造铁轨效果)
+
+            // 1. 高架底座 (通用)
+            segments.forEach(seg => { if (seg.isViaduct) drawPath(seg.d, '#fff', 'viaduct-base'); });
+
+            // 2. 地铁绘制 (普通颜色实线)
+            segments.forEach(seg => { 
+                if (!seg.isHSR) {
+                    drawPath(seg.d, seg.color, seg.isViaduct ? 'metro-base' : 'metro-base'); // 地铁无论高架地面都是实线
+                    if (seg.isViaduct) drawPath(seg.d, '#fff', 'viaduct-split'); // 高架分割
+                }
+            });
+
+            // 3. HSR 铁轨绘制 (三层叠加：颜色底->白色空心->颜色枕木)
+            segments.forEach(seg => {
+                if (seg.isHSR) {
+                    // H1: 底层颜色 (宽) -> 形成双轨边缘
+                    drawPath(seg.d, seg.color, 'rail-bed');
+                    // H2: 中层白色 (稍窄) -> 挖空中间
+                    drawPath(seg.d, '#eef2f5', 'rail-hollow');
+                    // H3: 顶层颜色虚线 (细) -> 形成枕木
+                    drawPath(seg.d, seg.color, 'rail-ties');
+                }
+            });
+
+            // C. 站点处理 (保持不变)
+            Object.entries(subwayData.lines).forEach(([lineId, line]) => {
+                if (!mapState.activeLines.has(lineId)) return;
+                line.stations.forEach(s => {
+                    const pos = getPos(s);
+                    if (!stationMap[s.name]) stationMap[s.name] = { ...s, displayX: pos.x, displayY: pos.y, lines: [lineId], color: line.color };
+                    else if (!stationMap[s.name].lines.includes(lineId)) stationMap[s.name].lines.push(lineId);
+                });
+            });
+
+            Object.values(stationMap).forEach(s => {
+                const isTransfer = s.lines.length > 1;
+                if (mapState.iconMode) {
+                    const iconText = getStationIcon(s.id);
+                    const color = isTransfer ? '#e74c3c' : '#2ecc71';
+                    const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    textEl.textContent = iconText;
+                    textEl.setAttribute('x', s.displayX); textEl.setAttribute('y', s.displayY);
+                    textEl.setAttribute('class', 'station-icon-text');
+                    textEl.style.fill = color;
+                    textEl.dataset.originX = s.displayX; textEl.dataset.originY = s.displayY;
+                    textEl.onclick = () => showInfo(s);
+                    mapGroup.appendChild(textEl);
+                } else {
+                    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    circle.setAttribute('cx', s.displayX); circle.setAttribute('cy', s.displayY);
+                    circle.setAttribute('r', isTransfer ? '5' : '4'); 
+                    circle.setAttribute('class', 'station-icon-circle');
+                    circle.dataset.originX = s.displayX; circle.dataset.originY = s.displayY;
+                    circle.onclick = () => showInfo(s);
+                    mapGroup.appendChild(circle);
+                }
+            });
+
+            if (mapState.showLabels) {
+                Object.values(stationMap).forEach(s => {
+                    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    text.textContent = s.name;
+                    text.setAttribute('class', 'station-label');
+                    text.dataset.originX = s.displayX; text.dataset.originY = s.displayY;
+                    mapGroup.appendChild(text);
+                    labelElements.push(text);
+                });
+            }
+            updateLegend(); updateLabelsPosition(); updateTransform();
+        }
+
+        function updateLegend() {
+            const legend = document.getElementById('legend');
+            let html = `
+                <h4>图例说明</h4>
+                <div class="legend-item"><div class="legend-line-normal"></div><span>地铁 (M/S/L)</span></div>
+                <div class="legend-item"><div class="legend-line-rail"></div><span>高铁/H线 (铁轨)</span></div>
+            `;
+            if (mapState.iconMode) {
+                html += `
+                    <div class="legend-grid">
+                        <div><span class="legend-icon" style="color: #e74c3c;">㉿</span>换乘站</div>
+                        <div><span class="legend-icon" style="color: #2ecc71;">㉿</span>非换乘</div>
+                        <div><span class="legend-icon" style="color: #2ecc71;">₪</span>高铁(H)</div>
+                        <div><span class="legend-icon" style="color: #2ecc71;">㉿</span>地铁(M)</div>
+                        <div><span class="legend-icon" style="color: #2ecc71;">Ⓜ</span>市郊(S)</div>
+                        <div><span class="legend-icon" style="color: #2ecc71;">ℳ</span>城际(U)</div>
+                    </div>
+                `;
+            }
+            legend.innerHTML = html;
+        }
+
+        // (其余通用函数保持不变)
+        function updateLabelsPosition() {
+            const textOffset = mapState.iconMode ? 14 : 10;
+            const svgOffset = textOffset / mapState.scale;
+            labelElements.forEach(text => {
+                const ox = parseFloat(text.dataset.originX);
+                const oy = parseFloat(text.dataset.originY);
+                text.setAttribute('x', ox + svgOffset); text.setAttribute('y', oy);
+            });
+        }
+        function showInfo(s) {
+            const html = `<h3>${s.name} ${s.lines.length > 1 ? '<span style="color:#e74c3c;font-size:12px">换乘</span>' : ''}</h3><p><strong>ID:</strong> ${s.id}</p><p><strong>海拔:</strong> ${s.elevation}米 ${s.elevation>=60 ? '(高架)' : ''}</p><p><strong>线路:</strong> ${s.lines.join(', ')}</p><p style="color:#666; font-size:12px">X: ${s.x}, Y: ${s.y}</p>`;
+            document.getElementById('station-info').innerHTML = html;
+        }
+        function toggleLabels() { mapState.showLabels = !mapState.showLabels; renderMap(); }
+        function handleSearch() {
+            const input = document.getElementById('search-input'); const resultsDiv = document.getElementById('search-results'); const term = input.value.trim().toLowerCase();
+            if (!term) { resultsDiv.style.display = 'none'; return; }
+            let matches = [];
+            Object.values(subwayData.lines).forEach(line => {
+                line.stations.forEach(s => {
+                    if (s.name.toLowerCase().includes(term)) {
+                        const exists = matches.find(m => m.name === s.name);
+                        if (!exists) matches.push({ ...s, lineName: line.name }); else exists.lineName += `, ${line.name}`;
+                    }
+                });
+            });
+            if (matches.length === 0) { resultsDiv.style.display = 'none'; return; }
+            resultsDiv.innerHTML = matches.map(s => `<div class="search-item" onclick="selectStation('${s.name}')"><span class="search-item-name">${s.name}</span><span class="search-item-line">${s.lineName}</span></div>`).join('');
+            resultsDiv.style.display = 'block';
+        }
+        function selectStation(name) {
+            document.getElementById('search-input').value = name; document.getElementById('search-results').style.display = 'none';
+            let targetStation = null;
+            for (const [lineId, line] of Object.entries(subwayData.lines)) {
+                const s = line.stations.find(st => st.name === name);
+                if (s) { targetStation = s; if (!mapState.activeLines.has(lineId)) { mapState.activeLines.add(lineId); generateLineControls(); renderMap(); } break; }
+            }
+            if (targetStation) {
+                const pos = getPos(targetStation); mapState.scale = 2.0; 
+                const svgW = svg.clientWidth || 800; const svgH = svg.clientHeight || 600;
+                mapState.translateX = svgW/2 - pos.x * mapState.scale; mapState.translateY = svgH/2 - pos.y * mapState.scale;
+                updateTransform();
+                let lines = []; Object.values(subwayData.lines).forEach(l => { if (l.stations.some(s => s.name === name)) lines.push(l.name); });
+                showInfo({...targetStation, lines: lines}); 
+            }
+        }
+        document.addEventListener('click', function(e) { if (!document.querySelector('.search-box').contains(e.target)) { document.getElementById('search-results').style.display = 'none'; } });
+        function updateTransform() { mapGroup.setAttribute('transform', `translate(${mapState.translateX}, ${mapState.translateY}) scale(${mapState.scale})`); svg.style.setProperty('--map-scale', mapState.scale); updateLabelsPosition(); }
+        function zoomIn() { mapState.scale *= 1.2; updateTransform(); }
+        function zoomOut() { mapState.scale *= 0.8; updateTransform(); }
+        function resetView() { mapState.scale = 0.8; mapState.translateX = 400; mapState.translateY = 400; updateTransform(); }
+        function showAllLines() { mapState.activeLines = new Set(Object.keys(subwayData.lines)); generateLineControls(); renderMap(); }
+        svg.addEventListener('mousedown', e => { mapState.isDragging = true; mapState.lastX = e.clientX; mapState.lastY = e.clientY; });
+        window.addEventListener('mousemove', e => { if (!mapState.isDragging) return; const dx = e.clientX - mapState.lastX; const dy = e.clientY - mapState.lastY; mapState.translateX += dx; mapState.translateY += dy; mapState.lastX = e.clientX; mapState.lastY = e.clientY; updateTransform(); });
+        window.addEventListener('mouseup', () => mapState.isDragging = false);
+        svg.addEventListener('wheel', e => { e.preventDefault(); const factor = e.deltaY > 0 ? 0.9 : 1.1; mapState.scale *= factor; if(mapState.scale < 0.2) mapState.scale = 0.2; if(mapState.scale > 10) mapState.scale = 10; updateTransform(); });
+
+        generateLineControls(); renderMap();
+    </script>
+</body>
+</html>
 
 
 
