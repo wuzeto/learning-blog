@@ -9,119 +9,163 @@
         /* --- 基础样式 --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif; background: linear-gradient(135deg, #f5f7fa, #c3cfe2); color: #333; min-height: 100vh; overflow-x: hidden; }
-        .container { max-width: 100vw; }
+        .container { max-width: 100vw; height: 100vh; display: flex; flex-direction: column; }
 
-        .header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 15px 30px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
-        .header h1 { font-size: 1.8em; color: #2c3e50; }
+        /* --- 顶部导航 (变紧凑) --- */
+        .header { 
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); 
+            padding: 10px 20px; /* 减小内边距 */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+            z-index: 1000; display: flex; justify-content: space-between; align-items: center;
+            height: 60px; flex-shrink: 0;
+        }
+        .header h1 { font-size: 1.4em; color: #2c3e50; margin: 0; }
+        .header-info { font-size: 12px; color: #666; margin-left: 10px; }
 
-        .main-content { display: flex; min-height: calc(100vh - 80px); }
-        .map-container { flex: 3; background: #eef2f5; position: relative; overflow: hidden; }
+        /* --- 主布局区域 --- */
+        .main-content { 
+            display: flex; 
+            flex: 1; 
+            position: relative; /* 为折叠按钮定位 */
+            overflow: hidden; 
+        }
+
+        /* 地图容器：占据剩余所有空间 */
+        .map-container { 
+            flex: 1; 
+            background: #eef2f5; 
+            position: relative; 
+            overflow: hidden; 
+            transition: all 0.3s ease; /* 平滑过渡 */
+        }
         #map { width: 100%; height: 100%; cursor: move; --map-scale: 1; }
-        .control-panel { flex: 1; min-width: 320px; max-width: 420px; background: white; padding: 20px; overflow-y: auto; box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1); z-index: 1001; }
 
-        .search-box { position: relative; margin-bottom: 20px; }
-        .search-box input { width: 100%; padding: 12px 20px 12px 40px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; background: #f8f9fa; transition: border-color 0.3s; }
-        .search-box i { position: absolute; left: 15px; top: 14px; color: #95a5a6; }
+        /* --- 控制面板 (侧边栏优化) --- */
+        .control-panel { 
+            width: 300px; /* 固定宽度，不再按比例伸缩 */
+            flex-shrink: 0; /* 禁止压缩 */
+            background: white; 
+            padding: 15px; 
+            overflow-y: auto; 
+            box-shadow: -2px 0 15px rgba(0, 0, 0, 0.05); 
+            z-index: 1001; 
+            transition: margin-right 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+
+        /* 折叠状态 */
+        .main-content.collapsed .control-panel {
+            margin-right: -300px; /* 向右移出屏幕 */
+            transform: translateX(300px);
+        }
+
+        /* --- 折叠/展开 悬浮按钮 --- */
+        .toggle-sidebar-btn {
+            position: absolute;
+            top: 50%;
+            right: 300px; /* 默认贴在侧边栏左侧 */
+            transform: translateY(-50%);
+            width: 24px;
+            height: 60px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-right: none;
+            border-radius: 8px 0 0 8px;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+            cursor: pointer;
+            z-index: 1002;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            transition: right 0.3s ease, background 0.2s;
+        }
+        .toggle-sidebar-btn:hover { background: #f0f7ff; color: #3498db; }
+
+        /* 折叠时的按钮位置 */
+        .main-content.collapsed .toggle-sidebar-btn {
+            right: 0;
+        }
+
+        /* --- 搜索框 (紧凑版) --- */
+        .search-box { position: relative; margin-bottom: 15px; }
+        .search-box input { width: 100%; padding: 10px 15px 10px 35px; border: 1px solid #ddd; border-radius: 20px; font-size: 14px; background: #f8f9fa; transition: all 0.3s; }
+        .search-box input:focus { border-color: #3498db; background: #fff; box-shadow: 0 0 5px rgba(52,152,219,0.2); outline: none; }
+        .search-box i { position: absolute; left: 12px; top: 12px; color: #95a5a6; font-size: 14px; }
         .search-results { position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #eee; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-height: 300px; overflow-y: auto; z-index: 2000; margin-top: 5px; display: none; }
-        .search-item { padding: 10px 15px; cursor: pointer; border-bottom: 1px solid #f5f5f5; display: flex; justify-content: space-between; align-items: center; }
+        .search-item { padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #f5f5f5; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
         .search-item:hover { background-color: #f0f7ff; }
 
-        .line-control { display: flex; align-items: center; padding: 12px; background: #f8f9fa; border-radius: 8px; margin-bottom: 10px; cursor: pointer; border: 2px solid transparent; transition: all 0.2s; }
-        .line-control.active { border-color: #3498db; background: #e1f0fa; }
-        .line-color { width: 16px; height: 16px; border-radius: 4px; margin-right: 12px; flex-shrink: 0; }
+        /* --- 线路开关 (紧凑版) --- */
+        .line-control { display: flex; align-items: center; padding: 8px 10px; background: #f8f9fa; border-radius: 6px; margin-bottom: 8px; cursor: pointer; border: 1px solid transparent; transition: all 0.2s; }
+        .line-control.active { border-color: #3498db; background: #eeffff; }
+        .line-color { width: 12px; height: 12px; border-radius: 3px; margin-right: 10px; flex-shrink: 0; }
         .line-info { flex-grow: 1; }
-        .line-name { font-weight: bold; font-size: 14px; }
-        .line-stats { font-size: 12px; color: #666; margin-top: 2px; }
+        .line-name { font-weight: bold; font-size: 13px; }
+        .line-stats { font-size: 11px; color: #888; margin-top: 1px; }
 
-        .controls-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
-        .control-btn { padding: 12px; border: none; border-radius: 8px; background: #3498db; color: white; cursor: pointer; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        /* --- 按钮网格 --- */
+        .controls-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 15px 0; }
+        .control-btn { padding: 8px; border: none; border-radius: 6px; background: #3498db; color: white; cursor: pointer; font-weight: 600; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 4px; }
         .control-btn:hover { opacity: 0.9; }
         .control-btn.reset { background: #e74c3c; }
         .control-btn.toggle { background: #9b59b6; }
         .control-btn.special { background: #8e44ad; } 
 
-        .station-info { background: #f8f9fa; border-radius: 10px; padding: 15px; margin-top: 20px; border-left: 4px solid #3498db; }
+        .station-info { background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 12px; margin-top: 15px; border-left: 4px solid #3498db; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .station-info h3 { margin: 0 0 5px 0; font-size: 16px; }
+        .station-info p { margin: 3px 0; font-size: 12px; color: #555; }
 
-        /* --- SVG 线路样式 (核心部分) --- */
+        /* --- SVG 线路样式 --- */
         path { vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; fill: none; transition: stroke-width 0.3s; }
-
-        /* 1. 普通地铁样式 */
         path.metro-base { stroke-width: 5; }
-
-        /* 2. 高架底座 (通用) */
         path.viaduct-base { stroke: #fff; stroke-width: 12; stroke-opacity: 0.9; }
-        path.viaduct-split { stroke: #fff; stroke-width: 2; stroke-opacity: 0.9; } /* 地铁高架的中间线 */
+        path.viaduct-split { stroke: #fff; stroke-width: 2; stroke-opacity: 0.9; }
+        path.viaduct-main { stroke-width: 6; }
 
-        /* 3. 高铁/H线 专用样式 (三层叠加) */
+        /* HSR Style */
+        path.rail-bed { stroke-width: 8; stroke-linecap: square !important; }
+        path.rail-hollow { stroke: #eef2f5 !important; stroke-width: 5; stroke-linecap: square !important; }
+        path.rail-ties { stroke-width: 4; stroke-dasharray: 6, 6; stroke-linecap: butt !important; }
 
-        /* H1: 铁轨底层 (宽颜色实线) */
-        path.rail-bed { 
-            stroke-width: 8; 
-            stroke-linecap: square !important; /* 方头，连接处更平整 */
-        }
-
-        /* H2: 铁轨中层 (白色实线，用于镂空出双轨) */
-        path.rail-hollow { 
-            stroke: #eef2f5 !important; /* 使用地图背景色，制造镂空感 */
-            stroke-width: 5;
-            stroke-linecap: square !important;
-        }
-
-        /* H3: 铁轨顶层 (颜色虚线，即枕木) */
-        path.rail-ties { 
-            stroke-width: 4; 
-            stroke-dasharray: 6, 6; /* 实线长, 间隔长 */
-            stroke-linecap: butt !important; /* 平头，必须是butt才能像枕木 */
-        }
-
-        /* 站点图标 */
+        /* 站点 */
         .station-icon-text { font-family: 'Arial', sans-serif; font-weight: normal; cursor: pointer; text-anchor: middle; dominant-baseline: central; font-size: calc(20px / var(--map-scale)); stroke: white; stroke-width: calc(3px / var(--map-scale)); paint-order: stroke fill; transition: all 0.3s ease; }
         .station-icon-text:hover { opacity: 0.8; font-size: calc(24px / var(--map-scale)); }
         .station-label { font-weight: bold; fill: #2c3e50; pointer-events: none; font-size: calc(14px / var(--map-scale)); text-shadow: calc(1.5px / var(--map-scale)) 0 #fff, 0 calc(1.5px / var(--map-scale)) #fff; dominant-baseline: middle; }
         .station-icon-circle { fill: #fff; stroke: #555; stroke-width: 2; cursor: pointer; transition: all 0.3s ease; }
         .station-icon-circle:hover { fill: #eee; stroke: #000; }
 
-        /* 图例 */
-        .legend { position: absolute; bottom: 20px; left: 20px; background: rgba(255,255,255,0.95); padding: 15px; border-radius: 10px; font-size: 13px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); min-width: 200px; }
-        .legend-item { display: flex; align-items: center; margin: 8px 0; }
+        /* 图例 (简化版) */
+        .legend { position: absolute; bottom: 20px; left: 20px; background: rgba(255,255,255,0.9); padding: 10px; border-radius: 8px; font-size: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); pointer-events: none; }
+        .legend-item { display: flex; align-items: center; margin: 4px 0; }
+        .legend-line-normal { width: 30px; height: 4px; background: #3498db; margin-right: 8px; border-radius: 2px;}
+        .legend-line-rail { width: 30px; height: 6px; background: #D35400; position: relative; margin-right: 8px; border-top: 2px solid #D35400; border-bottom: 2px solid #D35400; }
+        .legend-line-rail::after { content: ''; position: absolute; top: 1px; left: 0; width: 100%; height: 4px; background: repeating-linear-gradient(to right, #D35400 0, #D35400 3px, #fff 3px, #fff 6px); }
+        .legend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-top: 5px; border-top: 1px solid #eee; padding-top: 5px; }
 
-        .legend-line-normal { width: 40px; height: 5px; background: #3498db; margin-right: 10px; border-radius: 2px;}
-
-        /* 铁轨图例 (CSS模拟) */
-        .legend-line-rail { 
-            width: 40px; height: 8px; 
-            background: #D35400; /* 底色 */
-            position: relative;
-            margin-right: 10px; 
-            border-top: 2px solid #D35400;
-            border-bottom: 2px solid #D35400;
-        }
-        .legend-line-rail::after {
-            content: ''; position: absolute; top: 2px; left: 0; width: 100%; height: 4px;
-            background: repeating-linear-gradient(to right, #D35400 0, #D35400 4px, #fff 4px, #fff 8px);
-        }
-
-        .legend-icon { font-size: 16px; margin-right: 10px; stroke: #ccc; -webkit-text-stroke: 0.5px #ccc; width: 20px; text-align: center; display: inline-block;}
-        .legend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-top: 10px; border-top: 1px solid #eee; padding-top: 10px; }
-
-        .zoom-controls { position: absolute; top: 20px; right: 20px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .zoom-btn { width: 40px; height: 40px; border: none; background: white; cursor: pointer; font-size: 18px; border-bottom: 1px solid #eee; }
+        .zoom-controls { position: absolute; top: 20px; right: 20px; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .zoom-btn { width: 32px; height: 32px; border: none; background: white; cursor: pointer; font-size: 16px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center;}
         .zoom-btn:hover { background: #f0f7ff; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div>
-                <h1><i class="fas fa-subway"></i> 城市交通网络全景图</h1>
-                <div style="font-size: 14px; color: #666;">H线采用拟真铁轨风格 (双实线夹枕木虚线)</div>
+            <div style="display:flex; align-items:baseline;">
+                <h1><i class="fas fa-subway"></i> 城市交通全景图</h1>
+                <span class="header-info">H线铁轨风格 | 侧边栏可折叠</span>
             </div>
             <div style="font-size: 13px; color: #7f8c8d;">
-                <i class="fas fa-info-circle"></i> 滚轮缩放 / 拖拽移动
+                <i class="fas fa-mouse-pointer"></i> 滚轮缩放 / 拖拽
             </div>
         </div>
 
-        <div class="main-content">
+        <div class="main-content" id="mainContent">
+
+            <div class="toggle-sidebar-btn" onclick="toggleSidebar()">
+                <i class="fas fa-chevron-right" id="toggleIcon"></i>
+            </div>
+
             <div class="map-container">
                 <svg id="map" width="2000" height="2000"></svg>
                 <div class="zoom-controls">
@@ -134,29 +178,28 @@
             <div class="control-panel">
                 <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="search-input" placeholder="输入站点名称搜索..." autocomplete="off" oninput="handleSearch()">
+                    <input type="text" id="search-input" placeholder="搜站点..." autocomplete="off" oninput="handleSearch()">
                     <div id="search-results" class="search-results"></div>
                 </div>
 
-                <h3>显示控制</h3>
                 <div class="controls-grid">
                     <button class="control-btn special" id="mode-btn" onclick="toggleIconMode()">
-                        <i class="fas fa-icons"></i> 切换图标模式
+                        <i class="fas fa-icons"></i> 模式切换
                     </button>
                     <button class="control-btn toggle" onclick="toggleLabels()">
-                        <i class="fas fa-font"></i> 切换站名
+                        <i class="fas fa-font"></i> 站名
                     </button>
-                    <button class="control-btn" onclick="resetView()"><i class="fas fa-redo"></i> 复位视图</button>
-                    <button class="control-btn reset" onclick="showAllLines()"><i class="fas fa-eye"></i> 显示全部</button>
+                    <button class="control-btn" onclick="resetView()"><i class="fas fa-redo"></i> 复位</button>
+                    <button class="control-btn reset" onclick="showAllLines()"><i class="fas fa-eye"></i> 全部</button>
                 </div>
-
-                <h3>线路开关</h3>
-                <div id="line-controls" style="margin: 15px 0;"></div>
 
                 <div class="station-info" id="station-info">
-                    <h3><i class="fas fa-mouse-pointer"></i> 请点击站点</h3>
-                    <p>查看详细信息和海拔高度</p>
+                    <h3>信息面板</h3>
+                    <p>点击地图站点查看详情</p>
                 </div>
+
+                <h4 style="margin: 15px 0 10px 0; font-size:14px;">线路列表</h4>
+                <div id="line-controls"></div>
             </div>
         </div>
     </div>
@@ -4844,8 +4887,24 @@
         const mapGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
         svg.appendChild(mapGroup);
 
-        let labelElements = [];
+        // --- 侧边栏折叠逻辑 ---
+        function toggleSidebar() {
+            const container = document.getElementById('mainContent');
+            const icon = document.getElementById('toggleIcon');
+            container.classList.toggle('collapsed');
 
+            if (container.classList.contains('collapsed')) {
+                icon.classList.remove('fa-chevron-right');
+                icon.classList.add('fa-chevron-left');
+            } else {
+                icon.classList.remove('fa-chevron-left');
+                icon.classList.add('fa-chevron-right');
+            }
+            // 触发一次 resize 事件，确保 SVG 适应新宽度（虽通常自动适应，但加上保险）
+            setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 300);
+        }
+
+        // --- 核心逻辑 ---
         // --- 图标映射 ---
         function getStationIcon(id) {
             if (!id) return '㉿';
@@ -4857,13 +4916,14 @@
             }
         }
 
+
         function toggleIconMode() {
             mapState.iconMode = !mapState.iconMode;
             const btn = document.getElementById('mode-btn');
             if (mapState.iconMode) {
-                btn.innerHTML = '<i class="fas fa-circle"></i> 恢复普通模式'; btn.style.background = '#e67e22';
+                btn.innerHTML = '<i class="fas fa-circle"></i> 普通'; btn.style.background = '#e67e22';
             } else {
-                btn.innerHTML = '<i class="fas fa-icons"></i> 切换信息模式'; btn.style.background = '#8e44ad';
+                btn.innerHTML = '<i class="fas fa-icons"></i> 信息'; btn.style.background = '#8e44ad';
             }
             renderMap();
         }
@@ -4879,13 +4939,10 @@
             sortedLines.forEach(([lineId, line]) => {
                 const div = document.createElement('div');
                 div.className = `line-control ${mapState.activeLines.has(lineId) ? 'active' : ''}`;
-
-                // 铁轨样式预览
                 let colorStyle = `background: ${line.color};`;
                 if(lineId.startsWith('H')) {
                     colorStyle = `background: repeating-linear-gradient(to right, ${line.color} 0, ${line.color} 3px, #fff 3px, #fff 6px); border: 1px solid ${line.color};`;
                 }
-
                 div.onclick = () => {
                     if (mapState.activeLines.has(lineId)) mapState.activeLines.delete(lineId);
                     else mapState.activeLines.add(lineId);
@@ -4893,8 +4950,7 @@
                     renderMap();
                 };
                 const totalStations = line.stations.length;
-                const elevatedStations = line.stations.filter(s => s.elevation >= 60).length;
-                div.innerHTML = `<div class="line-color" style="${colorStyle}"></div><div class="line-info"><div class="line-name">${line.name}</div><div class="line-stats">共${totalStations}站 / 高架${elevatedStations}站</div></div>`;
+                div.innerHTML = `<div class="line-color" style="${colorStyle}"></div><div class="line-info"><div class="line-name">${line.name}</div><div class="line-stats">${totalStations}站</div></div>`;
                 container.appendChild(div);
             });
         }
@@ -4921,17 +4977,14 @@
 
         function renderMap() {
             mapGroup.innerHTML = ''; 
-            labelElements = [];
             const stationMap = {};
             const segments = [];
 
-            // A. 计算路径
             Object.entries(subwayData.lines).forEach(([lineId, line]) => {
                 if (!mapState.activeLines.has(lineId)) return;
                 const isHSR = lineId.startsWith('H');
                 const stations = line.stations;
                 if (stations.length < 2) return;
-
                 for (let i = 0; i < stations.length - 1; i++) {
                     const s1 = stations[i];
                     const s2 = stations[i+1];
@@ -4945,32 +4998,21 @@
                 }
             });
 
-            // B. 绘制图层 (关键：多层叠加创造铁轨效果)
-
-            // 1. 高架底座 (通用)
             segments.forEach(seg => { if (seg.isViaduct) drawPath(seg.d, '#fff', 'viaduct-base'); });
-
-            // 2. 地铁绘制 (普通颜色实线)
             segments.forEach(seg => { 
                 if (!seg.isHSR) {
-                    drawPath(seg.d, seg.color, seg.isViaduct ? 'metro-base' : 'metro-base'); // 地铁无论高架地面都是实线
-                    if (seg.isViaduct) drawPath(seg.d, '#fff', 'viaduct-split'); // 高架分割
+                    drawPath(seg.d, seg.color, 'metro-base'); 
+                    if (seg.isViaduct) drawPath(seg.d, '#fff', 'viaduct-split'); 
                 }
             });
-
-            // 3. HSR 铁轨绘制 (三层叠加：颜色底->白色空心->颜色枕木)
             segments.forEach(seg => {
                 if (seg.isHSR) {
-                    // H1: 底层颜色 (宽) -> 形成双轨边缘
                     drawPath(seg.d, seg.color, 'rail-bed');
-                    // H2: 中层白色 (稍窄) -> 挖空中间
                     drawPath(seg.d, '#eef2f5', 'rail-hollow');
-                    // H3: 顶层颜色虚线 (细) -> 形成枕木
                     drawPath(seg.d, seg.color, 'rail-ties');
                 }
             });
 
-            // C. 站点处理 (保持不变)
             Object.entries(subwayData.lines).forEach(([lineId, line]) => {
                 if (!mapState.activeLines.has(lineId)) return;
                 line.stations.forEach(s => {
@@ -4980,6 +5022,7 @@
                 });
             });
 
+            const labelElements = [];
             Object.values(stationMap).forEach(s => {
                 const isTransfer = s.lines.length > 1;
                 if (mapState.iconMode) {
@@ -5002,45 +5045,43 @@
                     circle.onclick = () => showInfo(s);
                     mapGroup.appendChild(circle);
                 }
-            });
 
-            if (mapState.showLabels) {
-                Object.values(stationMap).forEach(s => {
+                if (mapState.showLabels) {
                     const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                     text.textContent = s.name;
                     text.setAttribute('class', 'station-label');
                     text.dataset.originX = s.displayX; text.dataset.originY = s.displayY;
                     mapGroup.appendChild(text);
                     labelElements.push(text);
-                });
-            }
-            updateLegend(); updateLabelsPosition(); updateTransform();
+                }
+            });
+
+            updateLabelsPosition(labelElements);
+            updateLegend();
         }
 
         function updateLegend() {
             const legend = document.getElementById('legend');
             let html = `
-                <h4>图例说明</h4>
-                <div class="legend-item"><div class="legend-line-normal"></div><span>地铁 (M/S/L)</span></div>
-                <div class="legend-item"><div class="legend-line-rail"></div><span>高铁/H线 (铁轨)</span></div>
+                <div class="legend-item"><div class="legend-line-normal"></div><span>地铁</span></div>
+                <div class="legend-item"><div class="legend-line-rail"></div><span>高铁/H线</span></div>
             `;
             if (mapState.iconMode) {
                 html += `
                     <div class="legend-grid">
-                        <div><span class="legend-icon" style="color: #e74c3c;">㉿</span>换乘站</div>
-                        <div><span class="legend-icon" style="color: #2ecc71;">㉿</span>非换乘</div>
-                        <div><span class="legend-icon" style="color: #2ecc71;">₪</span>高铁(H)</div>
-                        <div><span class="legend-icon" style="color: #2ecc71;">㉿</span>地铁(M)</div>
-                        <div><span class="legend-icon" style="color: #2ecc71;">Ⓜ</span>市郊(S)</div>
-                        <div><span class="legend-icon" style="color: #2ecc71;">ℳ</span>城际(U)</div>
+                        <div><span class="legend-icon" style="color: #e74c3c;">㉿</span>换乘</div>
+                        <div><span class="legend-icon" style="color: #2ecc71;">₪</span>H</div>
+                        <div><span class="legend-icon" style="color: #2ecc71;">㉿</span>M</div>
+                        <div><span class="legend-icon" style="color: #2ecc71;">Ⓜ</span>S</div>
+                        <div><span class="legend-icon" style="color: #2ecc71;">ℳ</span>U</div>
                     </div>
                 `;
             }
             legend.innerHTML = html;
         }
 
-        // (其余通用函数保持不变)
-        function updateLabelsPosition() {
+        function updateLabelsPosition(labelElements) {
+            if(!labelElements) return;
             const textOffset = mapState.iconMode ? 14 : 10;
             const svgOffset = textOffset / mapState.scale;
             labelElements.forEach(text => {
@@ -5049,8 +5090,9 @@
                 text.setAttribute('x', ox + svgOffset); text.setAttribute('y', oy);
             });
         }
+
         function showInfo(s) {
-            const html = `<h3>${s.name} ${s.lines.length > 1 ? '<span style="color:#e74c3c;font-size:12px">换乘</span>' : ''}</h3><p><strong>ID:</strong> ${s.id}</p><p><strong>海拔:</strong> ${s.elevation}米 ${s.elevation>=60 ? '(高架)' : ''}</p><p><strong>线路:</strong> ${s.lines.join(', ')}</p><p style="color:#666; font-size:12px">X: ${s.x}, Y: ${s.y}</p>`;
+            const html = `<h3>${s.name} ${s.lines.length > 1 ? '<span style="color:#e74c3c;font-size:12px">换乘</span>' : ''}</h3><p><strong>ID:</strong> ${s.id}</p><p><strong>海拔:</strong> ${s.elevation}m ${s.elevation>=60?'(高架)':''}</p><p><strong>线路:</strong> ${s.lines.join(', ')}</p>`;
             document.getElementById('station-info').innerHTML = html;
         }
         function toggleLabels() { mapState.showLabels = !mapState.showLabels; renderMap(); }
@@ -5067,7 +5109,7 @@
                 });
             });
             if (matches.length === 0) { resultsDiv.style.display = 'none'; return; }
-            resultsDiv.innerHTML = matches.map(s => `<div class="search-item" onclick="selectStation('${s.name}')"><span class="search-item-name">${s.name}</span><span class="search-item-line">${s.lineName}</span></div>`).join('');
+            resultsDiv.innerHTML = matches.map(s => `<div class="search-item" onclick="selectStation('${s.name}')"><span>${s.name}</span><span style="color:#999;font-size:11px">${s.lineName}</span></div>`).join('');
             resultsDiv.style.display = 'block';
         }
         function selectStation(name) {
@@ -5087,7 +5129,7 @@
             }
         }
         document.addEventListener('click', function(e) { if (!document.querySelector('.search-box').contains(e.target)) { document.getElementById('search-results').style.display = 'none'; } });
-        function updateTransform() { mapGroup.setAttribute('transform', `translate(${mapState.translateX}, ${mapState.translateY}) scale(${mapState.scale})`); svg.style.setProperty('--map-scale', mapState.scale); updateLabelsPosition(); }
+        function updateTransform() { mapGroup.setAttribute('transform', `translate(${mapState.translateX}, ${mapState.translateY}) scale(${mapState.scale})`); svg.style.setProperty('--map-scale', mapState.scale); renderMap(); }
         function zoomIn() { mapState.scale *= 1.2; updateTransform(); }
         function zoomOut() { mapState.scale *= 0.8; updateTransform(); }
         function resetView() { mapState.scale = 0.8; mapState.translateX = 400; mapState.translateY = 400; updateTransform(); }
