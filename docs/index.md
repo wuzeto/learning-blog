@@ -63,6 +63,16 @@ hide:
       </div>
     </a>
 
+    <!-- 替换原有MC卡片，新增指向mc.html的点击入口 -->
+      <a href="mc.html" class="nav-card" data-color="cyan"> <!-- 改用专属青色，区分其他卡片 -->
+      <div class="card-icon"><i class="fas fa-map-marked-alt"></i></div> <!-- 地图图标更贴合MC地图 -->
+      <h3>MC_MAP</h3>
+      <p>我的世界 · 地图可视化</p>
+      <div class="status-bar">
+        <div class="bar-fill" style="width: 50%"></div>
+      </div>
+    </a>
+
   </div>
 
   <!-- Category sections -->
@@ -180,6 +190,11 @@ hide:
         <div class="progress-label">系统</div>
         <div class="progress-bar"><div class="progress-fill" style="width: 46%"></div></div>
         <div class="progress-percent">46%</div>
+      </div>
+      <div class="progress-item">
+        <div class="progress-label">MC</div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 46%"></div></div>
+        <div class="progress-percent">地图</div>
       </div>
     </div>
   </div>
