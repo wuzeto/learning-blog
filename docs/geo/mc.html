@@ -3,164 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>🚇 城市交通网络全景图 (全平台交互版)</title>
+    <title>🚇 城市交通全景图 (单线详情版)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* --- 基础样式 --- */
+        /* --- 基础设置 --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body { 
             font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif; 
             background: linear-gradient(135deg, #f5f7fa, #c3cfe2); 
-            color: #333; 
-            height: 100vh; 
-            width: 100vw;
-            overflow: hidden; /* 禁止整个页面滚动 */
-            -webkit-user-select: none; user-select: none;
-            touch-action: none; /* 关键：禁止浏览器处理触摸动作，完全交给JS */
+            color: #333; height: 100vh; width: 100vw; overflow: hidden;
+            -webkit-user-select: none; user-select: none; touch-action: none;
         }
-
         .container { width: 100%; height: 100%; display: flex; flex-direction: column; }
 
+        /* --- 头部 --- */
         .header { 
             background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); 
-            padding: 10px 20px; 
+            padding: 0 15px; height: 50px; flex-shrink: 0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
             z-index: 1000; display: flex; justify-content: space-between; align-items: center;
-            height: 60px; flex-shrink: 0;
         }
-        .header h1 { font-size: 1.4em; color: #2c3e50; margin: 0; cursor: default; }
-        .header-info { font-size: 12px; color: #666; margin-left: 10px; display: none; }
-        @media (min-width: 600px) { .header-info { display: inline; } }
+        .header h1 { font-size: 16px; color: #2c3e50; margin: 0; }
 
+        /* --- 主界面 --- */
         .main-content { display: flex; flex: 1; position: relative; overflow: hidden; }
-
-        .map-container { flex: 1; background: #eef2f5; position: relative; overflow: hidden; }
+        .map-container { flex: 1; background: #eef2f5; position: relative; overflow: hidden; will-change: transform; }
         #map { width: 100%; height: 100%; cursor: grab; --map-scale: 1; outline: none; touch-action: none; }
         #map:active { cursor: grabbing; }
 
-        /* 侧边栏 */
-        .control-panel { 
-            width: 300px; flex-shrink: 0; background: white; padding: 15px; 
-            overflow-y: auto; box-shadow: -2px 0 15px rgba(0, 0, 0, 0.05); 
-            z-index: 1001; transition: transform 0.3s ease; position: absolute;
-            right: 0; top: 0; bottom: 0; /* 绝对定位以适配移动端 */
-        }
+        /* --- LOD 动态显示 --- */
+        .station-group { transition: opacity 0.2s; }
+        .view-level-1 .is-minor { opacity: 0; pointer-events: none; }
+        .view-level-2 .is-minor .station-label { opacity: 0; }
 
-        /* 默认隐藏侧边栏 (移动端优先体验) 或通过类控制 */
-        .main-content.collapsed .control-panel { transform: translateX(100%); }
+        /* 样式定义 */
+        .station-label { font-weight: bold; fill: #2c3e50; font-size: calc(14px / var(--map-scale)); text-shadow: 1px 1px 0 #fff; pointer-events: none; }
+        .station-icon-text { font-size: calc(22px / var(--map-scale)); cursor: pointer; stroke: white; stroke-width: 2px; paint-order: stroke fill; }
+        .station-icon-circle { stroke: #555; stroke-width: 2; cursor: pointer; }
 
-        .toggle-sidebar-btn {
-            position: absolute; top: 50%; right: 300px; transform: translateY(-50%);
-            width: 30px; height: 60px; background: #fff; border: 1px solid #ddd; border-right: none;
-            border-radius: 8px 0 0 8px; box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-            cursor: pointer; z-index: 1002; display: flex; align-items: center; justify-content: center;
-            color: #666; transition: right 0.3s ease, background 0.2s;
-        }
-        .main-content.collapsed .toggle-sidebar-btn { right: 0; }
-
-        /* --- 搜索框 --- */
-        .search-box { position: relative; margin-bottom: 15px; }
-        .search-box input { 
-            width: 100%; padding: 10px 15px 10px 35px; border: 1px solid #ddd; 
-            border-radius: 20px; font-size: 14px; background: #f8f9fa; transition: all 0.3s; 
-            -webkit-user-select: auto; user-select: auto;
-        }
-        .search-box input:focus { border-color: #3498db; background: #fff; box-shadow: 0 0 5px rgba(52,152,219,0.2); outline: none; }
-        .search-box i { position: absolute; left: 12px; top: 12px; color: #95a5a6; font-size: 14px; }
-        .search-results { position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #eee; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-height: 300px; overflow-y: auto; z-index: 2000; margin-top: 5px; display: none; }
-        .search-item { padding: 10px 15px; cursor: pointer; border-bottom: 1px solid #f5f5f5; font-size: 13px; }
-
-        /* 线路列表 */
-        .line-control { display: flex; align-items: center; padding: 8px 10px; background: #f8f9fa; border-radius: 6px; margin-bottom: 8px; cursor: pointer; border: 1px solid transparent; transition: all 0.2s; }
-        .line-control.active { border-color: #3498db; background: #eeffff; }
-        .line-color { width: 12px; height: 12px; border-radius: 3px; margin-right: 10px; flex-shrink: 0; }
-        .line-info { flex-grow: 1; }
-        .line-name { font-weight: bold; font-size: 13px; }
-        .line-stats { font-size: 11px; color: #888; margin-top: 1px; }
-
-        .controls-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 15px 0; }
-        .control-btn { padding: 8px; border: none; border-radius: 6px; background: #3498db; color: white; cursor: pointer; font-weight: 600; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 4px; }
-        .station-info { background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 12px; margin-top: 15px; border-left: 4px solid #3498db; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .station-info h3, .station-info p { cursor: text; -webkit-user-select: text; user-select: text; }
-
-        /* --- SVG 线路样式 --- */
-        path { vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; fill: none; transition: stroke-width 0.3s; }
+        path { vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; fill: none; }
         path.metro-base { stroke-width: 5; }
         path.viaduct-base { stroke: #fff; stroke-width: 12; stroke-opacity: 0.9; }
         path.viaduct-split { stroke: #fff; stroke-width: 2; stroke-opacity: 0.9; }
-        path.viaduct-main { stroke-width: 6; }
-        path.rail-bed { stroke-width: 8; stroke-linecap: square !important; }
+        path.rail-bed { stroke-width: 9; stroke-linecap: square !important; }
         path.rail-hollow { stroke: #eef2f5 !important; stroke-width: 5; stroke-linecap: square !important; }
         path.rail-ties { stroke-width: 4; stroke-dasharray: 6, 6; stroke-linecap: butt !important; }
 
-        .station-icon-text { font-family: 'Arial', sans-serif; font-weight: normal; cursor: pointer; text-anchor: middle; dominant-baseline: central; font-size: calc(20px / var(--map-scale)); stroke: white; stroke-width: calc(3px / var(--map-scale)); paint-order: stroke fill; transition: all 0.3s ease; }
-        .station-label { font-weight: bold; fill: #2c3e50; pointer-events: none; font-size: calc(14px / var(--map-scale)); text-shadow: calc(1.5px / var(--map-scale)) 0 #fff, 0 calc(1.5px / var(--map-scale)) #fff; dominant-baseline: middle; }
-        .station-icon-circle { fill: #fff; stroke: #555; stroke-width: 2; cursor: pointer; transition: all 0.3s ease; }
+        /* --- 侧边栏 --- */
+        .control-panel { 
+            width: 320px; flex-shrink: 0; background: white; padding: 15px; 
+            overflow-y: auto; box-shadow: -2px 0 15px rgba(0, 0, 0, 0.05); 
+            z-index: 1001; transition: transform 0.3s ease; position: absolute;
+            right: 0; top: 0; bottom: 0;
+        }
+        .main-content.collapsed .control-panel { transform: translateX(100%); }
+        .toggle-sidebar-btn {
+            position: absolute; top: 50%; right: 320px; transform: translateY(-50%);
+            width: 30px; height: 60px; background: #fff; border: 1px solid #ddd; border-right: none;
+            border-radius: 8px 0 0 8px; box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+            cursor: pointer; z-index: 1002; display: flex; align-items: center; justify-content: center; color: #666;
+            transition: right 0.3s ease;
+        }
+        .main-content.collapsed .toggle-sidebar-btn { right: 0; }
 
-        .legend { position: absolute; bottom: 20px; left: 20px; background: rgba(255,255,255,0.9); padding: 10px; border-radius: 8px; font-size: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); pointer-events: none; }
-        .legend-item { display: flex; align-items: center; margin: 4px 0; }
-        .legend-line-normal { width: 30px; height: 4px; background: #3498db; margin-right: 8px; border-radius: 2px;}
-        .legend-line-rail { width: 30px; height: 6px; background: #D35400; position: relative; margin-right: 8px; border-top: 2px solid #D35400; border-bottom: 2px solid #D35400; }
-        .legend-line-rail::after { content: ''; position: absolute; top: 1px; left: 0; width: 100%; height: 4px; background: repeating-linear-gradient(to right, #D35400 0, #D35400 3px, #fff 3px, #fff 6px); }
-        .legend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-top: 5px; border-top: 1px solid #eee; padding-top: 5px; }
+        /* 线路列表项 (新布局) */
+        .line-control { display: flex; align-items: stretch; margin-bottom: 8px; background: #f8f9fa; border-radius: 6px; overflow: hidden; border: 1px solid transparent; transition: all 0.2s; }
+        .line-control.active { border-color: #3498db; background: #eef7ff; }
 
-        .zoom-controls { position: absolute; top: 20px; right: 20px; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .zoom-btn { width: 36px; height: 36px; border: none; background: white; cursor: pointer; font-size: 18px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center;}
+        .line-toggle-area { flex: 1; display: flex; align-items: center; padding: 10px; cursor: pointer; }
+        .line-toggle-area:hover { background: rgba(0,0,0,0.02); }
+        .line-color { width: 14px; height: 14px; border-radius: 3px; margin-right: 10px; flex-shrink: 0; }
+        .line-info { flex: 1; }
+        .line-name { font-weight: bold; font-size: 14px; }
+        .line-stats { font-size: 11px; color: #888; }
+
+        .line-detail-btn { 
+            width: 40px; display: flex; align-items: center; justify-content: center; 
+            border-left: 1px solid #eee; cursor: pointer; color: #3498db; font-size: 16px;
+        }
+        .line-detail-btn:hover { background: #3498db; color: white; }
+
+        /* --- [新增] 单线详情模态框 (Strip Map) --- */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); z-index: 3000;
+            display: none; align-items: center; justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+        .modal-container {
+            background: white; width: 95%; max-width: 1000px; height: 80%;
+            border-radius: 12px; display: flex; flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden;
+            animation: slideUp 0.3s ease;
+        }
+        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        .modal-header {
+            padding: 15px 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;
+            background: #f8f9fa;
+        }
+        .modal-title { font-size: 18px; font-weight: bold; display: flex; align-items: center; gap: 10px; }
+        .modal-close { cursor: pointer; font-size: 24px; color: #999; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+        .modal-close:hover { background: #eee; color: #333; }
+
+        .modal-body { flex: 1; overflow-x: auto; overflow-y: hidden; position: relative; padding: 40px 20px; background: #fff; }
+        /* 隐藏滚动条但保留滚动功能 */
+        .modal-body::-webkit-scrollbar { height: 8px; }
+        .modal-body::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+
+        /* 单线图 SVG 样式 */
+        .strip-station-group { cursor: pointer; transition: opacity 0.2s; }
+        .strip-station-group:hover { opacity: 0.7; }
+        .strip-line-path { fill: none; stroke-linecap: round; }
+        .strip-label { font-size: 12px; font-weight: bold; fill: #333; dominant-baseline: middle; text-anchor: start; }
+        .strip-tag { font-size: 10px; fill: #666; }
+
+        /* 弹窗 & 搜索 */
+        .map-popup { position: absolute; display: none; background: rgba(255,255,255,0.96); padding: 15px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); z-index: 2000; min-width: 220px; border-left: 5px solid #3498db; pointer-events: auto; transform: translate(-50%, -110%); -webkit-user-select: text; user-select: text; }
+        .search-box input { width: 100%; padding: 10px 35px; border: 1px solid #ddd; border-radius: 20px; -webkit-user-select: auto; user-select: auto; }
+        .search-results { position: absolute; top: 100%; left: 0; right: 0; background: white; max-height: 300px; overflow-y: auto; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; z-index: 2000; }
+        .search-item { padding: 10px 15px; border-bottom: 1px solid #eee; cursor: pointer; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div style="display:flex; align-items:baseline;">
-                <h1><i class="fas fa-subway"></i> 交通全景图</h1>
-                <span class="header-info">PC光标缩放 | 移动端双指缩放</span>
-            </div>
-            <div style="font-size: 13px; color: #7f8c8d;">
-                <i class="fas fa-hand-pointer"></i>
-            </div>
+            <h1><i class="fas fa-subway"></i> 城市交通全景图</h1>
+            <div style="font-size: 12px; color: #666;" id="zoom-level">Zoom: 1.0</div>
         </div>
 
         <div class="main-content" id="mainContent">
-            <div class="toggle-sidebar-btn" onclick="toggleSidebar()">
-                <i class="fas fa-chevron-right" id="toggleIcon"></i>
-            </div>
+            <div class="toggle-sidebar-btn" onclick="toggleSidebar()"><i class="fas fa-chevron-right" id="toggleIcon"></i></div>
 
-            <div class="map-container">
+            <div class="map-container" id="mapContainer">
                 <svg id="map" width="2000" height="2000"></svg>
-                <div class="zoom-controls">
-                    <button class="zoom-btn" onclick="handleZoomBtn(1.2)"><i class="fas fa-plus"></i></button>
-                    <button class="zoom-btn" onclick="handleZoomBtn(0.8)"><i class="fas fa-minus"></i></button>
+                <div id="map-popup" class="map-popup"><div style="position:absolute;top:5px;right:10px;cursor:pointer;" onclick="closePopup()">×</div><div id="popup-content"></div></div>
+                <div style="position:absolute; top:20px; right:20px; background:white; border-radius:6px; box-shadow:0 2px 10px rgba(0,0,0,0.1); overflow:hidden;">
+                    <button onclick="handleZoomBtn(1.2)" style="display:block; width:36px; height:36px; border:none; border-bottom:1px solid #eee; background:white; font-size:18px; cursor:pointer;">+</button>
+                    <button onclick="handleZoomBtn(0.8)" style="display:block; width:36px; height:36px; border:none; background:white; font-size:18px; cursor:pointer;">-</button>
                 </div>
-                <div class="legend" id="legend"></div>
             </div>
 
             <div class="control-panel">
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="search-input" placeholder="搜站点..." autocomplete="off" oninput="handleSearch()">
+                <div style="position:relative; margin-bottom:15px;">
+                    <i class="fas fa-search" style="position:absolute; left:12px; top:13px; color:#999;"></i>
+                    <input type="text" id="search-input" class="search-box" placeholder="输入站点..." oninput="handleSearch()">
                     <div id="search-results" class="search-results"></div>
                 </div>
 
-                <div class="controls-grid">
-                    <button class="control-btn special" id="mode-btn" onclick="toggleIconMode()">
-                        <i class="fas fa-icons"></i> 模式
-                    </button>
-                    <button class="control-btn toggle" onclick="toggleLabels()">
-                        <i class="fas fa-font"></i> 站名
-                    </button>
-                    <button class="control-btn" onclick="resetView()"><i class="fas fa-redo"></i> 复位</button>
-                    <button class="control-btn reset" onclick="showAllLines()"><i class="fas fa-eye"></i> 全部</button>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:15px;">
+                    <button onclick="resetView()" style="padding:10px; background:#3498db; color:white; border:none; border-radius:6px; cursor:pointer;">复位地图</button>
+                    <button id="mode-btn" onclick="toggleIconMode()" style="padding:10px; background:#8e44ad; color:white; border:none; border-radius:6px; cursor:pointer;">切换模式</button>
                 </div>
 
-                <div class="station-info" id="station-info">
-                    <h3>信息面板</h3>
-                    <p>点击站点 / 拖拽地图</p>
+                <div id="station-info" style="padding:12px; background:#fff; border:1px solid #eee; border-radius:6px; margin-bottom:15px; border-left:4px solid #3498db; font-size:13px; color:#666;">
+                    点击站点查看详情，点击列表右侧图标查看单线图。
                 </div>
 
-                <h4 style="margin: 15px 0 10px 0; font-size:14px;">线路列表</h4>
+                <h4 style="margin-bottom:10px;">线路列表</h4>
                 <div id="line-controls"></div>
             </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="lineModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle"></div>
+                <div class="modal-close" onclick="closeLineModal()">×</div>
+            </div>
+            <div class="modal-body" id="modalBody">
+                </div>
         </div>
     </div>
 
@@ -4833,389 +4846,275 @@
 };
 
         let mapState = {
-            scale: 0.8,
-            translateX: 400,
-            translateY: 400,
-            isDragging: false,
-            lastX: 0, lastY: 0,
-            // 触摸相关
-            initialPinchDistance: null,
-            lastScale: 1,
-
+            scale: 0.8, translateX: 400, translateY: 400,
             activeLines: new Set(Object.keys(subwayData.lines)),
-            showLabels: true,
-            iconMode: false
+            iconMode: false, rafId: null
         };
 
         const svg = document.getElementById('map');
         const mapGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
         svg.appendChild(mapGroup);
+        const mapContainer = document.getElementById('mapContainer');
+        const popup = document.getElementById('map-popup');
 
-        // --- 核心更新：光标中心缩放逻辑 ---
-        function applyZoom(factor, centerX, centerY) {
-            const oldScale = mapState.scale;
-            let newScale = oldScale * factor;
-
-            // 限制缩放范围
-            if (newScale < 0.1) newScale = 0.1;
-            if (newScale > 10) newScale = 10;
-
-            // 计算新的偏移量，使 (centerX, centerY) 在地图上的位置保持不变
-            // 公式：NewTranslate = Center - (Center - OldTranslate) * (NewScale / OldScale)
-            mapState.translateX = centerX - (centerX - mapState.translateX) * (newScale / oldScale);
-            mapState.translateY = centerY - (centerY - mapState.translateY) * (newScale / oldScale);
-            mapState.scale = newScale;
-
-            updateTransform();
+        // --- 核心渲染与LOD ---
+        function updateViewLevel() {
+            mapContainer.classList.remove('view-level-1', 'view-level-2', 'view-level-3');
+            const l = mapState.scale < 0.6 ? 1 : (mapState.scale < 1.8 ? 2 : 3);
+            mapContainer.classList.add(`view-level-${l}`);
+            document.getElementById('zoom-level').innerText = `Zoom: ${mapState.scale.toFixed(2)} (L${l})`;
+        }
+        function updateTransform(anim=false) {
+            mapGroup.style.transition = anim ? 'transform 0.3s ease' : 'none';
+            mapGroup.setAttribute('transform', `translate(${mapState.translateX}, ${mapState.translateY}) scale(${mapState.scale})`);
+            svg.style.setProperty('--map-scale', mapState.scale);
+            updateViewLevel();
+            if(anim) setTimeout(updateLabelsPosition, 300); else if(!mapState.rafId) updateLabelsPosition();
         }
 
-        // --- 桌面端交互 ---
-        svg.addEventListener('wheel', e => {
-            e.preventDefault();
-            // 获取鼠标相对于 SVG 容器的位置
-            const rect = svg.getBoundingClientRect();
-            const mouseX = e.clientX - rect.left;
-            const mouseY = e.clientY - rect.top;
-
-            const factor = e.deltaY > 0 ? 0.9 : 1.1;
-            applyZoom(factor, mouseX, mouseY);
-        }, { passive: false });
-
-        svg.addEventListener('mousedown', e => {
-            mapState.isDragging = true;
-            mapState.lastX = e.clientX;
-            mapState.lastY = e.clientY;
-        });
-
-        window.addEventListener('mousemove', e => {
-            if (!mapState.isDragging) return;
-            e.preventDefault();
-            const dx = e.clientX - mapState.lastX;
-            const dy = e.clientY - mapState.lastY;
-            mapState.translateX += dx;
-            mapState.translateY += dy;
-            mapState.lastX = e.clientX;
-            mapState.lastY = e.clientY;
-            updateTransform();
-        });
-
-        window.addEventListener('mouseup', () => mapState.isDragging = false);
-
-        // --- 移动端交互 (Touch Events) ---
-
-        // 计算两点间距离
-        function getDistance(touch1, touch2) {
-            const dx = touch1.clientX - touch2.clientX;
-            const dy = touch1.clientY - touch2.clientY;
-            return Math.sqrt(dx * dx + dy * dy);
-        }
-
-        // 计算两点中心
-        function getCenter(touch1, touch2) {
-            const rect = svg.getBoundingClientRect();
-            return {
-                x: (touch1.clientX + touch2.clientX) / 2 - rect.left,
-                y: (touch1.clientY + touch2.clientY) / 2 - rect.top
-            };
-        }
-
-        svg.addEventListener('touchstart', e => {
-            if (e.touches.length === 1) {
-                // 单指拖动
-                mapState.isDragging = true;
-                mapState.lastX = e.touches[0].clientX;
-                mapState.lastY = e.touches[0].clientY;
-            } else if (e.touches.length === 2) {
-                // 双指捏合开始
-                mapState.isDragging = false; // 暂停拖动，优先处理缩放
-                mapState.initialPinchDistance = getDistance(e.touches[0], e.touches[1]);
-            }
-        }, { passive: false });
-
-        svg.addEventListener('touchmove', e => {
-            e.preventDefault(); // 阻止页面滚动
-
-            if (e.touches.length === 1 && mapState.isDragging) {
-                // 单指移动地图
-                const dx = e.touches[0].clientX - mapState.lastX;
-                const dy = e.touches[0].clientY - mapState.lastY;
-                mapState.translateX += dx;
-                mapState.translateY += dy;
-                mapState.lastX = e.touches[0].clientX;
-                mapState.lastY = e.touches[0].clientY;
-                updateTransform();
-
-            } else if (e.touches.length === 2 && mapState.initialPinchDistance) {
-                // 双指缩放
-                const currentDistance = getDistance(e.touches[0], e.touches[1]);
-                const center = getCenter(e.touches[0], e.touches[1]);
-
-                // 计算相对缩放比例
-                const factor = currentDistance / mapState.initialPinchDistance;
-
-                // 应用缩放（中心点为双指中点）
-                applyZoom(factor, center.x, center.y);
-
-                // 更新基准距离，防止指数级跳变
-                mapState.initialPinchDistance = currentDistance;
-            }
-        }, { passive: false });
-
-        svg.addEventListener('touchend', e => {
-            mapState.isDragging = false;
-            if (e.touches.length < 2) {
-                mapState.initialPinchDistance = null;
-            }
-        });
-
-        // --- 按钮缩放 (屏幕中心) ---
-        function handleZoomBtn(factor) {
-            const rect = svg.getBoundingClientRect();
-            applyZoom(factor, rect.width / 2, rect.height / 2);
-        }
-
-        // --- 侧边栏折叠 ---
-        function toggleSidebar() {
-            const container = document.getElementById('mainContent');
-            const icon = document.getElementById('toggleIcon');
-            container.classList.toggle('collapsed');
-
-            if (container.classList.contains('collapsed')) {
-                icon.classList.remove('fa-chevron-right'); icon.classList.add('fa-chevron-left');
-            } else {
-                icon.classList.remove('fa-chevron-left'); icon.classList.add('fa-chevron-right');
-            }
-            setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 300);
-        }
-
-        // --- 常规逻辑 ---
-        function getStationIcon(id) {
-            if (!id) return '㉿';
-            const prefix = id.charAt(0).toUpperCase();
-            switch(prefix) {
-                case 'H': return '₪'; case 'M': return '㉿'; case 'S': return 'Ⓜ';
-                case 'U': return 'ℳ'; case 'K': return 'ʍ'; case 'T': return '₥'; case 'B': return 'Ⓑ';
-                default: return '㉿';
-            }
-        }
-
-        function toggleIconMode() {
-            mapState.iconMode = !mapState.iconMode;
-            const btn = document.getElementById('mode-btn');
-            if (mapState.iconMode) {
-                btn.innerHTML = '<i class="fas fa-circle"></i> 普通'; btn.style.background = '#e67e22';
-            } else {
-                btn.innerHTML = '<i class="fas fa-icons"></i> 信息'; btn.style.background = '#8e44ad';
-            }
-            renderMap();
-        }
-
-        function generateLineControls() {
-            const container = document.getElementById('line-controls');
-            container.innerHTML = '';
-            const sortedLines = Object.entries(subwayData.lines).sort((a,b) => {
-                const numA = parseInt(a[0].replace(/\D/g, '')) || 0;
-                const numB = parseInt(b[0].replace(/\D/g, '')) || 0;
-                return numA - numB;
-            });
-            sortedLines.forEach(([lineId, line]) => {
-                const div = document.createElement('div');
-                div.className = `line-control ${mapState.activeLines.has(lineId) ? 'active' : ''}`;
-                let colorStyle = `background: ${line.color};`;
-                if(lineId.startsWith('H')) {
-                    colorStyle = `background: repeating-linear-gradient(to right, ${line.color} 0, ${line.color} 3px, #fff 3px, #fff 6px); border: 1px solid ${line.color};`;
-                }
-                div.onclick = () => {
-                    if (mapState.activeLines.has(lineId)) mapState.activeLines.delete(lineId);
-                    else mapState.activeLines.add(lineId);
-                    div.className = `line-control ${mapState.activeLines.has(lineId) ? 'active' : ''}`;
-                    renderMap();
-                };
-                const totalStations = line.stations.length;
-                div.innerHTML = `<div class="line-color" style="${colorStyle}"></div><div class="line-info"><div class="line-name">${line.name}</div><div class="line-stats">${totalStations}站</div></div>`;
-                container.appendChild(div);
-            });
-        }
-
-        function getPos(station) { return { x: (station.x + 6000) * 0.08, y: (station.y + 5000) * 0.08 }; }
-
-        function getSplinePath(p0, p1, p2, p3) {
-            const tension = 0.4; 
-            if (!p0 || !p1 || !p2 || !p3) return '';
-            const cp1x = p1.x + (p2.x - p0.x) * tension / 3;
-            const cp1y = p1.y + (p2.y - p0.y) * tension / 3;
-            const cp2x = p2.x - (p3.x - p1.x) * tension / 3;
-            const cp2y = p2.y - (p3.y - p1.y) * tension / 3;
-            return `M ${p1.x} ${p1.y} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${p2.x} ${p2.y}`;
-        }
-
-        function drawPath(d, color, className) {
-             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-             path.setAttribute('d', d);
-             path.setAttribute('stroke', color);
-             path.setAttribute('class', className);
-             mapGroup.appendChild(path);
-        }
+        // --- 线路与站点绘制 (全网图) ---
+        function getPos(s) { return { x: (s.x + 6000) * 0.08, y: (s.y + 5000) * 0.08 }; }
+        function getStationIcon(id) { if(!id) return '㉿'; const m={'H':'₪','S':'㉿','M':'Ⓜ','U':'ℳ','K':'ʍ','T':'₥','B':'Ⓑ'}; return m[id.charAt(0).toUpperCase()]||'㉿'; }
 
         function renderMap() {
-            mapGroup.innerHTML = ''; 
-            const stationMap = {};
-            const segments = [];
-
-            Object.entries(subwayData.lines).forEach(([lineId, line]) => {
-                if (!mapState.activeLines.has(lineId)) return;
-                const isHSR = lineId.startsWith('H');
-                const stations = line.stations;
-                if (stations.length < 2) return;
-                for (let i = 0; i < stations.length - 1; i++) {
-                    const s1 = stations[i];
-                    const s2 = stations[i+1];
-                    const isViaduct = (s1.elevation >= 60 && s2.elevation >= 60);
-                    const p0 = getPos(stations[Math.max(0, i - 1)]);
-                    const p1 = getPos(s1);
-                    const p2 = getPos(s2);
-                    const p3 = getPos(stations[Math.min(stations.length - 1, i + 2)]);
-                    const d = getSplinePath(p0, p1, p2, p3);
-                    if (d) segments.push({ d: d, color: line.color, isViaduct: isViaduct, isHSR: isHSR });
+            mapGroup.innerHTML = ''; const sMap={}, segs=[];
+            Object.entries(subwayData.lines).forEach(([lid, l]) => {
+                if (!mapState.activeLines.has(lid)) return;
+                const isH = lid.startsWith('H');
+                for(let i=0; i<l.stations.length-1; i++){
+                    const s1=l.stations[i], s2=l.stations[i+1], p0=getPos(l.stations[Math.max(0,i-1)]), p1=getPos(s1), p2=getPos(s2), p3=getPos(l.stations[Math.min(l.stations.length-1,i+2)]);
+                    const d=`M ${p1.x} ${p1.y} C ${p1.x+(p2.x-p0.x)*0.13} ${p1.y+(p2.y-p0.y)*0.13}, ${p2.x-(p3.x-p1.x)*0.13} ${p2.y-(p3.y-p1.y)*0.13}, ${p2.x} ${p2.y}`;
+                    segs.push({d, col:l.color, via:s1.elevation>=60&&s2.elevation>=60, isH});
                 }
+                l.stations.forEach(s=>{ const p=getPos(s); if(!sMap[s.name]) sMap[s.name]={...s, dX:p.x, dY:p.y, ls:[lid], c:l.color}; else if(!sMap[s.name].ls.includes(lid)) sMap[s.name].ls.push(lid); });
             });
 
-            segments.forEach(seg => { if (seg.isViaduct) drawPath(seg.d, '#fff', 'viaduct-base'); });
-            segments.forEach(seg => { 
-                if (!seg.isHSR) {
-                    drawPath(seg.d, seg.color, 'metro-base'); 
-                    if (seg.isViaduct) drawPath(seg.d, '#fff', 'viaduct-split'); 
-                }
-            });
-            segments.forEach(seg => {
-                if (seg.isHSR) {
-                    drawPath(seg.d, seg.color, 'rail-bed');
-                    drawPath(seg.d, '#eef2f5', 'rail-hollow');
-                    drawPath(seg.d, seg.color, 'rail-ties');
-                }
-            });
+            segs.forEach(s=>{ if(s.via) P(s.d,'#fff','viaduct-base'); });
+            segs.forEach(s=>{ if(!s.isH){ P(s.d,s.col,'metro-base'); if(s.via) P(s.d,'#fff','viaduct-split'); } });
+            segs.forEach(s=>{ if(s.isH){ P(s.d,s.col,'rail-bed'); P(s.d,'#eef2f5','rail-hollow'); P(s.d,s.col,'rail-ties'); } });
 
-            Object.entries(subwayData.lines).forEach(([lineId, line]) => {
-                if (!mapState.activeLines.has(lineId)) return;
-                line.stations.forEach(s => {
-                    const pos = getPos(s);
-                    if (!stationMap[s.name]) stationMap[s.name] = { ...s, displayX: pos.x, displayY: pos.y, lines: [lineId], color: line.color };
-                    else if (!stationMap[s.name].lines.includes(lineId)) stationMap[s.name].lines.push(lineId);
-                });
-            });
+            Object.values(sMap).forEach(s => {
+                const isMj = s.ls.length>1 || s.ls.some(x=>x.startsWith('H')||x.startsWith('U'));
+                const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+                g.setAttribute('class', `station-group ${isMj?'is-major':'is-minor'}`);
+                g.dataset.ox = s.dX; g.dataset.oy = s.dY;
 
-            const labelElements = [];
-            Object.values(stationMap).forEach(s => {
-                const isTransfer = s.lines.length > 1;
                 if (mapState.iconMode) {
-                    const iconText = getStationIcon(s.id);
-                    const color = isTransfer ? '#e74c3c' : '#2ecc71';
-                    const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-                    textEl.textContent = iconText;
-                    textEl.setAttribute('x', s.displayX); textEl.setAttribute('y', s.displayY);
-                    textEl.setAttribute('class', 'station-icon-text');
-                    textEl.style.fill = color;
-                    textEl.dataset.originX = s.displayX; textEl.dataset.originY = s.displayY;
-                    textEl.onclick = () => showInfo(s);
-                    mapGroup.appendChild(textEl);
+                    const t = document.createElementNS('http://www.w3.org/2000/svg','text');
+                    t.textContent = getStationIcon(s.id); t.setAttribute('class', 'station-icon-text');
+                    t.style.fill = s.ls.length>1 ? '#e74c3c' : '#2ecc71';
+                    t.onclick = (e) => showInfo(s, e); g.appendChild(t);
                 } else {
-                    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-                    circle.setAttribute('cx', s.displayX); circle.setAttribute('cy', s.displayY);
-                    circle.setAttribute('r', isTransfer ? '5' : '4'); 
-                    circle.setAttribute('class', 'station-icon-circle');
-                    circle.dataset.originX = s.displayX; circle.dataset.originY = s.displayY;
-                    circle.onclick = () => showInfo(s);
-                    mapGroup.appendChild(circle);
+                    const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+                    c.setAttribute('r', s.ls.length>1?5:4); c.setAttribute('class', 'station-icon-circle');
+                    c.onclick = (e) => showInfo(s, e); g.appendChild(c);
                 }
-
-                if (mapState.showLabels) {
-                    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-                    text.textContent = s.name;
-                    text.setAttribute('class', 'station-label');
-                    text.dataset.originX = s.displayX; text.dataset.originY = s.displayY;
-                    mapGroup.appendChild(text);
-                    labelElements.push(text);
+                if (true) {
+                    const txt = document.createElementNS('http://www.w3.org/2000/svg','text');
+                    txt.textContent = s.name; txt.setAttribute('class', 'station-label');
+                    g.appendChild(txt);
                 }
+                mapGroup.appendChild(g);
             });
-
-            updateLabelsPosition(labelElements);
-            updateLegend();
+            updateLabelsPosition(); updateViewLevel();
+        }
+        function P(d,c,cl){ const p=document.createElementNS('http://www.w3.org/2000/svg','path'); p.setAttribute('d',d); p.setAttribute('stroke',c); p.setAttribute('class',cl); mapGroup.appendChild(p); }
+        function updateLabelsPosition() {
+            const off = (mapState.iconMode ? 14 : 10) / mapState.scale;
+            document.querySelectorAll('.station-group').forEach(g => {
+                const ox=parseFloat(g.dataset.ox), oy=parseFloat(g.dataset.oy);
+                const i=g.firstChild, t=g.lastChild;
+                if(i.tagName=='text'){ i.setAttribute('x',ox); i.setAttribute('y',oy); } else { i.setAttribute('cx',ox); i.setAttribute('cy',oy); }
+                if(t.tagName=='text'){ t.setAttribute('x',ox+off); t.setAttribute('y',oy); }
+            });
         }
 
-        function updateLegend() {
-            const legend = document.getElementById('legend');
-            let html = `
-                <div class="legend-item"><div class="legend-line-normal"></div><span>地铁</span></div>
-                <div class="legend-item"><div class="legend-line-rail"></div><span>高铁/H线</span></div>
+        // --- [核心功能] 单线详情图 (Strip Map) ---
+        function openLineDetail(lineId) {
+            const line = subwayData.lines[lineId];
+            if (!line) return;
+
+            const modal = document.getElementById('lineModal');
+            document.getElementById('modalTitle').innerHTML = `
+                <div style="width:20px;height:20px;background:${line.color};border-radius:4px;margin-right:10px;"></div>
+                ${line.name} <span style="font-size:14px;color:#666;margin-left:10px;font-weight:normal">全程 ${line.stations.length} 站</span>
             `;
-            if (mapState.iconMode) {
-                html += `
-                    <div class="legend-grid">
-                        <div><span class="legend-icon" style="color: #e74c3c;">㉿</span>换乘</div>
-                        <div><span class="legend-icon" style="color: #2ecc71;">₪</span>H</div>
-                        <div><span class="legend-icon" style="color: #2ecc71;">㉿</span>M</div>
-                        <div><span class="legend-icon" style="color: #2ecc71;">Ⓜ</span>S</div>
-                        <div><span class="legend-icon" style="color: #2ecc71;">ℳ</span>U</div>
-                    </div>
-                `;
-            }
-            legend.innerHTML = html;
-        }
 
-        function updateLabelsPosition(labelElements) {
-            if(!labelElements) return;
-            const textOffset = mapState.iconMode ? 14 : 10;
-            const svgOffset = textOffset / mapState.scale;
-            labelElements.forEach(text => {
-                const ox = parseFloat(text.dataset.originX);
-                const oy = parseFloat(text.dataset.originY);
-                text.setAttribute('x', ox + svgOffset); text.setAttribute('y', oy);
-            });
-        }
+            // 生成 SVG 路线图
+            const spacing = 100; // 站点间距
+            const marginLeft = 50;
+            const marginTop = 150;
+            const width = line.stations.length * spacing + 200;
+            const isHSR = lineId.startsWith('H');
 
-        function showInfo(s) {
-            const html = `<h3>${s.name} ${s.lines.length > 1 ? '<span style="color:#e74c3c;font-size:12px">换乘</span>' : ''}</h3><p><strong>ID:</strong> ${s.id}</p><p><strong>海拔:</strong> ${s.elevation}m ${s.elevation>=60?'(高架)':''}</p><p><strong>线路:</strong> ${s.lines.join(', ')}</p>`;
-            document.getElementById('station-info').innerHTML = html;
-        }
-        function toggleLabels() { mapState.showLabels = !mapState.showLabels; renderMap(); }
-        function handleSearch() {
-            const input = document.getElementById('search-input'); const resultsDiv = document.getElementById('search-results'); const term = input.value.trim().toLowerCase();
-            if (!term) { resultsDiv.style.display = 'none'; return; }
-            let matches = [];
-            Object.values(subwayData.lines).forEach(line => {
-                line.stations.forEach(s => {
-                    if (s.name.toLowerCase().includes(term)) {
-                        const exists = matches.find(m => m.name === s.name);
-                        if (!exists) matches.push({ ...s, lineName: line.name }); else exists.lineName += `, ${line.name}`;
+            let svgContent = `<svg width="${width}" height="300" style="min-width:100%;">`;
+
+            // 1. 绘制连接线
+            const yPos = marginTop;
+            const lineClass = isHSR ? 'rail-bed' : 'metro-base'; // 简化样式，详情页只画一条粗线
+            const dashAttr = isHSR ? 'stroke-dasharray="10,5"' : '';
+
+            // 底线
+            svgContent += `<path d="M ${marginLeft} ${yPos} L ${marginLeft + (line.stations.length-1)*spacing} ${yPos}" stroke="${line.color}" stroke-width="${isHSR?6:8}" ${dashAttr} fill="none" />`;
+
+            // 2. 绘制站点
+            line.stations.forEach((s, index) => {
+                const cx = marginLeft + index * spacing;
+                const isTransfer = subwayData.lines[lineId].stations.find(st=>st.name===s.name).transfer; 
+                // 注意：这里需要全网搜索该站点的换乘信息
+                // 简化逻辑：重新扫描全网数据找该站点的所有线路
+                let transfers = [];
+                Object.entries(subwayData.lines).forEach(([lid, l]) => {
+                    if (lid !== lineId && l.stations.some(st => st.name === s.name)) {
+                        transfers.push({id: lid, color: l.color});
                     }
                 });
-            });
-            if (matches.length === 0) { resultsDiv.style.display = 'none'; return; }
-            resultsDiv.innerHTML = matches.map(s => `<div class="search-item" onclick="selectStation('${s.name}')"><span>${s.name}</span><span style="color:#999;font-size:11px">${s.lineName}</span></div>`).join('');
-            resultsDiv.style.display = 'block';
-        }
-        function selectStation(name) {
-            document.getElementById('search-input').value = name; document.getElementById('search-results').style.display = 'none';
-            let targetStation = null;
-            for (const [lineId, line] of Object.entries(subwayData.lines)) {
-                const s = line.stations.find(st => st.name === name);
-                if (s) { targetStation = s; if (!mapState.activeLines.has(lineId)) { mapState.activeLines.add(lineId); generateLineControls(); renderMap(); } break; }
-            }
-            if (targetStation) {
-                const pos = getPos(targetStation); mapState.scale = 2.0; 
-                const svgW = svg.clientWidth || 800; const svgH = svg.clientHeight || 600;
-                mapState.translateX = svgW/2 - pos.x * mapState.scale; mapState.translateY = svgH/2 - pos.y * mapState.scale;
-                updateTransform();
-                let lines = []; Object.values(subwayData.lines).forEach(l => { if (l.stations.some(s => s.name === name)) lines.push(l.name); });
-                showInfo({...targetStation, lines: lines}); 
-            }
-        }
-        document.addEventListener('click', function(e) { if (!document.querySelector('.search-box').contains(e.target)) { document.getElementById('search-results').style.display = 'none'; } });
-        function updateTransform() { mapGroup.setAttribute('transform', `translate(${mapState.translateX}, ${mapState.translateY}) scale(${mapState.scale})`); svg.style.setProperty('--map-scale', mapState.scale); renderMap(); }
-        function resetView() { mapState.scale = 0.8; mapState.translateX = 400; mapState.translateY = 400; updateTransform(); }
-        function showAllLines() { mapState.activeLines = new Set(Object.keys(subwayData.lines)); generateLineControls(); renderMap(); }
 
-        generateLineControls(); renderMap();
+                const elevTag = s.elevation >= 60 ? '高架' : '地下';
+
+                // 站点圈
+                svgContent += `<circle cx="${cx}" cy="${yPos}" r="${transfers.length>0?8:6}" fill="white" stroke="${line.color}" stroke-width="3" />`;
+
+                // 站名 (旋转45度)
+                svgContent += `
+                    <text x="${cx}" y="${yPos + 25}" transform="rotate(45, ${cx}, ${yPos + 25})" class="strip-label" style="cursor:pointer" onclick="locate('${s.name}');closeLineModal()">${s.name}</text>
+                `;
+
+                // 上方信息：海拔 + ID
+                svgContent += `
+                    <text x="${cx}" y="${yPos - 20}" text-anchor="middle" class="strip-tag">${s.id}</text>
+                    <rect x="${cx-15}" y="${yPos - 45}" width="30" height="16" rx="4" fill="#eee" />
+                    <text x="${cx}" y="${yPos - 37}" text-anchor="middle" font-size="9" fill="#666" dy="3">${elevTag}</text>
+                `;
+
+                // 换乘标识 (显示在圆圈下方)
+                if (transfers.length > 0) {
+                    let badgeY = yPos + 80; // 避开站名
+                    transfers.forEach((t, i) => {
+                        svgContent += `<rect x="${cx-2}" y="${badgeY + i*14}" width="14" height="6" rx="2" fill="${t.color}" />`;
+                    });
+                }
+
+                // 点击区域
+                svgContent += `<rect x="${cx-15}" y="0" width="30" height="300" fill="transparent" style="cursor:pointer" onclick="locate('${s.name}');closeLineModal()" title="点击在地图上定位" />`;
+            });
+
+            svgContent += `</svg>`;
+            document.getElementById('modalBody').innerHTML = svgContent;
+
+            modal.style.display = 'flex';
+        }
+
+        function closeLineModal() { document.getElementById('lineModal').style.display = 'none'; }
+
+        // --- 交互控制 ---
+        function generateLineControls() {
+            const c = document.getElementById('line-controls'); c.innerHTML='';
+            Object.entries(subwayData.lines).sort((a,b)=>parseInt(a[0].replace(/\D/g,''))-parseInt(b[0].replace(/\D/g,''))).forEach(([id,l])=>{
+                const d = document.createElement('div'); d.className = `line-control ${mapState.activeLines.has(id)?'active':''}`;
+
+                // 左侧：开关
+                const toggle = document.createElement('div'); toggle.className='line-toggle-area';
+                toggle.innerHTML = `<div class="line-color" style="background:${l.color}"></div><div class="line-info"><div class="line-name">${l.name}</div><div class="line-stats">${l.stations.length}站</div></div>`;
+                toggle.onclick = () => { mapState.activeLines.has(id)?mapState.activeLines.delete(id):mapState.activeLines.add(id); d.className=`line-control ${mapState.activeLines.has(id)?'active':''}`; renderMap(); };
+
+                // 右侧：详情按钮
+                const detail = document.createElement('div'); detail.className='line-detail-btn';
+                detail.innerHTML = '<i class="fas fa-file-alt"></i>';
+                detail.title = "查看单线路线图";
+                detail.onclick = (e) => { e.stopPropagation(); openLineDetail(id); };
+
+                d.appendChild(toggle);
+                d.appendChild(detail);
+                c.appendChild(d);
+            });
+        }
+
+        // --- 通用交互 ---
+        function showInfo(s, e) {
+            if(e) e.stopPropagation();
+            // 查找所有经过该站的线路
+            let linesInfo = [];
+            Object.entries(subwayData.lines).forEach(([lid, l]) => {
+                if (l.stations.some(st => st.name === s.name)) linesInfo.push({id:lid, name:l.name, color:l.color});
+            });
+
+            const html = `
+                <h3 style="border-left:4px solid ${s.color};padding-left:8px;margin-bottom:8px;">${s.name}</h3>
+                <p><strong>ID:</strong> ${s.id}</p>
+                <p><strong>海拔:</strong> ${s.elevation}m ${s.elevation>=60?'<span style="color:#d35400">高架</span>':'<span style="color:#2980b9">地下</span>'}</p>
+                <div style="margin-top:5px;font-size:12px;">
+                    <strong>线路:</strong><br>
+                    ${linesInfo.map(l=>`<span style="display:inline-block;background:${l.color};color:#fff;padding:1px 4px;border-radius:3px;margin:2px 2px 0 0;font-size:10px;">${l.name}</span>`).join('')}
+                </div>
+                <div style="margin-top:8px;text-align:right;">
+                    <a href="javascript:void(0)" onclick="closePopup();" style="color:#999;font-size:12px;text-decoration:none;">关闭</a>
+                </div>
+            `;
+            document.getElementById('popup-content').innerHTML = html;
+            document.getElementById('station-info').innerHTML = html;
+
+            let cx, cy;
+            if(e) { cx=e.clientX||e.touches[0].clientX; cy=e.clientY||e.touches[0].clientY; }
+            else { const r=mapContainer.getBoundingClientRect(); cx=r.left+r.width/2; cy=r.top+r.height/2; }
+            popup.style.display='block'; popup.style.left=cx+'px'; popup.style.top=cy+'px';
+        }
+
+        function handleSearch() {
+            const v = document.getElementById('search-input').value.trim().toLowerCase();
+            const res = document.getElementById('search-results');
+            if(!v) { res.style.display='none'; return; }
+            let hits = [];
+            Object.values(subwayData.lines).forEach(l=>{ l.stations.forEach(s=>{ if(s.name.toLowerCase().includes(v)) hits.push({...s, lname:l.name, lcolor:l.color}); }); });
+            const uniqueHits = []; const names = new Set();
+            hits.forEach(h=>{ if(!names.has(h.name)){ uniqueHits.push(h); names.add(h.name); } }); // 去重
+            if(!uniqueHits.length) { res.style.display='none'; return; }
+            res.innerHTML = uniqueHits.map(s=>`<div class="search-item" onclick="locate('${s.name}')">${s.name} <small style="color:${s.lcolor}">${s.lname}</small></div>`).join('');
+            res.style.display='block';
+        }
+
+        function locate(name) {
+            document.getElementById('search-results').style.display='none'; document.getElementById('search-input').value=name;
+            for(const l of Object.values(subwayData.lines)) {
+                const s = l.stations.find(st=>st.name===name);
+                if(s) {
+                    const p = getPos(s); mapState.scale=2.5; 
+                    const r = svg.getBoundingClientRect();
+                    mapState.translateX=r.width/2 - p.x*2.5; mapState.translateY=r.height/2 - p.y*2.5;
+                    updateTransform(true);
+                    setTimeout(()=>showInfo({...s, lines:[], color:l.color}), 350);
+                    break;
+                }
+            }
+        }
+
+        // 事件监听
+        function applyZoom(f,cx,cy,tr=true){ 
+            const os=mapState.scale; let ns=Math.max(0.1,Math.min(10,os*f)); 
+            mapState.translateX=cx-(cx-mapState.translateX)*(ns/os); mapState.translateY=cy-(cy-mapState.translateY)*(ns/os); mapState.scale=ns; 
+            if(!mapState.rafId) mapState.rafId=requestAnimationFrame(()=>{updateTransform(tr);mapState.rafId=null;}); 
+        }
+        svg.addEventListener('wheel', e=>{ e.preventDefault(); popup.style.display='none'; const r=svg.getBoundingClientRect(); applyZoom(e.deltaY>0?0.9:1.1,e.clientX-r.left,e.clientY-r.top,false); },{passive:false});
+
+        let isMD=false;
+        svg.addEventListener('mousedown',e=>{isMD=true;mapState.lastX=e.clientX;mapState.lastY=e.clientY;mapGroup.style.cursor='grabbing';popup.style.display='none';});
+        window.addEventListener('mousemove',e=>{if(!isMD)return;e.preventDefault();const dx=e.clientX-mapState.lastX,dy=e.clientY-mapState.lastY;mapState.translateX+=dx;mapState.translateY+=dy;mapState.lastX=e.clientX;mapState.lastY=e.clientY;if(!mapState.rafId)mapState.rafId=requestAnimationFrame(()=>{updateTransform(false);mapState.rafId=null;});});
+        window.addEventListener('mouseup',()=>{if(isMD){isMD=false;mapGroup.style.cursor='grab';setTimeout(updateLabelsPosition,200);}});
+
+        let ts={mode:'idle',ld:0};
+        svg.addEventListener('touchstart',e=>{popup.style.display='none';if(e.touches.length==1){ts.mode='drag';mapState.lastX=e.touches[0].clientX;mapState.lastY=e.touches[0].clientY;}else if(e.touches.length==2){ts.mode='pinch';ts.ld=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);}},{passive:false});
+        svg.addEventListener('touchmove',e=>{e.preventDefault();if(ts.mode=='drag'&&e.touches.length==1){const dx=e.touches[0].clientX-mapState.lastX,dy=e.touches[0].clientY-mapState.lastY;mapState.translateX+=dx;mapState.translateY+=dy;mapState.lastX=e.touches[0].clientX;mapState.lastY=e.touches[0].clientY;if(!mapState.rafId)mapState.rafId=requestAnimationFrame(()=>{updateTransform(false);mapState.rafId=null;});}else if(ts.mode=='pinch'&&e.touches.length==2){const nd=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY),c={x:(e.touches[0].clientX+e.touches[1].clientX)/2,y:(e.touches[0].clientY+e.touches[1].clientY)/2},r=svg.getBoundingClientRect();applyZoom(1+(nd/ts.ld-1)*1.2,c.x-r.left,c.y-r.top,false);ts.ld=nd;}},{passive:false});
+        svg.addEventListener('touchend',()=>{ts.mode='idle';setTimeout(updateLabelsPosition,200);});
+
+        // 辅助
+        function closePopup(){popup.style.display='none';}
+        function toggleSidebar(){document.getElementById('mainContent').classList.toggle('collapsed');document.getElementById('toggleIcon').className=document.getElementById('mainContent').classList.contains('collapsed')?'fas fa-chevron-left':'fas fa-chevron-right';setTimeout(()=>window.dispatchEvent(new Event('resize')),300);}
+        function toggleIconMode(){mapState.iconMode=!mapState.iconMode;renderMap();}
+        function handleZoomBtn(f){const r=svg.getBoundingClientRect();applyZoom(f,r.width/2,r.height/2,true);}
+        function resetView(){mapState.scale=0.8;mapState.translateX=400;mapState.translateY=400;updateTransform(true);}
+        function showAllLines(){mapState.activeLines=new Set(Object.keys(subwayData.lines));generateLineControls();renderMap();}
+
+        generateLineControls(); renderMap(); updateViewLevel();
     </script>
 </body>
 </html>
